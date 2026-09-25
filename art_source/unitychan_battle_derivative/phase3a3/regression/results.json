@@ -1,0 +1,491 @@
+[
+  {
+    "name": "acceptance_smoke",
+    "exit": 1,
+    "errors": [
+      "ERROR: ACCEPTANCE_SMOKE: avatar keeps its complete authored face mesh"
+    ],
+    "warnings": [],
+    "pass": false,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/acceptance_smoke.tscn"
+    ]
+  },
+  {
+    "name": "ammo_carried_foundation_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/ammo_carried_foundation_test.tscn"
+    ]
+  },
+  {
+    "name": "ammo_runtime_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/ammo_runtime_test.tscn"
+    ]
+  },
+  {
+    "name": "area_definition_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/area_definition_test.tscn"
+    ]
+  },
+  {
+    "name": "carried_inventory_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/carried_inventory_test.tscn"
+    ]
+  },
+  {
+    "name": "combat_tuning_baseline_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/combat_tuning_baseline_test.tscn"
+    ]
+  },
+  {
+    "name": "content_inventory_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/content_inventory_test.tscn"
+    ]
+  },
+  {
+    "name": "damage_packet_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/damage_packet_test.tscn"
+    ]
+  },
+  {
+    "name": "destructible_world_object_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/destructible_world_object_test.tscn"
+    ]
+  },
+  {
+    "name": "enemy_definition_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/enemy_definition_test.tscn"
+    ]
+  },
+  {
+    "name": "enemy_spawn_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/enemy_spawn_test.tscn"
+    ]
+  },
+  {
+    "name": "extraction_vertical_slice_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/extraction_vertical_slice_test.tscn"
+    ]
+  },
+  {
+    "name": "loadout_decision_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/loadout_decision_test.tscn"
+    ]
+  },
+  {
+    "name": "loadout_state_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/loadout_state_test.tscn"
+    ]
+  },
+  {
+    "name": "loot_table_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/loot_table_test.tscn"
+    ]
+  },
+  {
+    "name": "mission_flow_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/mission_flow_test.tscn"
+    ]
+  },
+  {
+    "name": "mission_objective_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/mission_objective_test.tscn"
+    ]
+  },
+  {
+    "name": "objective_world_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/objective_world_test.tscn"
+    ]
+  },
+  {
+    "name": "presentation_gameplay_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/presentation_gameplay_test.tscn"
+    ]
+  },
+  {
+    "name": "profile_state_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/profile_state_test.tscn"
+    ]
+  },
+  {
+    "name": "result_return_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/result_return_test.tscn"
+    ]
+  },
+  {
+    "name": "save_service_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/save_service_test.tscn"
+    ]
+  },
+  {
+    "name": "sortie_failure_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/sortie_failure_test.tscn"
+    ]
+  },
+  {
+    "name": "sortie_outcome_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/sortie_outcome_test.tscn"
+    ]
+  },
+  {
+    "name": "sortie_session_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/sortie_session_test.tscn"
+    ]
+  },
+  {
+    "name": "threat_escalation_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/threat_escalation_test.tscn"
+    ]
+  },
+  {
+    "name": "visual_combat_acceptance",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/visual_combat_acceptance.tscn"
+    ]
+  },
+  {
+    "name": "visual_enemy_acceptance",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/visual_enemy_acceptance.tscn"
+    ]
+  },
+  {
+    "name": "visual_slice_assets_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/visual_slice_assets_test.tscn"
+    ]
+  },
+  {
+    "name": "weapon_behavior_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/weapon_behavior_test.tscn"
+    ]
+  },
+  {
+    "name": "weapon_switching_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/weapon_switching_test.tscn"
+    ]
+  },
+  {
+    "name": "world_interaction_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/world_interaction_test.tscn"
+    ]
+  },
+  {
+    "name": "world_traversal_test",
+    "exit": 0,
+    "errors": [],
+    "warnings": [],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "res://tests/world_traversal_test.tscn"
+    ]
+  },
+  {
+    "name": "main",
+    "exit": 0,
+    "errors": [],
+    "warnings": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+      "--headless",
+      "--quit-after",
+      "180"
+    ]
+  }
+]

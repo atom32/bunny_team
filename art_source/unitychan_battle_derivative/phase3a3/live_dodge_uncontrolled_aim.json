@@ -1,0 +1,2340 @@
+[
+	{
+		"final_scale": "(1.0, 1.0, 1.0)",
+		"final_state": "Idle",
+		"samples": [
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.758421719074249,
+				"node": "Start",
+				"position": 0.0,
+				"right_error": 0.758463084697723
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0255392622202635,
+				"node": "Idle",
+				"position": 0.0,
+				"right_error": 0.0000000827148696203039
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.027782054618001,
+				"node": "Idle",
+				"position": 0.0166666675359011,
+				"right_error": 0.0000000200613019529783
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0292655937373638,
+				"node": "Idle",
+				"position": 0.0333333350718021,
+				"right_error": 0.0000000748774056091861
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0304843951016665,
+				"node": "Idle",
+				"position": 0.0500000007450581,
+				"right_error": 0.0000000591664779392431
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0310651604086161,
+				"node": "Idle",
+				"position": 0.0666666701436043,
+				"right_error": 0.000000153778245248759
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.029067462310195,
+				"node": "Idle",
+				"position": 0.0833333358168602,
+				"right_error": 0.000000127315573195119
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0272156428545713,
+				"node": "Idle",
+				"position": 0.100000001490116,
+				"right_error": 0.0000000748774056091861
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.028986569494009,
+				"node": "Idle",
+				"position": 0.116666667163372,
+				"right_error": 0.0000000226600569419588
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0293697696179152,
+				"node": "Idle",
+				"position": 0.133333340287209,
+				"right_error": 0.0000000567419320418594
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0290148351341486,
+				"node": "Idle",
+				"position": 0.150000005960464,
+				"right_error": 0.000000104374628051573
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0282947700470686,
+				"node": "Idle",
+				"position": 0.16666667163372,
+				"right_error": 0.0000000614390600617298
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0274336747825146,
+				"node": "Idle",
+				"position": 0.183333337306976,
+				"right_error": 0.0000000166600049311683
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0172155871987343,
+				"node": "Idle",
+				"position": 0.200000002980232,
+				"right_error": 0.000000135346510887757
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.00572108943015337,
+				"node": "Idle",
+				"position": 0.216666668653488,
+				"right_error": 0.000000110760844052038
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000421468477895814,
+				"node": "Idle",
+				"position": 0.233333334326744,
+				"right_error": 0.0000000640923190076137
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000210734238947907,
+				"node": "Idle",
+				"position": 0.25,
+				"right_error": 0.00000014994003549873
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000942432194506182,
+				"node": "Idle",
+				"position": 0.266666680574417,
+				"right_error": 0.000000140577270713038
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000134110450744629,
+				"node": "Idle",
+				"position": 0.283333331346512,
+				"right_error": 0.0000000300342506420748
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000614390600617298,
+				"node": "Idle",
+				"position": 0.300000011920929,
+				"right_error": 0.0000000372529029846191
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000155572692506212,
+				"node": "Idle",
+				"position": 0.316666662693024,
+				"right_error": 0.0000000226600569419588
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000210734238947907,
+				"node": "Idle",
+				"position": 0.333333343267441,
+				"right_error": 0.0000000679801672731628
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000802452078119131,
+				"node": "Idle",
+				"position": 0.349999994039536,
+				"right_error": 0.0000000833000228794845
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000210734238947907,
+				"node": "Idle",
+				"position": 0.366666674613953,
+				"right_error": 0.0000000434439755281346
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000842936955791629,
+				"node": "Idle",
+				"position": 0.383333325386047,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000210734238947907,
+				"node": "Idle",
+				"position": 0.400000005960464,
+				"right_error": 0.0000000802452078119131
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000104308128356934,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.000000155036545379517
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000537269002620633,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.0000000401226039059566
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000537269002620633,
+				"node": "Run",
+				"position": 0.0166666675359011,
+				"right_error": 0.0000000477069939108787
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000210734238947907,
+				"node": "Run",
+				"position": 0.0333333350718021,
+				"right_error": 0.0000000401226039059566
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000210734238947907,
+				"node": "Run",
+				"position": 0.0500000007450581,
+				"right_error": 0.0000000636577865975596
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000107453800524127,
+				"node": "Run",
+				"position": 0.0666666701436043,
+				"right_error": 0.000000238883785641519
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000614390600617298,
+				"node": "Run",
+				"position": 0.0833333358168602,
+				"right_error": 0.0000000596046447753906
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000266976257989882,
+				"node": "Run",
+				"position": 0.100000001490116,
+				"right_error": 0.0202209018170834
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000596046447753906,
+				"node": "Run",
+				"position": 0.116666667163372,
+				"right_error": 0.0127473855391145
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000107453800524127,
+				"node": "Run",
+				"position": 0.133333340287209,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000133280039449346,
+				"node": "Run",
+				"position": 0.150000005960464,
+				"right_error": 0.0000000596046447753906
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.00196139304898679,
+				"node": "Run",
+				"position": 0.16666667163372,
+				"right_error": 0.000000066640019724673
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.00440365262329578,
+				"node": "Run",
+				"position": 0.183333337306976,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.00519344862550497,
+				"node": "Run",
+				"position": 0.200000002980232,
+				"right_error": 0.000000119209289550781
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.00620981911197305,
+				"node": "Run",
+				"position": 0.216666668653488,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.143333333333333,
+				"left_error": 0.0161406025290489,
+				"node": "Dodge",
+				"position": 0.0,
+				"right_error": 0.000000119209289550781
+			},
+			{
+				"dodge_remaining": 0.126666666666667,
+				"left_error": 0.012779152020812,
+				"node": "Dodge",
+				"position": 0.0,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.11,
+				"left_error": 0.00345943286083639,
+				"node": "Dodge",
+				"position": 0.0166666675359011,
+				"right_error": 0.000000168587391158326
+			},
+			{
+				"dodge_remaining": 0.0933333333333334,
+				"left_error": 0.0,
+				"node": "Dodge",
+				"position": 0.0333333350718021,
+				"right_error": 0.000000119209289550781
+			},
+			{
+				"dodge_remaining": 0.0766666666666667,
+				"left_error": 0.000000119209289550781,
+				"node": "Dodge",
+				"position": 0.0500000007450581,
+				"right_error": 0.000000119209289550781
+			},
+			{
+				"dodge_remaining": 0.06,
+				"left_error": 0.000000119209289550781,
+				"node": "Dodge",
+				"position": 0.0666666701436043,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": 0.0433333333333334,
+				"left_error": 0.000000266560078898692,
+				"node": "Dodge",
+				"position": 0.0833333358168602,
+				"right_error": 0.000000119209289550781
+			},
+			{
+				"dodge_remaining": 0.0266666666666667,
+				"left_error": 0.000000119209289550781,
+				"node": "Dodge",
+				"position": 0.100000001490116,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": 0.01,
+				"left_error": 0.000000533120157797384,
+				"node": "Dodge",
+				"position": 0.116666667163372,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000337174782316652,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.000000337174782316652
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000674640701618046,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.00244954554364085,
+				"node": "Run",
+				"position": 0.0166666675359011,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.00116273260209709,
+				"node": "Run",
+				"position": 0.0333333350718021,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.0500000007450581,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.0666666701436043,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.0833333358168602,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Run",
+				"position": 0.100000001490116,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Run",
+				"position": 0.116666667163372,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000456952839158475,
+				"node": "Run",
+				"position": 0.133333340287209,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Run",
+				"position": 0.150000005960464,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.16666667163372,
+				"right_error": 0.000000533120157797384
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.183333337306976,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.200000002980232,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.216666668653488,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.233333334326744,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.25,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Run",
+				"position": 0.266666680574417,
+				"right_error": 0.000000674349564633303
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.283333331346512,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.0,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.0,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.0166666675359011,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.0333333350718021,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.0500000007450581,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.0666666701436043,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.0833333358168602,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.100000001490116,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.116666667163372,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.133333340287209,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.150000005960464,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.16666667163372,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.183333337306976,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.200000002980232,
+				"right_error": 0.000000674349564633303
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.216666668653488,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.233333334326744,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.25,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.266666680574417,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.283333331346512,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.300000011920929,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.316666662693024,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.333333343267441,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.349999994039536,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.366666674613953,
+				"right_error": 0.000000674349564633303
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.383333325386047,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.400000005960464,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.416666656732559,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.433333337306976,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.449999988079071,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.466666668653488,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.483333319425583,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.5,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.516666650772095,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.533333361148834,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.550000011920929,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.566666662693024,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.583333313465118,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.600000023841858,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.616666674613953,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.633333325386047,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.649999976158142,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.666666686534882,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.683333337306976,
+				"right_error": 0.000000674349564633303
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.699999988079071,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.716666638851166,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.733333349227905,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.75,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.766666650772095,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.783333361148834,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.800000011920929,
+				"right_error": 0.0
+			}
+		],
+		"weapon": "Rifle"
+	},
+	{
+		"final_scale": "(1.0, 1.0, 1.0)",
+		"final_state": "Idle",
+		"samples": [
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.758421719074249,
+				"node": "Start",
+				"position": 0.0,
+				"right_error": 0.758463084697723
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000108482090865891,
+				"node": "Idle",
+				"position": 0.0,
+				"right_error": 0.0000000433240217034836
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000965705595490363,
+				"node": "Idle",
+				"position": 0.0166666675359011,
+				"right_error": 0.00000010487205059917
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000999600260342959,
+				"node": "Idle",
+				"position": 0.0333333350718021,
+				"right_error": 0.0000000715604926426749
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000600685012841495,
+				"node": "Idle",
+				"position": 0.0500000007450581,
+				"right_error": 0.0000000230396484113271
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000124894484088145,
+				"node": "Idle",
+				"position": 0.0666666701436043,
+				"right_error": 0.0000000455587176872996
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000521540641784668,
+				"node": "Idle",
+				"position": 0.0833333358168602,
+				"right_error": 0.000000132653809714611
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000805903539458086,
+				"node": "Idle",
+				"position": 0.100000001490116,
+				"right_error": 0.000000102292972314899
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000846223286998793,
+				"node": "Idle",
+				"position": 0.116666667163372,
+				"right_error": 0.0000000305070351203085
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000596046447753906,
+				"node": "Idle",
+				"position": 0.133333340287209,
+				"right_error": 0.0000000550741674487654
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000151962623817781,
+				"node": "Idle",
+				"position": 0.150000005960464,
+				"right_error": 0.0000000217219877640673
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000128184638015227,
+				"node": "Idle",
+				"position": 0.16666667163372,
+				"right_error": 0.000000134317247102445
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000111510082945188,
+				"node": "Idle",
+				"position": 0.183333337306976,
+				"right_error": 0.0000000619171913740502
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000999600260342959,
+				"node": "Idle",
+				"position": 0.200000002980232,
+				"right_error": 0.000000063027904673163
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000149011611938477,
+				"node": "Idle",
+				"position": 0.216666668653488,
+				"right_error": 0.0000000689178705215454
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000203224743700048,
+				"node": "Idle",
+				"position": 0.233333334326744,
+				"right_error": 0.000000150355958794535
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000149011611938477,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.000000146853949445358
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000999600260342959,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.0000000730242391000502
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000942432194506182,
+				"node": "Run",
+				"position": 0.0166666675359011,
+				"right_error": 0.0000000526835606251552
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000149011611938477,
+				"node": "Run",
+				"position": 0.0333333350718021,
+				"right_error": 0.000000151413686921842
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000333200098623365,
+				"node": "Run",
+				"position": 0.0500000007450581,
+				"right_error": 0.000000341428489036844
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000169244657399759,
+				"node": "Run",
+				"position": 0.0666666701436043,
+				"right_error": 0.000000149011611938477
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000134110450744629,
+				"node": "Run",
+				"position": 0.0833333358168602,
+				"right_error": 0.0000000999600260342959
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000954139878217575,
+				"node": "Run",
+				"position": 0.100000001490116,
+				"right_error": 0.000000151962623817781
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000942432194506182,
+				"node": "Run",
+				"position": 0.116666667163372,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000108482090865891,
+				"node": "Run",
+				"position": 0.133333340287209,
+				"right_error": 0.0000000894069671630859
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000894069671630859,
+				"node": "Run",
+				"position": 0.150000005960464,
+				"right_error": 0.00000012287812012346
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000596046447753906,
+				"node": "Run",
+				"position": 0.16666667163372,
+				"right_error": 0.000000168587391158326
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000066640019724673,
+				"node": "Run",
+				"position": 0.183333337306976,
+				"right_error": 0.000000119209289550781
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000842936955791629,
+				"node": "Run",
+				"position": 0.200000002980232,
+				"right_error": 0.000000178813934326172
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000133280039449346,
+				"node": "Run",
+				"position": 0.216666668653488,
+				"right_error": 0.000000168587391158326
+			},
+			{
+				"dodge_remaining": 0.143333333333333,
+				"left_error": 0.0000000596046447753906,
+				"node": "Dodge",
+				"position": 0.0,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.126666666666667,
+				"left_error": 0.0,
+				"node": "Dodge",
+				"position": 0.0,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.11,
+				"left_error": 0.000000168587391158326,
+				"node": "Dodge",
+				"position": 0.0166666675359011,
+				"right_error": 0.000000266560078898692
+			},
+			{
+				"dodge_remaining": 0.0933333333333334,
+				"left_error": 0.0,
+				"node": "Dodge",
+				"position": 0.0333333350718021,
+				"right_error": 0.000000266560078898692
+			},
+			{
+				"dodge_remaining": 0.0766666666666667,
+				"left_error": 0.0,
+				"node": "Dodge",
+				"position": 0.0500000007450581,
+				"right_error": 0.000000266560078898692
+			},
+			{
+				"dodge_remaining": 0.06,
+				"left_error": 0.000000119209289550781,
+				"node": "Dodge",
+				"position": 0.0666666701436043,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.0433333333333334,
+				"left_error": 0.000000119209289550781,
+				"node": "Dodge",
+				"position": 0.0833333358168602,
+				"right_error": 0.000000412953085060508
+			},
+			{
+				"dodge_remaining": 0.0266666666666667,
+				"left_error": 0.000000476837158203125,
+				"node": "Dodge",
+				"position": 0.100000001490116,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": 0.01,
+				"left_error": 0.0,
+				"node": "Dodge",
+				"position": 0.116666667163372,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.00000058400388525115,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.000000533120157797384
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.0166666675359011,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Run",
+				"position": 0.0333333350718021,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.0500000007450581,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.0666666701436043,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.0833333358168602,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.100000001490116,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.116666667163372,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Run",
+				"position": 0.133333340287209,
+				"right_error": 0.000000533120157797384
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.150000005960464,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.16666667163372,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.183333337306976,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.200000002980232,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.216666668653488,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.233333334326744,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.25,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.266666680574417,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.0,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.0,
+				"right_error": 0.000000674349564633303
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.0166666675359011,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.0333333350718021,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.0500000007450581,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.0666666701436043,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.0833333358168602,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.100000001490116,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.116666667163372,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.133333340287209,
+				"right_error": 0.000000674349564633303
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.150000005960464,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.16666667163372,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.183333337306976,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.200000002980232,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.216666668653488,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.233333334326744,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.25,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.266666680574417,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.283333331346512,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.300000011920929,
+				"right_error": 0.000000674349564633303
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.316666662693024,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.333333343267441,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.349999994039536,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000674349564633303,
+				"node": "Idle",
+				"position": 0.366666674613953,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.383333325386047,
+				"right_error": 0.000000674349564633303
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.400000005960464,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.416666656732559,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.433333337306976,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.449999988079071,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.466666668653488,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.483333319425583,
+				"right_error": 0.000000674349564633303
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.5,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.516666650772095,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.533333361148834,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.550000011920929,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.566666662693024,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.583333313465118,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.600000023841858,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000674349564633303,
+				"node": "Idle",
+				"position": 0.616666674613953,
+				"right_error": 0.000000674349564633303
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.633333325386047,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.649999976158142,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.666666686534882,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.683333337306976,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.699999988079071,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.716666638851166,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.733333349227905,
+				"right_error": 0.000000859630404193013
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.75,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.766666650772095,
+				"right_error": 0.000000674349564633303
+			}
+		],
+		"weapon": "SMG"
+	},
+	{
+		"final_scale": "(1.0, 1.0, 1.0)",
+		"final_state": "Idle",
+		"samples": [
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.758421719074249,
+				"node": "Start",
+				"position": 0.0,
+				"right_error": 0.758463084697723
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.00873973872512579,
+				"node": "Idle",
+				"position": 0.0,
+				"right_error": 0.000000149754811218372
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.010664239525795,
+				"node": "Idle",
+				"position": 0.0166666675359011,
+				"right_error": 0.000000076345735067207
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0125241279602051,
+				"node": "Idle",
+				"position": 0.0333333350718021,
+				"right_error": 0.00000013838838697211
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0147885894402862,
+				"node": "Idle",
+				"position": 0.0500000007450581,
+				"right_error": 0.0000000691941934860552
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0171198323369026,
+				"node": "Idle",
+				"position": 0.0666666701436043,
+				"right_error": 0.000000108482090865891
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0177839640527964,
+				"node": "Idle",
+				"position": 0.0833333358168602,
+				"right_error": 0.0000000702886353565191
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0187592562288046,
+				"node": "Idle",
+				"position": 0.100000001490116,
+				"right_error": 0.000000125614661783402
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0199219007045031,
+				"node": "Idle",
+				"position": 0.116666667163372,
+				"right_error": 0.0000000477069939108787
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0211505647748709,
+				"node": "Idle",
+				"position": 0.133333340287209,
+				"right_error": 0.0000000166600049311683
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0216828901320696,
+				"node": "Idle",
+				"position": 0.150000005960464,
+				"right_error": 0.0000000596046447753906
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.021878320723772,
+				"node": "Idle",
+				"position": 0.16666667163372,
+				"right_error": 0.0000000600685012841495
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0219563469290733,
+				"node": "Idle",
+				"position": 0.183333337306976,
+				"right_error": 0.00000018685960867515
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0141531424596906,
+				"node": "Idle",
+				"position": 0.200000002980232,
+				"right_error": 0.0000000777863462531059
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.00525793759152293,
+				"node": "Idle",
+				"position": 0.216666668653488,
+				"right_error": 0.0000000379906559544452
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000999600260342959,
+				"node": "Idle",
+				"position": 0.233333334326744,
+				"right_error": 0.00000007068241103525
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000108482090865891,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.000000270898027565636
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000421468477895814,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.000000173296086813934
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.00000018907454091277,
+				"node": "Run",
+				"position": 0.0166666675359011,
+				"right_error": 0.0000000868879510562692
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000868879510562692,
+				"node": "Run",
+				"position": 0.0333333350718021,
+				"right_error": 0.00000012287812012346
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000614390600617298,
+				"node": "Run",
+				"position": 0.0500000007450581,
+				"right_error": 0.0000000802452078119131
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000149754811218372,
+				"node": "Run",
+				"position": 0.0666666701436043,
+				"right_error": 0.0000000682857006495396
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000190827975643515,
+				"node": "Run",
+				"position": 0.0833333358168602,
+				"right_error": 0.0000000802452078119131
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000127315573195119,
+				"node": "Run",
+				"position": 0.100000001490116,
+				"right_error": 0.000000066640019724673
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000537269002620633,
+				"node": "Run",
+				"position": 0.116666667163372,
+				"right_error": 0.0000000942432194506182
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000149011611938477,
+				"node": "Run",
+				"position": 0.133333340287209,
+				"right_error": 0.000000160490415623826
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.00000012287812012346,
+				"node": "Run",
+				"position": 0.150000005960464,
+				"right_error": 0.000000119209289550781
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000149011611938477,
+				"node": "Run",
+				"position": 0.16666667163372,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.000000178813934326172,
+				"node": "Run",
+				"position": 0.183333337306976,
+				"right_error": 0.0000000596046447753906
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0000000596046447753906,
+				"node": "Run",
+				"position": 0.200000002980232,
+				"right_error": 0.000000168587391158326
+			},
+			{
+				"dodge_remaining": 0.0,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.216666668653488,
+				"right_error": 0.000000266560078898692
+			},
+			{
+				"dodge_remaining": 0.143333333333333,
+				"left_error": 0.000000238418579101563,
+				"node": "Dodge",
+				"position": 0.0,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.126666666666667,
+				"left_error": 0.000000119209289550781,
+				"node": "Dodge",
+				"position": 0.0,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.11,
+				"left_error": 0.000000119209289550781,
+				"node": "Dodge",
+				"position": 0.0166666675359011,
+				"right_error": 0.000000119209289550781
+			},
+			{
+				"dodge_remaining": 0.0933333333333334,
+				"left_error": 0.000000119209289550781,
+				"node": "Dodge",
+				"position": 0.0333333350718021,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": 0.0766666666666667,
+				"left_error": 0.0,
+				"node": "Dodge",
+				"position": 0.0500000007450581,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": 0.06,
+				"left_error": 0.000000238418579101563,
+				"node": "Dodge",
+				"position": 0.0666666701436043,
+				"right_error": 0.000000266560078898692
+			},
+			{
+				"dodge_remaining": 0.0433333333333334,
+				"left_error": 0.000000119209289550781,
+				"node": "Dodge",
+				"position": 0.0833333358168602,
+				"right_error": 0.000000119209289550781
+			},
+			{
+				"dodge_remaining": 0.0266666666666667,
+				"left_error": 0.000000357627868652344,
+				"node": "Dodge",
+				"position": 0.100000001490116,
+				"right_error": 0.00000058400388525115
+			},
+			{
+				"dodge_remaining": 0.01,
+				"left_error": 0.000000337174782316652,
+				"node": "Dodge",
+				"position": 0.116666667163372,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000337174782316652,
+				"node": "Run",
+				"position": 0.0,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.0166666675359011,
+				"right_error": 0.000000533120157797384
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.0333333350718021,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.0500000007450581,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Run",
+				"position": 0.0666666701436043,
+				"right_error": 0.000000533120157797384
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.0833333358168602,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.100000001490116,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Run",
+				"position": 0.116666667163372,
+				"right_error": 0.000000674349564633303
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Run",
+				"position": 0.133333340287209,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.00000106624031559477,
+				"node": "Run",
+				"position": 0.150000005960464,
+				"right_error": 0.000000533120157797384
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.16666667163372,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.183333337306976,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.200000002980232,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.216666668653488,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Run",
+				"position": 0.233333334326744,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Run",
+				"position": 0.25,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Run",
+				"position": 0.266666680574417,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.0,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.0,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.0166666675359011,
+				"right_error": 0.0
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.0333333350718021,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000983024960987677,
+				"node": "Idle",
+				"position": 0.0500000007450581,
+				"right_error": 0.000000238418579101563
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.0666666701436043,
+				"right_error": 0.000000476837158203125
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.0833333358168602,
+				"right_error": 0.0126633420586586
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.100000001490116,
+				"right_error": 0.0270136557519436
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.116666667163372,
+				"right_error": 0.0305517800152302
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.133333340287209,
+				"right_error": 0.0314850956201553
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.150000005960464,
+				"right_error": 0.032371811568737
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000674349564633303,
+				"node": "Idle",
+				"position": 0.16666667163372,
+				"right_error": 0.0332107245922089
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000674349564633303,
+				"node": "Idle",
+				"position": 0.183333337306976,
+				"right_error": 0.0340068452060223
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.200000002980232,
+				"right_error": 0.0347609482705593
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.216666668653488,
+				"right_error": 0.0354727134108543
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.233333334326744,
+				"right_error": 0.0361510291695595
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.25,
+				"right_error": 0.0367918908596039
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.266666680574417,
+				"right_error": 0.0373983830213547
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000674349564633303,
+				"node": "Idle",
+				"position": 0.283333331346512,
+				"right_error": 0.0379438921809196
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.300000011920929,
+				"right_error": 0.0384611375629902
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000674349564633303,
+				"node": "Idle",
+				"position": 0.316666662693024,
+				"right_error": 0.0389908477663994
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000674349564633303,
+				"node": "Idle",
+				"position": 0.333333343267441,
+				"right_error": 0.0394953265786171
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000674349564633303,
+				"node": "Idle",
+				"position": 0.349999994039536,
+				"right_error": 0.0399738885462284
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.366666674613953,
+				"right_error": 0.0404289625585079
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.383333325386047,
+				"right_error": 0.0408176742494106
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000476837158203125,
+				"node": "Idle",
+				"position": 0.400000005960464,
+				"right_error": 0.0411860980093479
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.416666656732559,
+				"right_error": 0.0415331125259399
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.433333337306976,
+				"right_error": 0.0418566986918449
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.449999988079071,
+				"right_error": 0.042189434170723
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.466666668653488,
+				"right_error": 0.0425004102289677
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.483333319425583,
+				"right_error": 0.0427901074290276
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.5,
+				"right_error": 0.0430604107677937
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.516666650772095,
+				"right_error": 0.0433175601065159
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.533333361148834,
+				"right_error": 0.0435589179396629
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.550000011920929,
+				"right_error": 0.0437722690403461
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000674349564633303,
+				"node": "Idle",
+				"position": 0.566666662693024,
+				"right_error": 0.043970875442028
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.583333313465118,
+				"right_error": 0.0441588088870049
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.600000023841858,
+				"right_error": 0.0443361923098564
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.616666674613953,
+				"right_error": 0.0445129200816154
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.633333325386047,
+				"right_error": 0.0446817651391029
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.0,
+				"node": "Idle",
+				"position": 0.649999976158142,
+				"right_error": 0.0448361709713936
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.666666686534882,
+				"right_error": 0.0449817702174187
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.683333337306976,
+				"right_error": 0.0451168939471245
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.699999988079071,
+				"right_error": 0.0452397838234901
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.716666638851166,
+				"right_error": 0.0453586243093014
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000533120157797384,
+				"node": "Idle",
+				"position": 0.733333349227905,
+				"right_error": 0.0454713702201843
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000674349564633303,
+				"node": "Idle",
+				"position": 0.75,
+				"right_error": 0.0455759204924107
+			},
+			{
+				"dodge_remaining": -0.00666666666666664,
+				"left_error": 0.000000238418579101563,
+				"node": "Idle",
+				"position": 0.766666650772095,
+				"right_error": 0.0456726774573326
+			}
+		],
+		"weapon": "Rocket"
+	}
+]

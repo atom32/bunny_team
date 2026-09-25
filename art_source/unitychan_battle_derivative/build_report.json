@@ -1,0 +1,447 @@
+{
+  "blender": "5.2.2 LTS",
+  "mapping": [
+    {
+      "object": "headNose",
+      "mesh": "headNose",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/face3_main.mat"
+      ],
+      "transform_id": "4455816401454376",
+      "enabled": true,
+      "derivative": "included",
+      "head_prefab_world_blender": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          -5.21540641784668e-08,
+          1.1175870895385742e-08
+        ],
+        [
+          0.0,
+          5.21540641784668e-08,
+          1.0,
+          -1.7043203115463257e-07
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "hairSide",
+      "mesh": "hairSide",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Hair_Spow.mat"
+      ],
+      "transform_id": "4093871098427320",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "eyeHighLightShape",
+      "mesh": "eyeHighLightShape",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/face3_main.mat"
+      ],
+      "transform_id": "4671571913614276",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "shoesExtend",
+      "mesh": "shoesExtend",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat"
+      ],
+      "transform_id": "4374648093879932",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "horn",
+      "mesh": "horn",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ],
+      "transform_id": "4809924081623070",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "hairFront",
+      "mesh": "hairFront",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Hair_Spow.mat"
+      ],
+      "transform_id": "4670923321200848",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "01_kohaku_A_head",
+      "mesh": "head_Def",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A_head.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/face3_main.mat"
+      ],
+      "transform_id": "4445920792580114",
+      "enabled": true,
+      "derivative": "included",
+      "head_prefab_world_blender": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          -7.450580596923828e-09,
+          1.1175870895385742e-08
+        ],
+        [
+          0.0,
+          7.450580596923828e-09,
+          1.0,
+          -4.936009645462036e-08
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "object": "legs",
+      "mesh": "legs",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Skin.mat"
+      ],
+      "transform_id": "4639736648991080",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "frill",
+      "mesh": "frill",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat"
+      ],
+      "transform_id": "4482538642844742",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "eyeBall",
+      "mesh": "eyeBall",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/face3_main.mat"
+      ],
+      "transform_id": "4817606552184144",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "cuffs",
+      "mesh": "cuffs",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ],
+      "transform_id": "4975810079229264",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "kwep_exebreaker",
+      "mesh": "kwep_exebreaker",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_Wep.mat"
+      ],
+      "transform_id": "4270808707870710",
+      "enabled": true,
+      "derivative": "excluded bundled melee weapon; use existing game weapon contract"
+    },
+    {
+      "object": "hairBack",
+      "mesh": "hairBack",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Hair_Spow.mat"
+      ],
+      "transform_id": "4908406793133204",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "belt",
+      "mesh": "belt",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat"
+      ],
+      "transform_id": "4612195466818696",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "skin",
+      "mesh": "skin",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Skin.mat"
+      ],
+      "transform_id": "4227925247454264",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "hairUnder",
+      "mesh": "hairUnder",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Hair_Spow.mat"
+      ],
+      "transform_id": "4906542305072700",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "scarf",
+      "mesh": "scarf",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ],
+      "transform_id": "4417420576344344",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "pants",
+      "mesh": "pants",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ],
+      "transform_id": "4690859483457498",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "shirt",
+      "mesh": "shirt",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ],
+      "transform_id": "4189480714594606",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "collar",
+      "mesh": "collar",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ],
+      "transform_id": "4287409740981292",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "wristband",
+      "mesh": "wristband",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ],
+      "transform_id": "4685115680704330",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "body",
+      "mesh": "body",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ],
+      "transform_id": "4088594421337606",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "shoes",
+      "mesh": "shoes",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ],
+      "transform_id": "4492805300610834",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "armcover",
+      "mesh": "armcover",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat"
+      ],
+      "transform_id": "4369054149227726",
+      "enabled": true,
+      "derivative": "included"
+    },
+    {
+      "object": "mantle",
+      "mesh": "mantle",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat"
+      ],
+      "transform_id": "4218039518822468",
+      "enabled": true,
+      "derivative": "included"
+    }
+  ],
+  "materials": [
+    {
+      "material": "Unity2016_C_Add",
+      "base_texture": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Add.png",
+      "base_color_srgb": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "roughness": 0.8,
+      "metallic": 0,
+      "emission": "none (no active emission source)",
+      "shade_grade_specular": "preserved as source evidence, not mapped to PBR channels"
+    },
+    {
+      "material": "Unity2016_C_Body",
+      "base_texture": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Body.png",
+      "base_color_srgb": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "roughness": 0.8,
+      "metallic": 0,
+      "emission": "none (no active emission source)",
+      "shade_grade_specular": "preserved as source evidence, not mapped to PBR channels"
+    },
+    {
+      "material": "Unity2016_C_Hair_Spow",
+      "base_texture": null,
+      "base_color_srgb": {
+        "r": 0.93725497,
+        "g": 0.8313726,
+        "b": 0.6784314,
+        "a": 1.0
+      },
+      "roughness": 0.8,
+      "metallic": 0,
+      "emission": "none (no active emission source)",
+      "shade_grade_specular": "preserved as source evidence, not mapped to PBR channels"
+    },
+    {
+      "material": "Unity2016_C_Skin",
+      "base_texture": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_skin.png",
+      "base_color_srgb": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "roughness": 0.8,
+      "metallic": 0,
+      "emission": "none (no active emission source)",
+      "shade_grade_specular": "preserved as source evidence, not mapped to PBR channels"
+    },
+    {
+      "material": "Unity2016_Wep",
+      "base_texture": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep.png",
+      "base_color_srgb": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "roughness": 0.8,
+      "metallic": 0,
+      "emission": "none (no active emission source)",
+      "shade_grade_specular": "preserved as source evidence, not mapped to PBR channels"
+    },
+    {
+      "material": "face3_main",
+      "base_texture": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main.png",
+      "base_color_srgb": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "roughness": 0.8,
+      "metallic": 0,
+      "emission": "none (no active emission source)",
+      "shade_grade_specular": "preserved as source evidence, not mapped to PBR channels"
+    }
+  ],
+  "normalization_world_bone_position_max_error_m": 2.4027400458748785e-07,
+  "normalization_world_bone_rotation_max_error_rad": 0.0,
+  "normalization_world_vertex_max_error_m": 1.3075715880680267e-07,
+  "triangles": 37359,
+  "meshes": 24,
+  "bones": 328,
+  "animations": 0,
+  "bounds_min": [
+    -0.48041170835494995,
+    -0.4550224542617798,
+    -0.0019159774528816342
+  ],
+  "bounds_max": [
+    0.48040321469306946,
+    0.2928068935871124,
+    1.4649872779846191
+  ],
+  "export": {
+    "format": "GLB",
+    "yup": true,
+    "selected": true,
+    "animations": false
+  },
+  "heading_normalization_degrees": 180,
+  "limitations": [
+    "Principled approximation, not UTS parity",
+    "deformation acceptance pending"
+  ],
+  "glb_sha256": "32e030e3aa4dea44f699bd7ce260a87c6ea9d5f4c0ea4c5eaedd6e823a335e0f"
+}

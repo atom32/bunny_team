@@ -1,0 +1,11 @@
+{
+  "project": "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306\\project",
+  "output": "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_003306",
+  "master_exists": true,
+  "official_hashes_match": 68,
+  "production_player_sha256": "48a36086c6bdf54f9ade39b97bdfa6910cf887ac816871a9a493c2db04d13b8c",
+  "git_head": "c4ca114e732ff8508370928dd5d16e04d838a6a0",
+  "cold_import_exit": 0,
+  "errors": 0,
+  "warnings": 0
+}

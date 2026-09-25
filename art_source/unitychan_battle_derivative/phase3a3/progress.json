@@ -1,0 +1,29 @@
+{
+  "status": "PRESENTATION SPIKE PASS / USABLE; scoped publishing pending",
+  "completed": [
+    "fresh copy cold import 0 errors / 0 warnings",
+    "68 official hashes unchanged",
+    "three master actions exported",
+    "isolated adapter compiled and Hanger initial grip smoke",
+    "24 animation/weapon evidence captures with explicit clip seek",
+    "Fixed parent-local raw pose cache; Rocket recoil error now ~2.1e-7m",
+    "Full source clip coverage (Idle 2.95s, Walk 1.3667s, Run .8667s, Dodge 1.45s)",
+    "45 Hanger presentation API sequence checks PASS; five repetitions of both requested orders",
+    "Unchanged suites 32/33, sole legacy Face failure; main exit 0; weapon_switching_test PASS",
+    "Live unmodified Dodge input/state-machine captured from rear and front oblique views for all 3 weapons; exits after observed 0.116667s clip position and returns to Idle / unit body scale",
+    "Two production-camera graphical routes PASS (Rifle+Rocket, SMG+Rocket); real Q switching, firing, session reload, Terminal objective COMPLETED, extraction and Result"
+  ],
+  "next": [
+    "Commit scoped derivative evidence/source and push; verify remote HEAD"
+  ],
+  "known_probe_caveats": [
+    "diagnostic clip sampling bypasses gameplay state transitions; actual route still required",
+    "SMG/Rocket existing start_reload() returns false; no separate reload motion in this fixture",
+    "ObjectDB 2-instance exit warning in latest capture log",
+    "initial compile failure and old sampling logs are superseded by final animation.log",
+    "Three-weapon sequences are Hanger presentation API, not invented three-slot gameplay; actual two-slot switching covered by existing unchanged weapon_switching_test.",
+    "Full 1.45s Dodge stress clip overlaps Rocket/head around .48s; actual unmodified Dodge exits by observed .116667s. Front/rear live captures show no such overlap. Do not generalize acceptance to full clip playback.",
+    "Front-oblique live Rifle Dodge has transient left target error up to .05323m at state entry; right hand attached, sliding settles; record as Demo P2 rather than numerical perfection.",
+    "Terminal interaction now explicitly asserted through objective state; successful extraction does not mean all mission objectives completed."
+  ]
+}

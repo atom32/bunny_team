@@ -1,0 +1,37 @@
+{
+	"animations": [
+		"Dodge",
+		"Idle_Gun",
+		"Run",
+		"Run_Shoot",
+		"Walk"
+	],
+	"method": "automated graphics/API; production Hanger camera",
+	"mounts": {
+		"Backpack": true,
+		"Chest": true,
+		"HandL": true,
+		"HandR": true,
+		"HipL": true,
+		"HipR": true,
+		"ShoulderL": true,
+		"ShoulderR": true
+	},
+	"weapons": [
+		{
+			"id": "weapon.assault_rifle_01",
+			"left_grip_error_m": 0.000000266560078898692,
+			"right_grip_error_m": 0.000000254631146390238
+		},
+		{
+			"id": "weapon.smg_01",
+			"left_grip_error_m": 0.000000133280039449346,
+			"right_grip_error_m": 0.00000024978896817629
+		},
+		{
+			"id": "weapon.rocket_launcher_01",
+			"left_grip_error_m": 0.11952843517065,
+			"right_grip_error_m": 0.000000120137002568299
+		}
+	]
+}

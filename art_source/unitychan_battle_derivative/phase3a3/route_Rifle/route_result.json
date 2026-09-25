@@ -1,0 +1,74 @@
+{
+  "checks": {
+    "Combat still works": true,
+    "Door interaction": true,
+    "Enter Field Office": true,
+    "Exit Field Office": true,
+    "Extraction": true,
+    "Field Office entrance visible": true,
+    "Hanger launches": true,
+    "Initial weapon restored": true,
+    "Interior traversal": true,
+    "Player movement": true,
+    "Production camera": true,
+    "Result": true,
+    "Return to original route": true,
+    "Terminal area reachable": true,
+    "Terminal interaction completed": true,
+    "reload_0": true,
+    "reload_1": true,
+    "reload_2": true,
+    "reload_3": true,
+    "switch_pose_0": true,
+    "switch_pose_1": true,
+    "switch_pose_2": true,
+    "switch_pose_3": true
+  },
+  "combat": {
+    "damage_taken": 15,
+    "enemies_defeated": 0,
+    "shots": 64
+  },
+  "combat_scope": "weapon fire and normal enemy AI; kill/damage semantics are covered by regression suites",
+  "failure": "",
+  "method": "automated input/API, not manual",
+  "mission_completed": false,
+  "weapon_checks": [
+    {
+      "ammo_after": 1,
+      "ammo_before": 0,
+      "expected_pose": "Rocket",
+      "fired": true,
+      "id": "weapon.rocket_launcher_01",
+      "reload": true,
+      "selected_pose": "Rocket"
+    },
+    {
+      "ammo_after": 30,
+      "ammo_before": 4,
+      "expected_pose": "Rifle",
+      "fired": true,
+      "id": "weapon.assault_rifle_01",
+      "reload": true,
+      "selected_pose": "Rifle"
+    },
+    {
+      "ammo_after": 1,
+      "ammo_before": 0,
+      "expected_pose": "Rocket",
+      "fired": true,
+      "id": "weapon.rocket_launcher_01",
+      "reload": true,
+      "selected_pose": "Rocket"
+    },
+    {
+      "ammo_after": 30,
+      "ammo_before": 29,
+      "expected_pose": "Rifle",
+      "fired": true,
+      "id": "weapon.assault_rifle_01",
+      "reload": true,
+      "selected_pose": "Rifle"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+	"Pose_Rifle": {
+		"animation_playback": false,
+		"config": {
+			"intent": "existing rifle preview reference, unmodified marker targets",
+			"scene": "assault_rifle",
+			"weapon_origin": [
+				0.0,
+				1.13,
+				-0.06
+			]
+		},
+		"hands": {
+			"Left": {
+				"arm_length_m": 0.378000006079674,
+				"finger_contact_authored": false,
+				"marker_to_wrist_m": 0.0000000372529029846191,
+				"shoulder_to_target_m": 0.347067028284073,
+				"target": [
+					-0.0263999998569489,
+					1.07280004024506,
+					-0.288799971342087
+				],
+				"wrist_frame_authored": false
+			},
+			"Right": {
+				"arm_length_m": 0.377999871969223,
+				"finger_contact_authored": false,
+				"marker_to_wrist_m": 0.000000147513972592606,
+				"shoulder_to_target_m": 0.199634075164795,
+				"target": [
+					0.030799999833107,
+					1.0595999956131,
+					-0.126000002026558
+				],
+				"wrist_frame_authored": false
+			}
+		},
+		"muzzle_direction_error_deg": 0.0,
+		"static": true,
+		"visual_acceptance": "NOT ACCEPTED: position-only diagnostic; no wrist/finger grasp definition"
+	},
+	"Pose_Rocket": {
+		"animation_playback": false,
+		"config": {
+			"intent": "right shoulder/body-side support, NOT rifle; reach-feasible candidate to expose rear-grip placement conflict",
+			"scene": "rocket_launcher",
+			"weapon_origin": [
+				0.26,
+				1.17,
+				0.34
+			]
+		},
+		"hands": {
+			"Left": {
+				"arm_length_m": 0.378000006079674,
+				"finger_contact_authored": false,
+				"marker_to_wrist_m": 0.0000000198001899320843,
+				"shoulder_to_target_m": 0.359713613986969,
+				"target": [
+					0.220399990677834,
+					1.00279998779297,
+					-0.0251999795436859
+				],
+				"wrist_frame_authored": false
+			},
+			"Right": {
+				"arm_length_m": 0.377999871969223,
+				"finger_contact_authored": false,
+				"marker_to_wrist_m": 0.0000000842936955791629,
+				"shoulder_to_target_m": 0.331748008728027,
+				"target": [
+					0.299600005149841,
+					0.99399995803833,
+					0.278400003910065
+				],
+				"wrist_frame_authored": false
+			}
+		},
+		"muzzle_direction_error_deg": 0.0,
+		"static": true,
+		"visual_acceptance": "NOT ACCEPTED: position-only diagnostic; no wrist/finger grasp definition"
+	},
+	"Pose_SMG": {
+		"animation_playback": false,
+		"config": {
+			"intent": "compact torso-height hold, shorter body than rifle; candidate only",
+			"scene": "smg",
+			"weapon_origin": [
+				0.0,
+				1.08,
+				-0.02
+			]
+		},
+		"hands": {
+			"Left": {
+				"arm_length_m": 0.378000006079674,
+				"finger_contact_authored": false,
+				"marker_to_wrist_m": 0.0000000979970877779124,
+				"shoulder_to_target_m": 0.322083473205566,
+				"target": [
+					-0.0263999998569489,
+					1.02280008792877,
+					-0.248799979686737
+				],
+				"wrist_frame_authored": false
+			},
+			"Right": {
+				"arm_length_m": 0.377999871969223,
+				"finger_contact_authored": false,
+				"marker_to_wrist_m": 0.0000000614390600617298,
+				"shoulder_to_target_m": 0.193598121404648,
+				"target": [
+					0.030799999833107,
+					1.00960004329681,
+					-0.085999995470047
+				],
+				"wrist_frame_authored": false
+			}
+		},
+		"muzzle_direction_error_deg": 0.0,
+		"static": true,
+		"visual_acceptance": "NOT ACCEPTED: position-only diagnostic; no wrist/finger grasp definition"
+	}
+}

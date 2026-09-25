@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "Combat still works": true,
+    "Door interaction": true,
+    "Enter Field Office": true,
+    "Exit Field Office": true,
+    "Extraction": true,
+    "Field Office entrance visible": true,
+    "Hanger launches": true,
+    "Interior traversal": true,
+    "Player movement": true,
+    "Production camera": true,
+    "Result": true,
+    "Return to original route": true,
+    "Terminal area reachable": true
+  },
+  "combat": {
+    "damage_taken": 3,
+    "enemies_defeated": 0,
+    "shots": 60
+  },
+  "combat_scope": "weapon fire and normal enemy AI; kill/damage semantics are covered by regression suites",
+  "failure": "",
+  "method": "automated input/API, not manual",
+  "mission_completed": false
+}

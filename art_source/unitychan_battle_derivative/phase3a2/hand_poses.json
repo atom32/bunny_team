@@ -1,0 +1,293 @@
+{
+  "Rifle": {
+    "weapon_origin": [
+      0,
+      1.13,
+      -0.06
+    ],
+    "status": "unaccepted authored candidate",
+    "Right": {
+      "wrist_from_weapon": [
+        0.0308,
+        -0.0704,
+        -0.066
+      ],
+      "palm_long": [
+        0,
+        0.5,
+        -0.866
+      ],
+      "palm_normal": [
+        -1,
+        0,
+        0
+      ],
+      "curl_deg": {
+        "Thumb": [
+          18,
+          35,
+          25
+        ],
+        "Index": [
+          10,
+          25,
+          20
+        ],
+        "Middle": [
+          45,
+          65,
+          40
+        ],
+        "Ring": [
+          48,
+          70,
+          40
+        ],
+        "Pinky": [
+          52,
+          70,
+          40
+        ]
+      },
+      "index_splay_deg": 25
+    },
+    "Left": {
+      "wrist_from_weapon": [
+        -0.0264,
+        -0.0572,
+        -0.2288
+      ],
+      "palm_long": [
+        0,
+        0.3,
+        -0.954
+      ],
+      "palm_normal": [
+        1,
+        0,
+        0
+      ],
+      "curl_deg": {
+        "Thumb": [
+          20,
+          40,
+          30
+        ],
+        "Index": [
+          40,
+          65,
+          35
+        ],
+        "Middle": [
+          45,
+          70,
+          40
+        ],
+        "Ring": [
+          50,
+          70,
+          40
+        ],
+        "Pinky": [
+          55,
+          70,
+          40
+        ]
+      }
+    }
+  },
+  "SMG": {
+    "weapon_origin": [
+      0,
+      1.08,
+      -0.02
+    ],
+    "status": "unaccepted authored candidate",
+    "Right": {
+      "wrist_from_weapon": [
+        0.032,
+        -0.052,
+        -0.04
+      ],
+      "palm_long": [
+        0,
+        0.25,
+        -0.968
+      ],
+      "palm_normal": [
+        -1,
+        0,
+        0
+      ],
+      "curl_deg": {
+        "Thumb": [
+          18,
+          35,
+          25
+        ],
+        "Index": [
+          5,
+          20,
+          25
+        ],
+        "Middle": [
+          45,
+          65,
+          40
+        ],
+        "Ring": [
+          48,
+          70,
+          40
+        ],
+        "Pinky": [
+          52,
+          70,
+          40
+        ]
+      },
+      "index_splay_deg": 10
+    },
+    "Left": {
+      "wrist_from_weapon": [
+        -0.055,
+        -0.058,
+        -0.225
+      ],
+      "palm_long": [
+        0.98,
+        0,
+        -0.2
+      ],
+      "palm_normal": [
+        0,
+        1,
+        0
+      ],
+      "curl_deg": {
+        "Thumb": [
+          20,
+          40,
+          30
+        ],
+        "Index": [
+          40,
+          65,
+          35
+        ],
+        "Middle": [
+          45,
+          70,
+          40
+        ],
+        "Ring": [
+          50,
+          70,
+          40
+        ],
+        "Pinky": [
+          55,
+          70,
+          40
+        ]
+      }
+    }
+  },
+  "Rocket": {
+    "weapon_origin": [
+      0.075,
+      1.0,
+      0.04
+    ],
+    "status": "unaccepted authored candidate",
+    "Right": {
+      "wrist_from_weapon": [
+        0.07,
+        -0.12,
+        -0.1
+      ],
+      "palm_long": [
+        0,
+        0.75,
+        -0.661
+      ],
+      "palm_normal": [
+        -1,
+        0,
+        0
+      ],
+      "curl_deg": {
+        "Thumb": [
+          18,
+          35,
+          25
+        ],
+        "Index": [
+          15,
+          35,
+          25
+        ],
+        "Middle": [
+          45,
+          65,
+          40
+        ],
+        "Ring": [
+          48,
+          70,
+          40
+        ],
+        "Pinky": [
+          52,
+          70,
+          40
+        ]
+      }
+    },
+    "Left": {
+      "wrist_from_weapon": [
+        -0.11,
+        -0.02,
+        -0.3
+      ],
+      "palm_long": [
+        1,
+        0,
+        0
+      ],
+      "palm_normal": [
+        0,
+        1,
+        0
+      ],
+      "curl_deg": {
+        "Thumb": [
+          20,
+          40,
+          30
+        ],
+        "Index": [
+          40,
+          65,
+          35
+        ],
+        "Middle": [
+          45,
+          70,
+          40
+        ],
+        "Ring": [
+          50,
+          70,
+          40
+        ],
+        "Pinky": [
+          55,
+          70,
+          40
+        ]
+      }
+    },
+    "intent": "Low upper-body carry, not shoulder tube. Adapter-only candidate contact offsets; original markers untouched."
+  }
+}

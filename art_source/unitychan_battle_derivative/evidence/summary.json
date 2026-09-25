@@ -1,0 +1,12 @@
+{
+  "decision": "BLOCKED",
+  "tests_passed": 32,
+  "tests_total": 33,
+  "source_hashes": "34 assets + 34 metas unchanged",
+  "runtime_override": "isolated copy, exactly one preload path",
+  "glb_sha256": "32e030e3aa4dea44f699bd7ce260a87c6ea9d5f4c0ea4c5eaedd6e823a335e0f",
+  "grip_acceptance": "FAIL, see grip_acceptance.log; supersedes measurement-only presentation_probe PASS",
+  "live_project_changed": false,
+  "commercial_release": "NOT CLEARED",
+  "validation_directory": "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a_validation_20260925_235352"
+}

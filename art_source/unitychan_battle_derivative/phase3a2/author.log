@@ -1,0 +1,184 @@
+00:00.313  blend            | Read blend: "D:\bunny_team\art_source\unitychan_battle_derivative\phase3a2\master_before.blend"
+D:\bunny_team\art_source\unitychan_battle_derivative\phase3a2\author_hands.py:10: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  active_images={n.image for o in meshes for mat in o.data.materials if mat and mat.use_nodes for n in mat.node_tree.nodes if n.type=='TEX_IMAGE' and n.image}
+00:23:41 | INFO: Data are loaded, start creating Blender stuff
+00:23:41 | INFO: Blender create Mesh node blaster-e
+00:23:41 | INFO: Blender create Mesh node scope
+00:23:41 | INFO: Blender create Mesh node magazine
+00:23:41 | INFO: glTF import finished in 0.05s
+00:23:41 | INFO: Data are loaded, start creating Blender stuff
+00:23:41 | INFO: Blender create Mesh node blaster-g
+00:23:41 | INFO: glTF import finished in 0.00s
+00:23:41 | INFO: Data are loaded, start creating Blender stuff
+00:23:41 | INFO: Blender create Mesh node blaster-o
+00:23:41 | INFO: glTF import finished in 0.00s
+INFO Draco is available, use library at F:\SteamLibrary\steamapps\common\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at F:\SteamLibrary\steamapps\common\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+00:23:41 | INFO: Starting glTF 2.0 export
+00:23:41 | INFO: Extracting primitive: blaster-e
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: magazine
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: scope
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.035
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.042
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.031
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.027
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.036
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.044
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.029
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.025
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.028
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.033
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.037
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.043
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: head_Def.001
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.017
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.034
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.030
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.032
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.024
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.041
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.026
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.039
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.045
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.040
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.038
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Finished glTF 2.0 export in 0.1734013557434082 s
+
+00:23:41 | INFO: Starting glTF 2.0 export
+00:23:41 | INFO: Extracting primitive: blaster-g
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.058
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.065
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.054
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.050
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.059
+00:23:41 | INFO: Primitives created: 1
+00:23:41 | INFO: Extracting primitive: Mesh.067
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.052
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.048
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.051
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.056
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.060
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.066
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: head_Def.002
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.046
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.057
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.053
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.055
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.047
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.064
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.049
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.062
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.068
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.063
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.061
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Finished glTF 2.0 export in 0.08881378173828125 s
+
+00:23:42 | INFO: Starting glTF 2.0 export
+00:23:42 | INFO: Extracting primitive: blaster-o
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.081
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.088
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.077
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.073
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.082
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.090
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.075
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.071
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.074
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.079
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.083
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.089
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: head_Def.003
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.069
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.080
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.076
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.078
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.070
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.087
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.072
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.085
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.091
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.086
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Extracting primitive: Mesh.084
+00:23:42 | INFO: Primitives created: 1
+00:23:42 | INFO: Finished glTF 2.0 export in 0.08059191703796387 s
+
+Info: Saved as "battle_master.blend"
+STATIC_HAND_AUTHORING_COMPLETE - NOT VISUAL ACCEPTANCE
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

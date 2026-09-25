@@ -1,0 +1,908 @@
+diff --git a/assets/characters/quaternius_scifi/SciFi.gltf.import b/assets/characters/quaternius_scifi/SciFi.gltf.import
+index 6560c4d..14e081f 100644
+--- a/assets/characters/quaternius_scifi/SciFi.gltf.import
++++ b/assets/characters/quaternius_scifi/SciFi.gltf.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/SciFi.gltf-401e34821a98a2ee5cafcbc759845052.s
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/characters/unitychan_battle/animations/damaged.fbx.import b/assets/characters/unitychan_battle/animations/damaged.fbx.import
+index 9070f9a..70bd8c5 100644
+--- a/assets/characters/unitychan_battle/animations/damaged.fbx.import
++++ b/assets/characters/unitychan_battle/animations/damaged.fbx.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/damaged.fbx-3c0b5eb7400ed8ac4e27799caf2ab711.
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+diff --git a/assets/characters/unitychan_battle/animations/idle.fbx.import b/assets/characters/unitychan_battle/animations/idle.fbx.import
+index af928ab..700d69c 100644
+--- a/assets/characters/unitychan_battle/animations/idle.fbx.import
++++ b/assets/characters/unitychan_battle/animations/idle.fbx.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/idle.fbx-37b381a41ec7def9ae1087b57e889cc9.scn
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+diff --git a/assets/characters/unitychan_battle/animations/run.fbx.import b/assets/characters/unitychan_battle/animations/run.fbx.import
+index 6638762..530a8ef 100644
+--- a/assets/characters/unitychan_battle/animations/run.fbx.import
++++ b/assets/characters/unitychan_battle/animations/run.fbx.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/run.fbx-81cf54b3eed3096f3134b89c585697e3.scn"
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+diff --git a/assets/characters/unitychan_battle/animations/slide.fbx.import b/assets/characters/unitychan_battle/animations/slide.fbx.import
+index 517fc79..f27db49 100644
+--- a/assets/characters/unitychan_battle/animations/slide.fbx.import
++++ b/assets/characters/unitychan_battle/animations/slide.fbx.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/slide.fbx-84972b20eae75f20e56c97ab76805637.sc
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+diff --git a/assets/characters/unitychan_battle/animations/walk.fbx.import b/assets/characters/unitychan_battle/animations/walk.fbx.import
+index ef2f263..f008de9 100644
+--- a/assets/characters/unitychan_battle/animations/walk.fbx.import
++++ b/assets/characters/unitychan_battle/animations/walk.fbx.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/walk.fbx-1fe110b7e70ab2777ba9d90684478114.scn
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+diff --git a/assets/characters/unitychan_battle/animations/win.fbx.import b/assets/characters/unitychan_battle/animations/win.fbx.import
+index 89d0eb1..ff9dd27 100644
+--- a/assets/characters/unitychan_battle/animations/win.fbx.import
++++ b/assets/characters/unitychan_battle/animations/win.fbx.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/win.fbx-d4e71fb572830d6b728db82d1f161800.scn"
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+diff --git a/assets/characters/unitychan_battle/unitychan_battle.fbx.import b/assets/characters/unitychan_battle/unitychan_battle.fbx.import
+deleted file mode 100644
+index ac525f5..0000000
+--- a/assets/characters/unitychan_battle/unitychan_battle.fbx.import
++++ /dev/null
+@@ -1,44 +0,0 @@
+-[remap]
+-
+-importer="scene"
+-importer_version=1
+-type="PackedScene"
+-uid="uid://dd2m1q2bojfq0"
+-path="res://.godot/imported/unitychan_battle.fbx-ace2bb613ce1fe68b1c7bf542e978d0a.scn"
+-
+-[deps]
+-
+-source_file="res://assets/characters/unitychan_battle/unitychan_battle.fbx"
+-dest_files=["res://.godot/imported/unitychan_battle.fbx-ace2bb613ce1fe68b1c7bf542e978d0a.scn"]
+-
+-[params]
+-
+-nodes/root_type=""
+-nodes/root_name=""
+-nodes/root_script=null
+-nodes/apply_root_scale=true
+-nodes/root_scale=1.0
+-nodes/import_as_skeleton_bones=false
+-nodes/use_name_suffixes=true
+-nodes/use_node_type_suffixes=true
+-meshes/ensure_tangents=true
+-meshes/generate_lods=true
+-meshes/create_shadow_meshes=true
+-meshes/light_baking=1
+-meshes/lightmap_texel_size=0.2
+-meshes/force_disable_compression=false
+-skins/use_named_skins=true
+-animation/import=true
+-animation/fps=30
+-animation/trimming=true
+-animation/remove_immutable_tracks=true
+-animation/import_rest_as_RESET=false
+-import_script/path=""
+-materials/extract=0
+-materials/extract_format=0
+-materials/extract_path=""
+-_subresources={}
+-fbx/importer=0
+-fbx/allow_geometry_helper_nodes=false
+-fbx/embedded_image_handling=1
+-fbx/naming_version=2
+diff --git a/assets/characters/vrm_avatar/avatar_sample_a.glb.import b/assets/characters/vrm_avatar/avatar_sample_a.glb.import
+index fac9cb5..75739c5 100644
+--- a/assets/characters/vrm_avatar/avatar_sample_a.glb.import
++++ b/assets/characters/vrm_avatar/avatar_sample_a.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/avatar_sample_a.glb-d3605b9521650ff7c59eec690
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/characters/vrm_avatar/avatar_sample_a_N00_000_Hair_00_nml.png.import b/assets/characters/vrm_avatar/avatar_sample_a_N00_000_Hair_00_nml.png.import
+index 87d003c..a91f987 100644
+--- a/assets/characters/vrm_avatar/avatar_sample_a_N00_000_Hair_00_nml.png.import
++++ b/assets/characters/vrm_avatar/avatar_sample_a_N00_000_Hair_00_nml.png.import
+@@ -3,9 +3,10 @@
+ importer="texture"
+ type="CompressedTexture2D"
+ uid="uid://dnyj7w7aet4wh"
+-path="res://.godot/imported/avatar_sample_a_N00_000_Hair_00_nml.png-4ccb1ad318d93154e3eeb5c17e6a3665.ctex"
++path.s3tc="res://.godot/imported/avatar_sample_a_N00_000_Hair_00_nml.png-4ccb1ad318d93154e3eeb5c17e6a3665.s3tc.ctex"
+ metadata={
+-"vram_texture": false
++"imported_formats": ["s3tc_bptc"],
++"vram_texture": true
+ }
+ generator_parameters={
+ "md5": "322443c1f7a460574ddee402695f33b1"
+@@ -14,22 +15,22 @@ generator_parameters={
+ [deps]
+ 
+ source_file="res://assets/characters/vrm_avatar/avatar_sample_a_N00_000_Hair_00_nml.png"
+-dest_files=["res://.godot/imported/avatar_sample_a_N00_000_Hair_00_nml.png-4ccb1ad318d93154e3eeb5c17e6a3665.ctex"]
++dest_files=["res://.godot/imported/avatar_sample_a_N00_000_Hair_00_nml.png-4ccb1ad318d93154e3eeb5c17e6a3665.s3tc.ctex"]
+ 
+ [params]
+ 
+-compress/mode=0
++compress/mode=2
+ compress/high_quality=false
+ compress/lossy_quality=0.7
+ compress/uastc_level=0
+ compress/rdo_quality_loss=0.0
+ compress/hdr_compression=1
+-compress/normal_map=0
++compress/normal_map=1
+ compress/channel_pack=0
+ mipmaps/generate=true
+ mipmaps/limit=-1
+-roughness/mode=0
+-roughness/src_normal=""
++roughness/mode=1
++roughness/src_normal="res://assets/characters/vrm_avatar/avatar_sample_a_N00_000_Hair_00_nml.png"
+ process/channel_remap/red=0
+ process/channel_remap/green=1
+ process/channel_remap/blue=2
+@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
+ process/hdr_as_srgb=false
+ process/hdr_clamp_exposure=false
+ process/size_limit=0
+-detect_3d/compress_to=1
++detect_3d/compress_to=0
+diff --git a/assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneBlack.png.import b/assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneBlack.png.import
+index 056ca37..f04d61e 100644
+--- a/assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneBlack.png.import
++++ b/assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneBlack.png.import
+@@ -3,9 +3,10 @@
+ importer="texture"
+ type="CompressedTexture2D"
+ uid="uid://bxur4qx28pbrw"
+-path="res://.godot/imported/avatar_sample_a_Shader_NoneBlack.png-10afd068bbcc2a589cd56fd889ab2911.ctex"
++path.s3tc="res://.godot/imported/avatar_sample_a_Shader_NoneBlack.png-10afd068bbcc2a589cd56fd889ab2911.s3tc.ctex"
+ metadata={
+-"vram_texture": false
++"imported_formats": ["s3tc_bptc"],
++"vram_texture": true
+ }
+ generator_parameters={
+ "md5": "b7dd5e0194ee0ac08a4b802cb73d867f"
+@@ -14,11 +15,11 @@ generator_parameters={
+ [deps]
+ 
+ source_file="res://assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneBlack.png"
+-dest_files=["res://.godot/imported/avatar_sample_a_Shader_NoneBlack.png-10afd068bbcc2a589cd56fd889ab2911.ctex"]
++dest_files=["res://.godot/imported/avatar_sample_a_Shader_NoneBlack.png-10afd068bbcc2a589cd56fd889ab2911.s3tc.ctex"]
+ 
+ [params]
+ 
+-compress/mode=0
++compress/mode=2
+ compress/high_quality=false
+ compress/lossy_quality=0.7
+ compress/uastc_level=0
+@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
+ process/hdr_as_srgb=false
+ process/hdr_clamp_exposure=false
+ process/size_limit=0
+-detect_3d/compress_to=1
++detect_3d/compress_to=0
+diff --git a/assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneNormal.png.import b/assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneNormal.png.import
+index e348b5f..4049887 100644
+--- a/assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneNormal.png.import
++++ b/assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneNormal.png.import
+@@ -3,9 +3,10 @@
+ importer="texture"
+ type="CompressedTexture2D"
+ uid="uid://dli7qsqpm2uq4"
+-path="res://.godot/imported/avatar_sample_a_Shader_NoneNormal.png-52eeb94998c0b8eedd6b9e54e48182a8.ctex"
++path.s3tc="res://.godot/imported/avatar_sample_a_Shader_NoneNormal.png-52eeb94998c0b8eedd6b9e54e48182a8.s3tc.ctex"
+ metadata={
+-"vram_texture": false
++"imported_formats": ["s3tc_bptc"],
++"vram_texture": true
+ }
+ generator_parameters={
+ "md5": "9bbc9601ef7a4f099f663c795b1df8b8"
+@@ -14,22 +15,22 @@ generator_parameters={
+ [deps]
+ 
+ source_file="res://assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneNormal.png"
+-dest_files=["res://.godot/imported/avatar_sample_a_Shader_NoneNormal.png-52eeb94998c0b8eedd6b9e54e48182a8.ctex"]
++dest_files=["res://.godot/imported/avatar_sample_a_Shader_NoneNormal.png-52eeb94998c0b8eedd6b9e54e48182a8.s3tc.ctex"]
+ 
+ [params]
+ 
+-compress/mode=0
++compress/mode=2
+ compress/high_quality=false
+ compress/lossy_quality=0.7
+ compress/uastc_level=0
+ compress/rdo_quality_loss=0.0
+ compress/hdr_compression=1
+-compress/normal_map=0
++compress/normal_map=1
+ compress/channel_pack=0
+ mipmaps/generate=true
+ mipmaps/limit=-1
+-roughness/mode=0
+-roughness/src_normal=""
++roughness/mode=1
++roughness/src_normal="res://assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneNormal.png"
+ process/channel_remap/red=0
+ process/channel_remap/green=1
+ process/channel_remap/blue=2
+@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
+ process/hdr_as_srgb=false
+ process/hdr_clamp_exposure=false
+ process/size_limit=0
+-detect_3d/compress_to=1
++detect_3d/compress_to=0
+diff --git a/assets/characters/vrm_avatar/avatar_sample_a__05.png.import b/assets/characters/vrm_avatar/avatar_sample_a__05.png.import
+index 47e88c6..3895607 100644
+--- a/assets/characters/vrm_avatar/avatar_sample_a__05.png.import
++++ b/assets/characters/vrm_avatar/avatar_sample_a__05.png.import
+@@ -3,9 +3,10 @@
+ importer="texture"
+ type="CompressedTexture2D"
+ uid="uid://b417bi0s3xw2f"
+-path="res://.godot/imported/avatar_sample_a__05.png-fc69d430efd6d417b835b60d637e2cca.ctex"
++path.s3tc="res://.godot/imported/avatar_sample_a__05.png-fc69d430efd6d417b835b60d637e2cca.s3tc.ctex"
+ metadata={
+-"vram_texture": false
++"imported_formats": ["s3tc_bptc"],
++"vram_texture": true
+ }
+ generator_parameters={
+ "md5": "cb419e5e7a6efc44e3b56841485636f5"
+@@ -14,22 +15,22 @@ generator_parameters={
+ [deps]
+ 
+ source_file="res://assets/characters/vrm_avatar/avatar_sample_a__05.png"
+-dest_files=["res://.godot/imported/avatar_sample_a__05.png-fc69d430efd6d417b835b60d637e2cca.ctex"]
++dest_files=["res://.godot/imported/avatar_sample_a__05.png-fc69d430efd6d417b835b60d637e2cca.s3tc.ctex"]
+ 
+ [params]
+ 
+-compress/mode=0
++compress/mode=2
+ compress/high_quality=false
+ compress/lossy_quality=0.7
+ compress/uastc_level=0
+ compress/rdo_quality_loss=0.0
+ compress/hdr_compression=1
+-compress/normal_map=0
++compress/normal_map=1
+ compress/channel_pack=0
+ mipmaps/generate=true
+ mipmaps/limit=-1
+-roughness/mode=0
+-roughness/src_normal=""
++roughness/mode=1
++roughness/src_normal="res://assets/characters/vrm_avatar/avatar_sample_a__05.png"
+ process/channel_remap/red=0
+ process/channel_remap/green=1
+ process/channel_remap/blue=2
+@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
+ process/hdr_as_srgb=false
+ process/hdr_clamp_exposure=false
+ process/size_limit=0
+-detect_3d/compress_to=1
++detect_3d/compress_to=0
+diff --git a/assets/characters/vrm_avatar/avatar_sample_a__11.png.import b/assets/characters/vrm_avatar/avatar_sample_a__11.png.import
+index 9711299..46c9b47 100644
+--- a/assets/characters/vrm_avatar/avatar_sample_a__11.png.import
++++ b/assets/characters/vrm_avatar/avatar_sample_a__11.png.import
+@@ -3,9 +3,10 @@
+ importer="texture"
+ type="CompressedTexture2D"
+ uid="uid://bepehxs5exs0n"
+-path="res://.godot/imported/avatar_sample_a__11.png-5fbb9dd253c7bb7197bc28faa31fa6f4.ctex"
++path.s3tc="res://.godot/imported/avatar_sample_a__11.png-5fbb9dd253c7bb7197bc28faa31fa6f4.s3tc.ctex"
+ metadata={
+-"vram_texture": false
++"imported_formats": ["s3tc_bptc"],
++"vram_texture": true
+ }
+ generator_parameters={
+ "md5": "adc566c2dd6ae9ae436c5368b74aa1ff"
+@@ -14,22 +15,22 @@ generator_parameters={
+ [deps]
+ 
+ source_file="res://assets/characters/vrm_avatar/avatar_sample_a__11.png"
+-dest_files=["res://.godot/imported/avatar_sample_a__11.png-5fbb9dd253c7bb7197bc28faa31fa6f4.ctex"]
++dest_files=["res://.godot/imported/avatar_sample_a__11.png-5fbb9dd253c7bb7197bc28faa31fa6f4.s3tc.ctex"]
+ 
+ [params]
+ 
+-compress/mode=0
++compress/mode=2
+ compress/high_quality=false
+ compress/lossy_quality=0.7
+ compress/uastc_level=0
+ compress/rdo_quality_loss=0.0
+ compress/hdr_compression=1
+-compress/normal_map=0
++compress/normal_map=1
+ compress/channel_pack=0
+ mipmaps/generate=true
+ mipmaps/limit=-1
+-roughness/mode=0
+-roughness/src_normal=""
++roughness/mode=1
++roughness/src_normal="res://assets/characters/vrm_avatar/avatar_sample_a__11.png"
+ process/channel_remap/red=0
+ process/channel_remap/green=1
+ process/channel_remap/blue=2
+@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
+ process/hdr_as_srgb=false
+ process/hdr_clamp_exposure=false
+ process/size_limit=0
+-detect_3d/compress_to=1
++detect_3d/compress_to=0
+diff --git a/assets/characters/vrm_avatar/avatar_sample_a__16.png.import b/assets/characters/vrm_avatar/avatar_sample_a__16.png.import
+index a5c3963..b927bce 100644
+--- a/assets/characters/vrm_avatar/avatar_sample_a__16.png.import
++++ b/assets/characters/vrm_avatar/avatar_sample_a__16.png.import
+@@ -3,9 +3,10 @@
+ importer="texture"
+ type="CompressedTexture2D"
+ uid="uid://cfsjvutvv1jfr"
+-path="res://.godot/imported/avatar_sample_a__16.png-f1a2bab8171dc708d2d3995ca2fbc96e.ctex"
++path.s3tc="res://.godot/imported/avatar_sample_a__16.png-f1a2bab8171dc708d2d3995ca2fbc96e.s3tc.ctex"
+ metadata={
+-"vram_texture": false
++"imported_formats": ["s3tc_bptc"],
++"vram_texture": true
+ }
+ generator_parameters={
+ "md5": "6811c482ead27c0b1165ecfbe996c2b4"
+@@ -14,11 +15,11 @@ generator_parameters={
+ [deps]
+ 
+ source_file="res://assets/characters/vrm_avatar/avatar_sample_a__16.png"
+-dest_files=["res://.godot/imported/avatar_sample_a__16.png-f1a2bab8171dc708d2d3995ca2fbc96e.ctex"]
++dest_files=["res://.godot/imported/avatar_sample_a__16.png-f1a2bab8171dc708d2d3995ca2fbc96e.s3tc.ctex"]
+ 
+ [params]
+ 
+-compress/mode=0
++compress/mode=2
+ compress/high_quality=false
+ compress/lossy_quality=0.7
+ compress/uastc_level=0
+@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
+ process/hdr_as_srgb=false
+ process/hdr_clamp_exposure=false
+ process/size_limit=0
+-detect_3d/compress_to=1
++detect_3d/compress_to=0
+diff --git a/assets/characters/vrm_avatar/avatar_sample_a__18.png.import b/assets/characters/vrm_avatar/avatar_sample_a__18.png.import
+index a36d2e8..309387d 100644
+--- a/assets/characters/vrm_avatar/avatar_sample_a__18.png.import
++++ b/assets/characters/vrm_avatar/avatar_sample_a__18.png.import
+@@ -3,9 +3,10 @@
+ importer="texture"
+ type="CompressedTexture2D"
+ uid="uid://ctrwcr63k7rtu"
+-path="res://.godot/imported/avatar_sample_a__18.png-980663683272ae56969f9d47971a8e01.ctex"
++path.s3tc="res://.godot/imported/avatar_sample_a__18.png-980663683272ae56969f9d47971a8e01.s3tc.ctex"
+ metadata={
+-"vram_texture": false
++"imported_formats": ["s3tc_bptc"],
++"vram_texture": true
+ }
+ generator_parameters={
+ "md5": "6811c482ead27c0b1165ecfbe996c2b4"
+@@ -14,11 +15,11 @@ generator_parameters={
+ [deps]
+ 
+ source_file="res://assets/characters/vrm_avatar/avatar_sample_a__18.png"
+-dest_files=["res://.godot/imported/avatar_sample_a__18.png-980663683272ae56969f9d47971a8e01.ctex"]
++dest_files=["res://.godot/imported/avatar_sample_a__18.png-980663683272ae56969f9d47971a8e01.s3tc.ctex"]
+ 
+ [params]
+ 
+-compress/mode=0
++compress/mode=2
+ compress/high_quality=false
+ compress/lossy_quality=0.7
+ compress/uastc_level=0
+@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
+ process/hdr_as_srgb=false
+ process/hdr_clamp_exposure=false
+ process/size_limit=0
+-detect_3d/compress_to=1
++detect_3d/compress_to=0
+diff --git a/assets/characters/vrm_avatar/avatar_sample_a__20.png.import b/assets/characters/vrm_avatar/avatar_sample_a__20.png.import
+index 1f74ecb..ba22716 100644
+--- a/assets/characters/vrm_avatar/avatar_sample_a__20.png.import
++++ b/assets/characters/vrm_avatar/avatar_sample_a__20.png.import
+@@ -3,9 +3,10 @@
+ importer="texture"
+ type="CompressedTexture2D"
+ uid="uid://c6clmxsjqrfpl"
+-path="res://.godot/imported/avatar_sample_a__20.png-6be3ce1232ca8b76adc7d830dec2a5cf.ctex"
++path.s3tc="res://.godot/imported/avatar_sample_a__20.png-6be3ce1232ca8b76adc7d830dec2a5cf.s3tc.ctex"
+ metadata={
+-"vram_texture": false
++"imported_formats": ["s3tc_bptc"],
++"vram_texture": true
+ }
+ generator_parameters={
+ "md5": "6811c482ead27c0b1165ecfbe996c2b4"
+@@ -14,11 +15,11 @@ generator_parameters={
+ [deps]
+ 
+ source_file="res://assets/characters/vrm_avatar/avatar_sample_a__20.png"
+-dest_files=["res://.godot/imported/avatar_sample_a__20.png-6be3ce1232ca8b76adc7d830dec2a5cf.ctex"]
++dest_files=["res://.godot/imported/avatar_sample_a__20.png-6be3ce1232ca8b76adc7d830dec2a5cf.s3tc.ctex"]
+ 
+ [params]
+ 
+-compress/mode=0
++compress/mode=2
+ compress/high_quality=false
+ compress/lossy_quality=0.7
+ compress/uastc_level=0
+@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
+ process/hdr_as_srgb=false
+ process/hdr_clamp_exposure=false
+ process/size_limit=0
+-detect_3d/compress_to=1
++detect_3d/compress_to=0
+diff --git a/assets/characters/vrm_avatar/avatar_sample_a__22.png.import b/assets/characters/vrm_avatar/avatar_sample_a__22.png.import
+index 8694f43..36c5ce9 100644
+--- a/assets/characters/vrm_avatar/avatar_sample_a__22.png.import
++++ b/assets/characters/vrm_avatar/avatar_sample_a__22.png.import
+@@ -3,9 +3,10 @@
+ importer="texture"
+ type="CompressedTexture2D"
+ uid="uid://bgbptru864ona"
+-path="res://.godot/imported/avatar_sample_a__22.png-e751895badca7d0549159ce30f62bad4.ctex"
++path.s3tc="res://.godot/imported/avatar_sample_a__22.png-e751895badca7d0549159ce30f62bad4.s3tc.ctex"
+ metadata={
+-"vram_texture": false
++"imported_formats": ["s3tc_bptc"],
++"vram_texture": true
+ }
+ generator_parameters={
+ "md5": "6811c482ead27c0b1165ecfbe996c2b4"
+@@ -14,11 +15,11 @@ generator_parameters={
+ [deps]
+ 
+ source_file="res://assets/characters/vrm_avatar/avatar_sample_a__22.png"
+-dest_files=["res://.godot/imported/avatar_sample_a__22.png-e751895badca7d0549159ce30f62bad4.ctex"]
++dest_files=["res://.godot/imported/avatar_sample_a__22.png-e751895badca7d0549159ce30f62bad4.s3tc.ctex"]
+ 
+ [params]
+ 
+-compress/mode=0
++compress/mode=2
+ compress/high_quality=false
+ compress/lossy_quality=0.7
+ compress/uastc_level=0
+@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
+ process/hdr_as_srgb=false
+ process/hdr_clamp_exposure=false
+ process/size_limit=0
+-detect_3d/compress_to=1
++detect_3d/compress_to=0
+diff --git a/assets/environment/kenney_space_station_kit/chair.glb.import b/assets/environment/kenney_space_station_kit/chair.glb.import
+index 31f7581..2a735c0 100644
+--- a/assets/environment/kenney_space_station_kit/chair.glb.import
++++ b/assets/environment/kenney_space_station_kit/chair.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/chair.glb-99c7580a31dc85f9f55b2a0d47c6533b.sc
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/computer-screen.glb.import b/assets/environment/kenney_space_station_kit/computer-screen.glb.import
+index 2f2f944..5e600c6 100644
+--- a/assets/environment/kenney_space_station_kit/computer-screen.glb.import
++++ b/assets/environment/kenney_space_station_kit/computer-screen.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/computer-screen.glb-679201be2a34165a1fabdd7b5
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/computer-system.glb.import b/assets/environment/kenney_space_station_kit/computer-system.glb.import
+index b3eb278..114c1ab 100644
+--- a/assets/environment/kenney_space_station_kit/computer-system.glb.import
++++ b/assets/environment/kenney_space_station_kit/computer-system.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/computer-system.glb-2a43b46c81a0e68b5183e5d41
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/container-flat.glb.import b/assets/environment/kenney_space_station_kit/container-flat.glb.import
+index e106d2f..6a29aaf 100644
+--- a/assets/environment/kenney_space_station_kit/container-flat.glb.import
++++ b/assets/environment/kenney_space_station_kit/container-flat.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/container-flat.glb-0de624deac451a4c11a06fd836
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/container-tall.glb.import b/assets/environment/kenney_space_station_kit/container-tall.glb.import
+index d3cb820..65452cc 100644
+--- a/assets/environment/kenney_space_station_kit/container-tall.glb.import
++++ b/assets/environment/kenney_space_station_kit/container-tall.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/container-tall.glb-2b682d61261a42e54b49286df4
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/display-wall.glb.import b/assets/environment/kenney_space_station_kit/display-wall.glb.import
+index cdf77eb..dd419be 100644
+--- a/assets/environment/kenney_space_station_kit/display-wall.glb.import
++++ b/assets/environment/kenney_space_station_kit/display-wall.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/display-wall.glb-cf00575eb34eb359ae50ef274adf
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/door-double-closed.glb.import b/assets/environment/kenney_space_station_kit/door-double-closed.glb.import
+index 0dc61fd..079fcd4 100644
+--- a/assets/environment/kenney_space_station_kit/door-double-closed.glb.import
++++ b/assets/environment/kenney_space_station_kit/door-double-closed.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/door-double-closed.glb-0cc07b3a922a3211222b88
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/floor-detail.glb.import b/assets/environment/kenney_space_station_kit/floor-detail.glb.import
+index f932b39..8b02e08 100644
+--- a/assets/environment/kenney_space_station_kit/floor-detail.glb.import
++++ b/assets/environment/kenney_space_station_kit/floor-detail.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/floor-detail.glb-8f0ecc7d4923bd81fd191ea4e51f
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/floor.glb.import b/assets/environment/kenney_space_station_kit/floor.glb.import
+index 8f2f82f..a4a8311 100644
+--- a/assets/environment/kenney_space_station_kit/floor.glb.import
++++ b/assets/environment/kenney_space_station_kit/floor.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/floor.glb-5722c9265f4e4b5a355d53c01100e892.sc
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/pipe-bend.glb.import b/assets/environment/kenney_space_station_kit/pipe-bend.glb.import
+index 56ff817..8808c47 100644
+--- a/assets/environment/kenney_space_station_kit/pipe-bend.glb.import
++++ b/assets/environment/kenney_space_station_kit/pipe-bend.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/pipe-bend.glb-e67c867221a06a4761c3257f9a87a4e
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/pipe.glb.import b/assets/environment/kenney_space_station_kit/pipe.glb.import
+index 5684881..369d291 100644
+--- a/assets/environment/kenney_space_station_kit/pipe.glb.import
++++ b/assets/environment/kenney_space_station_kit/pipe.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/pipe.glb-b1261ba23b85f6150778dd5ea4a92896.scn
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/table.glb.import b/assets/environment/kenney_space_station_kit/table.glb.import
+index 453cd9c..1271500 100644
+--- a/assets/environment/kenney_space_station_kit/table.glb.import
++++ b/assets/environment/kenney_space_station_kit/table.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/table.glb-b70f16cdc31921164ed3eb628e597739.sc
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/wall-detail.glb.import b/assets/environment/kenney_space_station_kit/wall-detail.glb.import
+index 04ebfe7..9b0dd95 100644
+--- a/assets/environment/kenney_space_station_kit/wall-detail.glb.import
++++ b/assets/environment/kenney_space_station_kit/wall-detail.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/wall-detail.glb-1bfd2afd0f06628163ed48f221a49
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/wall-switch.glb.import b/assets/environment/kenney_space_station_kit/wall-switch.glb.import
+index 5a83a33..570ebb5 100644
+--- a/assets/environment/kenney_space_station_kit/wall-switch.glb.import
++++ b/assets/environment/kenney_space_station_kit/wall-switch.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/wall-switch.glb-6317682e04aea96006e6b770ad44f
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/wall-window.glb.import b/assets/environment/kenney_space_station_kit/wall-window.glb.import
+index 8e02ad6..3f6cb2e 100644
+--- a/assets/environment/kenney_space_station_kit/wall-window.glb.import
++++ b/assets/environment/kenney_space_station_kit/wall-window.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/wall-window.glb-4fe6a2234b60cc0e32accae7f3492
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/environment/kenney_space_station_kit/wall.glb.import b/assets/environment/kenney_space_station_kit/wall.glb.import
+index 6bf096b..f098c15 100644
+--- a/assets/environment/kenney_space_station_kit/wall.glb.import
++++ b/assets/environment/kenney_space_station_kit/wall.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/wall.glb-d2817a6d358af25d3becfe48ba3cca03.scn
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/weapons/kenney_blaster_kit/blaster-e.glb.import b/assets/weapons/kenney_blaster_kit/blaster-e.glb.import
+index c8ad069..0e67ff5 100644
+--- a/assets/weapons/kenney_blaster_kit/blaster-e.glb.import
++++ b/assets/weapons/kenney_blaster_kit/blaster-e.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/blaster-e.glb-3bcac05ed486f4aa5f7abfa570dee2f
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/weapons/kenney_blaster_kit/blaster-g.glb.import b/assets/weapons/kenney_blaster_kit/blaster-g.glb.import
+index f546232..bb7eeee 100644
+--- a/assets/weapons/kenney_blaster_kit/blaster-g.glb.import
++++ b/assets/weapons/kenney_blaster_kit/blaster-g.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/blaster-g.glb-f9e0c2a9fc2fee2a14279493a2d5d0e
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/assets/weapons/kenney_blaster_kit/blaster-o.glb.import b/assets/weapons/kenney_blaster_kit/blaster-o.glb.import
+index c3c3681..d279310 100644
+--- a/assets/weapons/kenney_blaster_kit/blaster-o.glb.import
++++ b/assets/weapons/kenney_blaster_kit/blaster-o.glb.import
+@@ -16,6 +16,8 @@ dest_files=["res://.godot/imported/blaster-o.glb-74f86374cc6e3d77baf0c984fe026b4
+ nodes/root_type=""
+ nodes/root_name=""
+ nodes/root_script=null
++mesh_library/use_node_names_as_mesh_names=false
++array_mesh/deduplicate_surfaces=true
+ nodes/apply_root_scale=true
+ nodes/root_scale=1.0
+ nodes/import_as_skeleton_bones=false
+@@ -40,3 +42,4 @@ materials/extract_path=""
+ _subresources={}
+ gltf/naming_version=2
+ gltf/embedded_image_handling=1
++gltf/texture_map_mode=0
+diff --git a/project.godot b/project.godot
+index 1b7af9b..68fa02c 100644
+--- a/project.godot
++++ b/project.godot
+@@ -12,7 +12,7 @@ config_version=5
+ 
+ config/name="Neon Bastion"
+ run/main_scene="res://scenes/hanger/hanger.tscn"
+-config/features=PackedStringArray("4.6", "GL Compatibility")
++config/features=PackedStringArray("4.7", "GL Compatibility")
+ 
+ [autoload]
+ 

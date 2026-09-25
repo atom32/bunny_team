@@ -1,0 +1,471 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started 项目初始化 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | 正在扫描文件结构……[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | 正在加载全局类名……[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | 正在校验 GDExtension……[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 正在创建自动加载脚本……[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | 正在初始化插件……[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | 正在启动文件扫描……[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started 正在注册全局类…… (101 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | UrbanArena[39m[0m
+[   1% ] [90m[1mupdate_scripts_classes[22m | HumanoidRetargetVisual[39m[0m
+[   2% ] [90m[1mupdate_scripts_classes[22m | CombatEffects[39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | DamagePacket[39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | RagdollProxy[39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   6% ] [90m[1mupdate_scripts_classes[22m | AmmoDefinition[39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | AreaDefinition[39m[0m
+[   8% ] [90m[1mupdate_scripts_classes[22m | ContentManifest[39m[0m
+[   9% ] [90m[1mupdate_scripts_classes[22m | EnemyDefinition[39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | EquipmentDefinition[39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | InventoryState[39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | ItemDefinition[39m[0m
+[  13% ] [90m[1mupdate_scripts_classes[22m | ItemInstance[39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | LoadoutState[39m[0m
+[  15% ] [90m[1mupdate_scripts_classes[22m | LootTableDefinition[39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | LootTableEntry[39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | MissionDefinition[39m[0m
+[  18% ] [90m[1mupdate_scripts_classes[22m | ObjectiveDefinition[39m[0m
+[  19% ] [90m[1mupdate_scripts_classes[22m | ObjectiveState[39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | ProfileState[39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | SortieOutcome[39m[0m
+[  22% ] [90m[1mupdate_scripts_classes[22m | SortieRequest[39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | SortieSession[39m[0m
+[  24% ] [90m[1mupdate_scripts_classes[22m | WeaponDefinition[39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | WeaponRuntimeState[39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | EnemyCharacterDebug[39m[0m
+[  27% ] [90m[1mupdate_scripts_classes[22m | EnemyController[39m[0m
+[  28% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | CharacterCombatRig[39m[0m
+[  31% ] [90m[1mupdate_scripts_classes[22m | ForwardAxisRetargetModifier[39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | InteractionComponent[39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | PlayerController[39m[0m
+[  34% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  36% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  37% ] [90m[1mupdate_scripts_classes[22m | AreaLoader[39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  39% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | EnemySpawnService[39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  42% ] [90m[1mupdate_scripts_classes[22m | LootRollService[39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | SaveService[39m[0m
+[  45% ] [90m[1mupdate_scripts_classes[22m | SortieOutcomeService[39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | UIFactory[39m[0m
+[  48% ] [90m[1mupdate_scripts_classes[22m | VisualFactory[39m[0m
+[  49% ] [90m[1mupdate_scripts_classes[22m | BattleHUD[39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | HangerUI[39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | ResultUI[39m[0m
+[  51% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | CoverObstacle[39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | DestructibleWorldObject[39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | Door[39m[0m
+[  55% ] [90m[1mupdate_scripts_classes[22m | EnemySpawnPoint[39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | ExtractionPoint[39m[0m
+[  57% ] [90m[1mupdate_scripts_classes[22m | LootPickup[39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | LootSpawnPoint[39m[0m
+[  59% ] [90m[1mupdate_scripts_classes[22m | ObjectiveInteractable[39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | ObjectiveReachZone[39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | PrototypeArena[39m[0m
+[  62% ] [90m[1mupdate_scripts_classes[22m | ThreatEvent[39m[0m
+[  63% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  65% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  68% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  71% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  72% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  74% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  77% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  81% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  86% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  89% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  91% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  93% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  94% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  95% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  96% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  97% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  98% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started 正在扫描动作…… (104 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | eyeline_00.tga[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | eye_iris_L_00.tga[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | eye_iris_R_00.tga[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | face_00.tga[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | FO_SKIN1.tga[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | ar_fire.wav[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | defeat.wav[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | dodge.wav[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | enemy_fire.wav[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | explosion.wav[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | impact.wav[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | neon_bastion_loop.wav[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | player_hurt.wav[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | reload.wav[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | rocket_fire.wav[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | smg_fire.wav[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | ui_click.wav[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | ui_confirm.wav[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | victory.wav[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | SciFi.gltf[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | damaged.fbx[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | idle.fbx[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | run.fbx[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | slide.fbx[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | walk.fbx[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | win.fbx[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | Dark_Silhouette.jpg[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | Light_Silhouette.jpg[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | Dark_Silhouette.png[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | Light_Frame.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | Light_Silhouette.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | Dark_Silhouette.svg[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | Light_Frame.svg[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | Light_Silhouette.svg[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | kohaku_A_Add.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | kohaku_A_Add_Shd.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | kohaku_A_Add_Spow.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | kohaku_A_Body.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | kohaku_A_Body_Shd.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | kohaku_A_Body_spow.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | kohaku_A_face3_lpow.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | kohaku_A_face3_main.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | kohaku_A_face3_main_Shd2.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | kohaku_A_face3_main_spow.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | kohaku_A_face3_main_sub.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | kohaku_A_Hair_Spow.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | kohaku_A_skin.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | kohaku_A_Skin_Shd.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | kohaku_A_skin_spow.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | kohaku_A_Wep.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | kohaku_A_Wep_Emi.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | kohaku_A_Wep_Shd.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | kohaku_A_Wep_Spec.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | para_height2.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | battle_presentation.glb[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | avatar_sample_a.glb[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | avatar_sample_a_MatcapWarp.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | avatar_sample_a_N00_000_00_Face_00_out.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | avatar_sample_a_N00_000_Hair_00_nml.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | avatar_sample_a_Shader_NoneBlack.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | avatar_sample_a_Shader_NoneNormal.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | avatar_sample_a_Thumbnail.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__01.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__02.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__03.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__04.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__05.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__06.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__07.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__09.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__10.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__11.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__12.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__13.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__14.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__15.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__16.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__17.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__18.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__19.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__20.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__21.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | avatar_sample_a__22.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | colormap.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | chair.glb[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | computer-screen.glb[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | computer-system.glb[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | container-flat.glb[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | container-tall.glb[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | display-wall.glb[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | door-double-closed.glb[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | floor-detail.glb[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | floor.glb[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | pipe-bend.glb[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | pipe.glb[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | table.glb[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | wall-detail.glb[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | wall-switch.glb[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | wall-window.glb[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | wall.glb[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | colormap.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | blaster-e.glb[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | blaster-g.glb[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | blaster-o.glb[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 正在导入或重新导入资产 (31 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   3% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   6% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   9% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  12% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  15% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  18% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  21% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  25% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  28% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  31% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  34% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  37% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  40% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  43% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  46% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  50% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  53% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  56% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  59% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  62% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  65% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  68% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  71% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  75% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  78% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  81% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  84% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  87% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  90% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  93% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在执行重新导入的前置操作……[39m[0m
+[   0% ] [90m[1mpreload_reimporting_scene[22m | Started 正在准备重新加载场景 (1 steps)[39m[0m
+[   0% ] [90m[1mpreload_reimporting_scene[22m | 正在分析场景 [空][39m[0m
+[  50% ] [90m[1mpreload_reimporting_scene[22m | 准备完成。[39m[0m
+[92m[ DONE ][39m [1mpreload_reimporting_scene[22m
+[0m
+[   0% ] [90m[1mreimport[22m | para_height2.png[39m[0m
+[   3% ] [90m[1mreimport[22m | kohaku_A_Wep_Spec.png[39m[0m
+[   6% ] [90m[1mreimport[22m | kohaku_A_Wep_Shd.png[39m[0m
+[   9% ] [90m[1mreimport[22m | kohaku_A_Wep_Emi.png[39m[0m
+[  12% ] [90m[1mreimport[22m | kohaku_A_Wep.png[39m[0m
+[  15% ] [90m[1mreimport[22m | kohaku_A_skin_spow.png[39m[0m
+[  18% ] [90m[1mreimport[22m | kohaku_A_Skin_Shd.png[39m[0m
+[  21% ] [90m[1mreimport[22m | kohaku_A_skin.png[39m[0m
+[  25% ] [90m[1mreimport[22m | kohaku_A_Hair_Spow.png[39m[0m
+[  28% ] [90m[1mreimport[22m | kohaku_A_face3_main_sub.png[39m[0m
+[  31% ] [90m[1mreimport[22m | kohaku_A_face3_main_spow.png[39m[0m
+[  34% ] [90m[1mreimport[22m | kohaku_A_face3_main_Shd2.png[39m[0m
+[  37% ] [90m[1mreimport[22m | kohaku_A_face3_main.png[39m[0m
+[  40% ] [90m[1mreimport[22m | kohaku_A_face3_lpow.png[39m[0m
+[  43% ] [90m[1mreimport[22m | kohaku_A_Body_spow.png[39m[0m
+[  46% ] [90m[1mreimport[22m | kohaku_A_Body_Shd.png[39m[0m
+[  50% ] [90m[1mreimport[22m | kohaku_A_Body.png[39m[0m
+[  53% ] [90m[1mreimport[22m | kohaku_A_Add_Spow.png[39m[0m
+[  56% ] [90m[1mreimport[22m | kohaku_A_Add_Shd.png[39m[0m
+[  59% ] [90m[1mreimport[22m | kohaku_A_Add.png[39m[0m
+[  62% ] [90m[1mreimport[22m | Light_Silhouette.svg[39m[0m
+[  65% ] [90m[1mreimport[22m | Light_Frame.svg[39m[0m
+[  68% ] [90m[1mreimport[22m | Dark_Silhouette.svg[39m[0m
+[  71% ] [90m[1mreimport[22m | Light_Silhouette.png[39m[0m
+[  75% ] [90m[1mreimport[22m | Light_Frame.png[39m[0m
+[  78% ] [90m[1mreimport[22m | Dark_Silhouette.png[39m[0m
+[  81% ] [90m[1mreimport[22m | Light_Silhouette.jpg[39m[0m
+[  84% ] [90m[1mreimport[22m | Dark_Silhouette.jpg[39m[0m
+[  87% ] [90m[1mreimport[22m | win.fbx[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  90% ] [90m[1mreimport[22m | damaged.fbx[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  93% ] [90m[1mreimport[22m | SciFi.gltf[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  96% ] [90m[1mreimport[22m | 正在结束资产导入……[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 正在导入或重新导入资产 (31 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在执行重新导入的后置操作……[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started 正在加载编辑器 (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | 正在加载编辑器布局……[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | 正在加载停靠面板……[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m

@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5090
+
+SCRIPT ERROR: Parse Error: No constructor of "Array" matches the signature "Array(Vector3)".
+   at: GDScript::reload (res://tools/phase3a1_static_probe.gd:65)
+ERROR: Failed to load script "res://tools/phase3a1_static_probe.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

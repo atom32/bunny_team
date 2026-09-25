@@ -1,0 +1,12 @@
+D:\bunny_team\art_source\unitychan_battle_derivative\build.py:66: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.new('Battle_'+name);mat.use_nodes=True
+Traceback (most recent call last):
+  File "D:\bunny_team\art_source\unitychan_battle_derivative\build.py", line 123, in <module>
+    assert bone_error<0.0001 and vertex_error<0.0001,(bone_error,vertex_error)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (0.99000000115484, 1.3140562194926493e-07)
+FBX version: 7300
+FBX version: 7500
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

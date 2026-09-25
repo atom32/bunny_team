@@ -1,0 +1,279 @@
+{
+  "official_files": [
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\01_kohaku_A.fbx",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\01_kohaku_A.fbx.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\01_kohaku_A_head.fbx",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\01_kohaku_A_head.fbx.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\Unity2016_C_Add.mat",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\Unity2016_C_Add.mat.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\Unity2016_C_Body.mat",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\Unity2016_C_Body.mat.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\Unity2016_C_Hair_Spow.mat",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\Unity2016_C_Hair_Spow.mat.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\Unity2016_C_Skin.mat",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\Unity2016_C_Skin.mat.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\Unity2016_Wep.mat",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\Unity2016_Wep.mat.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\face3_main.mat",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Materials\\face3_main.mat.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Prefabs\\01_kohaku_A.prefab",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Prefabs\\01_kohaku_A.prefab.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Add.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Add.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Add_Shd.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Add_Shd.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Add_Spow.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Add_Spow.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Body.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Body.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Body_Shd.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Body_Shd.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Body_spow.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Body_spow.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Hair_Spow.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Hair_Spow.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Skin_Shd.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Skin_Shd.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Wep.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Wep.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Wep_Emi.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Wep_Emi.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Wep_Shd.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Wep_Shd.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Wep_Spec.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Wep_Spec.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_face3_lpow.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_face3_lpow.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_face3_main.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_face3_main.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_face3_main_Shd2.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_face3_main_Shd2.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_face3_main_spow.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_face3_main_spow.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_face3_main_sub.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_face3_main_sub.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_skin.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_skin.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_skin_spow.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_skin_spow.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\para_height2.png",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\para_height2.png.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Toon\\Shader\\README.TXT",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Toon\\Shader\\README.TXT.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Toon\\Shader\\Toon_ShadingGradeMap.shader",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Toon\\Shader\\Toon_ShadingGradeMap.shader.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Toon\\Shader\\UCTS_Outline.cginc",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Toon\\Shader\\UCTS_Outline.cginc.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Toon\\Shader\\UCTS_ShadingGradeMap.cginc",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Toon\\Shader\\UCTS_ShadingGradeMap.cginc.meta",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Toon\\Shader\\UCTS_ShadowCaster.cginc",
+      "match": true
+    },
+    {
+      "path": "art_source\\unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Toon\\Shader\\UCTS_ShadowCaster.cginc.meta",
+      "match": true
+    }
+  ],
+  "all_match": true,
+  "protected_tracked_diff": "",
+  "glb_sha256": "32e030e3aa4dea44f699bd7ce260a87c6ea9d5f4c0ea4c5eaedd6e823a335e0f"
+}

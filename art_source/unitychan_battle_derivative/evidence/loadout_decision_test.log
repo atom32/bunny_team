@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+LOADOUT_TRACE | AR + SMG | primary=Assault Rifle[basic=20 heavy=12 structure=5 mag=30 range=34] | secondary=Vector SMG[basic=10 heavy=2 structure=0 mag=36 range=18] | ammo=SHARED ammo.556_standard
+LOADOUT_TRACE | AR + SMG | initial_ammo=ammo.556_standard=186 | after_fire=ammo.556_standard=184 | after_reload=ammo.556_standard=184
+LOADOUT_TRACE | AR + SMG | extraction=true | warehouse_ammo=ammo.556_standard=184, ammo.rocket_standard=4
+LOADOUT_TRACE | AR + Rocket | primary=Assault Rifle[basic=20 heavy=12 structure=5 mag=30 range=34] | secondary=Breach Launcher[basic=92 heavy=84 structure=20 mag=1 range=30] | ammo=ammo.556_standard + ammo.rocket_standard
+LOADOUT_TRACE | AR + Rocket | initial_ammo=ammo.556_standard=150, ammo.rocket_standard=5 | after_fire=ammo.556_standard=149, ammo.rocket_standard=4 | after_reload=ammo.556_standard=149, ammo.rocket_standard=4
+LOADOUT_TRACE | AR + Rocket | extraction=true | warehouse_ammo=ammo.556_standard=149, ammo.rocket_standard=4
+LOADOUT_TRACE | SMG + Rocket | primary=Vector SMG[basic=10 heavy=2 structure=0 mag=36 range=18] | secondary=Breach Launcher[basic=92 heavy=84 structure=20 mag=1 range=30] | ammo=ammo.556_standard + ammo.rocket_standard
+LOADOUT_TRACE | SMG + Rocket | initial_ammo=ammo.556_standard=156, ammo.rocket_standard=5 | after_fire=ammo.556_standard=155, ammo.rocket_standard=4 | after_reload=ammo.556_standard=155, ammo.rocket_standard=4
+LOADOUT_TRACE | SMG + Rocket | extraction=true | warehouse_ammo=ammo.556_standard=155, ammo.rocket_standard=4
+LOADOUT_TRACE | SMG + Rocket | failed=true | warehouse_unchanged=true | loot_recovered=false | retry_ready=true
+LOADOUT_DECISION_TEST: PASS

@@ -1,0 +1,6 @@
+{
+  "file": "scripts/player/player_controller.gd",
+  "old": "res://assets/characters/vrm_avatar/avatar_sample_a.glb",
+  "new": "res://assets/characters/unitychan_battle/battle_presentation.glb",
+  "scope": "ISOLATED SPIKE ONLY; default player/enemy unchanged"
+}

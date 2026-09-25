@@ -1,0 +1,10 @@
+{
+  "master_sha256": "e62e8f5fa20fa99a25639b78ccc4e5bc10abcb72f4ba751970806f8640f43a63",
+  "actions": [
+    "Rifle",
+    "SMG",
+    "Rocket"
+  ],
+  "bones": 328,
+  "blender": "5.2.2 LTS"
+}

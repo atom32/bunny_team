@@ -1,0 +1,80 @@
+{
+  "requirements": [
+    {
+      "requirement": "1 hard constraints",
+      "evidence": "final_integrity.json; production diff empty",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "2 workspace",
+      "evidence": "import_config.diff; user WIP preserved",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "3 baseline",
+      "evidence": "workspace.json; master_export.json; final_integrity.json",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "4-12 eight animation states",
+      "evidence": "animation_review.json 24 rows + live_dodge/front; limits explicitly documented",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "13 switching",
+      "evidence": "switching.json 45 checks + two route result logs",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "14 IK",
+      "evidence": "animation measurements/render review + live Dodge + switching",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "15 adapter boundary",
+      "evidence": "presentation_adapter.gd and hand_modifier.gd; isolated_changes.json",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "16 classification",
+      "evidence": "README matrix + animation_review.json",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "17 no P2 polish",
+      "evidence": "only parent-local cache integration fix; unchanged master hash",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "18 Hanger",
+      "evidence": "switch and route Hanger PNG reviewed; Demo limitations stated",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "19 Field Office",
+      "evidence": "both route_result.json all checks true; Terminal objective completed; Result PNG",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "20 unchanged tests",
+      "evidence": "regression/results.json 32/33 + main; final_integrity.json",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "21 acceptance",
+      "evidence": "reviewed evidence + stated existing-state Dodge scope",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "22 blocker handling",
+      "evidence": "historical rejected world cache/clip findings retained; targeted layer diagnosis",
+      "status": "VERIFIED"
+    },
+    {
+      "requirement": "23 report",
+      "evidence": "README current top section",
+      "status": "VERIFIED"
+    }
+  ],
+  "publish": "PENDING scoped derivative commit and push"
+}

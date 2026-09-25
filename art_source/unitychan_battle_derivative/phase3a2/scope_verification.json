@@ -1,0 +1,13 @@
+{
+  "official_hashes_checked": 68,
+  "official_unchanged": true,
+  "production_glb_sha256": "32e030e3aa4dea44f699bd7ce260a87c6ea9d5f4c0ea4c5eaedd6e823a335e0f",
+  "protected_tracked_diff": "project.godot\n",
+  "artifact_hashes": {
+    "Pose_Rifle.glb": "bcbdb3e27372dd10cdd0dfc58ae20247abcd6704c133bd49aef84e7e7aedfe4d",
+    "Pose_Rocket.glb": "c477abdda72755ceaab5f351beeaab5d4876f65b8181591246d3e5769faf223b",
+    "Pose_SMG.glb": "15a551f5d6e2ae6559fe9f2575465eff8d95f6dfe4e49ac507a4bf795006df74",
+    "battle_master.blend": "e62e8f5fa20fa99a25639b78ccc4e5bc10abcb72f4ba751970806f8640f43a63",
+    "hand_poses.json": "6d00d76ccbfce5da73f9fadfc99b97031304e5809c41bfcdea46960d16b0ad4c"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "scope": "Rejected/unaccepted static presentation candidates, not gameplay states",
+  "coordinate_system": "Godot meters, +Y up, -Z firing; original wrapper scale 0.44",
+  "Pose_Rifle": {"scene": "assault_rifle", "weapon_origin": [0.0, 1.13, -0.06], "intent": "existing rifle preview reference, unmodified marker targets"},
+  "Pose_SMG": {"scene": "smg", "weapon_origin": [0.0, 1.08, -0.02], "intent": "compact torso-height hold, shorter body than rifle; candidate only"},
+  "Pose_Rocket": {"scene": "rocket_launcher", "weapon_origin": [0.26, 1.17, 0.34], "intent": "right shoulder/body-side support, NOT rifle; reach-feasible candidate to expose rear-grip placement conflict"}
+}

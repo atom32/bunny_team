@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5090
+
+PHASE2B_ROUTE: AUTOMATED INPUT/API, NOT MANUAL; NORMAL AI; NO TELEPORT/INVULNERABILITY
+CAPTURE 01_hanger (1280, 720) error=0
+WAYPOINT (-17.1, 0.0, 26.0) reached (-16.77627, -0.024161, 26.12919)
+CAPTURE 02_entrance (1280, 720) error=0
+WAYPOINT (-17.1, 0.0, 24.7) reached (-17.13142, -0.02416, 25.12177)
+WAYPOINT_TIMEOUT target=(-17.1, 0.0, 21.5) position=(-17.12766, -0.024519, 23.50282) health=260.0
+ROUTE_FAIL Entrance traversal failed
+CAPTURE failure (1280, 720) error=0
+{"checks":{"Combat still works":true,"Door interaction":true,"Field Office entrance visible":true,"Hanger launches":true,"Player movement":true,"Production camera":true},"combat":{"damage_taken":0,"enemies_defeated":0,"shots":90},"combat_scope":"weapon fire and normal enemy AI; kill/damage semantics are covered by regression suites","failure":"Entrance traversal failed","method":"automated input/API, not manual","mission_completed":false}
