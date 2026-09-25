@@ -104,7 +104,8 @@ work before `stage.py` / master rebuilding can reproduce that snapshot. Do not c
 clone cold-import acceptance from this scoped derivative commit. GLB itself is self-contained;
 master source textures require adjacent recovered official_1_1 with matching hashes.
 
-Publishing status is recorded after the scoped commit/push; no production promotion is
+Publishing: scoped derivative commit `003751478c953fbcaabefedc22ab59e85a4d1cb8` pushed to `origin/main`
+and remote hash verified (`phase3a3/publish_receipt.json`). No production promotion is
 included. Internal Demo usability is accepted, final art quality and full source Dodge
 clip reuse are not. Stop here: no Terminal, enemy, material redesign or gameplay expansion.
 

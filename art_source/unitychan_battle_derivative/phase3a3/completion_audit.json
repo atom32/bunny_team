@@ -76,5 +76,5 @@
       "status": "VERIFIED"
     }
   ],
-  "publish": "PENDING scoped derivative commit and push"
+  "publish": "VERIFIED: scoped commit 003751478c953fbcaabefedc22ab59e85a4d1cb8 equals remote main; receipt retained"
 }

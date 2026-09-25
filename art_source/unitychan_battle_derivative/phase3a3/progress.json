@@ -1,5 +1,5 @@
 {
-  "status": "PRESENTATION SPIKE PASS / USABLE; scoped publishing pending",
+  "status": "COMPLETE \u2014 internal Demo presentation spike PASS / USABLE; scoped commit pushed",
   "completed": [
     "fresh copy cold import 0 errors / 0 warnings",
     "68 official hashes unchanged",
@@ -13,9 +13,7 @@
     "Live unmodified Dodge input/state-machine captured from rear and front oblique views for all 3 weapons; exits after observed 0.116667s clip position and returns to Idle / unit body scale",
     "Two production-camera graphical routes PASS (Rifle+Rocket, SMG+Rocket); real Q switching, firing, session reload, Terminal objective COMPLETED, extraction and Result"
   ],
-  "next": [
-    "Commit scoped derivative evidence/source and push; verify remote HEAD"
-  ],
+  "next": [],
   "known_probe_caveats": [
     "diagnostic clip sampling bypasses gameplay state transitions; actual route still required",
     "SMG/Rocket existing start_reload() returns false; no separate reload motion in this fixture",
