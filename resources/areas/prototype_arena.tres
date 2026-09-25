@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AreaDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/area_definition.gd" id="1_area_definition"]
+[ext_resource type="PackedScene" path="res://scenes/areas/prototype_arena.tscn" id="2_area_scene"]
+
+[resource]
+script = ExtResource("1_area_definition")
+id = &"prototype_arena"
+display_name = "Prototype Arena"
+scene = ExtResource("2_area_scene")

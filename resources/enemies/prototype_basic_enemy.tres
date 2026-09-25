@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_definition.gd" id="1_definition"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/enemy.tscn" id="2_scene"]
+
+[resource]
+script = ExtResource("1_definition")
+id = &"prototype_basic_enemy"
+display_name = "Prototype Basic Enemy"
+scene = ExtResource("2_scene")
+max_health = 60.0
+armor = 0.0
+move_speed = 3.2
+approach_speed = 1.15
+attack_damage = 3.2
+attack_range = 15.0
+attack_cooldown_min = 1.9
+attack_cooldown_max = 2.6

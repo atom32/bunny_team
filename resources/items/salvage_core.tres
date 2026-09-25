@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"loot.salvage_core_01"
+display_name = "Salvage Core"
+description = "Recovered machine components suitable for warehouse storage."
+weight = 6.0
+base_value = 420
+item_tags = PackedStringArray("loot", "salvage")

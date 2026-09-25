@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="WeaponDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/smg.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"weapon.smg_01"
+display_name = "Vector SMG"
+description = "Light close-range automatic weapon."
+weight = 2.6
+base_value = 850
+item_tags = PackedStringArray("weapon", "primary", "smg")
+socket_name = &"HandR"
+scene = ExtResource("2")
+movement_modifier = 0.9
+weapon_type = &"smg"
+compatible_ammo_ids = PackedStringArray("ammo.556_standard")
+magazine_capacity = 36
+fire_mode = &"automatic"
+action_type = &"hitscan"
+damage = 10.0
+armor_penetration = 0.0
+structure_damage = 0.0
+fire_rate = 14.0
+weapon_range = 18.0
+knockback = 1.25
+tracer_color = Color(1, 0.82, 0.25, 1)
+tracer_width = 0.035
+muzzle_scale = 0.72
+recoil_strength = 0.035
+impact_scale = 0.72

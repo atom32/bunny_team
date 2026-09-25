@@ -1,0 +1,158 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/prototype_arena.gd" id="1_area"]
+[ext_resource type="PackedScene" path="res://scenes/battle/urban_arena.tscn" id="2_environment"]
+[ext_resource type="PackedScene" path="res://scenes/world/loot_spawn_point.tscn" id="3_loot_spawn_point"]
+[ext_resource type="PackedScene" path="res://scenes/world/objective_interactable.tscn" id="4_objective_interactable"]
+[ext_resource type="PackedScene" path="res://scenes/world/objective_reach_zone.tscn" id="5_objective_reach_zone"]
+[ext_resource type="PackedScene" path="res://scenes/world/extraction_point.tscn" id="6_extraction_point"]
+[ext_resource type="PackedScene" path="res://scenes/world/door.tscn" id="7_door"]
+[ext_resource type="PackedScene" path="res://scenes/world/cover_obstacle.tscn" id="8_cover"]
+[ext_resource type="PackedScene" path="res://scenes/world/enemy_spawn_point.tscn" id="9_enemy_spawn"]
+[ext_resource type="PackedScene" path="res://scenes/world/destructible_world_object.tscn" id="10_destructible"]
+[ext_resource type="PackedScene" path="res://scenes/world/threat_event.tscn" id="11_threat_event"]
+[ext_resource type="PackedScene" path="res://scenes/areas/prototype_field_office.tscn" id="12_field_office"]
+
+[node name="PrototypeArena" type="Node3D"]
+script = ExtResource("1_area")
+
+[node name="Environment" parent="." instance=ExtResource("2_environment")]
+
+[node name="GameplayGeometry" type="Node3D" parent="."]
+
+[node name="InteriorCombatLane" type="Node3D" parent="GameplayGeometry"]
+
+[node name="FieldOffice" parent="GameplayGeometry/InteriorCombatLane" instance=ExtResource("12_field_office")]
+position = Vector3(-16, 0, 16)
+
+[node name="SouthAccessDoor" parent="GameplayGeometry/InteriorCombatLane" instance=ExtResource("7_door")]
+position = Vector3(-17.1, 0, 23)
+
+[node name="InteriorEntryCover" parent="GameplayGeometry/InteriorCombatLane" instance=ExtResource("8_cover")]
+position = Vector3(-16, 0, 18.5)
+
+[node name="InteriorFlankCover" parent="GameplayGeometry/InteriorCombatLane" instance=ExtResource("8_cover")]
+position = Vector3(-12.5, 0, 16.5)
+rotation = Vector3(0, 0.523599, 0)
+
+[node name="CenterCombatCover" parent="GameplayGeometry" instance=ExtResource("8_cover")]
+position = Vector3(0, 0, 14)
+rotation = Vector3(0, 0.610865, 0)
+
+[node name="DestructibleBarrier" parent="GameplayGeometry/InteriorCombatLane" instance=ExtResource("10_destructible")]
+position = Vector3(-16, 0, 14.5)
+
+[node name="LootSpawnPoints" type="Node3D" parent="."]
+
+[node name="LootSpawnPointNorth" parent="LootSpawnPoints" instance=ExtResource("3_loot_spawn_point")]
+position = Vector3(0, 0, 30)
+loot_table_id = &"prototype_basic_loot"
+
+[node name="LootSpawnPointWest" parent="LootSpawnPoints" instance=ExtResource("3_loot_spawn_point")]
+position = Vector3(-7, 0, 23)
+loot_table_id = &"prototype_basic_loot"
+
+[node name="LootSpawnPointCenter" parent="LootSpawnPoints" instance=ExtResource("3_loot_spawn_point")]
+position = Vector3(7, 0, -2)
+loot_table_id = &"prototype_basic_loot"
+
+[node name="HighValueLootSpawn" parent="LootSpawnPoints" instance=ExtResource("3_loot_spawn_point")]
+position = Vector3(-19, 0, 11.5)
+loot_table_id = &"prototype_high_value_loot"
+roll_count = 2
+
+[node name="ThreatEvents" type="Node3D" parent="."]
+
+[node name="LocalAlertEvent" parent="ThreatEvents" instance=ExtResource("11_threat_event")]
+position = Vector3(0, 0, 5)
+reinforcement_group_id = &"prototype_local_alert"
+trigger_on_body_entered = false
+
+[node name="Objectives" type="Node3D" parent="."]
+
+[node name="PrototypeTerminal" parent="Objectives" instance=ExtResource("4_objective_interactable")]
+position = Vector3(-19, 0, 12)
+objective_id = &"interact_prototype_terminal"
+interaction_prompt = "ACCESS FIELD TERMINAL"
+
+[node name="PrototypeSurveyZone" parent="Objectives" instance=ExtResource("5_objective_reach_zone")]
+position = Vector3(-10, 0, 22)
+objective_id = &"reach_prototype_zone"
+
+[node name="ExtractionPoints" type="Node3D" parent="."]
+
+[node name="ExtractionPoint" parent="ExtractionPoints" instance=ExtResource("6_extraction_point")]
+position = Vector3(2.5, 0, 32)
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="PlayerSpawn" type="Marker3D" parent="SpawnPoints" groups=["player_spawn_point"]]
+position = Vector3(0, 0.1, 32)
+
+[node name="EnemySpawn01" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(-32, 0.1, -47)
+enemy_definition_id = &"prototype_basic_enemy"
+
+[node name="EnemySpawn02" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(0, 0.1, -47)
+enemy_definition_id = &"prototype_basic_enemy"
+
+[node name="EnemySpawn03" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(32, 0.1, -47)
+enemy_definition_id = &"prototype_heavy_enemy"
+
+[node name="EnemySpawn04" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(-47, 0.1, -32)
+enemy_definition_id = &"prototype_basic_enemy"
+
+[node name="EnemySpawn05" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(-16, 0.1, -32)
+enemy_definition_id = &"prototype_basic_enemy"
+
+[node name="EnemySpawn06" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(32, 0.1, -18)
+enemy_definition_id = &"prototype_basic_enemy"
+
+[node name="EnemySpawn07" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(47, 0.1, 0)
+enemy_definition_id = &"prototype_heavy_enemy"
+
+[node name="EnemySpawn08" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(32, 0.1, 18)
+enemy_definition_id = &"prototype_basic_enemy"
+
+[node name="EnemySpawn09" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(-47, 0.1, 32)
+enemy_definition_id = &"prototype_basic_enemy"
+
+[node name="InteriorBasicSpawn" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(-13, 0.1, 16)
+enemy_definition_id = &"prototype_basic_enemy"
+
+[node name="BarrierHeavySpawn" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(-16, 0.1, 11)
+enemy_definition_id = &"prototype_heavy_enemy"
+
+[node name="EnemySpawn12" parent="SpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(32, 0.1, 47)
+enemy_definition_id = &"prototype_basic_enemy"
+
+[node name="ReinforcementSpawnPoints" type="Node3D" parent="."]
+
+[node name="ReinforcementBasicWest" parent="ReinforcementSpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(-9, 0.1, -7)
+enemy_definition_id = &"prototype_basic_enemy"
+initial_spawn = false
+activation_group_id = &"prototype_local_alert"
+
+[node name="ReinforcementBasicEast" parent="ReinforcementSpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(9, 0.1, -7)
+enemy_definition_id = &"prototype_basic_enemy"
+initial_spawn = false
+activation_group_id = &"prototype_local_alert"
+
+[node name="ReinforcementHeavyNorth" parent="ReinforcementSpawnPoints" instance=ExtResource("9_enemy_spawn")]
+position = Vector3(0, 0.1, -15)
+enemy_definition_id = &"prototype_heavy_enemy"
+initial_spawn = false
+activation_group_id = &"prototype_local_alert"

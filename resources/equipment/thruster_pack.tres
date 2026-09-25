@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EquipmentDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/equipment_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/equipment/thruster_pack.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"equipment.thruster_pack_01"
+display_name = "Dash Thrusters"
+description = "Mobility pack with compact maneuvering thrusters."
+weight = 4.0
+base_value = 1400
+item_tags = PackedStringArray("equipment", "backpack")
+socket_name = &"Backpack"
+scene = ExtResource("2")
+movement_modifier = 0.35

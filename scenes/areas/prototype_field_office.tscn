@@ -1,0 +1,195 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/areas/field_office_art.tscn" id="art"]
+[ext_resource type="Script" path="res://scripts/presentation/field_office_presentation.gd" id="presentation"]
+
+[sub_resource type="StandardMaterial3D" id="FloorMaterial"]
+albedo_color = Color(0.145, 0.18, 0.2, 1)
+metallic = 0.35
+roughness = 0.72
+
+[sub_resource type="StandardMaterial3D" id="WallMaterial"]
+albedo_color = Color(0.24, 0.285, 0.305, 1)
+metallic = 0.28
+roughness = 0.62
+
+[sub_resource type="StandardMaterial3D" id="TrimMaterial"]
+albedo_color = Color(0.18, 0.48, 0.52, 1)
+metallic = 0.45
+roughness = 0.35
+emission_enabled = false
+emission = Color(0.18, 0.74, 0.78, 1)
+emission_energy_multiplier = 1.2
+
+[sub_resource type="StandardMaterial3D" id="CeilingMaterial"]
+albedo_color = Color(0.18, 0.24, 0.25, 1)
+metallic = 0.2
+roughness = 0.5
+
+[sub_resource type="BoxMesh" id="FloorMesh"]
+material = SubResource("FloorMaterial")
+size = Vector3(12, 0.24, 14)
+
+[sub_resource type="BoxShape3D" id="FloorShape"]
+size = Vector3(12, 0.24, 14)
+
+[sub_resource type="BoxMesh" id="SideWallMesh"]
+material = SubResource("WallMaterial")
+size = Vector3(0.3, 3.6, 14)
+
+[sub_resource type="BoxShape3D" id="SideWallShape"]
+size = Vector3(0.3, 3.6, 14)
+
+[sub_resource type="BoxMesh" id="EndWallMesh"]
+material = SubResource("WallMaterial")
+size = Vector3(4.8, 3.6, 0.3)
+
+[sub_resource type="BoxShape3D" id="EndWallShape"]
+size = Vector3(4.8, 3.6, 0.3)
+
+[sub_resource type="BoxMesh" id="CeilingSideMesh"]
+material = SubResource("CeilingMaterial")
+size = Vector3(0.35, 0.12, 14)
+
+[sub_resource type="BoxMesh" id="CeilingEndMesh"]
+material = SubResource("CeilingMaterial")
+size = Vector3(11.3, 0.12, 0.35)
+
+[node name="FieldOffice" type="Node3D"]
+script = ExtResource("presentation")
+
+[node name="InteriorFloor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.12, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="FloorMesh" type="MeshInstance3D" parent="InteriorFloor"]
+visible = false
+mesh = SubResource("FloorMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteriorFloor"]
+shape = SubResource("FloorShape")
+
+[node name="WestWall" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1.8, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="WallMesh" type="MeshInstance3D" parent="WestWall"]
+visible = false
+mesh = SubResource("SideWallMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WestWall"]
+shape = SubResource("SideWallShape")
+
+[node name="EastWall" type="StaticBody3D" parent="."]
+position = Vector3(6, 1.8, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="WallMesh" type="MeshInstance3D" parent="EastWall"]
+visible = false
+mesh = SubResource("SideWallMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EastWall"]
+shape = SubResource("SideWallShape")
+
+[node name="SouthWallLeft" type="StaticBody3D" parent="."]
+position = Vector3(-3.6, 1.8, 7)
+collision_layer = 4
+collision_mask = 0
+
+[node name="WallMesh" type="MeshInstance3D" parent="SouthWallLeft"]
+visible = false
+mesh = SubResource("EndWallMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SouthWallLeft"]
+shape = SubResource("EndWallShape")
+
+[node name="SouthWallRight" type="StaticBody3D" parent="."]
+position = Vector3(3.6, 1.8, 7)
+collision_layer = 4
+collision_mask = 0
+
+[node name="WallMesh" type="MeshInstance3D" parent="SouthWallRight"]
+visible = false
+mesh = SubResource("EndWallMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SouthWallRight"]
+shape = SubResource("EndWallShape")
+
+[node name="NorthWallLeft" type="StaticBody3D" parent="."]
+position = Vector3(-3.6, 1.8, -7)
+collision_layer = 4
+collision_mask = 0
+
+[node name="WallMesh" type="MeshInstance3D" parent="NorthWallLeft"]
+visible = false
+mesh = SubResource("EndWallMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NorthWallLeft"]
+shape = SubResource("EndWallShape")
+
+[node name="NorthWallRight" type="StaticBody3D" parent="."]
+position = Vector3(3.6, 1.8, -7)
+collision_layer = 4
+collision_mask = 0
+
+[node name="WallMesh" type="MeshInstance3D" parent="NorthWallRight"]
+visible = false
+mesh = SubResource("EndWallMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NorthWallRight"]
+shape = SubResource("EndWallShape")
+
+[node name="CeilingFrame" type="Node3D" parent="."]
+
+[node name="WestCanopy" type="MeshInstance3D" parent="CeilingFrame"]
+position = Vector3(-5.825, 3.6, 0)
+cast_shadow = 0
+mesh = SubResource("CeilingSideMesh")
+
+[node name="EastCanopy" type="MeshInstance3D" parent="CeilingFrame"]
+position = Vector3(5.825, 3.6, 0)
+cast_shadow = 0
+mesh = SubResource("CeilingSideMesh")
+
+[node name="SouthCanopy" type="MeshInstance3D" parent="CeilingFrame"]
+position = Vector3(0, 3.6, 6.825)
+cast_shadow = 0
+mesh = SubResource("CeilingEndMesh")
+
+[node name="NorthCanopy" type="MeshInstance3D" parent="CeilingFrame"]
+position = Vector3(0, 3.6, -6.825)
+cast_shadow = 0
+mesh = SubResource("CeilingEndMesh")
+
+[node name="EntranceHeader" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.15, 6.82)
+mesh = SubResource("EndWallMesh")
+scale = Vector3(0.5, 0.25, 1)
+material_override = SubResource("TrimMaterial")
+
+[node name="ExitHeader" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.15, -6.82)
+mesh = SubResource("EndWallMesh")
+scale = Vector3(0.5, 0.25, 1)
+material_override = SubResource("TrimMaterial")
+
+[node name="InteriorLight" type="OmniLight3D" parent="."]
+position = Vector3(0, 3.1, 0)
+light_color = Color(0.55, 0.92, 1, 1)
+light_energy = 0.35
+omni_range = 10.0
+shadow_enabled = false
+
+[node name="BuildingLabel" type="Label3D" parent="."]
+visible = false
+position = Vector3(0, 3.05, 7.2)
+text = "FIELD SECURITY OFFICE"
+font_size = 28
+outline_size = 9
+modulate = Color(0.48, 0.95, 0.96, 1)
+billboard = 1
+
+[node name="OfficeArt" parent="." instance=ExtResource("art")]

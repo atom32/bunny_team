@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/objective_reach_zone.gd" id="1_reach_zone"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_reach"]
+size = Vector3(4.8, 2.0, 4.8)
+
+[node name="ObjectiveReachZone" type="Area3D"]
+script = ExtResource("1_reach_zone")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+position = Vector3(0, 1, 0)
+shape = SubResource("BoxShape3D_reach")

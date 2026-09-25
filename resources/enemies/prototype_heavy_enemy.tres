@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EnemyDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/enemy_definition.gd" id="1_definition"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/enemy.tscn" id="2_scene"]
+
+[resource]
+script = ExtResource("1_definition")
+id = &"prototype_heavy_enemy"
+display_name = "Prototype Heavy"
+scene = ExtResource("2_scene")
+max_health = 120.0
+armor = 8.0
+move_speed = 1.9
+approach_speed = 0.7
+attack_damage = 5.5
+attack_range = 15.0
+attack_cooldown_min = 2.7
+attack_cooldown_max = 3.3

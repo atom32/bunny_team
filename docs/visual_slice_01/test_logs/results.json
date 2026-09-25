@@ -1,0 +1,233 @@
+[
+  {
+    "test": "acceptance_smoke",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 3.1
+  },
+  {
+    "test": "ammo_carried_foundation_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.4
+  },
+  {
+    "test": "ammo_runtime_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.6
+  },
+  {
+    "test": "area_definition_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.4
+  },
+  {
+    "test": "carried_inventory_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.5
+  },
+  {
+    "test": "combat_tuning_baseline_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 1.1
+  },
+  {
+    "test": "content_inventory_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.4
+  },
+  {
+    "test": "damage_packet_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.7
+  },
+  {
+    "test": "destructible_world_object_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.7
+  },
+  {
+    "test": "enemy_definition_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.7
+  },
+  {
+    "test": "enemy_spawn_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.6
+  },
+  {
+    "test": "extraction_vertical_slice_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.6
+  },
+  {
+    "test": "loadout_decision_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.7
+  },
+  {
+    "test": "loadout_state_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.4
+  },
+  {
+    "test": "loot_table_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.6
+  },
+  {
+    "test": "mission_flow_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 1.1
+  },
+  {
+    "test": "mission_objective_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.4
+  },
+  {
+    "test": "objective_world_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.6
+  },
+  {
+    "test": "presentation_gameplay_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 7.2
+  },
+  {
+    "test": "profile_state_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.4
+  },
+  {
+    "test": "result_return_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.7
+  },
+  {
+    "test": "save_service_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.4
+  },
+  {
+    "test": "sortie_failure_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.8
+  },
+  {
+    "test": "sortie_outcome_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.5
+  },
+  {
+    "test": "sortie_session_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.4
+  },
+  {
+    "test": "threat_escalation_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.9
+  },
+  {
+    "test": "visual_combat_acceptance",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 3.1
+  },
+  {
+    "test": "visual_enemy_acceptance",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 3.0
+  },
+  {
+    "test": "visual_slice_assets_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 2.9
+  },
+  {
+    "test": "weapon_behavior_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.9
+  },
+  {
+    "test": "weapon_switching_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.7
+  },
+  {
+    "test": "world_interaction_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.7
+  },
+  {
+    "test": "world_traversal_test",
+    "exit": 0,
+    "errors": [],
+    "pass_marker": true,
+    "seconds": 0.7
+  }
+]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AmmoDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ammo_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"ammo.556_standard"
+display_name = "5.56 Standard"
+description = "General-purpose rifle ammunition."
+weight = 0.012
+base_value = 3
+item_tags = PackedStringArray("ammo", "556")
+stackable = true
+max_stack = 120
+damage = 20.0
+armor_penetration = 8.0
+effect_tags = PackedStringArray("kinetic")

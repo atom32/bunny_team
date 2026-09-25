@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="WeaponDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/rocket_launcher.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"weapon.rocket_launcher_01"
+display_name = "Breach Launcher"
+description = "Shoulder-mounted explosive launcher."
+weight = 8.0
+base_value = 2600
+item_tags = PackedStringArray("weapon", "primary", "launcher")
+socket_name = &"ShoulderR"
+scene = ExtResource("2")
+movement_modifier = -0.8
+weapon_type = &"launcher"
+compatible_ammo_ids = PackedStringArray("ammo.rocket_standard")
+magazine_capacity = 1
+fire_mode = &"single"
+action_type = &"projectile"
+damage = 92.0
+armor_penetration = 0.0
+structure_damage = 50.0
+fire_rate = 0.72
+weapon_range = 30.0
+projectile_speed = 20.0
+blast_radius = 4.8
+knockback = 15.0
+tracer_color = Color(1, 0.3, 0.08, 1)
+tracer_width = 0.09
+muzzle_scale = 1.8
+recoil_strength = 0.34
+impact_scale = 1.5

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EquipmentDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/equipment_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/equipment/standard_pack.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"equipment.field_pack_01"
+display_name = "Field Pack"
+description = "Standard carried equipment pack."
+weight = 2.0
+base_value = 600
+item_tags = PackedStringArray("equipment", "backpack")
+socket_name = &"Backpack"
+scene = ExtResource("2")

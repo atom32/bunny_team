@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="LootTableDefinition" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/loot_table_definition.gd" id="1_table"]
+[ext_resource type="Script" path="res://scripts/data/loot_table_entry.gd" id="2_entry"]
+
+[sub_resource type="Resource" id="LootTableEntry_salvage"]
+script = ExtResource("2_entry")
+definition_id = &"loot.salvage_core_01"
+weight = 60.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="LootTableEntry_ammo"]
+script = ExtResource("2_entry")
+definition_id = &"ammo.556_standard"
+weight = 30.0
+min_quantity = 30
+max_quantity = 60
+
+[sub_resource type="Resource" id="LootTableEntry_rocket"]
+script = ExtResource("2_entry")
+definition_id = &"ammo.rocket_standard"
+weight = 10.0
+min_quantity = 1
+max_quantity = 2
+
+[resource]
+script = ExtResource("1_table")
+table_id = &"prototype_basic_loot"
+entries = Array[ExtResource("2_entry")]([SubResource("LootTableEntry_salvage"), SubResource("LootTableEntry_ammo"), SubResource("LootTableEntry_rocket")])

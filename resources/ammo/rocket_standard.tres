@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AmmoDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ammo_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"ammo.rocket_standard"
+display_name = "Breach Rocket"
+description = "Standard explosive ammunition for the Breach Launcher."
+weight = 0.8
+base_value = 120
+item_tags = PackedStringArray("ammo", "rocket", "explosive")
+stackable = true
+max_stack = 12
+damage = 92.0
+armor_penetration = 18.0
+effect_tags = PackedStringArray("explosive", "structure_damage")

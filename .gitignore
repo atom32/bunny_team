@@ -1,0 +1,12 @@
+# Godot's generated import cache and editor state.
+.godot/
+
+# Local operating-system files.
+.DS_Store
+
+# Local credentials and environment overrides.
+.env
+.env.*
+!.env.example
+Github_PAT.txt
+export_credentials.cfg

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AmmoDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/ammo_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"ammo.556_ap"
+display_name = "5.56 AP"
+description = "Armor-piercing rifle ammunition with increased carried weight and value."
+weight = 0.014
+base_value = 8
+item_tags = PackedStringArray("ammo", "556", "armor_piercing")
+stackable = true
+max_stack = 120
+damage = 18.0
+armor_penetration = 22.0
+effect_tags = PackedStringArray("kinetic", "armor_piercing")

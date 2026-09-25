@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="ContentManifest" load_steps=24 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/content_manifest.gd" id="1_manifest"]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="2_item"]
+[ext_resource type="Resource" path="res://resources/weapons/assault_rifle.tres" id="3_rifle"]
+[ext_resource type="Resource" path="res://resources/weapons/smg.tres" id="4_smg"]
+[ext_resource type="Resource" path="res://resources/weapons/rocket_launcher.tres" id="5_rocket"]
+[ext_resource type="Resource" path="res://resources/equipment/light_armor.tres" id="6_light"]
+[ext_resource type="Resource" path="res://resources/equipment/heavy_armor.tres" id="7_heavy"]
+[ext_resource type="Resource" path="res://resources/equipment/standard_pack.tres" id="8_pack"]
+[ext_resource type="Resource" path="res://resources/equipment/thruster_pack.tres" id="9_thruster"]
+[ext_resource type="Resource" path="res://resources/ammo/556_standard.tres" id="10_standard"]
+[ext_resource type="Resource" path="res://resources/ammo/556_ap.tres" id="11_ap"]
+[ext_resource type="Resource" path="res://resources/items/salvage_core.tres" id="12_salvage"]
+[ext_resource type="Resource" path="res://resources/ammo/rocket_standard.tres" id="13_rocket_ammo"]
+[ext_resource type="Script" path="res://scripts/data/mission_definition.gd" id="14_mission_definition"]
+[ext_resource type="Resource" path="res://resources/missions/prototype_combat.tres" id="15_prototype_combat"]
+[ext_resource type="Script" path="res://scripts/data/loot_table_definition.gd" id="16_loot_table_definition"]
+[ext_resource type="Resource" path="res://resources/loot/prototype_basic_loot.tres" id="17_prototype_basic_loot"]
+[ext_resource type="Script" path="res://scripts/data/area_definition.gd" id="18_area_definition"]
+[ext_resource type="Resource" path="res://resources/areas/prototype_arena.tres" id="19_prototype_arena"]
+[ext_resource type="Script" path="res://scripts/data/enemy_definition.gd" id="20_enemy_definition"]
+[ext_resource type="Resource" path="res://resources/enemies/prototype_basic_enemy.tres" id="21_prototype_basic_enemy"]
+[ext_resource type="Resource" path="res://resources/enemies/prototype_heavy_enemy.tres" id="22_prototype_heavy_enemy"]
+[ext_resource type="Resource" path="res://resources/loot/prototype_high_value_loot.tres" id="23_prototype_high_value_loot"]
+
+[resource]
+script = ExtResource("1_manifest")
+definitions = Array[ExtResource("2_item")]([ExtResource("3_rifle"), ExtResource("4_smg"), ExtResource("5_rocket"), ExtResource("6_light"), ExtResource("7_heavy"), ExtResource("8_pack"), ExtResource("9_thruster"), ExtResource("10_standard"), ExtResource("11_ap"), ExtResource("12_salvage"), ExtResource("13_rocket_ammo")])
+missions = Array[ExtResource("14_mission_definition")]([ExtResource("15_prototype_combat")])
+loot_tables = Array[ExtResource("16_loot_table_definition")]([ExtResource("17_prototype_basic_loot"), ExtResource("23_prototype_high_value_loot")])
+areas = Array[ExtResource("18_area_definition")]([ExtResource("19_prototype_arena")])
+enemies = Array[ExtResource("20_enemy_definition")]([ExtResource("21_prototype_basic_enemy"), ExtResource("22_prototype_heavy_enemy")])

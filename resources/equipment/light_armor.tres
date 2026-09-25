@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EquipmentDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/equipment_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/equipment/light_armor.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"armor.recon_shell_01"
+display_name = "Recon Shell"
+description = "Light armor tuned for mobility."
+weight = 3.0
+base_value = 900
+item_tags = PackedStringArray("equipment", "armor")
+socket_name = &"Chest"
+scene = ExtResource("2")
+movement_modifier = 0.5

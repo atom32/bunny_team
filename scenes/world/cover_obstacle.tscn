@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/cover_obstacle.gd" id="1_cover"]
+
+[sub_resource type="StandardMaterial3D" id="CoverMaterial"]
+albedo_color = Color(0.145098, 0.2, 0.223529, 1)
+metallic = 0.42
+roughness = 0.58
+
+[sub_resource type="BoxMesh" id="CoverMesh"]
+material = SubResource("CoverMaterial")
+size = Vector3(2.8, 1.5, 0.7)
+
+[sub_resource type="BoxShape3D" id="CoverShape"]
+size = Vector3(2.8, 1.5, 0.7)
+
+[node name="CoverObstacle" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_cover")
+
+[node name="CoverMesh" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.75, 0)
+mesh = SubResource("CoverMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.75, 0)
+shape = SubResource("CoverShape")

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EquipmentDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/equipment_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/equipment/heavy_armor.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"armor.bulwark_plate_01"
+display_name = "Bulwark Plate"
+description = "Heavy armor that trades speed for protection."
+weight = 8.0
+base_value = 1800
+item_tags = PackedStringArray("equipment", "armor")
+socket_name = &"Chest"
+scene = ExtResource("2")
+movement_modifier = -0.65

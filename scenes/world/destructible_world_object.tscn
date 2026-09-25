@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/destructible_world_object.gd" id="1_destructible"]
+
+[sub_resource type="StandardMaterial3D" id="BarrierMaterial"]
+albedo_color = Color(0.309804, 0.356863, 0.372549, 1)
+metallic = 0.55
+roughness = 0.48
+
+[sub_resource type="BoxMesh" id="BarrierMesh"]
+material = SubResource("BarrierMaterial")
+size = Vector3(3, 2, 0.55)
+
+[sub_resource type="BoxShape3D" id="BarrierShape"]
+size = Vector3(3, 2, 0.55)
+
+[node name="DestructibleWorldObject" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_destructible")
+
+[node name="BarrierMesh" type="MeshInstance3D" parent="."]
+position = Vector3(0, 1, 0)
+mesh = SubResource("BarrierMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+position = Vector3(0, 1, 0)
+shape = SubResource("BarrierShape")

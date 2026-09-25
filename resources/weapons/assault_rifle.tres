@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="WeaponDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/weapon_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/assault_rifle.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"weapon.assault_rifle_01"
+display_name = "Assault Rifle"
+description = "Stable medium-range automatic rifle."
+weight = 4.2
+base_value = 1200
+item_tags = PackedStringArray("weapon", "primary", "rifle")
+socket_name = &"HandR"
+scene = ExtResource("2")
+movement_modifier = -0.1
+weapon_type = &"rifle"
+compatible_ammo_ids = PackedStringArray("ammo.556_standard")
+magazine_capacity = 30
+fire_mode = &"automatic"
+action_type = &"hitscan"
+uses_combat_rig = true
+damage = 20.0
+armor_penetration = 0.0
+structure_damage = 5.0
+fire_rate = 7.5
+weapon_range = 34.0
+knockback = 3.2
+tracer_color = Color(0.35, 0.92, 1, 1)
+tracer_width = 0.055
+muzzle_scale = 1.0
+recoil_strength = 0.08
+impact_scale = 1.0

@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="MissionDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/mission_definition.gd" id="1_mission"]
+[ext_resource type="Script" path="res://scripts/data/objective_definition.gd" id="2_objective"]
+
+[sub_resource type="Resource" id="ObjectiveDefinition_eliminate"]
+script = ExtResource("2_objective")
+objective_id = &"eliminate_prototype_enemies"
+display_name = "Eliminate enemies"
+objective_type = 0
+target = 3
+required = true
+
+[sub_resource type="Resource" id="ObjectiveDefinition_interact"]
+script = ExtResource("2_objective")
+objective_id = &"interact_prototype_terminal"
+display_name = "Access field terminal"
+objective_type = 1
+target = 1
+target_id = &"prototype_terminal"
+required = true
+
+[sub_resource type="Resource" id="ObjectiveDefinition_reach"]
+script = ExtResource("2_objective")
+objective_id = &"reach_prototype_zone"
+display_name = "Reach survey zone"
+objective_type = 2
+target = 1
+target_id = &"prototype_reach_zone"
+required = true
+
+[resource]
+script = ExtResource("1_mission")
+mission_id = &"prototype_combat"
+display_name = "Prototype Combat"
+description = "Eliminate the marked hostile force, access the field terminal, and reach the survey zone before extracting."
+objective_definitions = Array[ExtResource("2_objective")]([SubResource("ObjectiveDefinition_eliminate"), SubResource("ObjectiveDefinition_interact"), SubResource("ObjectiveDefinition_reach")])

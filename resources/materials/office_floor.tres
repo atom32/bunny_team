@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3]
+
+[ext_resource type="Shader" path="res://resources/materials/slice_palette.gdshader" id="1"]
+[ext_resource type="Texture2D" path="res://assets/environment/kenney_space_station_kit/Textures/colormap.png" id="2"]
+
+[resource]
+shader = ExtResource("1")
+shader_parameter/palette = ExtResource("2")
+shader_parameter/accent = Color(0.16, 0.38, 0.39, 1)
+shader_parameter/brightness = 0.19

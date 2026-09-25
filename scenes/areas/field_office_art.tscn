@@ -1,0 +1,1378 @@
+[gd_scene load_steps=123 format=3]
+
+[ext_resource type="Script" path="res://scripts/presentation/model_palette.gd" id="palette_script"]
+[ext_resource type="Material" path="res://resources/materials/office_palette.tres" id="palette"]
+[ext_resource type="Material" path="res://resources/materials/office_floor.tres" id="floor_material"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/wall.glb" id="wall"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/wall-detail.glb" id="wall_detail"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/wall-window.glb" id="wall_window"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/floor.glb" id="floor"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/floor-detail.glb" id="floor_detail"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/table.glb" id="table"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/chair.glb" id="chair"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/computer-screen.glb" id="computer_screen"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/computer-system.glb" id="computer_system"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/display-wall.glb" id="display_wall"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/container-flat.glb" id="container_flat"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/container-tall.glb" id="container_tall"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/wall-switch.glb" id="wall_switch"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/pipe.glb" id="pipe"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/pipe-bend.glb" id="pipe_bend"]
+
+[sub_resource type="StandardMaterial3D" id="metal"]
+albedo_color = Color(0.10, 0.15, 0.17, 1)
+roughness = 0.8
+metallic = 0.5
+
+[sub_resource type="StandardMaterial3D" id="wall"]
+albedo_color = Color(0.43, 0.48, 0.46, 1)
+roughness = 0.8
+metallic = 0.0
+
+[sub_resource type="StandardMaterial3D" id="roof"]
+albedo_color = Color(0.18, 0.24, 0.25, 1)
+roughness = 0.8
+metallic = 0.25
+
+[sub_resource type="StandardMaterial3D" id="floor"]
+albedo_color = Color(0.16, 0.21, 0.22, 1)
+roughness = 0.8
+metallic = 0.0
+
+[sub_resource type="StandardMaterial3D" id="stripe"]
+albedo_color = Color(0.72, 0.48, 0.18, 1)
+roughness = 0.8
+metallic = 0.0
+
+[sub_resource type="StandardMaterial3D" id="lamp"]
+albedo_color = Color(0.74, 0.85, 0.8, 1)
+roughness = 0.8
+metallic = 0
+emission_enabled = true
+emission = Color(0.77, 0.88, 0.83, 1)
+emission_energy_multiplier = 1.2
+
+[sub_resource type="StandardMaterial3D" id="teal"]
+albedo_color = Color(0.14, 0.38, 0.39, 1)
+roughness = 0.8
+metallic = 0.15
+
+[sub_resource type="BoxMesh" id="Corner_1_7_mesh"]
+material = SubResource("metal")
+size = Vector3(0.25, 3.85, 0.25)
+
+[sub_resource type="BoxMesh" id="Corner_17_mesh"]
+material = SubResource("metal")
+size = Vector3(0.25, 3.85, 0.25)
+
+[sub_resource type="BoxMesh" id="Foundation_1_mesh"]
+material = SubResource("metal")
+size = Vector3(0.4, 0.22, 14.3)
+
+[sub_resource type="BoxMesh" id="Skirting_1_mesh"]
+material = SubResource("metal")
+size = Vector3(0.09, 0.18, 13.6)
+
+[sub_resource type="BoxMesh" id="Corner1_7_mesh"]
+material = SubResource("metal")
+size = Vector3(0.25, 3.85, 0.25)
+
+[sub_resource type="BoxMesh" id="Corner17_mesh"]
+material = SubResource("metal")
+size = Vector3(0.25, 3.85, 0.25)
+
+[sub_resource type="BoxMesh" id="Foundation1_mesh"]
+material = SubResource("metal")
+size = Vector3(0.4, 0.22, 14.3)
+
+[sub_resource type="BoxMesh" id="Skirting1_mesh"]
+material = SubResource("metal")
+size = Vector3(0.09, 0.18, 13.6)
+
+[sub_resource type="BoxMesh" id="Threshold_7_mesh"]
+material = SubResource("metal")
+size = Vector3(2.2, 0.03, 0.42)
+
+[sub_resource type="BoxMesh" id="Jamb_1_18_7_mesh"]
+material = SubResource("metal")
+size = Vector3(0.12, 2.72, 0.42)
+
+[sub_resource type="BoxMesh" id="Jamb1_18_7_mesh"]
+material = SubResource("metal")
+size = Vector3(0.12, 2.72, 0.42)
+
+[sub_resource type="BoxMesh" id="Lintel_7_mesh"]
+material = SubResource("metal")
+size = Vector3(2.48, 0.2, 0.42)
+
+[sub_resource type="BoxMesh" id="Threshold7_mesh"]
+material = SubResource("metal")
+size = Vector3(2.2, 0.03, 0.42)
+
+[sub_resource type="BoxMesh" id="Jamb_1_187_mesh"]
+material = SubResource("metal")
+size = Vector3(0.12, 2.72, 0.42)
+
+[sub_resource type="BoxMesh" id="Jamb1_187_mesh"]
+material = SubResource("metal")
+size = Vector3(0.12, 2.72, 0.42)
+
+[sub_resource type="BoxMesh" id="Lintel7_mesh"]
+material = SubResource("metal")
+size = Vector3(2.48, 0.2, 0.42)
+
+[sub_resource type="BoxMesh" id="Canopy_mesh"]
+material = SubResource("metal")
+size = Vector3(3.7, 0.16, 1.4)
+
+[sub_resource type="BoxMesh" id="EntryLightStrip_mesh"]
+material = SubResource("lamp")
+size = Vector3(2.5, 0.04, 0.1)
+
+[sub_resource type="BoxMesh" id="SignPanel_mesh"]
+material = SubResource("metal")
+size = Vector3(4.3, 0.64, 0.16)
+
+[sub_resource type="BoxMesh" id="RoofEdgeX_1_mesh"]
+material = SubResource("metal")
+size = Vector3(0.4, 0.18, 14.5)
+
+[sub_resource type="BoxMesh" id="RoofEdgeZ_1_mesh"]
+material = SubResource("metal")
+size = Vector3(12.4, 0.18, 0.4)
+
+[sub_resource type="BoxMesh" id="Soffit_1_mesh"]
+material = SubResource("wall")
+size = Vector3(0.5, 0.1, 13.4)
+
+[sub_resource type="BoxMesh" id="RoofEdgeX1_mesh"]
+material = SubResource("metal")
+size = Vector3(0.4, 0.18, 14.5)
+
+[sub_resource type="BoxMesh" id="RoofEdgeZ1_mesh"]
+material = SubResource("metal")
+size = Vector3(12.4, 0.18, 0.4)
+
+[sub_resource type="BoxMesh" id="Soffit1_mesh"]
+material = SubResource("wall")
+size = Vector3(0.5, 0.1, 13.4)
+
+[sub_resource type="BoxMesh" id="RoofRib_4_mesh"]
+material = SubResource("metal")
+size = Vector3(0.06, 0.12, 14)
+
+[sub_resource type="BoxMesh" id="RoofRib_2_mesh"]
+material = SubResource("metal")
+size = Vector3(0.06, 0.12, 14)
+
+[sub_resource type="BoxMesh" id="RoofRib0_mesh"]
+material = SubResource("metal")
+size = Vector3(0.06, 0.12, 14)
+
+[sub_resource type="BoxMesh" id="RoofRib2_mesh"]
+material = SubResource("metal")
+size = Vector3(0.06, 0.12, 14)
+
+[sub_resource type="BoxMesh" id="RoofRib4_mesh"]
+material = SubResource("metal")
+size = Vector3(0.06, 0.12, 14)
+
+[sub_resource type="BoxMesh" id="Roof_mesh"]
+material = SubResource("roof")
+size = Vector3(12.3, 0.16, 14.3)
+
+[sub_resource type="BoxMesh" id="RoofVentBase_mesh"]
+material = SubResource("metal")
+size = Vector3(1.6, 0.35, 1.3)
+
+[sub_resource type="BoxMesh" id="VentSlat0_mesh"]
+material = SubResource("wall")
+size = Vector3(1.45, 0.08, 0.08)
+
+[sub_resource type="BoxMesh" id="VentSlat1_mesh"]
+material = SubResource("wall")
+size = Vector3(1.45, 0.08, 0.08)
+
+[sub_resource type="BoxMesh" id="VentSlat2_mesh"]
+material = SubResource("wall")
+size = Vector3(1.45, 0.08, 0.08)
+
+[sub_resource type="BoxMesh" id="VentSlat3_mesh"]
+material = SubResource("wall")
+size = Vector3(1.45, 0.08, 0.08)
+
+[sub_resource type="BoxMesh" id="VentSlat4_mesh"]
+material = SubResource("wall")
+size = Vector3(1.45, 0.08, 0.08)
+
+[sub_resource type="BoxMesh" id="CeilingLuminaire0_mesh"]
+material = SubResource("metal")
+size = Vector3(3.6, 0.09, 0.22)
+
+[sub_resource type="BoxMesh" id="CeilingDiffuser0_mesh"]
+material = SubResource("lamp")
+size = Vector3(3.35, 0.035, 0.18)
+
+[sub_resource type="BoxMesh" id="CeilingLuminaire1_mesh"]
+material = SubResource("metal")
+size = Vector3(3.6, 0.09, 0.22)
+
+[sub_resource type="BoxMesh" id="CeilingDiffuser1_mesh"]
+material = SubResource("lamp")
+size = Vector3(3.35, 0.035, 0.18)
+
+[sub_resource type="BoxMesh" id="AisleStripe_2_1_mesh"]
+material = SubResource("stripe")
+size = Vector3(0.04, 0.006, 11.8)
+
+[sub_resource type="BoxMesh" id="AisleStripe2_1_mesh"]
+material = SubResource("stripe")
+size = Vector3(0.04, 0.006, 11.8)
+
+[sub_resource type="BoxMesh" id="EntryMark_0_6_mesh"]
+material = SubResource("teal")
+size = Vector3(0.32, 0.006, 0.12)
+
+[sub_resource type="BoxMesh" id="EntryMark0_mesh"]
+material = SubResource("teal")
+size = Vector3(0.32, 0.006, 0.12)
+
+[sub_resource type="BoxMesh" id="EntryMark0_6_mesh"]
+material = SubResource("teal")
+size = Vector3(0.32, 0.006, 0.12)
+
+[sub_resource type="StandardMaterial3D" id="glass"]
+albedo_color = Color(0.12, 0.22, 0.26, 1)
+metallic = 0.4
+roughness = 0.18
+
+[sub_resource type="BoxMesh" id="SideGlass00_mesh"]
+material = SubResource("glass")
+size = Vector3(0.025, 1.7, 1.15)
+
+[sub_resource type="BoxMesh" id="SideGlass01_mesh"]
+material = SubResource("glass")
+size = Vector3(0.025, 1.7, 1.15)
+
+[sub_resource type="BoxMesh" id="EndGlass00_mesh"]
+material = SubResource("glass")
+size = Vector3(1.38, 1.7, 0.025)
+
+[sub_resource type="BoxMesh" id="EndGlass01_mesh"]
+material = SubResource("glass")
+size = Vector3(1.38, 1.7, 0.025)
+
+[sub_resource type="BoxMesh" id="SideGlass20_mesh"]
+material = SubResource("glass")
+size = Vector3(0.025, 1.7, 1.15)
+
+[sub_resource type="BoxMesh" id="SideGlass21_mesh"]
+material = SubResource("glass")
+size = Vector3(0.025, 1.7, 1.15)
+
+[sub_resource type="BoxMesh" id="EndGlass20_mesh"]
+material = SubResource("glass")
+size = Vector3(1.38, 1.7, 0.025)
+
+[sub_resource type="BoxMesh" id="EndGlass21_mesh"]
+material = SubResource("glass")
+size = Vector3(1.38, 1.7, 0.025)
+
+[sub_resource type="BoxMesh" id="FloorSeamX0_mesh"]
+material = SubResource("metal")
+size = Vector3(0.012, 0.002, 13.5)
+
+[sub_resource type="BoxMesh" id="FloorSeamX1_mesh"]
+material = SubResource("metal")
+size = Vector3(0.012, 0.002, 13.5)
+
+[sub_resource type="BoxMesh" id="FloorSeamX2_mesh"]
+material = SubResource("metal")
+size = Vector3(0.012, 0.002, 13.5)
+
+[sub_resource type="BoxMesh" id="FloorSeamX3_mesh"]
+material = SubResource("metal")
+size = Vector3(0.012, 0.002, 13.5)
+
+[sub_resource type="BoxMesh" id="FloorSeamX4_mesh"]
+material = SubResource("metal")
+size = Vector3(0.012, 0.002, 13.5)
+
+[sub_resource type="BoxMesh" id="FloorSeamZ0_mesh"]
+material = SubResource("metal")
+size = Vector3(11.5, 0.002, 0.012)
+
+[sub_resource type="BoxMesh" id="FloorSeamZ1_mesh"]
+material = SubResource("metal")
+size = Vector3(11.5, 0.002, 0.012)
+
+[sub_resource type="BoxMesh" id="FloorSeamZ2_mesh"]
+material = SubResource("metal")
+size = Vector3(11.5, 0.002, 0.012)
+
+[sub_resource type="BoxMesh" id="FloorSeamZ3_mesh"]
+material = SubResource("metal")
+size = Vector3(11.5, 0.002, 0.012)
+
+[sub_resource type="BoxMesh" id="FloorSeamZ4_mesh"]
+material = SubResource("metal")
+size = Vector3(11.5, 0.002, 0.012)
+
+[sub_resource type="BoxMesh" id="FloorSeamZ5_mesh"]
+material = SubResource("metal")
+size = Vector3(11.5, 0.002, 0.012)
+
+[sub_resource type="BoxMesh" id="Locker_mesh"]
+material = SubResource("metal")
+size = Vector3(0.65, 1.8, 1.55)
+
+[sub_resource type="BoxMesh" id="LockerDoor0_mesh"]
+material = SubResource("wall")
+size = Vector3(0.04, 1.62, 0.71)
+
+[sub_resource type="BoxMesh" id="LockerHandle0_mesh"]
+material = SubResource("metal")
+size = Vector3(0.055, 0.18, 0.035)
+
+[sub_resource type="BoxMesh" id="LockerVent00_mesh"]
+material = SubResource("metal")
+size = Vector3(0.045, 0.022, 0.39)
+
+[sub_resource type="BoxMesh" id="LockerVent01_mesh"]
+material = SubResource("metal")
+size = Vector3(0.045, 0.022, 0.39)
+
+[sub_resource type="BoxMesh" id="LockerVent02_mesh"]
+material = SubResource("metal")
+size = Vector3(0.045, 0.022, 0.39)
+
+[sub_resource type="BoxMesh" id="LockerDoor1_mesh"]
+material = SubResource("wall")
+size = Vector3(0.04, 1.62, 0.71)
+
+[sub_resource type="BoxMesh" id="LockerHandle1_mesh"]
+material = SubResource("metal")
+size = Vector3(0.055, 0.18, 0.035)
+
+[sub_resource type="BoxMesh" id="LockerVent10_mesh"]
+material = SubResource("metal")
+size = Vector3(0.045, 0.022, 0.39)
+
+[sub_resource type="BoxMesh" id="LockerVent11_mesh"]
+material = SubResource("metal")
+size = Vector3(0.045, 0.022, 0.39)
+
+[sub_resource type="BoxMesh" id="LockerVent12_mesh"]
+material = SubResource("metal")
+size = Vector3(0.045, 0.022, 0.39)
+
+[sub_resource type="BoxMesh" id="ShelfBack_mesh"]
+material = SubResource("metal")
+size = Vector3(0.12, 1.65, 1.8)
+
+[sub_resource type="BoxMesh" id="ShelfBoard0_mesh"]
+material = SubResource("wall")
+size = Vector3(0.6, 0.07, 1.8)
+
+[sub_resource type="BoxMesh" id="ShelfBoard1_mesh"]
+material = SubResource("wall")
+size = Vector3(0.6, 0.07, 1.8)
+
+[sub_resource type="BoxMesh" id="ShelfBoard2_mesh"]
+material = SubResource("wall")
+size = Vector3(0.6, 0.07, 1.8)
+
+[sub_resource type="BoxMesh" id="FileBinder0_mesh"]
+material = SubResource("metal")
+size = Vector3(0.31, 0.36, 0.13)
+
+[sub_resource type="BoxMesh" id="BinderLabel0_mesh"]
+material = SubResource("wall")
+size = Vector3(0.014, 0.11, 0.085)
+
+[sub_resource type="BoxMesh" id="FileBinder1_mesh"]
+material = SubResource("teal")
+size = Vector3(0.31, 0.36, 0.13)
+
+[sub_resource type="BoxMesh" id="BinderLabel1_mesh"]
+material = SubResource("wall")
+size = Vector3(0.014, 0.11, 0.085)
+
+[sub_resource type="BoxMesh" id="FileBinder2_mesh"]
+material = SubResource("metal")
+size = Vector3(0.31, 0.36, 0.13)
+
+[sub_resource type="BoxMesh" id="BinderLabel2_mesh"]
+material = SubResource("wall")
+size = Vector3(0.014, 0.11, 0.085)
+
+[sub_resource type="BoxMesh" id="FileBinder3_mesh"]
+material = SubResource("teal")
+size = Vector3(0.31, 0.36, 0.13)
+
+[sub_resource type="BoxMesh" id="BinderLabel3_mesh"]
+material = SubResource("wall")
+size = Vector3(0.014, 0.11, 0.085)
+
+[sub_resource type="BoxMesh" id="WasteBin_mesh"]
+material = SubResource("metal")
+size = Vector3(0.35, 0.51, 0.35)
+
+[sub_resource type="BoxMesh" id="WasteRim_mesh"]
+material = SubResource("wall")
+size = Vector3(0.4, 0.06, 0.4)
+
+[sub_resource type="BoxMesh" id="BinOpening_mesh"]
+material = SubResource("metal")
+size = Vector3(0.3, 0.008, 0.3)
+
+[sub_resource type="BoxMesh" id="DeskLampBase_mesh"]
+material = SubResource("metal")
+size = Vector3(0.19, 0.03, 0.19)
+
+[sub_resource type="BoxMesh" id="DeskLampStem_mesh"]
+material = SubResource("metal")
+size = Vector3(0.025, 0.35, 0.025)
+
+[sub_resource type="BoxMesh" id="DeskLampHead_mesh"]
+material = SubResource("teal")
+size = Vector3(0.3, 0.07, 0.13)
+
+[sub_resource type="BoxMesh" id="DeskPapers_mesh"]
+material = SubResource("wall")
+size = Vector3(0.29, 0.012, 0.22)
+
+[sub_resource type="BoxMesh" id="Keyboard_mesh"]
+material = SubResource("metal")
+size = Vector3(0.16, 0.028, 0.38)
+
+[node name="OfficeArt" type="Node3D"]
+script = ExtResource("palette_script")
+palette_material = ExtResource("palette")
+floor_material = ExtResource("floor_material")
+
+[node name="Architecture" type="Node3D" parent="."]
+
+[node name="Furnishings" type="Node3D" parent="."]
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="RoofShell" type="Node3D" parent="."]
+
+[node name="Wayfinding" type="Node3D" parent="."]
+
+[node name="Side-1Panel0" parent="Architecture" instance=ExtResource("wall")]
+position = Vector3(-6, 0, -6)
+rotation = Vector3(0, -1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side-1Panel1" parent="Architecture" instance=ExtResource("wall_window")]
+position = Vector3(-6, 0, -4)
+rotation = Vector3(0, -1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side-1Panel2" parent="Architecture" instance=ExtResource("wall")]
+position = Vector3(-6, 0, -2)
+rotation = Vector3(0, -1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side-1Panel3" parent="Architecture" instance=ExtResource("wall_detail")]
+position = Vector3(-6, 0, 0)
+rotation = Vector3(0, -1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side-1Panel4" parent="Architecture" instance=ExtResource("wall_window")]
+position = Vector3(-6, 0, 2)
+rotation = Vector3(0, -1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side-1Panel5" parent="Architecture" instance=ExtResource("wall")]
+position = Vector3(-6, 0, 4)
+rotation = Vector3(0, -1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side-1Panel6" parent="Architecture" instance=ExtResource("wall")]
+position = Vector3(-6, 0, 6)
+rotation = Vector3(0, -1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="End-1Panel0" parent="Architecture" instance=ExtResource("wall_window")]
+position = Vector3(-4.8, 0, -7)
+rotation = Vector3(0, 3.14159, 0)
+scale = Vector3(2.4, 3.6, 1)
+
+[node name="End-1Panel1" parent="Architecture" instance=ExtResource("wall_detail")]
+position = Vector3(-2.4, 0, -7)
+rotation = Vector3(0, 3.14159, 0)
+scale = Vector3(2.4, 3.6, 1)
+
+[node name="End-1Panel2" parent="Architecture" instance=ExtResource("wall_detail")]
+position = Vector3(2.4, 0, -7)
+rotation = Vector3(0, 3.14159, 0)
+scale = Vector3(2.4, 3.6, 1)
+
+[node name="End-1Panel3" parent="Architecture" instance=ExtResource("wall_window")]
+position = Vector3(4.8, 0, -7)
+rotation = Vector3(0, 3.14159, 0)
+scale = Vector3(2.4, 3.6, 1)
+
+[node name="Corner-1-7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-6, 1.925, -7)
+mesh = SubResource("Corner_1_7_mesh")
+metadata/keep_material = true
+
+[node name="Corner-17" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-6, 1.925, 7)
+mesh = SubResource("Corner_17_mesh")
+metadata/keep_material = true
+
+[node name="Foundation-1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-6, 0, 0)
+mesh = SubResource("Foundation_1_mesh")
+metadata/keep_material = true
+
+[node name="Skirting-1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-5.81, 0.1, 0)
+mesh = SubResource("Skirting_1_mesh")
+metadata/keep_material = true
+
+[node name="Side1Panel0" parent="Architecture" instance=ExtResource("wall")]
+position = Vector3(6, 0, -6)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side1Panel1" parent="Architecture" instance=ExtResource("wall_window")]
+position = Vector3(6, 0, -4)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side1Panel2" parent="Architecture" instance=ExtResource("wall")]
+position = Vector3(6, 0, -2)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side1Panel3" parent="Architecture" instance=ExtResource("wall_detail")]
+position = Vector3(6, 0, 0)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side1Panel4" parent="Architecture" instance=ExtResource("wall_window")]
+position = Vector3(6, 0, 2)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side1Panel5" parent="Architecture" instance=ExtResource("wall")]
+position = Vector3(6, 0, 4)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="Side1Panel6" parent="Architecture" instance=ExtResource("wall")]
+position = Vector3(6, 0, 6)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(2, 3.6, 1)
+
+[node name="End1Panel0" parent="Architecture" instance=ExtResource("wall_window")]
+position = Vector3(-4.8, 0, 7)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2.4, 3.6, 1)
+
+[node name="End1Panel1" parent="Architecture" instance=ExtResource("wall_detail")]
+position = Vector3(-2.4, 0, 7)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2.4, 3.6, 1)
+
+[node name="End1Panel2" parent="Architecture" instance=ExtResource("wall_detail")]
+position = Vector3(2.4, 0, 7)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2.4, 3.6, 1)
+
+[node name="End1Panel3" parent="Architecture" instance=ExtResource("wall_window")]
+position = Vector3(4.8, 0, 7)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2.4, 3.6, 1)
+
+[node name="Corner1-7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(6, 1.925, -7)
+mesh = SubResource("Corner1_7_mesh")
+metadata/keep_material = true
+
+[node name="Corner17" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(6, 1.925, 7)
+mesh = SubResource("Corner17_mesh")
+metadata/keep_material = true
+
+[node name="Foundation1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(6, 0, 0)
+mesh = SubResource("Foundation1_mesh")
+metadata/keep_material = true
+
+[node name="Skirting1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(5.81, 0.1, 0)
+mesh = SubResource("Skirting1_mesh")
+metadata/keep_material = true
+
+[node name="Floor0_0" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(-5, -0.082, -6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor0_1" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(-5, -0.082, -4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor0_2" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(-5, -0.082, -2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor0_3" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(-5, -0.082, 0)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor0_4" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(-5, -0.082, 2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor0_5" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(-5, -0.082, 4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor0_6" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(-5, -0.082, 6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor1_0" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-3, -0.082, -6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor1_1" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-3, -0.082, -4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor1_2" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-3, -0.082, -2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor1_3" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-3, -0.082, 0)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor1_4" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-3, -0.082, 2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor1_5" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-3, -0.082, 4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor1_6" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-3, -0.082, 6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor2_0" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-1, -0.082, -6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor2_1" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-1, -0.082, -4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor2_2" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-1, -0.082, -2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor2_3" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-1, -0.082, 0)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor2_4" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-1, -0.082, 2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor2_5" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-1, -0.082, 4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor2_6" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(-1, -0.082, 6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor3_0" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(1, -0.082, -6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor3_1" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(1, -0.082, -4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor3_2" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(1, -0.082, -2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor3_3" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(1, -0.082, 0)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor3_4" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(1, -0.082, 2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor3_5" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(1, -0.082, 4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor3_6" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(1, -0.082, 6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor4_0" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(3, -0.082, -6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor4_1" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(3, -0.082, -4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor4_2" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(3, -0.082, -2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor4_3" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(3, -0.082, 0)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor4_4" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(3, -0.082, 2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor4_5" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(3, -0.082, 4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor4_6" parent="Architecture" instance=ExtResource("floor")]
+position = Vector3(3, -0.082, 6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor5_0" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(5, -0.082, -6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor5_1" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(5, -0.082, -4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor5_2" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(5, -0.082, -2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor5_3" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(5, -0.082, 0)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor5_4" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(5, -0.082, 2)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor5_5" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(5, -0.082, 4)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Floor5_6" parent="Architecture" instance=ExtResource("floor_detail")]
+position = Vector3(5, -0.082, 6)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(2, 0.3, 2)
+
+[node name="Threshold-7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.015, -7)
+mesh = SubResource("Threshold_7_mesh")
+metadata/keep_material = true
+
+[node name="Jamb-1.18-7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-1.18, 1.36, -7)
+mesh = SubResource("Jamb_1_18_7_mesh")
+metadata/keep_material = true
+
+[node name="Jamb1.18-7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(1.18, 1.36, -7)
+mesh = SubResource("Jamb1_18_7_mesh")
+metadata/keep_material = true
+
+[node name="Lintel-7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 2.68, -7)
+mesh = SubResource("Lintel_7_mesh")
+metadata/keep_material = true
+
+[node name="Threshold7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.015, 7)
+mesh = SubResource("Threshold7_mesh")
+metadata/keep_material = true
+
+[node name="Jamb-1.187" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-1.18, 1.36, 7)
+mesh = SubResource("Jamb_1_187_mesh")
+metadata/keep_material = true
+
+[node name="Jamb1.187" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(1.18, 1.36, 7)
+mesh = SubResource("Jamb1_187_mesh")
+metadata/keep_material = true
+
+[node name="Lintel7" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 2.68, 7)
+mesh = SubResource("Lintel7_mesh")
+metadata/keep_material = true
+
+[node name="Canopy" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 2.9, 7.65)
+mesh = SubResource("Canopy_mesh")
+metadata/keep_material = true
+
+[node name="EntryLightStrip" type="MeshInstance3D" parent="Lights"]
+position = Vector3(0, 2.79, 7.96)
+mesh = SubResource("EntryLightStrip_mesh")
+metadata/keep_material = true
+
+[node name="SignPanel" type="MeshInstance3D" parent="Wayfinding"]
+position = Vector3(0, 3.52, 7.25)
+mesh = SubResource("SignPanel_mesh")
+metadata/keep_material = true
+
+[node name="OfficeSign" type="Label3D" parent="Wayfinding"]
+position = Vector3(0, 3.51, 7.345)
+rotation = Vector3(0, 0.0, 0)
+text = "FIELD OFFICE  /  07"
+font_size = 37
+pixel_size = 0.006
+outline_size = 0
+modulate = Color(0.75, 0.90, 0.89, 1)
+no_depth_test = false
+
+[node name="RearSign" type="Label3D" parent="Wayfinding"]
+position = Vector3(0, 2.85, -7.26)
+rotation = Vector3(0, 3.14159, 0)
+text = "SERVICE EXIT"
+font_size = 25
+pixel_size = 0.006
+outline_size = 0
+modulate = Color(0.75, 0.90, 0.89, 1)
+no_depth_test = false
+
+[node name="RoofEdgeX-1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-6, 3.72, 0)
+mesh = SubResource("RoofEdgeX_1_mesh")
+metadata/keep_material = true
+
+[node name="RoofEdgeZ-1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 3.72, -7)
+mesh = SubResource("RoofEdgeZ_1_mesh")
+metadata/keep_material = true
+
+[node name="Soffit-1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-5.65, 3.4, 0)
+mesh = SubResource("Soffit_1_mesh")
+metadata/keep_material = true
+
+[node name="RoofEdgeX1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(6, 3.72, 0)
+mesh = SubResource("RoofEdgeX1_mesh")
+metadata/keep_material = true
+
+[node name="RoofEdgeZ1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 3.72, 7)
+mesh = SubResource("RoofEdgeZ1_mesh")
+metadata/keep_material = true
+
+[node name="Soffit1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(5.65, 3.4, 0)
+mesh = SubResource("Soffit1_mesh")
+metadata/keep_material = true
+
+[node name="RoofRib-4" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(-4, 3.88, 0)
+mesh = SubResource("RoofRib_4_mesh")
+metadata/keep_material = true
+
+[node name="RoofRib-2" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(-2, 3.88, 0)
+mesh = SubResource("RoofRib_2_mesh")
+metadata/keep_material = true
+
+[node name="RoofRib0" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(0, 3.88, 0)
+mesh = SubResource("RoofRib0_mesh")
+metadata/keep_material = true
+
+[node name="RoofRib2" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(2, 3.88, 0)
+mesh = SubResource("RoofRib2_mesh")
+metadata/keep_material = true
+
+[node name="RoofRib4" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(4, 3.88, 0)
+mesh = SubResource("RoofRib4_mesh")
+metadata/keep_material = true
+
+[node name="Roof" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(0, 3.78, 0)
+mesh = SubResource("Roof_mesh")
+metadata/keep_material = true
+
+[node name="RoofVentBase" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(3.8, 4.03, -4.5)
+mesh = SubResource("RoofVentBase_mesh")
+metadata/keep_material = true
+
+[node name="VentSlat0" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(3.8, 4.25, -4.95)
+mesh = SubResource("VentSlat0_mesh")
+metadata/keep_material = true
+
+[node name="VentSlat1" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(3.8, 4.25, -4.73)
+mesh = SubResource("VentSlat1_mesh")
+metadata/keep_material = true
+
+[node name="VentSlat2" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(3.8, 4.25, -4.51)
+mesh = SubResource("VentSlat2_mesh")
+metadata/keep_material = true
+
+[node name="VentSlat3" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(3.8, 4.25, -4.29)
+mesh = SubResource("VentSlat3_mesh")
+metadata/keep_material = true
+
+[node name="VentSlat4" type="MeshInstance3D" parent="RoofShell"]
+position = Vector3(3.8, 4.25, -4.07)
+mesh = SubResource("VentSlat4_mesh")
+metadata/keep_material = true
+
+[node name="ReceptionDesk" parent="Furnishings" instance=ExtResource("table")]
+position = Vector3(4.5, 0.015, 4.9)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(1.85, 1.85, 1.55)
+
+[node name="DeskChair" parent="Furnishings" instance=ExtResource("chair")]
+position = Vector3(3.35, 0.015, 4.9)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(1.7, 1.7, 1.7)
+
+[node name="DeskMonitor" parent="Furnishings" instance=ExtResource("computer_screen")]
+position = Vector3(4.5, 0.765, 4.9)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(0.62, 0.62, 0.62)
+
+[node name="DeskComputer" parent="Furnishings" instance=ExtResource("computer_system")]
+position = Vector3(4.9, 0.015, 4.1)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(0.5, 0.65, 0.5)
+
+[node name="PowerPanel" parent="Furnishings" instance=ExtResource("wall_switch")]
+position = Vector3(-5.79, 1.2, 5.2)
+rotation = Vector3(0, 1.5708, 0)
+scale = Vector3(1.8, 1.8, 0.45)
+
+[node name="OperationsDisplay" parent="Furnishings" instance=ExtResource("display_wall")]
+position = Vector3(5.75, 1.5, -3.6)
+rotation = Vector3(0, -1.5708, 0)
+scale = Vector3(2, 2, 1)
+
+[node name="StorageCabinet" parent="Furnishings" instance=ExtResource("container_tall")]
+position = Vector3(-5, 0.01, -5.85)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(1.2, 2.05, 1)
+
+[node name="SupplyCase" parent="Furnishings" instance=ExtResource("container_flat")]
+position = Vector3(-4.65, 0.01, -4.65)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(1.2, 1.2, 1.2)
+
+[node name="SupplyCaseUpper" parent="Furnishings" instance=ExtResource("container_flat")]
+position = Vector3(-4.65, 0.58, -4.65)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(1.05, 1.05, 1.05)
+
+[node name="UtilityPipe" parent="Furnishings" instance=ExtResource("pipe")]
+position = Vector3(5.7, 2.8, -0.8)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(0.65, 0.65, 2.6)
+
+[node name="UtilityBend" parent="Furnishings" instance=ExtResource("pipe_bend")]
+position = Vector3(5.7, 2.8, 1.0)
+rotation = Vector3(0, 0.0, 0)
+scale = Vector3(0.65, 0.65, 0.65)
+
+[node name="CeilingLuminaire0" type="MeshInstance3D" parent="Lights"]
+position = Vector3(0, 3.4, 4.5)
+mesh = SubResource("CeilingLuminaire0_mesh")
+metadata/keep_material = true
+
+[node name="CeilingDiffuser0" type="MeshInstance3D" parent="Lights"]
+position = Vector3(0, 3.335, 4.5)
+mesh = SubResource("CeilingDiffuser0_mesh")
+metadata/keep_material = true
+
+[node name="CeilingLight0" type="OmniLight3D" parent="Lights"]
+position = Vector3(0, 2.95, 4.5)
+light_color = Color(0.76, 0.84, 0.81, 1)
+light_energy = 0.7
+omni_range = 6.5
+omni_attenuation = 1.7
+shadow_enabled = false
+
+[node name="CeilingLuminaire1" type="MeshInstance3D" parent="Lights"]
+position = Vector3(0, 3.4, -3.5)
+mesh = SubResource("CeilingLuminaire1_mesh")
+metadata/keep_material = true
+
+[node name="CeilingDiffuser1" type="MeshInstance3D" parent="Lights"]
+position = Vector3(0, 3.335, -3.5)
+mesh = SubResource("CeilingDiffuser1_mesh")
+metadata/keep_material = true
+
+[node name="CeilingLight1" type="OmniLight3D" parent="Lights"]
+position = Vector3(0, 2.95, -3.5)
+light_color = Color(0.76, 0.84, 0.81, 1)
+light_energy = 0.7
+omni_range = 6.5
+omni_attenuation = 1.7
+shadow_enabled = false
+
+[node name="EntryWash" type="OmniLight3D" parent="Lights"]
+position = Vector3(0, 2.5, 7.5)
+light_color = Color(0.90, 0.71, 0.43, 1)
+light_energy = 1.1
+omni_range = 4.8
+omni_attenuation = 1.7
+shadow_enabled = false
+
+[node name="TerminalWash" type="OmniLight3D" parent="Lights"]
+position = Vector3(4.4, 2, -4.4)
+light_color = Color(0.3, 0.8, 0.77, 1)
+light_energy = 0.7
+omni_range = 3.3
+omni_attenuation = 1.7
+shadow_enabled = false
+
+[node name="WindowFill" type="OmniLight3D" parent="Lights"]
+position = Vector3(-4.9, 2.5, -3)
+light_color = Color(0.68, 0.77, 0.9, 1)
+light_energy = 0.8
+omni_range = 5
+omni_attenuation = 1.7
+shadow_enabled = false
+
+[node name="AisleStripe-2.1" type="MeshInstance3D" parent="Wayfinding"]
+position = Vector3(-2.1, 0.021, 0)
+mesh = SubResource("AisleStripe_2_1_mesh")
+metadata/keep_material = true
+
+[node name="AisleStripe2.1" type="MeshInstance3D" parent="Wayfinding"]
+position = Vector3(2.1, 0.021, 0)
+mesh = SubResource("AisleStripe2_1_mesh")
+metadata/keep_material = true
+
+[node name="EntryMark-0.6" type="MeshInstance3D" parent="Wayfinding"]
+position = Vector3(-0.6, 0.023, 6)
+mesh = SubResource("EntryMark_0_6_mesh")
+metadata/keep_material = true
+
+[node name="EntryMark0" type="MeshInstance3D" parent="Wayfinding"]
+position = Vector3(0, 0.023, 6)
+mesh = SubResource("EntryMark0_mesh")
+metadata/keep_material = true
+
+[node name="EntryMark0.6" type="MeshInstance3D" parent="Wayfinding"]
+position = Vector3(0.6, 0.023, 6)
+mesh = SubResource("EntryMark0_6_mesh")
+metadata/keep_material = true
+
+
+[node name="SideGlass00" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-6, 1.88, -4)
+mesh = SubResource("SideGlass00_mesh")
+metadata/keep_material = true
+
+[node name="SideGlass01" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-6, 1.88, 2)
+mesh = SubResource("SideGlass01_mesh")
+metadata/keep_material = true
+
+[node name="EndGlass00" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-4.8, 1.88, -7)
+mesh = SubResource("EndGlass00_mesh")
+metadata/keep_material = true
+
+[node name="EndGlass01" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.8, 1.88, -7)
+mesh = SubResource("EndGlass01_mesh")
+metadata/keep_material = true
+
+[node name="SideGlass20" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(6, 1.88, -4)
+mesh = SubResource("SideGlass20_mesh")
+metadata/keep_material = true
+
+[node name="SideGlass21" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(6, 1.88, 2)
+mesh = SubResource("SideGlass21_mesh")
+metadata/keep_material = true
+
+[node name="EndGlass20" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-4.8, 1.88, 7)
+mesh = SubResource("EndGlass20_mesh")
+metadata/keep_material = true
+
+[node name="EndGlass21" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4.8, 1.88, 7)
+mesh = SubResource("EndGlass21_mesh")
+metadata/keep_material = true
+
+[node name="FloorSeamX0" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-4, 0.019, 0)
+mesh = SubResource("FloorSeamX0_mesh")
+metadata/keep_material = true
+
+[node name="FloorSeamX1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(-2, 0.019, 0)
+mesh = SubResource("FloorSeamX1_mesh")
+metadata/keep_material = true
+
+[node name="FloorSeamX2" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.019, 0)
+mesh = SubResource("FloorSeamX2_mesh")
+metadata/keep_material = true
+
+[node name="FloorSeamX3" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(2, 0.019, 0)
+mesh = SubResource("FloorSeamX3_mesh")
+metadata/keep_material = true
+
+[node name="FloorSeamX4" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(4, 0.019, 0)
+mesh = SubResource("FloorSeamX4_mesh")
+metadata/keep_material = true
+
+[node name="FloorSeamZ0" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.019, -5)
+mesh = SubResource("FloorSeamZ0_mesh")
+metadata/keep_material = true
+
+[node name="FloorSeamZ1" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.019, -3)
+mesh = SubResource("FloorSeamZ1_mesh")
+metadata/keep_material = true
+
+[node name="FloorSeamZ2" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.019, -1)
+mesh = SubResource("FloorSeamZ2_mesh")
+metadata/keep_material = true
+
+[node name="FloorSeamZ3" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.019, 1)
+mesh = SubResource("FloorSeamZ3_mesh")
+metadata/keep_material = true
+
+[node name="FloorSeamZ4" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.019, 3)
+mesh = SubResource("FloorSeamZ4_mesh")
+metadata/keep_material = true
+
+[node name="FloorSeamZ5" type="MeshInstance3D" parent="Architecture"]
+position = Vector3(0, 0.019, 5)
+mesh = SubResource("FloorSeamZ5_mesh")
+metadata/keep_material = true
+
+[node name="Locker" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(5.36, 0.92, -1.2)
+mesh = SubResource("Locker_mesh")
+metadata/keep_material = true
+
+[node name="LockerDoor0" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(5.01, 0.94, -1.59)
+mesh = SubResource("LockerDoor0_mesh")
+metadata/keep_material = true
+
+[node name="LockerHandle0" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.975, 0.99, -1.3900000000000001)
+mesh = SubResource("LockerHandle0_mesh")
+metadata/keep_material = true
+
+[node name="LockerVent00" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.975, 1.35, -1.59)
+mesh = SubResource("LockerVent00_mesh")
+metadata/keep_material = true
+
+[node name="LockerVent01" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.975, 1.43, -1.59)
+mesh = SubResource("LockerVent01_mesh")
+metadata/keep_material = true
+
+[node name="LockerVent02" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.975, 1.51, -1.59)
+mesh = SubResource("LockerVent02_mesh")
+metadata/keep_material = true
+
+[node name="LockerDoor1" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(5.01, 0.94, -0.81)
+mesh = SubResource("LockerDoor1_mesh")
+metadata/keep_material = true
+
+[node name="LockerHandle1" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.975, 0.99, -0.6100000000000001)
+mesh = SubResource("LockerHandle1_mesh")
+metadata/keep_material = true
+
+[node name="LockerVent10" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.975, 1.35, -0.81)
+mesh = SubResource("LockerVent10_mesh")
+metadata/keep_material = true
+
+[node name="LockerVent11" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.975, 1.43, -0.81)
+mesh = SubResource("LockerVent11_mesh")
+metadata/keep_material = true
+
+[node name="LockerVent12" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.975, 1.51, -0.81)
+mesh = SubResource("LockerVent12_mesh")
+metadata/keep_material = true
+
+[node name="ShelfBack" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.63, 0.98, 1.9)
+mesh = SubResource("ShelfBack_mesh")
+metadata/keep_material = true
+
+[node name="ShelfBoard0" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.37, 0.32, 1.9)
+mesh = SubResource("ShelfBoard0_mesh")
+metadata/keep_material = true
+
+[node name="ShelfBoard1" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.37, 0.93, 1.9)
+mesh = SubResource("ShelfBoard1_mesh")
+metadata/keep_material = true
+
+[node name="ShelfBoard2" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.37, 1.55, 1.9)
+mesh = SubResource("ShelfBoard2_mesh")
+metadata/keep_material = true
+
+[node name="FileBinder0" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.29, 1.145, 1.2)
+mesh = SubResource("FileBinder0_mesh")
+metadata/keep_material = true
+
+[node name="BinderLabel0" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.123, 1.18, 1.2)
+mesh = SubResource("BinderLabel0_mesh")
+metadata/keep_material = true
+
+[node name="FileBinder1" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.29, 1.145, 1.5)
+mesh = SubResource("FileBinder1_mesh")
+metadata/keep_material = true
+
+[node name="BinderLabel1" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.123, 1.18, 1.5)
+mesh = SubResource("BinderLabel1_mesh")
+metadata/keep_material = true
+
+[node name="FileBinder2" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.29, 1.145, 1.8)
+mesh = SubResource("FileBinder2_mesh")
+metadata/keep_material = true
+
+[node name="BinderLabel2" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.123, 1.18, 1.8)
+mesh = SubResource("BinderLabel2_mesh")
+metadata/keep_material = true
+
+[node name="FileBinder3" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.29, 1.145, 2.1)
+mesh = SubResource("FileBinder3_mesh")
+metadata/keep_material = true
+
+[node name="BinderLabel3" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(-5.123, 1.18, 2.1)
+mesh = SubResource("BinderLabel3_mesh")
+metadata/keep_material = true
+
+[node name="WasteBin" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(5.3, 0.27, 3.3)
+mesh = SubResource("WasteBin_mesh")
+metadata/keep_material = true
+
+[node name="WasteRim" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(5.3, 0.55, 3.3)
+mesh = SubResource("WasteRim_mesh")
+metadata/keep_material = true
+
+[node name="BinOpening" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(5.3, 0.584, 3.3)
+mesh = SubResource("BinOpening_mesh")
+metadata/keep_material = true
+
+[node name="DeskLampBase" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.48, 0.773, 5.55)
+mesh = SubResource("DeskLampBase_mesh")
+metadata/keep_material = true
+
+[node name="DeskLampStem" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.48, 0.96, 5.55)
+mesh = SubResource("DeskLampStem_mesh")
+metadata/keep_material = true
+
+[node name="DeskLampHead" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.4, 1.14, 5.55)
+mesh = SubResource("DeskLampHead_mesh")
+metadata/keep_material = true
+
+[node name="DeskPapers" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.5, 0.767, 4.3)
+mesh = SubResource("DeskPapers_mesh")
+metadata/keep_material = true
+
+[node name="Keyboard" type="MeshInstance3D" parent="Furnishings"]
+position = Vector3(4.18, 0.78, 4.9)
+mesh = SubResource("Keyboard_mesh")
+metadata/keep_material = true

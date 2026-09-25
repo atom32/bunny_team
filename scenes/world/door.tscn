@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/door.gd" id="1_door"]
+
+[sub_resource type="StandardMaterial3D" id="DoorMaterial"]
+albedo_color = Color(0.105882, 0.184314, 0.211765, 1)
+metallic = 0.65
+roughness = 0.32
+
+[sub_resource type="BoxMesh" id="DoorMesh"]
+material = SubResource("DoorMaterial")
+size = Vector3(2.2, 2.4, 0.24)
+
+[sub_resource type="BoxShape3D" id="DoorShape"]
+size = Vector3(2.2, 2.4, 0.24)
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1_door")
+
+[node name="DoorLeaf" type="Node3D" parent="."]
+
+[node name="DoorBody" type="StaticBody3D" parent="DoorLeaf"]
+position = Vector3(1.1, 1.2, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="DoorMesh" type="MeshInstance3D" parent="DoorLeaf/DoorBody"]
+mesh = SubResource("DoorMesh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLeaf/DoorBody"]
+shape = SubResource("DoorShape")
+
+[node name="DoorLabel" type="Label3D" parent="."]
+position = Vector3(1.1, 2.72, 0)
+text = "ACCESS"
+font_size = 22
+outline_size = 7
+modulate = Color(0.368627, 0.92549, 0.878431, 1)
+billboard = 1
