@@ -1,0 +1,1034 @@
+{
+  "face3_main": {
+    "textures": {
+      "_1st_ShadeMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main_sub.png",
+      "_2nd_ShadeMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main_Shd2.png",
+      "_BaseMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main.png",
+      "_BumpMap": null,
+      "_DetailAlbedoMap": null,
+      "_DetailMask": null,
+      "_DetailNormalMap": null,
+      "_EmissionMap": null,
+      "_MainTex": "UNRESOLVED",
+      "_MatCap_Sampler": null,
+      "_MetallicGlossMap": null,
+      "_NormalMap": null,
+      "_NormalMapForMatCap": null,
+      "_OcclusionMap": null,
+      "_Outline_Sampler": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_lpow.png",
+      "_ParallaxMap": null,
+      "_Set_HighColorMask": null,
+      "_Set_RimLightMask": null,
+      "_ShadingGradeMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main_spow.png"
+    },
+    "floats": {
+      "_1st_ShadeColor_Feather": 0.0001,
+      "_1st_ShadeColor_Step": 0.5,
+      "_2nd_ShadeColor_Feather": 0.0001,
+      "_2nd_ShadeColor_Step": 0.51,
+      "_Add_Antipodean_RimLight": 0.0,
+      "_Ap_RimLight_FeatherOff": 0.0,
+      "_Ap_RimLight_Power": 0.1,
+      "_BumpScale": 1.0,
+      "_CullMode": 2.0,
+      "_Cutoff": 0.5,
+      "_DetailNormalMapScale": 1.0,
+      "_DstBlend": 0.0,
+      "_Farthest_Distance": 0.0,
+      "_GI_Intensity": 0.0,
+      "_GlossMapScale": 1.0,
+      "_Glossiness": 0.5,
+      "_GlossyReflections": 1.0,
+      "_HighColor_Power": 0.0,
+      "_Is_1st_ShadeColorOnly": 0.0,
+      "_Is_BlendAddToHiColor": 0.0,
+      "_Is_BlendAddToMatCap": 1.0,
+      "_Is_BrendBaseColor": 0.0,
+      "_Is_LightColor_1st_Shade": 1.0,
+      "_Is_LightColor_2nd_Shade": 1.0,
+      "_Is_LightColor_Ap_RimLight": 1.0,
+      "_Is_LightColor_Base": 1.0,
+      "_Is_LightColor_HighColor": 1.0,
+      "_Is_LightColor_MatCap": 1.0,
+      "_Is_LightColor_RimLight": 1.0,
+      "_Is_NormalMap": 0.0,
+      "_Is_NormalMapForMatCap": 0.0,
+      "_Is_NormalMapToHighColor": 0.0,
+      "_Is_NormalMapToRimLight": 0.0,
+      "_Is_SpecularToHighColor": 0.0,
+      "_Is_UseTweakHighColorOnShadow": 0.0,
+      "_Is_UseTweakMatCapOnShadow": 0.0,
+      "_LightDirection_MaskOn": 0.0,
+      "_MatCap": 0.0,
+      "_Metallic": 0.0,
+      "_Mode": 0.0,
+      "_Nearest_Distance": 0.0,
+      "_OcclusionStrength": 1.0,
+      "_Offset_Z": 0.0,
+      "_Outline_Width": 1.0,
+      "_Parallax": 0.02,
+      "_RimLight": 0.0,
+      "_RimLight_FeatherOff": 0.0,
+      "_RimLight_InsideMask": 0.0001,
+      "_RimLight_Power": 0.1,
+      "_Rotate_MatCapUV": 0.0,
+      "_Rotate_NormalMapForMatCapUV": 0.0,
+      "_Set_SystemShadowsToBase": 1.0,
+      "_SmoothnessTextureChannel": 0.0,
+      "_SpecularHighlights": 1.0,
+      "_SrcBlend": 1.0,
+      "_TweakHighColorOnShadow": 0.0,
+      "_TweakMatCapOnShadow": 0.0,
+      "_Tweak_HighColorMaskLevel": 0.0,
+      "_Tweak_LightDirection_MaskLevel": 0.0,
+      "_Tweak_MatCapUV": 0.0,
+      "_Tweak_RimLightMaskLevel": 0.0,
+      "_Tweak_SystemShadowsLevel": 0.0,
+      "_UVSec": 0.0,
+      "_ZWrite": 1.0
+    },
+    "colors": {
+      "_1st_ShadeColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_2nd_ShadeColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Ap_RimLightColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_BaseColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_EmissionColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_HighColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_MatCapColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Outline_Color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_RimLightColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "texture_import": {
+      "_1st_ShadeMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_2nd_ShadeMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_BaseMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_Outline_Sampler": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_ShadingGradeMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      }
+    }
+  },
+  "Unity2016_C_Add": {
+    "textures": {
+      "_1st_ShadeMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Add_Shd.png",
+      "_2nd_ShadeMap": null,
+      "_BaseMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Add.png",
+      "_BumpMap": null,
+      "_DetailAlbedoMap": null,
+      "_DetailMask": null,
+      "_DetailNormalMap": null,
+      "_EmissionMap": null,
+      "_MainTex": "UNRESOLVED",
+      "_MatCap_Sampler": null,
+      "_MetallicGlossMap": null,
+      "_NormalMap": null,
+      "_NormalMapForMatCap": null,
+      "_OcclusionMap": null,
+      "_Outline_Sampler": null,
+      "_ParallaxMap": null,
+      "_Set_HighColorMask": null,
+      "_Set_RimLightMask": null,
+      "_ShadingGradeMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Add_Spow.png"
+    },
+    "floats": {
+      "_1st_ShadeColor_Feather": 0.0001,
+      "_1st_ShadeColor_Step": 0.65,
+      "_2nd_ShadeColor_Feather": 0.0001,
+      "_2nd_ShadeColor_Step": 0.0,
+      "_Add_Antipodean_RimLight": 0.0,
+      "_Ap_RimLight_FeatherOff": 0.0,
+      "_Ap_RimLight_Power": 0.1,
+      "_BumpScale": 1.0,
+      "_CullMode": 2.0,
+      "_Cutoff": 0.5,
+      "_DetailNormalMapScale": 1.0,
+      "_DstBlend": 0.0,
+      "_Farthest_Distance": 0.0,
+      "_GI_Intensity": 0.0,
+      "_GlossMapScale": 1.0,
+      "_Glossiness": 0.5,
+      "_GlossyReflections": 1.0,
+      "_HighColor_Power": 0.0,
+      "_Is_1st_ShadeColorOnly": 0.0,
+      "_Is_BlendAddToHiColor": 0.0,
+      "_Is_BlendAddToMatCap": 1.0,
+      "_Is_BrendBaseColor": 0.0,
+      "_Is_LightColor_1st_Shade": 1.0,
+      "_Is_LightColor_2nd_Shade": 1.0,
+      "_Is_LightColor_Ap_RimLight": 1.0,
+      "_Is_LightColor_Base": 1.0,
+      "_Is_LightColor_HighColor": 1.0,
+      "_Is_LightColor_MatCap": 1.0,
+      "_Is_LightColor_RimLight": 1.0,
+      "_Is_NormalMap": 0.0,
+      "_Is_NormalMapForMatCap": 0.0,
+      "_Is_NormalMapToHighColor": 0.0,
+      "_Is_NormalMapToRimLight": 0.0,
+      "_Is_SpecularToHighColor": 0.0,
+      "_Is_UseTweakHighColorOnShadow": 0.0,
+      "_Is_UseTweakMatCapOnShadow": 0.0,
+      "_LightDirection_MaskOn": 0.0,
+      "_MatCap": 0.0,
+      "_Metallic": 0.0,
+      "_Mode": 0.0,
+      "_Nearest_Distance": 0.0,
+      "_OcclusionStrength": 1.0,
+      "_Offset_Z": 0.0,
+      "_Outline_Width": 1.0,
+      "_Parallax": 0.02,
+      "_RimLight": 0.0,
+      "_RimLight_FeatherOff": 0.0,
+      "_RimLight_InsideMask": 0.0001,
+      "_RimLight_Power": 0.1,
+      "_Rotate_MatCapUV": 0.0,
+      "_Rotate_NormalMapForMatCapUV": 0.0,
+      "_Set_SystemShadowsToBase": 1.0,
+      "_SmoothnessTextureChannel": 0.0,
+      "_SpecularHighlights": 1.0,
+      "_SrcBlend": 1.0,
+      "_TweakHighColorOnShadow": 0.0,
+      "_TweakMatCapOnShadow": 0.0,
+      "_Tweak_HighColorMaskLevel": 0.0,
+      "_Tweak_LightDirection_MaskLevel": 0.0,
+      "_Tweak_MatCapUV": 0.0,
+      "_Tweak_RimLightMaskLevel": 0.0,
+      "_Tweak_SystemShadowsLevel": 0.0,
+      "_UVSec": 0.0,
+      "_ZWrite": 1.0
+    },
+    "colors": {
+      "_1st_ShadeColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_2nd_ShadeColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_Ap_RimLightColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_BaseColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_EmissionColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_HighColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_MatCapColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Outline_Color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_RimLightColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "texture_import": {
+      "_1st_ShadeMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_BaseMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_ShadingGradeMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      }
+    }
+  },
+  "Unity2016_C_Body": {
+    "textures": {
+      "_1st_ShadeMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Body_Shd.png",
+      "_2nd_ShadeMap": null,
+      "_BaseMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Body.png",
+      "_BumpMap": null,
+      "_DetailAlbedoMap": null,
+      "_DetailMask": null,
+      "_DetailNormalMap": null,
+      "_EmissionMap": null,
+      "_MainTex": "UNRESOLVED",
+      "_MatCap_Sampler": null,
+      "_MetallicGlossMap": null,
+      "_NormalMap": null,
+      "_NormalMapForMatCap": null,
+      "_OcclusionMap": null,
+      "_Outline_Sampler": null,
+      "_ParallaxMap": null,
+      "_Set_HighColorMask": null,
+      "_Set_RimLightMask": null,
+      "_ShadingGradeMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Body_spow.png"
+    },
+    "floats": {
+      "_1st_ShadeColor_Feather": 0.0001,
+      "_1st_ShadeColor_Step": 0.65,
+      "_2nd_ShadeColor_Feather": 0.0001,
+      "_2nd_ShadeColor_Step": 0.0,
+      "_Add_Antipodean_RimLight": 0.0,
+      "_Ap_RimLight_FeatherOff": 0.0,
+      "_Ap_RimLight_Power": 0.1,
+      "_BumpScale": 1.0,
+      "_CullMode": 2.0,
+      "_Cutoff": 0.5,
+      "_DetailNormalMapScale": 1.0,
+      "_DstBlend": 0.0,
+      "_Farthest_Distance": 0.0,
+      "_GI_Intensity": 0.0,
+      "_GlossMapScale": 1.0,
+      "_Glossiness": 0.5,
+      "_GlossyReflections": 1.0,
+      "_HighColor_Power": 0.0,
+      "_Is_1st_ShadeColorOnly": 0.0,
+      "_Is_BlendAddToHiColor": 0.0,
+      "_Is_BlendAddToMatCap": 1.0,
+      "_Is_BrendBaseColor": 0.0,
+      "_Is_LightColor_1st_Shade": 1.0,
+      "_Is_LightColor_2nd_Shade": 1.0,
+      "_Is_LightColor_Ap_RimLight": 1.0,
+      "_Is_LightColor_Base": 1.0,
+      "_Is_LightColor_HighColor": 1.0,
+      "_Is_LightColor_MatCap": 1.0,
+      "_Is_LightColor_RimLight": 1.0,
+      "_Is_NormalMap": 0.0,
+      "_Is_NormalMapForMatCap": 0.0,
+      "_Is_NormalMapToHighColor": 0.0,
+      "_Is_NormalMapToRimLight": 0.0,
+      "_Is_SpecularToHighColor": 0.0,
+      "_Is_UseTweakHighColorOnShadow": 0.0,
+      "_Is_UseTweakMatCapOnShadow": 0.0,
+      "_LightDirection_MaskOn": 0.0,
+      "_MatCap": 0.0,
+      "_Metallic": 0.0,
+      "_Mode": 0.0,
+      "_Nearest_Distance": 0.0,
+      "_OcclusionStrength": 1.0,
+      "_Offset_Z": 0.0,
+      "_Outline_Width": 1.0,
+      "_Parallax": 0.02,
+      "_RimLight": 0.0,
+      "_RimLight_FeatherOff": 0.0,
+      "_RimLight_InsideMask": 0.0001,
+      "_RimLight_Power": 0.1,
+      "_Rotate_MatCapUV": 0.0,
+      "_Rotate_NormalMapForMatCapUV": 0.0,
+      "_Set_SystemShadowsToBase": 1.0,
+      "_SmoothnessTextureChannel": 0.0,
+      "_SpecularHighlights": 1.0,
+      "_SrcBlend": 1.0,
+      "_TweakHighColorOnShadow": 0.0,
+      "_TweakMatCapOnShadow": 0.0,
+      "_Tweak_HighColorMaskLevel": 0.0,
+      "_Tweak_LightDirection_MaskLevel": 0.0,
+      "_Tweak_MatCapUV": 0.0,
+      "_Tweak_RimLightMaskLevel": 0.0,
+      "_Tweak_SystemShadowsLevel": 0.0,
+      "_UVSec": 0.0,
+      "_ZWrite": 1.0
+    },
+    "colors": {
+      "_1st_ShadeColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_2nd_ShadeColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_Ap_RimLightColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_BaseColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_EmissionColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_HighColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_MatCapColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Outline_Color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_RimLightColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "texture_import": {
+      "_1st_ShadeMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_BaseMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_ShadingGradeMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      }
+    }
+  },
+  "Unity2016_C_Hair_Spow": {
+    "textures": {
+      "_1st_ShadeMap": null,
+      "_2nd_ShadeMap": null,
+      "_BaseMap": null,
+      "_BumpMap": null,
+      "_DetailAlbedoMap": null,
+      "_DetailMask": null,
+      "_DetailNormalMap": null,
+      "_EmissionMap": null,
+      "_MainTex": "UNRESOLVED",
+      "_MatCap_Sampler": null,
+      "_MetallicGlossMap": null,
+      "_NormalMap": null,
+      "_NormalMapForMatCap": null,
+      "_OcclusionMap": null,
+      "_Outline_Sampler": null,
+      "_ParallaxMap": null,
+      "_Set_HighColorMask": null,
+      "_Set_RimLightMask": null,
+      "_ShadingGradeMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Hair_Spow.png"
+    },
+    "floats": {
+      "_1st_ShadeColor_Feather": 0.0001,
+      "_1st_ShadeColor_Step": 0.5,
+      "_2nd_ShadeColor_Feather": 0.0001,
+      "_2nd_ShadeColor_Step": 0.0,
+      "_Add_Antipodean_RimLight": 0.0,
+      "_Ap_RimLight_FeatherOff": 0.0,
+      "_Ap_RimLight_Power": 0.1,
+      "_BumpScale": 1.0,
+      "_CullMode": 2.0,
+      "_Cutoff": 0.5,
+      "_DetailNormalMapScale": 1.0,
+      "_DstBlend": 0.0,
+      "_Farthest_Distance": 0.0,
+      "_GI_Intensity": 0.0,
+      "_GlossMapScale": 1.0,
+      "_Glossiness": 0.5,
+      "_GlossyReflections": 1.0,
+      "_HighColor_Power": 0.0,
+      "_Is_1st_ShadeColorOnly": 0.0,
+      "_Is_BlendAddToHiColor": 0.0,
+      "_Is_BlendAddToMatCap": 1.0,
+      "_Is_BrendBaseColor": 0.0,
+      "_Is_LightColor_1st_Shade": 1.0,
+      "_Is_LightColor_2nd_Shade": 1.0,
+      "_Is_LightColor_Ap_RimLight": 1.0,
+      "_Is_LightColor_Base": 1.0,
+      "_Is_LightColor_HighColor": 1.0,
+      "_Is_LightColor_MatCap": 1.0,
+      "_Is_LightColor_RimLight": 1.0,
+      "_Is_NormalMap": 0.0,
+      "_Is_NormalMapForMatCap": 0.0,
+      "_Is_NormalMapToHighColor": 0.0,
+      "_Is_NormalMapToRimLight": 0.0,
+      "_Is_SpecularToHighColor": 0.0,
+      "_Is_UseTweakHighColorOnShadow": 0.0,
+      "_Is_UseTweakMatCapOnShadow": 0.0,
+      "_LightDirection_MaskOn": 0.0,
+      "_MatCap": 0.0,
+      "_Metallic": 0.0,
+      "_Mode": 0.0,
+      "_Nearest_Distance": 0.0,
+      "_OcclusionStrength": 1.0,
+      "_Offset_Z": 0.0,
+      "_Outline_Width": 1.0,
+      "_Parallax": 0.02,
+      "_RimLight": 0.0,
+      "_RimLight_FeatherOff": 0.0,
+      "_RimLight_InsideMask": 0.0001,
+      "_RimLight_Power": 0.1,
+      "_Rotate_MatCapUV": 0.0,
+      "_Rotate_NormalMapForMatCapUV": 0.0,
+      "_Set_SystemShadowsToBase": 1.0,
+      "_SmoothnessTextureChannel": 0.0,
+      "_SpecularHighlights": 1.0,
+      "_SrcBlend": 1.0,
+      "_TweakHighColorOnShadow": 0.0,
+      "_TweakMatCapOnShadow": 0.0,
+      "_Tweak_HighColorMaskLevel": 0.0,
+      "_Tweak_LightDirection_MaskLevel": 0.0,
+      "_Tweak_MatCapUV": 0.0,
+      "_Tweak_RimLightMaskLevel": 0.0,
+      "_Tweak_SystemShadowsLevel": 0.0,
+      "_UVSec": 0.0,
+      "_ZWrite": 1.0
+    },
+    "colors": {
+      "_1st_ShadeColor": {
+        "r": 0.53333336,
+        "g": 0.4901961,
+        "b": 0.48235297,
+        "a": 1.0
+      },
+      "_2nd_ShadeColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Ap_RimLightColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_BaseColor": {
+        "r": 0.93725497,
+        "g": 0.8313726,
+        "b": 0.6784314,
+        "a": 1.0
+      },
+      "_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_EmissionColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_HighColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_MatCapColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Outline_Color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_RimLightColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "texture_import": {
+      "_ShadingGradeMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      }
+    }
+  },
+  "Unity2016_C_Skin": {
+    "textures": {
+      "_1st_ShadeMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Skin_Shd.png",
+      "_2nd_ShadeMap": null,
+      "_BaseMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_skin.png",
+      "_BumpMap": null,
+      "_DetailAlbedoMap": null,
+      "_DetailMask": null,
+      "_DetailNormalMap": null,
+      "_EmissionMap": null,
+      "_MainTex": "UNRESOLVED",
+      "_MatCap_Sampler": null,
+      "_MetallicGlossMap": null,
+      "_NormalMap": null,
+      "_NormalMapForMatCap": null,
+      "_OcclusionMap": null,
+      "_Outline_Sampler": null,
+      "_ParallaxMap": null,
+      "_Set_HighColorMask": null,
+      "_Set_RimLightMask": null,
+      "_ShadingGradeMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_skin_spow.png"
+    },
+    "floats": {
+      "_1st_ShadeColor_Feather": 0.0001,
+      "_1st_ShadeColor_Step": 0.5,
+      "_2nd_ShadeColor_Feather": 0.0001,
+      "_2nd_ShadeColor_Step": 0.0,
+      "_Add_Antipodean_RimLight": 0.0,
+      "_Ap_RimLight_FeatherOff": 0.0,
+      "_Ap_RimLight_Power": 0.1,
+      "_BumpScale": 1.0,
+      "_CullMode": 2.0,
+      "_Cutoff": 0.5,
+      "_DetailNormalMapScale": 1.0,
+      "_DstBlend": 0.0,
+      "_Farthest_Distance": 0.0,
+      "_GI_Intensity": 0.0,
+      "_GlossMapScale": 1.0,
+      "_Glossiness": 0.5,
+      "_GlossyReflections": 1.0,
+      "_HighColor_Power": 0.0,
+      "_Is_1st_ShadeColorOnly": 0.0,
+      "_Is_BlendAddToHiColor": 0.0,
+      "_Is_BlendAddToMatCap": 1.0,
+      "_Is_BrendBaseColor": 0.0,
+      "_Is_LightColor_1st_Shade": 1.0,
+      "_Is_LightColor_2nd_Shade": 1.0,
+      "_Is_LightColor_Ap_RimLight": 1.0,
+      "_Is_LightColor_Base": 1.0,
+      "_Is_LightColor_HighColor": 1.0,
+      "_Is_LightColor_MatCap": 1.0,
+      "_Is_LightColor_RimLight": 1.0,
+      "_Is_NormalMap": 0.0,
+      "_Is_NormalMapForMatCap": 0.0,
+      "_Is_NormalMapToHighColor": 0.0,
+      "_Is_NormalMapToRimLight": 0.0,
+      "_Is_SpecularToHighColor": 0.0,
+      "_Is_UseTweakHighColorOnShadow": 0.0,
+      "_Is_UseTweakMatCapOnShadow": 0.0,
+      "_LightDirection_MaskOn": 0.0,
+      "_MatCap": 0.0,
+      "_Metallic": 0.0,
+      "_Mode": 0.0,
+      "_Nearest_Distance": 0.0,
+      "_OcclusionStrength": 1.0,
+      "_Offset_Z": 0.0,
+      "_Outline_Width": 1.0,
+      "_Parallax": 0.02,
+      "_RimLight": 0.0,
+      "_RimLight_FeatherOff": 0.0,
+      "_RimLight_InsideMask": 0.0001,
+      "_RimLight_Power": 0.1,
+      "_Rotate_MatCapUV": 0.0,
+      "_Rotate_NormalMapForMatCapUV": 0.0,
+      "_Set_SystemShadowsToBase": 1.0,
+      "_SmoothnessTextureChannel": 0.0,
+      "_SpecularHighlights": 1.0,
+      "_SrcBlend": 1.0,
+      "_TweakHighColorOnShadow": 0.0,
+      "_TweakMatCapOnShadow": 0.0,
+      "_Tweak_HighColorMaskLevel": 0.0,
+      "_Tweak_LightDirection_MaskLevel": 0.0,
+      "_Tweak_MatCapUV": 0.0,
+      "_Tweak_RimLightMaskLevel": 0.0,
+      "_Tweak_SystemShadowsLevel": 0.0,
+      "_UVSec": 0.0,
+      "_ZWrite": 1.0
+    },
+    "colors": {
+      "_1st_ShadeColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_2nd_ShadeColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Ap_RimLightColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_BaseColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_EmissionColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_HighColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_MatCapColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Outline_Color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_RimLightColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    "texture_import": {
+      "_1st_ShadeMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_BaseMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_ShadingGradeMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      }
+    }
+  },
+  "Unity2016_Wep": {
+    "textures": {
+      "_1st_ShadeMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep_Shd.png",
+      "_2nd_ShadeMap": null,
+      "_BaseMap": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep.png",
+      "_BumpMap": null,
+      "_DetailAlbedoMap": null,
+      "_DetailMask": null,
+      "_DetailNormalMap": null,
+      "_EmissionMap": "UNRESOLVED",
+      "_MainTex": "UNRESOLVED",
+      "_MatCap_Sampler": null,
+      "_MetallicGlossMap": null,
+      "_NormalMap": null,
+      "_NormalMapForMatCap": null,
+      "_OcclusionMap": null,
+      "_Outline_Sampler": null,
+      "_ParallaxMap": null,
+      "_Set_HighColorMask": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep_Spec.png",
+      "_Set_RimLightMask": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep_Spec.png",
+      "_ShadingGradeMap": null
+    },
+    "floats": {
+      "_1st_ShadeColor_Feather": 0.0001,
+      "_1st_ShadeColor_Step": 0.5,
+      "_2nd_ShadeColor_Feather": 0.0001,
+      "_2nd_ShadeColor_Step": 0.0,
+      "_Add_Antipodean_RimLight": 0.0,
+      "_Ap_RimLight_FeatherOff": 0.0,
+      "_Ap_RimLight_Power": 0.6,
+      "_BumpScale": 1.0,
+      "_CullMode": 2.0,
+      "_Cutoff": 0.5,
+      "_DetailNormalMapScale": 1.0,
+      "_DstBlend": 0.0,
+      "_Farthest_Distance": 0.0,
+      "_GI_Intensity": 0.0,
+      "_GlossMapScale": 1.0,
+      "_Glossiness": 0.5,
+      "_GlossyReflections": 1.0,
+      "_HighColor_Power": 0.038,
+      "_Is_1st_ShadeColorOnly": 0.0,
+      "_Is_BlendAddToHiColor": 0.0,
+      "_Is_BlendAddToMatCap": 1.0,
+      "_Is_BrendBaseColor": 0.0,
+      "_Is_LightColor_1st_Shade": 1.0,
+      "_Is_LightColor_2nd_Shade": 1.0,
+      "_Is_LightColor_Ap_RimLight": 1.0,
+      "_Is_LightColor_Base": 1.0,
+      "_Is_LightColor_HighColor": 1.0,
+      "_Is_LightColor_MatCap": 1.0,
+      "_Is_LightColor_RimLight": 1.0,
+      "_Is_NormalMap": 0.0,
+      "_Is_NormalMapForMatCap": 0.0,
+      "_Is_NormalMapToHighColor": 0.0,
+      "_Is_NormalMapToRimLight": 0.0,
+      "_Is_SpecularToHighColor": 0.0,
+      "_Is_UseTweakHighColorOnShadow": 0.0,
+      "_Is_UseTweakMatCapOnShadow": 0.0,
+      "_LightDirection_MaskOn": 0.0,
+      "_MatCap": 0.0,
+      "_Metallic": 0.0,
+      "_Mode": 0.0,
+      "_Nearest_Distance": 0.0,
+      "_OcclusionStrength": 1.0,
+      "_Offset_Z": 0.0,
+      "_Outline_Width": 1.0,
+      "_Parallax": 0.02,
+      "_RimLight": 1.0,
+      "_RimLight_FeatherOff": 0.0,
+      "_RimLight_InsideMask": 0.0001,
+      "_RimLight_Power": 0.537,
+      "_Rotate_MatCapUV": 0.0,
+      "_Rotate_NormalMapForMatCapUV": 0.0,
+      "_Set_SystemShadowsToBase": 1.0,
+      "_SmoothnessTextureChannel": 0.0,
+      "_SpecularHighlights": 1.0,
+      "_SrcBlend": 1.0,
+      "_TweakHighColorOnShadow": 0.0,
+      "_TweakMatCapOnShadow": 0.0,
+      "_Tweak_HighColorMaskLevel": 0.0,
+      "_Tweak_LightDirection_MaskLevel": 0.0,
+      "_Tweak_MatCapUV": 0.0,
+      "_Tweak_RimLightMaskLevel": 0.0,
+      "_Tweak_SystemShadowsLevel": 0.0,
+      "_UVSec": 0.0,
+      "_ZWrite": 1.0
+    },
+    "colors": {
+      "_1st_ShadeColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_2nd_ShadeColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Ap_RimLightColor": {
+        "r": 1.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_BaseColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_EmissionColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_HighColor": {
+        "r": 0.0,
+        "g": 1.0,
+        "b": 0.9168353,
+        "a": 1.0
+      },
+      "_MatCapColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "_Outline_Color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "_RimLightColor": {
+        "r": 1.0,
+        "g": 0.0,
+        "b": 0.22758627,
+        "a": 1.0
+      }
+    },
+    "texture_import": {
+      "_1st_ShadeMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_BaseMap": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_Set_HighColorMask": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      },
+      "_Set_RimLightMask": {
+        "sRGBTexture": "1",
+        "textureType": "0",
+        "filterMode": "-1",
+        "wrapMode": "Unity default"
+      }
+    }
+  }
+}

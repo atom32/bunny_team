@@ -1,0 +1,348 @@
+{
+  "mesh_attributes": {
+    "Mesh.012": [
+      {
+        "POSITION": 424,
+        "NORMAL": 424,
+        "TEXCOORD_0": 424,
+        "TEXCOORD_1": 424,
+        "TEXCOORD_2": 424,
+        "JOINTS_0": 424,
+        "WEIGHTS_0": 424
+      }
+    ],
+    "Mesh.014": [
+      {
+        "POSITION": 3802,
+        "NORMAL": 3802,
+        "TEXCOORD_0": 3802,
+        "TEXCOORD_1": 3802,
+        "TEXCOORD_2": 3802,
+        "JOINTS_0": 3802,
+        "WEIGHTS_0": 3802
+      }
+    ],
+    "Mesh.008": [
+      {
+        "POSITION": 1819,
+        "NORMAL": 1819,
+        "TEXCOORD_0": 1819,
+        "TEXCOORD_1": 1819,
+        "TEXCOORD_2": 1819,
+        "JOINTS_0": 1819,
+        "WEIGHTS_0": 1819
+      }
+    ],
+    "Mesh.011": [
+      {
+        "POSITION": 423,
+        "NORMAL": 423,
+        "TEXCOORD_0": 423,
+        "TEXCOORD_1": 423,
+        "TEXCOORD_2": 423,
+        "JOINTS_0": 423,
+        "WEIGHTS_0": 423
+      }
+    ],
+    "Mesh.009": [
+      {
+        "POSITION": 716,
+        "NORMAL": 716,
+        "TEXCOORD_0": 716,
+        "TEXCOORD_1": 716,
+        "TEXCOORD_2": 716,
+        "JOINTS_0": 716,
+        "WEIGHTS_0": 716
+      }
+    ],
+    "Mesh.001": [
+      {
+        "POSITION": 322,
+        "NORMAL": 322,
+        "TEXCOORD_0": 322,
+        "TEXCOORD_1": 322,
+        "TEXCOORD_2": 322,
+        "JOINTS_0": 322,
+        "WEIGHTS_0": 322
+      }
+    ],
+    "Mesh.022": [
+      {
+        "POSITION": 120,
+        "NORMAL": 120,
+        "TEXCOORD_0": 120,
+        "TEXCOORD_1": 120,
+        "TEXCOORD_2": 120,
+        "JOINTS_0": 120,
+        "WEIGHTS_0": 120
+      }
+    ],
+    "Mesh.015": [
+      {
+        "POSITION": 734,
+        "NORMAL": 734,
+        "TEXCOORD_0": 734,
+        "TEXCOORD_1": 734,
+        "TEXCOORD_2": 734,
+        "JOINTS_0": 734,
+        "WEIGHTS_0": 734
+      }
+    ],
+    "Mesh.019": [
+      {
+        "POSITION": 2787,
+        "NORMAL": 2787,
+        "TEXCOORD_0": 2787,
+        "TEXCOORD_1": 2787,
+        "TEXCOORD_2": 2787,
+        "JOINTS_0": 2787,
+        "WEIGHTS_0": 2787
+      }
+    ],
+    "Mesh.020": [
+      {
+        "POSITION": 1648,
+        "NORMAL": 1648,
+        "TEXCOORD_0": 1648,
+        "TEXCOORD_1": 1648,
+        "TEXCOORD_2": 1648,
+        "JOINTS_0": 1648,
+        "WEIGHTS_0": 1648
+      }
+    ],
+    "Mesh.021": [
+      {
+        "POSITION": 142,
+        "NORMAL": 142,
+        "TEXCOORD_0": 142,
+        "TEXCOORD_1": 142,
+        "TEXCOORD_2": 142,
+        "JOINTS_0": 142,
+        "WEIGHTS_0": 142
+      }
+    ],
+    "Mesh.018": [
+      {
+        "POSITION": 1307,
+        "NORMAL": 1307,
+        "TEXCOORD_0": 1307,
+        "TEXCOORD_1": 1307,
+        "TEXCOORD_2": 1307,
+        "JOINTS_0": 1307,
+        "WEIGHTS_0": 1307
+      }
+    ],
+    "head_Def": [
+      {
+        "POSITION": 2370,
+        "NORMAL": 2370,
+        "TEXCOORD_0": 2370,
+        "JOINTS_0": 2370,
+        "WEIGHTS_0": 2370
+      }
+    ],
+    "Mesh.023": [
+      {
+        "POSITION": 64,
+        "NORMAL": 64,
+        "TEXCOORD_0": 64,
+        "TEXCOORD_1": 64,
+        "TEXCOORD_2": 64,
+        "JOINTS_0": 64,
+        "WEIGHTS_0": 64
+      }
+    ],
+    "Mesh": [
+      {
+        "POSITION": 840,
+        "NORMAL": 840,
+        "TEXCOORD_0": 840,
+        "TEXCOORD_1": 840,
+        "TEXCOORD_2": 840,
+        "JOINTS_0": 840,
+        "WEIGHTS_0": 840
+      }
+    ],
+    "Mesh.004": [
+      {
+        "POSITION": 929,
+        "NORMAL": 929,
+        "TEXCOORD_0": 929,
+        "TEXCOORD_1": 929,
+        "TEXCOORD_2": 929,
+        "JOINTS_0": 929,
+        "WEIGHTS_0": 929
+      }
+    ],
+    "Mesh.016": [
+      {
+        "POSITION": 918,
+        "NORMAL": 918,
+        "TEXCOORD_0": 918,
+        "TEXCOORD_1": 918,
+        "TEXCOORD_2": 918,
+        "JOINTS_0": 918,
+        "WEIGHTS_0": 918
+      }
+    ],
+    "Mesh.003": [
+      {
+        "POSITION": 511,
+        "NORMAL": 511,
+        "TEXCOORD_0": 511,
+        "TEXCOORD_1": 511,
+        "TEXCOORD_2": 511,
+        "JOINTS_0": 511,
+        "WEIGHTS_0": 511
+      }
+    ],
+    "Mesh.010": [
+      {
+        "POSITION": 746,
+        "NORMAL": 746,
+        "TEXCOORD_0": 746,
+        "TEXCOORD_1": 746,
+        "TEXCOORD_2": 746,
+        "JOINTS_0": 746,
+        "WEIGHTS_0": 746
+      }
+    ],
+    "Mesh.007": [
+      {
+        "POSITION": 400,
+        "NORMAL": 400,
+        "TEXCOORD_0": 400,
+        "TEXCOORD_1": 400,
+        "TEXCOORD_2": 400,
+        "JOINTS_0": 400,
+        "WEIGHTS_0": 400
+      }
+    ],
+    "Mesh.005": [
+      {
+        "POSITION": 860,
+        "NORMAL": 860,
+        "TEXCOORD_0": 860,
+        "TEXCOORD_1": 860,
+        "TEXCOORD_2": 860,
+        "JOINTS_0": 860,
+        "WEIGHTS_0": 860
+      }
+    ],
+    "Mesh.006": [
+      {
+        "POSITION": 342,
+        "NORMAL": 342,
+        "TEXCOORD_0": 342,
+        "TEXCOORD_1": 342,
+        "TEXCOORD_2": 342,
+        "JOINTS_0": 342,
+        "WEIGHTS_0": 342
+      }
+    ],
+    "Mesh.002": [
+      {
+        "POSITION": 2936,
+        "NORMAL": 2936,
+        "TEXCOORD_0": 2936,
+        "TEXCOORD_1": 2936,
+        "TEXCOORD_2": 2936,
+        "JOINTS_0": 2936,
+        "WEIGHTS_0": 2936
+      }
+    ],
+    "Mesh.013": [
+      {
+        "POSITION": 272,
+        "NORMAL": 272,
+        "TEXCOORD_0": 272,
+        "TEXCOORD_1": 272,
+        "TEXCOORD_2": 272,
+        "JOINTS_0": 272,
+        "WEIGHTS_0": 272
+      }
+    ]
+  },
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Battle_Unity2016_C_Add",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.800000011920929
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Battle_Unity2016_C_Body",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 1
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.800000011920929
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Battle_face3_main",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.800000011920929
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Battle_Unity2016_C_Hair_Spow",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.863157331943512,
+          0.6583749055862427,
+          0.41788509488105774,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.800000011920929
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Battle_Unity2016_C_Skin",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.800000011920929
+      }
+    }
+  ],
+  "images": [
+    {
+      "bufferView": 8,
+      "mimeType": "image/png",
+      "name": "kohaku_A_Add"
+    },
+    {
+      "bufferView": 26,
+      "mimeType": "image/png",
+      "name": "kohaku_A_Body"
+    },
+    {
+      "bufferView": 51,
+      "mimeType": "image/png",
+      "name": "kohaku_A_face3_main"
+    },
+    {
+      "bufferView": 202,
+      "mimeType": "image/png",
+      "name": "kohaku_A_skin"
+    }
+  ]
+}

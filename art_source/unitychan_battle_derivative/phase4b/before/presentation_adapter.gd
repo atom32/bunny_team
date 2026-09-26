@@ -20,13 +20,7 @@ func _apply_materials():
     material.shader=SURFACE
     material.set_shader_parameter("base_color",source.albedo_color)
     if source.albedo_texture:material.set_shader_parameter("base_texture",source.albedo_texture)
-    for parameter in profile[key]:
-     var value = profile[key][parameter]
-     if parameter.ends_with("_texture"):
-      value = load(value)
-     elif parameter.ends_with("_color"):
-      value = Color(value[0], value[1], value[2], value[3])
-     material.set_shader_parameter(parameter,value)
+    for parameter in profile[key]:material.set_shader_parameter(parameter,profile[key][parameter])
     shared[key]=material
    mesh.set_surface_override_material(surface,shared[key])
 

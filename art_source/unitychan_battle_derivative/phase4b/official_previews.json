@@ -1,0 +1,17 @@
+[
+  {
+    "asset": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/face3_main.mat",
+    "preview": "official_preview_face3_main.png",
+    "sha256": "d719e0ea41d3441ecd542d838cf1ea82acde89ea5d6fc7b344671b3c5e0e9344"
+  },
+  {
+    "asset": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A_head.fbx",
+    "preview": "official_preview_01_kohaku_A_head.png",
+    "sha256": "21236633b296065b3bfd26092e0202d83e814ae8e8bf7e8e8d13d06f917b2261"
+  },
+  {
+    "asset": "Assets/UnityChanTPK/Models/01_kohaku_A/Prefabs/01_kohaku_A.prefab",
+    "preview": "official_preview_01_kohaku_A.png",
+    "sha256": "acb6bab8fab95f1e363c1e5ad71eeb48f27358edb82b71408a3a284a9dc1464f"
+  }
+]

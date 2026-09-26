@@ -1,0 +1,97 @@
+{
+  "checks": {
+    "only_scoped_existing_files_changed": true,
+    "three_runtime_files_changed": true,
+    "68_official_hashes_match": true,
+    "runtime_glb_equals_original_conversion": true,
+    "derivative_glb_equals_original_conversion": true,
+    "no_new_phase4b_master_edit": true,
+    "face_shape_topology_uv_weights_preserved": true,
+    "18_head_morphs_preserved": true,
+    "source_material_bindings_match": true,
+    "original_user_save_unchanged": true,
+    "33_tests_plus_main_pass": true,
+    "24_animation_weapon_combinations_pass": true,
+    "Rifle_route": true,
+    "Rifle_restart": true,
+    "Rifle_independent_warehouse_merge": true,
+    "SMG_route": true,
+    "SMG_restart": true,
+    "SMG_independent_warehouse_merge": true,
+    "graphical_and_restart_logs_no_errors": true,
+    "evidence_shader_equals_runtime_shader": true
+  },
+  "changed_existing_files": [
+    "art_source/unitychan_battle_derivative/README.md",
+    "assets/characters/unitychan_battle/presentation/anime_surface.gdshader",
+    "assets/characters/unitychan_battle/presentation/material_profile.json",
+    "scripts/presentation/unitychan/presentation_adapter.gd"
+  ],
+  "official_hash_count": 68,
+  "glb_sha256": "32e030e3aa4dea44f699bd7ce260a87c6ea9d5f4c0ea4c5eaedd6e823a335e0f",
+  "tests": "33/33",
+  "main_exit": 0,
+  "test_warnings": {
+    "profile_state_test": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ],
+    "main": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ]
+  },
+  "routes": {
+    "Rifle": {
+      "check_count": 32,
+      "restart_check_count": 5,
+      "combat": {
+        "damage_taken": 21,
+        "enemies_defeated": 0,
+        "mission_completed": false,
+        "shots": 60
+      }
+    },
+    "SMG": {
+      "check_count": 32,
+      "restart_check_count": 5,
+      "combat": {
+        "damage_taken": 21,
+        "enemies_defeated": 0,
+        "mission_completed": false,
+        "shots": 102
+      }
+    }
+  },
+  "logs": {
+    "hanger/run.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "material_probe.log": {
+      "errors": [],
+      "warnings": [
+        "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+      ]
+    },
+    "animation/run.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "route_Rifle/route.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "route_SMG/route.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "persistence_Rifle/reload.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "persistence_SMG/reload.log": {
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "scope": "Automated graphics/API validation, not manual. Source-semantic subset, not independent Unity-render pixel parity."
+}

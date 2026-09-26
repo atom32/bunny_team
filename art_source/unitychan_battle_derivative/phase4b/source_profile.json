@@ -26,8 +26,7 @@
     "shade2_step": 0.51,
     "shade1_feather": 0.0001,
     "shade2_feather": 0.0001,
-    "first_shade_only": false,
-    "bound_game_lights": true
+    "first_shade_only": false
   },
   "Battle_Unity2016_C_Add": {
     "base_color": [
@@ -55,8 +54,7 @@
     "shade2_step": 0.0,
     "shade1_feather": 0.0001,
     "shade2_feather": 0.0001,
-    "first_shade_only": false,
-    "bound_game_lights": true
+    "first_shade_only": false
   },
   "Battle_Unity2016_C_Body": {
     "base_color": [
@@ -84,8 +82,7 @@
     "shade2_step": 0.0,
     "shade1_feather": 0.0001,
     "shade2_feather": 0.0001,
-    "first_shade_only": false,
-    "bound_game_lights": true
+    "first_shade_only": false
   },
   "Battle_Unity2016_C_Hair_Spow": {
     "base_color": [
@@ -111,8 +108,7 @@
     "shade2_step": 0.0,
     "shade1_feather": 0.0001,
     "shade2_feather": 0.0001,
-    "first_shade_only": false,
-    "bound_game_lights": true
+    "first_shade_only": false
   },
   "Battle_Unity2016_C_Skin": {
     "base_color": [
@@ -140,7 +136,6 @@
     "shade2_step": 0.0,
     "shade1_feather": 0.0001,
     "shade2_feather": 0.0001,
-    "first_shade_only": false,
-    "bound_game_lights": true
+    "first_shade_only": false
   }
 }

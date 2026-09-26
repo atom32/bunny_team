@@ -1,0 +1,38 @@
+{
+  "Battle_Unity2016_C_Add": {
+    "base_color": "(1.0, 1.0, 1.0, 1.0)",
+    "base_texture": "(res://assets/characters/unitychan_battle/textures/kohaku_A_Add.png):<CompressedTexture2D#-9223371934312428877>",
+    "bound_game_lights": "true",
+    "grade_texture": "(res://assets/characters/unitychan_battle/textures/kohaku_A_Add_Spow.png):<CompressedTexture2D#-9223371933909775689>",
+    "shade1_color": "(1.0, 1.0, 1.0, 1.0)"
+  },
+  "Battle_Unity2016_C_Body": {
+    "base_color": "(1.0, 1.0, 1.0, 1.0)",
+    "base_texture": "(res://assets/characters/unitychan_battle/textures/kohaku_A_Body.png):<CompressedTexture2D#-9223371933691671883>",
+    "bound_game_lights": "true",
+    "grade_texture": "(res://assets/characters/unitychan_battle/textures/kohaku_A_Body_spow.png):<CompressedTexture2D#-9223371933289018693>",
+    "shade1_color": "(1.0, 1.0, 1.0, 1.0)"
+  },
+  "Battle_Unity2016_C_Hair_Spow": {
+    "base_color": "(0.9373, 0.8314, 0.6784, 1.0)",
+    "base_texture": "<null>",
+    "bound_game_lights": "true",
+    "grade_texture": "(res://assets/characters/unitychan_battle/textures/kohaku_A_Hair_Spow.png):<CompressedTexture2D#-9223371932248831308>",
+    "shade1_color": "(0.5333, 0.4902, 0.4824, 1.0)"
+  },
+  "Battle_Unity2016_C_Skin": {
+    "base_color": "(1.0, 1.0, 1.0, 1.0)",
+    "base_texture": "(res://assets/characters/unitychan_battle/textures/kohaku_A_skin.png):<CompressedTexture2D#-9223371932030727486>",
+    "bound_game_lights": "true",
+    "grade_texture": "(res://assets/characters/unitychan_battle/textures/kohaku_A_skin_spow.png):<CompressedTexture2D#-9223371931628074298>",
+    "shade1_color": "(1.0, 1.0, 1.0, 1.0)"
+  },
+  "Battle_face3_main": {
+    "base_color": "(1.0, 1.0, 1.0, 1.0)",
+    "base_texture": "(res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main.png):<CompressedTexture2D#-9223371933070914887>",
+    "bound_game_lights": "true",
+    "grade_texture": "(res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_spow.png):<CompressedTexture2D#-9223371932466935104>",
+    "shade1_color": "(1.0, 1.0, 1.0, 1.0)"
+  },
+  "lights": 2
+}

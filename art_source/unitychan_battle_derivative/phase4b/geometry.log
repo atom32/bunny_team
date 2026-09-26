@@ -1,0 +1,371 @@
+FBX version: 7300
+FBX version: 7500
+10:32:20 | INFO: Data are loaded, start creating Blender stuff
+10:32:20 | INFO: Blender create Mesh node Mesh.012
+10:32:20 | INFO: Blender create Mesh node Mesh.014
+10:32:20 | INFO: Blender create Mesh node Mesh.008
+10:32:20 | INFO: Blender create Mesh node Mesh.011
+10:32:20 | INFO: Blender create Mesh node Mesh.009
+10:32:20 | INFO: Blender create Mesh node Mesh.001
+10:32:20 | INFO: Blender create Mesh node Mesh.022
+10:32:20 | INFO: Blender create Mesh node Mesh.015
+10:32:20 | INFO: Blender create Mesh node Mesh.019
+10:32:20 | INFO: Blender create Mesh node Mesh.020
+10:32:20 | INFO: Blender create Mesh node Mesh.021
+10:32:20 | INFO: Blender create Mesh node Mesh.018
+10:32:20 | INFO: Blender create Mesh node head_Def
+10:32:20 | INFO: Blender create Mesh node Mesh.023
+10:32:20 | INFO: Blender create Mesh node Mesh
+10:32:20 | INFO: Blender create Mesh node Mesh.004
+10:32:20 | INFO: Blender create Mesh node Mesh.016
+10:32:20 | INFO: Blender create Mesh node Mesh.003
+10:32:20 | INFO: Blender create Mesh node Mesh.010
+10:32:20 | INFO: Blender create Mesh node Mesh.007
+10:32:20 | INFO: Blender create Mesh node Mesh.005
+10:32:20 | INFO: Blender create Mesh node Mesh.006
+10:32:20 | INFO: Blender create Mesh node Mesh.002
+10:32:20 | INFO: Blender create Mesh node Mesh.013
+10:32:20 | INFO: glTF import finished in 0.19s
+{
+  "head_Def": {
+    "source_vertices": 2014,
+    "glb_vertices": 2370,
+    "source_indices": 10422,
+    "glb_indices": 10422,
+    "position_max_m": 1.215152991562718e-07,
+    "uv_max": 0.0,
+    "normal_max_degrees": 0.6513203825892162,
+    "weight_max_delta_by_bone_name": 0.0,
+    "unmatched_corners": 0,
+    "oriented_triangle_multiset_equal_rounded_1e5": false,
+    "oriented_triangles_equal_after_tolerance_match": true,
+    "derived_tangent_max_degrees": 180.00000500895632,
+    "derived_bitangent_sign_differences": 154,
+    "morph_position_max_m_by_shape": {
+      "head_mayuSadR": 1.2151529215499825e-07,
+      "head_mayuSupR": 1.2151529215499825e-07,
+      "head_mayuSupL": 1.2151529215499825e-07,
+      "head_mayuSadL": 1.2151529215499825e-07,
+      "head_I": 1.2151529215499825e-07,
+      "Basis": 1.2151529215499825e-07,
+      "head_mayuAngL": 1.2151529215499825e-07,
+      "head_mayuAngR": 1.2151529215499825e-07,
+      "head_O": 1.2151529215499825e-07,
+      "head_He": 1.2151529215499825e-07,
+      "head_eyeCloseL": 1.2151529215499825e-07,
+      "head_A": 1.2151529215499825e-07,
+      "head_eyeCloseR1": 1.2151529215499825e-07,
+      "head_U": 1.2151529215499825e-07,
+      "head_R1": 1.2151529215499825e-07,
+      "head_E": 1.2151529215499825e-07,
+      "head_R2": 1.2151529215499825e-07,
+      "head_eyeCloseL2": 1.2151529215499825e-07,
+      "head_eyeCloseR2": 1.2151529215499825e-07
+    },
+    "source_active_bones": [],
+    "glb_active_bones": [
+      "Character1_Head"
+    ]
+  },
+  "headNose": {
+    "source_vertices": 26,
+    "glb_vertices": 64,
+    "source_indices": 144,
+    "glb_indices": 144,
+    "position_max_m": 2.385738469001808e-07,
+    "uv_max": 0.0,
+    "normal_max_degrees": 0.01978234059262607,
+    "weight_max_delta_by_bone_name": 0.0,
+    "unmatched_corners": 0,
+    "oriented_triangle_multiset_equal_rounded_1e5": false,
+    "oriented_triangles_equal_after_tolerance_match": true,
+    "derived_tangent_max_degrees": 180.00000500895632,
+    "derived_bitangent_sign_differences": 1,
+    "morph_position_max_m_by_shape": {},
+    "source_active_bones": [],
+    "glb_active_bones": [
+      "Character1_Head"
+    ]
+  },
+  "eyeBall": {
+    "source_vertices": 202,
+    "glb_vertices": 322,
+    "source_indices": 1080,
+    "glb_indices": 1080,
+    "position_max_m": 3.6168424344396044e-07,
+    "uv_max": 7.450580596923828e-09,
+    "normal_max_degrees": 0.027976454840372228,
+    "weight_max_delta_by_bone_name": 0.0,
+    "unmatched_corners": 0,
+    "oriented_triangle_multiset_equal_rounded_1e5": false,
+    "oriented_triangles_equal_after_tolerance_match": true,
+    "derived_tangent_max_degrees": 4.851956784946903,
+    "derived_bitangent_sign_differences": 0,
+    "morph_position_max_m_by_shape": {},
+    "source_active_bones": [
+      "Character1_Head",
+      "eyeBase_L",
+      "eyeBase_R"
+    ],
+    "glb_active_bones": [
+      "Character1_Head",
+      "eyeBase_L",
+      "eyeBase_R"
+    ]
+  },
+  "eyeHighLightShape": {
+    "source_vertices": 120,
+    "glb_vertices": 120,
+    "source_indices": 648,
+    "glb_indices": 648,
+    "position_max_m": 3.6170342809782596e-07,
+    "uv_max": 7.450580596923828e-09,
+    "normal_max_degrees": 0.01978234059262607,
+    "weight_max_delta_by_bone_name": 0.0,
+    "unmatched_corners": 0,
+    "oriented_triangle_multiset_equal_rounded_1e5": false,
+    "oriented_triangles_equal_after_tolerance_match": true,
+    "derived_tangent_max_degrees": 177.15785401228732,
+    "derived_bitangent_sign_differences": 144,
+    "morph_position_max_m_by_shape": {},
+    "source_active_bones": [
+      "eyeBase_L",
+      "eyeBase_R"
+    ],
+    "glb_active_bones": [
+      "eyeBase_L",
+      "eyeBase_R"
+    ]
+  },
+  "hairFront": {
+    "source_vertices": 1150,
+    "glb_vertices": 1648,
+    "source_indices": 6816,
+    "glb_indices": 6816,
+    "position_max_m": 4.807789650840277e-07,
+    "uv_max": 0.0,
+    "normal_max_degrees": 0.7702479565825955,
+    "weight_max_delta_by_bone_name": 0.0006135106086730957,
+    "unmatched_corners": 0,
+    "oriented_triangle_multiset_equal_rounded_1e5": false,
+    "oriented_triangles_equal_after_tolerance_match": true,
+    "derived_tangent_max_degrees": 180.00000500895632,
+    "derived_bitangent_sign_differences": 373,
+    "morph_position_max_m_by_shape": {},
+    "source_active_bones": [
+      "Character1_Head",
+      "J_1_L_HairFrontSide_00",
+      "J_1_L_HairFrontSide_01",
+      "J_1_L_HairFrontSide_02",
+      "J_1_L_HairFront_00",
+      "J_1_L_HairFront_01",
+      "J_1_L_HairFront_03",
+      "J_1_L_HairFront_04",
+      "J_1_L_HairSideTop_00",
+      "J_1_L_HairSideTop_01",
+      "J_1_L_HairTop_00",
+      "J_1_L_HairTop_01",
+      "J_1_L_HairTop_03",
+      "J_1_L_HairTop_04",
+      "J_1_R_HairFrontSide_00",
+      "J_1_R_HairFrontSide_01",
+      "J_1_R_HairFrontSide_02",
+      "J_1_R_HairFront_00",
+      "J_1_R_HairSideTop_00",
+      "J_1_R_HairSideTop_01",
+      "J_1_R_HairTop_00",
+      "J_1_R_HairTop_01"
+    ],
+    "glb_active_bones": [
+      "Character1_Head",
+      "J_1_L_HairFrontSide_00",
+      "J_1_L_HairFrontSide_01",
+      "J_1_L_HairFrontSide_02",
+      "J_1_L_HairFront_00",
+      "J_1_L_HairFront_01",
+      "J_1_L_HairFront_03",
+      "J_1_L_HairFront_04",
+      "J_1_L_HairSideTop_00",
+      "J_1_L_HairSideTop_01",
+      "J_1_L_HairTop_00",
+      "J_1_L_HairTop_01",
+      "J_1_L_HairTop_03",
+      "J_1_L_HairTop_04",
+      "J_1_R_HairFrontSide_00",
+      "J_1_R_HairFrontSide_01",
+      "J_1_R_HairFrontSide_02",
+      "J_1_R_HairFront_00",
+      "J_1_R_HairSideTop_00",
+      "J_1_R_HairSideTop_01",
+      "J_1_R_HairTop_00",
+      "J_1_R_HairTop_01"
+    ]
+  },
+  "hairSide": {
+    "source_vertices": 94,
+    "glb_vertices": 142,
+    "source_indices": 552,
+    "glb_indices": 552,
+    "position_max_m": 1.5557269250621175e-07,
+    "uv_max": 0.0,
+    "normal_max_degrees": 0.0,
+    "weight_max_delta_by_bone_name": 0.0,
+    "unmatched_corners": 0,
+    "oriented_triangle_multiset_equal_rounded_1e5": true,
+    "oriented_triangles_equal_after_tolerance_match": true,
+    "derived_tangent_max_degrees": 174.00501137065274,
+    "derived_bitangent_sign_differences": 12,
+    "morph_position_max_m_by_shape": {},
+    "source_active_bones": [
+      "Character1_Head"
+    ],
+    "glb_active_bones": [
+      "Character1_Head"
+    ]
+  },
+  "hairBack": {
+    "source_vertices": 1780,
+    "glb_vertices": 2787,
+    "source_indices": 10668,
+    "glb_indices": 10668,
+    "position_max_m": 5.962443196949607e-07,
+    "uv_max": 7.450580596923828e-09,
+    "normal_max_degrees": 0.8897745595105262,
+    "weight_max_delta_by_bone_name": 5.960464477539063e-08,
+    "unmatched_corners": 0,
+    "oriented_triangle_multiset_equal_rounded_1e5": false,
+    "oriented_triangles_equal_after_tolerance_match": true,
+    "derived_tangent_max_degrees": 180.00000500895632,
+    "derived_bitangent_sign_differences": 228,
+    "morph_position_max_m_by_shape": {},
+    "source_active_bones": [
+      "Character1_Head",
+      "J_1_L_HairBackSide_00",
+      "J_1_L_HairBackSide_01",
+      "J_1_L_HairBackSide_02",
+      "J_1_L_HairBackSide_03",
+      "J_1_L_HairBack_00",
+      "J_1_L_HairBack_01",
+      "J_1_L_HairBack_03",
+      "J_1_L_HairBack_04",
+      "J_1_L_HairBack_06",
+      "J_1_L_HairBack_07",
+      "J_1_L_HairBack_08",
+      "J_1_L_HairBack_09",
+      "J_1_L_HairBack_10",
+      "J_1_L_HairSide_00",
+      "J_1_L_HairSide_01",
+      "J_1_L_HairSide_02",
+      "J_1_L_HairSide_03",
+      "J_1_R_HairBackSide_00",
+      "J_1_R_HairBackSide_01",
+      "J_1_R_HairBackSide_02",
+      "J_1_R_HairBackSide_03",
+      "J_1_R_HairBack_00",
+      "J_1_R_HairBack_01",
+      "J_1_R_HairBack_03",
+      "J_1_R_HairBack_04",
+      "J_1_R_HairSide_00",
+      "J_1_R_HairSide_01",
+      "J_1_R_HairSide_02",
+      "J_1_R_HairSide_03"
+    ],
+    "glb_active_bones": [
+      "Character1_Head",
+      "J_1_L_HairBackSide_00",
+      "J_1_L_HairBackSide_01",
+      "J_1_L_HairBackSide_02",
+      "J_1_L_HairBackSide_03",
+      "J_1_L_HairBack_00",
+      "J_1_L_HairBack_01",
+      "J_1_L_HairBack_03",
+      "J_1_L_HairBack_04",
+      "J_1_L_HairBack_06",
+      "J_1_L_HairBack_07",
+      "J_1_L_HairBack_08",
+      "J_1_L_HairBack_09",
+      "J_1_L_HairBack_10",
+      "J_1_L_HairSide_00",
+      "J_1_L_HairSide_01",
+      "J_1_L_HairSide_02",
+      "J_1_L_HairSide_03",
+      "J_1_R_HairBackSide_00",
+      "J_1_R_HairBackSide_01",
+      "J_1_R_HairBackSide_02",
+      "J_1_R_HairBackSide_03",
+      "J_1_R_HairBack_00",
+      "J_1_R_HairBack_01",
+      "J_1_R_HairBack_03",
+      "J_1_R_HairBack_04",
+      "J_1_R_HairSide_00",
+      "J_1_R_HairSide_01",
+      "J_1_R_HairSide_02",
+      "J_1_R_HairSide_03"
+    ]
+  },
+  "hairUnder": {
+    "source_vertices": 710,
+    "glb_vertices": 1307,
+    "source_indices": 4260,
+    "glb_indices": 4260,
+    "position_max_m": 4.835994786844822e-07,
+    "uv_max": 0.0,
+    "normal_max_degrees": 0.027976454840372228,
+    "weight_max_delta_by_bone_name": 1.1920928955078125e-07,
+    "unmatched_corners": 0,
+    "oriented_triangle_multiset_equal_rounded_1e5": false,
+    "oriented_triangles_equal_after_tolerance_match": true,
+    "derived_tangent_max_degrees": 180.00000500895632,
+    "derived_bitangent_sign_differences": 25,
+    "morph_position_max_m_by_shape": {},
+    "source_active_bones": [
+      "Character1_Head",
+      "J_1_L_InsideHairBackSide_00",
+      "J_1_L_InsideHairBackSide_01",
+      "J_1_L_InsideHairBackSide_02",
+      "J_1_L_InsideHairBackSide_03",
+      "J_1_L_InsideHairBack_00",
+      "J_1_L_InsideHairBack_01",
+      "J_1_L_InsideHairBack_02",
+      "J_1_L_InsideHairBack_03",
+      "J_1_L_InsideHairBack_05",
+      "J_1_L_InsideHairBack_06",
+      "J_1_L_InsideHairBack_07",
+      "J_1_L_InsideHairBack_08",
+      "J_1_R_InsideHairBackSide_00",
+      "J_1_R_InsideHairBackSide_01",
+      "J_1_R_InsideHairBackSide_02",
+      "J_1_R_InsideHairBackSide_03",
+      "J_1_R_InsideHairBack_00",
+      "J_1_R_InsideHairBack_01",
+      "J_1_R_InsideHairBack_02",
+      "J_1_R_InsideHairBack_03"
+    ],
+    "glb_active_bones": [
+      "Character1_Head",
+      "J_1_L_InsideHairBackSide_00",
+      "J_1_L_InsideHairBackSide_01",
+      "J_1_L_InsideHairBackSide_02",
+      "J_1_L_InsideHairBackSide_03",
+      "J_1_L_InsideHairBack_00",
+      "J_1_L_InsideHairBack_01",
+      "J_1_L_InsideHairBack_02",
+      "J_1_L_InsideHairBack_03",
+      "J_1_L_InsideHairBack_05",
+      "J_1_L_InsideHairBack_06",
+      "J_1_L_InsideHairBack_07",
+      "J_1_L_InsideHairBack_08",
+      "J_1_R_InsideHairBackSide_00",
+      "J_1_R_InsideHairBackSide_01",
+      "J_1_R_InsideHairBackSide_02",
+      "J_1_R_InsideHairBackSide_03",
+      "J_1_R_InsideHairBack_00",
+      "J_1_R_InsideHairBack_01",
+      "J_1_R_InsideHairBack_02",
+      "J_1_R_InsideHairBack_03"
+    ]
+  }
+}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit
