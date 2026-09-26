@@ -233,7 +233,7 @@ func _telegraph_shot() -> void:
 	var from := humanoid_visual.get_muzzle_position()
 	CombatEffects.telegraph(get_tree().current_scene, from, _shot_aim_point)
 	await get_tree().create_timer(0.38).timeout
-	if is_dead or not is_instance_valid(target) or target.is_dead:
+	if not is_inside_tree() or is_dead or not is_instance_valid(target) or not target.is_inside_tree() or target.is_dead:
 		_is_telegraphing = false
 		_shot_aim_point = Vector3.ZERO
 		return

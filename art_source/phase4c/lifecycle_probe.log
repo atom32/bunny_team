@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+{ "active_shot_pending": true, "active_callback_completed": true, "active_correct_fire_count": true, "active_aim_cleared": true, "enemy_detached_shot_pending": true, "enemy_detached_callback_completed": true, "enemy_detached_correct_fire_count": true, "enemy_detached_aim_cleared": true, "target_detached_shot_pending": true, "target_detached_callback_completed": true, "target_detached_correct_fire_count": true, "target_detached_aim_cleared": true, "both_detached_shot_pending": true, "both_detached_callback_completed": true, "both_detached_correct_fire_count": true, "both_detached_aim_cleared": true }
