@@ -118,6 +118,11 @@ func shutdown_for_test() -> void:
 	for player in _sfx_players:
 		player.free()
 	_sfx_players.clear()
+	# stop() is consumed on the audio thread. A test's SceneTreeTimer can
+	# expire in the same long frame, before the Dummy driver has mixed again.
+	# Drain two driver periods in wall time; normal playback never calls this.
+	var mix_period := AudioServer.get_time_since_last_mix() + AudioServer.get_time_to_next_mix()
+	OS.delay_msec(ceili(maxf(mix_period, 0.001) * 2000.0) + 10)
 
 
 func _exit_tree() -> void:

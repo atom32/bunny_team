@@ -1,0 +1,410 @@
+WorkerThreadPool: 16 threads, 4 max low-priority.
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Using "default" pen tablet driver...
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+CORE API HASH: 2004498165
+EDITOR API HASH: 1696660745
+SceneTreeFTI: traversal method DEFAULT
+Loading resource: res://scripts/systems/content_db.gd remapped: res://scripts/systems/content_db.gd
+Loading resource: res://resources/content/content_manifest.tres remapped: res://resources/content/content_manifest.tres
+Loading resource: res://scripts/data/content_manifest.gd remapped: res://scripts/data/content_manifest.gd
+Completed load for: 'res://scripts/data/content_manifest.gd' remapped 'res://scripts/data/content_manifest.gd' at thread -1
+Loading resource: res://resources/weapons/assault_rifle.tres remapped: res://resources/weapons/assault_rifle.tres
+Loading resource: res://scripts/data/weapon_definition.gd remapped: res://scripts/data/weapon_definition.gd
+Completed load for: 'res://scripts/data/weapon_definition.gd' remapped 'res://scripts/data/weapon_definition.gd' at thread -1
+Loading resource: res://scenes/weapons/assault_rifle.tscn remapped: res://scenes/weapons/assault_rifle.tscn
+Loading resource: res://scripts/weapons/weapon_visual.gd remapped: res://scripts/weapons/weapon_visual.gd
+Completed load for: 'res://scripts/weapons/weapon_visual.gd' remapped 'res://scripts/weapons/weapon_visual.gd' at thread -1
+Loading resource: res://assets/weapons/kenney_blaster_kit/blaster-e.glb remapped: res://assets/weapons/kenney_blaster_kit/blaster-e.glb
+Loading resource: res://.godot/imported/blaster-e.glb-3bcac05ed486f4aa5f7abfa570dee2f9.scn remapped: res://.godot/imported/blaster-e.glb-3bcac05ed486f4aa5f7abfa570dee2f9.scn
+Loading resource: res://assets/weapons/kenney_blaster_kit/Textures/colormap.png remapped: res://assets/weapons/kenney_blaster_kit/Textures/colormap.png
+Loading resource: res://.godot/imported/colormap.png-dedd8c3c365bb17a092d5a251ca3d029.s3tc.ctex remapped: res://.godot/imported/colormap.png-dedd8c3c365bb17a092d5a251ca3d029.s3tc.ctex
+Completed load for: 'res://assets/weapons/kenney_blaster_kit/Textures/colormap.png' remapped 'res://assets/weapons/kenney_blaster_kit/Textures/colormap.png' at thread -1
+Completed load for: 'res://assets/weapons/kenney_blaster_kit/blaster-e.glb' remapped 'res://assets/weapons/kenney_blaster_kit/blaster-e.glb' at thread -1
+Loading resource: res://scripts/presentation/model_palette.gd remapped: res://scripts/presentation/model_palette.gd
+Completed load for: 'res://scripts/presentation/model_palette.gd' remapped 'res://scripts/presentation/model_palette.gd' at thread -1
+Loading resource: res://resources/materials/weapon_palette.tres remapped: res://resources/materials/weapon_palette.tres
+Loading resource: res://resources/materials/slice_palette.gdshader remapped: res://resources/materials/slice_palette.gdshader
+Completed load for: 'res://resources/materials/slice_palette.gdshader' remapped 'res://resources/materials/slice_palette.gdshader' at thread -1
+Completed load for: 'res://resources/materials/weapon_palette.tres' remapped 'res://resources/materials/weapon_palette.tres' at thread -1
+Completed load for: 'res://scenes/weapons/assault_rifle.tscn' remapped 'res://scenes/weapons/assault_rifle.tscn' at thread -1
+Completed load for: 'res://resources/weapons/assault_rifle.tres' remapped 'res://resources/weapons/assault_rifle.tres' at thread -1
+Loading resource: res://resources/weapons/smg.tres remapped: res://resources/weapons/smg.tres
+Loading resource: res://scenes/weapons/smg.tscn remapped: res://scenes/weapons/smg.tscn
+Loading resource: res://assets/weapons/kenney_blaster_kit/blaster-g.glb remapped: res://assets/weapons/kenney_blaster_kit/blaster-g.glb
+Loading resource: res://.godot/imported/blaster-g.glb-f9e0c2a9fc2fee2a14279493a2d5d0e9.scn remapped: res://.godot/imported/blaster-g.glb-f9e0c2a9fc2fee2a14279493a2d5d0e9.scn
+Completed load for: 'res://assets/weapons/kenney_blaster_kit/blaster-g.glb' remapped 'res://assets/weapons/kenney_blaster_kit/blaster-g.glb' at thread -1
+Completed load for: 'res://scenes/weapons/smg.tscn' remapped 'res://scenes/weapons/smg.tscn' at thread -1
+Completed load for: 'res://resources/weapons/smg.tres' remapped 'res://resources/weapons/smg.tres' at thread -1
+Loading resource: res://resources/weapons/rocket_launcher.tres remapped: res://resources/weapons/rocket_launcher.tres
+Loading resource: res://scenes/weapons/rocket_launcher.tscn remapped: res://scenes/weapons/rocket_launcher.tscn
+Loading resource: res://assets/weapons/kenney_blaster_kit/blaster-o.glb remapped: res://assets/weapons/kenney_blaster_kit/blaster-o.glb
+Loading resource: res://.godot/imported/blaster-o.glb-74f86374cc6e3d77baf0c984fe026b4e.scn remapped: res://.godot/imported/blaster-o.glb-74f86374cc6e3d77baf0c984fe026b4e.scn
+Completed load for: 'res://assets/weapons/kenney_blaster_kit/blaster-o.glb' remapped 'res://assets/weapons/kenney_blaster_kit/blaster-o.glb' at thread -1
+Completed load for: 'res://scenes/weapons/rocket_launcher.tscn' remapped 'res://scenes/weapons/rocket_launcher.tscn' at thread -1
+Completed load for: 'res://resources/weapons/rocket_launcher.tres' remapped 'res://resources/weapons/rocket_launcher.tres' at thread -1
+Loading resource: res://resources/equipment/light_armor.tres remapped: res://resources/equipment/light_armor.tres
+Loading resource: res://scenes/equipment/light_armor.tscn remapped: res://scenes/equipment/light_armor.tscn
+Loading resource: res://scripts/equipment/equipment_visual.gd remapped: res://scripts/equipment/equipment_visual.gd
+Completed load for: 'res://scripts/equipment/equipment_visual.gd' remapped 'res://scripts/equipment/equipment_visual.gd' at thread -1
+Completed load for: 'res://scenes/equipment/light_armor.tscn' remapped 'res://scenes/equipment/light_armor.tscn' at thread -1
+Completed load for: 'res://resources/equipment/light_armor.tres' remapped 'res://resources/equipment/light_armor.tres' at thread -1
+Loading resource: res://resources/equipment/heavy_armor.tres remapped: res://resources/equipment/heavy_armor.tres
+Loading resource: res://scenes/equipment/heavy_armor.tscn remapped: res://scenes/equipment/heavy_armor.tscn
+Completed load for: 'res://scenes/equipment/heavy_armor.tscn' remapped 'res://scenes/equipment/heavy_armor.tscn' at thread -1
+Completed load for: 'res://resources/equipment/heavy_armor.tres' remapped 'res://resources/equipment/heavy_armor.tres' at thread -1
+Loading resource: res://resources/equipment/standard_pack.tres remapped: res://resources/equipment/standard_pack.tres
+Loading resource: res://scenes/equipment/standard_pack.tscn remapped: res://scenes/equipment/standard_pack.tscn
+Completed load for: 'res://scenes/equipment/standard_pack.tscn' remapped 'res://scenes/equipment/standard_pack.tscn' at thread -1
+Completed load for: 'res://resources/equipment/standard_pack.tres' remapped 'res://resources/equipment/standard_pack.tres' at thread -1
+Loading resource: res://resources/equipment/thruster_pack.tres remapped: res://resources/equipment/thruster_pack.tres
+Loading resource: res://scenes/equipment/thruster_pack.tscn remapped: res://scenes/equipment/thruster_pack.tscn
+Completed load for: 'res://scenes/equipment/thruster_pack.tscn' remapped 'res://scenes/equipment/thruster_pack.tscn' at thread -1
+Completed load for: 'res://resources/equipment/thruster_pack.tres' remapped 'res://resources/equipment/thruster_pack.tres' at thread -1
+Loading resource: res://resources/ammo/556_standard.tres remapped: res://resources/ammo/556_standard.tres
+Loading resource: res://scripts/data/ammo_definition.gd remapped: res://scripts/data/ammo_definition.gd
+Completed load for: 'res://scripts/data/ammo_definition.gd' remapped 'res://scripts/data/ammo_definition.gd' at thread -1
+Completed load for: 'res://resources/ammo/556_standard.tres' remapped 'res://resources/ammo/556_standard.tres' at thread -1
+Loading resource: res://resources/ammo/556_ap.tres remapped: res://resources/ammo/556_ap.tres
+Completed load for: 'res://resources/ammo/556_ap.tres' remapped 'res://resources/ammo/556_ap.tres' at thread -1
+Loading resource: res://resources/items/salvage_core.tres remapped: res://resources/items/salvage_core.tres
+Completed load for: 'res://resources/items/salvage_core.tres' remapped 'res://resources/items/salvage_core.tres' at thread -1
+Loading resource: res://resources/ammo/rocket_standard.tres remapped: res://resources/ammo/rocket_standard.tres
+Completed load for: 'res://resources/ammo/rocket_standard.tres' remapped 'res://resources/ammo/rocket_standard.tres' at thread -1
+Loading resource: res://resources/missions/prototype_combat.tres remapped: res://resources/missions/prototype_combat.tres
+Completed load for: 'res://resources/missions/prototype_combat.tres' remapped 'res://resources/missions/prototype_combat.tres' at thread -1
+Loading resource: res://resources/loot/prototype_basic_loot.tres remapped: res://resources/loot/prototype_basic_loot.tres
+Completed load for: 'res://resources/loot/prototype_basic_loot.tres' remapped 'res://resources/loot/prototype_basic_loot.tres' at thread -1
+Loading resource: res://resources/areas/prototype_arena.tres remapped: res://resources/areas/prototype_arena.tres
+Loading resource: res://scenes/areas/prototype_arena.tscn remapped: res://scenes/areas/prototype_arena.tscn
+Loading resource: res://scripts/world/prototype_arena.gd remapped: res://scripts/world/prototype_arena.gd
+Completed load for: 'res://scripts/world/prototype_arena.gd' remapped 'res://scripts/world/prototype_arena.gd' at thread -1
+Loading resource: res://scenes/battle/urban_arena.tscn remapped: res://scenes/battle/urban_arena.tscn
+Loading resource: res://scripts/battle/urban_arena.gd remapped: res://scripts/battle/urban_arena.gd
+Completed load for: 'res://scripts/battle/urban_arena.gd' remapped 'res://scripts/battle/urban_arena.gd' at thread -1
+Loading resource: res://scripts/presentation/urban_defense.gd remapped: res://scripts/presentation/urban_defense.gd
+Loading resource: res://scenes/presentation/urban_defense/security_barrier.tscn remapped: res://scenes/presentation/urban_defense/security_barrier.tscn
+Loading resource: res://assets/environment/urban_defense/security_barrier.glb remapped: res://assets/environment/urban_defense/security_barrier.glb
+Loading resource: res://.godot/imported/security_barrier.glb-5070d05c8b12f43905a435aede926558.scn remapped: res://.godot/imported/security_barrier.glb-5070d05c8b12f43905a435aede926558.scn
+Completed load for: 'res://assets/environment/urban_defense/security_barrier.glb' remapped 'res://assets/environment/urban_defense/security_barrier.glb' at thread -1
+Completed load for: 'res://scenes/presentation/urban_defense/security_barrier.tscn' remapped 'res://scenes/presentation/urban_defense/security_barrier.tscn' at thread -1
+Completed load for: 'res://scripts/presentation/urban_defense.gd' remapped 'res://scripts/presentation/urban_defense.gd' at thread -1
+Completed load for: 'res://scenes/battle/urban_arena.tscn' remapped 'res://scenes/battle/urban_arena.tscn' at thread -1
+Loading resource: res://scenes/world/loot_spawn_point.tscn remapped: res://scenes/world/loot_spawn_point.tscn
+Loading resource: res://scripts/world/loot_spawn_point.gd remapped: res://scripts/world/loot_spawn_point.gd
+Loading resource: res://scenes/world/loot_pickup.tscn remapped: res://scenes/world/loot_pickup.tscn
+Loading resource: res://scripts/world/loot_pickup.gd remapped: res://scripts/world/loot_pickup.gd
+Completed load for: 'res://scripts/world/loot_pickup.gd' remapped 'res://scripts/world/loot_pickup.gd' at thread -1
+Completed load for: 'res://scenes/world/loot_pickup.tscn' remapped 'res://scenes/world/loot_pickup.tscn' at thread -1
+Completed load for: 'res://scripts/world/loot_spawn_point.gd' remapped 'res://scripts/world/loot_spawn_point.gd' at thread -1
+Completed load for: 'res://scenes/world/loot_spawn_point.tscn' remapped 'res://scenes/world/loot_spawn_point.tscn' at thread -1
+Loading resource: res://scenes/world/objective_interactable.tscn remapped: res://scenes/world/objective_interactable.tscn
+Completed load for: 'res://scenes/world/objective_interactable.tscn' remapped 'res://scenes/world/objective_interactable.tscn' at thread -1
+Loading resource: res://scenes/world/objective_reach_zone.tscn remapped: res://scenes/world/objective_reach_zone.tscn
+Loading resource: res://scripts/world/objective_reach_zone.gd remapped: res://scripts/world/objective_reach_zone.gd
+Completed load for: 'res://scripts/world/objective_reach_zone.gd' remapped 'res://scripts/world/objective_reach_zone.gd' at thread -1
+Completed load for: 'res://scenes/world/objective_reach_zone.tscn' remapped 'res://scenes/world/objective_reach_zone.tscn' at thread -1
+Loading resource: res://scenes/world/extraction_point.tscn remapped: res://scenes/world/extraction_point.tscn
+Loading resource: res://scripts/world/extraction_point.gd remapped: res://scripts/world/extraction_point.gd
+Completed load for: 'res://scripts/world/extraction_point.gd' remapped 'res://scripts/world/extraction_point.gd' at thread -1
+Completed load for: 'res://scenes/world/extraction_point.tscn' remapped 'res://scenes/world/extraction_point.tscn' at thread -1
+Loading resource: res://scenes/world/door.tscn remapped: res://scenes/world/door.tscn
+Loading resource: res://scripts/world/door.gd remapped: res://scripts/world/door.gd
+Completed load for: 'res://scripts/world/door.gd' remapped 'res://scripts/world/door.gd' at thread -1
+Completed load for: 'res://scenes/world/door.tscn' remapped 'res://scenes/world/door.tscn' at thread -1
+Loading resource: res://scenes/world/cover_obstacle.tscn remapped: res://scenes/world/cover_obstacle.tscn
+Loading resource: res://scripts/world/cover_obstacle.gd remapped: res://scripts/world/cover_obstacle.gd
+Completed load for: 'res://scripts/world/cover_obstacle.gd' remapped 'res://scripts/world/cover_obstacle.gd' at thread -1
+Completed load for: 'res://scenes/world/cover_obstacle.tscn' remapped 'res://scenes/world/cover_obstacle.tscn' at thread -1
+Loading resource: res://scenes/world/enemy_spawn_point.tscn remapped: res://scenes/world/enemy_spawn_point.tscn
+Loading resource: res://scripts/world/enemy_spawn_point.gd remapped: res://scripts/world/enemy_spawn_point.gd
+Completed load for: 'res://scripts/world/enemy_spawn_point.gd' remapped 'res://scripts/world/enemy_spawn_point.gd' at thread -1
+Completed load for: 'res://scenes/world/enemy_spawn_point.tscn' remapped 'res://scenes/world/enemy_spawn_point.tscn' at thread -1
+Loading resource: res://scenes/world/destructible_world_object.tscn remapped: res://scenes/world/destructible_world_object.tscn
+Loading resource: res://scripts/world/destructible_world_object.gd remapped: res://scripts/world/destructible_world_object.gd
+Completed load for: 'res://scripts/world/destructible_world_object.gd' remapped 'res://scripts/world/destructible_world_object.gd' at thread -1
+Completed load for: 'res://scenes/world/destructible_world_object.tscn' remapped 'res://scenes/world/destructible_world_object.tscn' at thread -1
+Loading resource: res://scenes/world/threat_event.tscn remapped: res://scenes/world/threat_event.tscn
+Completed load for: 'res://scenes/world/threat_event.tscn' remapped 'res://scenes/world/threat_event.tscn' at thread -1
+Loading resource: res://scenes/areas/prototype_field_office.tscn remapped: res://scenes/areas/prototype_field_office.tscn
+Loading resource: res://scenes/areas/field_office_art.tscn remapped: res://scenes/areas/field_office_art.tscn
+Loading resource: res://resources/materials/office_palette.tres remapped: res://resources/materials/office_palette.tres
+Loading resource: res://assets/environment/kenney_space_station_kit/Textures/colormap.png remapped: res://assets/environment/kenney_space_station_kit/Textures/colormap.png
+Loading resource: res://.godot/imported/colormap.png-be1062403cae5841b56b70413343ea77.s3tc.ctex remapped: res://.godot/imported/colormap.png-be1062403cae5841b56b70413343ea77.s3tc.ctex
+Completed load for: 'res://assets/environment/kenney_space_station_kit/Textures/colormap.png' remapped 'res://assets/environment/kenney_space_station_kit/Textures/colormap.png' at thread -1
+Completed load for: 'res://resources/materials/office_palette.tres' remapped 'res://resources/materials/office_palette.tres' at thread -1
+Loading resource: res://resources/materials/office_floor.tres remapped: res://resources/materials/office_floor.tres
+Completed load for: 'res://resources/materials/office_floor.tres' remapped 'res://resources/materials/office_floor.tres' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/wall.glb remapped: res://assets/environment/kenney_space_station_kit/wall.glb
+Loading resource: res://.godot/imported/wall.glb-d2817a6d358af25d3becfe48ba3cca03.scn remapped: res://.godot/imported/wall.glb-d2817a6d358af25d3becfe48ba3cca03.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/wall.glb' remapped 'res://assets/environment/kenney_space_station_kit/wall.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/wall-detail.glb remapped: res://assets/environment/kenney_space_station_kit/wall-detail.glb
+Loading resource: res://.godot/imported/wall-detail.glb-1bfd2afd0f06628163ed48f221a49e97.scn remapped: res://.godot/imported/wall-detail.glb-1bfd2afd0f06628163ed48f221a49e97.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/wall-detail.glb' remapped 'res://assets/environment/kenney_space_station_kit/wall-detail.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/wall-window.glb remapped: res://assets/environment/kenney_space_station_kit/wall-window.glb
+Loading resource: res://.godot/imported/wall-window.glb-4fe6a2234b60cc0e32accae7f3492e77.scn remapped: res://.godot/imported/wall-window.glb-4fe6a2234b60cc0e32accae7f3492e77.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/wall-window.glb' remapped 'res://assets/environment/kenney_space_station_kit/wall-window.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/floor.glb remapped: res://assets/environment/kenney_space_station_kit/floor.glb
+Loading resource: res://.godot/imported/floor.glb-5722c9265f4e4b5a355d53c01100e892.scn remapped: res://.godot/imported/floor.glb-5722c9265f4e4b5a355d53c01100e892.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/floor.glb' remapped 'res://assets/environment/kenney_space_station_kit/floor.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/floor-detail.glb remapped: res://assets/environment/kenney_space_station_kit/floor-detail.glb
+Loading resource: res://.godot/imported/floor-detail.glb-8f0ecc7d4923bd81fd191ea4e51f3e64.scn remapped: res://.godot/imported/floor-detail.glb-8f0ecc7d4923bd81fd191ea4e51f3e64.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/floor-detail.glb' remapped 'res://assets/environment/kenney_space_station_kit/floor-detail.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/table.glb remapped: res://assets/environment/kenney_space_station_kit/table.glb
+Loading resource: res://.godot/imported/table.glb-b70f16cdc31921164ed3eb628e597739.scn remapped: res://.godot/imported/table.glb-b70f16cdc31921164ed3eb628e597739.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/table.glb' remapped 'res://assets/environment/kenney_space_station_kit/table.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/chair.glb remapped: res://assets/environment/kenney_space_station_kit/chair.glb
+Loading resource: res://.godot/imported/chair.glb-99c7580a31dc85f9f55b2a0d47c6533b.scn remapped: res://.godot/imported/chair.glb-99c7580a31dc85f9f55b2a0d47c6533b.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/chair.glb' remapped 'res://assets/environment/kenney_space_station_kit/chair.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/computer-screen.glb remapped: res://assets/environment/kenney_space_station_kit/computer-screen.glb
+Loading resource: res://.godot/imported/computer-screen.glb-679201be2a34165a1fabdd7b56476495.scn remapped: res://.godot/imported/computer-screen.glb-679201be2a34165a1fabdd7b56476495.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/computer-screen.glb' remapped 'res://assets/environment/kenney_space_station_kit/computer-screen.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/computer-system.glb remapped: res://assets/environment/kenney_space_station_kit/computer-system.glb
+Loading resource: res://.godot/imported/computer-system.glb-2a43b46c81a0e68b5183e5d41261e63d.scn remapped: res://.godot/imported/computer-system.glb-2a43b46c81a0e68b5183e5d41261e63d.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/computer-system.glb' remapped 'res://assets/environment/kenney_space_station_kit/computer-system.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/display-wall.glb remapped: res://assets/environment/kenney_space_station_kit/display-wall.glb
+Loading resource: res://.godot/imported/display-wall.glb-cf00575eb34eb359ae50ef274adf126c.scn remapped: res://.godot/imported/display-wall.glb-cf00575eb34eb359ae50ef274adf126c.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/display-wall.glb' remapped 'res://assets/environment/kenney_space_station_kit/display-wall.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/container-flat.glb remapped: res://assets/environment/kenney_space_station_kit/container-flat.glb
+Loading resource: res://.godot/imported/container-flat.glb-0de624deac451a4c11a06fd836acf9f3.scn remapped: res://.godot/imported/container-flat.glb-0de624deac451a4c11a06fd836acf9f3.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/container-flat.glb' remapped 'res://assets/environment/kenney_space_station_kit/container-flat.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/container-tall.glb remapped: res://assets/environment/kenney_space_station_kit/container-tall.glb
+Loading resource: res://.godot/imported/container-tall.glb-2b682d61261a42e54b49286df4d1c6d5.scn remapped: res://.godot/imported/container-tall.glb-2b682d61261a42e54b49286df4d1c6d5.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/container-tall.glb' remapped 'res://assets/environment/kenney_space_station_kit/container-tall.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/wall-switch.glb remapped: res://assets/environment/kenney_space_station_kit/wall-switch.glb
+Loading resource: res://.godot/imported/wall-switch.glb-6317682e04aea96006e6b770ad44fe30.scn remapped: res://.godot/imported/wall-switch.glb-6317682e04aea96006e6b770ad44fe30.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/wall-switch.glb' remapped 'res://assets/environment/kenney_space_station_kit/wall-switch.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/pipe.glb remapped: res://assets/environment/kenney_space_station_kit/pipe.glb
+Loading resource: res://.godot/imported/pipe.glb-b1261ba23b85f6150778dd5ea4a92896.scn remapped: res://.godot/imported/pipe.glb-b1261ba23b85f6150778dd5ea4a92896.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/pipe.glb' remapped 'res://assets/environment/kenney_space_station_kit/pipe.glb' at thread -1
+Loading resource: res://assets/environment/kenney_space_station_kit/pipe-bend.glb remapped: res://assets/environment/kenney_space_station_kit/pipe-bend.glb
+Loading resource: res://.godot/imported/pipe-bend.glb-e67c867221a06a4761c3257f9a87a4e7.scn remapped: res://.godot/imported/pipe-bend.glb-e67c867221a06a4761c3257f9a87a4e7.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/pipe-bend.glb' remapped 'res://assets/environment/kenney_space_station_kit/pipe-bend.glb' at thread -1
+Completed load for: 'res://scenes/areas/field_office_art.tscn' remapped 'res://scenes/areas/field_office_art.tscn' at thread -1
+Loading resource: res://scripts/presentation/field_office_presentation.gd remapped: res://scripts/presentation/field_office_presentation.gd
+Loading resource: res://assets/environment/kenney_space_station_kit/door-double-closed.glb remapped: res://assets/environment/kenney_space_station_kit/door-double-closed.glb
+Loading resource: res://.godot/imported/door-double-closed.glb-0cc07b3a922a3211222b8865f0dfc376.scn remapped: res://.godot/imported/door-double-closed.glb-0cc07b3a922a3211222b8865f0dfc376.scn
+Completed load for: 'res://assets/environment/kenney_space_station_kit/door-double-closed.glb' remapped 'res://assets/environment/kenney_space_station_kit/door-double-closed.glb' at thread -1
+Completed load for: 'res://scripts/presentation/field_office_presentation.gd' remapped 'res://scripts/presentation/field_office_presentation.gd' at thread -1
+Loading resource: res://scenes/presentation/service_props/maintenance_cluster.tscn remapped: res://scenes/presentation/service_props/maintenance_cluster.tscn
+Loading resource: res://scenes/presentation/service_props/supply_stack.tscn remapped: res://scenes/presentation/service_props/supply_stack.tscn
+Loading resource: res://assets/environment/service_props/supply_stack.glb remapped: res://assets/environment/service_props/supply_stack.glb
+Loading resource: res://.godot/imported/supply_stack.glb-8aa99d3f1fe068f1917ffb45083a82b6.scn remapped: res://.godot/imported/supply_stack.glb-8aa99d3f1fe068f1917ffb45083a82b6.scn
+Loading resource: res://assets/environment/service_props/supply_stack_colormap.png remapped: res://assets/environment/service_props/supply_stack_colormap.png
+Loading resource: res://.godot/imported/supply_stack_colormap.png-e37d2a75848e9dc665b343e281469cf4.ctex remapped: res://.godot/imported/supply_stack_colormap.png-e37d2a75848e9dc665b343e281469cf4.ctex
+Completed load for: 'res://assets/environment/service_props/supply_stack_colormap.png' remapped 'res://assets/environment/service_props/supply_stack_colormap.png' at thread -1
+Completed load for: 'res://assets/environment/service_props/supply_stack.glb' remapped 'res://assets/environment/service_props/supply_stack.glb' at thread -1
+Loading resource: res://scripts/presentation/service_prop_materials.gd remapped: res://scripts/presentation/service_prop_materials.gd
+Completed load for: 'res://scripts/presentation/service_prop_materials.gd' remapped 'res://scripts/presentation/service_prop_materials.gd' at thread -1
+Completed load for: 'res://scenes/presentation/service_props/supply_stack.tscn' remapped 'res://scenes/presentation/service_props/supply_stack.tscn' at thread -1
+Loading resource: res://scenes/presentation/service_props/service_cabinet.tscn remapped: res://scenes/presentation/service_props/service_cabinet.tscn
+Loading resource: res://assets/environment/service_props/service_cabinet.glb remapped: res://assets/environment/service_props/service_cabinet.glb
+Loading resource: res://.godot/imported/service_cabinet.glb-6d08f830ba05a5acd0d862e2c8879f28.scn remapped: res://.godot/imported/service_cabinet.glb-6d08f830ba05a5acd0d862e2c8879f28.scn
+Loading resource: res://assets/environment/service_props/service_cabinet_colormap.png remapped: res://assets/environment/service_props/service_cabinet_colormap.png
+Loading resource: res://.godot/imported/service_cabinet_colormap.png-6889f4990317e28d8cde77da0b0bcb90.ctex remapped: res://.godot/imported/service_cabinet_colormap.png-6889f4990317e28d8cde77da0b0bcb90.ctex
+Completed load for: 'res://assets/environment/service_props/service_cabinet_colormap.png' remapped 'res://assets/environment/service_props/service_cabinet_colormap.png' at thread -1
+Completed load for: 'res://assets/environment/service_props/service_cabinet.glb' remapped 'res://assets/environment/service_props/service_cabinet.glb' at thread -1
+Completed load for: 'res://scenes/presentation/service_props/service_cabinet.tscn' remapped 'res://scenes/presentation/service_props/service_cabinet.tscn' at thread -1
+Loading resource: res://scenes/presentation/service_props/pipe_rack.tscn remapped: res://scenes/presentation/service_props/pipe_rack.tscn
+Loading resource: res://assets/environment/service_props/pipe_rack.glb remapped: res://assets/environment/service_props/pipe_rack.glb
+Loading resource: res://.godot/imported/pipe_rack.glb-f3e521be72ac6d74c686456f5e491c05.scn remapped: res://.godot/imported/pipe_rack.glb-f3e521be72ac6d74c686456f5e491c05.scn
+Loading resource: res://assets/environment/service_props/pipe_rack_colormap.png remapped: res://assets/environment/service_props/pipe_rack_colormap.png
+Loading resource: res://.godot/imported/pipe_rack_colormap.png-58aea0ee93a9462fc30b68b3c1603473.ctex remapped: res://.godot/imported/pipe_rack_colormap.png-58aea0ee93a9462fc30b68b3c1603473.ctex
+Completed load for: 'res://assets/environment/service_props/pipe_rack_colormap.png' remapped 'res://assets/environment/service_props/pipe_rack_colormap.png' at thread -1
+Completed load for: 'res://assets/environment/service_props/pipe_rack.glb' remapped 'res://assets/environment/service_props/pipe_rack.glb' at thread -1
+Completed load for: 'res://scenes/presentation/service_props/pipe_rack.tscn' remapped 'res://scenes/presentation/service_props/pipe_rack.tscn' at thread -1
+Completed load for: 'res://scenes/presentation/service_props/maintenance_cluster.tscn' remapped 'res://scenes/presentation/service_props/maintenance_cluster.tscn' at thread -1
+Completed load for: 'res://scenes/areas/prototype_field_office.tscn' remapped 'res://scenes/areas/prototype_field_office.tscn' at thread -1
+Completed load for: 'res://scenes/areas/prototype_arena.tscn' remapped 'res://scenes/areas/prototype_arena.tscn' at thread -1
+Completed load for: 'res://resources/areas/prototype_arena.tres' remapped 'res://resources/areas/prototype_arena.tres' at thread -1
+Loading resource: res://resources/enemies/prototype_basic_enemy.tres remapped: res://resources/enemies/prototype_basic_enemy.tres
+Loading resource: res://scenes/enemies/enemy.tscn remapped: res://scenes/enemies/enemy.tscn
+Loading resource: res://scripts/enemies/enemy_controller.gd remapped: res://scripts/enemies/enemy_controller.gd
+Loading resource: res://scenes/player/ragdoll_proxy.tscn remapped: res://scenes/player/ragdoll_proxy.tscn
+Loading resource: res://scripts/combat/ragdoll_proxy.gd remapped: res://scripts/combat/ragdoll_proxy.gd
+Completed load for: 'res://scripts/combat/ragdoll_proxy.gd' remapped 'res://scripts/combat/ragdoll_proxy.gd' at thread -1
+Completed load for: 'res://scenes/player/ragdoll_proxy.tscn' remapped 'res://scenes/player/ragdoll_proxy.tscn' at thread -1
+Loading resource: res://scenes/weapons/rocket_projectile.tscn remapped: res://scenes/weapons/rocket_projectile.tscn
+Loading resource: res://scripts/combat/rocket_projectile.gd remapped: res://scripts/combat/rocket_projectile.gd
+Loading resource: res://resources/vfx/combat_flash.gdshader remapped: res://resources/vfx/combat_flash.gdshader
+Completed load for: 'res://resources/vfx/combat_flash.gdshader' remapped 'res://resources/vfx/combat_flash.gdshader' at thread -1
+Loading resource: res://resources/vfx/soft_smoke.tres remapped: res://resources/vfx/soft_smoke.tres
+Completed load for: 'res://resources/vfx/soft_smoke.tres' remapped 'res://resources/vfx/soft_smoke.tres' at thread -1
+Loading resource: res://assets/audio/neon_bastion_loop.wav remapped: res://assets/audio/neon_bastion_loop.wav
+Loading resource: res://.godot/imported/neon_bastion_loop.wav-a7e5e8b0f2da5574b8363032af6b4b59.sample remapped: res://.godot/imported/neon_bastion_loop.wav-a7e5e8b0f2da5574b8363032af6b4b59.sample
+Completed load for: 'res://assets/audio/neon_bastion_loop.wav' remapped 'res://assets/audio/neon_bastion_loop.wav' at thread -1
+Loading resource: res://assets/audio/ar_fire.wav remapped: res://assets/audio/ar_fire.wav
+Loading resource: res://.godot/imported/ar_fire.wav-38b55cfac5001959892dfcd1e1ca7a8a.sample remapped: res://.godot/imported/ar_fire.wav-38b55cfac5001959892dfcd1e1ca7a8a.sample
+Completed load for: 'res://assets/audio/ar_fire.wav' remapped 'res://assets/audio/ar_fire.wav' at thread -1
+Loading resource: res://assets/audio/smg_fire.wav remapped: res://assets/audio/smg_fire.wav
+Loading resource: res://.godot/imported/smg_fire.wav-7a7197ef045cc1d697b6efa83e4d62cb.sample remapped: res://.godot/imported/smg_fire.wav-7a7197ef045cc1d697b6efa83e4d62cb.sample
+Completed load for: 'res://assets/audio/smg_fire.wav' remapped 'res://assets/audio/smg_fire.wav' at thread -1
+Loading resource: res://assets/audio/rocket_fire.wav remapped: res://assets/audio/rocket_fire.wav
+Loading resource: res://.godot/imported/rocket_fire.wav-87554e48e022ec8a955ecc89ec199ca4.sample remapped: res://.godot/imported/rocket_fire.wav-87554e48e022ec8a955ecc89ec199ca4.sample
+Completed load for: 'res://assets/audio/rocket_fire.wav' remapped 'res://assets/audio/rocket_fire.wav' at thread -1
+Loading resource: res://assets/audio/enemy_fire.wav remapped: res://assets/audio/enemy_fire.wav
+Loading resource: res://.godot/imported/enemy_fire.wav-0daf2ab420dcd9185a8d299d477644b9.sample remapped: res://.godot/imported/enemy_fire.wav-0daf2ab420dcd9185a8d299d477644b9.sample
+Completed load for: 'res://assets/audio/enemy_fire.wav' remapped 'res://assets/audio/enemy_fire.wav' at thread -1
+Loading resource: res://assets/audio/impact.wav remapped: res://assets/audio/impact.wav
+Loading resource: res://.godot/imported/impact.wav-69c408f3f3e73daf7c3030beaa0507af.sample remapped: res://.godot/imported/impact.wav-69c408f3f3e73daf7c3030beaa0507af.sample
+Completed load for: 'res://assets/audio/impact.wav' remapped 'res://assets/audio/impact.wav' at thread -1
+Loading resource: res://assets/audio/player_hurt.wav remapped: res://assets/audio/player_hurt.wav
+Loading resource: res://.godot/imported/player_hurt.wav-e76f2b424872d75af456fd06da721c72.sample remapped: res://.godot/imported/player_hurt.wav-e76f2b424872d75af456fd06da721c72.sample
+Completed load for: 'res://assets/audio/player_hurt.wav' remapped 'res://assets/audio/player_hurt.wav' at thread -1
+Loading resource: res://assets/audio/explosion.wav remapped: res://assets/audio/explosion.wav
+Loading resource: res://.godot/imported/explosion.wav-4dcccbd27187cfdac205309f792899a7.sample remapped: res://.godot/imported/explosion.wav-4dcccbd27187cfdac205309f792899a7.sample
+Completed load for: 'res://assets/audio/explosion.wav' remapped 'res://assets/audio/explosion.wav' at thread -1
+Loading resource: res://assets/audio/dodge.wav remapped: res://assets/audio/dodge.wav
+Loading resource: res://.godot/imported/dodge.wav-9186ee525247cf03bb2e8ec8df89e2e2.sample remapped: res://.godot/imported/dodge.wav-9186ee525247cf03bb2e8ec8df89e2e2.sample
+Completed load for: 'res://assets/audio/dodge.wav' remapped 'res://assets/audio/dodge.wav' at thread -1
+Loading resource: res://assets/audio/reload.wav remapped: res://assets/audio/reload.wav
+Loading resource: res://.godot/imported/reload.wav-50f2d65be979b5afe34a1e31b08f63e8.sample remapped: res://.godot/imported/reload.wav-50f2d65be979b5afe34a1e31b08f63e8.sample
+Completed load for: 'res://assets/audio/reload.wav' remapped 'res://assets/audio/reload.wav' at thread -1
+Loading resource: res://assets/audio/ui_click.wav remapped: res://assets/audio/ui_click.wav
+Loading resource: res://.godot/imported/ui_click.wav-27a1a14815f4272c438d6dd4385cee0b.sample remapped: res://.godot/imported/ui_click.wav-27a1a14815f4272c438d6dd4385cee0b.sample
+Completed load for: 'res://assets/audio/ui_click.wav' remapped 'res://assets/audio/ui_click.wav' at thread -1
+Loading resource: res://assets/audio/ui_confirm.wav remapped: res://assets/audio/ui_confirm.wav
+Loading resource: res://.godot/imported/ui_confirm.wav-bc2ae5b59e18c09c9fb35c83bd897209.sample remapped: res://.godot/imported/ui_confirm.wav-bc2ae5b59e18c09c9fb35c83bd897209.sample
+Completed load for: 'res://assets/audio/ui_confirm.wav' remapped 'res://assets/audio/ui_confirm.wav' at thread -1
+Loading resource: res://assets/audio/victory.wav remapped: res://assets/audio/victory.wav
+Loading resource: res://.godot/imported/victory.wav-d893d32ad919f27e15cf04d35e288b78.sample remapped: res://.godot/imported/victory.wav-d893d32ad919f27e15cf04d35e288b78.sample
+Completed load for: 'res://assets/audio/victory.wav' remapped 'res://assets/audio/victory.wav' at thread -1
+Loading resource: res://assets/audio/defeat.wav remapped: res://assets/audio/defeat.wav
+Loading resource: res://.godot/imported/defeat.wav-2c373cdad262b5fb9203b05423989caa.sample remapped: res://.godot/imported/defeat.wav-2c373cdad262b5fb9203b05423989caa.sample
+Completed load for: 'res://assets/audio/defeat.wav' remapped 'res://assets/audio/defeat.wav' at thread -1
+Completed load for: 'res://scripts/combat/rocket_projectile.gd' remapped 'res://scripts/combat/rocket_projectile.gd' at thread -1
+Completed load for: 'res://scenes/weapons/rocket_projectile.tscn' remapped 'res://scenes/weapons/rocket_projectile.tscn' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/battle_presentation.glb remapped: res://assets/characters/unitychan_battle/battle_presentation.glb
+Loading resource: res://.godot/imported/battle_presentation.glb-af83ba541127bc3157e57bdc96b1bc0e.scn remapped: res://.godot/imported/battle_presentation.glb-af83ba541127bc3157e57bdc96b1bc0e.scn
+Completed load for: 'res://assets/characters/unitychan_battle/battle_presentation.glb' remapped 'res://assets/characters/unitychan_battle/battle_presentation.glb' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/animations/idle.fbx remapped: res://assets/characters/unitychan_battle/animations/idle.fbx
+Loading resource: res://.godot/imported/idle.fbx-37b381a41ec7def9ae1087b57e889cc9.scn remapped: res://.godot/imported/idle.fbx-37b381a41ec7def9ae1087b57e889cc9.scn
+Completed load for: 'res://assets/characters/unitychan_battle/animations/idle.fbx' remapped 'res://assets/characters/unitychan_battle/animations/idle.fbx' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/animations/walk.fbx remapped: res://assets/characters/unitychan_battle/animations/walk.fbx
+Loading resource: res://.godot/imported/walk.fbx-1fe110b7e70ab2777ba9d90684478114.scn remapped: res://.godot/imported/walk.fbx-1fe110b7e70ab2777ba9d90684478114.scn
+Completed load for: 'res://assets/characters/unitychan_battle/animations/walk.fbx' remapped 'res://assets/characters/unitychan_battle/animations/walk.fbx' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/animations/run.fbx remapped: res://assets/characters/unitychan_battle/animations/run.fbx
+Loading resource: res://.godot/imported/run.fbx-81cf54b3eed3096f3134b89c585697e3.scn remapped: res://.godot/imported/run.fbx-81cf54b3eed3096f3134b89c585697e3.scn
+Completed load for: 'res://assets/characters/unitychan_battle/animations/run.fbx' remapped 'res://assets/characters/unitychan_battle/animations/run.fbx' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/animations/slide.fbx remapped: res://assets/characters/unitychan_battle/animations/slide.fbx
+Loading resource: res://.godot/imported/slide.fbx-84972b20eae75f20e56c97ab76805637.scn remapped: res://.godot/imported/slide.fbx-84972b20eae75f20e56c97ab76805637.scn
+Completed load for: 'res://assets/characters/unitychan_battle/animations/slide.fbx' remapped 'res://assets/characters/unitychan_battle/animations/slide.fbx' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/presentation/anime_surface.gdshader remapped: res://assets/characters/unitychan_battle/presentation/anime_surface.gdshader
+Completed load for: 'res://assets/characters/unitychan_battle/presentation/anime_surface.gdshader' remapped 'res://assets/characters/unitychan_battle/presentation/anime_surface.gdshader' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a.glb remapped: res://assets/characters/vrm_avatar/avatar_sample_a.glb
+Loading resource: res://.godot/imported/avatar_sample_a.glb-d3605b9521650ff7c59eec6905126ddb.scn remapped: res://.godot/imported/avatar_sample_a.glb-d3605b9521650ff7c59eec6905126ddb.scn
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__01.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__01.png
+Loading resource: res://.godot/imported/avatar_sample_a__01.png-bd83016592bee64b313ce83e872f820c.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__01.png-bd83016592bee64b313ce83e872f820c.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__01.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__01.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__02.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__02.png
+Loading resource: res://.godot/imported/avatar_sample_a__02.png-65e9469d01d6c978219110001b405566.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__02.png-65e9469d01d6c978219110001b405566.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__02.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__02.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__03.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__03.png
+Loading resource: res://.godot/imported/avatar_sample_a__03.png-c7aa9bffe990abbfa149a9acd2c2bf68.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__03.png-c7aa9bffe990abbfa149a9acd2c2bf68.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__03.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__03.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__04.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__04.png
+Loading resource: res://.godot/imported/avatar_sample_a__04.png-d8959d0da95f72e8095f66a6dee55533.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__04.png-d8959d0da95f72e8095f66a6dee55533.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__04.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__04.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__06.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__06.png
+Loading resource: res://.godot/imported/avatar_sample_a__06.png-308c374bc6ef4b1806ab14ade15db5ff.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__06.png-308c374bc6ef4b1806ab14ade15db5ff.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__06.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__06.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__07.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__07.png
+Loading resource: res://.godot/imported/avatar_sample_a__07.png-3109b51826e1cdb753b0a5152b440154.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__07.png-3109b51826e1cdb753b0a5152b440154.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__07.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__07.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__09.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__09.png
+Loading resource: res://.godot/imported/avatar_sample_a__09.png-cd5bb3da9686b6fddf23539cc4894a99.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__09.png-cd5bb3da9686b6fddf23539cc4894a99.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__09.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__09.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__10.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__10.png
+Loading resource: res://.godot/imported/avatar_sample_a__10.png-d68f205ddf708d0c3ef45e821e739791.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__10.png-d68f205ddf708d0c3ef45e821e739791.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__10.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__10.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__12.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__12.png
+Loading resource: res://.godot/imported/avatar_sample_a__12.png-731c1723bce981d22414293819e95a0c.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__12.png-731c1723bce981d22414293819e95a0c.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__12.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__12.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__13.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__13.png
+Loading resource: res://.godot/imported/avatar_sample_a__13.png-c430491a0de4cd65f3adaf54f6e87eed.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__13.png-c430491a0de4cd65f3adaf54f6e87eed.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__13.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__13.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__14.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__14.png
+Loading resource: res://.godot/imported/avatar_sample_a__14.png-3e7a6abeaca497e07b3bd1bbd40808be.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__14.png-3e7a6abeaca497e07b3bd1bbd40808be.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__14.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__14.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__15.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__15.png
+Loading resource: res://.godot/imported/avatar_sample_a__15.png-eaf36158f03b50fc2589fe71cc0b4d08.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__15.png-eaf36158f03b50fc2589fe71cc0b4d08.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__15.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__15.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__17.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__17.png
+Loading resource: res://.godot/imported/avatar_sample_a__17.png-e706c9d7d581300add49fb084be65bde.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__17.png-e706c9d7d581300add49fb084be65bde.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__17.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__17.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__19.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__19.png
+Loading resource: res://.godot/imported/avatar_sample_a__19.png-0583e1beeec88a0d7589d2e886b5f5a1.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__19.png-0583e1beeec88a0d7589d2e886b5f5a1.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__19.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__19.png' at thread -1
+Loading resource: res://assets/characters/vrm_avatar/avatar_sample_a__21.png remapped: res://assets/characters/vrm_avatar/avatar_sample_a__21.png
+Loading resource: res://.godot/imported/avatar_sample_a__21.png-a8589854cdd3939ceb42549559e40610.s3tc.ctex remapped: res://.godot/imported/avatar_sample_a__21.png-a8589854cdd3939ceb42549559e40610.s3tc.ctex
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a__21.png' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a__21.png' at thread -1
+Completed load for: 'res://assets/characters/vrm_avatar/avatar_sample_a.glb' remapped 'res://assets/characters/vrm_avatar/avatar_sample_a.glb' at thread -1
+Completed load for: 'res://scripts/enemies/enemy_controller.gd' remapped 'res://scripts/enemies/enemy_controller.gd' at thread -1
+Completed load for: 'res://scenes/enemies/enemy.tscn' remapped 'res://scenes/enemies/enemy.tscn' at thread -1
+Completed load for: 'res://resources/enemies/prototype_basic_enemy.tres' remapped 'res://resources/enemies/prototype_basic_enemy.tres' at thread -1
+Loading resource: res://resources/enemies/prototype_heavy_enemy.tres remapped: res://resources/enemies/prototype_heavy_enemy.tres
+Completed load for: 'res://resources/enemies/prototype_heavy_enemy.tres' remapped 'res://resources/enemies/prototype_heavy_enemy.tres' at thread -1
+Loading resource: res://resources/loot/prototype_high_value_loot.tres remapped: res://resources/loot/prototype_high_value_loot.tres
+Completed load for: 'res://resources/loot/prototype_high_value_loot.tres' remapped 'res://resources/loot/prototype_high_value_loot.tres' at thread -1
+Completed load for: 'res://resources/content/content_manifest.tres' remapped 'res://resources/content/content_manifest.tres' at thread -1
+Completed load for: 'res://scripts/systems/content_db.gd' remapped 'res://scripts/systems/content_db.gd' at thread -1
+Loading resource: res://scripts/systems/profile_runtime.gd remapped: res://scripts/systems/profile_runtime.gd
+Completed load for: 'res://scripts/systems/profile_runtime.gd' remapped 'res://scripts/systems/profile_runtime.gd' at thread -1
+Loading resource: res://scripts/systems/sortie_runtime.gd remapped: res://scripts/systems/sortie_runtime.gd
+Completed load for: 'res://scripts/systems/sortie_runtime.gd' remapped 'res://scripts/systems/sortie_runtime.gd' at thread -1
+Loading resource: res://scripts/systems/game_state.gd remapped: res://scripts/systems/game_state.gd
+Completed load for: 'res://scripts/systems/game_state.gd' remapped 'res://scripts/systems/game_state.gd' at thread -1
+Loaded system CA certificates
+Loading resource: res://tests/world_interaction_test.tscn remapped: res://tests/world_interaction_test.tscn
+Loading resource: res://tests/world_interaction_test.gd remapped: res://tests/world_interaction_test.gd
+Completed load for: 'res://tests/world_interaction_test.gd' remapped 'res://tests/world_interaction_test.gd' at thread -1
+Completed load for: 'res://tests/world_interaction_test.tscn' remapped 'res://tests/world_interaction_test.tscn' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_Add.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_Add.png
+Loading resource: res://.godot/imported/kohaku_A_Add.png-b6cde114e3939b5c93d24350cdeac87d.ctex remapped: res://.godot/imported/kohaku_A_Add.png-b6cde114e3939b5c93d24350cdeac87d.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_Add.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_Add.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_Add_Shd.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_Add_Shd.png
+Loading resource: res://.godot/imported/kohaku_A_Add_Shd.png-cf06a4efdc8749a92e5feeec18afcc61.ctex remapped: res://.godot/imported/kohaku_A_Add_Shd.png-cf06a4efdc8749a92e5feeec18afcc61.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_Add_Shd.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_Add_Shd.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_Add_Spow.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_Add_Spow.png
+Loading resource: res://.godot/imported/kohaku_A_Add_Spow.png-e144105e331664655f0df1d71edc0b44.ctex remapped: res://.godot/imported/kohaku_A_Add_Spow.png-e144105e331664655f0df1d71edc0b44.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_Add_Spow.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_Add_Spow.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_Body.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_Body.png
+Loading resource: res://.godot/imported/kohaku_A_Body.png-c4209d5354415964b8e9c4c5da8a90c2.ctex remapped: res://.godot/imported/kohaku_A_Body.png-c4209d5354415964b8e9c4c5da8a90c2.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_Body.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_Body.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_Body_Shd.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_Body_Shd.png
+Loading resource: res://.godot/imported/kohaku_A_Body_Shd.png-0988d9a71d75a28c7a62de0a9c4317d5.ctex remapped: res://.godot/imported/kohaku_A_Body_Shd.png-0988d9a71d75a28c7a62de0a9c4317d5.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_Body_Shd.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_Body_Shd.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_Body_spow.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_Body_spow.png
+Loading resource: res://.godot/imported/kohaku_A_Body_spow.png-36275123647be03dae00cf6ebf98d40d.ctex remapped: res://.godot/imported/kohaku_A_Body_spow.png-36275123647be03dae00cf6ebf98d40d.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_Body_spow.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_Body_spow.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main.png
+Loading resource: res://.godot/imported/kohaku_A_face3_main.png-50db042533897b1087b1c7b645264ac3.ctex remapped: res://.godot/imported/kohaku_A_face3_main.png-50db042533897b1087b1c7b645264ac3.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_sub.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_sub.png
+Loading resource: res://.godot/imported/kohaku_A_face3_main_sub.png-c627d28edd820c93975a0884a1138ad1.ctex remapped: res://.godot/imported/kohaku_A_face3_main_sub.png-c627d28edd820c93975a0884a1138ad1.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_sub.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_sub.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_Shd2.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_Shd2.png
+Loading resource: res://.godot/imported/kohaku_A_face3_main_Shd2.png-339ea47e7fc6d7d37195019a73fed828.ctex remapped: res://.godot/imported/kohaku_A_face3_main_Shd2.png-339ea47e7fc6d7d37195019a73fed828.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_Shd2.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_Shd2.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_spow.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_spow.png
+Loading resource: res://.godot/imported/kohaku_A_face3_main_spow.png-910a809ddcd0780b1b2e53ebf94d4134.ctex remapped: res://.godot/imported/kohaku_A_face3_main_spow.png-910a809ddcd0780b1b2e53ebf94d4134.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_spow.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_face3_main_spow.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_Hair_Spow.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_Hair_Spow.png
+Loading resource: res://.godot/imported/kohaku_A_Hair_Spow.png-07110a7b3e565e431f112ab69de5491f.ctex remapped: res://.godot/imported/kohaku_A_Hair_Spow.png-07110a7b3e565e431f112ab69de5491f.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_Hair_Spow.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_Hair_Spow.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_skin.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_skin.png
+Loading resource: res://.godot/imported/kohaku_A_skin.png-ed696fc8b1c21865db0c0e5e7889784d.ctex remapped: res://.godot/imported/kohaku_A_skin.png-ed696fc8b1c21865db0c0e5e7889784d.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_skin.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_skin.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_Skin_Shd.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_Skin_Shd.png
+Loading resource: res://.godot/imported/kohaku_A_Skin_Shd.png-928f60be43d464fdb40eef4f5b40d6d8.ctex remapped: res://.godot/imported/kohaku_A_Skin_Shd.png-928f60be43d464fdb40eef4f5b40d6d8.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_Skin_Shd.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_Skin_Shd.png' at thread -1
+Loading resource: res://assets/characters/unitychan_battle/textures/kohaku_A_skin_spow.png remapped: res://assets/characters/unitychan_battle/textures/kohaku_A_skin_spow.png
+Loading resource: res://.godot/imported/kohaku_A_skin_spow.png-3d224c2bc0242740b75e43de8eeee458.ctex remapped: res://.godot/imported/kohaku_A_skin_spow.png-3d224c2bc0242740b75e43de8eeee458.ctex
+Completed load for: 'res://assets/characters/unitychan_battle/textures/kohaku_A_skin_spow.png' remapped 'res://assets/characters/unitychan_battle/textures/kohaku_A_skin_spow.png' at thread -1
+WORLD_INTERACTION_TEST: PASS
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"
