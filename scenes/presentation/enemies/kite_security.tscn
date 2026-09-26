@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/enemies/kite_security/enemy_visual.glb" id="model"]
+
+[node name="KiteSecurityPresentation" type="Node3D"]
+metadata/presentation_only = true
+
+[node name="Model" parent="." instance=ExtResource("model")]

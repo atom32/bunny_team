@@ -1,0 +1,26 @@
+{
+  "blender": "5.2.2 LTS",
+  "units": "meters",
+  "export_yup": true,
+  "parts": [
+    "Chassis",
+    "PortPod",
+    "StarboardPod",
+    "Sensor",
+    "RearPack",
+    "Gun"
+  ],
+  "triangles": 11092,
+  "materials": 6,
+  "textures": 0,
+  "bones": 0,
+  "animation_clips": 0,
+  "collisions": 0,
+  "gun_pivot_godot": [
+    0,
+    1.15,
+    -0.711
+  ],
+  "runtime_sha256": "31a1f994e3f209a495245ef18cd323c4a845c9ad8ac9a060c7eb8fac08f0926e",
+  "master_sha256": "2fc17fe7f2be61993f12c0db45761524db0b1ee1f00ce76649be7ca4990361de"
+}

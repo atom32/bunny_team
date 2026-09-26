@@ -1,0 +1,4 @@
+Original project-local KITE-07 hard-surface asset authored for this project.
+No third-party downloaded mesh or texture is incorporated in enemy_visual.glb.
+This provenance notice is not a new license for retained game dependencies.
+Unity-Chan, AvatarSample_A, Kenney and other existing assets retain their own terms.

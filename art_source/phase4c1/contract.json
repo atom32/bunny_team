@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "360_fire_direction_samples_equal": true,
+    "360_fire_origin_samples_equal": true,
+    "collision_and_navigation_unchanged": true,
+    "damage_death_physics_rng_unchanged": true,
+    "no_new_collision_in_asset": true,
+    "old_rendering_hidden_not_deleted": true,
+    "real_legacy_animation_rig_retained": true,
+    "six_existing_death_bodies_visually_reskinned": true,
+    "spawn_rng_unchanged": true,
+    "visible_bore_tracks_gameplay_muzzle": true,
+    "visible_drone_instantiated": true
+  },
+  "max_direction_error": 0.0,
+  "max_origin_error_m": 0.0,
+  "max_visual_bore_error_m": 0.000000247556670274207,
+  "method": "Same production controller and inputs; old visual vs presentation-child scene. Old rig retained, not bypassed.",
+  "samples": 360
+}

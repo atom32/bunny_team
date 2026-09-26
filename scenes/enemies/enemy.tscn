@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_controller.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/presentation/enemy_drone_presentation.gd" id="presentation"]
 
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1")
+
+[node name="EnemyDronePresentation" type="Node3D" parent="."]
+script = ExtResource("presentation")
+metadata/presentation_only = true
 

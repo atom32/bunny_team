@@ -1,0 +1,18 @@
+[
+  {
+    "name": "cold_import",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase4c1_cold_01\\project",
+      "--headless",
+      "--editor",
+      "--import"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "d69678364f652898da0b7704b3151a96c3307f37d1dc3fa531a065a86ffec5ee"
+  }
+]

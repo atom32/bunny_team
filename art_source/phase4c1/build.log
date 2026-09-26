@@ -1,0 +1,26 @@
+D:\bunny_team\art_source\phase4c1\build_enemy.py:21: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m = bpy.data.materials.new(name); m.use_nodes = True
+00:03.735  reports          | WARNING Path 'F:\SteamLibrary\steamapps\common\Blender\5.2\datafiles\assets\brushes\essentials_brushes-gp_draw.blend' cannot be made relative for Material 'Dots Stroke'
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+00:03.735  reports          | WARNING Path 'F:\SteamLibrary\steamapps\common\Blender\5.2\datafiles\assets\brushes\essentials_brushes-gp_draw.blend' cannot be made relative for Material 'Material'
+Info: Saved as "enemy_master.blend"
+INFO Draco is available, use library at F:\SteamLibrary\steamapps\common\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at F:\SteamLibrary\steamapps\common\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+11:50:34 | INFO: Starting glTF 2.0 export
+11:50:34 | INFO: Extracting primitive: Swept ceramic shell
+11:50:34 | INFO: Primitives created: 5
+11:50:34 | INFO: Extracting primitive: Cylinder.014
+11:50:34 | INFO: Primitives created: 4
+11:50:34 | INFO: Extracting primitive: Split shroud
+11:50:34 | INFO: Primitives created: 5
+11:50:34 | INFO: Extracting primitive: Power cassette
+11:50:34 | INFO: Primitives created: 3
+11:50:34 | INFO: Extracting primitive: Cylinder.010
+11:50:34 | INFO: Primitives created: 6
+11:50:34 | INFO: Extracting primitive: Split shroud.001
+11:50:34 | INFO: Primitives created: 5
+11:50:34 | INFO: Finished glTF 2.0 export in 0.6148834228515625 s
+
+{"blender": "5.2.2 LTS", "units": "meters", "export_yup": true, "parts": ["Chassis", "PortPod", "StarboardPod", "Sensor", "RearPack", "Gun"], "triangles": 11092, "materials": 6, "textures": 0, "bones": 0, "animation_clips": 0, "collisions": 0, "gun_pivot_godot": [0, 1.15, -0.711], "runtime_sha256": "31a1f994e3f209a495245ef18cd323c4a845c9ad8ac9a060c7eb8fac08f0926e", "master_sha256": "2fc17fe7f2be61993f12c0db45761524db0b1ee1f00ce76649be7ca4990361de"}
+
+Blender quit

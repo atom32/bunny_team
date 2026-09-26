@@ -1,0 +1,4 @@
+local/
+*.blend1
+persistence_*/profile.json
+persistence_*/expected_after.json

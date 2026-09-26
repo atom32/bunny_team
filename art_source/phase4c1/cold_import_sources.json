@@ -1,0 +1,10 @@
+{
+  "assets/enemies/kite_security/LICENSE.txt": "9e1bc6995d066e2d038cf921d9776e208af63a908422aea9bb4ba893319d4b66",
+  "assets/enemies/kite_security/SOURCE.md": "21e673ae573e7a27b47c66c8de68a8df6ee5a0fc63b08b18f0ea503f536f61cb",
+  "assets/enemies/kite_security/enemy_visual.glb": "31a1f994e3f209a495245ef18cd323c4a845c9ad8ac9a060c7eb8fac08f0926e",
+  "assets/enemies/kite_security/enemy_visual.glb.import": "1181bcf2ae1f01a73d7ace033dd043b6a159234476b37fb8887fc655c82687e6",
+  "scenes/enemies/enemy.tscn": "fb0dab9f18d1afd910e30a3956fa58183c5dbdb3d3c295cfa4e88a8f3f7a7d8b",
+  "scenes/presentation/enemies/kite_security.tscn": "1de9a64bd8da374cf7fe5cc6a544dbde7b839d1ec6734805f3e5969efe73bbcf",
+  "scripts/presentation/enemy_drone_presentation.gd": "a59c833ca74574b241b74f6a0a413af2560d6d680721549f018c12f3af8935f2",
+  "scripts/presentation/enemy_drone_presentation.gd.uid": "31f1e439f2f8bcb028bfbbb2bcab3ade74a750f943d42ae2f5656307ab1020aa"
+}

@@ -1,0 +1,159 @@
+{
+  "status": "PASS",
+  "checks": {
+    "only_existing_enemy_scene_changed": true,
+    "baseline_e915d21": true,
+    "controller_rig_player_arena_tests_unchanged": true,
+    "official_68_hashes_identical": true,
+    "all_comparative_contract_checks": true,
+    "master_hash_correct": true,
+    "runtime_hash_correct": true,
+    "fresh_isolated_import_zero_errors_warnings": true,
+    "cold_import_used_current_runtime_files": true,
+    "33_tests_main_pass": true,
+    "actual_user_save_unchanged": true,
+    "two_current_route_processes_clean": true,
+    "Rifle_complete_route": true,
+    "Rifle_normal_enemy_death_before_extraction": true,
+    "Rifle_cross_process_save_load": true,
+    "Rifle_warehouse_commit_equivalent": true,
+    "SMG_complete_route": true,
+    "SMG_normal_enemy_death_before_extraction": true,
+    "SMG_cross_process_save_load": true,
+    "SMG_warehouse_commit_equivalent": true,
+    "final_logs_no_errors": true,
+    "production_captures_1280x720": true
+  },
+  "changed_existing_files": [
+    "scenes/enemies/enemy.tscn"
+  ],
+  "tests": "33/33",
+  "main_exit": 0,
+  "test_warnings": {
+    "main": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ]
+  },
+  "logs": {
+    "build.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "contract.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "import.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "visual.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "route_Rifle\\route.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "route_SMG\\route.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "persistence_Rifle\\reload.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "persistence_SMG\\reload.log": {
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "contract": {
+    "checks": {
+      "360_fire_direction_samples_equal": true,
+      "360_fire_origin_samples_equal": true,
+      "collision_and_navigation_unchanged": true,
+      "damage_death_physics_rng_unchanged": true,
+      "no_new_collision_in_asset": true,
+      "old_rendering_hidden_not_deleted": true,
+      "real_legacy_animation_rig_retained": true,
+      "six_existing_death_bodies_visually_reskinned": true,
+      "spawn_rng_unchanged": true,
+      "visible_bore_tracks_gameplay_muzzle": true,
+      "visible_drone_instantiated": true
+    },
+    "max_direction_error": 0.0,
+    "max_origin_error_m": 0.0,
+    "max_visual_bore_error_m": 2.47556670274207e-07,
+    "method": "Same production controller and inputs; old visual vs presentation-child scene. Old rig retained, not bypassed.",
+    "samples": 360
+  },
+  "asset": {
+    "blender": "5.2.2 LTS",
+    "units": "meters",
+    "export_yup": true,
+    "parts": [
+      "Chassis",
+      "PortPod",
+      "StarboardPod",
+      "Sensor",
+      "RearPack",
+      "Gun"
+    ],
+    "triangles": 11092,
+    "materials": 6,
+    "textures": 0,
+    "bones": 0,
+    "animation_clips": 0,
+    "collisions": 0,
+    "gun_pivot_godot": [
+      0,
+      1.15,
+      -0.711
+    ],
+    "runtime_sha256": "31a1f994e3f209a495245ef18cd323c4a845c9ad8ac9a060c7eb8fac08f0926e",
+    "master_sha256": "2fc17fe7f2be61993f12c0db45761524db0b1ee1f00ce76649be7ca4990361de"
+  },
+  "routes": {
+    "Rifle": {
+      "checks": 39,
+      "combat": {
+        "damage_taken": 12,
+        "enemies_defeated": 4,
+        "mission_completed": false,
+        "shots": 26
+      },
+      "effects": {
+        "DodgeStreak": 1,
+        "EnemyDied": 4,
+        "Explosion": 8,
+        "HitEffect": 16,
+        "ImpactSmoke": 13,
+        "MuzzleFlash": 40,
+        "RocketTrail": 5
+      },
+      "restart_checks": 5
+    },
+    "SMG": {
+      "checks": 39,
+      "combat": {
+        "damage_taken": 6,
+        "enemies_defeated": 4,
+        "mission_completed": false,
+        "shots": 45
+      },
+      "effects": {
+        "DodgeStreak": 1,
+        "EnemyDied": 4,
+        "Explosion": 8,
+        "HitEffect": 19,
+        "ImpactSmoke": 18,
+        "MuzzleFlash": 60,
+        "RocketTrail": 2
+      },
+      "restart_checks": 5
+    }
+  },
+  "license": "Hidden AvatarSample_A driver retained; public-release blocker NOT resolved.",
+  "acceptance_method": "Real OpenGL scripted/input/API production routes; controlled supplementary views. Not manual keyboard/mouse."
+}
