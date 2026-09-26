@@ -1,0 +1,4592 @@
+[
+  {
+    "direction": [
+      0.0,
+      -0.00743182469159365,
+      -0.999972403049469
+    ],
+    "frame": 0,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.71130096912384
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182469159365,
+      -0.999972403049469
+    ],
+    "frame": 1,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300909519196
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 2,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 3,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 4,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 5,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 6,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 7,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 8,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 9,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 10,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 11,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 12,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 13,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 14,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 15,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 16,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 17,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 18,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743182376027107,
+      -0.999972403049469
+    ],
+    "frame": 19,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335421085358,
+      -0.711300849914551
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00742720020934939,
+      -0.999972403049469
+    ],
+    "frame": 20,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335683345795,
+      -0.698937833309174
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00742502463981509,
+      -0.999972462654114
+    ],
+    "frame": 21,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335802555084,
+      -0.6931232213974
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00742449518293142,
+      -0.999972462654114
+    ],
+    "frame": 22,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335838317871,
+      -0.69169819355011
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00742506049573421,
+      -0.999972462654114
+    ],
+    "frame": 23,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335802555084,
+      -0.693215608596802
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00742636527866125,
+      -0.999972462654114
+    ],
+    "frame": 24,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335731029511,
+      -0.696705341339111
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00742816179990768,
+      -0.999972403049469
+    ],
+    "frame": 25,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.4833562374115,
+      -0.701517224311829
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00742937251925468,
+      -0.999972403049469
+    ],
+    "frame": 26,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335564136505,
+      -0.704742670059204
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743018044158816,
+      -0.999972403049469
+    ],
+    "frame": 27,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335516452789,
+      -0.706904828548431
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743072014302015,
+      -0.999972403049469
+    ],
+    "frame": 28,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335480690002,
+      -0.708354115486145
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.00743108196184039,
+      -0.999972403049469
+    ],
+    "frame": 29,
+    "has_weapon": true,
+    "origin": [
+      -2.20000004768372,
+      1.48335456848145,
+      -0.709325611591339
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.0000584350200369954,
+      -0.00729672703891993,
+      -0.99997341632843
+    ],
+    "frame": 30,
+    "has_weapon": true,
+    "origin": [
+      -2.19887280464172,
+      1.48075783252716,
+      -0.709975004196167
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.000155818124767393,
+      -0.007072439417243,
+      -0.999974966049194
+    ],
+    "frame": 31,
+    "has_weapon": true,
+    "origin": [
+      -2.19699430465698,
+      1.4764279127121,
+      -0.710408449172974
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.000278937310213223,
+      -0.00678865239024162,
+      -0.999976873397827
+    ],
+    "frame": 32,
+    "has_weapon": true,
+    "origin": [
+      -2.19461941719055,
+      1.47095143795013,
+      -0.710697293281555
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00041869530105032,
+      -0.00646624388173223,
+      -0.999979019165039
+    ],
+    "frame": 33,
+    "has_weapon": true,
+    "origin": [
+      -2.19192361831665,
+      1.46473073959351,
+      -0.710889101028442
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.000568861956708133,
+      -0.0061196475289762,
+      -0.999981105327606
+    ],
+    "frame": 34,
+    "has_weapon": true,
+    "origin": [
+      -2.18902707099915,
+      1.45804405212402,
+      -0.71101588010788
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00072499958332628,
+      -0.00575899193063378,
+      -0.999983191490173
+    ],
+    "frame": 35,
+    "has_weapon": true,
+    "origin": [
+      -2.18601536750793,
+      1.45108652114868,
+      -0.711099028587341
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.000883992877788842,
+      -0.0053914925083518,
+      -0.999985039234161
+    ],
+    "frame": 36,
+    "has_weapon": true,
+    "origin": [
+      -2.18294858932495,
+      1.44399726390839,
+      -0.711153030395508
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00104354275390506,
+      -0.0050224456936121,
+      -0.999986827373505
+    ],
+    "frame": 37,
+    "has_weapon": true,
+    "origin": [
+      -2.17987108230591,
+      1.43687832355499,
+      -0.711187601089478
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00120191846508533,
+      -0.00465580262243748,
+      -0.999988436698914
+    ],
+    "frame": 38,
+    "has_weapon": true,
+    "origin": [
+      -2.17681622505188,
+      1.42980587482452,
+      -0.711209058761597
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00135780975688249,
+      -0.00429463619366288,
+      -0.999989807605743
+    ],
+    "frame": 39,
+    "has_weapon": true,
+    "origin": [
+      -2.17380928993225,
+      1.42283916473389,
+      -0.711221873760223
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00151017832104117,
+      -0.00394140230491757,
+      -0.999991118907928
+    ],
+    "frame": 40,
+    "has_weapon": true,
+    "origin": [
+      -2.17087030410767,
+      1.41602551937103,
+      -0.711228847503662
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00165810936596245,
+      -0.00359812821261585,
+      -0.999992191791534
+    ],
+    "frame": 41,
+    "has_weapon": true,
+    "origin": [
+      -2.16801691055298,
+      1.40940403938293,
+      -0.711232125759125
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00180089834611863,
+      -0.00326654547825456,
+      -0.999993085861206
+    ],
+    "frame": 42,
+    "has_weapon": true,
+    "origin": [
+      -2.1652626991272,
+      1.40300810337067,
+      -0.711232900619507
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00193787750322372,
+      -0.00294817402027547,
+      -0.999993741512299
+    ],
+    "frame": 43,
+    "has_weapon": true,
+    "origin": [
+      -2.16262054443359,
+      1.39686703681946,
+      -0.71123206615448
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00206850352697074,
+      -0.00264435680583119,
+      -0.999994337558746
+    ],
+    "frame": 44,
+    "has_weapon": true,
+    "origin": [
+      -2.16010093688965,
+      1.39100670814514,
+      -0.711230278015137
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00219224439933896,
+      -0.00235632271505892,
+      -0.999994874000549
+    ],
+    "frame": 45,
+    "has_weapon": true,
+    "origin": [
+      -2.15771412849426,
+      1.38545083999634,
+      -0.711227893829346
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00230864295735955,
+      -0.00208516628481448,
+      -0.999995172023773
+    ],
+    "frame": 46,
+    "has_weapon": true,
+    "origin": [
+      -2.15546894073486,
+      1.3802205324173,
+      -0.71122533082962
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00241727870889008,
+      -0.00183191988617182,
+      -0.999995350837708
+    ],
+    "frame": 47,
+    "has_weapon": true,
+    "origin": [
+      -2.15337347984314,
+      1.37533569335938,
+      -0.711222589015961
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00251776911318302,
+      -0.0015975107671693,
+      -0.999995529651642
+    ],
+    "frame": 48,
+    "has_weapon": true,
+    "origin": [
+      -2.15143513679504,
+      1.370814204216,
+      -0.711219847202301
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00260975537821651,
+      -0.0013827916700393,
+      -0.999995648860931
+    ],
+    "frame": 49,
+    "has_weapon": true,
+    "origin": [
+      -2.14966082572937,
+      1.36667251586914,
+      -0.71121734380722
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00269294041208923,
+      -0.00118852872401476,
+      -0.999995648860931
+    ],
+    "frame": 50,
+    "has_weapon": true,
+    "origin": [
+      -2.14805626869202,
+      1.36292541027069,
+      -0.711214900016785
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00276702851988375,
+      -0.00101542100310326,
+      -0.999995648860931
+    ],
+    "frame": 51,
+    "has_weapon": true,
+    "origin": [
+      -2.14662718772888,
+      1.35958635807037,
+      -0.711212694644928
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00283177220262587,
+      -0.000864092260599136,
+      -0.999995648860931
+    ],
+    "frame": 52,
+    "has_weapon": true,
+    "origin": [
+      -2.14537835121155,
+      1.35666739940643,
+      -0.71121084690094
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00288693630136549,
+      -0.000735074048861861,
+      -0.999995529651642
+    ],
+    "frame": 53,
+    "has_weapon": true,
+    "origin": [
+      -2.14431428909302,
+      1.35417878627777,
+      -0.711209118366241
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00293236039578915,
+      -0.000628811481874436,
+      -0.999995470046997
+    ],
+    "frame": 54,
+    "has_weapon": true,
+    "origin": [
+      -2.14343810081482,
+      1.35212910175323,
+      -0.711207687854767
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00296788406558335,
+      -0.000545693794265389,
+      -0.999995470046997
+    ],
+    "frame": 55,
+    "has_weapon": true,
+    "origin": [
+      -2.14275288581848,
+      1.35052585601807,
+      -0.711206614971161
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.0029934081248939,
+      -0.000485999160446227,
+      -0.999995470046997
+    ],
+    "frame": 56,
+    "has_weapon": true,
+    "origin": [
+      -2.14226055145264,
+      1.3493744134903,
+      -0.711205899715424
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00300880870781839,
+      -0.000449949933681637,
+      -0.999995350837708
+    ],
+    "frame": 57,
+    "has_weapon": true,
+    "origin": [
+      -2.14196348190308,
+      1.34867906570435,
+      -0.711205363273621
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00301407417282462,
+      -0.00043767603347078,
+      -0.999995350837708
+    ],
+    "frame": 58,
+    "has_weapon": true,
+    "origin": [
+      -2.14186191558838,
+      1.3484423160553,
+      -0.711205303668976
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00300916726700962,
+      -0.000449214479885995,
+      -0.999995350837708
+    ],
+    "frame": 59,
+    "has_weapon": true,
+    "origin": [
+      -2.14195656776428,
+      1.34866487979889,
+      -0.711205422878265
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00299410033039749,
+      -0.000484528281958774,
+      -0.999995470046997
+    ],
+    "frame": 60,
+    "has_weapon": true,
+    "origin": [
+      -2.14224720001221,
+      1.34934604167938,
+      -0.711205899715424
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.0029689222574234,
+      -0.000543487432878464,
+      -0.999995470046997
+    ],
+    "frame": 61,
+    "has_weapon": true,
+    "origin": [
+      -2.14273285865784,
+      1.3504832983017,
+      -0.711206614971161
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00293372012674809,
+      -0.000625888234935701,
+      -0.999995470046997
+    ],
+    "frame": 62,
+    "has_weapon": true,
+    "origin": [
+      -2.14341187477112,
+      1.35207271575928,
+      -0.711207747459412
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00288861710578203,
+      -0.000731446256395429,
+      -0.999995529651642
+    ],
+    "frame": 63,
+    "has_weapon": true,
+    "origin": [
+      -2.14428186416626,
+      1.3541088104248,
+      -0.711209177970886
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00283374986611307,
+      -0.000859790830872953,
+      -0.999995648860931
+    ],
+    "frame": 64,
+    "has_weapon": true,
+    "origin": [
+      -2.14534020423889,
+      1.35658442974091,
+      -0.711210906505585
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00276931538246572,
+      -0.00101047055795789,
+      -0.999995648860931
+    ],
+    "frame": 65,
+    "has_weapon": true,
+    "origin": [
+      -2.14658308029175,
+      1.35949087142944,
+      -0.711212873458862
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00269551179371774,
+      -0.00118296057917178,
+      -0.999995648860931
+    ],
+    "frame": 66,
+    "has_weapon": true,
+    "origin": [
+      -2.14800667762756,
+      1.36281800270081,
+      -0.711215198040009
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00261258590035141,
+      -0.00137665471993387,
+      -0.999995648860931
+    ],
+    "frame": 67,
+    "has_weapon": true,
+    "origin": [
+      -2.14960622787476,
+      1.36655414104462,
+      -0.711217880249023
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00252082222141325,
+      -0.00159087940119207,
+      -0.999995529651642
+    ],
+    "frame": 68,
+    "has_weapon": true,
+    "origin": [
+      -2.15137624740601,
+      1.37068629264832,
+      -0.711220741271973
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00242051761597395,
+      -0.00182488095015287,
+      -0.999995470046997
+    ],
+    "frame": 69,
+    "has_weapon": true,
+    "origin": [
+      -2.15331101417542,
+      1.37519991397858,
+      -0.711223900318146
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00231201737187803,
+      -0.00207784306257963,
+      -0.999995172023773
+    ],
+    "frame": 70,
+    "has_weapon": true,
+    "origin": [
+      -2.15540385246277,
+      1.38007926940918,
+      -0.711227416992188
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00219566863961518,
+      -0.00234888214617968,
+      -0.999994874000549
+    ],
+    "frame": 71,
+    "has_weapon": true,
+    "origin": [
+      -2.15764808654785,
+      1.38530731201172,
+      -0.711231052875519
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00207186606712639,
+      -0.00263705849647522,
+      -0.999994337558746
+    ],
+    "frame": 72,
+    "has_weapon": true,
+    "origin": [
+      -2.16003608703613,
+      1.39086592197418,
+      -0.711235105991364
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00194101780653,
+      -0.00294137699529529,
+      -0.999993741512299
+    ],
+    "frame": 73,
+    "has_weapon": true,
+    "origin": [
+      -2.1625599861145,
+      1.39673590660095,
+      -0.711239218711853
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00180356903001666,
+      -0.0032607747707516,
+      -0.999993085861206
+    ],
+    "frame": 74,
+    "has_weapon": true,
+    "origin": [
+      -2.16521120071411,
+      1.40289676189423,
+      -0.711243629455566
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00166000192984939,
+      -0.00359413912519813,
+      -0.999992191791534
+    ],
+    "frame": 75,
+    "has_weapon": true,
+    "origin": [
+      -2.16798043251038,
+      1.40932703018188,
+      -0.711248338222504
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00151078577619046,
+      -0.00394032569602132,
+      -0.999991118907928
+    ],
+    "frame": 76,
+    "has_weapon": true,
+    "origin": [
+      -2.17085862159729,
+      1.41600465774536,
+      -0.711253046989441
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00135641556698829,
+      -0.00429813005030155,
+      -0.999989807605743
+    ],
+    "frame": 77,
+    "has_weapon": true,
+    "origin": [
+      -2.17383623123169,
+      1.42290639877319,
+      -0.711258053779602
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00119742273818702,
+      -0.00466632843017578,
+      -0.999988436698914
+    ],
+    "frame": 78,
+    "has_weapon": true,
+    "origin": [
+      -2.17690300941467,
+      1.43000864982605,
+      -0.711263239383698
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00103435083292425,
+      -0.00504365190863609,
+      -0.99998676776886
+    ],
+    "frame": 79,
+    "has_weapon": true,
+    "origin": [
+      -2.18004846572876,
+      1.43728697299957,
+      -0.711268365383148
+    ],
+    "reloading": true,
+    "state": "RELOAD",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.000853053294122219,
+      -0.00485027441754937,
+      -0.999987840652466
+    ],
+    "frame": 80,
+    "has_weapon": true,
+    "origin": [
+      -2.18354201316834,
+      1.43357682228088,
+      -0.70714408159256
+    ],
+    "reloading": true,
+    "state": "DODGE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.000673424103297293,
+      -0.00485359085723758,
+      -0.9999880194664
+    ],
+    "frame": 81,
+    "has_weapon": true,
+    "origin": [
+      -2.18700575828552,
+      1.4336541891098,
+      -0.704381346702576
+    ],
+    "reloading": true,
+    "state": "DODGE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.000494672218337655,
+      -0.0049896058626473,
+      -0.999987423419952
+    ],
+    "frame": 82,
+    "has_weapon": true,
+    "origin": [
+      -2.19045400619507,
+      1.43628799915314,
+      -0.702531516551971
+    ],
+    "reloading": true,
+    "state": "DODGE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.000316360063152388,
+      -0.00521496823057532,
+      -0.999986350536346
+    ],
+    "frame": 83,
+    "has_weapon": true,
+    "origin": [
+      -2.19389462471008,
+      1.44064354896545,
+      -0.701293468475342
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.000196950466488488,
+      -0.00536580383777618,
+      -0.999985575675964
+    ],
+    "frame": 84,
+    "has_weapon": true,
+    "origin": [
+      -2.1961989402771,
+      1.44355905056,
+      -0.700463652610779
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.000116946328489576,
+      -0.0054668178781867,
+      -0.999985098838806
+    ],
+    "frame": 85,
+    "has_weapon": true,
+    "origin": [
+      -2.19774293899536,
+      1.44551169872284,
+      -0.699907302856445
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.0000633575473329984,
+      -0.00553448405116796,
+      -0.999984681606293
+    ],
+    "frame": 86,
+    "has_weapon": true,
+    "origin": [
+      -2.1987771987915,
+      1.44681978225708,
+      -0.699534475803375
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.0000274352223641472,
+      -0.0055798189714551,
+      -0.999984502792358
+    ],
+    "frame": 87,
+    "has_weapon": true,
+    "origin": [
+      -2.19947052001953,
+      1.44769620895386,
+      -0.699284493923187
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      -0.00000335988966071454,
+      -0.0056102005764842,
+      -0.999984264373779
+    ],
+    "frame": 88,
+    "has_weapon": true,
+    "origin": [
+      -2.1999351978302,
+      1.44828355312347,
+      -0.699116945266724
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0000127724442791077,
+      -0.00563056068494916,
+      -0.999984085559845
+    ],
+    "frame": 89,
+    "has_weapon": true,
+    "origin": [
+      -2.20024657249451,
+      1.44867718219757,
+      -0.699004650115967
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 0,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 1,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 2,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 3,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 4,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 5,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 6,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 7,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 8,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 9,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 10,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 11,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 12,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 13,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 14,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 15,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 16,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 17,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 18,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 19,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 20,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 21,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 22,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 23,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 24,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 25,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 26,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 27,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 28,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 29,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 30,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 31,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 32,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 33,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 34,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 35,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 36,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 37,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 38,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 39,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 40,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 41,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 42,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 43,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 44,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 45,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 46,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 47,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 48,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 49,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 50,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 51,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 52,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 53,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 54,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 55,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 56,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 57,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 58,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 59,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 60,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 61,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 62,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 63,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 64,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 65,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 66,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 67,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 68,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 69,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 70,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 71,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 72,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 73,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 74,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 75,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 76,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 77,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 78,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 79,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 80,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 81,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 82,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 83,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 84,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 85,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 86,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 87,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 88,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 89,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 0,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 1,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 2,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 3,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 4,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 5,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 6,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 7,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 8,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 9,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 10,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 11,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 12,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 13,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 14,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 15,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 16,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 17,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 18,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 19,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 20,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 21,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 22,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 23,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 24,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "FIRE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 25,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 26,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 27,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 28,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 29,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 30,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 31,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 32,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 33,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 34,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 35,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 36,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 37,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 38,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 39,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 40,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 41,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 42,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 43,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 44,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 45,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 46,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 47,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 48,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 49,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 50,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 51,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 52,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 53,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 54,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 55,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 56,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 57,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 58,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 59,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 60,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 61,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 62,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 63,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 64,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 65,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 66,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 67,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 68,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 69,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 70,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 71,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 72,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 73,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 74,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 75,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 76,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 77,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 78,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 79,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "AIM",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 80,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 81,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 82,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 83,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 84,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 85,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 86,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 87,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 88,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "direction": [
+      0.0,
+      -0.0128524089232087,
+      -0.999917447566986
+    ],
+    "frame": 89,
+    "has_weapon": false,
+    "origin": [
+      -2.20000004768372,
+      1.5900000333786,
+      -0.550000011920929
+    ],
+    "reloading": false,
+    "state": "DODGE",
+    "weapon": "weapon.rocket_launcher_01"
+  }
+]

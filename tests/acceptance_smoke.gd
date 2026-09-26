@@ -106,9 +106,9 @@ func _test_hanger_and_equipment() -> void:
 		check(secondary != null and secondary.definition_id == &"weapon.rocket_launcher_01", "new profile equips a concrete rocket launcher instance as secondary")
 		check(player.armor_instance == profile.loadout.get_item(LoadoutState.SLOT_ARMOR, profile.inventory), "hanger preview equips the selected owned armor instance")
 		check(player.backpack_instance == profile.loadout.get_item(LoadoutState.SLOT_BACKPACK, profile.inventory), "hanger preview equips the selected owned backpack instance")
-		check(player.find_child("CombatAvatarModel", true, false) != null, "hanger uses the complete imported VRM avatar")
-		check(player.character_skeleton != null and player.character_skeleton.get_bone_count() >= 90, "avatar uses the complete 91-bone humanoid rig")
-		check(player.find_child("CharacterRetarget", true, false) != null, "locomotion source retargets onto the VRM humanoid rig")
+		check(player.find_child("CombatAvatarModel", true, false) != null, "hanger uses the complete imported character presentation")
+		check(player.character_skeleton != null and player.character_skeleton.get_bone_count() >= 90, "avatar uses the complete humanoid animation rig")
+		check(player.find_child("CharacterRetarget", true, false) != null, "locomotion source retargets onto the display humanoid rig")
 		check(player.animation_player != null and player.animation_player.has_animation(&"Run"), "combat android includes locomotion animations")
 		check(player.animation_tree != null and player.animation_tree.active, "locomotion runs through an active AnimationTree")
 		check(InputMap.has_action("reload"), "combat input exposes reload on the player controller")
@@ -128,8 +128,8 @@ func _test_hanger_and_equipment() -> void:
 			if weapon_id == &"weapon.assault_rifle_01":
 				check(player.combat_rig.has_weapon(), "assault rifle visibly mounts on the two-hand combat rig")
 				check(player.combat_rig.uses_modifier_ik(), "assault rifle hands use Godot TwoBoneIK3D modifiers")
-				check(player.combat_rig.uses_model_forward_axis(), "upper-body aim uses the VRM model's -Z forward axis")
-				check(player.combat_rig.uses_forward_axis_correction(), "locomotion retarget mirrors the +Z source animation onto the VRM's -Z forward axis")
+				check(player.combat_rig.uses_model_forward_axis(), "upper-body aim uses the display model's -Z forward axis")
+				check(player.combat_rig.uses_forward_axis_correction(), "locomotion retarget mirrors the +Z source animation onto the display model's -Z forward axis")
 				var right_hand_error := player.combat_rig.get_hand_error(&"right")
 				var left_hand_error := player.combat_rig.get_hand_error(&"left")
 				check(right_hand_error < 0.01, "right hand stays on the assault-rifle primary grip (error %.3f m)" % right_hand_error)
@@ -139,8 +139,9 @@ func _test_hanger_and_equipment() -> void:
 				check(player.combat_rig.get_upper_body_state_name() in [&"AIM", &"RELOAD"], "upper-body state remains independent from locomotion")
 			else:
 				check(_socket_contains(player, weapon.socket_name, weapon_id), "%s visibly mounts on %s" % [weapon_id, weapon.socket_name])
-		var face := player.find_child("Face", true, false) as MeshInstance3D
-		check(face != null and face.mesh.get_aabb().size.y > 0.2, "avatar keeps its complete authored face mesh")
+		check(player.combat_rig.has_method("validate_visual_integrity") and player.combat_rig.validate_visual_integrity(), "presentation retains complete authored skinned body and head geometry")
+		for mount in [&"Chest", &"ShoulderL", &"ShoulderR", &"Backpack", &"HipL", &"HipR", &"HandL", &"HandR"]:
+			check(player.body_visual.find_child(String(mount), true, false) is Node3D, "presentation exposes semantic mount %s" % mount)
 		player.equip_armor(ContentDB.get_item(&"armor.bulwark_plate_01") as EquipmentDefinition)
 		player.equip_backpack(ContentDB.get_item(&"equipment.thruster_pack_01") as EquipmentDefinition)
 		await get_tree().process_frame

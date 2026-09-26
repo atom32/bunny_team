@@ -1,0 +1,146 @@
+[
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Idle",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "locomotion": "Walk",
+    "pass": true,
+    "state": "Walk",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "locomotion": "Run",
+    "pass": true,
+    "state": "Run",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "locomotion": "Run",
+    "pass": true,
+    "state": "Run_Shoot",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Recoil",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Reload",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Hit",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "locomotion": "Dodge",
+    "pass": true,
+    "state": "Dodge",
+    "weapon": "weapon.assault_rifle_01"
+  },
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Idle",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "locomotion": "Walk",
+    "pass": true,
+    "state": "Walk",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "locomotion": "Run",
+    "pass": true,
+    "state": "Run",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "locomotion": "Run",
+    "pass": true,
+    "state": "Run_Shoot",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Recoil",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Reload",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Hit",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "locomotion": "Dodge",
+    "pass": true,
+    "state": "Dodge",
+    "weapon": "weapon.smg_01"
+  },
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Idle",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "locomotion": "Walk",
+    "pass": true,
+    "state": "Walk",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "locomotion": "Run",
+    "pass": true,
+    "state": "Run",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "locomotion": "Run",
+    "pass": true,
+    "state": "Run_Shoot",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Recoil",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Reload",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "locomotion": "Idle",
+    "pass": true,
+    "state": "Hit",
+    "weapon": "weapon.rocket_launcher_01"
+  },
+  {
+    "locomotion": "Dodge",
+    "pass": true,
+    "state": "Dodge",
+    "weapon": "weapon.rocket_launcher_01"
+  }
+]

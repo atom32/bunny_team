@@ -1,0 +1,29 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5090
+
+PHASE2B_ROUTE: AUTOMATED INPUT/API, NOT MANUAL; NORMAL AI; NO TELEPORT/INVULNERABILITY
+CAPTURE 01_hanger (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 26.0) reached (-15.61337, -0.024161, 26.1945)
+CAPTURE 02_entrance (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 24.7) reached (-16.00769, -0.025082, 25.03466)
+WAYPOINT (-16.0, 0.0, 21.5) reached (-16.00769, -0.004174, 21.91333)
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.146, -0.004498, 21.09135)
+CAPTURE 03_inside (1280, 720) error=0
+CAPTURE switch_0_Rocket (1280, 720) error=0
+CAPTURE switch_1_Rifle (1280, 720) error=0
+CAPTURE switch_2_Rocket (1280, 720) error=0
+CAPTURE switch_3_Rifle (1280, 720) error=0
+WAYPOINT (-19.5, 0.0, 13.1) reached (-19.44492, -0.004922, 13.4228)
+CAPTURE 04_terminal (1280, 720) error=0
+CAPTURE 04b_terminal_interacted (1280, 720) error=0
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.44821, -0.006171, 20.57109)
+WAYPOINT (-16.0, 0.0, 21.5) reached (-16.34449, -0.004687, 21.71331)
+WAYPOINT (-16.0, 0.0, 26.0) reached (-15.97986, -0.024161, 25.57918)
+CAPTURE 05b_after_dodge (1280, 720) error=0
+CAPTURE 05_exit (1280, 720) error=0
+WAYPOINT (0.0, 0.0, 30.0) reached (-0.396145, -0.024161, 30.18331)
+WAYPOINT (2.5, 0.0, 32.0) reached (2.170434, -0.02416, 32.17366)
+OUTCOME enemies_defeated=0 damage_taken=15 mission_completed=false
+CAPTURE 06_result (1280, 720) error=0
+CAPTURE 07_return_hanger (1280, 720) error=0
+{"checks":{"Combat still works":true,"Dodge executed":true,"Door interaction":true,"Enter Field Office":true,"Existing save loaded":true,"Exit Field Office":true,"Extraction":true,"Field Office entrance visible":true,"Hanger launches":true,"Initial weapon restored":true,"Interior traversal":true,"Player movement":true,"Presentation retained after return":true,"Production camera":true,"Result":true,"Result uses same session identity":true,"Return to original route":true,"Returned to Hanger":true,"Same logical profile object":true,"Same sortie Player actor":true,"Same sortie session":true,"Session cleared after commit":true,"Terminal area reachable":true,"Terminal interaction completed":true,"reload_0":true,"reload_1":true,"reload_2":true,"reload_3":true,"switch_pose_0":true,"switch_pose_1":true,"switch_pose_2":true,"switch_pose_3":true},"combat":{"damage_taken":15,"enemies_defeated":0,"mission_completed":false,"shots":60},"combat_scope":"weapon fire and normal enemy AI; kill/damage semantics are covered by regression suites","failure":"","method":"automated input/API, not manual","mission_completed":false,"weapon_checks":[{"ammo_after":1,"ammo_before":0,"expected_pose":"Rocket","fired":true,"id":"weapon.rocket_launcher_01","reload":true,"selected_pose":"Rocket"},{"ammo_after":30,"ammo_before":4,"expected_pose":"Rifle","fired":true,"id":"weapon.assault_rifle_01","reload":true,"selected_pose":"Rifle"},{"ammo_after":1,"ammo_before":0,"expected_pose":"Rocket","fired":true,"id":"weapon.rocket_launcher_01","reload":true,"selected_pose":"Rocket"},{"ammo_after":30,"ammo_before":29,"expected_pose":"Rifle","fired":true,"id":"weapon.assault_rifle_01","reload":true,"selected_pose":"Rifle"}]}

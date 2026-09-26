@@ -1,0 +1,15 @@
+{
+  "tests": "33/33",
+  "main_exit": 0,
+  "official_hashes": 68,
+  "all_official_unchanged": true,
+  "original_production_save_unchanged": true,
+  "old_character_unchanged": true,
+  "gameplay_files_diff": [
+    "scripts/player/player_controller.gd",
+    "tests/acceptance_smoke.gd"
+  ],
+  "runtime_glb_equals_derivative": true,
+  "routes_and_reloads": "both PASS",
+  "independent_warehouse_merge": "both PASS"
+}

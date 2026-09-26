@@ -9,7 +9,7 @@ signal weapon_switched(slot_id: StringName)
 
 const ROCKET_SCENE := preload("res://scenes/weapons/rocket_projectile.tscn")
 const RAGDOLL_SCENE := preload("res://scenes/player/ragdoll_proxy.tscn")
-const CHARACTER_SCENE := preload("res://assets/characters/vrm_avatar/avatar_sample_a.glb")
+const CHARACTER_SCENE := preload("res://assets/characters/unitychan_battle/battle_presentation.glb")
 const CHARACTER_ANIMATION_SOURCE_SCENE := preload("res://assets/characters/unitychan_battle/animations/idle.fbx")
 const BODY_VISUAL_SCALE := Vector3.ONE
 const CHARACTER_ANIMATION_SCENES := {
@@ -463,7 +463,7 @@ func _build_character() -> void:
 	weapon_root.name = "WeaponRoot"
 	body_visual.add_child(weapon_root)
 	if character_skeleton:
-		combat_rig = CharacterCombatRig.new()
+		combat_rig = preload("res://scripts/presentation/unitychan/presentation_adapter.gd").new()
 		combat_rig.name = "UpperBodyAim"
 		body_visual.add_child(combat_rig)
 		combat_rig.setup(animation_source_skeleton, character_skeleton, retarget_modifier)

@@ -1,0 +1,434 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SCRIPT ERROR: Parse Error: Cannot infer the type of "arrays" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/presentation/unitychan/presentation_adapter.gd:48)
+SCRIPT ERROR: Parse Error: Cannot infer the type of "bounds" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://scripts/presentation/unitychan/presentation_adapter.gd:53)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://scripts/player/player_controller.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://scripts/enemies/enemy_controller.gd:0)
+ERROR: Failed to load script "res://scripts/enemies/enemy_controller.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: PlayerController._build_character (res://scripts/player/player_controller.gd:466)
+   GDScript backtrace (most recent call first):
+       [0] _build_character (res://scripts/player/player_controller.gd:466)
+       [1] _ready (res://scripts/player/player_controller.gd:111)
+       [2] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [3] _ready (res://scripts/hanger/hanger.gd:19)
+       [4] _test_hanger_and_equipment (res://tests/acceptance_smoke.gd:94)
+       [5] _ready (res://tests/acceptance_smoke.gd:29)
+ERROR: Missing equipment socket for weapon.assault_rifle_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_weapon_definition (res://scripts/player/player_controller.gd:296)
+       [2] _activate_weapon_slot (res://scripts/player/player_controller.gd:264)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:186)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [6] _ready (res://scripts/hanger/hanger.gd:19)
+       [7] _test_hanger_and_equipment (res://tests/acceptance_smoke.gd:94)
+       [8] _ready (res://tests/acceptance_smoke.gd:29)
+ERROR: Missing equipment socket for armor.recon_shell_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_armor_definition (res://scripts/player/player_controller.gd:307)
+       [2] equip_armor_instance (res://scripts/player/player_controller.gd:273)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:187)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [6] _ready (res://scripts/hanger/hanger.gd:19)
+       [7] _test_hanger_and_equipment (res://tests/acceptance_smoke.gd:94)
+       [8] _ready (res://tests/acceptance_smoke.gd:29)
+ERROR: Missing equipment socket for equipment.field_pack_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_backpack_definition (res://scripts/player/player_controller.gd:318)
+       [2] equip_backpack_instance (res://scripts/player/player_controller.gd:282)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:188)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [6] _ready (res://scripts/hanger/hanger.gd:19)
+       [7] _test_hanger_and_equipment (res://tests/acceptance_smoke.gd:94)
+       [8] _ready (res://tests/acceptance_smoke.gd:29)
+ERROR: Missing equipment socket for weapon.assault_rifle_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_weapon_definition (res://scripts/player/player_controller.gd:296)
+       [2] equip_weapon (res://scripts/player/player_controller.gd:289)
+       [3] _test_hanger_and_equipment (res://tests/acceptance_smoke.gd:125)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_weapon' in base 'Nil'.
+   at: _test_hanger_and_equipment (res://tests/acceptance_smoke.gd:129)
+   GDScript backtrace (most recent call first):
+       [0] _test_hanger_and_equipment (res://tests/acceptance_smoke.gd:129)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: PlayerController._build_character (res://scripts/player/player_controller.gd:466)
+   GDScript backtrace (most recent call first):
+       [0] _build_character (res://scripts/player/player_controller.gd:466)
+       [1] _ready (res://scripts/player/player_controller.gd:111)
+       [2] _spawn_player (res://scripts/battle/battle.gd:92)
+       [3] _ready (res://scripts/battle/battle.gd:30)
+       [4] _test_battle (res://tests/acceptance_smoke.gd:181)
+       [5] _ready (res://tests/acceptance_smoke.gd:30)
+       [6] _test_hanger_and_equipment (res://tests/acceptance_smoke.gd:129)
+ERROR: Missing equipment socket for weapon.assault_rifle_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_weapon_definition (res://scripts/player/player_controller.gd:296)
+       [2] _activate_weapon_slot (res://scripts/player/player_controller.gd:264)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:186)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _spawn_player (res://scripts/battle/battle.gd:92)
+       [6] _ready (res://scripts/battle/battle.gd:30)
+       [7] _test_battle (res://tests/acceptance_smoke.gd:181)
+       [8] _ready (res://tests/acceptance_smoke.gd:30)
+       [9] _test_hanger_and_equipment (res://tests/acceptance_smoke.gd:129)
+ERROR: Missing equipment socket for armor.recon_shell_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_armor_definition (res://scripts/player/player_controller.gd:307)
+       [2] equip_armor_instance (res://scripts/player/player_controller.gd:273)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:187)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _spawn_player (res://scripts/battle/battle.gd:92)
+       [6] _ready (res://scripts/battle/battle.gd:30)
+       [7] _test_battle (res://tests/acceptance_smoke.gd:181)
+       [8] _ready (res://tests/acceptance_smoke.gd:30)
+       [9] _test_hanger_and_equipment (res://tests/acceptance_smoke.gd:129)
+ERROR: Missing equipment socket for equipment.field_pack_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_backpack_definition (res://scripts/player/player_controller.gd:318)
+       [2] equip_backpack_instance (res://scripts/player/player_controller.gd:282)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:188)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _spawn_player (res://scripts/battle/battle.gd:92)
+       [6] _ready (res://scripts/battle/battle.gd:30)
+       [7] _test_battle (res://tests/acceptance_smoke.gd:181)
+       [8] _ready (res://tests/acceptance_smoke.gd:30)
+       [9] _test_hanger_and_equipment (res://tests/acceptance_smoke.gd:129)
+ERROR: Missing equipment socket for weapon.rocket_launcher_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_weapon_definition (res://scripts/player/player_controller.gd:296)
+       [2] _activate_weapon_slot (res://scripts/player/player_controller.gd:264)
+       [3] switch_weapon (res://scripts/player/player_controller.gd:219)
+       [4] _test_battle (res://tests/acceptance_smoke.gd:277)
+ERROR: Missing equipment socket for weapon.assault_rifle_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_weapon_definition (res://scripts/player/player_controller.gd:296)
+       [2] _activate_weapon_slot (res://scripts/player/player_controller.gd:264)
+       [3] switch_weapon (res://scripts/player/player_controller.gd:219)
+       [4] _test_battle (res://tests/acceptance_smoke.gd:289)
+ERROR: Missing equipment socket for weapon.assault_rifle_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_weapon_definition (res://scripts/player/player_controller.gd:296)
+       [2] equip_weapon (res://scripts/player/player_controller.gd:289)
+       [3] _test_battle (res://tests/acceptance_smoke.gd:346)
+SCRIPT ERROR: Invalid call. Nonexistent function 'get_forward_axis_motion_alignment' in base 'Nil'.
+   at: _test_battle (res://tests/acceptance_smoke.gd:353)
+   GDScript backtrace (most recent call first):
+       [0] _test_battle (res://tests/acceptance_smoke.gd:353)
+ERROR: Result scene could not create a SortieOutcome
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/result/result.gd:18)
+       [1] _test_result (res://tests/acceptance_smoke.gd:524)
+       [2] _ready (res://tests/acceptance_smoke.gd:33)
+       [3] _test_ragdoll (res://tests/acceptance_smoke.gd:516)
+ERROR: Could not create SortieOutcome from current session
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] finalize_sortie (res://scripts/result/result.gd:63)
+       [1] _test_result (res://tests/acceptance_smoke.gd:532)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: PlayerController._build_character (res://scripts/player/player_controller.gd:466)
+   GDScript backtrace (most recent call first):
+       [0] _build_character (res://scripts/player/player_controller.gd:466)
+       [1] _ready (res://scripts/player/player_controller.gd:111)
+       [2] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [3] _ready (res://scripts/hanger/hanger.gd:19)
+       [4] _test_result (res://tests/acceptance_smoke.gd:552)
+ERROR: Missing equipment socket for weapon.assault_rifle_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_weapon_definition (res://scripts/player/player_controller.gd:296)
+       [2] _activate_weapon_slot (res://scripts/player/player_controller.gd:264)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:186)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [6] _ready (res://scripts/hanger/hanger.gd:19)
+       [7] _test_result (res://tests/acceptance_smoke.gd:552)
+ERROR: Missing equipment socket for armor.recon_shell_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_armor_definition (res://scripts/player/player_controller.gd:307)
+       [2] equip_armor_instance (res://scripts/player/player_controller.gd:273)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:187)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [6] _ready (res://scripts/hanger/hanger.gd:19)
+       [7] _test_result (res://tests/acceptance_smoke.gd:552)
+ERROR: Missing equipment socket for equipment.field_pack_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_backpack_definition (res://scripts/player/player_controller.gd:318)
+       [2] equip_backpack_instance (res://scripts/player/player_controller.gd:282)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:188)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [6] _ready (res://scripts/hanger/hanger.gd:19)
+       [7] _test_result (res://tests/acceptance_smoke.gd:552)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: PlayerController._build_character (res://scripts/player/player_controller.gd:466)
+   GDScript backtrace (most recent call first):
+       [0] _build_character (res://scripts/player/player_controller.gd:466)
+       [1] _ready (res://scripts/player/player_controller.gd:111)
+       [2] _ready (res://scripts/result/result.gd:29)
+       [3] _test_early_extraction (res://tests/acceptance_smoke.gd:576)
+       [4] _ready (res://tests/acceptance_smoke.gd:34)
+       [5] _test_result (res://tests/acceptance_smoke.gd:558)
+ERROR: Missing equipment socket for weapon.assault_rifle_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_weapon_definition (res://scripts/player/player_controller.gd:296)
+       [2] _activate_weapon_slot (res://scripts/player/player_controller.gd:264)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:186)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _ready (res://scripts/result/result.gd:29)
+       [6] _test_early_extraction (res://tests/acceptance_smoke.gd:576)
+       [7] _ready (res://tests/acceptance_smoke.gd:34)
+       [8] _test_result (res://tests/acceptance_smoke.gd:558)
+ERROR: Missing equipment socket for armor.recon_shell_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_armor_definition (res://scripts/player/player_controller.gd:307)
+       [2] equip_armor_instance (res://scripts/player/player_controller.gd:273)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:187)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _ready (res://scripts/result/result.gd:29)
+       [6] _test_early_extraction (res://tests/acceptance_smoke.gd:576)
+       [7] _ready (res://tests/acceptance_smoke.gd:34)
+       [8] _test_result (res://tests/acceptance_smoke.gd:558)
+ERROR: Missing equipment socket for equipment.field_pack_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_backpack_definition (res://scripts/player/player_controller.gd:318)
+       [2] equip_backpack_instance (res://scripts/player/player_controller.gd:282)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:188)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _ready (res://scripts/result/result.gd:29)
+       [6] _test_early_extraction (res://tests/acceptance_smoke.gd:576)
+       [7] _ready (res://tests/acceptance_smoke.gd:34)
+       [8] _test_result (res://tests/acceptance_smoke.gd:558)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: PlayerController._build_character (res://scripts/player/player_controller.gd:466)
+   GDScript backtrace (most recent call first):
+       [0] _build_character (res://scripts/player/player_controller.gd:466)
+       [1] _ready (res://scripts/player/player_controller.gd:111)
+       [2] _spawn_player (res://scripts/battle/battle.gd:92)
+       [3] _ready (res://scripts/battle/battle.gd:30)
+       [4] _test_failed_sortie (res://tests/acceptance_smoke.gd:614)
+       [5] _ready (res://tests/acceptance_smoke.gd:35)
+       [6] _test_early_extraction (res://tests/acceptance_smoke.gd:589)
+ERROR: Missing equipment socket for weapon.assault_rifle_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_weapon_definition (res://scripts/player/player_controller.gd:296)
+       [2] _activate_weapon_slot (res://scripts/player/player_controller.gd:264)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:186)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _spawn_player (res://scripts/battle/battle.gd:92)
+       [6] _ready (res://scripts/battle/battle.gd:30)
+       [7] _test_failed_sortie (res://tests/acceptance_smoke.gd:614)
+       [8] _ready (res://tests/acceptance_smoke.gd:35)
+       [9] _test_early_extraction (res://tests/acceptance_smoke.gd:589)
+ERROR: Missing equipment socket for armor.recon_shell_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_armor_definition (res://scripts/player/player_controller.gd:307)
+       [2] equip_armor_instance (res://scripts/player/player_controller.gd:273)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:187)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _spawn_player (res://scripts/battle/battle.gd:92)
+       [6] _ready (res://scripts/battle/battle.gd:30)
+       [7] _test_failed_sortie (res://tests/acceptance_smoke.gd:614)
+       [8] _ready (res://tests/acceptance_smoke.gd:35)
+       [9] _test_early_extraction (res://tests/acceptance_smoke.gd:589)
+ERROR: Missing equipment socket for equipment.field_pack_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_backpack_definition (res://scripts/player/player_controller.gd:318)
+       [2] equip_backpack_instance (res://scripts/player/player_controller.gd:282)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:188)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _spawn_player (res://scripts/battle/battle.gd:92)
+       [6] _ready (res://scripts/battle/battle.gd:30)
+       [7] _test_failed_sortie (res://tests/acceptance_smoke.gd:614)
+       [8] _ready (res://tests/acceptance_smoke.gd:35)
+       [9] _test_early_extraction (res://tests/acceptance_smoke.gd:589)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: PlayerController._build_character (res://scripts/player/player_controller.gd:466)
+   GDScript backtrace (most recent call first):
+       [0] _build_character (res://scripts/player/player_controller.gd:466)
+       [1] _ready (res://scripts/player/player_controller.gd:111)
+       [2] _ready (res://scripts/result/result.gd:29)
+       [3] _test_failed_sortie (res://tests/acceptance_smoke.gd:666)
+ERROR: Missing equipment socket for weapon.assault_rifle_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_weapon_definition (res://scripts/player/player_controller.gd:296)
+       [2] _activate_weapon_slot (res://scripts/player/player_controller.gd:264)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:186)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _ready (res://scripts/result/result.gd:29)
+       [6] _test_failed_sortie (res://tests/acceptance_smoke.gd:666)
+ERROR: Missing equipment socket for armor.recon_shell_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_armor_definition (res://scripts/player/player_controller.gd:307)
+       [2] equip_armor_instance (res://scripts/player/player_controller.gd:273)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:187)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _ready (res://scripts/result/result.gd:29)
+       [6] _test_failed_sortie (res://tests/acceptance_smoke.gd:666)
+ERROR: Missing equipment socket for equipment.field_pack_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_backpack_definition (res://scripts/player/player_controller.gd:318)
+       [2] equip_backpack_instance (res://scripts/player/player_controller.gd:282)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:188)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _ready (res://scripts/result/result.gd:29)
+       [6] _test_failed_sortie (res://tests/acceptance_smoke.gd:666)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: PlayerController._build_character (res://scripts/player/player_controller.gd:466)
+   GDScript backtrace (most recent call first):
+       [0] _build_character (res://scripts/player/player_controller.gd:466)
+       [1] _ready (res://scripts/player/player_controller.gd:111)
+       [2] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [3] _ready (res://scripts/hanger/hanger.gd:19)
+       [4] _test_failed_sortie (res://tests/acceptance_smoke.gd:684)
+ERROR: Missing equipment socket for weapon.assault_rifle_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_weapon_definition (res://scripts/player/player_controller.gd:296)
+       [2] _activate_weapon_slot (res://scripts/player/player_controller.gd:264)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:186)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [6] _ready (res://scripts/hanger/hanger.gd:19)
+       [7] _test_failed_sortie (res://tests/acceptance_smoke.gd:684)
+ERROR: Missing equipment socket for armor.recon_shell_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_armor_definition (res://scripts/player/player_controller.gd:307)
+       [2] equip_armor_instance (res://scripts/player/player_controller.gd:273)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:187)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [6] _ready (res://scripts/hanger/hanger.gd:19)
+       [7] _test_failed_sortie (res://tests/acceptance_smoke.gd:684)
+ERROR: Missing equipment socket for equipment.field_pack_01
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _attach_equipment (res://scripts/player/player_controller.gd:655)
+       [1] _equip_backpack_definition (res://scripts/player/player_controller.gd:318)
+       [2] equip_backpack_instance (res://scripts/player/player_controller.gd:282)
+       [3] equip_loadout (res://scripts/player/player_controller.gd:188)
+       [4] _ready (res://scripts/player/player_controller.gd:113)
+       [5] _build_preview_character (res://scripts/hanger/hanger.gd:69)
+       [6] _ready (res://scripts/hanger/hanger.gd:19)
+       [7] _test_failed_sortie (res://tests/acceptance_smoke.gd:684)
+ERROR: ACCEPTANCE_SMOKE: result screen instantiates and reads mission state
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: completed path reports extraction independently
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: completed path reports mission completion independently
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: completed Result reads all objective summaries from Outcome
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: completed Result preserves authored interaction and reach progress
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: result finalizes extraction through outcome commit and save
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: extracted loot reaches persistent profile only after finalize
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: remaining magazine ammunition materializes into the recovered warehouse stack
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: finalize merges standard and high-value loot into a valid warehouse
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: saved profile reload contains extracted loot
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: saved profile reload preserves uncarried warehouse items
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: saved profile reload preserves explicitly carried ammunition
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: saved profile reload preserves secondary ammunition
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: successful finalize clears the active sortie
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: return Hanger reads the profile containing extracted loot
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ERROR: ACCEPTANCE_SMOKE: Hanger warehouse summary shows extracted generated salvage and ammunition
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://tests/acceptance_smoke.gd:46)
+ACCEPTANCE_SMOKE: FAIL (16)

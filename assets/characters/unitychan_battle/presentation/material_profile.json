@@ -1,0 +1,14 @@
+{
+  "Battle_face3_main": {
+    "direct_response_gain": 0.2,
+    "diffuse_shadow_floor": 0.25
+  },
+  "Battle_Unity2016_C_Skin": {
+    "direct_response_gain": 0.2,
+    "diffuse_shadow_floor": 0.25
+  },
+  "Battle_Unity2016_C_Hair_Spow": {
+    "direct_response_gain": 0.2,
+    "diffuse_shadow_floor": 0.25
+  }
+}
