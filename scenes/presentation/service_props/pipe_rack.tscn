@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/environment/service_props/pipe_rack.glb" id="model"]
+
+[ext_resource type="Script" path="res://scripts/presentation/service_prop_materials.gd" id="materials"]
+
+[node name="PipeRack" type="Node3D"]
+metadata/presentation_only = true
+script = ExtResource("materials")
+
+[node name="Visual" parent="." instance=ExtResource("model")]

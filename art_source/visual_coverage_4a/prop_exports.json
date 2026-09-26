@@ -1,0 +1,79 @@
+{
+  "blender": "5.2.2 LTS",
+  "units": "meters",
+  "export_yup": true,
+  "assets": [
+    {
+      "asset": "supply_stack",
+      "triangles": 372,
+      "materials": 3,
+      "mesh_objects": 6,
+      "blender_bounds_min": [
+        -0.800000011920929,
+        -0.675000011920929,
+        0.0
+      ],
+      "max": [
+        0.800000011920929,
+        0.675000011920929,
+        1.2999999523162842
+      ],
+      "blender_dimensions": [
+        1.600000023841858,
+        1.350000023841858,
+        1.2999999523162842
+      ],
+      "identity_transforms": true,
+      "collision": false,
+      "runtime_sha256": "a119b4ae0efb53dcaef6f7ac135938507124a4bd29311e049b38b637f3a7526c"
+    },
+    {
+      "asset": "service_cabinet",
+      "triangles": 290,
+      "materials": 4,
+      "mesh_objects": 10,
+      "blender_bounds_min": [
+        -0.5249999761581421,
+        -0.4195000231266022,
+        0.0
+      ],
+      "max": [
+        0.5249999761581421,
+        0.40223997831344604,
+        1.5480000972747803
+      ],
+      "blender_dimensions": [
+        1.0499999523162842,
+        0.8217400014400482,
+        1.5480000972747803
+      ],
+      "identity_transforms": true,
+      "collision": false,
+      "runtime_sha256": "61ed9f2c94598ae74485c874dc51248284d1f0561ff71249082143a26dd74e70"
+    },
+    {
+      "asset": "pipe_rack",
+      "triangles": 408,
+      "materials": 4,
+      "mesh_objects": 19,
+      "blender_bounds_min": [
+        -0.800000011920929,
+        -0.36000001430511475,
+        0.0
+      ],
+      "max": [
+        0.800000011920929,
+        0.3767949342727661,
+        2.0999999046325684
+      ],
+      "blender_dimensions": [
+        1.600000023841858,
+        0.7367949485778809,
+        2.0999999046325684
+      ],
+      "identity_transforms": true,
+      "collision": false,
+      "runtime_sha256": "bc136b4b01c43826ff9191fc09372f877a6230c3b6ca61a7427359c9bbc3f84b"
+    }
+  ]
+}

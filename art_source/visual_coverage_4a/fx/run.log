@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5090
+
+before child count 4
+SMOKE (0.0, 1.304223, 0.0) SCALE (2.769345, 2.769345, 2.769345) COLOR (0.2, 0.1686, 0.1647, 0.0262)
+before TRAIL (-1.4, 0.7, 0.0) SCALE (1.2875, 1.2875, 1.2875) COLOR (0.8716, 0.4302, 0.201, 0.6722) SIZE [P: (-0.099887, -0.1, -0.099887), S: (0.199773, 0.2, 0.199773)] KEEP false
+after child count 4
+SMOKE (0.0, 1.263143, 0.0) SCALE (2.696967, 2.696967, 2.696967) COLOR (0.2221, 0.1949, 0.1936, 0.0717)
+after TRAIL (-1.4, 0.7, 0.0) SCALE (1.55, 1.55, 1.55) COLOR (0.5828, 0.5904, 0.5977, 0.6944) SIZE [P: (-0.22, -0.22, 0.0), S: (0.44, 0.44, 0.0)] KEEP true

@@ -1,0 +1,133 @@
+{
+  "checks": {
+    "only_three_existing_runtime_files_changed": true,
+    "six_Kenney_source_meshes_unchanged": true,
+    "official_source_unchanged": true,
+    "player_source_unchanged": true,
+    "enemy_source_unchanged": true,
+    "original_production_save_unchanged": true,
+    "33_tests_and_main_exit_zero": true,
+    "Rifle_route": true,
+    "Rifle_restart": true,
+    "Rifle_independent_warehouse_merge": true,
+    "SMG_route": true,
+    "SMG_restart": true,
+    "SMG_independent_warehouse_merge": true,
+    "smoke_cleanup": true,
+    "runtime_prop_contract": true,
+    "supply_stack_export_hash": true,
+    "supply_stack_static_only": true,
+    "service_cabinet_export_hash": true,
+    "service_cabinet_static_only": true,
+    "pipe_rack_export_hash": true,
+    "pipe_rack_static_only": true,
+    "final_route_and_fx_no_errors": true
+  },
+  "changed_runtime_files": [
+    "scenes/areas/prototype_field_office.tscn",
+    "scenes/hanger/hanger.tscn",
+    "scripts/combat/combat_effects.gd"
+  ],
+  "official_file_hashes_checked": 68,
+  "tests": "33/33",
+  "main_exit": 0,
+  "routes": {
+    "Rifle": {
+      "checks": 32,
+      "combat": {
+        "damage_taken": 9,
+        "enemies_defeated": 0,
+        "mission_completed": false,
+        "shots": 60
+      },
+      "reload_checks": 5,
+      "warehouse_merge": true
+    },
+    "SMG": {
+      "checks": 32,
+      "combat": {
+        "damage_taken": 21,
+        "enemies_defeated": 0,
+        "mission_completed": false,
+        "shots": 105
+      },
+      "reload_checks": 5,
+      "warehouse_merge": true
+    }
+  },
+  "budgets": [
+    {
+      "asset": "supply_stack",
+      "triangles": 372,
+      "materials": 3,
+      "surfaces": 6,
+      "images": [
+        {
+          "width": 512,
+          "height": 512,
+          "bytes": 7440
+        }
+      ],
+      "glb_bytes": 47660,
+      "instances": 2
+    },
+    {
+      "asset": "service_cabinet",
+      "triangles": 290,
+      "materials": 4,
+      "surfaces": 10,
+      "images": [
+        {
+          "width": 512,
+          "height": 512,
+          "bytes": 7440
+        }
+      ],
+      "glb_bytes": 44028,
+      "instances": 2
+    },
+    {
+      "asset": "pipe_rack",
+      "triangles": 408,
+      "materials": 4,
+      "surfaces": 19,
+      "images": [
+        {
+          "width": 512,
+          "height": 512,
+          "bytes": 7440
+        }
+      ],
+      "glb_bytes": 62736,
+      "instances": 2
+    }
+  ],
+  "test_warnings": {
+    "main": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ]
+  },
+  "route_fx_logs": {
+    "fx\\run.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "route_Rifle\\route.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "route_SMG\\route.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "persistence_Rifle\\reload.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "persistence_SMG\\reload.log": {
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "limitation": "One concurrent graphical route exit timeout retained in diagnostic_route_failure; not reproduced in the final sequential run. Cause not established. No gameplay workaround."
+}

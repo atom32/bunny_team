@@ -1,4 +1,3 @@
-class_name CombatEffects
 extends RefCounted
 
 
@@ -101,9 +100,9 @@ static func dodge_pulse(parent: Node, position: Vector3, direction: Vector3) -> 
 
 
 static func rocket_trail(parent: Node, position: Vector3) -> void:
-	var trail := SoftSmoke.create(parent, position, 0.22, Color("c0c5c9ff"), "RocketTrail")
+	var trail := VisualFactory.sphere(parent, 0.1, position, Color("ff7a35"), "RocketTrail")
 	trail.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	var material := trail.material_override as StandardMaterial3D
+	var material := VisualFactory.material(Color("ff7a35cc"), 0.0, 0.15, Color("ff461c"), 4.5)
 	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	trail.material_override = material
 	var tween := trail.create_tween().set_parallel(true).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
@@ -153,8 +152,8 @@ static func explosion(parent: Node, position: Vector3, radius: float) -> void:
 	shock_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	shockwave.material_override = shock_material
 	parent.add_child(shockwave)
-	var smoke := SoftSmoke.create(parent, position + Vector3.UP * 0.3, 0.75, Color("777c83dd"), "ExplosionSmoke")
-	var smoke_material := smoke.material_override as StandardMaterial3D
+	var smoke := VisualFactory.sphere(parent, 0.5, position + Vector3.UP * 0.3, Color("332b2a99"), "ExplosionSmoke")
+	var smoke_material := VisualFactory.material(Color("332b2a99"), 0.0, 1.0)
 	smoke_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	smoke.material_override = smoke_material
 	var light := OmniLight3D.new()

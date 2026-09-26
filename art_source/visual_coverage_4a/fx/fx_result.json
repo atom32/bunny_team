@@ -1,0 +1,6 @@
+{
+  "after_explosion_cleanup": true,
+  "after_trail_cleanup": true,
+  "before_explosion_cleanup": true,
+  "before_trail_cleanup": true
+}

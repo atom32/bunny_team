@@ -1,0 +1,146 @@
+D:\bunny_team\art_source\visual_coverage_4a\build_service_props.py:8: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*c,1);m.use_nodes=True
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node container-flat
+09:45:17 | INFO: glTF import finished in 0.04s
+D:\bunny_team\art_source\visual_coverage_4a\build_service_props.py:21: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if m.use_nodes:
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node container-flat
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node container-tall
+09:45:17 | INFO: Blender create Mesh node Group
+09:45:17 | INFO: glTF import finished in 0.00s
+Info: Saved as "supply_stack.blend"
+INFO Draco is available, use library at F:\SteamLibrary\steamapps\common\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at F:\SteamLibrary\steamapps\common\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+09:45:17 | INFO: Starting glTF 2.0 export
+09:45:17 | INFO: Extracting primitive: container-flat
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: container-flat.001
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: container-tall
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Group
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.001
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Finished glTF 2.0 export in 0.012707233428955078 s
+D:\bunny_team\art_source\visual_coverage_4a\build_service_props.py:8: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m=bpy.data.materials.new(name);m.diffuse_color=(*c,1);m.use_nodes=True
+
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node computer-system
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node wall-switch
+09:45:17 | INFO: glTF import finished in 0.00s
+Info: Saved as "service_cabinet.blend"
+09:45:17 | INFO: Starting glTF 2.0 export
+09:45:17 | INFO: Extracting primitive: Cube.002
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.001
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: computer-system
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.007
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.003
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.004
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.005
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.006
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: wall-switch
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Finished glTF 2.0 export in 0.012526273727416992 s
+
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe-bend
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe-bend
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe
+09:45:17 | INFO: glTF import finished in 0.00s
+09:45:17 | INFO: Data are loaded, start creating Blender stuff
+09:45:17 | INFO: Blender create Mesh node pipe-bend
+09:45:17 | INFO: glTF import finished in 0.00s
+Info: Saved as "pipe_rack.blend"
+09:45:17 | INFO: Starting glTF 2.0 export
+09:45:17 | INFO: Extracting primitive: Cube.003
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.004
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.005
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe.001
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe.002
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe.003
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe.004
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe.005
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe.006
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe.007
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe.008
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe-bend
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe-bend.001
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: pipe-bend.002
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.006
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.001
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Extracting primitive: Cube.002
+09:45:17 | INFO: Primitives created: 1
+09:45:17 | INFO: Finished glTF 2.0 export in 0.017328977584838867 s
+
+[{"asset": "supply_stack", "triangles": 372, "materials": 3, "mesh_objects": 6, "blender_bounds_min": [-0.800000011920929, -0.675000011920929, 0.0], "max": [0.800000011920929, 0.675000011920929, 1.2999999523162842], "blender_dimensions": [1.600000023841858, 1.350000023841858, 1.2999999523162842], "identity_transforms": true, "collision": false, "runtime_sha256": "a119b4ae0efb53dcaef6f7ac135938507124a4bd29311e049b38b637f3a7526c"}, {"asset": "service_cabinet", "triangles": 290, "materials": 4, "mesh_objects": 10, "blender_bounds_min": [-0.5249999761581421, -0.4195000231266022, 0.0], "max": [0.5249999761581421, 0.40223997831344604, 1.5480000972747803], "blender_dimensions": [1.0499999523162842, 0.8217400014400482, 1.5480000972747803], "identity_transforms": true, "collision": false, "runtime_sha256": "61ed9f2c94598ae74485c874dc51248284d1f0561ff71249082143a26dd74e70"}, {"asset": "pipe_rack", "triangles": 408, "materials": 4, "mesh_objects": 19, "blender_bounds_min": [-0.800000011920929, -0.36000001430511475, 0.0], "max": [0.800000011920929, 0.3767949342727661, 2.0999999046325684], "blender_dimensions": [1.600000023841858, 0.7367949485778809, 2.0999999046325684], "identity_transforms": true, "collision": false, "runtime_sha256": "bc136b4b01c43826ff9191fc09372f877a6230c3b6ca61a7427359c9bbc3f84b"}]
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

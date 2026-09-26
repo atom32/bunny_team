@@ -1,0 +1,38 @@
+{
+  "container-flat": {
+    "triangles": 116,
+    "materials": 1,
+    "images": 1,
+    "sha256": "f76bdebf96ad858dd8a6be5cb71694616a63488cbac3f61d01485dccde99fd0c"
+  },
+  "container-tall": {
+    "triangles": 116,
+    "materials": 1,
+    "images": 1,
+    "sha256": "e790f12cdab2e50d266d54e1bbb8a05a1cd77629a065254be3734a67b6053358"
+  },
+  "computer-system": {
+    "triangles": 176,
+    "materials": 1,
+    "images": 1,
+    "sha256": "87666d5211fdce8830d1abf55fab16bc21d67714d78f9525f1399c33c4cb54bb"
+  },
+  "wall-switch": {
+    "triangles": 18,
+    "materials": 1,
+    "images": 1,
+    "sha256": "2b297783053aa9b091972f31f5fc3892b7cb7572d017dd37fc22af9ac2640c20"
+  },
+  "pipe": {
+    "triangles": 20,
+    "materials": 1,
+    "images": 1,
+    "sha256": "b33fe37fee9d1dfe92dc75d5af7e54877199b9d865cb988afa25f40b7bed49ef"
+  },
+  "pipe-bend": {
+    "triangles": 48,
+    "materials": 1,
+    "images": 1,
+    "sha256": "dcbb380dde0687af80f74a84c8fbd22efbb5dc007b822a6522577fba0fd0e676"
+  }
+}

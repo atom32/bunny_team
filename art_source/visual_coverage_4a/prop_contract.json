@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "no_collision_bodies": true,
+    "no_navigation_regions": true,
+    "surfaces_35": true,
+    "three_reusable_props": true,
+    "triangles_1070": true
+  },
+  "label_count": 1,
+  "surfaces": 35,
+  "triangles": 1070
+}

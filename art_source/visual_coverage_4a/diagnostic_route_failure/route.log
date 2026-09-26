@@ -1,0 +1,24 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5090
+
+PHASE4A_ROUTE: AUTOMATED INPUT/API, NOT MANUAL; NORMAL AI; NO TELEPORT/INVULNERABILITY
+CAPTURE 01_hanger (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 26.0) reached (-15.60764, -0.024161, 26.18666)
+CAPTURE 02_entrance (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 24.7) reached (-15.99894, -0.02494, 25.02793)
+WAYPOINT (-16.0, 0.0, 21.5) reached (-15.99829, -0.0049, 21.90734)
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.13649, -0.006046, 21.08636)
+CAPTURE 03_inside (1280, 720) error=0
+CAPTURE switch_0_Rocket (1280, 720) error=0
+CAPTURE switch_1_Rifle (1280, 720) error=0
+CAPTURE switch_2_Rocket (1280, 720) error=0
+CAPTURE switch_3_Rifle (1280, 720) error=0
+WAYPOINT (-19.5, 0.0, 13.1) reached (-19.43568, -0.004922, 13.4182)
+CAPTURE 04_terminal (1280, 720) error=0
+CAPTURE 04b_terminal_interacted (1280, 720) error=0
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.43837, -0.005436, 20.56649)
+WAYPOINT (-16.0, 0.0, 21.5) reached (-16.33315, -0.00512, 21.67517)
+WAYPOINT_TIMEOUT target=(-16.0, 0.0, 26.0) position=(-16.02715, -0.024161, 23.32825) health=229.8
+ROUTE_FAIL Exit traversal failed
+CAPTURE failure (1280, 720) error=0
+{"checks":{"Combat still works":true,"Door interaction":true,"Enter Field Office":true,"Existing save loaded":true,"Field Office entrance visible":true,"Hanger launches":true,"Initial weapon restored":true,"Interior traversal":true,"Player movement":true,"Production camera":true,"Terminal area reachable":true,"Terminal interaction completed":true,"reload_0":true,"reload_1":true,"reload_2":true,"reload_3":true,"switch_pose_0":true,"switch_pose_1":true,"switch_pose_2":true,"switch_pose_3":true},"combat":{"damage_taken":30,"enemies_defeated":0,"shots":117},"combat_scope":"weapon fire and normal enemy AI; kill/damage semantics are covered by regression suites","failure":"Exit traversal failed","method":"automated input/API, not manual","mission_completed":false,"weapon_checks":[{"ammo_after":1,"ammo_before":0,"expected_pose":"Rocket","fired":true,"id":"weapon.rocket_launcher_01","reload":true,"selected_pose":"Rocket"},{"ammo_after":30,"ammo_before":4,"expected_pose":"Rifle","fired":true,"id":"weapon.assault_rifle_01","reload":true,"selected_pose":"Rifle"},{"ammo_after":1,"ammo_before":0,"expected_pose":"Rocket","fired":true,"id":"weapon.rocket_launcher_01","reload":true,"selected_pose":"Rocket"},{"ammo_after":30,"ammo_before":29,"expected_pose":"Rifle","fired":true,"id":"weapon.assault_rifle_01","reload":true,"selected_pose":"Rifle"}]}

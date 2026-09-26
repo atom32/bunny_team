@@ -1,0 +1,23 @@
+09:36:26 | INFO: Data are loaded, start creating Blender stuff
+09:36:26 | INFO: Blender create Mesh node container-flat
+09:36:26 | INFO: glTF import finished in 0.32s
+09:36:26 | INFO: Data are loaded, start creating Blender stuff
+09:36:26 | INFO: Blender create Mesh node container-tall
+09:36:26 | INFO: Blender create Mesh node Group
+09:36:26 | INFO: glTF import finished in 0.00s
+09:36:26 | INFO: Data are loaded, start creating Blender stuff
+09:36:26 | INFO: Blender create Mesh node computer-system
+09:36:26 | INFO: glTF import finished in 0.00s
+09:36:26 | INFO: Data are loaded, start creating Blender stuff
+09:36:26 | INFO: Blender create Mesh node wall-switch
+09:36:26 | INFO: glTF import finished in 0.00s
+09:36:26 | INFO: Data are loaded, start creating Blender stuff
+09:36:26 | INFO: Blender create Mesh node pipe
+09:36:26 | INFO: glTF import finished in 0.00s
+09:36:26 | INFO: Data are loaded, start creating Blender stuff
+09:36:26 | INFO: Blender create Mesh node pipe-bend
+09:36:26 | INFO: glTF import finished in 0.00s
+[{"asset": "container-flat", "blender_z_up_bounds_min": [-0.30000001192092896, -0.550000011920929, 1.0557953979400264e-14], "max": [0.3594970405101776, 0.540945291519165, 0.6000000238418579], "dimensions": [0.6594970524311066, 1.090945303440094, 0.6000000238418474], "mesh_objects": 1, "polygons": 116, "normals_finite": true, "uv_layers": [1], "unwanted_objects": [], "material_slots": ["colormap"], "textures": [{"name": "colormap", "size": [512, 512], "packed": true}]}, {"asset": "container-tall", "blender_z_up_bounds_min": [-0.30000001192092896, -0.30000001192092896, 0.0], "max": [0.30000001192092896, 0.30000001192092896, 0.8999999761581421], "dimensions": [0.6000000238418579, 0.6000000238418579, 0.8999999761581421], "mesh_objects": 2, "polygons": 116, "normals_finite": true, "uv_layers": [1, 1], "unwanted_objects": [], "material_slots": ["colormap", "colormap"], "textures": [{"name": "colormap", "size": [512, 512], "packed": true}]}, {"asset": "computer-system", "blender_z_up_bounds_min": [-0.44999998807907104, -0.32244443893432617, 0.0], "max": [0.44999998807907104, 0.37244442105293274, 0.6000000238418579], "dimensions": [0.8999999761581421, 0.6948888599872589, 0.6000000238418579], "mesh_objects": 1, "polygons": 176, "normals_finite": true, "uv_layers": [1], "unwanted_objects": [], "material_slots": ["colormap"], "textures": [{"name": "colormap", "size": [512, 512], "packed": true}]}, {"asset": "wall-switch", "blender_z_up_bounds_min": [-0.05000000074505806, -0.012500005774199963, 0.0], "max": [0.05000000074505806, 0.012500000186264515, 0.20000000298023224], "dimensions": [0.10000000149011612, 0.025000005960464478, 0.20000000298023224], "mesh_objects": 1, "polygons": 18, "normals_finite": true, "uv_layers": [1], "unwanted_objects": [], "material_slots": ["colormap"], "textures": [{"name": "colormap", "size": [512, 512], "packed": true}]}, {"asset": "pipe", "blender_z_up_bounds_min": [-0.12320507317781448, -0.1422649770975113, 0.0], "max": [0.12320507317781448, 0.1422649770975113, 0.5], "dimensions": [0.24641014635562897, 0.2845299541950226, 0.5], "mesh_objects": 1, "polygons": 20, "normals_finite": true, "uv_layers": [1], "unwanted_objects": [], "material_slots": ["colormap"], "textures": [{"name": "colormap", "size": [512, 512], "packed": true}]}, {"asset": "pipe-bend", "blender_z_up_bounds_min": [-0.12320507317781448, -0.1422649770975113, 0.0], "max": [0.3767949342727661, 0.1422649770975113, 0.5], "dimensions": [0.5000000074505806, 0.2845299541950226, 0.5], "mesh_objects": 1, "polygons": 48, "normals_finite": true, "uv_layers": [1], "unwanted_objects": [], "material_slots": ["colormap"], "textures": [{"name": "colormap", "size": [512, 512], "packed": true}]}]
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

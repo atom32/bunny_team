@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/presentation/service_props/supply_stack.tscn" id="supply"]
+[ext_resource type="PackedScene" path="res://scenes/presentation/service_props/service_cabinet.tscn" id="cabinet"]
+[ext_resource type="PackedScene" path="res://scenes/presentation/service_props/pipe_rack.tscn" id="pipes"]
+
+[node name="MaintenanceCluster" type="Node3D"]
+metadata/presentation_only = true
+
+[node name="SupplyStack" parent="." instance=ExtResource("supply")]
+position = Vector3(-1.45, 0, 0)
+
+[node name="ServiceCabinet" parent="." instance=ExtResource("cabinet")]
+position = Vector3(0.05, 0, 0)
+
+[node name="PipeRack" parent="." instance=ExtResource("pipes")]
+position = Vector3(1.55, 0, -0.1)
+
+[node name="ServiceLabel" type="Label3D" parent="."]
+position = Vector3(1.55, 0.48, 0.27)
+text = "SERVICE 07"
+font_size = 24
+pixel_size = 0.003
+modulate = Color(0.78, 0.78, 0.64, 1)
+outline_size = 4

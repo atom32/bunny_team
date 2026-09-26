@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=16 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/areas/field_office_art.tscn" id="art"]
 [ext_resource type="Script" path="res://scripts/presentation/field_office_presentation.gd" id="presentation"]
+
+[ext_resource type="PackedScene" path="res://scenes/presentation/service_props/maintenance_cluster.tscn" id="service"]
 
 [sub_resource type="StandardMaterial3D" id="FloorMaterial"]
 albedo_color = Color(0.145, 0.18, 0.2, 1)
@@ -193,3 +195,6 @@ modulate = Color(0.48, 0.95, 0.96, 1)
 billboard = 1
 
 [node name="OfficeArt" parent="." instance=ExtResource("art")]
+
+[node name="ExteriorMaintenance" parent="." instance=ExtResource("service")]
+position = Vector3(4.0, 0, 7.9)
