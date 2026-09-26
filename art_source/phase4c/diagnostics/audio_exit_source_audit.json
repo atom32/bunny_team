@@ -1,0 +1,7 @@
+{
+  "file": "scripts/systems/audio_director.gd",
+  "sha256": "5e2d6ba50590eef6900863e9fae7aae4452d59ec79c0a188f21752a168c60c99",
+  "equals_start_of_phase": true,
+  "equals_visual_baseline_source": true,
+  "diagnosis": "Verbose exit output identifies AudioStreamWAV / AudioStreamPlaybackWAV and assets/audio/impact.wav, not a new VFX material. Capping test FPS to 60 did not fix it (2/6 diagnostic runs still errored). No ERROR filtering is allowed."
+}

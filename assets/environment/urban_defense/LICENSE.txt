@@ -1,0 +1,5 @@
+Project-local authored asset, generated from the accompanying project source.
+No separately acquired third-party model or texture is included.
+Use/distribution follows the project's own licensing decisions; no CC0 or
+third-party commercial-clearance claim is made by this file.
+Blender is an authoring tool; no Blender executable or font file is bundled.

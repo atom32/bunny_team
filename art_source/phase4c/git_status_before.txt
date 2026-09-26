@@ -1,0 +1,159 @@
+ M Handoff.md
+ M THIRD_PARTY_ASSETS.md
+ M art_source/unitychan_battle_derivative/README.md
+ M art_source/unitychan_battle_derivative/battle_master.blend
+ M assets/audio/ar_fire.wav.import
+ M assets/audio/defeat.wav.import
+ M assets/audio/dodge.wav.import
+ M assets/audio/enemy_fire.wav.import
+ M assets/audio/explosion.wav.import
+ M assets/audio/impact.wav.import
+ M assets/audio/neon_bastion_loop.wav.import
+ M assets/audio/player_hurt.wav.import
+ M assets/audio/reload.wav.import
+ M assets/audio/rocket_fire.wav.import
+ M assets/audio/smg_fire.wav.import
+ M assets/audio/ui_click.wav.import
+ M assets/audio/ui_confirm.wav.import
+ M assets/audio/victory.wav.import
+ M assets/characters/quaternius_scifi/SciFi.gltf.import
+ M assets/characters/unitychan_battle/animations/damaged.fbx.import
+ M assets/characters/unitychan_battle/animations/idle.fbx.import
+ M assets/characters/unitychan_battle/animations/run.fbx.import
+ M assets/characters/unitychan_battle/animations/slide.fbx.import
+ M assets/characters/unitychan_battle/animations/walk.fbx.import
+ M assets/characters/unitychan_battle/animations/win.fbx.import
+ M "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Dark_Silhouette.jpg.import"
+ M "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Light_Silhouette.jpg.import"
+ M "assets/characters/unitychan_battle/license/License Logo/Others/png/Dark_Silhouette.png.import"
+ M "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Frame.png.import"
+ M "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Silhouette.png.import"
+ M "assets/characters/unitychan_battle/license/License Logo/Others/svg/Dark_Silhouette.svg.import"
+ M "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Frame.svg.import"
+ M "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Silhouette.svg.import"
+ M assets/characters/unitychan_battle/textures/kohaku_A_Add.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_Add_Shd.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_Add_Spow.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_Body.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_Body_Shd.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_Body_spow.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_Hair_Spow.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_Skin_Shd.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_Wep.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_Wep_Emi.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_Wep_Shd.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_Wep_Spec.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_face3_lpow.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_face3_main.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_face3_main_Shd2.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_face3_main_spow.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_face3_main_sub.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_skin.png.import
+ M assets/characters/unitychan_battle/textures/kohaku_A_skin_spow.png.import
+ M assets/characters/unitychan_battle/textures/para_height2.png.import
+ D assets/characters/unitychan_battle/unitychan_battle.fbx
+ D assets/characters/unitychan_battle/unitychan_battle.fbx.import
+ M assets/characters/vrm_avatar/avatar_sample_a.glb.import
+ M assets/characters/vrm_avatar/avatar_sample_a_MatcapWarp.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a_N00_000_00_Face_00_out.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a_N00_000_Hair_00_nml.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneBlack.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a_Shader_NoneNormal.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a_Thumbnail.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__01.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__02.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__03.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__04.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__05.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__06.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__07.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__09.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__10.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__11.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__12.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__13.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__14.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__15.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__16.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__17.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__18.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__19.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__20.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__21.png.import
+ M assets/characters/vrm_avatar/avatar_sample_a__22.png.import
+ M assets/environment/kenney_space_station_kit/Textures/colormap.png.import
+ M assets/environment/kenney_space_station_kit/chair.glb.import
+ M assets/environment/kenney_space_station_kit/computer-screen.glb.import
+ M assets/environment/kenney_space_station_kit/computer-system.glb.import
+ M assets/environment/kenney_space_station_kit/container-flat.glb.import
+ M assets/environment/kenney_space_station_kit/container-tall.glb.import
+ M assets/environment/kenney_space_station_kit/display-wall.glb.import
+ M assets/environment/kenney_space_station_kit/door-double-closed.glb.import
+ M assets/environment/kenney_space_station_kit/floor-detail.glb.import
+ M assets/environment/kenney_space_station_kit/floor.glb.import
+ M assets/environment/kenney_space_station_kit/pipe-bend.glb.import
+ M assets/environment/kenney_space_station_kit/pipe.glb.import
+ M assets/environment/kenney_space_station_kit/table.glb.import
+ M assets/environment/kenney_space_station_kit/wall-detail.glb.import
+ M assets/environment/kenney_space_station_kit/wall-switch.glb.import
+ M assets/environment/kenney_space_station_kit/wall-window.glb.import
+ M assets/environment/kenney_space_station_kit/wall.glb.import
+ M assets/weapons/kenney_blaster_kit/Textures/colormap.png.import
+ M assets/weapons/kenney_blaster_kit/blaster-e.glb.import
+ M assets/weapons/kenney_blaster_kit/blaster-g.glb.import
+ M assets/weapons/kenney_blaster_kit/blaster-o.glb.import
+ M project.godot
+?? art_source/phase4c/
+?? art_source/unitychan_battle_derivative/phase3b/
+?? art_source/unitychan_battle_derivative/phase3c/
+?? art_source/unitychan_battle_derivative/phase3d/commit_receipt.json
+?? art_source/unitychan_battle_derivative/phase4b/README_SECTION.md
+?? art_source/unitychan_battle_derivative/phase4b/before/README.md
+?? art_source/unitychan_battle_derivative/phase4b/commit_receipt.json
+?? art_source/unitychan_battle_derivative/phase4b/git_diff_before.patch
+?? art_source/unitychan_battle_derivative/phase4b/persistence/
+?? art_source/unitychan_battle_derivative/phase4b/persistence_Rifle/expected_after.json
+?? art_source/unitychan_battle_derivative/phase4b/persistence_Rifle/profile.json
+?? art_source/unitychan_battle_derivative/phase4b/persistence_SMG/expected_after.json
+?? art_source/unitychan_battle_derivative/phase4b/persistence_SMG/profile.json
+?? art_source/unitychan_battle_legacy/
+?? art_source/visual_coverage_4a/commit_receipt.json
+?? art_source/visual_coverage_4a/fx/gradient.png
+?? art_source/visual_coverage_4a/fx/static_red.png
+?? art_source/visual_coverage_4a/fx/static_smoke.png
+?? art_source/visual_coverage_4a/fx_debug.gd
+?? art_source/visual_coverage_4a/hanger_capture.gd
+?? art_source/visual_coverage_4a/hanger_capture.log
+?? art_source/visual_coverage_4a/hanger_material_tuned.png
+?? art_source/visual_coverage_4a/hanger_tuned.png
+?? art_source/visual_coverage_4a/pipe_rack.blend1
+?? art_source/visual_coverage_4a/progress.json
+?? art_source/visual_coverage_4a/route_Rifle/01_hanger.png
+?? art_source/visual_coverage_4a/route_Rifle/02_entrance.png
+?? art_source/visual_coverage_4a/route_Rifle/04_terminal.png
+?? art_source/visual_coverage_4a/route_Rifle/failure.png
+?? art_source/visual_coverage_4a/route_Rifle/switch_2_Rocket.png
+?? art_source/visual_coverage_4a/route_Rifle/switch_3_Rifle.png
+?? art_source/visual_coverage_4a/route_SMG/01_hanger.png
+?? art_source/visual_coverage_4a/route_SMG/01_hanger_after_props.png
+?? art_source/visual_coverage_4a/route_SMG/01_hanger_before_props.png
+?? art_source/visual_coverage_4a/route_SMG/02_entrance.png
+?? art_source/visual_coverage_4a/route_SMG/02_entrance_after_props.png
+?? art_source/visual_coverage_4a/route_SMG/02_entrance_before_props.png
+?? art_source/visual_coverage_4a/route_SMG/03_inside.png
+?? art_source/visual_coverage_4a/route_SMG/04_terminal.png
+?? art_source/visual_coverage_4a/route_SMG/switch_2_Rocket.png
+?? art_source/visual_coverage_4a/route_SMG/switch_3_SMG.png
+?? art_source/visual_coverage_4a/service_cabinet.blend1
+?? art_source/visual_coverage_4a/supply_stack.blend1
+?? assets/140301_unitychanmodel_Celsis/
+?? docs/ART_ASSET_INVENTORY.md
+?? docs/ART_PIPELINE.md
+?? docs/art_candidates/
+?? docs/art_pipeline_validation.log
+?? docs/phase2b/
+?? tools/__pycache__/
+?? tools/audit_migration_dependencies.py
+?? tools/phase2b_route_probe.gd
+?? tools/phase2b_route_probe.gd.uid
+?? tools/verify_migration.py

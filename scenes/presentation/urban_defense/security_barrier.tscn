@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/environment/urban_defense/security_barrier.glb" id="model"]
+
+[node name="SecurityBarrierPresentation" type="Node3D"]
+metadata/presentation_only = true
+
+[node name="Visual" parent="." instance=ExtResource("model")]

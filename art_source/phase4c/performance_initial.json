@@ -1,0 +1,19 @@
+{
+  "after": {
+    "cpu_process_ms_mean": 44.1199416666664,
+    "cpu_process_ms_p95": 103.093,
+    "draw_calls": 897.0,
+    "primitives": 95167.0,
+    "render_video_memory_bytes": 322215472.0,
+    "texture_memory_bytes": 287327704.0
+  },
+  "before": {
+    "cpu_process_ms_mean": 16.7978999999999,
+    "cpu_process_ms_p95": 16.84,
+    "draw_calls": 877.0,
+    "primitives": 93375.0,
+    "render_video_memory_bytes": 322215472.0,
+    "texture_memory_bytes": 287327704.0
+  },
+  "scope": "1280x720 production Sortie camera, same frozen scene; 60 warmup + 120 frames; engine allocated video memory, NOT board-wide VRAM; not a combat frame-time benchmark"
+}

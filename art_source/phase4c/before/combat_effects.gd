@@ -1,7 +1,4 @@
-class_name CombatEffects
 extends RefCounted
-
-const ACCENTS := preload("res://scripts/presentation/combat_accents.gd")
 
 
 static func tracer(parent: Node, from: Vector3, to: Vector3, color: Color, width: float = 0.045) -> MeshInstance3D:
@@ -63,8 +60,13 @@ static func muzzle_flash(
 	parent.add_child(root)
 	root.global_position = position
 	root.look_at(position + direction, Vector3.UP)
-	ACCENTS.muzzle(root, color, intensity)
-	ACCENTS.smoke(parent, position + direction * 0.12, 0.09 * intensity, 0.23, "MuzzleSmoke")
+	var core := VisualFactory.sphere(root, 0.12 * intensity, Vector3.ZERO, color, "Core")
+	core.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	core.material_override = VisualFactory.material(color, 0.0, 0.08, color, 6.0)
+	var streak_length := 0.6 * intensity
+	var streak := VisualFactory.box(root, Vector3(0.07 * intensity, 0.07 * intensity, streak_length), Vector3(0.0, 0.0, -streak_length * 0.5), color, "Streak")
+	streak.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	streak.material_override = VisualFactory.material(color, 0.0, 0.08, color, 5.0)
 	if intensity > 1.2:
 		var light := OmniLight3D.new()
 		light.light_color = color
@@ -77,15 +79,14 @@ static func muzzle_flash(
 
 
 static func dodge_pulse(parent: Node, position: Vector3, direction: Vector3) -> void:
-	ACCENTS.dodge(parent, position, direction)
 	var ring_mesh := TorusMesh.new()
-	ring_mesh.inner_radius = 0.55
+	ring_mesh.inner_radius = 0.46
 	ring_mesh.outer_radius = 0.58
 	var ring := MeshInstance3D.new()
 	ring.name = "DodgePulse"
 	ring.mesh = ring_mesh
 	ring.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	var material := VisualFactory.material(Color("39dce888"), 0.0, 0.15, Color("4af4ff"), 1.5)
+	var material := VisualFactory.material(Color("39dce8"), 0.0, 0.15, Color("4af4ff"), 4.0)
 	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	ring.material_override = material
 	parent.add_child(ring)
@@ -111,10 +112,12 @@ static func rocket_trail(parent: Node, position: Vector3) -> void:
 
 
 static func hit(parent: Node, position: Vector3, color: Color = Color("68f6ff"), intensity: float = 1.0) -> void:
-	var spark := ACCENTS.impact(parent, position, color, intensity)
+	var spark := VisualFactory.sphere(parent, 0.13 * intensity, position, color, "HitEffect")
+	spark.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	spark.material_override = VisualFactory.material(color, 0.0, 0.08, color, 6.0)
 	var tween := spark.create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(spark, "scale", Vector3.ONE * 1.7, 0.12 + intensity * 0.035)
+	tween.tween_property(spark, "scale", Vector3(3.2, 0.3, 3.2), 0.12 + intensity * 0.035)
 	tween.tween_property(spark, "position:y", position.y + 0.3 * intensity, 0.15)
 	tween.chain().tween_callback(spark.queue_free)
 	for index in range(4):

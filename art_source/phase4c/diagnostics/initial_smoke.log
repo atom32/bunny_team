@@ -1,0 +1,141 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/enemies/enemy_controller.gd:125)
+       [2] _test_battle (res://tests/acceptance_smoke.gd:244)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/enemies/enemy_controller.gd:125)
+       [2] _test_battle (res://tests/acceptance_smoke.gd:245)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/enemies/enemy_controller.gd:125)
+       [2] _fire_hitscan (res://scripts/player/player_controller.gd:854)
+       [3] _test_battle (res://tests/acceptance_smoke.gd:262)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] _fire_hitscan (res://scripts/player/player_controller.gd:855)
+       [2] _test_battle (res://tests/acceptance_smoke.gd:262)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] _fire_hitscan (res://scripts/player/player_controller.gd:855)
+       [2] _test_battle (res://tests/acceptance_smoke.gd:275)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/enemies/enemy_controller.gd:125)
+       [2] _explode (res://scripts/combat/rocket_projectile.gd:104)
+       [3] _physics_process (res://scripts/combat/rocket_projectile.gd:65)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/enemies/enemy_controller.gd:125)
+       [2] _fire_hitscan (res://scripts/player/player_controller.gd:854)
+       [3] _test_battle (res://tests/acceptance_smoke.gd:291)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] _fire_hitscan (res://scripts/player/player_controller.gd:855)
+       [2] _test_battle (res://tests/acceptance_smoke.gd:291)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/enemies/enemy_controller.gd:125)
+       [2] _explode (res://scripts/combat/rocket_projectile.gd:104)
+       [3] _physics_process (res://scripts/combat/rocket_projectile.gd:65)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/player/player_controller.gd:329)
+       [2] _test_battle (res://tests/acceptance_smoke.gd:395)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/enemies/enemy_controller.gd:125)
+       [2] take_damage (res://scripts/enemies/enemy_controller.gd:134)
+       [3] _test_battle (res://tests/acceptance_smoke.gd:403)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/enemies/enemy_controller.gd:125)
+       [2] take_damage (res://scripts/enemies/enemy_controller.gd:134)
+       [3] _test_battle (res://tests/acceptance_smoke.gd:406)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] _die (res://scripts/enemies/enemy_controller.gd:271)
+       [2] receive_damage (res://scripts/enemies/enemy_controller.gd:128)
+       [3] take_damage (res://scripts/enemies/enemy_controller.gd:134)
+       [4] _test_battle (res://tests/acceptance_smoke.gd:406)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/enemies/enemy_controller.gd:125)
+       [2] take_damage (res://scripts/enemies/enemy_controller.gd:134)
+       [3] _test_battle (res://tests/acceptance_smoke.gd:456)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] _die (res://scripts/enemies/enemy_controller.gd:271)
+       [2] receive_damage (res://scripts/enemies/enemy_controller.gd:128)
+       [3] take_damage (res://scripts/enemies/enemy_controller.gd:134)
+       [4] _test_battle (res://tests/acceptance_smoke.gd:456)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/enemies/enemy_controller.gd:125)
+       [2] take_damage (res://scripts/enemies/enemy_controller.gd:134)
+       [3] _test_battle (res://tests/acceptance_smoke.gd:456)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] _die (res://scripts/enemies/enemy_controller.gd:271)
+       [2] receive_damage (res://scripts/enemies/enemy_controller.gd:128)
+       [3] take_damage (res://scripts/enemies/enemy_controller.gd:134)
+       [4] _test_battle (res://tests/acceptance_smoke.gd:456)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/enemies/enemy_controller.gd:125)
+       [2] take_damage (res://scripts/enemies/enemy_controller.gd:134)
+       [3] _test_battle (res://tests/acceptance_smoke.gd:456)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] _die (res://scripts/enemies/enemy_controller.gd:271)
+       [2] receive_damage (res://scripts/enemies/enemy_controller.gd:128)
+       [3] take_damage (res://scripts/enemies/enemy_controller.gd:134)
+       [4] _test_battle (res://tests/acceptance_smoke.gd:456)
+SCRIPT ERROR: Invalid type in function 'impact' in base 'GDScript'. The Object-derived class of argument 1 (Node (acceptance_smoke.gd)) is not a subclass of the expected argument class.
+   at: hit (res://scripts/combat/combat_effects.gd:114)
+   GDScript backtrace (most recent call first):
+       [0] hit (res://scripts/combat/combat_effects.gd:114)
+       [1] receive_damage (res://scripts/player/player_controller.gd:329)
+       [2] take_damage (res://scripts/player/player_controller.gd:340)
+       [3] _test_failed_sortie (res://tests/acceptance_smoke.gd:652)
+ACCEPTANCE_SMOKE: PASS

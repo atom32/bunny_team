@@ -1,0 +1,332 @@
+{
+  "status": "PASS",
+  "checks": {
+    "only_two_presentation_files_plus_two_authorized_cleanup_fixes_changed": true,
+    "baseline_is_cc81d303": true,
+    "68_official_hashes_identical": true,
+    "character_glb_unchanged": true,
+    "character_files_materials_adapters_unchanged": true,
+    "all_existing_tests_unchanged": true,
+    "authorized_lifecycle_probe": true,
+    "enemy_change_exactly_authorized_guard": true,
+    "audio_change_only_test_shutdown": true,
+    "audio_shutdown_fixed_count_25_runs": true,
+    "real_user_save_unchanged": true,
+    "arena_geometry_navigation_contract": true,
+    "fx_rng_and_cleanup": true,
+    "tracer_telegraph_rocket_explosion_unchanged": true,
+    "33_tests_and_main_pass": true,
+    "Rifle_production_route": true,
+    "Rifle_cross_process_reload": true,
+    "Rifle_independent_inventory_commit": true,
+    "SMG_production_route": true,
+    "SMG_cross_process_reload": true,
+    "SMG_independent_inventory_commit": true,
+    "Rifle_normal_AI_combat_lane": true,
+    "SMG_normal_AI_combat_lane": true,
+    "production_combat_effects_observed": true,
+    "validation_logs_no_errors": true
+  },
+  "changed_existing_files": [
+    "scenes/battle/urban_arena.tscn",
+    "scripts/combat/combat_effects.gd",
+    "scripts/enemies/enemy_controller.gd",
+    "scripts/systems/audio_director.gd"
+  ],
+  "official_hashes": 68,
+  "tests": "33/33",
+  "main_exit": 0,
+  "routes": {
+    "Rifle": {
+      "checks": 32,
+      "restart_checks": 5,
+      "combat": {
+        "damage_taken": 24,
+        "enemies_defeated": 0,
+        "mission_completed": false,
+        "shots": 107
+      },
+      "effects": {
+        "DodgeStreak": 1,
+        "Explosion": 8,
+        "HitEffect": 7,
+        "ImpactSmoke": 7,
+        "MuzzleFlash": 118,
+        "RocketTrail": 2
+      }
+    },
+    "SMG": {
+      "checks": 32,
+      "restart_checks": 5,
+      "combat": {
+        "damage_taken": 30,
+        "enemies_defeated": 0,
+        "mission_completed": false,
+        "shots": 125
+      },
+      "effects": {
+        "DodgeStreak": 1,
+        "Explosion": 8,
+        "HitEffect": 39,
+        "ImpactSmoke": 27,
+        "MuzzleFlash": 136,
+        "RocketTrail": 2
+      }
+    }
+  },
+  "combat_lanes": {
+    "Rifle": {
+      "checks": {
+        "existing save loaded": true,
+        "normal HP player survived": true,
+        "normal gameplay enemy death observed": true,
+        "road waypoint 1": true,
+        "road waypoint 2": true,
+        "shots fired": true
+      },
+      "shots": 3,
+      "effects": {
+        "EnemyDied": 1,
+        "HitEffect": 2,
+        "ImpactSmoke": 2,
+        "MuzzleFlash": 3
+      }
+    },
+    "SMG": {
+      "checks": {
+        "existing save loaded": true,
+        "normal HP player survived": true,
+        "normal gameplay enemy death observed": true,
+        "road waypoint 1": true,
+        "road waypoint 2": true,
+        "shots fired": true
+      },
+      "shots": 6,
+      "effects": {
+        "EnemyDied": 1,
+        "HitEffect": 4,
+        "ImpactSmoke": 3,
+        "MuzzleFlash": 5
+      }
+    }
+  },
+  "logs": {
+    "arena_probe.log": {
+      "errors": [],
+      "warnings": [
+        "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+      ]
+    },
+    "barrier_build.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "import.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "lifecycle_probe.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "performance_probe.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "visual_probe.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "route_Rifle\\route.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "route_SMG\\route.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "persistence_Rifle\\reload.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "persistence_SMG\\reload.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "combat_Rifle\\run.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "combat_SMG\\run.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\00_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\01_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\02_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\03_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\04_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\05_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\06_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\07_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\08_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\09_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\10_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\11_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\12_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\13_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\14_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\15_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\16_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\17_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\18_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\19_world_interaction.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\20_resource_probe.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\21_resource_probe.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\22_resource_probe.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\23_resource_probe.log": {
+      "errors": [],
+      "warnings": []
+    },
+    "audio_shutdown\\24_resource_probe.log": {
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "test_warnings": {
+    "main": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ]
+  },
+  "asset": {
+    "blender": "5.2.2 LTS",
+    "unit_scale": 1,
+    "export_yup": true,
+    "triangles": 1100,
+    "material_count": 5,
+    "texture_count": 0,
+    "mesh_count": 1,
+    "collision": false,
+    "blender_dimensions": [
+      2.7980000972747803,
+      0.5789999961853027,
+      0.8970000147819519
+    ],
+    "root_identity": true,
+    "runtime_sha256": "611cfba94cc3e06f4e544f2913d649096a0f8bbc571aa1820a62688589ab056c",
+    "master_sha256": "4b4d4ebcf0de6386a209feb477f1d1aa18f316441b6ad85b6571b6fe57618361"
+  },
+  "performance": {
+    "after_1": {
+      "draw_calls": 870.0,
+      "focused_samples": 120,
+      "primitives": 88479.0,
+      "render_video_memory_bytes": 320085000.0,
+      "texture_memory_bytes": 287327704.0,
+      "wall_render_interval_ms_mean": 0.85735,
+      "wall_render_interval_ms_median": 0.84,
+      "wall_render_interval_ms_p95": 0.999
+    },
+    "after_2": {
+      "draw_calls": 870.0,
+      "focused_samples": 120,
+      "primitives": 88479.0,
+      "render_video_memory_bytes": 320085000.0,
+      "texture_memory_bytes": 287327704.0,
+      "wall_render_interval_ms_mean": 0.853558333333333,
+      "wall_render_interval_ms_median": 0.841,
+      "wall_render_interval_ms_p95": 0.96
+    },
+    "before_1": {
+      "draw_calls": 854.0,
+      "focused_samples": 120,
+      "primitives": 86951.0,
+      "render_video_memory_bytes": 320085000.0,
+      "texture_memory_bytes": 287327704.0,
+      "wall_render_interval_ms_mean": 0.828008333333334,
+      "wall_render_interval_ms_median": 0.821,
+      "wall_render_interval_ms_p95": 0.89
+    },
+    "before_2": {
+      "draw_calls": 854.0,
+      "focused_samples": 120,
+      "primitives": 86951.0,
+      "render_video_memory_bytes": 320085000.0,
+      "texture_memory_bytes": 287327704.0,
+      "wall_render_interval_ms_mean": 0.8275,
+      "wall_render_interval_ms_median": 0.82,
+      "wall_render_interval_ms_p95": 0.91
+    },
+    "scope": "1280x720 production Sortie camera, same frozen scene ABBA; VSync off, 60 warmup + 120 frames each; wall render interval, NOT GPU timing or combat FPS; engine allocated video memory, NOT board-wide VRAM"
+  },
+  "scope": "Bounded C+D subphase only; A enemy and B weapon replacements deferred. Automated graphical/API evidence, not manual acceptance."
+}

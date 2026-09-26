@@ -1,0 +1,11 @@
+{
+  "after_sha256": "67d6911f0cca4cb26781e0c0421ed624a1d014b1627651a8a5bfa3e29a361e64",
+  "before_sha256": "67d6911f0cca4cb26781e0c0421ed624a1d014b1627651a8a5bfa3e29a361e64",
+  "checks": {
+    "collision_and_navigation_identical": true,
+    "eight_existing_barriers_skinned": true,
+    "no_presentation_physics": true,
+    "shell_fits_original_collision": true
+  },
+  "physics_navigation_record_count": 48
+}

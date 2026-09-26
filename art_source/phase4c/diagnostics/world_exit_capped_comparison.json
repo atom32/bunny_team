@@ -1,0 +1,96 @@
+[
+  {
+    "run": 0,
+    "exit": 0,
+    "errors": [
+      "ERROR: 1 resources still in use at exit."
+    ],
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--headless",
+      "--max-fps",
+      "60",
+      "--path",
+      "D:\\bunny_team",
+      "--verbose",
+      "res://tests/world_interaction_test.tscn"
+    ]
+  },
+  {
+    "run": 1,
+    "exit": 0,
+    "errors": [],
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--headless",
+      "--max-fps",
+      "60",
+      "--path",
+      "D:\\bunny_team",
+      "--verbose",
+      "res://tests/world_interaction_test.tscn"
+    ]
+  },
+  {
+    "run": 2,
+    "exit": 0,
+    "errors": [
+      "ERROR: 1 resources still in use at exit."
+    ],
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--headless",
+      "--max-fps",
+      "60",
+      "--path",
+      "D:\\bunny_team",
+      "--verbose",
+      "res://tests/world_interaction_test.tscn"
+    ]
+  },
+  {
+    "run": 3,
+    "exit": 0,
+    "errors": [],
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--headless",
+      "--max-fps",
+      "60",
+      "--path",
+      "D:\\bunny_team",
+      "--verbose",
+      "res://tests/world_interaction_test.tscn"
+    ]
+  },
+  {
+    "run": 4,
+    "exit": 0,
+    "errors": [],
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--headless",
+      "--max-fps",
+      "60",
+      "--path",
+      "D:\\bunny_team",
+      "--verbose",
+      "res://tests/world_interaction_test.tscn"
+    ]
+  },
+  {
+    "run": 5,
+    "exit": 0,
+    "errors": [],
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--headless",
+      "--max-fps",
+      "60",
+      "--path",
+      "D:\\bunny_team",
+      "--verbose",
+      "res://tests/world_interaction_test.tscn"
+    ]
+  }
+]

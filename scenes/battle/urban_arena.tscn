@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/battle/urban_arena.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/presentation/urban_defense.gd" id="presentation"]
 
 [node name="UrbanArena" type="Node3D"]
 script = ExtResource("1")
+
+[node name="UrbanDefensePresentation" type="Node3D" parent="."]
+script = ExtResource("presentation")
+metadata/presentation_only = true
 

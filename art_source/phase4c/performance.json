@@ -1,0 +1,43 @@
+{
+  "after_1": {
+    "draw_calls": 870.0,
+    "focused_samples": 120,
+    "primitives": 88479.0,
+    "render_video_memory_bytes": 320085000.0,
+    "texture_memory_bytes": 287327704.0,
+    "wall_render_interval_ms_mean": 0.85735,
+    "wall_render_interval_ms_median": 0.84,
+    "wall_render_interval_ms_p95": 0.999
+  },
+  "after_2": {
+    "draw_calls": 870.0,
+    "focused_samples": 120,
+    "primitives": 88479.0,
+    "render_video_memory_bytes": 320085000.0,
+    "texture_memory_bytes": 287327704.0,
+    "wall_render_interval_ms_mean": 0.853558333333333,
+    "wall_render_interval_ms_median": 0.841,
+    "wall_render_interval_ms_p95": 0.96
+  },
+  "before_1": {
+    "draw_calls": 854.0,
+    "focused_samples": 120,
+    "primitives": 86951.0,
+    "render_video_memory_bytes": 320085000.0,
+    "texture_memory_bytes": 287327704.0,
+    "wall_render_interval_ms_mean": 0.828008333333334,
+    "wall_render_interval_ms_median": 0.821,
+    "wall_render_interval_ms_p95": 0.89
+  },
+  "before_2": {
+    "draw_calls": 854.0,
+    "focused_samples": 120,
+    "primitives": 86951.0,
+    "render_video_memory_bytes": 320085000.0,
+    "texture_memory_bytes": 287327704.0,
+    "wall_render_interval_ms_mean": 0.8275,
+    "wall_render_interval_ms_median": 0.82,
+    "wall_render_interval_ms_p95": 0.91
+  },
+  "scope": "1280x720 production Sortie camera, same frozen scene ABBA; VSync off, 60 warmup + 120 frames each; wall render interval, NOT GPU timing or combat FPS; engine allocated video memory, NOT board-wide VRAM"
+}

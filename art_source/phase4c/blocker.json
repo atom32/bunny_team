@@ -1,0 +1,17 @@
+{
+  "status": "BLOCKED",
+  "file": "scripts/enemies/enemy_controller.gd",
+  "baseline_commit": "cc81d3034d364d51f213cb9b5d1128d1564222a6",
+  "current_sha256": "5a1705c1ed7594b586af87b077bc5601ef937ac369a14b644260b6ea02e1a664",
+  "start_of_phase_sha256": "5a1705c1ed7594b586af87b077bc5601ef937ac369a14b644260b6ea02e1a664",
+  "exact_working_file_unchanged": true,
+  "source_equals_baseline_after_newline_normalization": true,
+  "failure_log": "route_Rifle/route.log",
+  "location": "EnemyController._telegraph_shot after SceneTreeTimer await; lines 240-246",
+  "cause": "Guard checks is_dead and target validity, not enemy/target membership in the scene tree. During scene replacement, a still-valid detached actor can resume before deferred destruction. Muzzle/global transform and world access then fail.",
+  "scope": "This is an existing enemy lifecycle boundary. Error occurs before any changed muzzle/hit VFX code. No enemy fix has been applied.",
+  "next_action": "Explicit user authorization required for a separate minimal lifecycle guard; otherwise leave Phase 4C blocked and uncommitted.",
+  "record_type": "Historical discovery snapshot, not final status",
+  "resolution": "User explicitly authorized minimal lifecycle protection. Added enemy/target is_inside_tree checks after the existing timer. Deterministic lifecycle probe passes 16/16; final route/regression result is in final_validation.json.",
+  "preserved_failure_log": "diagnostics/pre_guard_route_Rifle.log"
+}

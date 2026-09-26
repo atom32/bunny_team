@@ -1,0 +1,50 @@
+[
+  {
+    "run": 0,
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "run": 1,
+    "exit": 0,
+    "errors": [
+      "ERROR: 1 resources still in use at exit."
+    ]
+  },
+  {
+    "run": 2,
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "run": 3,
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "run": 4,
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "run": 5,
+    "exit": 0,
+    "errors": [
+      "ERROR: 1 resources still in use at exit."
+    ]
+  },
+  {
+    "run": 6,
+    "exit": 0,
+    "errors": [
+      "ERROR: 1 resources still in use at exit."
+    ]
+  },
+  {
+    "run": 7,
+    "exit": 0,
+    "errors": [
+      "ERROR: 1 resources still in use at exit."
+    ]
+  }
+]

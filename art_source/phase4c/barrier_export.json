@@ -1,0 +1,18 @@
+{
+  "blender": "5.2.2 LTS",
+  "unit_scale": 1,
+  "export_yup": true,
+  "triangles": 1100,
+  "material_count": 5,
+  "texture_count": 0,
+  "mesh_count": 1,
+  "collision": false,
+  "blender_dimensions": [
+    2.7980000972747803,
+    0.5789999961853027,
+    0.8970000147819519
+  ],
+  "root_identity": true,
+  "runtime_sha256": "611cfba94cc3e06f4e544f2913d649096a0f8bbc571aa1820a62688589ab056c",
+  "master_sha256": "4b4d4ebcf0de6386a209feb477f1d1aa18f316441b6ad85b6571b6fe57618361"
+}
