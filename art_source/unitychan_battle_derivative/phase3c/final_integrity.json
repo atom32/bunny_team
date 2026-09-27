@@ -1,0 +1,18 @@
+{
+  "assets_unchanged": {
+    "production_player_script": true,
+    "production_character": true,
+    "derivative_asset": true,
+    "master": true
+  },
+  "source_snapshot_drift": [],
+  "isolated_snapshot_drift": [
+    "scripts/player/player_controller.gd"
+  ],
+  "isolated_player_exact_two_substitutions": true,
+  "official_hashes_checked": 68,
+  "official_all_match": true,
+  "protected_diff": [],
+  "HEAD": "ec5f18dbe81164f43c1613a8ab678f4e3c51bed9",
+  "pass": true
+}

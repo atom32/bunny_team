@@ -1,6 +1,21 @@
 # Bunny Team — Current Project Handoff
 
-## Current checkpoint — Phase 4D (2026-09-27)
+## Current checkpoint — Phase 5 + portable development sync (2026-09-27)
+
+- Branch `main`; runtime baseline **`bc4984b`** (Phase 5), enemy decoupling **`7ddb981`** (Phase 4E).
+- **Godot 4.7.2 / GL Compatibility**; normal entry `scenes/presentation/slice/boot.tscn`.
+- Flow: **Boot / Opening → Main Menu → Hideout → Mission → Deployment → Urban Arena / Field Office → Combat / Loot → Extraction → Debrief → Hideout**.
+- Production Player: Unity-Chan Battle Costume; official geometry/textures and Phase 4B material semantics remain locked. Production Enemy: native KITE-07; **no AvatarSample_A / legacy humanoid skeleton runtime dependency**.
+- Phase 5 retained verification: **33/33**, two graphical routes **64/64 each**, cross-process save/load PASS, cold import **0 ERROR / 0 WARNING**, Main exit **0** (known ObjectDB exit warning). See `art_source/phase5/README.md`; these are automated graphical routes, not manual playtesting.
+- This sync versions the missing original FBX texture dependencies, 4.7 import configuration, byte-identical legacy-source relocation, recovered official authoring sources, and source/validation records. No gameplay or production character edits.
+- Blender master repair is **four relative image paths only**; no geometry/rig/action/material-semantics change. Character leg-length investigation: `docs/CHARACTER_PROPORTION_CHECK.md`.
+- This sync's **staged-only clean-copy** rerun: **33/33**, cold import **0/0**, Main **exit 0 / no warnings**; exported official source **68/68** hashes match. Graphical routes/save-load above are retained Phase 5 evidence, not newly rerun.
+- New-machine setup and exact clean-index verification: **`docs/DEVELOPMENT_SETUP.md`**. Screenshots, videos, personal saves, cache and unrelated trial scripts are deliberately not part of this sync; local copies remain untouched.
+- Internal demo only. This sync does not grant or re-audit release rights. Retain all existing license/source notices; do not use Unity-Chan as AI input.
+
+**Read this section and current code first. All reports below retain their historical phase context; old “current”, “BLOCKED”, “not production”, rig-dependency and no-push statements do not describe this checkpoint.**
+
+## Historical checkpoint — Phase 4D (2026-09-27)
 
 - 项目：**Neon Bastion / Bunny Team**，日系科幻机娘俯视角撤离射击游戏；`D:\bunny_team`。
 - **运行内容基线：`main @ a40b765`**（完整 SHA：`a40b7658f9fe282697ce6887a76d59ea2d64b94b`）。
@@ -142,6 +157,173 @@ Phase 4G  Performance / release audit
 
 
 # Bunny Team Engineering Handoff
+
+## Current handoff — Phase 3A Presentation Spike (2026-09-25)
+
+**Decision: BLOCKED. Do not switch the default player.** Personal-demo derivative,
+not commercial-release clearance. No new character searches, AI or Terminal work.
+
+- New excluded workspace: `art_source/unitychan_battle_derivative/`. Blender master,
+  self-contained GLB, prefab mapping, reproducible build/isolated-validation scripts,
+  complete UCL 3.0 license/logo bundle and evidence retained. Read its `README.md`.
+- Official source + meta fingerprints unchanged. 24 skinned + one static nose
+  renderer mapped; separate head retained, bundled melee weapon excluded. Derivative:
+  37,359 triangles, 24 meshes, 328 bones, five materials, four base-color images.
+- Corrected centimeter/root-transform loss; applied 180-degree presentation heading
+  normalization. World-position/rotation checks passed; not full skin/animation parity.
+- Fresh isolated derivative import: **0 ERROR / 0 WARNING / exit 0**.
+- Isolated replacement: **32/33 tests PASS**. ACCEPTANCE_SMOKE FAIL is old avatar
+  `Face` name/height assertion. Tests were NOT weakened. Main exit 0; visual-slice,
+  world traversal, presentation gameplay, weapon behavior/switching suites PASS.
+- Eight mounts available; AR/SMG sampled grips converge. Strict all-weapon grip probe
+  **FAIL: Rocket left-hand offset ~12 cm**. Measurement-only probe's PASS label is
+  superseded by `evidence/grip_acceptance.log` (exit 1).
+- Real OpenGL 1280x720 production-camera route PASS through Field Office, terminal,
+  extraction/Result: normal AI, 60 shots, 3 damage, 0 kills; early extraction, not full
+  mission. Automated API/input, NOT manual. Hinge waypoint failure retained; only
+  test path changed to door opening center, not gameplay geometry/routes.
+- Visual acceptance NOT ACCEPTED: Hanger hair/face overexposed, equipment occlusion;
+  cloth/skin behavior, full animation visual review and performance still unverified.
+- Live runtime/player/enemy/gameplay/config unchanged, main remains c4ca114; all
+  prior WIP preserved. No commit/reset. Phase 2B 33/33 describes the OLD baseline,
+  not the new derivative. ObjectDB warnings retained; not warning-free.
+
+Next bounded step: presentation-only Rocket grip calibration + anime material and
+skin/animation review, then reviewed model-independent face/adapter acceptance and
+complete regression. Do not adopt the derivative based on route PASS alone.
+
+---
+
+## Historical handoff — Battle Costume source recovery (2026-09-25)
+
+User selected **Unity-chan Battle Costume for a personal demo**. This supersedes
+candidate shopping and next-Terminal proposals below. No Terminal work.
+
+- **SOURCE RECOVERY PASS; CHARACTER INTEGRATION NOT VERIFIED.** Official Humanoid
+  1.1 package downloaded (12,531,513 bytes); main FBX hash exactly matches legacy.
+- Recovered 20 original PNGs, six Unity materials, official prefab, both body/head
+  FBXs and shader/include evidence in `art_source/unitychan_battle_legacy/official_1_1/`.
+- Six Maya authoring PSDs are NOT in the official release. Shipped appearance uses
+  PNGs via Unity materials. All assigned-shader declared non-null texture references
+  resolve; seven dangling old saved-property references are not used by that shader.
+  No fake PSD, texture substitution, FBX/rig/animation rewrite.
+- Blender 5.2.2: 20/20 PNG decode PASS, main FBX import PASS; 39,241 triangles,
+  character 328 bones + weapon 11 bones. Not prefab/runtime or animation acceptance.
+- Fresh isolated 4.7.2 current-project import: **0 ERROR / 0 WARNING / exit 0**.
+  Source remains under `.gdignore`; this is not Battle Costume runtime acceptance.
+- Existing 33/33 and graphical route PASS are Phase 2B evidence, not rerun this step.
+  Runtime assets, Gameplay, player/enemy presentation and project config unchanged.
+- `main @ c4ca114` preserved with all prior WIP; no commit/push/reset.
+- Evidence: `art_source/unitychan_battle_legacy/RECOVERY.md`, `recovery_manifest.json`,
+  `blender_source_probe.json`, and `docs/art_pipeline_validation.log`.
+
+Next: isolated Blender prefab/material reconstruction, then deformation/retarget
+verification and player-only presentation adapter. Main FBX alone does not reproduce
+the separate-head prefab. Bind-pose behavior still needs verification. Existing
+VRM release restriction remains in effect.
+
+---
+
+## Historical handoff — Phase 2B — Migration Gate Closed (2026-09-25)
+
+**MIGRATION GATE: PASS for continued internal development on Godot 4.7.2. PUBLIC SHOOTING-DEMO RELEASE: BLOCKED — VRM authorization unresolved.** No Terminal selection/production was started. Stop here.
+
+### Accepted gate standard and evidence
+
+- User explicitly authorized **automated graphical input/API route acceptance instead of the original manual-keyboard gate**. It is NOT human/manual input. The current acceptance standard, not the older manual requirement below, governs this checkpoint.
+- Actual working-tree snapshot → entirely fresh `.godot` → Godot 4.7.2 cold import: **0 ERROR / 0 WARNING / exit 0**. A separate fresh repair candidate also passed 0/0. No cached `.godot` was copied.
+- Real dependencies repaired: official UnityChan 1.2.1 archive contains all six existing animation FBXs with **identical SHA-256** and all five missing TGA files. Only those original TGAs and their Godot `.import` settings were added, at the unchanged FBXs' expected path. No FBX/rig/animation/material rewrite or substitute texture.
+- Unused Battle Costume FBX and original sidecar moved intact to `art_source/unitychan_battle_legacy/`, excluded by `.gdignore`. Filename/path/UID reference searches plus resource dependency checks found no runtime reference. The six missing PSD references and two bind-pose warnings remain in that preserved legacy source; no rest-pose reset was performed.
+- Live idle/walk/run/slide + VRM bone hierarchy/rest/pose, skin binds and animation track/key fingerprints match before/after exactly. **150 runtime source files** used by the regression copy match the checkout. Character presentation, movement, combat and routes unchanged.
+- After fix: **ALL TESTS 33/33 PASS**, ACCEPTANCE_SMOKE PASS, MAIN HEADLESS exit 0, VISUAL_SLICE_ASSETS_TEST PASS, WORLD_TRAVERSAL_TEST PASS, PRESENTATION_GAMEPLAY_TEST PASS, RESULT_RETURN_TEST PASS. No runtime ERROR/SCRIPT ERROR. MAIN and sortie_outcome_test each reported a **KNOWN NON-BLOCKING EXIT WARNING: 2 ObjectDB instances**; not warning-free.
+- OpenGL 3.3 / RTX 5090, 1280×720 production camera: Hanger → movement → door E → entrance → interior → Terminal → exit → original outdoor route → extraction → Result **automated PASS**. Normal AI/health/collision retained. Terminal objective 1/1; early extraction successful, mission otherwise incomplete (0 kills; 9 damage taken). This is not full-mission completion or a manual-combat skill test.
+- First scripted route attempt hit the entrance jamb due to a diagonal waypoint; only the test path was corrected to cross the doorway before turning. Production collision/map/code were NOT altered. Failed attempt evidence retained.
+
+### Git and reproducibility
+
+- Branch `main`, HEAD still `c4ca114e732ff8508370928dd5d16e04d838a6a0`, same origin. Original Phase 1/2 documentation WIP preserved. No reset, discard, commit or push.
+- Worktree changes: migration dependency restoration + legacy relocation + validation tools/evidence/documentation. Git shows deletion at the old FBX path and an untracked destination until staged; this is a byte-identical move, not destruction. Carry all untracked files if migrating this checkpoint; cloning HEAD alone does not include this fix.
+- Fixed scripts: `tools/verify_migration.py` (fresh WIP snapshot/import/regression/optional graphical route), `tools/audit_migration_dependencies.py` (read-only material/source trace), `tools/phase2b_route_probe.gd` (normal-AI graphics route).
+- Durable evidence: `docs/phase2b/validation.json`, `dependency_trace.json`, `route_result.json`, `captures/`; the directory has `.gdignore` so screenshots are not game resources. Full diagnostic details/reproduction fingerprints appended to `docs/art_pipeline_validation.log`.
+- Original official archive and intermediate failures retained outside Git at `C:\Users\admin\AppData\Local\Temp\bunny_phase2b_20260925_214246`. Only ~15 MiB of original dependency textures added to runtime source; no asset-pack dump or AI work.
+
+### Release boundary / next phase
+
+VRM author/model/FAQ pages were checked again. Their current permissions differ from the fixture metadata; the exact old-file authorization/version is still unresolved. Keep the model intact and **blocked for public shooting-demo use**, do not remove metadata or use it as AI input. This documented restriction does not block this internal migration checkpoint. C03 replacement remains DEFERRED.
+
+Next separately authorized phase: exactly **one Terminal vertical slice**. This session ends at the migration checkpoint; do not proceed automatically.
+
+---
+
+## Historical handoff — Phase 2 Gate checkpoint (2026-09-25)
+
+**Result: BLOCKED before Terminal production; Definition of Done NOT achieved.** This section supersedes the Phase 1 proposals below. Latest user authorization: use **Godot 4.7.2**, with other platforms to be unified by the user. Engine selection is settled; migration acceptance is not. Do not obtain 4.6.3 or call 4.7.2 merely an unauthorized temporary version. `project.godot` remains at its compatible 4.6 feature level; no rendering/configuration change was needed for this audit.
+
+- Git: `main`, HEAD `c4ca114e732ff8508370928dd5d16e04d838a6a0`, origin `https://github.com/atom32/bunny_team.git`. Start-of-Phase-2 WIP was the Phase 1 Handoff edit and four untracked documentation paths listed in the validation log. Preserved. This phase changes Documentation only; no Gameplay, imports, rigs, runtime assets, commits, resets or package downloads.
+- Fresh 4.7.2 cold import of a new HEAD archive: **FAIL — 72 ERROR / 38 WARNING**, process exit 0. Reproduced independently of the old cache. Six animation FBXs each contribute 10 missing-texture errors/5 warnings; `unitychan_battle.fbx` contributes 12 errors/8 warnings, including both multiple-bind-pose warnings. Details and safe next choices: `docs/ART_PIPELINE.md`, Phase 2 section.
+- Unity-Chan dependency cleanup: **DEFERRED**, not cosmetically silenced. Idle/walk/run/slide remain live animation/skeleton dependencies even though their meshes are hidden. Entire-directory ignore/deletion would break runtime. No replacement textures or rest-pose edits.
+- VRM release/license: **BLOCKED**, with new evidence rather than a blanket claim that the author forbids combat. Official AvatarSample_A page currently allows violent use. The repository binary exactly matches the VRMMetalKit fixture, but retains OnlyAuthor/Disallow metadata; applicability of current author terms to this particular distributed version is unresolved. See `docs/art_candidates/README.md` for URLs, hashes, permissions and limitations. No public footage or AI input approved.
+- C03 bounded compatibility probe: existing glTF loads as PackedScene with one 62-bone skeleton; direct replacement is **not compatible** with current Character1_* bone contract. Eight sockets have anatomical counterparts but no tested adapter/IK/AnimationTree acceptance. Local LICENSE says **Ultimate Modular Males**, conflicting with Phase 1's Women pack attribution; exact pack identity must be reconciled. No character replacement made; C04 not downloaded.
+- Fresh runtime verification: **ALL TESTS 33/33 PASS**, including ACCEPTANCE_SMOKE, RESULT_RETURN_TEST, PRESENTATION_GAMEPLAY_TEST, VISUAL_SLICE_ASSETS_TEST, WORLD_TRAVERSAL_TEST. MAIN HEADLESS exit 0; no runtime ERROR/SCRIPT ERROR. Two-instance ObjectDB exit warnings remain in main and two suites; not warning-free.
+- Manual Field Office Enter/Exit, Terminal reachable, original route/result: **NOT VERIFIED**. Migration failed first, so no claim of manual acceptance and no Terminal selection/integration. Entrance/Terminal/Character visual acceptance, before/after performance, four new screenshots and 20–30s footage: **NOT VERIFIED / not produced**.
+- Raw evidence: `C:\Users\admin\AppData\Local\Temp\bunny_phase2_20260925_211817`; durable results, commands, hashes and diagnostic output appended to `docs/art_pipeline_validation.log`.
+
+### Next checkpoint, in order
+
+1. Close cold import on 4.7.2: recover the exact lawful original image dependencies OR prove a geometry-free animation-source derivative preserves every bone/rest/track/key and PackedScene contract. Do not simply switch animation FBXs to AnimationLibrary: current code expects PackedScene + Skeleton3D + Take 001. Keep original sources and licenses archived; quarantine only verified unused references, not the live animation directory.
+2. Reconcile the VRM metadata/version with author permission (or separately approve a small presentation-only character adapter spike). Do not rewrite embedded licensing metadata as a substitute for permission.
+3. Complete actual-window keyboard/mouse route acceptance, then select **exactly ONE** Terminal/Cabinet, comparing processed C09 with C02 and C01 only if superior. The old 3–5-model proposal below is superseded. No Hanger/weapon/UI/environment expansion.
+4. Blender master → GLB → presentation wrapper without collision/interaction changes → full regressions → production-camera 1280×720 performance/screenshots/video/manual acceptance. No AI workflow needed unless a real supporting-art gap is identified.
+
+---
+
+## Historical handoff — RTX 5090 Art Pipeline Audit (2026-09-25)
+
+**Latest authorized phase: migration validation + sustainable art production planning, not Gameplay implementation or bulk asset replacement.** This section supersedes the old "stated next task" below. The Visual Slice 01 implementation and historical acceptance evidence remain intact.
+
+### Read next
+
+- `docs/ART_PIPELINE.md` — workstation facts, production gates, Blender normalization, rollout order, Windows test commands and acceptance limits.
+- `docs/ART_ASSET_INVENTORY.md` — measured inventory, current presentation contracts, P0/P1 priorities and licensing blockers.
+- `docs/art_candidates/README.md` — 16 individually documented source entries: 2 already integrated, 12 candidates, 2 rejected for style/scope. No new packages downloaded or approved for integration.
+- `docs/art_pipeline_validation.log` — consolidated fresh test/tool evidence, including cold-import errors rather than a false clean-migration claim.
+- `docs/visual_slice_01/REPORT.md` — historical visual implementation/manual evidence, unchanged.
+
+### Workstation / Git
+
+- Project is already on the RTX 5090 machine at `D:\bunny_team`.
+- Initial tree **clean** (no modified or untracked files); branch `main`; HEAD `c4ca114e732ff8508370928dd5d16e04d838a6a0`; origin `https://github.com/atom32/bunny_team.git`; remote main checked and matches HEAD. Clean baseline can be cloned/checked out directly. This phase leaves only its documentation edits uncommitted; no reset/discard/commit/push was performed.
+- Installed Godot: `E:\Godot\Godot_v4.7.2-stable_win64_console.exe`, **4.7.2**, not the historical **4.6.3**. All importing/testing occurred in a temporary git-archive copy, not the production working tree. No engine upgrade was applied to project configuration.
+- Blender: `F:\SteamLibrary\steamapps\common\Blender\blender.exe`, **5.2.2 LTS**. Existing CC0 AR → Blender → GLB → separate Godot test import/instantiate passed; 802 triangles and Blender world bounds preserved. No production asset replaced.
+- RTX 5090, driver 616.92, CUDA driver UMD 13.4; ComfyUI Python 3.13.11 / Torch 2.13.0+cu130 completed a CUDA tensor calculation. System Python 3.14.2, Node 24.12.0, Git 2.52.0; Python/Node are not game runtime dependencies.
+- MiniMax H3 and WAI Anima weights/nodes/workflows exist under `D:\ComfyUI-aki-v3.2\ComfyUI` (0.33.2). Full model inference/API workflow has **not** been validated. `anima-preview.safetensors.part` is incomplete and is not counted as a working model. No installs, model downloads or AI generation performed.
+
+### New blockers (do not conceal behind test PASS)
+
+1. **Cold import is NOT CLEAN:** Windows Godot 4.7.2 import exited 0 but logged **72 ERROR / 38 WARNING** lines, including missing original Unity-Chan TGA/PSD texture paths. Runtime suites subsequently pass; this does not clear the import gate. Diagnose with a pinned Godot version and repair import dependencies separately, without empty substitute textures or Gameplay changes.
+2. **Current player AND enemy VRM licensing is not cleared for a shooting Demo:** actual `avatar_sample_a.glb` metadata contains `allowedUserName=OnlyAuthor`, `violentUssageName=Disallow`, alongside `licenseName=CC_BY` and `commercialUssageName=Allow`. The generic bundled model-license notes are insufficient to resolve this. Obtain explicit applicable permission or choose a cleared replacement (C03/C04 are investigation candidates), before public gameplay/promotion. Do not feed this model or Unity-Chan assets/screenshots into AI.
+3. **Manual Field Office Enter/Exit remains NOT VERIFIED.** Hanger/AR/SMG/Rocket VERIFIED are inherited previous-machine observations, not fresh 5090 manual verification. Full AI inference and actual 5090 GL rendering/manual acceptance are still pending.
+
+### Fresh validation, exact scope
+
+- Windows **Godot 4.7.2** isolated copy: **ALL TESTS 33/33 PASS**, RESULT_RETURN_TEST PASS, PRESENTATION_GAMEPLAY_TEST PASS, WORLD_TRAVERSAL_TEST PASS, ACCEPTANCE_SMOKE PASS, VISUAL_SLICE_ASSETS_TEST PASS; all runtime test exit codes 0 and no ERROR / SCRIPT ERROR / `: FAIL`.
+- MAIN HEADLESS: exit 0, no ERROR, **2 ObjectDB instances warning** at forced exit. Do not describe as warning-free.
+- 31 assertion suites + 2 scripted visual smoke flows; not automated image approval or direct manual input acceptance.
+- Historical Godot 4.6.3 33/33 baseline is preserved, **not rerun on this machine**. Cold import errors above are a separate failed migration gate.
+- Test profile data was isolated with per-process APPDATA/LOCALAPPDATA under the audit temporary directory. Original user saves, runtime code, Resource definitions, scenes and source assets were not modified.
+
+### Next authorized proposal (requires an implementation task)
+
+1. Resolve engine version/cold import; finish existing direct keyboard/mouse route acceptance. Resolve VRM release permissions separately before public output.
+2. First vertical art slice: **Field Office entrance + briefing/terminal nook**; keep layout, collisions, camera, roof cutaway and route intact. Existing Kenney modules are a baseline, not an instruction to make a pack showcase.
+3. Choose one licensed terminal/storage asset (C02 versus reworking existing C09), normalize in Blender, export GLB, adapt only Presentation, then full regressions and actual-camera comparison. Limit first slice to 3–5 models, 2 material sets and a small atlas, not an entire library.
+4. Character/animation replacement, Hanger, Rocket silhouette and UI are later separate slices. No new drone/turret/weapon gameplay. Existing A → adapted B → optional AI C priority is mandatory; AI must not replace source/licensing/quality evaluation.
+
+**Stop point:** planning delivered; workstation has the core production capability but migration/release readiness is conditional. No art integration, Gameplay changes, source-code edits or large downloads were made in this phase.
+
+---
+
+## Historical handoff — Visual Slice 01 (retained evidence)
 
 > **Authoritative status: Gameplay vertical slice complete; Visual Slice 01 integrated, full regression passes; visual quality/manual route acceptance still partial.**
 >

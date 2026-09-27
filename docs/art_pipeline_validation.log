@@ -1,0 +1,1422 @@
+ART PIPELINE VALIDATION — 2026-09-25
+Source commit: c4ca114e732ff8508370928dd5d16e04d838a6a0
+Source tree: D:\bunny_team (clean at start)
+Test copy: C:\Users\admin\AppData\Local\Temp\bunny_art_audit_20260925_201927\project
+Engine: E:\Godot\Godot_v4.7.2-stable_win64_console.exe
+Version: 4.7.2.stable.official.ed1daf0bf
+Historical 4.6.3 was NOT rerun. No manual acceptance performed.
+Test child APPDATA=C:\Users\admin\AppData\Local\Temp\bunny_art_audit_20260925_201927\userdata
+Test child LOCALAPPDATA=C:\Users\admin\AppData\Local\Temp\bunny_art_audit_20260925_201927\localdata
+Commands: --headless --path <copy> res://tests/<scene>.tscn --quit-after 1200; main --quit-after 180. Outer timeout 180 sec/process.
+
+COLD IMPORT: NOT CLEAN, process exit 0
+ERROR lines: 72
+WARNING lines: 38
+Raw import.log SHA256: e5d9d04091f4bd184020b732b7d08743682a5a3711da4eaf1f2f3bb62db3e31b
+Distinct import ERROR/WARNING lines:
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga'.
+WARNING: FBX: Image index '0' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga because there was no data to load. Skipping it.
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga'.
+WARNING: FBX: Image index '1' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga because there was no data to load. Skipping it.
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga'.
+WARNING: FBX: Image index '2' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga because there was no data to load. Skipping it.
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga'.
+WARNING: FBX: Image index '3' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga because there was no data to load. Skipping it.
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga'.
+WARNING: FBX: Image index '4' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga because there was no data to load. Skipping it.
+WARNING: FBX: Node 'J_1_R_mantleSide_R' has multiple bind poses, using initial pose as rest pose.
+WARNING: FBX: Node 'J_1_R_midFrillSide_R' has multiple bind poses, using initial pose as rest pose.
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Body.psd'.
+WARNING: FBX: Image index '0' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Body.psd because there was no data to load. Skipping it.
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/face3_main.psd'.
+WARNING: FBX: Image index '1' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/face3_main.psd because there was no data to load. Skipping it.
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Skin.psd'.
+WARNING: FBX: Image index '2' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Skin.psd because there was no data to load. Skipping it.
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Add.psd'.
+WARNING: FBX: Image index '3' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Add.psd because there was no data to load. Skipping it.
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_Wep.psd'.
+WARNING: FBX: Image index '4' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_Wep.psd because there was no data to load. Skipping it.
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Hair_Spow.psd'.
+WARNING: FBX: Image index '5' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Hair_Spow.psd because there was no data to load. Skipping it.
+
+RUNTIME: 33/33 suites PASS; main exit 0
+All runtime gates require exit 0, no ERROR/SCRIPT ERROR/: FAIL, and PASS marker for test scenes.
+
+=== acceptance_smoke ===
+{"name": "acceptance_smoke", "exit": 0, "pass_gate": true, "seconds": 3.33, "markers": ["ACCEPTANCE_SMOKE: PASS"], "errors": false}
+Raw log SHA256: 24d645d877609bbc5e6b1a863e11e3b774ec19d0a36ff8a69cd0b678d91f0fee
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+ACCEPTANCE_SMOKE: PASS
+
+=== ammo_carried_foundation_test ===
+{"name": "ammo_carried_foundation_test", "exit": 0, "pass_gate": true, "seconds": 0.53, "markers": ["AMMO_CARRIED_FOUNDATION_TEST: PASS"], "errors": false}
+Raw log SHA256: 76170c31da0c6b054c425133c501a799961148d3b82c8d9c7975f70a82e7723f
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+AMMO_CARRIED_FOUNDATION_TEST: PASS
+
+=== ammo_runtime_test ===
+{"name": "ammo_runtime_test", "exit": 0, "pass_gate": true, "seconds": 0.72, "markers": ["AMMO_RUNTIME_TEST: PASS"], "errors": false}
+Raw log SHA256: 23ad53ad446c89635b85d5612c2842b5934da267a2d947f2e342a9c9b7878473
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+AMMO_RUNTIME_TEST: PASS
+
+=== area_definition_test ===
+{"name": "area_definition_test", "exit": 0, "pass_gate": true, "seconds": 0.53, "markers": ["AREA_DEFINITION_TEST: PASS"], "errors": false}
+Raw log SHA256: 1f1ce724e35e9c4f236ac5b4014f9c7860f478c264dd36bc8c43782234d193ad
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+AREA_DEFINITION_TEST: PASS
+
+=== carried_inventory_test ===
+{"name": "carried_inventory_test", "exit": 0, "pass_gate": true, "seconds": 0.53, "markers": ["CARRIED_INVENTORY_TEST: PASS"], "errors": false}
+Raw log SHA256: 855b173553088b28f94d9444dc424670c9d49ec5a47d98da22740b9719a1a4cf
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+CARRIED_INVENTORY_TEST: PASS
+
+=== combat_tuning_baseline_test ===
+{"name": "combat_tuning_baseline_test", "exit": 0, "pass_gate": true, "seconds": 1.19, "markers": ["COMBAT_TUNING_BASELINE_TEST: PASS"], "errors": false}
+Raw log SHA256: ba024de2f8d0b5001eeea107db5d8529a2cd88de8af2bd7988483be5fcdbc0e2
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+COMBAT_BASELINE weapon=AR target=Basic shots_to_kill=3 damage_per_hit=20.00 ammo_spent=3 blast_center_damage=n/a
+
+
+COMBAT_BASELINE weapon=AR target=Heavy shots_to_kill=10 damage_per_hit=12.00 ammo_spent=10 blast_center_damage=n/a
+
+
+COMBAT_BASELINE weapon=SMG target=Basic shots_to_kill=6 damage_per_hit=10.00 ammo_spent=6 blast_center_damage=n/a
+
+
+COMBAT_BASELINE weapon=SMG target=Heavy shots_to_kill=60 damage_per_hit=2.00 ammo_spent=60 blast_center_damage=n/a
+
+
+COMBAT_BASELINE weapon=Rocket target=Basic shots_to_kill=1 damage_per_hit=60.00 ammo_spent=1 blast_center_damage=92.00
+
+
+COMBAT_BASELINE weapon=Rocket target=Heavy shots_to_kill=2 damage_per_hit=84.00 ammo_spent=2 blast_center_damage=92.00
+
+
+WORLD_BASELINE weapon=AR target=Cover blocked=true structure_damage=0.00 shots_to_destroy=indestructible target_damage=0.00
+
+
+WORLD_BASELINE weapon=AR target=Barrier blocked=false structure_damage=5.00 shots_to_destroy=4
+
+
+WORLD_BASELINE weapon=SMG target=Cover blocked=true structure_damage=0.00 shots_to_destroy=indestructible target_damage=0.00
+
+
+WORLD_BASELINE weapon=SMG target=Barrier blocked=true structure_damage=0.00 shots_to_destroy=not_destroyed
+
+
+WORLD_BASELINE weapon=Rocket target=Cover blocked=false structure_damage=0.00 shots_to_destroy=indestructible target_damage=32.20
+
+
+WORLD_BASELINE weapon=Rocket target=Barrier blocked=false structure_damage=20.00 shots_to_destroy=1
+
+
+AMMO_BASELINE weapon=AR ammo=ammo.556_standard magazine_capacity=30 reserve_before=120 magazine_before=30 reserve_after_fire=120 magazine_after_fire=29 reload_consumption=1 reserve_after_reload=119 magazine_before_extract=30 recovered_after_extract=149
+
+
+AMMO_BASELINE weapon=SMG ammo=ammo.556_standard magazine_capacity=36 reserve_before=120 magazine_before=36 reserve_after_fire=120 magazine_after_fire=35 reload_consumption=1 reserve_after_reload=119 magazine_before_extract=36 recovered_after_extract=155
+
+
+AMMO_BASELINE weapon=Rocket ammo=ammo.rocket_standard magazine_capacity=1 reserve_before=4 magazine_before=1 reserve_after_fire=4 magazine_after_fire=0 reload_consumption=1 reserve_after_reload=3 magazine_before_extract=1 recovered_after_extract=4
+
+
+LOADOUT_BASELINE primary=AR secondary=SMG shared_ammo=true independent_ammo=false heavy_solution=AR=12.00/hit;SMG=2.00/hit barrier_solution=AR=5.00/shot,4 shots;SMG=0.00/shot,not_destroyed shots
+
+
+LOADOUT_BASELINE primary=AR secondary=Rocket shared_ammo=false independent_ammo=true heavy_solution=AR=12.00/hit;Rocket=84.00/hit barrier_solution=AR=5.00/shot,4 shots;Rocket=20.00/shot,1 shots
+
+
+LOADOUT_BASELINE primary=SMG secondary=Rocket shared_ammo=false independent_ammo=true heavy_solution=SMG=2.00/hit;Rocket=84.00/hit barrier_solution=SMG=0.00/shot,not_destroyed shots;Rocket=20.00/shot,1 shots
+
+
+ARENA_BASELINE initial_basic_count=9 initial_heavy_count=3 reinforcement_basic_count=2 reinforcement_heavy_count=1 loot_spawn_count=4 threat_event_count=1 extraction_count=1 objective_count=3
+
+
+RELATION_BASELINE AR vs Heavy damage_per_hit=12.00 shots_to_kill=10
+
+
+RELATION_BASELINE AR vs Barrier structure_damage=5.00 shots_to_destroy=4
+
+
+RELATION_BASELINE AR vs Cover blocked=true target_damage=0.00
+
+
+RELATION_BASELINE SMG vs Heavy damage_per_hit=2.00 shots_to_kill=60
+
+
+RELATION_BASELINE SMG vs Barrier structure_damage=0.00 shots_to_destroy=not_destroyed
+
+
+RELATION_BASELINE SMG vs Cover blocked=true target_damage=0.00
+
+
+RELATION_BASELINE Rocket vs Heavy damage_per_hit=84.00 shots_to_kill=2
+
+
+RELATION_BASELINE Rocket vs Barrier structure_damage=20.00 shots_to_destroy=1
+
+
+RELATION_BASELINE Rocket vs Cover blocked=false target_damage=32.20
+
+
+COMBAT_TUNING_BASELINE_TEST: PASS
+
+=== content_inventory_test ===
+{"name": "content_inventory_test", "exit": 0, "pass_gate": true, "seconds": 0.53, "markers": ["CONTENT_INVENTORY_TEST: PASS"], "errors": false}
+Raw log SHA256: 991b7811adf491b64d5d376998c06472584dc7ec02656680d9f7be8656dcf16a
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+CONTENT_INVENTORY_TEST: PASS
+
+=== damage_packet_test ===
+{"name": "damage_packet_test", "exit": 0, "pass_gate": true, "seconds": 0.81, "markers": ["DAMAGE_PACKET_TEST: PASS"], "errors": false}
+Raw log SHA256: 0579fe530576221b8ac31a74033e52b42889fcd8fcbd33c69987f6a71c1b13e4
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+DAMAGE_PACKET_TEST: PASS
+
+=== destructible_world_object_test ===
+{"name": "destructible_world_object_test", "exit": 0, "pass_gate": true, "seconds": 0.81, "markers": ["DESTRUCTIBLE_WORLD_OBJECT_TEST: PASS"], "errors": false}
+Raw log SHA256: 535c21fd5fca4056d2349fa762cfb9e64a9c533314d9fb79d9f4b3d865d9f215
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+DESTRUCTIBLE_WORLD_OBJECT_TEST: PASS
+
+=== enemy_definition_test ===
+{"name": "enemy_definition_test", "exit": 0, "pass_gate": true, "seconds": 0.72, "markers": ["ENEMY_DEFINITION_TEST: PASS"], "errors": false}
+Raw log SHA256: 66bcf46375b1ee3c2c4a36691ba059842a69877852622ea6356f26a631df91ec
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+ENEMY_DEFINITION_TEST: PASS
+
+=== enemy_spawn_test ===
+{"name": "enemy_spawn_test", "exit": 0, "pass_gate": true, "seconds": 0.72, "markers": ["ENEMY_SPAWN_TEST: PASS"], "errors": false}
+Raw log SHA256: e6e813878e26bf4afd23fc5288bb6d2bded5a396b375aa43c696c9c75eab7922
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+ENEMY_SPAWN_TEST: PASS
+
+=== extraction_vertical_slice_test ===
+{"name": "extraction_vertical_slice_test", "exit": 0, "pass_gate": true, "seconds": 0.72, "markers": ["EXTRACTION_VERTICAL_SLICE_TEST: PASS"], "errors": false}
+Raw log SHA256: 0277ea6e7e135bbf05ab12f3aa7b6de5e2a7323776fee0ed607fa7e6034e7551
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+EXTRACTION_VERTICAL_SLICE_TEST: PASS
+
+=== loadout_decision_test ===
+{"name": "loadout_decision_test", "exit": 0, "pass_gate": true, "seconds": 0.81, "markers": ["LOADOUT_DECISION_TEST: PASS"], "errors": false}
+Raw log SHA256: d76e83230e6e1b9f2a1652cae53561bfc6bc21852802c37c7bcdfb1332a1fa17
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+LOADOUT_TRACE | AR + SMG | primary=Assault Rifle[basic=20 heavy=12 structure=5 mag=30 range=34] | secondary=Vector SMG[basic=10 heavy=2 structure=0 mag=36 range=18] | ammo=SHARED ammo.556_standard
+
+
+LOADOUT_TRACE | AR + SMG | initial_ammo=ammo.556_standard=186 | after_fire=ammo.556_standard=184 | after_reload=ammo.556_standard=184
+
+
+LOADOUT_TRACE | AR + SMG | extraction=true | warehouse_ammo=ammo.556_standard=184, ammo.rocket_standard=4
+
+
+LOADOUT_TRACE | AR + Rocket | primary=Assault Rifle[basic=20 heavy=12 structure=5 mag=30 range=34] | secondary=Breach Launcher[basic=92 heavy=84 structure=20 mag=1 range=30] | ammo=ammo.556_standard + ammo.rocket_standard
+
+
+LOADOUT_TRACE | AR + Rocket | initial_ammo=ammo.556_standard=150, ammo.rocket_standard=5 | after_fire=ammo.556_standard=149, ammo.rocket_standard=4 | after_reload=ammo.556_standard=149, ammo.rocket_standard=4
+
+
+LOADOUT_TRACE | AR + Rocket | extraction=true | warehouse_ammo=ammo.556_standard=149, ammo.rocket_standard=4
+
+
+LOADOUT_TRACE | SMG + Rocket | primary=Vector SMG[basic=10 heavy=2 structure=0 mag=36 range=18] | secondary=Breach Launcher[basic=92 heavy=84 structure=20 mag=1 range=30] | ammo=ammo.556_standard + ammo.rocket_standard
+
+
+LOADOUT_TRACE | SMG + Rocket | initial_ammo=ammo.556_standard=156, ammo.rocket_standard=5 | after_fire=ammo.556_standard=155, ammo.rocket_standard=4 | after_reload=ammo.556_standard=155, ammo.rocket_standard=4
+
+
+LOADOUT_TRACE | SMG + Rocket | extraction=true | warehouse_ammo=ammo.556_standard=155, ammo.rocket_standard=4
+
+
+LOADOUT_TRACE | SMG + Rocket | failed=true | warehouse_unchanged=true | loot_recovered=false | retry_ready=true
+
+
+LOADOUT_DECISION_TEST: PASS
+
+=== loadout_state_test ===
+{"name": "loadout_state_test", "exit": 0, "pass_gate": true, "seconds": 0.53, "markers": ["LOADOUT_STATE_TEST: PASS"], "errors": false}
+Raw log SHA256: 29ba90578cd099764a4f5b49c25a2beada1cddf8d091843bb9c066895b0955b3
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+LOADOUT_STATE_TEST: PASS
+
+=== loot_table_test ===
+{"name": "loot_table_test", "exit": 0, "pass_gate": true, "seconds": 0.72, "markers": ["LOOT_TABLE_TEST: PASS"], "errors": false}
+Raw log SHA256: f93f9a9fa0fc7dfee5647254fddf011c7e4495c20374472966e4a0acdee48605
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+LOOT_TABLE_TEST: PASS
+
+=== mission_flow_test ===
+{"name": "mission_flow_test", "exit": 0, "pass_gate": true, "seconds": 1.18, "markers": ["MISSION_FLOW_TEST: PASS"], "errors": false}
+Raw log SHA256: 2b756e1c7eb69a6b60fb7e529245107e222fcfff0edea42c8064fd8e2cea0e6b
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+MISSION_FLOW_TEST: PASS
+
+=== mission_objective_test ===
+{"name": "mission_objective_test", "exit": 0, "pass_gate": true, "seconds": 0.53, "markers": ["MISSION_OBJECTIVE_TEST: PASS"], "errors": false}
+Raw log SHA256: b289a7c56ee42ae801709f5ba63660ab7af30848ee58f613d7a25e9ddedfe906
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+MISSION_OBJECTIVE_TEST: PASS
+
+=== objective_world_test ===
+{"name": "objective_world_test", "exit": 0, "pass_gate": true, "seconds": 0.62, "markers": ["OBJECTIVE_WORLD_TEST: PASS"], "errors": false}
+Raw log SHA256: 050856bed137fc83f45a408af76dd19c615e3c0666e5159594908f4dfd65a2ee
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+OBJECTIVE_WORLD_TEST: PASS
+
+=== presentation_gameplay_test ===
+{"name": "presentation_gameplay_test", "exit": 0, "pass_gate": true, "seconds": 7.3, "markers": ["PRESENTATION_GAMEPLAY_TEST: PASS"], "errors": false}
+Raw log SHA256: 5e07055ea839576e12fd8328eb32e919e389904e86619384f2b34075b0e181a3
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+PRESENTATION_GAMEPLAY_TEST: PASS
+
+=== profile_state_test ===
+{"name": "profile_state_test", "exit": 0, "pass_gate": true, "seconds": 0.54, "markers": ["PROFILE_STATE_TEST: PASS"], "errors": false}
+Raw log SHA256: 04e1085ea125e1386c4287c3187089eb27d20ec97169ebfebe2c25e13ff8ae32
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+PROFILE_STATE_TEST: PASS
+
+=== result_return_test ===
+{"name": "result_return_test", "exit": 0, "pass_gate": true, "seconds": 0.81, "markers": ["RESULT_RETURN_TEST: PASS"], "errors": false}
+Raw log SHA256: 2639588189b25cd0b690cf0e49222f9dc97d8cef770d7d1015f0af82b8d41d1a
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+RESULT_RETURN_TEST: PASS
+
+=== save_service_test ===
+{"name": "save_service_test", "exit": 0, "pass_gate": true, "seconds": 0.53, "markers": ["SAVE_SERVICE_TEST: PASS"], "errors": false}
+Raw log SHA256: e80cf5d17794322af91a15af7817a039264ea5619ae242999c6e53966527ed63
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+SAVE_SERVICE_TEST: PASS
+
+=== sortie_failure_test ===
+{"name": "sortie_failure_test", "exit": 0, "pass_gate": true, "seconds": 0.81, "markers": ["SORTIE_FAILURE_TEST: PASS"], "errors": false}
+Raw log SHA256: e6b84616f9b44912f5bd0e2547731bfef44dbbdabdc68d44a0f78d41873f4578
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+SORTIE_FAILURE_TEST: PASS
+
+=== sortie_outcome_test ===
+{"name": "sortie_outcome_test", "exit": 0, "pass_gate": true, "seconds": 0.53, "markers": ["SORTIE_OUTCOME_TEST: PASS"], "errors": false}
+Raw log SHA256: 9b1c4cf23b05549ea8302dc6fe1b845b00ec5f984dad86938b6cb18d14bef2bc
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+SORTIE_OUTCOME_TEST: PASS
+
+=== sortie_session_test ===
+{"name": "sortie_session_test", "exit": 0, "pass_gate": true, "seconds": 0.53, "markers": ["SORTIE_SESSION_TEST: PASS"], "errors": false}
+Raw log SHA256: 006e83f6c559e6982e441d03d0c76203b368ddfcc8c0181a95dcf5d34ba28810
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+SORTIE_SESSION_TEST: PASS
+
+=== threat_escalation_test ===
+{"name": "threat_escalation_test", "exit": 0, "pass_gate": true, "seconds": 1.0, "markers": ["THREAT_ESCALATION_TEST: PASS"], "errors": false}
+Raw log SHA256: 36e9694988a44f0828120633784314e1e12f8832d84af925c072e5bbbfddcc5d
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+THREAT_ESCALATION_TEST: PASS
+
+=== visual_combat_acceptance ===
+{"name": "visual_combat_acceptance", "exit": 0, "pass_gate": true, "seconds": 3.22, "markers": ["VISUAL_COMBAT_ACCEPTANCE: PASS (scripted smoke; no visual assertion)"], "errors": false}
+Raw log SHA256: a03c8b9f7825911f9e0e0df61841087926dc3a36c57d2eba5ce57cd1b85f9a31
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+VISUAL_COMBAT_ACCEPTANCE: PASS (scripted smoke; no visual assertion)
+
+=== visual_enemy_acceptance ===
+{"name": "visual_enemy_acceptance", "exit": 0, "pass_gate": true, "seconds": 3.13, "markers": ["VISUAL_ENEMY_ACCEPTANCE: PASS (scripted smoke; no visual assertion)"], "errors": false}
+Raw log SHA256: 5389a706ad1e27a1ca7cebf78ce5952661f7f3f6e99c8dad8ea879cfd887cfd8
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+VISUAL_ENEMY_ACCEPTANCE: PASS (scripted smoke; no visual assertion)
+
+=== visual_slice_assets_test ===
+{"name": "visual_slice_assets_test", "exit": 0, "pass_gate": true, "seconds": 2.21, "markers": ["VISUAL_SLICE_ASSETS_TEST: PASS"], "errors": false}
+Raw log SHA256: 05b5b7e0e8a05785ab395382af14f13eb8856919e3317c998183eb6a7ee99183
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+VISUAL_SLICE_ASSETS_TEST: PASS
+
+=== weapon_behavior_test ===
+{"name": "weapon_behavior_test", "exit": 0, "pass_gate": true, "seconds": 1.0, "markers": ["WEAPON_BEHAVIOR_TEST: PASS"], "errors": false}
+Raw log SHA256: d68529ae428cb44fb360290243fc18132833c4fc3924a66f5dc24c7576574b21
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+WEAPON_BEHAVIOR_TEST: PASS
+
+=== weapon_switching_test ===
+{"name": "weapon_switching_test", "exit": 0, "pass_gate": true, "seconds": 0.72, "markers": ["WEAPON_SWITCHING_TEST: PASS"], "errors": false}
+Raw log SHA256: 326046f9dedf91f1ede3bff665fa58b0f443707b8b33c000d0b4f71c345189bc
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+WEAPON_SWITCHING_TEST: PASS
+
+=== world_interaction_test ===
+{"name": "world_interaction_test", "exit": 0, "pass_gate": true, "seconds": 0.72, "markers": ["WORLD_INTERACTION_TEST: PASS"], "errors": false}
+Raw log SHA256: 665782f438d81184dc5489e48148d982ba783a9d373801ea4ddd0eac7e603e01
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+WORLD_INTERACTION_TEST: PASS
+
+=== world_traversal_test ===
+{"name": "world_traversal_test", "exit": 0, "pass_gate": true, "seconds": 0.72, "markers": ["WORLD_TRAVERSAL_TEST: PASS"], "errors": false}
+Raw log SHA256: 17e938f91b3cf084f97b9cbc5634305d7705f513bf63d3a29c8987836733a2a2
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+WORLD_TRAVERSAL_TEST: PASS
+
+=== main ===
+{"name": "main", "exit": 0, "pass_gate": true, "seconds": 1.74, "markers": [], "errors": false}
+Raw log SHA256: cb86e92a8d1575eead6a6f4c917dc0f215b48ae018a4860d9af23aa637a184ab
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+
+
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+
+
+   at: cleanup (core/object/object.cpp:2536)
+
+=== blender.log ===
+Raw SHA256: 0964fc87a257f9e99bb2dd5d340a70e16c774a5b06280404a7024cf7d93a50d7
+20:21:32 | INFO: Data are loaded, start creating Blender stuff
+
+20:21:32 | INFO: Blender create Mesh node blaster-e
+
+20:21:33 | INFO: Blender create Mesh node scope
+
+20:21:33 | INFO: Blender create Mesh node magazine
+
+20:21:33 | INFO: glTF import finished in 0.79s
+
+INFO Draco is available, use library at F:\SteamLibrary\steamapps\common\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+
+INFO MeshOptimizer is available, use library at F:\SteamLibrary\steamapps\common\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+
+20:21:34 | INFO: Starting glTF 2.0 export
+
+20:21:34 | INFO: Extracting primitive: blaster-e
+
+20:21:34 | INFO: Primitives created: 1
+
+20:21:34 | INFO: Extracting primitive: magazine
+
+20:21:34 | INFO: Primitives created: 1
+
+20:21:34 | INFO: Extracting primitive: scope
+
+20:21:34 | INFO: Primitives created: 1
+
+20:21:34 | INFO: Finished glTF 2.0 export in 0.1230168342590332 s
+
+
+
+20:21:34 | INFO: Data are loaded, start creating Blender stuff
+
+20:21:34 | INFO: Blender create Mesh node blaster-e
+
+20:21:34 | INFO: Blender create Mesh node magazine
+
+20:21:34 | INFO: Blender create Mesh node scope
+
+20:21:34 | INFO: glTF import finished in 0.01s
+
+BLENDER_ROUNDTRIP: PASS {"version": "5.2.2 LTS", "before": {"min": [-0.1281999945640564, -1.3900001049041748, -0.2150000035762787], "max": [0.038200002163648605, 0.0, 0.1899999976158142], "triangles": 802}, "after": {"min": [-0.1281999945640564, -1.3900001049041748, -0.2150000035762787], "max": [0.038200002163648605, 0.0, 0.1899999976158142], "triangles": 802}}
+
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+
+
+Blender quit
+
+=== roundtrip_godot.log ===
+Raw SHA256: 0d415cbbda83651f4e949ad9f38d4dcf9da43f9116e543353783978e8db1ef97
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+
+
+BLENDER_GODOT_ROUNDTRIP: PASS triangles=802
+
+CUDA probe: ComfyUI embedded Python 3.13.11; Torch 2.13.0+cu130; torch.version.cuda 13.0; cuda available=True; NVIDIA GeForce RTX 5090; torch.ones(4,device="cuda").sum().item()=4.0.
+nvidia-smi: driver 616.92; CUDA UMD 13.4; GPU VRAM 32607 MiB.
+No full AI inference / graphics benchmark / actual-window manual play claimed.
+
+
+=== PHASE 2 GATE CHECKPOINT 2026-09-25 ===
+User explicitly selected Godot 4.7.2; other platforms to be unified by user. Version choice accepted; migration NOT accepted.
+HEAD c4ca114e732ff8508370928dd5d16e04d838a6a0 / main
+Start WIP: M Handoff.md; untracked docs/ART_PIPELINE.md, docs/ART_ASSET_INVENTORY.md, docs/art_candidates/, docs/art_pipeline_validation.log. Preserved.
+Source: fresh git archive HEAD, no copied .godot cache. Production code/assets unchanged.
+Evidence: C:\Users\admin\AppData\Local\Temp\bunny_phase2_20260925_211817
+Fresh runtime 33/33 PASS; cold import FAIL 72 ERROR / 38 WARNING despite exit 0.
+Manual / performance / screenshots / gameplay video NOT VERIFIED. Terminal not started.
+
+REPRODUCTION SCRIPT (stored outside production):
+import pathlib,subprocess,zipfile,os,json,time,hashlib,re
+root=pathlib.Path(r'D:\bunny_team'); out=pathlib.Path(os.environ['TEMP'])/('bunny_phase2_'+time.strftime('%Y%m%d_%H%M%S')); out.mkdir(); p=out/'project'
+subprocess.run(['git','archive','HEAD','-o',str(out/'source.zip')],cwd=root,check=True)
+with zipfile.ZipFile(out/'source.zip') as z:z.extractall(p)
+env=dict(os.environ,APPDATA=str(out/'userdata'),LOCALAPPDATA=str(out/'localdata')); exe=r'E:\Godot\Godot_v4.7.2-stable_win64_console.exe'
+def run(name,args):
+ t=time.time(); r=subprocess.run([exe,'--headless','--path',str(p)]+args,env=env,capture_output=True,timeout=180); b=r.stdout+r.stderr; (out/(name+'.log')).write_bytes(b); s=b.decode('utf8',errors='replace'); v={'name':name,'exit':r.returncode,'seconds':round(time.time()-t,2),'errors':len(re.findall(r'^(?:SCRIPT )?ERROR:',s,re.M)),'warnings':len(re.findall(r'^WARNING:',s,re.M)),'markers':re.findall(r'^.*(?:PASS|FAIL).*$',s,re.M),'sha256':hashlib.sha256(b).hexdigest()};print(json.dumps(v),flush=True);return v
+results=[run('cold_import',['--editor','--import'])]
+for scene in sorted((p/'tests').glob('*.tscn')):results.append(run(scene.stem,['res://tests/'+scene.name,'--quit-after','1200']))
+results.append(run('main',['--quit-after','180']))
+(out/'results.json').write_text(json.dumps(results,indent=2),encoding='utf8'); print('EVIDENCE_DIR='+str(out),flush=True)
+
+RESULTS:
+[
+  {
+    "name": "cold_import",
+    "exit": 0,
+    "seconds": 10.34,
+    "errors": 72,
+    "warnings": 38,
+    "markers": [],
+    "sha256": "8a388a887c2d72a670dd10d7261c90887ba977f5845470a9f566a09f7407a801"
+  },
+  {
+    "name": "acceptance_smoke",
+    "exit": 0,
+    "seconds": 3.42,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "ACCEPTANCE_SMOKE: PASS\r"
+    ],
+    "sha256": "cf3047efc21b325e1ae79c3d27e26e2d6108bd4381b208ac13808d59918184c6"
+  },
+  {
+    "name": "ammo_carried_foundation_test",
+    "exit": 0,
+    "seconds": 0.54,
+    "errors": 0,
+    "warnings": 1,
+    "markers": [
+      "AMMO_CARRIED_FOUNDATION_TEST: PASS\r"
+    ],
+    "sha256": "857fcecc2d98c41b536b57e32c0a5bb8ebe1fd612e190784323151e85b5c86dd"
+  },
+  {
+    "name": "ammo_runtime_test",
+    "exit": 0,
+    "seconds": 0.72,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "AMMO_RUNTIME_TEST: PASS\r"
+    ],
+    "sha256": "74dae0be1ebd9517457ba821fffdafe661e253c18047c6474b2ed7f539493df2"
+  },
+  {
+    "name": "area_definition_test",
+    "exit": 0,
+    "seconds": 0.54,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "AREA_DEFINITION_TEST: PASS\r"
+    ],
+    "sha256": "4f00c94e60d99bcd72cbc9a4376274ee86cb1749878568f225f47cc96052dee1"
+  },
+  {
+    "name": "carried_inventory_test",
+    "exit": 0,
+    "seconds": 0.54,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "CARRIED_INVENTORY_TEST: PASS\r"
+    ],
+    "sha256": "0f74e789f004d5ed185a8fd7515dceb1b48a01ecf2fd8e5c8c3b9137c3b7b1d0"
+  },
+  {
+    "name": "combat_tuning_baseline_test",
+    "exit": 0,
+    "seconds": 1.29,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "COMBAT_TUNING_BASELINE_TEST: PASS\r"
+    ],
+    "sha256": "12bde974deb5a0f0e90ec475930b7387378585c252e37635fffade87ec504c74"
+  },
+  {
+    "name": "content_inventory_test",
+    "exit": 0,
+    "seconds": 0.54,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "CONTENT_INVENTORY_TEST: PASS\r"
+    ],
+    "sha256": "929ebe56f5e5e5e51a2f9f62365d09d4c4dc987ff04084a40b0bf661b7edd7ce"
+  },
+  {
+    "name": "damage_packet_test",
+    "exit": 0,
+    "seconds": 0.82,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "DAMAGE_PACKET_TEST: PASS\r"
+    ],
+    "sha256": "473435ab83d7e7914f9920b4685603007d17cfa99cb94991ab45967afa642458"
+  },
+  {
+    "name": "destructible_world_object_test",
+    "exit": 0,
+    "seconds": 0.81,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "DESTRUCTIBLE_WORLD_OBJECT_TEST: PASS\r"
+    ],
+    "sha256": "a92098b524931bb4f7c94af98d7aef1d84a434ba1c28ce2448e315b8c07ca92f"
+  },
+  {
+    "name": "enemy_definition_test",
+    "exit": 0,
+    "seconds": 0.72,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "ENEMY_DEFINITION_TEST: PASS\r"
+    ],
+    "sha256": "fad7f3e0d94ffe98dbfb6eb25a57f8a14a3305fb3a767f7fc0031324a84e1e5b"
+  },
+  {
+    "name": "enemy_spawn_test",
+    "exit": 0,
+    "seconds": 0.72,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "ENEMY_SPAWN_TEST: PASS\r"
+    ],
+    "sha256": "182181d5c6838192b7fe54537355585808ec531c18c92b12991269030ffbaf60"
+  },
+  {
+    "name": "extraction_vertical_slice_test",
+    "exit": 0,
+    "seconds": 0.72,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "EXTRACTION_VERTICAL_SLICE_TEST: PASS\r"
+    ],
+    "sha256": "b42ad1ec4d83142c8034577171bd36eb8f9ebeb29ee794637062e64adcf6dca6"
+  },
+  {
+    "name": "loadout_decision_test",
+    "exit": 0,
+    "seconds": 0.82,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "LOADOUT_DECISION_TEST: PASS\r"
+    ],
+    "sha256": "4b06f9599762178a516d91e68adbcabaf69bc41d2b9ba4dcf54f3993e90ce3b3"
+  },
+  {
+    "name": "loadout_state_test",
+    "exit": 0,
+    "seconds": 0.54,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "LOADOUT_STATE_TEST: PASS\r"
+    ],
+    "sha256": "a01c3d9801d46522fa8ab49b0b9c01f39b91923f1346b7269d6275284c7cbac7"
+  },
+  {
+    "name": "loot_table_test",
+    "exit": 0,
+    "seconds": 0.72,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "LOOT_TABLE_TEST: PASS\r"
+    ],
+    "sha256": "cb8b95eee494560b0090fd3e2101570ddb9cc0bbd939359cf3c461dfc410a3dd"
+  },
+  {
+    "name": "mission_flow_test",
+    "exit": 0,
+    "seconds": 1.28,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "MISSION_FLOW_TEST: PASS\r"
+    ],
+    "sha256": "d8810c81df93dcc0cd8b2323616056fa1aa2cbf0618ee65c10b62a0051ceb984"
+  },
+  {
+    "name": "mission_objective_test",
+    "exit": 0,
+    "seconds": 0.54,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "MISSION_OBJECTIVE_TEST: PASS\r"
+    ],
+    "sha256": "996830f87e4162bf5d1676d79e8c4ba58cab010d0f25d9f4b813f95220aaee55"
+  },
+  {
+    "name": "objective_world_test",
+    "exit": 0,
+    "seconds": 0.72,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "OBJECTIVE_WORLD_TEST: PASS\r"
+    ],
+    "sha256": "f669bc89fc2a304be3f572f901dbbedbd6446f40107ce4a5b01149b14e9704c7"
+  },
+  {
+    "name": "presentation_gameplay_test",
+    "exit": 0,
+    "seconds": 7.3,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "PRESENTATION_GAMEPLAY_TEST: PASS\r"
+    ],
+    "sha256": "ae73643e9a4fe8ad17c70a8bb142d225944cd59d9506bfa7ab836e039c8d2cd6"
+  },
+  {
+    "name": "profile_state_test",
+    "exit": 0,
+    "seconds": 0.54,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "PROFILE_STATE_TEST: PASS\r"
+    ],
+    "sha256": "33f0ea9d822ed2036eedec3dc08c57a3cff32a01abca14e7162e4928d404eb19"
+  },
+  {
+    "name": "result_return_test",
+    "exit": 0,
+    "seconds": 0.82,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "RESULT_RETURN_TEST: PASS\r"
+    ],
+    "sha256": "9985118cd4cbd5cb1f239a038576b027c3c7391fc26cbf4267e4a133d12f8e66"
+  },
+  {
+    "name": "save_service_test",
+    "exit": 0,
+    "seconds": 0.54,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "SAVE_SERVICE_TEST: PASS\r"
+    ],
+    "sha256": "24d5b9bac3fac687a7cc964cc5e285070adfa0744e18230f1ebe2c89377be51d"
+  },
+  {
+    "name": "sortie_failure_test",
+    "exit": 0,
+    "seconds": 0.82,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "SORTIE_FAILURE_TEST: PASS\r"
+    ],
+    "sha256": "c1817d555972e58a67c66a37fefebfcf3db4b22f511a1c6e256f6bac42523614"
+  },
+  {
+    "name": "sortie_outcome_test",
+    "exit": 0,
+    "seconds": 0.54,
+    "errors": 0,
+    "warnings": 1,
+    "markers": [
+      "SORTIE_OUTCOME_TEST: PASS\r"
+    ],
+    "sha256": "8f52900944aad60d0476e6d74f8333f7d516db64672696ed410043df3c2e0487"
+  },
+  {
+    "name": "sortie_session_test",
+    "exit": 0,
+    "seconds": 0.54,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "SORTIE_SESSION_TEST: PASS\r"
+    ],
+    "sha256": "df5a421250cbe693d64d5e60e2b1a871774b450656eb57e876103e110d2c64b4"
+  },
+  {
+    "name": "threat_escalation_test",
+    "exit": 0,
+    "seconds": 1.0,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "THREAT_ESCALATION_TEST: PASS\r"
+    ],
+    "sha256": "57f31d59f83f742bbb6fdba28e3c974e0755c6d22b20160be8d5adacc3673e2d"
+  },
+  {
+    "name": "visual_combat_acceptance",
+    "exit": 0,
+    "seconds": 3.23,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "VISUAL_COMBAT_ACCEPTANCE: PASS (scripted smoke; no visual assertion)\r"
+    ],
+    "sha256": "9f6b93e11ebbf4e8c6e9d832f41652299ac2e97550593ad6e1a8ef0cd6ce2704"
+  },
+  {
+    "name": "visual_enemy_acceptance",
+    "exit": 0,
+    "seconds": 3.14,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "VISUAL_ENEMY_ACCEPTANCE: PASS (scripted smoke; no visual assertion)\r"
+    ],
+    "sha256": "5682059b30245191e06771f4a151fa636776744662b84be926f57a2b184e7c5b"
+  },
+  {
+    "name": "visual_slice_assets_test",
+    "exit": 0,
+    "seconds": 2.2,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "VISUAL_SLICE_ASSETS_TEST: PASS\r"
+    ],
+    "sha256": "3b1df4d1c790620a6b0d8b41cf1afdeb7869005edc0344c1b76e597d881760a8"
+  },
+  {
+    "name": "weapon_behavior_test",
+    "exit": 0,
+    "seconds": 1.1,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "WEAPON_BEHAVIOR_TEST: PASS\r"
+    ],
+    "sha256": "264f3cfaaf3d2b6b4d5eebf057246896cda1fb1e8b171c739b191441f58308dc"
+  },
+  {
+    "name": "weapon_switching_test",
+    "exit": 0,
+    "seconds": 0.73,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "WEAPON_SWITCHING_TEST: PASS\r"
+    ],
+    "sha256": "d361035a78a2eef17eb8ea503a07e0dd2f18e8269360a367aa10df65977b8d60"
+  },
+  {
+    "name": "world_interaction_test",
+    "exit": 0,
+    "seconds": 0.82,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "WORLD_INTERACTION_TEST: PASS\r"
+    ],
+    "sha256": "91c770f650f8c253f1a0e0b8233b5524d582f7395ffe0f00a0f420cfebe9c8f7"
+  },
+  {
+    "name": "world_traversal_test",
+    "exit": 0,
+    "seconds": 0.82,
+    "errors": 0,
+    "warnings": 0,
+    "markers": [
+      "WORLD_TRAVERSAL_TEST: PASS\r"
+    ],
+    "sha256": "8264c29f377b92f3150d3a714b06fb9db370a7d7ce63951334525146ec9ee739"
+  },
+  {
+    "name": "main",
+    "exit": 0,
+    "seconds": 1.74,
+    "errors": 0,
+    "warnings": 1,
+    "markers": [],
+    "sha256": "31402bba8d15a0f12f00af9e09d59443f98ce7d178bdbc81e6d9ecb5f1a965da"
+  }
+]
+DISTINCT COLD IMPORT DIAGNOSTICS:
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Add.psd'.
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Body.psd'.
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Hair_Spow.psd'.
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Skin.psd'.
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_Wep.psd'.
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/face3_main.psd'.
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga'.
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga'.
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga'.
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga'.
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga'.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+WARNING: FBX: Image index '0' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Body.psd because there was no data to load. Skipping it.
+WARNING: FBX: Image index '0' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga because there was no data to load. Skipping it.
+WARNING: FBX: Image index '1' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/face3_main.psd because there was no data to load. Skipping it.
+WARNING: FBX: Image index '1' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga because there was no data to load. Skipping it.
+WARNING: FBX: Image index '2' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Skin.psd because there was no data to load. Skipping it.
+WARNING: FBX: Image index '2' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga because there was no data to load. Skipping it.
+WARNING: FBX: Image index '3' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Add.psd because there was no data to load. Skipping it.
+WARNING: FBX: Image index '3' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga because there was no data to load. Skipping it.
+WARNING: FBX: Image index '4' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_Wep.psd because there was no data to load. Skipping it.
+WARNING: FBX: Image index '4' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga because there was no data to load. Skipping it.
+WARNING: FBX: Image index '5' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Hair_Spow.psd because there was no data to load. Skipping it.
+WARNING: FBX: Node 'J_1_R_mantleSide_R' has multiple bind poses, using initial pose as rest pose.
+WARNING: FBX: Node 'J_1_R_midFrillSide_R' has multiple bind poses, using initial pose as rest pose.
+
+ammo_carried_foundation_test exit warnings:
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+
+sortie_outcome_test exit warnings:
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+
+main exit warnings:
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+
+SOURCE PROBE SHA256 bb87d39caaa2652c59a28559936f61b59891463e61118eb724ceccbe658f7bcf
+Probe flags default FBXDocument.append_from_file; no production import settings changed. Probe teardown leaked 257 ObjectDB instances; this is separate from 38 cold-import warnings, NOT a warning-free probe and NOT attributed to win.fbx.
+Probe script:
+extends SceneTree
+func _initialize():
+	for f in ["unitychan_battle.fbx", "animations/idle.fbx", "animations/walk.fbx", "animations/run.fbx", "animations/slide.fbx", "animations/damaged.fbx", "animations/win.fbx"]:
+		print("SOURCE_BEGIN ", f)
+		var doc = FBXDocument.new()
+		var state = FBXState.new()
+		var code = doc.append_from_file("res://assets/characters/unitychan_battle/" + f, state)
+		print("SOURCE_END ", f, " code=", code)
+	var packed = load("res://assets/characters/quaternius_scifi/SciFi.gltf") as PackedScene
+	var model = packed.instantiate()
+	var sk = model.find_children("*", "Skeleton3D", true, false)
+	print("C03_IMPORT packed=",packed != null, " skeletons=", sk.size())
+	for s in sk:
+		var names=[]
+		for i in s.get_bone_count(): names.append(s.get_bone_name(i))
+		print("C03_BONES ", JSON.stringify(names))
+	model.free()
+	quit()
+
+Probe diagnostic lines (stack traces omitted):
+SOURCE_BEGIN unitychan_battle.fbx
+WARNING: FBX: Node 'J_1_R_mantleSide_R' has multiple bind poses, using initial pose as rest pose.
+WARNING: FBX: Node 'J_1_R_midFrillSide_R' has multiple bind poses, using initial pose as rest pose.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Body.psd'.
+WARNING: FBX: Image index '0' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Body.psd because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/face3_main.psd'.
+WARNING: FBX: Image index '1' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/face3_main.psd because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Skin.psd'.
+WARNING: FBX: Image index '2' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Skin.psd because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Add.psd'.
+WARNING: FBX: Image index '3' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Add.psd because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_Wep.psd'.
+WARNING: FBX: Image index '4' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_Wep.psd because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Hair_Spow.psd'.
+WARNING: FBX: Image index '5' couldn't be loaded from path: res://../TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Hair_Spow.psd because there was no data to load. Skipping it.
+SOURCE_END unitychan_battle.fbx code=0
+SOURCE_BEGIN animations/idle.fbx
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga'.
+WARNING: FBX: Image index '0' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga'.
+WARNING: FBX: Image index '1' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga'.
+WARNING: FBX: Image index '2' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga'.
+WARNING: FBX: Image index '3' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga'.
+WARNING: FBX: Image index '4' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga because there was no data to load. Skipping it.
+SOURCE_END animations/idle.fbx code=0
+SOURCE_BEGIN animations/walk.fbx
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga'.
+WARNING: FBX: Image index '0' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga'.
+WARNING: FBX: Image index '1' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga'.
+WARNING: FBX: Image index '2' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga'.
+WARNING: FBX: Image index '3' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga'.
+WARNING: FBX: Image index '4' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga because there was no data to load. Skipping it.
+SOURCE_END animations/walk.fbx code=0
+SOURCE_BEGIN animations/run.fbx
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga'.
+WARNING: FBX: Image index '0' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga'.
+WARNING: FBX: Image index '1' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga'.
+WARNING: FBX: Image index '2' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga'.
+WARNING: FBX: Image index '3' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga'.
+WARNING: FBX: Image index '4' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga because there was no data to load. Skipping it.
+SOURCE_END animations/run.fbx code=0
+SOURCE_BEGIN animations/slide.fbx
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga'.
+WARNING: FBX: Image index '0' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga'.
+WARNING: FBX: Image index '1' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga'.
+WARNING: FBX: Image index '2' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga'.
+WARNING: FBX: Image index '3' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga'.
+WARNING: FBX: Image index '4' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga because there was no data to load. Skipping it.
+SOURCE_END animations/slide.fbx code=0
+SOURCE_BEGIN animations/damaged.fbx
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga'.
+WARNING: FBX: Image index '0' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga'.
+WARNING: FBX: Image index '1' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga'.
+WARNING: FBX: Image index '2' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga'.
+WARNING: FBX: Image index '3' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga'.
+WARNING: FBX: Image index '4' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga because there was no data to load. Skipping it.
+SOURCE_END animations/damaged.fbx code=0
+SOURCE_BEGIN animations/win.fbx
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga'.
+WARNING: FBX: Image index '0' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga'.
+WARNING: FBX: Image index '1' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/face_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga'.
+WARNING: FBX: Image index '2' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga'.
+WARNING: FBX: Image index '3' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga because there was no data to load. Skipping it.
+ERROR: Resource file not found: res:// (expected type: Texture2D)
+ERROR: Can't open file from path 'res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga'.
+WARNING: FBX: Image index '4' couldn't be loaded from path: res://assets/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga because there was no data to load. Skipping it.
+SOURCE_END animations/win.fbx code=0
+C03_IMPORT packed=true skeletons=1
+C03_BONES ["Root","Body","Hips","Abdomen","Torso","Chest","Neck","Head","Shoulder.L","UpperArm.L","LowerArm.L","Wrist.L","Index1.L","Index2.L","Index3.L","Index4.L","Middle1.L","Middle2.L","Middle3.L","Middle4.L","Ring1.L","Ring2.L","Ring3.L","Ring4.L","Pinky1.L","Pinky2.L","Pinky3.L","Pinky4.L","Thumb1.L","Thumb2.L","Thumb3.L","Shoulder.R","UpperArm.R","LowerArm.R","Wrist.R","Index1.R","Index2.R","Index3.R","Index4.R","Middle1.R","Middle2.R","Middle3.R","Middle4.R","Ring1.R","Ring2.R","Ring3.R","Ring4.R","Pinky1.R","Pinky2.R","Pinky3.R","Pinky4.R","Thumb1.R","Thumb2.R","Thumb3.R","UpperLeg.L","LowerLeg.L","UpperLeg.R","LowerLeg.R","Foot.L","PT.L","Foot.R","PT.R"]
+WARNING: 257 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+
+License provenance: local avatar SHA256 a8b4c8e0f3e350012e6c0d2c4a2ce68654f44c1267b0761a115ecb60c0fe74e7. Git blob 7968f4145ad45e1e144c8a217454f38d6eec7325, same as GitHub contents API https://api.github.com/repos/arkavo-org/VRMMetalKit/contents/AvatarSample_A_0.0.vrm.glb (18566868 bytes). Author Hub current permissions differ from embedded restrictions; release BLOCKED. URLs and scope recorded in art_candidates/README.md. No model downloaded.
+
+
+=== PHASE 2B MIGRATION CLOSURE — 2026-09-25 ===
+USER: Godot 4.7.2 baseline; explicitly accepts automated rendered route instead of manual computer control. No Terminal work.
+Evidence temporary directory: C:\Users\admin\AppData\Local\Temp\bunny_phase2b_20260925_214246
+Package: official UnityChan 1.2.1, 116356812 bytes, SHA256 383723c5081b5d674ed9f95cb6518a3119a936ed98f9a52893898441d03a7dce
+Download URL: https://unity3d.jp/unity-chan_contents/download.php?id=UnityChan&v=1.2.1
+All six animation FBXs match official package binary hashes; five exact original TGA dependencies recovered. Full manifest: docs/phase2b/validation.json
+Trace: tools/audit_migration_dependencies.py -> docs/phase2b/dependency_trace.json. Material-to-texture links are parsed without rewriting FBX. Maya cgfx Video references are historical shader metadata, not Texture2D inputs consumed by Godot. VRM has 27 embedded images; no missing external image URI.
+Legacy relocation: unitychan_battle.fbx + its original .import -> art_source/unitychan_battle_legacy/.gdignore. Model SHA256 146f9846b95ba57a726e74ba3da63dfac8774f34db85e46d09d01e5ac8bb4478 unchanged. Model UID uid://dd2m1q2bojfq0 has no tracked runtime reference. Whole-repo gd/tscn/tres literal searches also zero references; no runtime dynamic directory asset loader found. ResourceLoader.get_dependencies does not expose script preloads, so its empty gd output alone is NOT treated as reachability proof.
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+DEPENDENCY_INBOUND res://assets/characters/unitychan_battle/unitychan_battle.fbx []
+DEPENDENCY_INBOUND res://assets/characters/unitychan_battle/animations/damaged.fbx []
+DEPENDENCY_INBOUND res://assets/characters/unitychan_battle/animations/win.fbx []
+ACTIVE_DEPENDENCIES res://scripts/player/player_controller.gd []
+DEPENDENCY_RESOURCE_COUNT 214
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+
+ATTEMPT 1 (isolated only, not applied): original TGAs without .import sidecars -> 60 ERROR / 20 WARNING; active preloads race texture import settings and extract redundant PNGs. Failure log SHA256 b30c211fd72a846c42c398a1fcae73cf80a50c3d217c8047b538764d6a6babb2
+ATTEMPT 2 (new isolated copy with original TGAs plus importer settings): 0 ERROR / 0 WARNING / exit0. SHA256 850ac0c108281dd42a37bf2e516e134fa135e98eccd2ce152b65c46c90e896c9
+No redundant PNGs copied into production.
+FINAL actual WIP snapshot via tools/verify_migration.py --import-only; no .godot copied:
+[
+  {
+    "name": "cold_import",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase2b_20260925_214246\\final_working_snapshot\\project",
+      "--headless",
+      "--editor",
+      "--import"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "d56c6928bf2f00f6a1be84251e56d992306a7c0097437a63839782aeaaa01cf3"
+  }
+]
+Before/final bone names/parents/rest/pose, skin binds, animation paths/types/interpolation/keys fingerprints identical for four live FBXs + VRM. Script used (read-only):
+extends SceneTree
+func _initialize():
+	var report = {}
+	for path in ["res://assets/characters/unitychan_battle/animations/idle.fbx", "res://assets/characters/unitychan_battle/animations/walk.fbx", "res://assets/characters/unitychan_battle/animations/run.fbx", "res://assets/characters/unitychan_battle/animations/slide.fbx", "res://assets/characters/vrm_avatar/avatar_sample_a.glb"]:
+		var model = load(path).instantiate()
+		var data = []
+		_scan(model, model, data)
+		var h = HashingContext.new()
+		h.start(HashingContext.HASH_SHA256)
+		h.update(var_to_bytes(data))
+		report[path] = {"sha256": h.finish().hex_encode(), "entries": data.size()}
+		model.free()
+	var output = FileAccess.open(OS.get_environment("BUNNY_SIGNATURE"), FileAccess.WRITE)
+	output.store_string(JSON.stringify(report, "  "))
+	output.close()
+	print(JSON.stringify(report))
+	quit()
+func _scan(node: Node, top: Node, data: Array):
+	if node is Skeleton3D:
+		var bones = []
+		for i in node.get_bone_count():
+			bones.append([node.get_bone_name(i), node.get_bone_parent(i), node.get_bone_rest(i), node.get_bone_pose(i)])
+		data.append([str(top.get_path_to(node)), node.transform, bones])
+	if node is MeshInstance3D and node.skin:
+		var binds = []
+		for i in node.skin.get_bind_count():
+			binds.append([node.skin.get_bind_name(i), node.skin.get_bind_bone(i), node.skin.get_bind_pose(i)])
+		data.append([str(top.get_path_to(node)), binds])
+	if node is AnimationPlayer:
+		for name in node.get_animation_list():
+			var anim = node.get_animation(name)
+			var tracks = []
+			for i in anim.get_track_count():
+				var keys = []
+				for k in anim.track_get_key_count(i):
+					keys.append([anim.track_get_key_time(i,k), anim.track_get_key_value(i,k), anim.track_get_key_transition(i,k)])
+				tracks.append([anim.track_get_path(i), anim.track_get_type(i), anim.track_get_interpolation_type(i), keys])
+			data.append([str(top.get_path_to(node)), name, anim.length, anim.loop_mode, tracks])
+	for child in node.get_children(): _scan(child, top, data)
+
+SIGNATURE_BEFORE {"res://assets/characters/unitychan_battle/animations/idle.fbx": {"entries": 2, "sha256": "9243c181bd84eda1874631d9032b0ed1db880dc9fa6fd2ebf3259de34c2c47c1"}, "res://assets/characters/unitychan_battle/animations/run.fbx": {"entries": 2, "sha256": "4f8e00549ad3ae51f25ca54fc97be6886ad752778e08a310df40fe3eebcd87ee"}, "res://assets/characters/unitychan_battle/animations/slide.fbx": {"entries": 2, "sha256": "4af1c1ae29847e0469066da6e34233e66407d3000a45f17bd214ebc9a905d57a"}, "res://assets/characters/unitychan_battle/animations/walk.fbx": {"entries": 2, "sha256": "0a1ff4fbd44e71b32d7ee6ef45d86f7611193ae1e404705bf0d5c347ab4d4e0a"}, "res://assets/characters/vrm_avatar/avatar_sample_a.glb": {"entries": 4, "sha256": "e1cf87052188d7b46687a153a073e4585863c2bd7f75b4822ac2a4e16a99cf24"}}
+SIGNATURE_FINAL {"res://assets/characters/unitychan_battle/animations/idle.fbx": {"entries": 2, "sha256": "9243c181bd84eda1874631d9032b0ed1db880dc9fa6fd2ebf3259de34c2c47c1"}, "res://assets/characters/unitychan_battle/animations/run.fbx": {"entries": 2, "sha256": "4f8e00549ad3ae51f25ca54fc97be6886ad752778e08a310df40fe3eebcd87ee"}, "res://assets/characters/unitychan_battle/animations/slide.fbx": {"entries": 2, "sha256": "4af1c1ae29847e0469066da6e34233e66407d3000a45f17bd214ebc9a905d57a"}, "res://assets/characters/unitychan_battle/animations/walk.fbx": {"entries": 2, "sha256": "0a1ff4fbd44e71b32d7ee6ef45d86f7611193ae1e404705bf0d5c347ab4d4e0a"}, "res://assets/characters/vrm_avatar/avatar_sample_a.glb": {"entries": 4, "sha256": "e1cf87052188d7b46687a153a073e4585863c2bd7f75b4822ac2a4e16a99cf24"}}
+Fresh post-fix regression: 33/33 PASS plus main exit0; verified unchanged runtime files compared against checkout: 150. All hashes/results in docs/phase2b/validation.json.
+{"name": "acceptance_smoke", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "cf3047efc21b325e1ae79c3d27e26e2d6108bd4381b208ac13808d59918184c6"}
+{"name": "ammo_carried_foundation_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "e0c468147849e2f7ef13af6dd50a58c4c766b99059cf6c8b6c7db488f3d90ef9"}
+{"name": "ammo_runtime_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "74dae0be1ebd9517457ba821fffdafe661e253c18047c6474b2ed7f539493df2"}
+{"name": "area_definition_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "4f00c94e60d99bcd72cbc9a4376274ee86cb1749878568f225f47cc96052dee1"}
+{"name": "carried_inventory_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "0f74e789f004d5ed185a8fd7515dceb1b48a01ecf2fd8e5c8c3b9137c3b7b1d0"}
+{"name": "combat_tuning_baseline_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "12bde974deb5a0f0e90ec475930b7387378585c252e37635fffade87ec504c74"}
+{"name": "content_inventory_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "929ebe56f5e5e5e51a2f9f62365d09d4c4dc987ff04084a40b0bf661b7edd7ce"}
+{"name": "damage_packet_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "473435ab83d7e7914f9920b4685603007d17cfa99cb94991ab45967afa642458"}
+{"name": "destructible_world_object_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "a92098b524931bb4f7c94af98d7aef1d84a434ba1c28ce2448e315b8c07ca92f"}
+{"name": "enemy_definition_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "fad7f3e0d94ffe98dbfb6eb25a57f8a14a3305fb3a767f7fc0031324a84e1e5b"}
+{"name": "enemy_spawn_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "182181d5c6838192b7fe54537355585808ec531c18c92b12991269030ffbaf60"}
+{"name": "extraction_vertical_slice_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "b42ad1ec4d83142c8034577171bd36eb8f9ebeb29ee794637062e64adcf6dca6"}
+{"name": "loadout_decision_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "4b06f9599762178a516d91e68adbcabaf69bc41d2b9ba4dcf54f3993e90ce3b3"}
+{"name": "loadout_state_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "a01c3d9801d46522fa8ab49b0b9c01f39b91923f1346b7269d6275284c7cbac7"}
+{"name": "loot_table_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "cb8b95eee494560b0090fd3e2101570ddb9cc0bbd939359cf3c461dfc410a3dd"}
+{"name": "mission_flow_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "d8810c81df93dcc0cd8b2323616056fa1aa2cbf0618ee65c10b62a0051ceb984"}
+{"name": "mission_objective_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "996830f87e4162bf5d1676d79e8c4ba58cab010d0f25d9f4b813f95220aaee55"}
+{"name": "objective_world_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "f669bc89fc2a304be3f572f901dbbedbd6446f40107ce4a5b01149b14e9704c7"}
+{"name": "presentation_gameplay_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "ae73643e9a4fe8ad17c70a8bb142d225944cd59d9506bfa7ab836e039c8d2cd6"}
+{"name": "profile_state_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "33f0ea9d822ed2036eedec3dc08c57a3cff32a01abca14e7162e4928d404eb19"}
+{"name": "result_return_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "9985118cd4cbd5cb1f239a038576b027c3c7391fc26cbf4267e4a133d12f8e66"}
+{"name": "save_service_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "24d5b9bac3fac687a7cc964cc5e285070adfa0744e18230f1ebe2c89377be51d"}
+{"name": "sortie_failure_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "c1817d555972e58a67c66a37fefebfcf3db4b22f511a1c6e256f6bac42523614"}
+{"name": "sortie_outcome_test", "exit": 0, "errors": 0, "warnings": ["WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).\r"], "pass": true, "sha256": "8f52900944aad60d0476e6d74f8333f7d516db64672696ed410043df3c2e0487"}
+{"name": "sortie_session_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "df5a421250cbe693d64d5e60e2b1a871774b450656eb57e876103e110d2c64b4"}
+{"name": "threat_escalation_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "57f31d59f83f742bbb6fdba28e3c974e0755c6d22b20160be8d5adacc3673e2d"}
+{"name": "visual_combat_acceptance", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "9f6b93e11ebbf4e8c6e9d832f41652299ac2e97550593ad6e1a8ef0cd6ce2704"}
+{"name": "visual_enemy_acceptance", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "5682059b30245191e06771f4a151fa636776744662b84be926f57a2b184e7c5b"}
+{"name": "visual_slice_assets_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "3b1df4d1c790620a6b0d8b41cf1afdeb7869005edc0344c1b76e597d881760a8"}
+{"name": "weapon_behavior_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "264f3cfaaf3d2b6b4d5eebf057246896cda1fb1e8b171c739b191441f58308dc"}
+{"name": "weapon_switching_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "d361035a78a2eef17eb8ea503a07e0dd2f18e8269360a367aa10df65977b8d60"}
+{"name": "world_interaction_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "91c770f650f8c253f1a0e0b8233b5524d582f7395ffe0f00a0f420cfebe9c8f7"}
+{"name": "world_traversal_test", "exit": 0, "errors": 0, "warnings": [], "pass": true, "sha256": "8264c29f377b92f3150d3a714b06fb9db370a7d7ce63951334525146ec9ee739"}
+{"name": "main", "exit": 0, "errors": 0, "warnings": ["WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).\r"], "pass": true, "sha256": "31402bba8d15a0f12f00af9e09d59443f98ce7d178bdbc81e6d9ecb5f1a965da"}
+
+First graphics route: FAIL at diagonal entrance approach, valid closed-path collision; only test waypoint order corrected, no scene/collision/player fix. Log retained:
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5090
+
+PHASE2B_ROUTE: AUTOMATED INPUT/API, NOT MANUAL; NORMAL AI; NO TELEPORT/INVULNERABILITY
+CAPTURE 01_hanger (1280, 720) error=0
+CAPTURE 02_entrance (1280, 720) error=0
+ROUTE_FAIL Entrance traversal failed
+CAPTURE failure (1280, 720) error=0
+{"checks":{"Combat still works":true,"Door interaction":true,"Field Office entrance visible":true,"Hanger launches":true,"Player movement":true,"Production camera":true},"failure":"Entrance traversal failed","method":"automated input/API, not manual","shots":89}
+
+Final graphics route command: Godot --path <isolated fixed copy> --rendering-method gl_compatibility --resolution 1280x720 --script tools/phase2b_route_probe.gd; APPDATA/LOCALAPPDATA isolated and BUNNY_EVIDENCE set. Final log:
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5090
+
+PHASE2B_ROUTE: AUTOMATED INPUT/API, NOT MANUAL; NORMAL AI; NO TELEPORT/INVULNERABILITY
+CAPTURE 01_hanger (1280, 720) error=0
+WAYPOINT (-17.1, 0.0, 26.0) reached (-16.73612, -0.024161, 26.1523)
+CAPTURE 02_entrance (1280, 720) error=0
+WAYPOINT (-17.1, 0.0, 24.7) reached (-17.15762, -0.02416, 25.10582)
+WAYPOINT (-17.1, 0.0, 21.5) reached (-17.09997, -0.004917, 21.83489)
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.0911, -0.004928, 21.08566)
+CAPTURE 03_inside (1280, 720) error=0
+WAYPOINT (-19.5, 0.0, 13.1) reached (-19.68292, -0.004922, 13.49558)
+CAPTURE 04_terminal (1280, 720) error=0
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.68323, -0.004942, 20.6722)
+WAYPOINT (-17.1, 0.0, 21.5) reached (-17.41894, -0.004909, 21.55705)
+WAYPOINT (-17.1, 0.0, 26.0) reached (-17.09185, -0.024161, 25.64939)
+CAPTURE 05_exit (1280, 720) error=0
+WAYPOINT (0.0, 0.0, 30.0) reached (-0.366939, -0.02416, 30.13453)
+WAYPOINT (2.5, 0.0, 32.0) reached (2.132077, -0.02416, 32.14108)
+OUTCOME enemies_defeated=0 damage_taken=9 mission_completed=false
+CAPTURE 06_result (1280, 720) error=0
+{"checks":{"Combat still works":true,"Door interaction":true,"Enter Field Office":true,"Exit Field Office":true,"Extraction":true,"Field Office entrance visible":true,"Hanger launches":true,"Interior traversal":true,"Player movement":true,"Production camera":true,"Result":true,"Return to original route":true,"Terminal area reachable":true},"combat":{"damage_taken":9,"enemies_defeated":0,"shots":120},"combat_scope":"weapon fire and normal enemy AI; kill/damage semantics are covered by regression suites","failure":"","method":"automated input/API, not manual","mission_completed":false}
+
+Normal AI stayed active; 120 weapon_fired signals, damage_taken9, enemies_defeated0. Early extraction succeeded, Terminal objective1/1 shown in Result; other mission objectives incomplete. Not full mission/kill acceptance; combat semantics also covered by regression. No gameplay/stat/rig/camera/route/art changes. No manual input claimed, no public footage approval.
+
+Final texture load proof (after clean import; not a substitute for cold import):
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+FBX_RUNTIME_DEPS idle []
+FBX_RUNTIME_DEPS walk []
+FBX_RUNTIME_DEPS run []
+FBX_RUNTIME_DEPS slide []
+FBX_RUNTIME_DEPS damaged []
+FBX_RUNTIME_DEPS win []
+TEXTURE_LOAD FO_SKIN1 valid=true size=(64.0, 8.0)
+TEXTURE_LOAD face_00 valid=true size=(2048.0, 2048.0)
+TEXTURE_LOAD eyeline_00 valid=true size=(512.0, 512.0)
+TEXTURE_LOAD eye_iris_L_00 valid=true size=(512.0, 512.0)
+TEXTURE_LOAD eye_iris_R_00 valid=true size=(512.0, 512.0)
+
+
+
+=== Battle Costume official source recovery 2026-09-25 ===
+Source: https://unity3d.jp/unity-chan_contents/download.php?id=TPK-Hmnd-Kohaku_A&v=1.1
+Scope: excluded art source + documentation only. No runtime changes or commit.
+Archive SHA256 12f1365e5e2eb82e2a0e3ddb5d105c690518a8404a1c33fb0027800436096c2c; 12531513 bytes.
+Recovery script twice PASS: 34 files + meta, 20 PNG, 6 materials, 24 prefab skinned renderers. Main FBX identical.
+Initial script parse failure: MeshFilter has m_Mesh but no m_Materials; skip non-material components, rerun PASS. Not a source-asset failure.
+Seven historical unresolved serialized texture GUIDs are absent from assigned shader properties AND shader/include usage. All declared non-null texture slots resolve. Six authoring PSDs absent from official release, not fabricated.
+Blender probe (read-only, no save):
+FBX version: 7300
+BATTLE_SOURCE_PROBE {"blender": "5.2.2 LTS", "textures": [{"name": "kohaku_A_Add.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_Add_Shd.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_Add_Spow.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_Body.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_Body_Shd.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_Body_spow.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_face3_lpow.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_face3_main.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_face3_main_Shd2.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_face3_main_spow.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_face3_main_sub.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_Hair_Spow.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_skin.png", "width": 1024, "height": 1024, "channels": 4}, {"name": "kohaku_A_Skin_Shd.png", "width": 1024, "height": 1024, "channels": 4}, {"name": "kohaku_A_skin_spow.png", "width": 1024, "height": 1024, "channels": 4}, {"name": "kohaku_A_Wep.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_Wep_Emi.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_Wep_Shd.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "kohaku_A_Wep_Spec.png", "width": 2048, "height": 2048, "channels": 4}, {"name": "para_height2.png", "width": 1024, "height": 1024, "channels": 4}], "scope": "Read-only texture decoding and source FBX inspection, NOT visual or animation acceptance", "armatures": [{"name": "Character1_Reference", "bones": 328}, {"name": "Wep", "bones": 11}], "mesh_count": 24, "triangles": 39241, "material_count": 7, "action_count": 0, "original_files_not_saved_or_modified": true}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit
+
+Fresh import command: python tools/verify_migration.py --godot E:/Godot/Godot_v4.7.2-stable_win64_console.exe --output C:\Users\admin\AppData\Local\Temp\bunny_battle_recovery_20260925_225850\cold_check --import-only
+[
+  {
+    "name": "cold_import",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_battle_recovery_20260925_225850\\cold_check\\project",
+      "--headless",
+      "--editor",
+      "--import"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "d56c6928bf2f00f6a1be84251e56d992306a7c0097437a63839782aeaaa01cf3"
+  }
+]
+Full 33/33 and graphical-route tests NOT RERUN; previous Phase 2B evidence remains historical. Character adapter/GLB/animation/deformation/visual acceptance NOT VERIFIED.
+
+
+=== Phase 3A isolated Presentation Spike: BLOCKED ===
+{
+  "decision": "BLOCKED",
+  "tests_passed": 32,
+  "tests_total": 33,
+  "source_hashes": "34 assets + 34 metas unchanged",
+  "runtime_override": "isolated copy, exactly one preload path",
+  "glb_sha256": "32e030e3aa4dea44f699bd7ce260a87c6ea9d5f4c0ea4c5eaedd6e823a335e0f",
+  "grip_acceptance": "FAIL, see grip_acceptance.log; supersedes measurement-only presentation_probe PASS",
+  "live_project_changed": false,
+  "commercial_release": "NOT CLEARED",
+  "validation_directory": "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a_validation_20260925_235352"
+}
+Full final logs, initial failures and production-camera PNGs: art_source/unitychan_battle_derivative/evidence/
+GLB rebuild byte-identical to tested snapshot. All 34 source + 34 meta SHA256 values match. Live player script unchanged; isolated override proved equal to exactly one preload-path substitution.
+Final probe strict grip acceptance exits 1 (Rocket left ~0.120m); supersedes earlier measurement-only PASS. All tests 32/33; smoke old Face assertion FAIL. Route 60 shots / 3 damage / 0 kills / early extraction PASS, not full mission. No default replacement or commercial clearance.

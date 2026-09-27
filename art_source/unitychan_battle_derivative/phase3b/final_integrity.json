@@ -1,0 +1,65 @@
+{
+  "head": "ec5f18dbe81164f43c1613a8ab678f4e3c51bed9",
+  "branch": "main",
+  "official_hashes_checked": 68,
+  "official_unchanged": true,
+  "source_snapshot_changes": [],
+  "production_diff": "",
+  "tests": {
+    "pass": 32,
+    "total": 33,
+    "failures": [
+      {
+        "name": "acceptance_smoke",
+        "errors": [
+          "ERROR: ACCEPTANCE_SMOKE: avatar keeps its complete authored face mesh"
+        ]
+      }
+    ]
+  },
+  "main": {
+    "name": "main",
+    "exit": 0,
+    "errors": [],
+    "warnings": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ],
+    "pass": true,
+    "command": [
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase3a3_20260926_010759\\project",
+      "--headless",
+      "--quit-after",
+      "180"
+    ]
+  },
+  "master_metadata_edit": {
+    "before_sha256": "f3298e5a4ce7314b991fef9933f2330f51887ed7b59c7c1fa156e80621d0327b",
+    "after_sha256": "56d6d7b75940ebf80b79de0af123ff2440eaf3832ca75254d30351d96304fa44",
+    "before_geometry_rig_actions": "5b634b02c3fe19b70323717e204bd7d46a65b6f8b593c6de308d11cb1364bf38",
+    "after_geometry_rig_actions": "5b634b02c3fe19b70323717e204bd7d46a65b6f8b593c6de308d11cb1364bf38",
+    "fingerprint_match": true,
+    "change": "three materials custom presentation properties only; no PBR nodes, mesh, skin, bones or pose changes",
+    "glb": "unchanged, shader applied at presentation boundary"
+  },
+  "glb_unchanged": true,
+  "material_profile": {
+    "Battle_face3_main": {
+      "direct_response_gain": 0.2,
+      "diffuse_shadow_floor": 0.25
+    },
+    "Battle_Unity2016_C_Skin": {
+      "direct_response_gain": 0.2,
+      "diffuse_shadow_floor": 0.25
+    },
+    "Battle_Unity2016_C_Hair_Spow": {
+      "direct_response_gain": 0.2,
+      "diffuse_shadow_floor": 0.25
+    }
+  },
+  "mount_profile": {
+    "Chest": 180.0,
+    "Backpack": 180.0
+  }
+}

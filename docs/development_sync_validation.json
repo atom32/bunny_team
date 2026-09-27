@@ -1,0 +1,309 @@
+{
+  "date": "2026-09-27",
+  "runtime_base_commit": "bc4984b98a5d9bad0e5cd0fc5e05005ed0ae8619",
+  "tested_index_tree_before_documenting_results": "721ef59103c2bb185f026173394260089b902780",
+  "method": "git checkout-index --all into a new external folder; no untracked WIP or .godot cache copied; isolated APPDATA and LOCALAPPDATA; Godot 4.7.2",
+  "result": "PASS",
+  "cold_import": {
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0
+  },
+  "existing_test_scenes": 33,
+  "tests_passed": 33,
+  "main": {
+    "exit": 0,
+    "errors": 0,
+    "warnings": 0
+  },
+  "official_sources_byte_identical_after_index_export": "68/68",
+  "production_scripts_scenes_tests_modified": false,
+  "production_character_modified": false,
+  "geometry_rig_actions_master_fingerprint_unchanged": true,
+  "master_change": "Retained historical material/equipment metadata; four image paths corrected to sibling-relative official PNGs only",
+  "excluded_local_WIP_changed": false,
+  "screenshots_videos_profiles_trial_scripts_added": false,
+  "note": "New verification is cold import + all 33 existing test scenes + main, not a new graphical/manual or cross-process save/load claim. Phase 5 route/save evidence is retained separately. Official source whitespace is preserved, not reformatted.",
+  "runs": [
+    {
+      "name": "cold_import",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "c88a55e7f4f83edcfbdf0be26e68bf6678442f69c1a945b4fc47ca0d62b44c7e"
+    },
+    {
+      "name": "acceptance_smoke",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "cf3047efc21b325e1ae79c3d27e26e2d6108bd4381b208ac13808d59918184c6"
+    },
+    {
+      "name": "ammo_carried_foundation_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "e0c468147849e2f7ef13af6dd50a58c4c766b99059cf6c8b6c7db488f3d90ef9"
+    },
+    {
+      "name": "ammo_runtime_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "74dae0be1ebd9517457ba821fffdafe661e253c18047c6474b2ed7f539493df2"
+    },
+    {
+      "name": "area_definition_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "4f00c94e60d99bcd72cbc9a4376274ee86cb1749878568f225f47cc96052dee1"
+    },
+    {
+      "name": "carried_inventory_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "0f74e789f004d5ed185a8fd7515dceb1b48a01ecf2fd8e5c8c3b9137c3b7b1d0"
+    },
+    {
+      "name": "combat_tuning_baseline_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "12bde974deb5a0f0e90ec475930b7387378585c252e37635fffade87ec504c74"
+    },
+    {
+      "name": "content_inventory_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "929ebe56f5e5e5e51a2f9f62365d09d4c4dc987ff04084a40b0bf661b7edd7ce"
+    },
+    {
+      "name": "damage_packet_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "473435ab83d7e7914f9920b4685603007d17cfa99cb94991ab45967afa642458"
+    },
+    {
+      "name": "destructible_world_object_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "a92098b524931bb4f7c94af98d7aef1d84a434ba1c28ce2448e315b8c07ca92f"
+    },
+    {
+      "name": "enemy_definition_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "fad7f3e0d94ffe98dbfb6eb25a57f8a14a3305fb3a767f7fc0031324a84e1e5b"
+    },
+    {
+      "name": "enemy_spawn_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "182181d5c6838192b7fe54537355585808ec531c18c92b12991269030ffbaf60"
+    },
+    {
+      "name": "extraction_vertical_slice_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "b42ad1ec4d83142c8034577171bd36eb8f9ebeb29ee794637062e64adcf6dca6"
+    },
+    {
+      "name": "loadout_decision_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "4b06f9599762178a516d91e68adbcabaf69bc41d2b9ba4dcf54f3993e90ce3b3"
+    },
+    {
+      "name": "loadout_state_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "a01c3d9801d46522fa8ab49b0b9c01f39b91923f1346b7269d6275284c7cbac7"
+    },
+    {
+      "name": "loot_table_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "cb8b95eee494560b0090fd3e2101570ddb9cc0bbd939359cf3c461dfc410a3dd"
+    },
+    {
+      "name": "mission_flow_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "d8810c81df93dcc0cd8b2323616056fa1aa2cbf0618ee65c10b62a0051ceb984"
+    },
+    {
+      "name": "mission_objective_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "996830f87e4162bf5d1676d79e8c4ba58cab010d0f25d9f4b813f95220aaee55"
+    },
+    {
+      "name": "objective_world_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "f669bc89fc2a304be3f572f901dbbedbd6446f40107ce4a5b01149b14e9704c7"
+    },
+    {
+      "name": "presentation_gameplay_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "ae73643e9a4fe8ad17c70a8bb142d225944cd59d9506bfa7ab836e039c8d2cd6"
+    },
+    {
+      "name": "profile_state_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "33f0ea9d822ed2036eedec3dc08c57a3cff32a01abca14e7162e4928d404eb19"
+    },
+    {
+      "name": "result_return_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "9985118cd4cbd5cb1f239a038576b027c3c7391fc26cbf4267e4a133d12f8e66"
+    },
+    {
+      "name": "save_service_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "24d5b9bac3fac687a7cc964cc5e285070adfa0744e18230f1ebe2c89377be51d"
+    },
+    {
+      "name": "sortie_failure_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "c1817d555972e58a67c66a37fefebfcf3db4b22f511a1c6e256f6bac42523614"
+    },
+    {
+      "name": "sortie_outcome_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "f2ccb0bcac153ce02a91b1a095631f37f546a5b1747a8b85429ead2795ec4ccf"
+    },
+    {
+      "name": "sortie_session_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "df5a421250cbe693d64d5e60e2b1a871774b450656eb57e876103e110d2c64b4"
+    },
+    {
+      "name": "threat_escalation_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "57f31d59f83f742bbb6fdba28e3c974e0755c6d22b20160be8d5adacc3673e2d"
+    },
+    {
+      "name": "visual_combat_acceptance",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "9f6b93e11ebbf4e8c6e9d832f41652299ac2e97550593ad6e1a8ef0cd6ce2704"
+    },
+    {
+      "name": "visual_enemy_acceptance",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "5682059b30245191e06771f4a151fa636776744662b84be926f57a2b184e7c5b"
+    },
+    {
+      "name": "visual_slice_assets_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "3b1df4d1c790620a6b0d8b41cf1afdeb7869005edc0344c1b76e597d881760a8"
+    },
+    {
+      "name": "weapon_behavior_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "264f3cfaaf3d2b6b4d5eebf057246896cda1fb1e8b171c739b191441f58308dc"
+    },
+    {
+      "name": "weapon_switching_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "d361035a78a2eef17eb8ea503a07e0dd2f18e8269360a367aa10df65977b8d60"
+    },
+    {
+      "name": "world_interaction_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "91c770f650f8c253f1a0e0b8233b5524d582f7395ffe0f00a0f420cfebe9c8f7"
+    },
+    {
+      "name": "world_traversal_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "8264c29f377b92f3150d3a714b06fb9db370a7d7ce63951334525146ec9ee739"
+    },
+    {
+      "name": "main",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "83cf0b082206af2aa236c83064fbcfa76be1e00a4aa3558574b2f65965d9481c"
+    }
+  ]
+}

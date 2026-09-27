@@ -1,0 +1,117 @@
+{
+  "decision": "Demo Presentation Candidate \u2014 PASS",
+  "requirements": [
+    {
+      "requirement": "1 Objective",
+      "status": "VERIFIED",
+      "evidence": "Final paired Hanger/Office images and equipment front/back/side: visually credible internal Demo candidate, not production replacement."
+    },
+    {
+      "requirement": "2 Hard boundaries",
+      "status": "VERIFIED",
+      "evidence": "final_integrity.json: all snapshot files unchanged, scripts/scenes/tests diff empty; mesh/skin/rest/action fingerprint unchanged."
+    },
+    {
+      "requirement": "3 Source separation",
+      "status": "VERIFIED",
+      "evidence": "68 official asset/meta hashes unchanged; derivative master metadata and external Godot presentation material only."
+    },
+    {
+      "requirement": "4 Priority order",
+      "status": "VERIFIED",
+      "evidence": "MATERIAL_LOG.md chronological standard material trials, response correction, then equipment/Hanger/Office."
+    },
+    {
+      "requirement": "5 Face",
+      "status": "VERIFIED",
+      "evidence": "materials_before.json, rejected gray albedo trial, integrated source-color-preserving response; hanger_after_detail / equipment_after front face reviewed."
+    },
+    {
+      "requirement": "6 Hair",
+      "status": "VERIFIED",
+      "evidence": "No hair base texture added; existing base color retained; highlight blocks recovered in Hanger and Office diagnostic pairs."
+    },
+    {
+      "requirement": "7 Methodology",
+      "status": "VERIFIED",
+      "evidence": "MATERIAL_LOG.md plus same-state material_trials; one-variable tests before combined accepted candidate."
+    },
+    {
+      "requirement": "8 Character",
+      "status": "VERIFIED",
+      "evidence": "equipment_after front/back/side and hanger_after: restored silhouette, source costume intact, unchanged scale."
+    },
+    {
+      "requirement": "9 Equipment",
+      "status": "VERIFIED",
+      "evidence": "Backpack/Chest local-frame reversal diagnosed; two presentation frame corrections only; no geometry or collision changes."
+    },
+    {
+      "requirement": "10 Hanger",
+      "status": "VERIFIED",
+      "evidence": "final_comparison/hanger_pair.json and PNGs: production camera fov39 retained; before/after frozen pose."
+    },
+    {
+      "requirement": "11 Field Office",
+      "status": "VERIFIED",
+      "evidence": "final_comparison/office_pair.json and PNGs; route_Rifle, route_SMG solo and final route all Terminal/extraction/Result checks true."
+    },
+    {
+      "requirement": "12 Lighting",
+      "status": "VERIFIED",
+      "evidence": "No scene/light/exposure edits, no emission or camera-dependent shader term; original ambient and shadows retained."
+    },
+    {
+      "requirement": "13 Anime target",
+      "status": "VERIFIED",
+      "evidence": "Eyes/face and warm hair color visible, broad shaded blocks rather than gloss; no whole-game recolor."
+    },
+    {
+      "requirement": "14 Weapon policy",
+      "status": "VERIFIED",
+      "evidence": "No weapon mesh/definition/pose changes; switching/fire/reload results in route reports; runtime_poses.json from unchanged Phase3A3."
+    },
+    {
+      "requirement": "15 Animation policy",
+      "status": "VERIFIED",
+      "evidence": "No animation authoring or state transition edits; fingerprint unchanged; accepted late-source Rocket Dodge limitation retained."
+    },
+    {
+      "requirement": "16 Comparisons",
+      "status": "VERIFIED",
+      "evidence": "final_comparison contains matched production before/after Hanger full/detail and Office full body; static-transform assertions exit0."
+    },
+    {
+      "requirement": "17 Performance",
+      "status": "VERIFIED",
+      "evidence": "performance.json: triangles/bones/materials/textures + estimates + 3s-warmed whole-Hanger CPU/wall/draw/memory data."
+    },
+    {
+      "requirement": "18 Tests",
+      "status": "VERIFIED",
+      "evidence": "regression/results.json: 32/33 unchanged tests; only legacy Face assertion, Main exit0; required suites PASS."
+    },
+    {
+      "requirement": "19 Git hygiene",
+      "status": "VERIFIED",
+      "evidence": "import_config.diff inspected: feature4.7, mesh-dedup/default import flags, VRAM texture/normal/roughness detection; all preexisting WIP preserved, no outside source snapshot changes."
+    },
+    {
+      "requirement": "20 No production replacement",
+      "status": "VERIFIED",
+      "evidence": "Production preload/script hash unchanged, derivative .gdignore remains; candidate only."
+    },
+    {
+      "requirement": "21 Acceptance",
+      "status": "VERIFIED",
+      "evidence": "Reviewed final renders + invariants + tests; no new major visual failure; minor accepted hand/hair contact limitations remain."
+    },
+    {
+      "requirement": "22 Report",
+      "status": "VERIFIED",
+      "evidence": "README current top Phase3B section, evidence links, metrics, Git and known limitations."
+    }
+  ],
+  "production_ready": false,
+  "commit_push": "Not requested by Phase3B objective; not performed"
+}

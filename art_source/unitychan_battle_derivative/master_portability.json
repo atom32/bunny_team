@@ -1,0 +1,35 @@
+{
+  "before_master_sha256": "56d6d7b75940ebf80b79de0af123ff2440eaf3832ca75254d30351d96304fa44",
+  "after_master_sha256": "bfafb7da60e08a8d7d64e87a9dce720061b46767b75ee8b6ac1e5d7adc524c80",
+  "before_geometry_rig_actions": "5b634b02c3fe19b70323717e204bd7d46a65b6f8b593c6de308d11cb1364bf38",
+  "after_geometry_rig_actions": "5b634b02c3fe19b70323717e204bd7d46a65b6f8b593c6de308d11cb1364bf38",
+  "changes": [
+    {
+      "image": "kohaku_A_Add.png",
+      "before": "//unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Add.png",
+      "after": "//../unitychan_battle_legacy/official_1_1/Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Add.png",
+      "source_sha256": "ca399f496b0a7da51e93cffa20c7c15e268b6428b690fc11b55f804f8ce06c1d"
+    },
+    {
+      "image": "kohaku_A_Body.png",
+      "before": "//unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_Body.png",
+      "after": "//../unitychan_battle_legacy/official_1_1/Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Body.png",
+      "source_sha256": "053d8ae690c38b16d644114062d60081cae152cfb4139595cd12b866bbd194f0"
+    },
+    {
+      "image": "kohaku_A_face3_main.png",
+      "before": "//unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_face3_main.png",
+      "after": "//../unitychan_battle_legacy/official_1_1/Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main.png",
+      "source_sha256": "4f632699611264b0b910f912afd6566b94276bd1bf9a1e8eb3e3bba695e085dc"
+    },
+    {
+      "image": "kohaku_A_skin.png",
+      "before": "//unitychan_battle_legacy\\official_1_1\\Assets\\UnityChanTPK\\Models\\01_kohaku_A\\Textures\\kohaku_A_skin.png",
+      "after": "//../unitychan_battle_legacy/official_1_1/Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_skin.png",
+      "source_sha256": "eca8fad786b26ad132e0065c493816ce40b58d1af2f08c251430d48696f081db"
+    }
+  ],
+  "geometry_changed": false,
+  "texture_pixels_changed": false,
+  "runtime_glb_changed": false
+}

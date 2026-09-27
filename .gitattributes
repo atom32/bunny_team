@@ -1,0 +1,2 @@
+# Preserve recovered official source bytes, including Unity text/meta files.
+/art_source/unitychan_battle_legacy/official_1_1/** -text

@@ -1,3 +1,158 @@
+# Unity-Chan Battle Costume — production presentation source
+
+> **Current checkpoint (2026-09-27):** Phase 5 `bc4984b`, Godot 4.7.2.
+> Player = production Unity-Chan (Phase 3D + Phase 4B fidelity); Enemy = native
+> KITE-07, no legacy humanoid dependency (Phase 4E). Phase 5 validation: 33/33,
+> two automated graphical routes 64/64 each, cross-process save/load PASS.
+> See `Handoff.md` and `docs/DEVELOPMENT_SETUP.md` for current setup/verification.
+> The reports below are **historical**, not instructions to repeat old gates or
+> replace current assets. Local screenshots, trial scripts and profile copies
+> referenced by historical reports may deliberately be absent from Git.
+
+## Portable master / proportion check — 2026-09-27
+
+`battle_master.blend` retains authored poses/material metadata. Four unpacked PNG
+references now use the correct sibling-relative `//../unitychan_battle_legacy/...`
+path; no pixels, mesh, bones, actions or runtime GLB changed. Geometry/rig/actions
+fingerprint before/after: `5b634b02c3fe19b70323717e204bd7d46a65b6f8b593c6de308d11cb1364bf38`.
+Evidence: `master_portability.json`; source-to-runtime leg measurements and method:
+`docs/CHARACTER_PROPORTION_CHECK.md`. Official source remains immutable.
+
+## Historical Phase 3B record
+
+### Phase 3B — Demo Presentation Candidate — PASS
+
+Current result (2026-09-26): **Unity-Chan Battle Costume is a Demo Presentation Candidate.**
+It is **not production-ready**, not installed as the production player, and not commercial
+release clearance. © Unity Technologies Japan / UCL; retained license/credit assets apply.
+This section records Phase 3B only; later 3D/4B production results supersede it.
+
+## Material correction
+
+Face/skin and hair now use a small derivative Godot material response, while retaining
+original base color, source textures and existing scene lighting. Standard specular removal
+and built-in toon mode alone did not resolve clipping; direct albedo darkening was rejected
+because Field Office shadows became gray/dark. `phase3b/MATERIAL_LOG.md` records the trials.
+
+Accepted response: bounded per-light diffuse irradiance, gain **0.2**, broad smooth normal
+ramp with floor **0.25**, ambient/shadow attenuation preserved, specular disabled. No emission,
+new lights, exposure changes, camera-dependent effects, fake hair albedo or UTS shade/grade
+maps mislabeled as ORM. Three pale materials use this response; two costume materials remain
+StandardMaterial3D. This is a limited anime-compatible approximation, not a Unity UTS port.
+
+Face: **PASS** — eyes/features and warm skin tones remain readable rather than a white patch;
+not flattened to gray or unshaded. Hair: **PASS** — blond color blocks/highlight detail recover
+in Hanger and Field Office. Costume white/cyan accents remain bright by design; no whole-game
+recolor or material polishing beyond the requested scope.
+
+Editable source: `battle_master.blend` has named material custom properties
+`godot_direct_response_gain`, `godot_diffuse_shadow_floor`, and shader reference. Run
+`phase3b/author_material_profile.py` with Blender 5.2.2 to export `material_profile.json`;
+existing authored values are preserved. Principled nodes remain the source-color fallback
+preview, **not** claimed to reproduce the Godot light shader. The GLB remains byte-identical
+geometry/base-material data; the isolated Presentation Adapter applies the runtime shader.
+
+## Equipment / Hanger / Field Office
+
+Equipment: **PASS**. The main occluder was the backpack in front of the chest: Unity-chan's
+torso-bone local X/Z oppose the old equipment frame. A one-time local Y 180° correction of
+**Chest and Backpack only** rotates their offsets and visual bases. Master custom property
+`GodotEquipmentFrameCorrection` exports to `mount_profile.json`. No mesh rebuild, rig edits,
+collision, weapon socket, IK target or gameplay semantics changed. Backpack is now behind
+the body and torso/arms are readable. Minor hair/pack contact remains acceptable.
+
+Hanger: **PASS**, original production camera/lighting/scale retained. Full body, face/hair,
+weapon and equipment reviewed; supplementary front/back/side images are explicitly diagnostic
+views, not a replacement production camera. Original shoulder costume and hip accessories
+remain attached. Empty optional equipment sockets were not arbitrarily moved.
+
+Field Office: **PASS automated graphics/API, not manual acceptance**. Existing scale/floor
+contact/silhouette preserved; Rifle+Rocket and SMG+Rocket normal-AI routes verify movement,
+Q switching, firing/reload, Terminal E objective completion, exit, extraction and Result.
+The final paired capture run also completed successfully. Extraction is successful while
+other mission objectives may remain incomplete; this is not a full-mission-clear claim.
+Top-down face details are naturally small; close diagnostics supplement material inspection,
+not evidence of a changed production camera.
+
+## Matched visual evidence
+
+Frozen same pose, environment, weapon and production camera; no exposure changes. Probe
+asserts unchanged camera/player/body transforms and restores candidate before normal play.
+
+| View | Before | After |
+|---|---|---|
+| Hanger full body | [Before](phase3b/final_comparison/hanger_before.png) | [After](phase3b/final_comparison/hanger_after.png) |
+| Hanger face/hair crop | [Before](phase3b/final_comparison/hanger_before_detail.png) | [After](phase3b/final_comparison/hanger_after_detail.png) |
+| Field Office | [Before](phase3b/final_comparison/office_before.png) | [After](phase3b/final_comparison/office_after.png) |
+
+Material-only diagnostic close views: `phase3b/office_material_trials/office_diagnostic_before.png`
+and `office_diagnostic_soft_response.png`. Equipment-only pairs: `equipment_before/` and
+`equipment_after/` front/back/side. `final_comparison/*_pair.json` records camera/pose data.
+
+## Performance (recorded, not optimized)
+
+- Character: **37,359 triangles / 328 bones / 5 materials / 4 base textures**, unchanged.
+- Textures: three 2048² + one 1024²; RGBA8 with full mips estimate **69.33 MiB**. This is not
+  a measured character-only allocation and compression may differ.
+- Whole Hanger, production 1280×720, RTX 5090, OpenGL Compatibility: **227 median draw calls**,
+  129,245 median rendered primitives (includes scene/shadow passes, not character polygon count).
+- Three-second warm-up then three-second sampling: **1.06 ms median wall-frame interval**;
+  CPU process monitor median **1.704 ms**. These are different measurements, **not GPU timing**,
+  target-device performance guarantees or a measured before/after speedup.
+- Whole-Hanger renderer accounting: textures ~79.57 MiB; video memory ~98.31 MiB.
+  `phase3b/performance.json` and raw samples retain scope and ranges. Earlier short-sample
+  startup CPU value is superseded, not used as steady-state performance.
+
+## Regression / integrity
+
+**32/33** unchanged tests. Sole failure: `ACCEPTANCE_SMOKE: avatar keeps its complete authored
+face mesh` (legacy Face/name/size assertion). No fake Face node, dimension change or test edit.
+PRESENTATION_GAMEPLAY, VISUAL_SLICE_ASSETS, WORLD_TRAVERSAL, weapon switching and RESULT_RETURN
+PASS; main headless exit **0**. Known ObjectDB exit warnings remain; not warning-free.
+
+Initial fresh isolated cold import: 0 errors / 0 warnings. Final shader/adapter loads compile
+and relevant tests complete without new errors. Initial SMG graphical route timed out during
+a concurrent-window probe; original failure kept in `route_SMG_initial_timeout/`. A solo
+fresh-profile replay passed without changing route/gameplay code. Focus interference is
+consistent with the evidence, not conclusively proven; graphical acceptance now runs serially.
+
+`phase3b/final_integrity.json`: **68/68 official asset/meta hashes unchanged**, all outside-
+derivative snapshot files unchanged, scripts/scenes/tests diff empty. Master metadata-only
+save/reload preserves geometry, weights, rest skeleton, posed matrices and animation channel
+fingerprint. GLB unchanged. No weapon pose reauthoring, bone rename/rebind or state-machine edit.
+Gameplay unchanged. Production player unchanged. Official Unity-Chan source unchanged.
+Tests not weakened. No fake legacy nodes. No production replacement.
+
+## Git / files / limits
+
+HEAD remains **main @ ec5f18dbe81164f43c1613a8ab678f4e3c51bed9**. Phase3B changes are only:
+- `battle_master.blend`: presentation metadata (materials and two equipment frames).
+- `phase3b/`: shader/profile/adapter, authoring and isolated probes, logs/screenshots/audits.
+- This README.
+
+Existing importer/migration/user WIP outside derivative is preserved, not reverted or
+included. Inspected `project.godot` diff only changes feature level 4.6→4.7. Existing import
+diffs include mesh dedup/default importer fields and VRAM/normal/roughness detection settings;
+these are meaningful source settings, not discarded cache. `phase3b/import_config.diff`
+retains evidence. No new importer/project edits by Phase3B. `.godot` remains generated cache.
+No Phase3B commit/push performed (not requested in this objective). This is not a clean-clone
+migration checkpoint; isolated reproduction still requires the previously documented WIP
+migration/source recovery dependencies.
+
+Known accepted issues: imperfect static grips, minor hand/finger/clothing contact, some
+bright costume accents, bulky existing gear, and late full-source Rocket Dodge deformation
+outside the currently reached gameplay interval. No animation polish or Terminal work.
+Next phase may separately decide production promotion; this phase stops at Demo candidate.
+
+Reproduction on this workstation: run `phase3b/stage.py`, then `phase3b/stage_adapter.py`;
+run `run_regression.py`, `run_routes.py`, and `run_final_captures.py` sequentially. Do not run
+multiple graphical probes concurrently. Keep official recovery and the derivative License
+folder intact. `phase3b/completion_audit.json` maps every Phase3B requirement to evidence.
+
+---
+
+# Historical phase reports
+
 # Phase 3A.3 — Final integration validation (2026-09-26)
 
 **Presentation spike: PASS / USABLE for the internal Demo.** Not a production-player
@@ -711,6 +866,137 @@ Only derivative probe/evidence/report files changed in this continuation. Gamepl
 production player, official source and existing tests were not edited. No fake nodes,
 production replacement, commit or push. Final 24-row classification / integrity audit and
 scoped publishing remain pending; the goal is not yet marked complete.
+
+
+## Phase 3B started — material diagnosis only
+
+See `phase3b/MATERIAL_LOG.md`. Fresh isolated import 0 errors / 0 warnings; original
+source and production unchanged. Same-camera single-variable material trials captured.
+Specular removal alone did not resolve pale diffuse clipping. Face/hair albedo response
+candidates remain **NOT ACCEPTED** pending Field Office/color review; no master/GLB edits
+or equipment changes yet. Phase 3B is active, not complete.
+
+
+### Phase 3B integration checkpoint (not final acceptance)
+
+Material response and Chest/Backpack frame correction are now authored in derivative
+master metadata and consumed by the isolated adapter. Mesh/skin/rig/action fingerprint
+unchanged. See phase3b/MATERIAL_LOG.md and before/after equipment evidence. Regression
+32/33 (known Face), main exit 0; Rifle route passes. Solo SMG replay, final matched
+comparisons and warmed performance sampling remain pending. Production remains untouched.
+
+
+## Phase 3C — Production Replacement Readiness
+
+**Phase 3C — PASS / Production Replacement Ready (technical migration gate).**
+
+The existing Player actor can use Unity-chan through the isolated presentation selector
+without changing gameplay semantics. This is NOT a permanent production replacement,
+commercial license clearance, or a claim of polished final animation quality. Phase3B
+remains **Demo Candidate PASS**. Full-game public-release authorization remains **BLOCKED**
+because the unchanged enemy still uses AvatarSample_A. No assets sent to AI.
+
+### 1. Legacy dependency inventory
+
+`phase3c/DEPENDENCY_INVENTORY.md` classifies A gameplay, B presentation, C legacy tests,
+D accidental visual coupling; `semantic_search.json` preserves discovery file/line evidence.
+Generic world queries and item-tag matches are not old-character dependencies. Supplementary
+bounds, groups and metadata search found no serialized avatar identity. Enemy Face/Hair
+palette special cases exist and remain untouched; do not confuse them with player gameplay.
+
+### 2. Face assertion
+
+Exact assertion: acceptance_smoke.gd:142–143, Face MeshInstance3D with local mesh AABB y>.2.
+It protects legacy facial geometry, not actor collision or identity. Left unchanged; no fake
+Face nodes. Recommend a separately reviewed per-asset integrity fixture plus semantic
+presentation contract, not deleting the check. Gameplay risk low; losing visual test
+coverage would be medium risk. Details in READINESS_AUDIT.md.
+
+### 3. Skeleton
+
+Character1_* humanoid names already match the shared animation/IK source. Old J_Bip alias
+compatibility stays in the original visual builder, with no rebind/rest-pose edits. Semantic
+Chest/ShoulderL/R/Backpack/HipL/R/HandL/R and CombatAvatarModel/CharacterRetarget remain real
+interfaces. Phase3B Chest/Backpack frame correction and authored hands stay in the adapter.
+
+### 4. Animation
+
+Existing hidden animation source, track retargeting, AnimationTree and locomotion/upper-body
+states remain unchanged. Actual input-driven Dodge passes both new graphical routes;
+regression and paired contract probes cover inherited reload/recoil behavior. Prior accepted
+Phase3A3/3B animation limitations are not upgraded into production-polish claims. No new clips,
+state transitions or per-frame gameplay offsets were introduced.
+
+### 5. Weapons
+
+AR/SMG/Rocket tested. `contract/comparison.json`: 270 deterministic samples over idle,
+recoil, reload and Dodge weight; legacy vs Unity-chan actual gameplay shot origins/directions
+have **0 delta**, has_weapon/reloading/state flags exactly equal. Rifle authored origin equals
+base origin; socket SMG/Rocket preserve has_weapon=false and original actor-based shot path.
+This mixed gameplay/presentation muzzle dependency must remain guarded in future edits.
+Weapon definitions, ammo, damage, fire rate, reload timing and switching are untouched.
+
+### 6. Hanger
+
+Same scenes/player/player.tscn preview host, fixed camera/platform and UI. Factory only selects
+visual scene/adapter in copied Player script. Start and returned Hanger screenshots show the
+selected model and real equipment. No Hanger scene or gameplay architecture edits.
+
+### 7. Field Office
+
+Same Battle Player/session traverses existing door/interior/Terminal and original extraction
+route. Camera, capsule, interaction radius and collision unchanged. Real OpenGL 1280x720
+captures in phase3c/route_Rifle and route_SMG. No new area or Terminal asset production.
+
+### 8. Save/load
+
+Schema1 contains inventory/loadout, not Person ID, avatar path, independent progression or
+currency fields. No invented identity schema. Legacy process writes a normal save; Unity-chan
+process loads it, runs sortie, returns through production Result UI signal, commits/saves;
+another process reloads and matches full data. `identity_verification.json` independently
+reconstructs warehouse = uncarried + recovered items and validates owned IDs/loadout/schema.
+Ammo legitimately decreases. Scene changes recreate preview Nodes; logical profile/session
+identity—not process-local Node ID across restarts—is the correct invariant.
+
+### 9. Isolated switch result
+
+`phase3c/stage.py` creates an external fresh snapshot. `presentation_switch.gd` defaults to
+legacy; BUNNY_PRESENTATION=unitychan opts in. Exactly two expressions in copied PlayerController
+change: character scene instantiation and rig constructor. No gameplay scripts inside GLB.
+Fresh import exit0, 0 ERROR/0 WARNING. Default legacy33/33; opt-in32/33 (Face only); MAIN0 both.
+Existing tests byte-for-byte unchanged. Known ObjectDB exit warnings remain in regression
+logs; not claimed warning-free. Original production player/asset stay recoverable.
+
+### 10. Full route
+
+Both Rifle/Rocket and SMG/Rocket routes pass all32 checks: existing save → Hanger → deploy →
+Office door/interior → Terminal COMPLETE → movement/switch/fire/reload → actual Dodge → exit →
+extraction → Result → Hanger. Normal AI/collision/health, no teleport or invulnerability.
+Rifle route60 shots/15 damage; SMG103 shots/18 damage. Both extracted without completing all
+mission objectives (0 enemies defeated); do not claim full mission completion. Automated
+input/API graphical acceptance, NOT manual keyboard acceptance. Post-result restart PASS.
+
+### 11. Remaining blockers / boundaries
+
+No blocking dependency found for this player-only technical migration. Public shooting-demo
+release remains BLOCKED by unchanged enemy AvatarSample_A license; Unity-chan personal-demo
+UCL provenance/credit obligations also remain. Legacy Face assertion still fails32/33 as
+explicitly allowed by this phase. Imported/source migration WIP is not a clean-clone committed
+checkpoint. Known accepted visual rough edges remain. Do not silently replace enemy or tests.
+
+### 12. Recommended next step and Git
+
+Review this readiness result, then separately authorize a narrow production-player switch
+and an explicit test-contract migration. Do not combine with Terminal, enemy or other art.
+No replacement, commit or push performed in Phase3C.
+
+HEAD: main @ ec5f18dbe81164f43c1613a8ab678f4e3c51bed9.
+Working tree: pre-existing Phase3B/import/migration WIP retained. Phase3C changed this README
+and added phase3c scripts/reports/logs/screenshots only. Production character modified: NO;
+Gameplay modified: NO; official source modified: NO; experiment isolated: YES.
+`final_integrity.json`: source snapshot drift empty; all68 official hashes match; master,
+GLB and production character/script match Phase3C baseline; isolated Player is exactly the
+two substitutions. `completion_audit.json` covers objective sections1–21.
 
 ## Phase 3D — Production Player Presentation Switch
 

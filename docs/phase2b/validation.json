@@ -1,0 +1,429 @@
+{
+  "phase": "2B",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "head": "c4ca114e732ff8508370928dd5d16e04d838a6a0",
+  "route_standard": "User explicitly accepted automated graphics route in place of manual input; NOT manual",
+  "release": "BLOCKED — authorization unresolved",
+  "source_package": {
+    "package_sha256": "383723c5081b5d674ed9f95cb6518a3119a936ed98f9a52893898441d03a7dce",
+    "textures": [
+      {
+        "path": "Assets/UnityChan/Models/UnityChanShader/Texture/eyeline_00.tga",
+        "sha256": "0da601df8457c855af953ee76e414d38fde39fa6d12b1cf94019e0ea1fbd2d80",
+        "bytes": 1048620
+      },
+      {
+        "path": "Assets/UnityChan/Models/UnityChanShader/Texture/FO_SKIN1.tga",
+        "sha256": "3cf5fa4a636c2b60f4100c83ebd9d9f63fd632d8d2796a9db4079227bd7b3223",
+        "bytes": 2092
+      },
+      {
+        "path": "Assets/UnityChan/Models/UnityChanShader/Texture/eye_iris_R_00.tga",
+        "sha256": "75c924ac7328f5e1b4b919d90046b4451d21b82215a937f711c896323bff7394",
+        "bytes": 1048620
+      },
+      {
+        "path": "Assets/UnityChan/Models/UnityChanShader/Texture/eye_iris_L_00.tga",
+        "sha256": "ca54d4aafc2c5f43179d4dc3c5e10e8ae806264fb90e1b2d76eb5d67de12ebc8",
+        "bytes": 1048620
+      },
+      {
+        "path": "Assets/UnityChan/Models/UnityChanShader/Texture/face_00.tga",
+        "sha256": "a7ca18718ddb6404a7ddcd717593b70d248285511a6dc38670342f54e1e6957f",
+        "bytes": 12582956
+      }
+    ],
+    "fbx_matches": [
+      {
+        "local": "walk.fbx",
+        "package_path": "Assets/UnityChan/Animations/unitychan_WALK00_F.fbx",
+        "sha256": "dbf92f068e0bfb297a6701c549db09de3a1585d734acd463351dc1dd004c8019"
+      },
+      {
+        "local": "win.fbx",
+        "package_path": "Assets/UnityChan/Animations/unitychan_WIN00.fbx",
+        "sha256": "a15ee14d2b3367fe3f33ed86a36f3697ac246447a38a947fa2725977715be34f"
+      },
+      {
+        "local": "slide.fbx",
+        "package_path": "Assets/UnityChan/Animations/unitychan_SLIDE00.fbx",
+        "sha256": "5378709ff2ebe310e869e59b93caa6fba50113abc8ed0167d5e6a64dd8c5ec5f"
+      },
+      {
+        "local": "damaged.fbx",
+        "package_path": "Assets/UnityChan/Animations/unitychan_DAMAGED00.fbx",
+        "sha256": "3367a12a066afc49f36e3d89c4e392097fe739509c11656ba91d31d2b3ddc945"
+      },
+      {
+        "local": "run.fbx",
+        "package_path": "Assets/UnityChan/Animations/unitychan_RUN00_F.fbx",
+        "sha256": "6e53c7040e41d4e51a952f398a42e17145ca6ed614940043a528929060577add"
+      },
+      {
+        "local": "idle.fbx",
+        "package_path": "Assets/UnityChan/Animations/unitychan_WAIT00.fbx",
+        "sha256": "5e37bfe66cded7236b27aa8418ee149b62526ddfdd01b0530fafe94f902f4b7d"
+      }
+    ]
+  },
+  "signatures_before": {
+    "res://assets/characters/unitychan_battle/animations/idle.fbx": {
+      "entries": 2,
+      "sha256": "9243c181bd84eda1874631d9032b0ed1db880dc9fa6fd2ebf3259de34c2c47c1"
+    },
+    "res://assets/characters/unitychan_battle/animations/run.fbx": {
+      "entries": 2,
+      "sha256": "4f8e00549ad3ae51f25ca54fc97be6886ad752778e08a310df40fe3eebcd87ee"
+    },
+    "res://assets/characters/unitychan_battle/animations/slide.fbx": {
+      "entries": 2,
+      "sha256": "4af1c1ae29847e0469066da6e34233e66407d3000a45f17bd214ebc9a905d57a"
+    },
+    "res://assets/characters/unitychan_battle/animations/walk.fbx": {
+      "entries": 2,
+      "sha256": "0a1ff4fbd44e71b32d7ee6ef45d86f7611193ae1e404705bf0d5c347ab4d4e0a"
+    },
+    "res://assets/characters/vrm_avatar/avatar_sample_a.glb": {
+      "entries": 4,
+      "sha256": "e1cf87052188d7b46687a153a073e4585863c2bd7f75b4822ac2a4e16a99cf24"
+    }
+  },
+  "signatures_after": {
+    "res://assets/characters/unitychan_battle/animations/idle.fbx": {
+      "entries": 2,
+      "sha256": "9243c181bd84eda1874631d9032b0ed1db880dc9fa6fd2ebf3259de34c2c47c1"
+    },
+    "res://assets/characters/unitychan_battle/animations/run.fbx": {
+      "entries": 2,
+      "sha256": "4f8e00549ad3ae51f25ca54fc97be6886ad752778e08a310df40fe3eebcd87ee"
+    },
+    "res://assets/characters/unitychan_battle/animations/slide.fbx": {
+      "entries": 2,
+      "sha256": "4af1c1ae29847e0469066da6e34233e66407d3000a45f17bd214ebc9a905d57a"
+    },
+    "res://assets/characters/unitychan_battle/animations/walk.fbx": {
+      "entries": 2,
+      "sha256": "0a1ff4fbd44e71b32d7ee6ef45d86f7611193ae1e404705bf0d5c347ab4d4e0a"
+    },
+    "res://assets/characters/vrm_avatar/avatar_sample_a.glb": {
+      "entries": 4,
+      "sha256": "e1cf87052188d7b46687a153a073e4585863c2bd7f75b4822ac2a4e16a99cf24"
+    }
+  },
+  "regression": [
+    {
+      "name": "acceptance_smoke",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "cf3047efc21b325e1ae79c3d27e26e2d6108bd4381b208ac13808d59918184c6"
+    },
+    {
+      "name": "ammo_carried_foundation_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "e0c468147849e2f7ef13af6dd50a58c4c766b99059cf6c8b6c7db488f3d90ef9"
+    },
+    {
+      "name": "ammo_runtime_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "74dae0be1ebd9517457ba821fffdafe661e253c18047c6474b2ed7f539493df2"
+    },
+    {
+      "name": "area_definition_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "4f00c94e60d99bcd72cbc9a4376274ee86cb1749878568f225f47cc96052dee1"
+    },
+    {
+      "name": "carried_inventory_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "0f74e789f004d5ed185a8fd7515dceb1b48a01ecf2fd8e5c8c3b9137c3b7b1d0"
+    },
+    {
+      "name": "combat_tuning_baseline_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "12bde974deb5a0f0e90ec475930b7387378585c252e37635fffade87ec504c74"
+    },
+    {
+      "name": "content_inventory_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "929ebe56f5e5e5e51a2f9f62365d09d4c4dc987ff04084a40b0bf661b7edd7ce"
+    },
+    {
+      "name": "damage_packet_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "473435ab83d7e7914f9920b4685603007d17cfa99cb94991ab45967afa642458"
+    },
+    {
+      "name": "destructible_world_object_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "a92098b524931bb4f7c94af98d7aef1d84a434ba1c28ce2448e315b8c07ca92f"
+    },
+    {
+      "name": "enemy_definition_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "fad7f3e0d94ffe98dbfb6eb25a57f8a14a3305fb3a767f7fc0031324a84e1e5b"
+    },
+    {
+      "name": "enemy_spawn_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "182181d5c6838192b7fe54537355585808ec531c18c92b12991269030ffbaf60"
+    },
+    {
+      "name": "extraction_vertical_slice_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "b42ad1ec4d83142c8034577171bd36eb8f9ebeb29ee794637062e64adcf6dca6"
+    },
+    {
+      "name": "loadout_decision_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "4b06f9599762178a516d91e68adbcabaf69bc41d2b9ba4dcf54f3993e90ce3b3"
+    },
+    {
+      "name": "loadout_state_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "a01c3d9801d46522fa8ab49b0b9c01f39b91923f1346b7269d6275284c7cbac7"
+    },
+    {
+      "name": "loot_table_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "cb8b95eee494560b0090fd3e2101570ddb9cc0bbd939359cf3c461dfc410a3dd"
+    },
+    {
+      "name": "mission_flow_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "d8810c81df93dcc0cd8b2323616056fa1aa2cbf0618ee65c10b62a0051ceb984"
+    },
+    {
+      "name": "mission_objective_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "996830f87e4162bf5d1676d79e8c4ba58cab010d0f25d9f4b813f95220aaee55"
+    },
+    {
+      "name": "objective_world_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "f669bc89fc2a304be3f572f901dbbedbd6446f40107ce4a5b01149b14e9704c7"
+    },
+    {
+      "name": "presentation_gameplay_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "ae73643e9a4fe8ad17c70a8bb142d225944cd59d9506bfa7ab836e039c8d2cd6"
+    },
+    {
+      "name": "profile_state_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "33f0ea9d822ed2036eedec3dc08c57a3cff32a01abca14e7162e4928d404eb19"
+    },
+    {
+      "name": "result_return_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "9985118cd4cbd5cb1f239a038576b027c3c7391fc26cbf4267e4a133d12f8e66"
+    },
+    {
+      "name": "save_service_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "24d5b9bac3fac687a7cc964cc5e285070adfa0744e18230f1ebe2c89377be51d"
+    },
+    {
+      "name": "sortie_failure_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "c1817d555972e58a67c66a37fefebfcf3db4b22f511a1c6e256f6bac42523614"
+    },
+    {
+      "name": "sortie_outcome_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [
+        "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).\r"
+      ],
+      "pass": true,
+      "sha256": "8f52900944aad60d0476e6d74f8333f7d516db64672696ed410043df3c2e0487"
+    },
+    {
+      "name": "sortie_session_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "df5a421250cbe693d64d5e60e2b1a871774b450656eb57e876103e110d2c64b4"
+    },
+    {
+      "name": "threat_escalation_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "57f31d59f83f742bbb6fdba28e3c974e0755c6d22b20160be8d5adacc3673e2d"
+    },
+    {
+      "name": "visual_combat_acceptance",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "9f6b93e11ebbf4e8c6e9d832f41652299ac2e97550593ad6e1a8ef0cd6ce2704"
+    },
+    {
+      "name": "visual_enemy_acceptance",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "5682059b30245191e06771f4a151fa636776744662b84be926f57a2b184e7c5b"
+    },
+    {
+      "name": "visual_slice_assets_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "3b1df4d1c790620a6b0d8b41cf1afdeb7869005edc0344c1b76e597d881760a8"
+    },
+    {
+      "name": "weapon_behavior_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "264f3cfaaf3d2b6b4d5eebf057246896cda1fb1e8b171c739b191441f58308dc"
+    },
+    {
+      "name": "weapon_switching_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "d361035a78a2eef17eb8ea503a07e0dd2f18e8269360a367aa10df65977b8d60"
+    },
+    {
+      "name": "world_interaction_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "91c770f650f8c253f1a0e0b8233b5524d582f7395ffe0f00a0f420cfebe9c8f7"
+    },
+    {
+      "name": "world_traversal_test",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [],
+      "pass": true,
+      "sha256": "8264c29f377b92f3150d3a714b06fb9db370a7d7ce63951334525146ec9ee739"
+    },
+    {
+      "name": "main",
+      "exit": 0,
+      "errors": 0,
+      "warnings": [
+        "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).\r"
+      ],
+      "pass": true,
+      "sha256": "31402bba8d15a0f12f00af9e09d59443f98ce7d178bdbc81e6d9ecb5f1a965da"
+    }
+  ],
+  "captures": {
+    "01_hanger.png": "94846b254be565f7b71563df98be5c6b8935ad066f703986c6ad5d88a72f62b4",
+    "02_entrance.png": "96af95b41e3318f12e70684715557fe4cd0b5f0b47acfe02ab18347453b19cfc",
+    "03_inside.png": "eea4f1fdde36f7aa21585085f305b20e9a4000dffdbeaadfcf9df71723b1ac7f",
+    "04_terminal.png": "465c07493f155d68e6848ec1b061eb9d0844da23c73b36be47c77eac4ac3bc50",
+    "05_exit.png": "f725a3a7cf8025fe1c697c895a760e9b2049380c060bfca1808e8fb3ff19edb1",
+    "06_result.png": "e84d8177af64ed84443e14f01ea964ae24b9fff2c2344c6f0895f77430e32c83",
+    "first_attempt_path_failure.png": "15de4bd0efc83d8929f6a76115ace2041ae7c432ce48cf6dac76292804a600c6"
+  },
+  "scripts": {
+    "audit_migration_dependencies.py": "7e9b81057095b111b8b41a0f3fe3e00dcade143af37e4d06219bbac6f3c25d8f",
+    "verify_migration.py": "6e4759f4fa5237ad6f2cc8f2cfc54e5fecd55f8788aee865dbf742cd10adfc46",
+    "phase2b_route_probe.gd": "5a8549cf6e6033bbf5041656544288d7e76b38db2d1bf849e5400453b2804068"
+  },
+  "cold_import_final": [
+    {
+      "name": "cold_import",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_phase2b_20260925_214246\\final_working_snapshot\\project",
+        "--headless",
+        "--editor",
+        "--import"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "d56c6928bf2f00f6a1be84251e56d992306a7c0097437a63839782aeaaa01cf3"
+    }
+  ],
+  "avatar_local_mtime_utc": "2026-09-25T12:07:24.401957+00:00",
+  "mtime_limit": "Filesystem time is NOT download date or proof of author license version.",
+  "regression_checkout_runtime_identity": {
+    "compared_files": 150,
+    "differences": []
+  }
+}

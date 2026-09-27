@@ -1,0 +1,6335 @@
+{
+  "head": "c4ca114e732ff8508370928dd5d16e04d838a6a0",
+  "scope": "Static references plus raw FBX material graph; not proof of dynamic resource reachability",
+  "fbx": [
+    {
+      "file": "art_source/unitychan_battle_legacy/unitychan_battle.fbx",
+      "sha256": "146f9846b95ba57a726e74ba3da63dfac8774f34db85e46d09d01e5ac8bb4478",
+      "references": [],
+      "texture_video": [
+        {
+          "type": "Video",
+          "id_name": [
+            1470669376336,
+            "Unity2016_L_Body_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Body.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Body.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Body.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1469429211152,
+            "Unity2016_L_Face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/face3_main.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\face3_main.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\face3_main.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1469429214752,
+            "Unity2016_L_Skin_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Skin.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Skin.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Skin.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1469429212752,
+            "Unity2016_L_Add_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Add.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Add.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Add.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1469429209952,
+            "Unity2016_L_Wep_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_Wep.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_Wep.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_Wep.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1469429211552,
+            "Unity2016_L_Hair_tex4\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Hair_Spow.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Hair_Spow.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Hair_Spow.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1469429207152,
+            "Unity2016_L_FaceHL_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/face3_main.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\face3_main.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\face3_main.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1470414581776,
+            "Unity2016_L_Body_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "Unity2016_L_Body_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Body.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Body.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Body.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1470414584176,
+            "Unity2016_L_Face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "Unity2016_L_Face_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/face3_main.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\face3_main.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\face3_main.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1470414583696,
+            "Unity2016_L_Skin_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "Unity2016_L_Skin_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Skin.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Skin.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Skin.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1470522419072,
+            "Unity2016_L_Add_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "Unity2016_L_Add_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Add.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Add.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Add.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1470522419552,
+            "Unity2016_L_Wep_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "Unity2016_L_Wep_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_Wep.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_Wep.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_Wep.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1470522416192,
+            "Unity2016_L_Hair_tex4\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "Unity2016_L_Hair_tex4\u0000\u0001Video"
+            ],
+            "FileName": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/Unity2016_C_Hair_Spow.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Hair_Spow.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\Unity2016_C_Hair_Spow.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1470522418592,
+            "Unity2016_L_FaceHL_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "Unity2016_L_FaceHL_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "E:/Works/Unity/TPK_MayaScenes/Models/Character/01_Kohaku/Images/face3_main.psd"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\..\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\face3_main.psd"
+            ]
+          },
+          "resolved_from_original_location": "D:\\TPK_MayaScenes\\Models\\Character\\01_Kohaku\\Images\\face3_main.psd",
+          "exists": false,
+          "classification": "excluded legacy texture reference"
+        }
+      ],
+      "material_links": [
+        {
+          "link": [
+            "OP",
+            1470414581776,
+            1470414582736,
+            "DiffuseColor"
+          ],
+          "from": [
+            1470414581776,
+            "Unity2016_L_Body_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1470414582736,
+            "Unity2016_L_Body1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470669376336,
+            1470414581776
+          ],
+          "from": [
+            1470669376336,
+            "Unity2016_L_Body_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1470414581776,
+            "Unity2016_L_Body_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414582736,
+            1469341758208
+          ],
+          "from": [
+            1470414582736,
+            "Unity2016_L_Body1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469341758208,
+            "horn\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1470414584176,
+            1470414582256,
+            "DiffuseColor"
+          ],
+          "from": [
+            1470414584176,
+            "Unity2016_L_Face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1470414582256,
+            "Unity2016_L_Face1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1469429211152,
+            1470414584176
+          ],
+          "from": [
+            1469429211152,
+            "Unity2016_L_Face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1470414584176,
+            "Unity2016_L_Face_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414582256,
+            1469447180784
+          ],
+          "from": [
+            1470414582256,
+            "Unity2016_L_Face1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469447180784,
+            "eyeBall\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1470414583696,
+            1470414583216,
+            "DiffuseColor"
+          ],
+          "from": [
+            1470414583696,
+            "Unity2016_L_Skin_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1470414583216,
+            "Unity2016_L_Skin1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1469429214752,
+            1470414583696
+          ],
+          "from": [
+            1469429214752,
+            "Unity2016_L_Skin_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1470414583696,
+            "Unity2016_L_Skin_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414583216,
+            1469447171504
+          ],
+          "from": [
+            1470414583216,
+            "Unity2016_L_Skin1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469447171504,
+            "skin\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414582736,
+            1469447162224
+          ],
+          "from": [
+            1470414582736,
+            "Unity2016_L_Body1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469447162224,
+            "pants\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414583216,
+            1469447159904
+          ],
+          "from": [
+            1470414583216,
+            "Unity2016_L_Skin1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469447159904,
+            "legs\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414582736,
+            1469447178464
+          ],
+          "from": [
+            1470414582736,
+            "Unity2016_L_Body1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469447178464,
+            "shoes\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1470522419072,
+            1470522417152,
+            "DiffuseColor"
+          ],
+          "from": [
+            1470522419072,
+            "Unity2016_L_Add_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1470522417152,
+            "Unity2016_L_Add1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1469429212752,
+            1470522419072
+          ],
+          "from": [
+            1469429212752,
+            "Unity2016_L_Add_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1470522419072,
+            "Unity2016_L_Add_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470522417152,
+            1469447183104
+          ],
+          "from": [
+            1470522417152,
+            "Unity2016_L_Add1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469447183104,
+            "shoesExtend\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414582736,
+            1469447176144
+          ],
+          "from": [
+            1470414582736,
+            "Unity2016_L_Body1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469447176144,
+            "shirt\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414582736,
+            1470118675120
+          ],
+          "from": [
+            1470414582736,
+            "Unity2016_L_Body1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1470118675120,
+            "body\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414582736,
+            1470118702960
+          ],
+          "from": [
+            1470414582736,
+            "Unity2016_L_Body1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1470118702960,
+            "cuffs\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414582736,
+            1470118709920
+          ],
+          "from": [
+            1470414582736,
+            "Unity2016_L_Body1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1470118709920,
+            "scarf\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414582736,
+            1470118679760
+          ],
+          "from": [
+            1470414582736,
+            "Unity2016_L_Body1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1470118679760,
+            "collar\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470522417152,
+            1470118726160
+          ],
+          "from": [
+            1470522417152,
+            "Unity2016_L_Add1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1470118726160,
+            "armcover\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414582736,
+            1470118728480
+          ],
+          "from": [
+            1470414582736,
+            "Unity2016_L_Body1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1470118728480,
+            "wristband\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470522417152,
+            1470118730800
+          ],
+          "from": [
+            1470522417152,
+            "Unity2016_L_Add1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1470118730800,
+            "belt\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470522417152,
+            1470118733120
+          ],
+          "from": [
+            1470522417152,
+            "Unity2016_L_Add1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1470118733120,
+            "frill\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470522417152,
+            1469963262416
+          ],
+          "from": [
+            1470522417152,
+            "Unity2016_L_Add1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469963262416,
+            "mantle\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1470522419552,
+            1470522417632,
+            "DiffuseColor"
+          ],
+          "from": [
+            1470522419552,
+            "Unity2016_L_Wep_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1470522417632,
+            "Unity2016_L_Wep\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1469429209952,
+            1470522419552
+          ],
+          "from": [
+            1469429209952,
+            "Unity2016_L_Wep_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1470522419552,
+            "Unity2016_L_Wep_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470522417632,
+            1469963246176
+          ],
+          "from": [
+            1470522417632,
+            "Unity2016_L_Wep\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469963246176,
+            "kwep_exebreaker\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1470522416192,
+            1470522418112,
+            "DiffuseColor"
+          ],
+          "from": [
+            1470522416192,
+            "Unity2016_L_Hair_tex4\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1470522418112,
+            "Unity2016_L_Hair4\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1469429211552,
+            1470522416192
+          ],
+          "from": [
+            1469429211552,
+            "Unity2016_L_Hair_tex4\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1470522416192,
+            "Unity2016_L_Hair_tex4\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470522418112,
+            1469963250816
+          ],
+          "from": [
+            1470522418112,
+            "Unity2016_L_Hair4\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469963250816,
+            "hairUnder\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470522418112,
+            1469963255456
+          ],
+          "from": [
+            1470522418112,
+            "Unity2016_L_Hair4\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469963255456,
+            "hairBack\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470522418112,
+            1469963257776
+          ],
+          "from": [
+            1470522418112,
+            "Unity2016_L_Hair4\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469963257776,
+            "hairFront\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470522418112,
+            1469963264736
+          ],
+          "from": [
+            1470522418112,
+            "Unity2016_L_Hair4\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1469963264736,
+            "hairSide\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1470522418592,
+            1470522416672,
+            "DiffuseColor"
+          ],
+          "from": [
+            1470522418592,
+            "Unity2016_L_FaceHL_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1470522416672,
+            "Unity2016_L_FaceHL1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1469429207152,
+            1470522418592
+          ],
+          "from": [
+            1469429207152,
+            "Unity2016_L_FaceHL_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1470522418592,
+            "Unity2016_L_FaceHL_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470522416672,
+            1470078688208
+          ],
+          "from": [
+            1470522416672,
+            "Unity2016_L_FaceHL1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1470078688208,
+            "eyeHighLightShape\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1470414582256,
+            1470411557136
+          ],
+          "from": [
+            1470414582256,
+            "Unity2016_L_Face1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1470411557136,
+            "headNose\u0000\u0001Model",
+            "Mesh"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "assets/characters/unitychan_battle/animations/damaged.fbx",
+      "sha256": "3367a12a066afc49f36e3d89c4e392097fe739509c11656ba91d31d2b3ddc945",
+      "references": [],
+      "texture_video": [
+        {
+          "type": "Video",
+          "id_name": [
+            419622720,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            419622064,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            419623376,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            419624688,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            419624032,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            419625344,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            419626656,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            419626000,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            419627312,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            419628624,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1217228160,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "FO_SKIN1_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1217234928,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "face_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1217234176,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eyeline_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1217230416,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_L_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1217237936,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_R_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        }
+      ],
+      "material_links": [
+        {
+          "link": [
+            "OP",
+            1217234928,
+            385022224,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1217234928,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            385022224,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1217228160,
+            385022224,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1217228160,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            385022224,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385022224,
+            1178089536
+          ],
+          "from": [
+            385022224,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1178089536,
+            "face_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            419625344,
+            1272128032,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            419625344,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272128032,
+            "root 21\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            419622720,
+            1217228160
+          ],
+          "from": [
+            419622720,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1217228160,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            419622064,
+            1217234928
+          ],
+          "from": [
+            419622064,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1217234928,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385022224,
+            404295120
+          ],
+          "from": [
+            385022224,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            404295120,
+            "head_back\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1217234176,
+            385034384,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1217234176,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            385034384,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1217228160,
+            385034384,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1217228160,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            385034384,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385034384,
+            1178090784
+          ],
+          "from": [
+            385034384,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1178090784,
+            "eyebase_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            419626656,
+            1272128928,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            419626656,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272128928,
+            "root 22\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            419623376,
+            1217234176
+          ],
+          "from": [
+            419623376,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1217234176,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385034384,
+            404297568
+          ],
+          "from": [
+            385034384,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            404297568,
+            "eye_base_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1217230416,
+            385035024,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1217230416,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            385035024,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1217228160,
+            385035024,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1217228160,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            385035024,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385035024,
+            1178090368
+          ],
+          "from": [
+            385035024,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1178090368,
+            "eye_L1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            419626000,
+            1272124896,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            419626000,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272124896,
+            "root 23\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            419624688,
+            1217230416
+          ],
+          "from": [
+            419624688,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1217230416,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385035024,
+            404300016
+          ],
+          "from": [
+            385035024,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            404300016,
+            "eye_L_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1217237936,
+            385021584,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1217237936,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            385021584,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1217228160,
+            385021584,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1217228160,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            385021584,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385021584,
+            1510429056
+          ],
+          "from": [
+            385021584,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1510429056,
+            "eye_R1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            419627312,
+            1272128480,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            419627312,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272128480,
+            "root 24\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            419624032,
+            1217237936
+          ],
+          "from": [
+            419624032,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1217237936,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385021584,
+            404302464
+          ],
+          "from": [
+            385021584,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            404302464,
+            "eye_R_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385022224,
+            404319600
+          ],
+          "from": [
+            385022224,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            404319600,
+            "MTH_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1217234176,
+            385035664,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1217234176,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            385035664,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1217228160,
+            385035664,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1217228160,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            385035664,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385035664,
+            1510429472
+          ],
+          "from": [
+            385035664,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1510429472,
+            "eyeline_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            419628624,
+            1272126688,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            419628624,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272126688,
+            "root 25\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385022224,
+            1513427296
+          ],
+          "from": [
+            385022224,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1513427296,
+            "EYE_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385035664,
+            1513429744
+          ],
+          "from": [
+            385035664,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1513429744,
+            "EL_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            385035664,
+            1513432192
+          ],
+          "from": [
+            385035664,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1513432192,
+            "BLW_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "assets/characters/unitychan_battle/animations/idle.fbx",
+      "sha256": "5e37bfe66cded7236b27aa8418ee149b62526ddfdd01b0530fafe94f902f4b7d",
+      "references": [
+        {
+          "file": "scripts/characters/humanoid_retarget_visual.gd",
+          "line": 5,
+          "text": "const ANIMATION_SOURCE_SCENE := preload(\"res://assets/characters/unitychan_battle/animations/idle.fbx\")"
+        },
+        {
+          "file": "scripts/characters/humanoid_retarget_visual.gd",
+          "line": 8,
+          "text": "&\"Idle_Gun\": preload(\"res://assets/characters/unitychan_battle/animations/idle.fbx\"),"
+        },
+        {
+          "file": "scripts/player/player_controller.gd",
+          "line": 13,
+          "text": "const CHARACTER_ANIMATION_SOURCE_SCENE := preload(\"res://assets/characters/unitychan_battle/animations/idle.fbx\")"
+        },
+        {
+          "file": "scripts/player/player_controller.gd",
+          "line": 16,
+          "text": "&\"Idle_Gun\": preload(\"res://assets/characters/unitychan_battle/animations/idle.fbx\"),"
+        }
+      ],
+      "texture_video": [
+        {
+          "type": "Video",
+          "id_name": [
+            1312927072,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1173194912,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1173192944,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1173195568,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1173193600,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1173194256,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1173190320,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1173191632,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1173204752,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1219011888,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            405277728,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "FO_SKIN1_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            405273216,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "face_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            405276976,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eyeline_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            405276224,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_L_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            405275472,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_R_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        }
+      ],
+      "material_links": [
+        {
+          "link": [
+            "OP",
+            405273216,
+            1397485248,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            405273216,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1397485248,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            405277728,
+            1397485248,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            405277728,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1397485248,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397485248,
+            1216872576
+          ],
+          "from": [
+            1397485248,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1216872576,
+            "face_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1173194256,
+            1274742576,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1173194256,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1274742576,
+            "root 91\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1312927072,
+            405277728
+          ],
+          "from": [
+            1312927072,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            405277728,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1173194912,
+            405273216
+          ],
+          "from": [
+            1173194912,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            405273216,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397485248,
+            1401634160
+          ],
+          "from": [
+            1397485248,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1401634160,
+            "head_back\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            405276976,
+            1397512768,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            405276976,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1397512768,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            405277728,
+            1397512768,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            405277728,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1397512768,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397512768,
+            1216873408
+          ],
+          "from": [
+            1397512768,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1216873408,
+            "eyebase_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1173190320,
+            1274741232,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1173190320,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1274741232,
+            "root 92\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1173192944,
+            405276976
+          ],
+          "from": [
+            1173192944,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            405276976,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397512768,
+            1401636608
+          ],
+          "from": [
+            1397512768,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1401636608,
+            "eye_base_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            405276224,
+            1397482368,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            405276224,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1397482368,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            405277728,
+            1397482368,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            405277728,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1397482368,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397482368,
+            1216877152
+          ],
+          "from": [
+            1397482368,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1216877152,
+            "eye_L1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1173191632,
+            1274733616,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1173191632,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1274733616,
+            "root 93\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1173195568,
+            405276224
+          ],
+          "from": [
+            1173195568,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            405276224,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397482368,
+            1148939552
+          ],
+          "from": [
+            1397482368,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1148939552,
+            "eye_L_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            405275472,
+            1397514048,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            405275472,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1397514048,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            405277728,
+            1397514048,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            405277728,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1397514048,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397514048,
+            1216876320
+          ],
+          "from": [
+            1397514048,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1216876320,
+            "eye_R1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1173204752,
+            1274740336,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1173204752,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1274740336,
+            "root 94\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1173193600,
+            405275472
+          ],
+          "from": [
+            1173193600,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            405275472,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397514048,
+            1148942000
+          ],
+          "from": [
+            1397514048,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1148942000,
+            "eye_R_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397485248,
+            446177200
+          ],
+          "from": [
+            1397485248,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            446177200,
+            "MTH_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            405276976,
+            1397482048,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            405276976,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1397482048,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            405277728,
+            1397482048,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            405277728,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1397482048,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397482048,
+            1216874240
+          ],
+          "from": [
+            1397482048,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1216874240,
+            "eyeline_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1219011888,
+            1274743024,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1219011888,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1274743024,
+            "root 95\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397485248,
+            1210350016
+          ],
+          "from": [
+            1397485248,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1210350016,
+            "EYE_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397482048,
+            1531297232
+          ],
+          "from": [
+            1397482048,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1531297232,
+            "EL_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1397482048,
+            1531299680
+          ],
+          "from": [
+            1397482048,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1531299680,
+            "BLW_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "assets/characters/unitychan_battle/animations/run.fbx",
+      "sha256": "6e53c7040e41d4e51a952f398a42e17145ca6ed614940043a528929060577add",
+      "references": [
+        {
+          "file": "scripts/characters/humanoid_retarget_visual.gd",
+          "line": 10,
+          "text": "&\"Run\": preload(\"res://assets/characters/unitychan_battle/animations/run.fbx\"),"
+        },
+        {
+          "file": "scripts/player/player_controller.gd",
+          "line": 18,
+          "text": "&\"Run\": preload(\"res://assets/characters/unitychan_battle/animations/run.fbx\"),"
+        },
+        {
+          "file": "scripts/player/player_controller.gd",
+          "line": 19,
+          "text": "&\"Run_Shoot\": preload(\"res://assets/characters/unitychan_battle/animations/run.fbx\"),"
+        }
+      ],
+      "texture_video": [
+        {
+          "type": "Video",
+          "id_name": [
+            1218944160,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1218943504,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1218944816,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1218946128,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1218945472,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1218946784,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1218947440,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1211129920,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1211128608,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1211127296,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            402748112,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "FO_SKIN1_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            402770672,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "face_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            402747360,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eyeline_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            402746608,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_L_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            448589584,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_R_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        }
+      ],
+      "material_links": [
+        {
+          "link": [
+            "OP",
+            402770672,
+            443092160,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            402770672,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            443092160,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            402748112,
+            443092160,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            402748112,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            443092160,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443092160,
+            1270886656
+          ],
+          "from": [
+            443092160,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1270886656,
+            "face_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1218946784,
+            1177895488,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1218946784,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1177895488,
+            "root 51\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1218944160,
+            402748112
+          ],
+          "from": [
+            1218944160,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            402748112,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1218943504,
+            402770672
+          ],
+          "from": [
+            1218943504,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            402770672,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443092160,
+            398716944
+          ],
+          "from": [
+            443092160,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            398716944,
+            "head_back\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            402747360,
+            443101760,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            402747360,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            443101760,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            402748112,
+            443101760,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            402748112,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            443101760,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443101760,
+            1270886240
+          ],
+          "from": [
+            443101760,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1270886240,
+            "eyebase_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1218947440,
+            1177893696,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1218947440,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1177893696,
+            "root 52\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1218944816,
+            402747360
+          ],
+          "from": [
+            1218944816,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            402747360,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443101760,
+            398719392
+          ],
+          "from": [
+            443101760,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            398719392,
+            "eye_base_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            402746608,
+            443090240,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            402746608,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            443090240,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            402748112,
+            443090240,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            402748112,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            443090240,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443090240,
+            1270887488
+          ],
+          "from": [
+            443090240,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1270887488,
+            "eye_L1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1211129920,
+            1177895936,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1211129920,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1177895936,
+            "root 53\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1218946128,
+            402746608
+          ],
+          "from": [
+            1218946128,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            402746608,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443090240,
+            398724288
+          ],
+          "from": [
+            443090240,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            398724288,
+            "eye_L_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            448589584,
+            443107520,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            448589584,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            443107520,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            402748112,
+            443107520,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            402748112,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            443107520,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443107520,
+            1270888736
+          ],
+          "from": [
+            443107520,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1270888736,
+            "eye_R1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1211128608,
+            1177896384,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1211128608,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1177896384,
+            "root 54\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1218945472,
+            448589584
+          ],
+          "from": [
+            1218945472,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            448589584,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443107520,
+            398726736
+          ],
+          "from": [
+            443107520,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            398726736,
+            "eye_R_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443092160,
+            296099728
+          ],
+          "from": [
+            443092160,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            296099728,
+            "MTH_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            402747360,
+            443118400,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            402747360,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            443118400,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            402748112,
+            443118400,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            402748112,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            443118400,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443118400,
+            1270888320
+          ],
+          "from": [
+            443118400,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1270888320,
+            "eyeline_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1211127296,
+            1177896832,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1211127296,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1177896832,
+            "root 55\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443092160,
+            1180852928
+          ],
+          "from": [
+            443092160,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1180852928,
+            "EYE_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443118400,
+            1180855376
+          ],
+          "from": [
+            443118400,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1180855376,
+            "EL_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            443118400,
+            1180857824
+          ],
+          "from": [
+            443118400,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1180857824,
+            "BLW_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "assets/characters/unitychan_battle/animations/slide.fbx",
+      "sha256": "5378709ff2ebe310e869e59b93caa6fba50113abc8ed0167d5e6a64dd8c5ec5f",
+      "references": [
+        {
+          "file": "scripts/player/player_controller.gd",
+          "line": 20,
+          "text": "&\"Dodge\": preload(\"res://assets/characters/unitychan_battle/animations/slide.fbx\"),"
+        }
+      ],
+      "texture_video": [
+        {
+          "type": "Video",
+          "id_name": [
+            1213200320,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1213202288,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1522720736,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1522716144,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1522719424,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1522723360,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1522722704,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1522721392,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1522718768,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1522722048,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1174790432,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "FO_SKIN1_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1174809232,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "face_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1174809984,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eyeline_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1174782912,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_L_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1174784416,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_R_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        }
+      ],
+      "material_links": [
+        {
+          "link": [
+            "OP",
+            1174809232,
+            1513325760,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1174809232,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513325760,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1174790432,
+            1513325760,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1174790432,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513325760,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513325760,
+            388435744
+          ],
+          "from": [
+            1513325760,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            388435744,
+            "face_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1522723360,
+            1272125792,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1522723360,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272125792,
+            "root 41\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1213200320,
+            1174790432
+          ],
+          "from": [
+            1213200320,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1174790432,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1213202288,
+            1174809232
+          ],
+          "from": [
+            1213202288,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1174809232,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513325760,
+            385043776
+          ],
+          "from": [
+            1513325760,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            385043776,
+            "head_back\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1174809984,
+            1513322880,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1174809984,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513322880,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1174790432,
+            1513322880,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1174790432,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513322880,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513322880,
+            388438656
+          ],
+          "from": [
+            1513322880,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            388438656,
+            "eyebase_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1522722704,
+            1272120416,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1522722704,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272120416,
+            "root 42\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1522720736,
+            1174809984
+          ],
+          "from": [
+            1522720736,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1174809984,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513322880,
+            385046224
+          ],
+          "from": [
+            1513322880,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            385046224,
+            "eye_base_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1174782912,
+            1513325120,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1174782912,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513325120,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1174790432,
+            1513325120,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1174790432,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513325120,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513325120,
+            388436992
+          ],
+          "from": [
+            1513325120,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            388436992,
+            "eye_L1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1522721392,
+            1272128480,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1522721392,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272128480,
+            "root 43\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1522716144,
+            1174782912
+          ],
+          "from": [
+            1522716144,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1174782912,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513325120,
+            385051120
+          ],
+          "from": [
+            1513325120,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            385051120,
+            "eye_L_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1174784416,
+            1513320640,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1174784416,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513320640,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1174790432,
+            1513320640,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1174790432,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513320640,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513320640,
+            388438240
+          ],
+          "from": [
+            1513320640,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            388438240,
+            "eye_R1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1522718768,
+            1272120864,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1522718768,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272120864,
+            "root 44\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1522719424,
+            1174784416
+          ],
+          "from": [
+            1522719424,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1174784416,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513320640,
+            385053568
+          ],
+          "from": [
+            1513320640,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            385053568,
+            "eye_R_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513325760,
+            1151627280
+          ],
+          "from": [
+            1513325760,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1151627280,
+            "MTH_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1174809984,
+            1513320320,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1174809984,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513320320,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1174790432,
+            1513320320,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1174790432,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513320320,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513320320,
+            388435328
+          ],
+          "from": [
+            1513320320,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            388435328,
+            "eyeline_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1522722048,
+            1272128032,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1522722048,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272128032,
+            "root 45\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513325760,
+            402503024
+          ],
+          "from": [
+            1513325760,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            402503024,
+            "EYE_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513320320,
+            402505472
+          ],
+          "from": [
+            1513320320,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            402505472,
+            "EL_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513320320,
+            402507920
+          ],
+          "from": [
+            1513320320,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            402507920,
+            "BLW_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "assets/characters/unitychan_battle/animations/walk.fbx",
+      "sha256": "dbf92f068e0bfb297a6701c549db09de3a1585d734acd463351dc1dd004c8019",
+      "references": [
+        {
+          "file": "scripts/characters/humanoid_retarget_visual.gd",
+          "line": 9,
+          "text": "&\"Walk\": preload(\"res://assets/characters/unitychan_battle/animations/walk.fbx\"),"
+        },
+        {
+          "file": "scripts/player/player_controller.gd",
+          "line": 17,
+          "text": "&\"Walk\": preload(\"res://assets/characters/unitychan_battle/animations/walk.fbx\"),"
+        }
+      ],
+      "texture_video": [
+        {
+          "type": "Video",
+          "id_name": [
+            1209935392,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1209928832,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1209930144,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1209929488,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1209928176,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1209930800,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1312925104,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1312928384,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1312927728,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1312923136,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1396283712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "FO_SKIN1_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1396267168,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "face_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1396282960,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eyeline_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1396282208,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_L_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            1396281456,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_R_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        }
+      ],
+      "material_links": [
+        {
+          "link": [
+            "OP",
+            1396267168,
+            400606016,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1396267168,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            400606016,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1396283712,
+            400606016,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1396283712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            400606016,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400606016,
+            1219584624
+          ],
+          "from": [
+            400606016,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1219584624,
+            "face_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1209930800,
+            398545328,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1209930800,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            398545328,
+            "root 121\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1209935392,
+            1396283712
+          ],
+          "from": [
+            1209935392,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1396283712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1209928832,
+            1396267168
+          ],
+          "from": [
+            1209928832,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1396267168,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400606016,
+            411176912
+          ],
+          "from": [
+            400606016,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            411176912,
+            "head_back\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1396282960,
+            400570496,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1396282960,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            400570496,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1396283712,
+            400570496,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1396283712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            400570496,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400570496,
+            1219585872
+          ],
+          "from": [
+            400570496,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1219585872,
+            "eyebase_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1312925104,
+            398536816,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1312925104,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            398536816,
+            "root 122\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1209930144,
+            1396282960
+          ],
+          "from": [
+            1209930144,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1396282960,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400570496,
+            411179360
+          ],
+          "from": [
+            400570496,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            411179360,
+            "eye_base_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1396282208,
+            400604736,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1396282208,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            400604736,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1396283712,
+            400604736,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1396283712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            400604736,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400604736,
+            1219585040
+          ],
+          "from": [
+            400604736,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1219585040,
+            "eye_L1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1312928384,
+            398539504,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1312928384,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            398539504,
+            "root 123\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1209929488,
+            1396282208
+          ],
+          "from": [
+            1209929488,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1396282208,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400604736,
+            411184256
+          ],
+          "from": [
+            400604736,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            411184256,
+            "eye_L_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1396281456,
+            400608256,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1396281456,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            400608256,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1396283712,
+            400608256,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1396283712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            400608256,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400608256,
+            1219585456
+          ],
+          "from": [
+            400608256,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1219585456,
+            "eye_R1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1312927728,
+            398548016,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1312927728,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            398548016,
+            "root 124\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1209928176,
+            1396281456
+          ],
+          "from": [
+            1209928176,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1396281456,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400608256,
+            411186704
+          ],
+          "from": [
+            400608256,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            411186704,
+            "eye_R_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400606016,
+            1218491936
+          ],
+          "from": [
+            400606016,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1218491936,
+            "MTH_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1396282960,
+            400564736,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            1396282960,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            400564736,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1396283712,
+            400564736,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            1396283712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            400564736,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400564736,
+            1219587120
+          ],
+          "from": [
+            400564736,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1219587120,
+            "eyeline_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1312923136,
+            398550256,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1312923136,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            398550256,
+            "root 125\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400606016,
+            1396500720
+          ],
+          "from": [
+            400606016,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1396500720,
+            "EYE_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400564736,
+            1396503168
+          ],
+          "from": [
+            400564736,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1396503168,
+            "EL_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            400564736,
+            1396505616
+          ],
+          "from": [
+            400564736,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1396505616,
+            "BLW_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "assets/characters/unitychan_battle/animations/win.fbx",
+      "sha256": "a15ee14d2b3367fe3f33ed86a36f3697ac246447a38a947fa2725977715be34f",
+      "references": [],
+      "texture_video": [
+        {
+          "type": "Video",
+          "id_name": [
+            1213199664,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1213200320,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1213203600,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1273792224,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1273787632,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1273788944,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1273791568,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1273788288,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1273786976,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Video",
+          "id_name": [
+            1273786320,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "fields": {
+            "Filename": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140401_UnityChanModel_Rig/renderData/shaders/Unitychan_chara_hada.cgfx"
+            ],
+            "RelativeFilename": [
+              "..\\..\\renderData\\shaders\\Unitychan_chara_hada.cgfx"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\characters\\renderData\\shaders\\Unitychan_chara_hada.cgfx",
+          "exists": false,
+          "classification": "historical Maya shader metadata"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            382395712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "FO_SKIN1_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/FO_SKIN1.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\FO_SKIN1.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            382429552,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "face_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/face_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\face_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            382394960,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eyeline_tex1\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eyeline_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eyeline_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            382428800,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_L_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_L_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_L_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        },
+        {
+          "type": "Texture",
+          "id_name": [
+            382394208,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "fields": {
+            "Media": [
+              "eye_R_tex\u0000\u0001Video"
+            ],
+            "FileName": [
+              "D:/Dropbox/Maya_Projects/UnityChan/140301_unitychanmodel_Celsis/sourceimages/eye_iris_R_00.tga"
+            ],
+            "RelativeFilename": [
+              "..\\..\\..\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga"
+            ]
+          },
+          "resolved_from_original_location": "D:\\bunny_team\\assets\\140301_unitychanmodel_Celsis\\sourceimages\\eye_iris_R_00.tga",
+          "exists": true,
+          "classification": "texture input"
+        }
+      ],
+      "material_links": [
+        {
+          "link": [
+            "OP",
+            382429552,
+            1513408400,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            382429552,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513408400,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            382395712,
+            1513408400,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            382395712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513408400,
+            "face\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513408400,
+            1269173712
+          ],
+          "from": [
+            1513408400,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1269173712,
+            "face_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1273788944,
+            1272126688,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1273788944,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272126688,
+            "root 11\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1213199664,
+            382395712
+          ],
+          "from": [
+            1213199664,
+            "FO_SKIN1_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            382395712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1213200320,
+            382429552
+          ],
+          "from": [
+            1213200320,
+            "face_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            382429552,
+            "face_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513408400,
+            1222002848
+          ],
+          "from": [
+            1513408400,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1222002848,
+            "head_back\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            382394960,
+            1513402320,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            382394960,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513402320,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            382395712,
+            1513402320,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            382395712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513402320,
+            "eyebase\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513402320,
+            1269171632
+          ],
+          "from": [
+            1513402320,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1269171632,
+            "eyebase_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1273791568,
+            1272126240,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1273791568,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272126240,
+            "root 12\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1213203600,
+            382394960
+          ],
+          "from": [
+            1213203600,
+            "eyeline_tex1\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            382394960,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513402320,
+            1222005296
+          ],
+          "from": [
+            1513402320,
+            "eyebase\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1222005296,
+            "eye_base_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            382428800,
+            1513419280,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            382428800,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513419280,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            382395712,
+            1513419280,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            382395712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513419280,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513419280,
+            1269172048
+          ],
+          "from": [
+            1513419280,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1269172048,
+            "eye_L1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1273788288,
+            1272125792,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1273788288,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272125792,
+            "root 13\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1273792224,
+            382428800
+          ],
+          "from": [
+            1273792224,
+            "eye_L_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            382428800,
+            "eye_L_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513419280,
+            1222007744
+          ],
+          "from": [
+            1513419280,
+            "eye_L1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1222007744,
+            "eye_L_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            382394208,
+            1513419920,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            382394208,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513419920,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            382395712,
+            1513419920,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            382395712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513419920,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513419920,
+            1269174960
+          ],
+          "from": [
+            1513419920,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1269174960,
+            "eye_R1_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1273786976,
+            1272124448,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1273786976,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272124448,
+            "root 14\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1273787632,
+            382394208
+          ],
+          "from": [
+            1273787632,
+            "eye_R_tex\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            382394208,
+            "eye_R_tex\u0000\u0001Texture",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513419920,
+            1222010192
+          ],
+          "from": [
+            1513419920,
+            "eye_R1\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            1222010192,
+            "eye_R_old\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513408400,
+            385540208
+          ],
+          "from": [
+            1513408400,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            385540208,
+            "MTH_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            382394960,
+            1513420240,
+            "Maya|DiffuseTexture"
+          ],
+          "from": [
+            382394960,
+            "eyeline_tex1\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513420240,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            382395712,
+            1513420240,
+            "Maya|FalloffTexture"
+          ],
+          "from": [
+            382395712,
+            "FO_SKIN1_tex\u0000\u0001Texture",
+            ""
+          ],
+          "to": [
+            1513420240,
+            "eyeline\u0000\u0001Material",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513420240,
+            382932064
+          ],
+          "from": [
+            1513420240,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            382932064,
+            "eyeline_Implementation\u0000\u0001Implementation",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OP",
+            1273786320,
+            1272122656,
+            "DescAbsoluteURL"
+          ],
+          "from": [
+            1273786320,
+            "\u0000\u0001Video",
+            "Clip"
+          ],
+          "to": [
+            1272122656,
+            "root 15\u0000\u0001BindingTable",
+            ""
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513408400,
+            408293360
+          ],
+          "from": [
+            1513408400,
+            "face\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            408293360,
+            "EYE_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513420240,
+            408295808
+          ],
+          "from": [
+            1513420240,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            408295808,
+            "EL_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        },
+        {
+          "link": [
+            "OO",
+            1513420240,
+            408298256
+          ],
+          "from": [
+            1513420240,
+            "eyeline\u0000\u0001Material",
+            ""
+          ],
+          "to": [
+            408298256,
+            "BLW_DEF\u0000\u0001Model",
+            "Mesh"
+          ]
+        }
+      ]
+    }
+  ],
+  "vrm": {
+    "sha256": "a8b4c8e0f3e350012e6c0d2c4a2ce68654f44c1267b0761a115ecb60c0fe74e7",
+    "meta": {
+      "allowedUserName": "OnlyAuthor",
+      "author": "pixiv VRoid Project",
+      "commercialUssageName": "Allow",
+      "licenseName": "CC_BY",
+      "sexualUssageName": "Disallow",
+      "texture": 24,
+      "title": "AvatarSample_A",
+      "violentUssageName": "Disallow"
+    },
+    "image_count": 27,
+    "external_images": [],
+    "embedded_image_count": 27
+  }
+}

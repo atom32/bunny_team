@@ -1,0 +1,9 @@
+{
+  "before_sha256": "f3298e5a4ce7314b991fef9933f2330f51887ed7b59c7c1fa156e80621d0327b",
+  "after_sha256": "56d6d7b75940ebf80b79de0af123ff2440eaf3832ca75254d30351d96304fa44",
+  "before_geometry_rig_actions": "5b634b02c3fe19b70323717e204bd7d46a65b6f8b593c6de308d11cb1364bf38",
+  "after_geometry_rig_actions": "5b634b02c3fe19b70323717e204bd7d46a65b6f8b593c6de308d11cb1364bf38",
+  "fingerprint_match": true,
+  "change": "three materials custom presentation properties only; no PBR nodes, mesh, skin, bones or pose changes",
+  "glb": "unchanged, shader applied at presentation boundary"
+}

@@ -1,0 +1,579 @@
+{
+  "source": "https://unity3d.jp/unity-chan_contents/download.php?id=TPK-Hmnd-Kohaku_A&v=1.1",
+  "access_date": "2026-09-25",
+  "archive_sha256": "12f1365e5e2eb82e2a0e3ddb5d105c690518a8404a1c33fb0027800436096c2c",
+  "archive_bytes": 12531513,
+  "legacy_fbx_identical": true,
+  "files": [
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "sha256": "146f9846b95ba57a726e74ba3da63dfac8774f34db85e46d09d01e5ac8bb4478",
+      "meta_sha256": "411ccd5b7887025e765a7ad17288c32dd4e2c4b3b4ea692ab76221b3c0af2f6e",
+      "bytes": 3615872
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A_head.fbx",
+      "sha256": "6a4f649bb0693967e6293ca257919b2593cdd6002accd819b7e8ea9ab051158f",
+      "meta_sha256": "8abe6a3feaa86c846d50597be9777c6a0bf6bc720235e22c2256947d43351056",
+      "bytes": 191776
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat",
+      "sha256": "2a391ea182ad64a5c46b63a21b5315363a4be0d9ca4a56599a5545269e7c19fe",
+      "meta_sha256": "bbf14ffe663a4e2e668191a10c0102305f19af049192d8f9f5c1d9d0cfd62204",
+      "bytes": 5467
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat",
+      "sha256": "c03150a4190031e7fc66c67573890e5c2bde262e731ff3fcbc88ecd40b2184b9",
+      "meta_sha256": "e0e8dfaff168ce127a4fe613b6bb11231f458437bfac360ac5113a521249c82d",
+      "bytes": 5468
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Hair_Spow.mat",
+      "sha256": "b3ab24364455ec12853216a67e99f75344c9a77a1d5672f9c0b54c5101031df1",
+      "meta_sha256": "bd1a9f19ca9622823f4c97e3ea150b1e6638c264a39adb136513230085c53666",
+      "bytes": 5413
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Skin.mat",
+      "sha256": "fac3ba599313da695e21f837730fd0acdec4b9d151926fee9810433caeeef859",
+      "meta_sha256": "1487282c82652c4b131b66e38fb6a1d367c981c83a421bcc1e31754594681682",
+      "bytes": 5467
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_Wep.mat",
+      "sha256": "e24eee8ff0fdd103703b6f023ca8f0eb2c04ec19529df06e4bccf4c07c367e2c",
+      "meta_sha256": "11bb22aeee19ed7b9599e75e0b430145177133c291bb8c89908f089d0b5f49ee",
+      "bytes": 5624
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/face3_main.mat",
+      "sha256": "335299a349c688b144aca8bb3be1a03395efecb94366eab30f02b48ea6182fa6",
+      "meta_sha256": "9cfe89b8b6f5923f963576bd341cf8da2b22f9ef149a0a9ba605147e9b5f4fdb",
+      "bytes": 5574
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Prefabs/01_kohaku_A.prefab",
+      "sha256": "b4469507ee2c352e7f8c418dad1d1a9d75bb3b9f174007f7897a7930c979b8a7",
+      "meta_sha256": "479d61f2f53e498d4deb6586d9bbc814ba65962c192683b561d1d434b758c563",
+      "bytes": 776395
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Add.png",
+      "sha256": "ca399f496b0a7da51e93cffa20c7c15e268b6428b690fc11b55f804f8ce06c1d",
+      "meta_sha256": "c45ca2b0eb98887fed5541bb61c18205f7702ac46fe77ec6c590fdfa7cb30b21",
+      "bytes": 117051
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Add_Shd.png",
+      "sha256": "c5f98dc6634167be56a737493ce62d9fd3b195c2e80d51a1d8b8f51c5d22c7d0",
+      "meta_sha256": "e30860c4fbc1105da2d519c0bd6514acce7f06eaa09cd265dc845f20614dfe15",
+      "bytes": 113048
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Add_Spow.png",
+      "sha256": "0fe5cb389126881cf9f1aca46ed09fe5d19a4f8f36b039d8b5447bf2ccd3ae45",
+      "meta_sha256": "33ed5f4c49e15e36d4f5d13da53d3463d4adc1125638f98c43b19d98b0b90b81",
+      "bytes": 109629
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Body.png",
+      "sha256": "053d8ae690c38b16d644114062d60081cae152cfb4139595cd12b866bbd194f0",
+      "meta_sha256": "54e80e14da92b2f1394387b000b74181f0c7d3672450e8d562279e30a7efb0ef",
+      "bytes": 144934
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Body_Shd.png",
+      "sha256": "ad504ceafdf1328ad8c03c4d295392ca8abc9c2fb35987a16c03d860e0e58369",
+      "meta_sha256": "d2ee8cf9e891e01706e748e6b4fbeb4f7c998222e326b61e48bd266847490e75",
+      "bytes": 145727
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Body_spow.png",
+      "sha256": "63f61ed5f976a70a6cee5a0256c930eacedb4ec85ff6b41098f5dc79a0b1055c",
+      "meta_sha256": "1a829582233948f8954691885694cf53a54952452d2c15d4a1023bf1e663bc2a",
+      "bytes": 71148
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Hair_Spow.png",
+      "sha256": "84f67de53addf7bda8041e05d4dfa08fec40ffd2f7220926d46e3d13807ee67b",
+      "meta_sha256": "79a56e2df156bc6a0ca4b9b0e9f59936b6ecc9b218263a6b49191cba0824bfda",
+      "bytes": 784451
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Skin_Shd.png",
+      "sha256": "b7797d62b30c4c91cba4606f9abee556132c0a3fecd688c8ff38831d961d17f5",
+      "meta_sha256": "1a118ef975d2ef94647c7c5b67bc3d692a935ec9ede9045f1a6ea30555323b35",
+      "bytes": 40577
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep.png",
+      "sha256": "91a50b35582c5becdabb80df3cce6e2aa5c7e72181063ccaab53003369cc7a10",
+      "meta_sha256": "5c2788766100fbdf3224cf5cb584509ba772845533394e3c5206ea2d9b33bd02",
+      "bytes": 55256
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep_Emi.png",
+      "sha256": "43e4320ca2b617e028ba4de3dd264e2a6b67b3e1701a41da85c9968a198072ef",
+      "meta_sha256": "3476f9efc5a6716fc61889c03dd8e602d1adfa0fa034a49a6eac8a3acbebc6bf",
+      "bytes": 34013
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep_Shd.png",
+      "sha256": "68a5757cdab13a54eacd980262da947902d120ccb800e4cadd7d98549fa4a141",
+      "meta_sha256": "a4c854a91f8b8421b17a8869ed410653a15361a236eab7405b2230e68b6d6f90",
+      "bytes": 55371
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep_Spec.png",
+      "sha256": "9e1407778d91f3365c02860269f116780d01eb001b296a333a32ddad2191df30",
+      "meta_sha256": "130dabf3f25e60d68793cf554219dbc2b18ee67da6dba3c06759c4c1b0a25110",
+      "bytes": 36327
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_lpow.png",
+      "sha256": "538969f34b0782c4fc9b1a10f744b4bfbc34a23dc78cc9e6fe64da97f9b72f5b",
+      "meta_sha256": "42de9d343bc6d41feb10a9f2899d10e746d34f184cb74d335a25145df86bbb9c",
+      "bytes": 110295
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main.png",
+      "sha256": "4f632699611264b0b910f912afd6566b94276bd1bf9a1e8eb3e3bba695e085dc",
+      "meta_sha256": "33967e380bd15f86987e43495a7fe3c0a42de39c72ad21e5e545d00b0919f7a1",
+      "bytes": 261650
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main_Shd2.png",
+      "sha256": "44a8e9019ff3e346d3afc68f3ea6b8f289cbd1452d26c64f342ca90de103d7fc",
+      "meta_sha256": "41f9f50f687227a8e1ab54575bc4fe899f4b82181adf49d6bf86291da929a149",
+      "bytes": 925585
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main_spow.png",
+      "sha256": "2b0c15e39f66dd6eb96286504ddfce3b26490ad1340f13b6670034dadc5dc8d8",
+      "meta_sha256": "39b831ea55722fbe8d9e26c3d6f8507368664c81abe27ee01d21b3a82f63c53b",
+      "bytes": 205883
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main_sub.png",
+      "sha256": "db9e43b3f12b3b4339878406fcb0fa3ebfedc4df9bbfac98716fa75b676c6bc0",
+      "meta_sha256": "3943b71dac3151f00e27bfb89a2b80456e642a4a273c3d8fd244d3e916ff9c91",
+      "bytes": 903831
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_skin.png",
+      "sha256": "eca8fad786b26ad132e0065c493816ce40b58d1af2f08c251430d48696f081db",
+      "meta_sha256": "55f279e95e54915a762202ec8f3d928684564accaacf95c395bf969a5dbd551a",
+      "bytes": 43141
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_skin_spow.png",
+      "sha256": "988174dc9f48e2d38679e0c9ba45f9f1fa6d3818e4ebecff55b06e41d6002afe",
+      "meta_sha256": "696aa276d9e149b7f4720daccecf999d7853eac23891bc4bdd2fdcb18a85e41c",
+      "bytes": 26053
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/para_height2.png",
+      "sha256": "b10289bee3b91d3fc40d08f25515ca040abb9d7d0f1c20b38a8e6fd24e4123de",
+      "meta_sha256": "c6e6a7cfe0eb2b6bd0dc3df0df7f66e7b1864c453c612f32c1cbcf47756afa6c",
+      "bytes": 62402
+    },
+    {
+      "path": "Assets/UnityChanTPK/Toon/Shader/README.TXT",
+      "sha256": "89f33af327d0d205fa1d32559e24724377efc00524d24cd6c09491bf47beab88",
+      "meta_sha256": "3003e9ad78ae8033879d14304af8633f8216d5c8e9d3ba7f51f0977145182132",
+      "bytes": 5729
+    },
+    {
+      "path": "Assets/UnityChanTPK/Toon/Shader/Toon_ShadingGradeMap.shader",
+      "sha256": "de35e87d541e2c01dc5c411c7a69b4e2f0725710646ed9b1ba73aad70ff82c64",
+      "meta_sha256": "82c4122b128d3763926bf491a092cf45619b7b301aecc94d2a15259bd3dbc678",
+      "bytes": 9087
+    },
+    {
+      "path": "Assets/UnityChanTPK/Toon/Shader/UCTS_Outline.cginc",
+      "sha256": "6d3b79a9a719801a9ba78b508e569dc70c2c92c1ef9f2fd520a537abdecb9f58",
+      "meta_sha256": "95a6feed616fbff5c458cbb2abdd5663a1d005926316dee203b10d58b7e6cb83",
+      "bytes": 5196
+    },
+    {
+      "path": "Assets/UnityChanTPK/Toon/Shader/UCTS_ShadingGradeMap.cginc",
+      "sha256": "3bc7b4ab8954368d3a8900844bd1013417c335db0778988945a786bd69374c45",
+      "meta_sha256": "5b1efa09efbf1b96c3830816ee5f1cac91de7fce0ab03fce08465a888cb467d3",
+      "bytes": 17944
+    },
+    {
+      "path": "Assets/UnityChanTPK/Toon/Shader/UCTS_ShadowCaster.cginc",
+      "sha256": "f15746248e7dfc77acb68caf876b0492073fb6fd541a0cd0cbc770fbfc3c7fc5",
+      "meta_sha256": "d8fa424330a68aa7412d63904634de37f5da0158c483b7b8fb743570e899e90e",
+      "bytes": 3135
+    }
+  ],
+  "materials": [
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat",
+      "shader": "Assets/UnityChanTPK/Toon/Shader/Toon_ShadingGradeMap.shader",
+      "textures": [
+        {
+          "slot": "_1st_ShadeMap",
+          "guid": "81d98d83f15a29e44b4b0a27519406a0",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Add_Shd.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_BaseMap",
+          "guid": "230c1341b00235d4e8796242bb8d12a1",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Add.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_MainTex",
+          "guid": "6d92257c5c28b334fa0a0f7e13cb5996",
+          "path": null,
+          "shader_property": false
+        },
+        {
+          "slot": "_ShadingGradeMap",
+          "guid": "2f91c5d0b349de94889eec4f0296ddf0",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Add_Spow.png",
+          "shader_property": true
+        }
+      ]
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat",
+      "shader": "Assets/UnityChanTPK/Toon/Shader/Toon_ShadingGradeMap.shader",
+      "textures": [
+        {
+          "slot": "_1st_ShadeMap",
+          "guid": "304964f8217d50a4c8b2981b1a60634d",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Body_Shd.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_BaseMap",
+          "guid": "bf673d0e2439b0546bf9d63910e51693",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Body.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_MainTex",
+          "guid": "45575dd193359a149bcd70e0fad6d5d0",
+          "path": null,
+          "shader_property": false
+        },
+        {
+          "slot": "_ShadingGradeMap",
+          "guid": "9b5f204524e80f84db8dfd450a33539a",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Body_spow.png",
+          "shader_property": true
+        }
+      ]
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Hair_Spow.mat",
+      "shader": "Assets/UnityChanTPK/Toon/Shader/Toon_ShadingGradeMap.shader",
+      "textures": [
+        {
+          "slot": "_MainTex",
+          "guid": "96bd8edfc20ca7e488ab48645f6f0c03",
+          "path": null,
+          "shader_property": false
+        },
+        {
+          "slot": "_ShadingGradeMap",
+          "guid": "0567d1449a4f1d54590c9d8ed9859f08",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Hair_Spow.png",
+          "shader_property": true
+        }
+      ]
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Skin.mat",
+      "shader": "Assets/UnityChanTPK/Toon/Shader/Toon_ShadingGradeMap.shader",
+      "textures": [
+        {
+          "slot": "_1st_ShadeMap",
+          "guid": "a2b1b72ed41ce3a42a27b89387bb0553",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Skin_Shd.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_BaseMap",
+          "guid": "6c5627539d47f0d4ea63a9d1bf62cd68",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_skin.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_MainTex",
+          "guid": "d9c46586267093f4f84f1f2d5b7f7b3f",
+          "path": null,
+          "shader_property": false
+        },
+        {
+          "slot": "_ShadingGradeMap",
+          "guid": "c9d99e028de580240875c7c7cf59d4e0",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_skin_spow.png",
+          "shader_property": true
+        }
+      ]
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_Wep.mat",
+      "shader": "Assets/UnityChanTPK/Toon/Shader/Toon_ShadingGradeMap.shader",
+      "textures": [
+        {
+          "slot": "_1st_ShadeMap",
+          "guid": "73e97c4ac1632e5438404f840048330f",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep_Shd.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_BaseMap",
+          "guid": "c3d2486a996f4ae40b4d7bfbc569a6b0",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_EmissionMap",
+          "guid": "40d4e9002104b614c83dd9458f6f9fcf",
+          "path": null,
+          "shader_property": false
+        },
+        {
+          "slot": "_MainTex",
+          "guid": "e499403a729a89e4585b17649d40fd80",
+          "path": null,
+          "shader_property": false
+        },
+        {
+          "slot": "_Set_HighColorMask",
+          "guid": "5ebe250917c624540b823ecfa0ef9b9f",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep_Spec.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_Set_RimLightMask",
+          "guid": "5ebe250917c624540b823ecfa0ef9b9f",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_Wep_Spec.png",
+          "shader_property": true
+        }
+      ]
+    },
+    {
+      "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/face3_main.mat",
+      "shader": "Assets/UnityChanTPK/Toon/Shader/Toon_ShadingGradeMap.shader",
+      "textures": [
+        {
+          "slot": "_1st_ShadeMap",
+          "guid": "fcda3fcb9d70b6e4b91adff42ffe82ab",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main_sub.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_2nd_ShadeMap",
+          "guid": "129da05caedf86d43b212882622b340d",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main_Shd2.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_BaseMap",
+          "guid": "1743ec549949ab644ba284afdb333eca",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_MainTex",
+          "guid": "cb1a1ca2bd0b31645afdab42471139bc",
+          "path": null,
+          "shader_property": false
+        },
+        {
+          "slot": "_Outline_Sampler",
+          "guid": "8c46ebfbc37b2ac45ae462e4c40602f1",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_lpow.png",
+          "shader_property": true
+        },
+        {
+          "slot": "_ShadingGradeMap",
+          "guid": "837a063d265376743aedd8d9e3c862bf",
+          "path": "Assets/UnityChanTPK/Models/01_kohaku_A/Textures/kohaku_A_face3_main_spow.png",
+          "shader_property": true
+        }
+      ]
+    }
+  ],
+  "prefab_renderers": [
+    {
+      "mesh_file_id": "4300042",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Hair_Spow.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300044",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/face3_main.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300012",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300000",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300040",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Hair_Spow.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300000",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A_head.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/face3_main.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300008",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Skin.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300030",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300002",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/face3_main.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300018",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300034",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_Wep.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300038",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Hair_Spow.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300028",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300004",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Skin.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300036",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Hair_Spow.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300020",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300006",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300014",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300022",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300026",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300016",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300010",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Body.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300024",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat"
+      ]
+    },
+    {
+      "mesh_file_id": "4300032",
+      "fbx": "Assets/UnityChanTPK/Models/01_kohaku_A/01_kohaku_A.fbx",
+      "materials": [
+        "Assets/UnityChanTPK/Models/01_kohaku_A/Materials/Unity2016_C_Add.mat"
+      ]
+    }
+  ],
+  "missing_declared_shader_textures": [],
+  "scope": "Source dependency recovery only; no Godot/Blender/animation acceptance"
+}

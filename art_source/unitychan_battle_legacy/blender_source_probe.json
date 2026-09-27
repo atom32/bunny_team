@@ -1,0 +1,141 @@
+{
+  "blender": "5.2.2 LTS",
+  "textures": [
+    {
+      "name": "kohaku_A_Add.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_Add_Shd.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_Add_Spow.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_Body.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_Body_Shd.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_Body_spow.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_face3_lpow.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_face3_main.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_face3_main_Shd2.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_face3_main_spow.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_face3_main_sub.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_Hair_Spow.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_skin.png",
+      "width": 1024,
+      "height": 1024,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_Skin_Shd.png",
+      "width": 1024,
+      "height": 1024,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_skin_spow.png",
+      "width": 1024,
+      "height": 1024,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_Wep.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_Wep_Emi.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_Wep_Shd.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "kohaku_A_Wep_Spec.png",
+      "width": 2048,
+      "height": 2048,
+      "channels": 4
+    },
+    {
+      "name": "para_height2.png",
+      "width": 1024,
+      "height": 1024,
+      "channels": 4
+    }
+  ],
+  "scope": "Read-only texture decoding and source FBX inspection, NOT visual or animation acceptance",
+  "armatures": [
+    {
+      "name": "Character1_Reference",
+      "bones": 328
+    },
+    {
+      "name": "Wep",
+      "bones": 11
+    }
+  ],
+  "mesh_count": 24,
+  "triangles": 39241,
+  "material_count": 7,
+  "action_count": 0,
+  "original_files_not_saved_or_modified": true
+}

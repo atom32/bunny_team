@@ -2,7 +2,9 @@
 
 ## Unity-chan Battle Costume
 
-- Files used: `assets/characters/unitychan_battle/unitychan_battle.fbx`, textures, and selected animation FBXs
+- Runtime animation FBXs: `assets/characters/unitychan_battle/animations/`; original hidden source rig/animation data retained.
+- Legacy/reference model: `art_source/unitychan_battle_legacy/unitychan_battle.fbx` (byte-identical relocation, excluded from Godot import by `.gdignore`). It is not the visible runtime character.
+- Restored original texture dependencies: `assets/140301_unitychanmodel_Celsis/sourceimages/`; exact source/hash/license record in adjacent `SOURCE.md`.
 - Character: Unity-chan Battle Costume
 - Publisher: Unity Technologies Japan K.K.
 - Source: https://unity3d.jp/unity-chan_contents/releaseNote.php?id=TPK-Hmnd-Kohaku_A&lang=en
@@ -12,7 +14,16 @@
 - Bundled license files: `assets/characters/unitychan_battle/license/`
 - Required corporate-use notation: `© Unity Technologies Japan/UCL`
 
-The visible model is driven in Godot through a shared-bone runtime retarget. Its bundled melee weapon is hidden; the project supplies its own shooter equipment.
+Production Player renders the official-source-derived Battle Costume GLB at
+`assets/characters/unitychan_battle/battle_presentation.glb` through the existing
+presentation adapter and retarget. The raw legacy FBX is retained outside runtime
+import scope; recovered immutable authoring files live under
+`art_source/unitychan_battle_legacy/official_1_1/`. Phase 2B restored five missing
+original TGA dependencies from the official UnityChan 1.2.1 package; all six local
+animation FBXs match that package by SHA-256. No animation or rig was rewritten
+by that repair. Phase 4E KITE-07 uses neither the old VRM nor its humanoid rig;
+AvatarSample_A remains a rollback/reference asset, not the production character.
+This development sync is not commercial release clearance.
 
 The Unity-chan license package must remain alongside the character files when the digital assets are redistributed. The license also prohibits using the character as AI image-generation training or input data.
 

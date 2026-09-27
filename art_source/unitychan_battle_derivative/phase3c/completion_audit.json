@@ -1,0 +1,133 @@
+{
+  "decision": "Phase 3C PASS / Production Replacement Ready (technical, isolated only)",
+  "requirements": [
+    {
+      "section": 1,
+      "requirement": "Actor/identity separation",
+      "status": "VERIFIED",
+      "evidence": "isolated_changes.json; final_integrity.json; identity_verification.json"
+    },
+    {
+      "section": 2,
+      "requirement": "Hard constraints",
+      "status": "VERIFIED",
+      "evidence": "final_integrity.json: source drift empty, protected diff empty, official 68 hashes; no test edits/fake nodes"
+    },
+    {
+      "section": 3,
+      "requirement": "Rollback baseline",
+      "status": "VERIFIED",
+      "evidence": "baseline.json; git_status_before.txt; presentation_switch.gd legacy default"
+    },
+    {
+      "section": 4,
+      "requirement": "Semantic search",
+      "status": "VERIFIED",
+      "evidence": "semantic_search.json plus supplemental group/metadata/bounds search in DEPENDENCY_INVENTORY.md"
+    },
+    {
+      "section": 5,
+      "requirement": "Dependency classes",
+      "status": "VERIFIED",
+      "evidence": "DEPENDENCY_INVENTORY.md grouped A/B/C/D table; generic non-character hits explicitly excluded"
+    },
+    {
+      "section": 6,
+      "requirement": "Face analysis",
+      "status": "VERIFIED",
+      "evidence": "READINESS_AUDIT.md exact acceptance_smoke:142-143, visual integrity not gameplay; unchanged test, future per-asset fixture recommendation"
+    },
+    {
+      "section": 7,
+      "requirement": "Dimensions",
+      "status": "VERIFIED",
+      "evidence": "DEPENDENCY_INVENTORY.md; persistence/verify_before.json capsule .36/1.85 unchanged"
+    },
+    {
+      "section": 8,
+      "requirement": "Skeleton",
+      "status": "VERIFIED",
+      "evidence": "DEPENDENCY_INVENTORY.md semantic mounts vs Character1 implementation; existing rig/retarget interfaces retained"
+    },
+    {
+      "section": 9,
+      "requirement": "Animation",
+      "status": "VERIFIED",
+      "evidence": "DEPENDENCY_INVENTORY.md; unchanged regression animation/IK assertions; actual Dodge in both routes; accepted Phase3A3/3B animation baseline retained"
+    },
+    {
+      "section": 10,
+      "requirement": "Weapons",
+      "status": "VERIFIED",
+      "evidence": "contract/comparison.json 270 samples zero gameplay muzzle/direction delta, exact state flags; route_Rifle and route_SMG weapon_checks"
+    },
+    {
+      "section": 11,
+      "requirement": "Save audit",
+      "status": "VERIFIED",
+      "evidence": "Profile schema1 inventory/loadout only; identity_verification.json; Person/progression/economy absent, not invented"
+    },
+    {
+      "section": 12,
+      "requirement": "Hanger",
+      "status": "VERIFIED",
+      "evidence": "route_Rifle/01_hanger.png and 07_return_hanger.png; same player.tscn and camera; isolation factory"
+    },
+    {
+      "section": 13,
+      "requirement": "Field Office",
+      "status": "VERIFIED",
+      "evidence": "route_Rifle and route_SMG 04b_terminal_interacted.png + route_result.json; same actor/session, normal collision and AI"
+    },
+    {
+      "section": 14,
+      "requirement": "Isolated switch",
+      "status": "VERIFIED",
+      "evidence": "stage.py; presentation_switch.gd; final_integrity.json exactly two copied Player expression substitutions"
+    },
+    {
+      "section": 15,
+      "requirement": "Full route",
+      "status": "VERIFIED",
+      "evidence": "Both route_result.json all 32 checks: save/Hanger/deploy/Office/Terminal/combat/reload/Dodge/extraction/Result/Hanger"
+    },
+    {
+      "section": 16,
+      "requirement": "Restart save/load",
+      "status": "VERIFIED",
+      "evidence": "persistence seed/verify_before/reload.json distinct processes; identity_flow.json; independent warehouse merge verifier"
+    },
+    {
+      "section": 17,
+      "requirement": "Classification table",
+      "status": "VERIFIED",
+      "evidence": "DEPENDENCY_INVENTORY.md includes gameplay/presentation need and migration action for grouped dependencies"
+    },
+    {
+      "section": 18,
+      "requirement": "Success criteria",
+      "status": "VERIFIED",
+      "evidence": "Legacy33/33; Unity32/33 Face only; both MAIN0; graphical and persistence evidence; no semantics changes"
+    },
+    {
+      "section": 19,
+      "requirement": "Architectural problem handling",
+      "status": "VERIFIED",
+      "evidence": "Mixed muzzle coupling audited and zero-delta verified; enemy Face tint preserved; no blocking architectural change/refactor required"
+    },
+    {
+      "section": 20,
+      "requirement": "Git policy",
+      "status": "VERIFIED",
+      "evidence": "HEAD ec5f18d; existing WIP preserved; no commit/push; only derivative Phase3C evidence/docs added this phase"
+    },
+    {
+      "section": 21,
+      "requirement": "Final report",
+      "status": "VERIFIED",
+      "evidence": "README.md Phase3C section with all12 requested subjects; technical readiness distinguished from public-release clearance"
+    }
+  ],
+  "release": "NOT public release clearance; old enemy still restricted",
+  "permanent_replacement": false
+}

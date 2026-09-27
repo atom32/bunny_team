@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "outcome_session_matches": true,
+    "completed_result": true,
+    "warehouse_equals_uncarried_plus_recovered": true,
+    "warehouse_capacity_preserved": true,
+    "loadout_matches_outcome": true,
+    "equipped_instance_ids_preserved": true,
+    "schema_unchanged": true,
+    "save_matches_committed_profile": true,
+    "separate_process_reload_matches": true,
+    "no_avatar_identity_serialized": true
+  },
+  "pass": true,
+  "note": "Independently reconstructs warehouse merge from pre-sortie + recovered outcome. Ammo consumption is expected, not equal-to-before. No Person/progression/economy fields exist in current schema."
+}
