@@ -1,0 +1,485 @@
+{
+  "animation_source_bones": 140,
+  "animation_tree_active": true,
+  "avatar_resource_cached": true,
+  "character_bones": 91,
+  "kite_model_path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/KiteSecurityPresentation",
+  "kite_native_muzzle_nodes": 0,
+  "legacy_avatar_runtime_dependency": true,
+  "legacy_character_scene": "res://assets/characters/vrm_avatar/avatar_sample_a.glb",
+  "legacy_model_hidden": true,
+  "legacy_muzzle_path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle/Muzzle",
+  "muzzle_direction": "(0.0, 0.0, -1.0)",
+  "muzzle_position": "(0.0, 0.01936, -0.71632)",
+  "node_count": 70,
+  "node_types": {
+    "AnimationPlayer": 2,
+    "AnimationTree": 1,
+    "BoneAttachment3D": 9,
+    "CharacterBody3D": 1,
+    "CollisionShape3D": 1,
+    "LookAtModifier3D": 2,
+    "Marker3D": 9,
+    "MeshInstance3D": 24,
+    "NavigationAgent3D": 1,
+    "Node3D": 14,
+    "RetargetModifier3D": 1,
+    "Skeleton3D": 2,
+    "SkeletonModifier3D": 1,
+    "TwoBoneIK3D": 2
+  },
+  "nodes": [
+    {
+      "path": "/root/@Node3D@2/Enemy",
+      "scene_file": "res://scenes/enemies/enemy.tscn",
+      "script": "res://scripts/enemies/enemy_controller.gd",
+      "type": "CharacterBody3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyDronePresentation",
+      "scene_file": "",
+      "script": "res://scripts/presentation/enemy_drone_presentation.gd",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/@CollisionShape3D@3",
+      "scene_file": "",
+      "type": "CollisionShape3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual",
+      "scene_file": "",
+      "script": "res://scripts/characters/humanoid_retarget_visual.gd",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource",
+      "scene_file": "res://assets/characters/unitychan_battle/animations/idle.fbx",
+      "type": "Node3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1",
+      "scene_file": "",
+      "type": "Node3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference",
+      "scene_file": "",
+      "type": "Node3D",
+      "visible_in_tree": false
+    },
+    {
+      "bones": 140,
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D",
+      "scene_file": "",
+      "type": "Skeleton3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/head_back",
+      "scene_file": "",
+      "type": "BoneAttachment3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/head_back/head_back",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/eye_base_old",
+      "scene_file": "",
+      "type": "BoneAttachment3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/eye_base_old/eye_base_old",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/eye_L_old",
+      "scene_file": "",
+      "type": "BoneAttachment3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/eye_L_old/eye_L_old",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/eye_R_old",
+      "scene_file": "",
+      "type": "BoneAttachment3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/eye_R_old/eye_R_old",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/MTH_DEF",
+      "scene_file": "",
+      "type": "BoneAttachment3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/MTH_DEF/MTH_DEF",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EYE_DEF",
+      "scene_file": "",
+      "type": "BoneAttachment3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EYE_DEF/EYE_DEF",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EYE_DEF/EYE_DEF/EL_DEF",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/BLW_DEF",
+      "scene_file": "",
+      "type": "BoneAttachment3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/BLW_DEF/BLW_DEF",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyAnimationPlayer",
+      "scene_file": "",
+      "type": "AnimationPlayer"
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget",
+      "scene_file": "",
+      "type": "RetargetModifier3D",
+      "visible_in_tree": false
+    },
+    {
+      "bones": 91,
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D",
+      "scene_file": "",
+      "type": "Skeleton3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/Face",
+      "scene_file": "",
+      "skeleton_path": "..",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/Body",
+      "scene_file": "",
+      "skeleton_path": "..",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/Hair",
+      "scene_file": "",
+      "skeleton_path": "..",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/ForwardAxisRetarget",
+      "scene_file": "",
+      "script": "res://scripts/player/forward_axis_retarget_modifier.gd",
+      "type": "SkeletonModifier3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/TorsoAim",
+      "scene_file": "",
+      "type": "LookAtModifier3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/HeadAim",
+      "scene_file": "",
+      "type": "LookAtModifier3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/RightArmIK",
+      "scene_file": "",
+      "type": "TwoBoneIK3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/LeftArmIK",
+      "scene_file": "",
+      "type": "TwoBoneIK3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/EnemyChestPlateAttachment",
+      "scene_file": "",
+      "type": "BoneAttachment3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/EnemyChestPlateAttachment/EnemyChestPlate",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/EnemyVisorAttachment",
+      "scene_file": "",
+      "type": "BoneAttachment3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/group1/Character1_Reference/Skeleton3D/EnemyRetarget/Skeleton3D/EnemyVisorAttachment/EnemyVisor",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationSource/AnimationPlayer",
+      "scene_file": "",
+      "type": "AnimationPlayer"
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyVRMModel",
+      "scene_file": "res://assets/characters/vrm_avatar/avatar_sample_a.glb",
+      "type": "Node3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyAnimationTree",
+      "scene_file": "",
+      "type": "AnimationTree"
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig",
+      "scene_file": "",
+      "script": "res://scripts/player/character_combat_rig.gd",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload",
+      "scene_file": "",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount",
+      "scene_file": "",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle",
+      "scene_file": "res://scenes/weapons/assault_rifle.tscn",
+      "script": "res://scripts/weapons/weapon_visual.gd",
+      "type": "Node3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle/Art",
+      "scene_file": "",
+      "script": "res://scripts/presentation/model_palette.gd",
+      "type": "Node3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle/Art/Model",
+      "scene_file": "res://assets/weapons/kenney_blaster_kit/blaster-e.glb",
+      "type": "Node3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle/Art/Model/blaster-e",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle/Art/Model/blaster-e/scope",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle/Art/Model/blaster-e/magazine",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle/Muzzle",
+      "scene_file": "",
+      "type": "Marker3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle/Muzzle/MuzzleFlash",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle/PrimaryGrip",
+      "scene_file": "",
+      "type": "Marker3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle/SupportGrip",
+      "scene_file": "",
+      "type": "Marker3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/FireReload/WeaponMount/EnemyAssaultRifle/ReloadGrip",
+      "scene_file": "",
+      "type": "Marker3D",
+      "visible_in_tree": false
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/AimTarget",
+      "scene_file": "",
+      "type": "Marker3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/RightHandTarget",
+      "scene_file": "",
+      "type": "Marker3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/LeftHandTarget",
+      "scene_file": "",
+      "type": "Marker3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/RightElbowPole",
+      "scene_file": "",
+      "type": "Marker3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyCombatRig/LeftElbowPole",
+      "scene_file": "",
+      "type": "Marker3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/EnemyMarker",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/KiteSecurityPresentation",
+      "scene_file": "res://scenes/presentation/enemies/kite_security.tscn",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/KiteSecurityPresentation/Model",
+      "scene_file": "res://assets/enemies/kite_security/enemy_visual.glb",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/KiteSecurityPresentation/Model/Chassis",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/KiteSecurityPresentation/Model/Gun",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/KiteSecurityPresentation/Model/PortPod",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/KiteSecurityPresentation/Model/RearPack",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/KiteSecurityPresentation/Model/Sensor",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyCharacterVisual/KiteSecurityPresentation/Model/StarboardPod",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/NavigationAgent3D",
+      "scene_file": "",
+      "type": "NavigationAgent3D"
+    }
+  ],
+  "real_hand_ik_present": true,
+  "retarget_present": true,
+  "scope": "Read-only instance of unchanged production enemy; no candidate or migration"
+}

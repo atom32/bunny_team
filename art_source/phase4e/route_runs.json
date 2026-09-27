@@ -1,0 +1,14 @@
+[
+  {
+    "primary": "Rifle",
+    "exit": 0,
+    "errors": [],
+    "pass": true
+  },
+  {
+    "primary": "SMG",
+    "exit": 0,
+    "errors": [],
+    "pass": true
+  }
+]

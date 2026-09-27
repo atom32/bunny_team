@@ -1,0 +1,41 @@
+{
+  "baseline": "a40b765",
+  "script_adapter": "remove global class_name; signal parameter EnemyController -> Node solely to load frozen baseline independently",
+  "files": {
+    "scripts/enemies/enemy_controller.gd": {
+      "baseline_sha256": "758e8739832683ea93e5e507372cdec376d08880a970f44c903ff4719254b2d5",
+      "working_sha256": "bdf1a23ad2a0ee33b82c7e07a5db274a5abf31245362695103b6974b3214d7d6",
+      "stored": "oracle/enemy_controller.gd.txt"
+    },
+    "scripts/characters/humanoid_retarget_visual.gd": {
+      "baseline_sha256": "f6a628a4e6ff46e851458773cea080820b165c33d71637b06e4cd2e6f8f2d7d7",
+      "working_sha256": "5393f4ea4787c367bb31dcff20cbce499457cc68a12ace93a5214c0076a5f6a6",
+      "stored": "oracle/humanoid_retarget_visual.gd.txt"
+    },
+    "scripts/player/character_combat_rig.gd": {
+      "baseline_sha256": "1eabcaadf7cd251534bb9947d66b34f23091752112964bc3a0cf1f04a4f6acb0",
+      "working_sha256": "a176b5c3ed2b140f1c3cf9a4f36b9534036ac189eae2b5696dfaa2b468289205",
+      "stored": "oracle/character_combat_rig.gd.txt"
+    },
+    "scripts/presentation/enemy_drone_presentation.gd": {
+      "baseline_sha256": "a59c833ca74574b241b74f6a0a413af2560d6d680721549f018c12f3af8935f2",
+      "working_sha256": "a59c833ca74574b241b74f6a0a413af2560d6d680721549f018c12f3af8935f2",
+      "stored": "oracle/enemy_drone_presentation.gd.txt"
+    },
+    "scenes/weapons/assault_rifle.tscn": {
+      "baseline_sha256": "10fb8a4791c7f09cd6ec44db81d7b7e2615678eefad483020f84b581f2b193ff",
+      "working_sha256": "fd7133ce8068cf03316727020fe67f9ff7f0ba1facdcad95edc645d5601c9c08",
+      "stored": "oracle/assault_rifle.tscn.txt"
+    },
+    "tests/acceptance_smoke.gd": {
+      "baseline_sha256": "95d9bf26829b60368447ae9add5126fcced2b6a5fd8649b2ad9dd415bc81c3df",
+      "working_sha256": "e207c75e1ec3f65b14e3db042e50e90e2851d7b6e4cf983af0d5086024413f74",
+      "stored": "oracle/acceptance_smoke.gd.txt"
+    },
+    "tests/visual_enemy_acceptance.gd": {
+      "baseline_sha256": "c72404051781f5b5d82de76413a407db7a95afe24717364b4db039ee716ab25a",
+      "working_sha256": "9c2866986835c5ea1d1615a69250906218ab0c9783c0bcbed6916904798b61f8",
+      "stored": "oracle/visual_enemy_acceptance.gd.txt"
+    }
+  }
+}

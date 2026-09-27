@@ -21,7 +21,7 @@ var detection_range := 24.0
 var target: PlayerController
 var navigation_agent: NavigationAgent3D
 var body_visual: Node3D
-var presentation: KiteEnemyPresentation
+var humanoid_visual: HumanoidRetargetVisual
 var is_dead := false
 var _shot_cooldown := 0.7
 var _path_refresh := 0.0
@@ -67,7 +67,7 @@ func _physics_process(delta: float) -> void:
 		return
 	if not is_instance_valid(target) or target.is_dead:
 		_movement_direction = Vector3.ZERO
-		_update_presentation(delta, global_position - global_basis.z * 8.0, 0.0)
+		_update_humanoid_visual(delta, global_position - global_basis.z * 8.0, 0.0)
 		return
 	var offset := target.global_position - global_position
 	var flat_offset := Vector3(offset.x, 0.0, offset.z)
@@ -88,7 +88,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = -0.1 if is_on_floor() else velocity.y - 24.0 * delta
 			move_and_slide()
 			_face_direction(_movement_direction, delta)
-			_update_presentation(delta, target.global_position + Vector3.UP * 1.05, approach_horizontal.length())
+			_update_humanoid_visual(delta, target.global_position + Vector3.UP * 1.05, approach_horizontal.length())
 			return
 	_shot_cooldown -= delta
 
@@ -111,7 +111,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	_face_direction(desired if desired.length_squared() > 0.01 else flat_offset, delta)
 	var visual_aim_point := _shot_aim_point if _is_telegraphing else target.global_position + Vector3.UP * 1.05
-	_update_presentation(delta, visual_aim_point, desired.length() * movement_speed)
+	_update_humanoid_visual(delta, visual_aim_point, desired.length() * movement_speed)
 	if distance <= attack_range and _shot_cooldown <= 0.0 and not _is_telegraphing:
 		_telegraph_shot()
 
@@ -156,11 +156,11 @@ func _build_navigation() -> void:
 
 
 func _build_visual() -> void:
-	presentation = KiteEnemyPresentation.new()
-	presentation.name = "EnemyPresentation"
-	presentation.scale = BASE_VISUAL_SCALE
-	body_visual = presentation
-	add_child(presentation)
+	humanoid_visual = HumanoidRetargetVisual.new()
+	humanoid_visual.name = "EnemyCharacterVisual"
+	humanoid_visual.scale = BASE_VISUAL_SCALE
+	body_visual = humanoid_visual
+	add_child(humanoid_visual)
 	var ring_mesh := TorusMesh.new()
 	ring_mesh.inner_radius = 0.42
 	ring_mesh.outer_radius = 0.5
@@ -170,7 +170,7 @@ func _build_visual() -> void:
 	marker.position.y = 0.045
 	marker.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	marker.material_override = VisualFactory.material(Color("d63d55"), 0.1, 0.18, Color("ff3657"), 3.2)
-	presentation.add_child(marker)
+	humanoid_visual.add_child(marker)
 
 
 func _face_direction(direction: Vector3, delta: float) -> void:
@@ -181,10 +181,10 @@ func _face_direction(direction: Vector3, delta: float) -> void:
 	rotation.y = lerp_angle(rotation.y, target_yaw, 1.0 - exp(-12.0 * delta))
 
 
-func _update_presentation(delta: float, aim_point: Vector3, locomotion_speed: float) -> void:
-	if not presentation:
+func _update_humanoid_visual(delta: float, aim_point: Vector3, locomotion_speed: float) -> void:
+	if not humanoid_visual:
 		return
-	presentation.update_visual(aim_point, _movement_direction, locomotion_speed, delta)
+	humanoid_visual.update_visual(aim_point, _movement_direction, locomotion_speed, delta)
 
 
 func _flash_hit(knockback_impulse: Vector3) -> void:
@@ -230,22 +230,22 @@ func _telegraph_shot() -> void:
 	_is_telegraphing = true
 	_shot_cooldown = randf_range(attack_cooldown_min, attack_cooldown_max)
 	_shot_aim_point = target.global_position + Vector3.UP * 1.05
-	var from := presentation.get_muzzle_position()
+	var from := humanoid_visual.get_muzzle_position()
 	CombatEffects.telegraph(get_tree().current_scene, from, _shot_aim_point)
 	await get_tree().create_timer(0.38).timeout
 	if not is_inside_tree() or is_dead or not is_instance_valid(target) or not target.is_inside_tree() or target.is_dead:
 		_is_telegraphing = false
 		_shot_aim_point = Vector3.ZERO
 		return
-	from = presentation.get_muzzle_position()
-	var shot_direction := presentation.get_muzzle_direction()
+	from = humanoid_visual.get_muzzle_position()
+	var shot_direction := humanoid_visual.get_muzzle_direction()
 	var ray_length := maxf(from.distance_to(_shot_aim_point) + 2.0, 16.0)
 	var ray_end := from + shot_direction * ray_length
 	var query := PhysicsRayQueryParameters3D.create(from, ray_end, 5)
 	query.exclude = [get_rid()]
 	var result := get_world_3d().direct_space_state.intersect_ray(query)
 	var hit_position: Vector3 = result.position if not result.is_empty() else ray_end
-	presentation.fire_recoil()
+	humanoid_visual.fire_recoil()
 	AudioDirector.play_sfx(&"enemy_fire", -1.0, 0.045)
 	CombatEffects.muzzle_flash(get_tree().current_scene, from, shot_direction, Color("ff3658"), 0.68)
 	CombatEffects.tracer(get_tree().current_scene, from, hit_position, Color("ff3658"), 0.052)

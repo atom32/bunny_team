@@ -1,0 +1,135 @@
+{
+  "avatar_resource_cached": false,
+  "bone_count": 0,
+  "kite_model_path": "/root/@Node3D@2/Enemy/EnemyPresentation/KiteSecurityPresentation",
+  "legacy_avatar_runtime_dependency": false,
+  "muzzle_direction": "(0.0, 0.0, -1.0)",
+  "muzzle_position": "(0.0, 0.01936, -0.71632)",
+  "native_muzzle_path": "/root/@Node3D@2/Enemy/EnemyPresentation/WeaponPresentation/FireReload/WeaponMount/Muzzle",
+  "node_count": 17,
+  "node_types": {
+    "CharacterBody3D": 1,
+    "CollisionShape3D": 1,
+    "Marker3D": 1,
+    "MeshInstance3D": 7,
+    "NavigationAgent3D": 1,
+    "Node3D": 6
+  },
+  "nodes": [
+    {
+      "path": "/root/@Node3D@2/Enemy",
+      "scene_file": "res://scenes/enemies/enemy.tscn",
+      "script": "res://scripts/enemies/enemy_controller.gd",
+      "type": "CharacterBody3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/@CollisionShape3D@3",
+      "scene_file": "",
+      "type": "CollisionShape3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation",
+      "scene_file": "",
+      "script": "res://scripts/presentation/enemy_drone_presentation.gd",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/WeaponPresentation",
+      "scene_file": "",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/WeaponPresentation/FireReload",
+      "scene_file": "",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/WeaponPresentation/FireReload/WeaponMount",
+      "scene_file": "",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/WeaponPresentation/FireReload/WeaponMount/Muzzle",
+      "scene_file": "",
+      "type": "Marker3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/KiteSecurityPresentation",
+      "scene_file": "res://scenes/presentation/enemies/kite_security.tscn",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/KiteSecurityPresentation/Model",
+      "scene_file": "res://assets/enemies/kite_security/enemy_visual.glb",
+      "type": "Node3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/KiteSecurityPresentation/Model/Chassis",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/KiteSecurityPresentation/Model/Gun",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/KiteSecurityPresentation/Model/PortPod",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/KiteSecurityPresentation/Model/RearPack",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/KiteSecurityPresentation/Model/Sensor",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/KiteSecurityPresentation/Model/StarboardPod",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/EnemyPresentation/EnemyMarker",
+      "scene_file": "",
+      "skeleton_path": "",
+      "type": "MeshInstance3D",
+      "visible_in_tree": true
+    },
+    {
+      "path": "/root/@Node3D@2/Enemy/NavigationAgent3D",
+      "scene_file": "",
+      "type": "NavigationAgent3D"
+    }
+  ],
+  "result": "PASS",
+  "scope": "Isolated production enemy instance; no oracle/debug scene loaded in this process",
+  "shared_animation_cached_after_enemy": true,
+  "shared_animation_cached_before_enemy": true,
+  "skeleton_count": 0
+}

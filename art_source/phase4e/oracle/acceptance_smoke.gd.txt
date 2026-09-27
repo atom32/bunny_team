@@ -312,39 +312,32 @@ func _test_battle() -> void:
 		var humanoid_enemy := enemies[0] as EnemyController
 		var door_body := authored_door.find_child("DoorBody", true, false) as StaticBody3D if authored_door else null
 		check(door_body != null and (humanoid_enemy.collision_mask & door_body.collision_layer) != 0, "authored door collision blocks enemies through the shared world layer")
-		var enemy_visual := humanoid_enemy.presentation
-		check(enemy_visual != null and humanoid_enemy.body_visual == enemy_visual, "enemy owns an independent presentation target for movement, attack and hit")
+		var enemy_visual := humanoid_enemy.humanoid_visual
+		check(enemy_visual != null, "enemy AI owns a decoupled humanoid character visual")
 		if enemy_visual:
-			check(enemy_visual.visual != null and enemy_visual.visual.is_visible_in_tree() and enemy_visual.model != null, "enemy has a visible KITE-07 asset instance")
-			check(enemy_visual.model.find_children("*", "MeshInstance3D", true, false).size() == 6, "enemy presentation contains all six authored drone parts")
-			check(enemy_visual.find_children("*", "Skeleton3D", true, false).is_empty() and enemy_visual.find_children("*", "BoneAttachment3D", true, false).is_empty(), "enemy presentation does not retain a hidden humanoid or bone attachment")
-			check(enemy_visual.find_children("*", "AnimationTree", true, false).is_empty() and enemy_visual.find_child("EnemyVRMModel", true, false) == null, "native enemy presentation has no legacy animation/model fallback")
-			check(enemy_visual.weapon_presentation != null and enemy_visual.muzzle == enemy_visual.get_node_or_null("WeaponPresentation/FireReload/WeaponMount/Muzzle"), "native weapon presentation owns the firing marker independently of bones")
-			check(enemy_visual.muzzle.global_transform.is_finite() and is_equal_approx(enemy_visual.get_muzzle_direction().length(), 1.0), "enemy muzzle has a finite world frame and normalized forward direction")
+			check(enemy_visual.character_model != null and enemy_visual.character_model.name == "EnemyVRMModel", "enemy uses the complete VRM character model")
+			check(enemy_visual.character_skeleton != null and enemy_visual.character_skeleton.get_bone_count() >= 90, "enemy uses a complete humanoid Skeleton3D")
+			check(enemy_visual.retarget_modifier != null and enemy_visual.find_child("ForwardAxisRetarget", true, false) != null, "enemy locomotion uses retarget and forward-axis correction")
+			check(enemy_visual.animation_tree != null and enemy_visual.animation_tree.active, "enemy locomotion runs through an active AnimationTree")
+			check(enemy_visual.combat_rig != null and enemy_visual.combat_rig.has_weapon(), "enemy rifle is mounted through the shared combat rig")
 			var enemy_aim_point := player.global_position + Vector3.UP * 1.05 if player else humanoid_enemy.global_position - humanoid_enemy.global_basis.z * 8.0
-			var pod := enemy_visual.model.find_child("PortPod", true, false) as Node3D
-			var sensor := enemy_visual.model.find_child("Sensor", true, false) as Node3D
-			var idle_sensor_position := sensor.position
-			enemy_visual.update_visual(enemy_aim_point, Vector3.ZERO, 0.0, 1.0 / 60.0)
-			enemy_visual._sync_visual(0.25)
-			check(sensor.position.distance_to(idle_sensor_position) > 0.00001, "enemy idle presentation produces hover motion")
+			enemy_visual.set_debug_locomotion(&"Run")
+			var enemy_axis_alignment := 0.0
+			var enemy_motion_samples := 0
 			for frame_index in 36:
 				enemy_visual.update_visual(enemy_aim_point, -humanoid_enemy.global_basis.z, 3.2, 1.0 / 60.0)
-				enemy_visual._sync_visual(1.0 / 60.0)
 				await get_tree().process_frame
-			check(pod.rotation.x < -0.04, "enemy movement presentation tilts the propulsion pods without humanoid locomotion")
+				if frame_index >= 12:
+					var sample := enemy_visual.get_forward_axis_motion_alignment()
+					if absf(sample) > 0.00001:
+						enemy_axis_alignment += sample
+						enemy_motion_samples += 1
+			check(enemy_motion_samples >= 8 and enemy_axis_alignment < 0.0, "enemy feet use the proven +Z animation to -Z model forward-axis correction")
 			var muzzle_to_aim := enemy_visual.get_muzzle_position().direction_to(enemy_aim_point)
 			check(enemy_visual.get_muzzle_direction().dot(muzzle_to_aim) > 0.97, "enemy muzzle direction matches its combat aim ray")
-			check(enemy_visual.gun.global_position.distance_to(enemy_visual.get_muzzle_position()) < 0.00001 and (-enemy_visual.gun.global_basis.z.normalized()).dot(enemy_visual.get_muzzle_direction()) > 0.99999, "visible weapon bore follows actual fire origin and direction")
-			var before_recoil := enemy_visual.get_muzzle_position()
-			enemy_visual.fire_recoil()
-			enemy_visual.update_visual(enemy_aim_point, Vector3.ZERO, 0.0, 1.0 / 60.0)
-			enemy_visual._sync_visual(1.0 / 60.0)
-			check(before_recoil.distance_to(enemy_visual.get_muzzle_position()) > 0.001, "enemy attack presentation produces real weapon recoil")
-			for frame_index in 60:
-				enemy_visual.update_visual(enemy_aim_point, Vector3.ZERO, 0.0, 1.0 / 60.0)
-				enemy_visual._sync_visual(1.0 / 60.0)
-			check(before_recoil.distance_to(enemy_visual.get_muzzle_position()) < 0.0001 and absf(pod.rotation.x) < 0.0001, "enemy weapon and movement presentation settle after recoil/movement")
+			check(enemy_visual.combat_rig.get_hand_error(&"right") < 0.02, "enemy right hand follows the rifle primary grip")
+			check(enemy_visual.combat_rig.get_hand_error(&"left") < 0.02, "enemy left hand follows the rifle support grip")
+			enemy_visual.clear_debug_locomotion()
 	if player:
 		check(player.player_marker != null, "player has a cyan combat readability marker")
 		check(player.acceleration >= 50.0 and player.deceleration > player.acceleration, "movement accelerates quickly and stops decisively")
@@ -409,20 +402,10 @@ func _test_battle() -> void:
 		var previous_enemy_health := enemy.health
 		enemy.take_damage(5.0, Vector3.RIGHT)
 		check(enemy.health < previous_enemy_health, "enemy receives damage and hit reaction")
-		check(enemy.presentation.gun.material_overlay != null and not enemy.body_visual.scale.is_equal_approx(EnemyController.BASE_VISUAL_SCALE), "damage drives native enemy hit flash and presentation reaction")
 		battle.ending = true
 		enemy.take_damage(999.0, Vector3.UP * 2.0)
 		await get_tree().process_frame
 		check(battle.find_child("RagdollProxy", true, false) != null, "enemy death creates a physics ragdoll")
-		var native_wreck_parts := 0
-		for wreck in battle.find_children("*", "RagdollProxy", true, false):
-			if not wreck.has_meta("drone_visual"):
-				continue
-			for part_name in KiteEnemyPresentation.DEATH_PARTS:
-				var body := wreck.get_node(str(KiteEnemyPresentation.DEATH_PARTS[part_name])) as RigidBody3D
-				if not body.get_node("Mesh").visible and body.get_node_or_null(str(part_name)) is MeshInstance3D:
-					native_wreck_parts += 1
-		check(native_wreck_parts >= 6, "enemy death preserves physics proxy and renders the authored KITE-07 wreck parts")
 	battle.result_transition_enabled = false
 	battle.ending = false
 	var profile_before_pickup := profile.to_dict()

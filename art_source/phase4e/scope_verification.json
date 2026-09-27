@@ -1,0 +1,16 @@
+{
+  "phase": "4E",
+  "status": "BLOCKED",
+  "head": "c43264935d2e14b55a87837104ea87aabe3ba639",
+  "runtime_baseline": "a40b765",
+  "existing_file_count_checked": 2262,
+  "changed_existing_files": [],
+  "tests_modified": false,
+  "production_modified": false,
+  "legacy_avatar_dependency": true,
+  "probe_exit": 0,
+  "native_firing_comparison": "NOT RUN - no candidate",
+  "regression": "NOT RERUN - stopped at incompatible legacy test contract",
+  "staged_files": [],
+  "push": false
+}

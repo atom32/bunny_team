@@ -1,0 +1,5218 @@
+{
+  "head": "c43264935d2e14b55a87837104ea87aabe3ba639",
+  "runtime_baseline": "a40b765",
+  "scope": "scripts/scenes/tests .gd/.tscn/.tres, read-only lexical discovery; hits are not automatically dependencies; resources/*.tres and project.godot",
+  "patterns": "AvatarSample_A|avatar_sample_a|Skeleton3D|BoneAttachment3D|BoneAttachment|Muzzle|Weapon|fire_origin|fire_direction|global_transform|humanoid_visual|EnemyVRMModel|EnemyCharacterVisual|EnemyCombatRig|HumanoidRetargetVisual",
+  "hits": [
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 39,
+      "text": "_sync_weapon_hud()"
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 43,
+      "text": "player.weapon_fired.connect(_on_player_weapon_fired)"
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 45,
+      "text": "player.weapon_switched.connect(_on_player_weapon_switched)"
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 108,
+      "text": "func _on_player_weapon_fired(recoil_strength: float) -> void:"
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 115,
+      "text": "_sync_weapon_hud()"
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 119,
+      "text": "func _on_player_weapon_switched(_slot_id: StringName) -> void:"
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 120,
+      "text": "_sync_weapon_hud()"
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 123,
+      "text": "func _sync_weapon_hud() -> void:"
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 126,
+      "text": "hud.set_weapon_slots("
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 127,
+      "text": "player.get_weapon_status(LoadoutState.SLOT_WEAPON_PRIMARY),"
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 128,
+      "text": "player.get_weapon_status(LoadoutState.SLOT_WEAPON_SECONDARY),"
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 129,
+      "text": "player.active_weapon_slot"
+    },
+    {
+      "path": "scripts/battle/battle.gd",
+      "line": 203,
+      "text": "var enemy := EnemySpawnService.spawn(definition, spawn_point.global_transform, enemy_container)"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 1,
+      "text": "class_name HumanoidRetargetVisual"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 4,
+      "text": "const CHARACTER_SCENE := preload(\"res://assets/characters/vrm_avatar/avatar_sample_a.glb\")"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 6,
+      "text": "const ASSAULT_RIFLE_SCENE := preload(\"res://scenes/weapons/assault_rifle.tscn\")"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 38,
+      "text": "var animation_source_skeleton: Skeleton3D"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 40,
+      "text": "var character_skeleton: Skeleton3D"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 46,
+      "text": "var weapon_visual: Node3D"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 59,
+      "text": "_mount_weapon()"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 102,
+      "text": "func get_muzzle_position() -> Vector3:"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 103,
+      "text": "return combat_rig.get_muzzle_position() if combat_rig else global_position + Vector3.UP * 1.2"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 106,
+      "text": "func get_muzzle_direction() -> Vector3:"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 107,
+      "text": "return combat_rig.get_muzzle_direction() if combat_rig else -global_basis.z.normalized()"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 122,
+      "text": "animation_source_skeleton = animation_source_model.find_child(\"Skeleton3D\", true, false) as Skeleton3D"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 125,
+      "text": "character_model.name = \"EnemyVRMModel\""
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 126,
+      "text": "var bundled_weapon := character_model.find_child(\"Wep\", true, false)"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 127,
+      "text": "if bundled_weapon:"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 128,
+      "text": "_set_mesh_visibility(bundled_weapon, false)"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 129,
+      "text": "character_skeleton = character_model.find_child(\"Skeleton3D\", true, false) as Skeleton3D"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 152,
+      "text": "combat_rig.name = \"EnemyCombatRig\""
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 157,
+      "text": "func _mount_weapon() -> void:"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 160,
+      "text": "weapon_visual = ASSAULT_RIFLE_SCENE.instantiate() as Node3D"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 161,
+      "text": "weapon_visual.name = \"EnemyAssaultRifle\""
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 162,
+      "text": "if not combat_rig.mount_weapon(weapon_visual):"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 165,
+      "text": "_recolor_weapon()"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 168,
+      "text": "func _build_animation_player(source_skeleton: Skeleton3D) -> AnimationPlayer:"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 241,
+      "text": "func _create_shared_bone_profile(source: Skeleton3D, target: Skeleton3D) -> SkeletonProfile:"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 254,
+      "text": "func _rename_character_bones(target: Skeleton3D) -> void:"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 282,
+      "text": "func _retarget_animation_tracks(animation: Animation, source_skeleton: Skeleton3D) -> void:"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 314,
+      "text": "func _recolor_weapon() -> void:"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 315,
+      "text": "for node in weapon_visual.find_children(\"*\", \"MeshInstance3D\", true, false):"
+    },
+    {
+      "path": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 352,
+      "text": "var attachment := BoneAttachment3D.new()"
+    },
+    {
+      "path": "scripts/combat/combat_effects.gd",
+      "line": 54,
+      "text": "static func muzzle_flash("
+    },
+    {
+      "path": "scripts/combat/combat_effects.gd",
+      "line": 62,
+      "text": "root.name = \"MuzzleFlash\""
+    },
+    {
+      "path": "scripts/combat/combat_effects.gd",
+      "line": 66,
+      "text": "ACCENTS.muzzle(root, color, intensity)"
+    },
+    {
+      "path": "scripts/combat/combat_effects.gd",
+      "line": 67,
+      "text": "ACCENTS.smoke(parent, position + direction * 0.12, 0.09 * intensity, 0.23, \"MuzzleSmoke\")"
+    },
+    {
+      "path": "scripts/combat/damage_packet.gd",
+      "line": 8,
+      "text": "var source_weapon: StringName"
+    },
+    {
+      "path": "scripts/combat/damage_packet.gd",
+      "line": 20,
+      "text": "source_weapon_value: StringName = &\"\","
+    },
+    {
+      "path": "scripts/combat/damage_packet.gd",
+      "line": 30,
+      "text": "source_weapon = source_weapon_value"
+    },
+    {
+      "path": "scripts/combat/rocket_projectile.gd",
+      "line": 11,
+      "text": "var source_weapon: StringName"
+    },
+    {
+      "path": "scripts/combat/rocket_projectile.gd",
+      "line": 37,
+      "text": "func setup(owner_body: CollisionObject3D, aim_direction: Vector3, weapon: WeaponDefinition) -> void:"
+    },
+    {
+      "path": "scripts/combat/rocket_projectile.gd",
+      "line": 40,
+      "text": "speed = weapon.projectile_speed"
+    },
+    {
+      "path": "scripts/combat/rocket_projectile.gd",
+      "line": 41,
+      "text": "damage = weapon.damage"
+    },
+    {
+      "path": "scripts/combat/rocket_projectile.gd",
+      "line": 42,
+      "text": "armor_penetration = weapon.armor_penetration"
+    },
+    {
+      "path": "scripts/combat/rocket_projectile.gd",
+      "line": 43,
+      "text": "structure_damage = weapon.structure_damage"
+    },
+    {
+      "path": "scripts/combat/rocket_projectile.gd",
+      "line": 44,
+      "text": "blast_radius = weapon.blast_radius"
+    },
+    {
+      "path": "scripts/combat/rocket_projectile.gd",
+      "line": 45,
+      "text": "knockback = weapon.knockback"
+    },
+    {
+      "path": "scripts/combat/rocket_projectile.gd",
+      "line": 46,
+      "text": "source_weapon = weapon.id"
+    },
+    {
+      "path": "scripts/combat/rocket_projectile.gd",
+      "line": 47,
+      "text": "max_distance = weapon.weapon_range"
+    },
+    {
+      "path": "scripts/combat/rocket_projectile.gd",
+      "line": 98,
+      "text": "source_weapon,"
+    },
+    {
+      "path": "scripts/data/loadout_state.gd",
+      "line": 4,
+      "text": "const SLOT_WEAPON_PRIMARY := &\"weapon_primary\""
+    },
+    {
+      "path": "scripts/data/loadout_state.gd",
+      "line": 5,
+      "text": "const SLOT_WEAPON_SECONDARY := &\"weapon_secondary\""
+    },
+    {
+      "path": "scripts/data/loadout_state.gd",
+      "line": 8,
+      "text": "const WEAPON_SLOT_IDS := [SLOT_WEAPON_PRIMARY, SLOT_WEAPON_SECONDARY]"
+    },
+    {
+      "path": "scripts/data/loadout_state.gd",
+      "line": 9,
+      "text": "const SLOT_IDS := [SLOT_WEAPON_PRIMARY, SLOT_WEAPON_SECONDARY, SLOT_ARMOR, SLOT_BACKPACK]"
+    },
+    {
+      "path": "scripts/data/loadout_state.gd",
+      "line": 96,
+      "text": "SLOT_WEAPON_PRIMARY, SLOT_WEAPON_SECONDARY:"
+    },
+    {
+      "path": "scripts/data/loadout_state.gd",
+      "line": 97,
+      "text": "return definition is WeaponDefinition"
+    },
+    {
+      "path": "scripts/data/loadout_state.gd",
+      "line": 99,
+      "text": "return definition is EquipmentDefinition and not definition is WeaponDefinition and definition.has_tag(&\"armor\")"
+    },
+    {
+      "path": "scripts/data/loadout_state.gd",
+      "line": 101,
+      "text": "return definition is EquipmentDefinition and not definition is WeaponDefinition and definition.has_tag(&\"backpack\")"
+    },
+    {
+      "path": "scripts/data/profile_state.gd",
+      "line": 7,
+      "text": "LoadoutState.SLOT_WEAPON_PRIMARY: &\"weapon.assault_rifle_01\","
+    },
+    {
+      "path": "scripts/data/profile_state.gd",
+      "line": 8,
+      "text": "LoadoutState.SLOT_WEAPON_SECONDARY: &\"weapon.rocket_launcher_01\","
+    },
+    {
+      "path": "scripts/data/profile_state.gd",
+      "line": 29,
+      "text": "if definition.has_tag(&\"weapon\") or definition.has_tag(&\"armor\") or definition.has_tag(&\"backpack\"):"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 4,
+      "text": "const WEAPON_RUNTIME_STATE_SCRIPT := preload(\"res://scripts/data/weapon_runtime_state.gd\")"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 32,
+      "text": "var _weapon_runtime_states: Dictionary = {}"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 73,
+      "text": "if not session._initialize_weapon_runtime_state():"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 132,
+      "text": "func get_weapon_runtime_state(weapon_instance_id: String):"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 133,
+      "text": "return _weapon_runtime_states.get(weapon_instance_id)"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 136,
+      "text": "func fire_weapon(weapon_instance_id: String) -> bool:"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 139,
+      "text": "var weapon_state: Variant = get_weapon_runtime_state(weapon_instance_id)"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 140,
+      "text": "return weapon_state != null and weapon_state.consume_round()"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 143,
+      "text": "func can_reload_weapon(weapon_instance_id: String) -> bool:"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 144,
+      "text": "var weapon_state: Variant = get_weapon_runtime_state(weapon_instance_id)"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 145,
+      "text": "return status == Status.ACTIVE and weapon_state != null and weapon_state.can_reload(inventory)"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 148,
+      "text": "func reload_weapon(weapon_instance_id: String) -> int:"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 151,
+      "text": "var weapon_state: Variant = get_weapon_runtime_state(weapon_instance_id)"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 152,
+      "text": "return weapon_state.reload(inventory) if weapon_state else 0"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 155,
+      "text": "func get_reserve_ammo(weapon_instance_id: String) -> int:"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 156,
+      "text": "var weapon_state: Variant = get_weapon_runtime_state(weapon_instance_id)"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 157,
+      "text": "return weapon_state.get_reserve_ammo(inventory) if weapon_state else 0"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 163,
+      "text": "for weapon_state in _weapon_runtime_states.values():"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 164,
+      "text": "if not weapon_state.can_materialize(inventory):"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 166,
+      "text": "for weapon_state in _weapon_runtime_states.values():"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 167,
+      "text": "if not weapon_state.materialize(inventory):"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 212,
+      "text": "and _weapon_runtime_states_are_valid()"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 292,
+      "text": "func _initialize_weapon_runtime_state() -> bool:"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 293,
+      "text": "_weapon_runtime_states.clear()"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 294,
+      "text": "for slot_id in LoadoutState.WEAPON_SLOT_IDS:"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 297,
+      "text": "var weapon_item := loadout.get_item(slot_id, inventory)"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 298,
+      "text": "var weapon_definition := ContentDB.get_weapon(weapon_item.definition_id, false) if weapon_item else null"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 299,
+      "text": "if not weapon_definition:"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 301,
+      "text": "var ammo_definition_id := weapon_definition.get_runtime_ammo_definition_id()"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 302,
+      "text": "if ammo_definition_id.is_empty() or weapon_definition.magazine_capacity <= 0:"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 306,
+      "text": "var initial_magazine := weapon_definition.magazine_capacity if _inventory_has_ammo(ammo_definition_id) else 0"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 307,
+      "text": "_weapon_runtime_states[weapon_item.instance_id] = WEAPON_RUNTIME_STATE_SCRIPT.new("
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 308,
+      "text": "weapon_item.instance_id,"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 310,
+      "text": "weapon_definition.magazine_capacity,"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 312,
+      "text": "weapon_definition.id"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 324,
+      "text": "func _weapon_runtime_states_are_valid() -> bool:"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 325,
+      "text": "for weapon_instance_id in _weapon_runtime_states:"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 326,
+      "text": "var weapon_state = _weapon_runtime_states[weapon_instance_id]"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 327,
+      "text": "var weapon_item := inventory.get_item(weapon_instance_id)"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 328,
+      "text": "var weapon_definition := ContentDB.get_weapon(weapon_item.definition_id, false) if weapon_item else null"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 330,
+      "text": "not weapon_state"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 331,
+      "text": "or not weapon_state.validate()"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 332,
+      "text": "or not weapon_definition"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 333,
+      "text": "or weapon_state.weapon_definition_id != weapon_definition.id"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 334,
+      "text": "or weapon_state.ammo_definition_id != weapon_definition.get_runtime_ammo_definition_id()"
+    },
+    {
+      "path": "scripts/data/sortie_session.gd",
+      "line": 335,
+      "text": "or weapon_state.magazine_capacity != weapon_definition.magazine_capacity"
+    },
+    {
+      "path": "scripts/data/weapon_definition.gd",
+      "line": 1,
+      "text": "class_name WeaponDefinition"
+    },
+    {
+      "path": "scripts/data/weapon_definition.gd",
+      "line": 4,
+      "text": "@export var weapon_type: StringName"
+    },
+    {
+      "path": "scripts/data/weapon_definition.gd",
+      "line": 15,
+      "text": "@export var weapon_range: float = 25.0"
+    },
+    {
+      "path": "scripts/data/weapon_definition.gd",
+      "line": 21,
+      "text": "@export var muzzle_scale: float = 1.0"
+    },
+    {
+      "path": "scripts/data/weapon_runtime_state.gd",
+      "line": 1,
+      "text": "class_name WeaponRuntimeState"
+    },
+    {
+      "path": "scripts/data/weapon_runtime_state.gd",
+      "line": 4,
+      "text": "var weapon_instance_id: String"
+    },
+    {
+      "path": "scripts/data/weapon_runtime_state.gd",
+      "line": 5,
+      "text": "var weapon_definition_id: StringName"
+    },
+    {
+      "path": "scripts/data/weapon_runtime_state.gd",
+      "line": 12,
+      "text": "p_weapon_instance_id: String = \"\","
+    },
+    {
+      "path": "scripts/data/weapon_runtime_state.gd",
+      "line": 16,
+      "text": "p_weapon_definition_id: StringName = &\"\""
+    },
+    {
+      "path": "scripts/data/weapon_runtime_state.gd",
+      "line": 18,
+      "text": "weapon_instance_id = p_weapon_instance_id"
+    },
+    {
+      "path": "scripts/data/weapon_runtime_state.gd",
+      "line": 19,
+      "text": "weapon_definition_id = p_weapon_definition_id"
+    },
+    {
+      "path": "scripts/data/weapon_runtime_state.gd",
+      "line": 27,
+      "text": "not weapon_instance_id.is_empty()"
+    },
+    {
+      "path": "scripts/data/weapon_runtime_state.gd",
+      "line": 33,
+      "text": "and (weapon_definition_id.is_empty() or ContentDB.get_weapon(weapon_definition_id, false) != null)"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 6,
+      "text": "var humanoid_visual: HumanoidRetargetVisual"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 29,
+      "text": "if is_instance_valid(humanoid_visual) and humanoid_visual.visible:"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 30,
+      "text": "var movement := -humanoid_visual.global_basis.z.normalized() if locomotion_state != &\"Idle\" else Vector3.ZERO"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 32,
+      "text": "var aim_point := humanoid_visual.global_position + Vector3(0.0, 1.05, -8.0)"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 33,
+      "text": "humanoid_visual.update_visual(aim_point, movement, speed, delta)"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 79,
+      "text": "humanoid_visual = HumanoidRetargetVisual.new()"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 80,
+      "text": "humanoid_visual.name = \"EnemyCharacterVisual\""
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 81,
+      "text": "add_child(humanoid_visual)"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 82,
+      "text": "humanoid_visual.set_debug_locomotion(locomotion_state)"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 94,
+      "text": "for line_name in [&\"Forward\", &\"Movement\", &\"Aim\", &\"Muzzle\"]:"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 136,
+      "text": "legend.text = \"GREEN Forward   CYAN Movement   YELLOW Aim   RED Muzzle\""
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 175,
+      "text": "humanoid_visual.set_debug_locomotion(state)"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 180,
+      "text": "humanoid_visual.set_animation_paused(paused)"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 187,
+      "text": "humanoid_visual.set_animation_speed(speed_scale)"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 194,
+      "text": "humanoid_visual.visible = false"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 197,
+      "text": "ragdoll.global_position = humanoid_visual.global_position"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 198,
+      "text": "ragdoll.global_rotation.y = humanoid_visual.global_rotation.y"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 206,
+      "text": "humanoid_visual.visible = true"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 210,
+      "text": "var origin := humanoid_visual.global_position + Vector3.UP * 0.05"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 211,
+      "text": "_set_direction_line(direction_lines[&\"Forward\"], origin, -humanoid_visual.global_basis.z, Color(\"62e686\"), 1.2)"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 212,
+      "text": "_set_direction_line(direction_lines[&\"Movement\"], origin + Vector3.UP * 0.04, humanoid_visual.movement_direction, Color(\"4ed9f5\"), 1.05)"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 213,
+      "text": "_set_direction_line(direction_lines[&\"Aim\"], origin + Vector3.UP * 0.08, humanoid_visual.aim_direction, Color(\"ffd65a\"), 1.35)"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 215,
+      "text": "direction_lines[&\"Muzzle\"],"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 216,
+      "text": "humanoid_visual.get_muzzle_position(),"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 217,
+      "text": "humanoid_visual.get_muzzle_direction(),"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 240,
+      "text": "\"State: %s\\nCharacter Forward: %s\\nMovement Direction: %s\\nAim Direction: %s\\nWeapon Muzzle Direction: %s\""
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 243,
+      "text": "_vector_text(-humanoid_visual.global_basis.z),"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 244,
+      "text": "_vector_text(humanoid_visual.movement_direction),"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 245,
+      "text": "_vector_text(humanoid_visual.aim_direction),"
+    },
+    {
+      "path": "scripts/debug/enemy_character_debug.gd",
+      "line": 246,
+      "text": "_vector_text(humanoid_visual.get_muzzle_direction()),"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 24,
+      "text": "var humanoid_visual: HumanoidRetargetVisual"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 70,
+      "text": "_update_humanoid_visual(delta, global_position - global_basis.z * 8.0, 0.0)"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 91,
+      "text": "_update_humanoid_visual(delta, target.global_position + Vector3.UP * 1.05, approach_horizontal.length())"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 114,
+      "text": "_update_humanoid_visual(delta, visual_aim_point, desired.length() * movement_speed)"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 159,
+      "text": "humanoid_visual = HumanoidRetargetVisual.new()"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 160,
+      "text": "humanoid_visual.name = \"EnemyCharacterVisual\""
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 161,
+      "text": "humanoid_visual.scale = BASE_VISUAL_SCALE"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 162,
+      "text": "body_visual = humanoid_visual"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 163,
+      "text": "add_child(humanoid_visual)"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 173,
+      "text": "humanoid_visual.add_child(marker)"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 184,
+      "text": "func _update_humanoid_visual(delta: float, aim_point: Vector3, locomotion_speed: float) -> void:"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 185,
+      "text": "if not humanoid_visual:"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 187,
+      "text": "humanoid_visual.update_visual(aim_point, _movement_direction, locomotion_speed, delta)"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 233,
+      "text": "var from := humanoid_visual.get_muzzle_position()"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 240,
+      "text": "from = humanoid_visual.get_muzzle_position()"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 241,
+      "text": "var shot_direction := humanoid_visual.get_muzzle_direction()"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 248,
+      "text": "humanoid_visual.fire_recoil()"
+    },
+    {
+      "path": "scripts/enemies/enemy_controller.gd",
+      "line": 250,
+      "text": "CombatEffects.muzzle_flash(get_tree().current_scene, from, shot_direction, Color(\"ff3658\"), 0.68)"
+    },
+    {
+      "path": "scripts/hanger/hanger.gd",
+      "line": 24,
+      "text": "hanger_ui.weapon_selected.connect(_on_weapon_selected)"
+    },
+    {
+      "path": "scripts/hanger/hanger.gd",
+      "line": 25,
+      "text": "hanger_ui.secondary_weapon_selected.connect(_on_secondary_weapon_selected)"
+    },
+    {
+      "path": "scripts/hanger/hanger.gd",
+      "line": 91,
+      "text": "func _on_weapon_selected(instance_id: String) -> void:"
+    },
+    {
+      "path": "scripts/hanger/hanger.gd",
+      "line": 95,
+      "text": "var changed := profile.loadout.unequip(LoadoutState.SLOT_WEAPON_PRIMARY) if instance_id.is_empty() else profile.loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, instance_id, profile.inventory)"
+    },
+    {
+      "path": "scripts/hanger/hanger.gd",
+      "line": 104,
+      "text": "func _on_secondary_weapon_selected(instance_id: String) -> void:"
+    },
+    {
+      "path": "scripts/hanger/hanger.gd",
+      "line": 108,
+      "text": "var changed := profile.loadout.unequip(LoadoutState.SLOT_WEAPON_SECONDARY) if instance_id.is_empty() else profile.loadout.equip(LoadoutState.SLOT_WEAPON_SECONDARY, instance_id, profile.inventory)"
+    },
+    {
+      "path": "scripts/hanger/hanger.gd",
+      "line": 158,
+      "text": "for slot_id in LoadoutState.WEAPON_SLOT_IDS:"
+    },
+    {
+      "path": "scripts/hanger/hanger.gd",
+      "line": 159,
+      "text": "var weapon_item := profile.loadout.get_item(slot_id, profile.inventory)"
+    },
+    {
+      "path": "scripts/hanger/hanger.gd",
+      "line": 160,
+      "text": "var weapon_definition := ContentDB.get_weapon(weapon_item.definition_id, false) if weapon_item else null"
+    },
+    {
+      "path": "scripts/hanger/hanger.gd",
+      "line": 161,
+      "text": "var ammo_definition_id := weapon_definition.get_runtime_ammo_definition_id() if weapon_definition else &\"\""
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 22,
+      "text": "var driver_skeleton: Skeleton3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 23,
+      "text": "var skeleton: Skeleton3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 24,
+      "text": "var display_skeleton: Skeleton3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 25,
+      "text": "var weapon_pose_root: Node3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 26,
+      "text": "var weapon_mount: Node3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 27,
+      "text": "var equipped_weapon: Node3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 32,
+      "text": "var muzzle: Marker3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 52,
+      "text": "func setup(driver_skeleton: Skeleton3D, target_skeleton: Skeleton3D, retarget: RetargetModifier3D) -> void:"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 56,
+      "text": "self.driver_skeleton.modifier_callback_mode_process = Skeleton3D.MODIFIER_CALLBACK_MODE_PROCESS_MANUAL"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 57,
+      "text": "display_skeleton.modifier_callback_mode_process = Skeleton3D.MODIFIER_CALLBACK_MODE_PROCESS_MANUAL"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 65,
+      "text": "func mount_weapon(weapon: Node3D) -> bool:"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 66,
+      "text": "clear_weapon()"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 67,
+      "text": "equipped_weapon = weapon"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 68,
+      "text": "weapon_mount.add_child(equipped_weapon)"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 69,
+      "text": "equipped_weapon.scale = Vector3.ONE * 0.44"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 70,
+      "text": "primary_grip = equipped_weapon.find_child(\"PrimaryGrip\", true, false) as Marker3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 71,
+      "text": "support_grip = equipped_weapon.find_child(\"SupportGrip\", true, false) as Marker3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 72,
+      "text": "reload_grip = equipped_weapon.find_child(\"ReloadGrip\", true, false) as Marker3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 73,
+      "text": "muzzle = equipped_weapon.find_child(\"Muzzle\", true, false) as Marker3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 74,
+      "text": "var is_complete := primary_grip != null and support_grip != null and reload_grip != null and muzzle != null"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 80,
+      "text": "func track_socket_visual(weapon: Node3D) -> void:"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 82,
+      "text": "# has_weapon() stays false: gameplay keeps its original muzzle/reload path."
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 83,
+      "text": "_socket_visual = weapon"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 85,
+      "text": "primary_grip = weapon.get_node(\"PrimaryGrip\") as Marker3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 86,
+      "text": "support_grip = weapon.get_node(\"SupportGrip\") as Marker3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 87,
+      "text": "reload_grip = weapon.get_node(\"ReloadGrip\") as Marker3D"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 92,
+      "text": "func clear_weapon() -> void:"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 94,
+      "text": "if is_instance_valid(equipped_weapon):"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 95,
+      "text": "weapon_mount.remove_child(equipped_weapon)"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 96,
+      "text": "equipped_weapon.queue_free()"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 97,
+      "text": "equipped_weapon = null"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 101,
+      "text": "muzzle = null"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 115,
+      "text": "if not has_weapon() and not is_instance_valid(_socket_visual):"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 137,
+      "text": "var weapon_target := pose_position + pose_direction * 20.0 if preview_mode else aim_world_point"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 138,
+      "text": "if pose_position.distance_squared_to(weapon_target) < 0.25:"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 139,
+      "text": "weapon_target = pose_position + pose_direction * 20.0"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 140,
+      "text": "var weapon_direction := pose_position.direction_to(weapon_target)"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 141,
+      "text": "var pose_basis := Basis.looking_at(weapon_direction, Vector3.UP)"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 146,
+      "text": "weapon_pose_root.global_transform = weapon_pose_root.global_transform.interpolate_with(desired_pose, pose_blend)"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 148,
+      "text": "weapon_pose_root.global_transform = desired_pose"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 151,
+      "text": "_socket_visual.global_transform = weapon_pose_root.global_transform * Transform3D(Basis.IDENTITY.scaled(Vector3.ONE * 0.44), Vector3.ZERO)"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 157,
+      "text": "var right_goal := primary_grip.global_transform"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 158,
+      "text": "var left_goal := support_grip.global_transform.interpolate_with(reload_grip.global_transform, reload_hand_weight)"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 161,
+      "text": "right_hand_target.global_transform = right_hand_target.global_transform.interpolate_with(right_goal, hand_blend)"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 162,
+      "text": "left_hand_target.global_transform = left_hand_target.global_transform.interpolate_with(left_goal, hand_blend)"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 164,
+      "text": "right_hand_target.global_transform = right_goal"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 165,
+      "text": "left_hand_target.global_transform = left_goal"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 179,
+      "text": "# Socket-mounted weapons still need the retargeted idle pose evaluated."
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 185,
+      "text": "if equipped_weapon and equipped_weapon.has_method(\"flash\"):"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 186,
+      "text": "equipped_weapon.flash()"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 190,
+      "text": "if not has_weapon() or _reloading:"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 224,
+      "text": "func has_weapon() -> bool:"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 225,
+      "text": "return is_instance_valid(equipped_weapon) and primary_grip != null and support_grip != null and muzzle != null"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 228,
+      "text": "func get_muzzle_position() -> Vector3:"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 229,
+      "text": "return muzzle.global_position if muzzle else global_position"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 232,
+      "text": "func get_muzzle_direction() -> Vector3:"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 233,
+      "text": "return -muzzle.global_basis.z.normalized() if muzzle else -global_basis.z.normalized()"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 241,
+      "text": "weapon_pose_root = Node3D.new()"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 242,
+      "text": "weapon_pose_root.name = \"FireReload\""
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 243,
+      "text": "add_child(weapon_pose_root)"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 244,
+      "text": "weapon_mount = Node3D.new()"
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 245,
+      "text": "weapon_mount.name = \"WeaponMount\""
+    },
+    {
+      "path": "scripts/player/character_combat_rig.gd",
+      "line": 246,
+      "text": "weapon_pose_root.add_child(weapon_mount)"
+    },
+    {
+      "path": "scripts/player/forward_axis_retarget_modifier.gd",
+      "line": 20,
+      "text": "func _skeleton_changed(_old_skeleton: Skeleton3D, _new_skeleton: Skeleton3D) -> void:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 6,
+      "text": "signal weapon_fired(recoil_strength: float)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 8,
+      "text": "signal weapon_switched(slot_id: StringName)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 10,
+      "text": "const ROCKET_SCENE := preload(\"res://scenes/weapons/rocket_projectile.tscn\")"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 63,
+      "text": "var weapon_root: Node3D"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 64,
+      "text": "var equipped_weapon_visual: Node3D"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 65,
+      "text": "var weapon_instance: ItemInstance"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 66,
+      "text": "var active_weapon_slot: StringName = LoadoutState.SLOT_WEAPON_PRIMARY"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 69,
+      "text": "var weapon_data: WeaponDefinition"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 74,
+      "text": "var animation_source_skeleton: Skeleton3D"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 78,
+      "text": "var character_skeleton: Skeleton3D"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 94,
+      "text": "var _weapon_instances_by_slot: Dictionary = {}"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 150,
+      "text": "reload_weapon()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 151,
+      "text": "if not preview_mode and event.is_action_pressed(\"switch_weapon\"):"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 152,
+      "text": "toggle_weapon()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 178,
+      "text": "_weapon_instances_by_slot.clear()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 179,
+      "text": "for slot_id in LoadoutState.WEAPON_SLOT_IDS:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 182,
+      "text": "_weapon_instances_by_slot[slot_id] = item"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 183,
+      "text": "var initial_slot := LoadoutState.SLOT_WEAPON_PRIMARY"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 184,
+      "text": "if not _weapon_instances_by_slot.has(initial_slot):"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 185,
+      "text": "initial_slot = LoadoutState.SLOT_WEAPON_SECONDARY"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 186,
+      "text": "_activate_weapon_slot(initial_slot)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 191,
+      "text": "func equip_weapon_instance(item: ItemInstance) -> bool:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 192,
+      "text": "var weapon := ContentDB.get_weapon(item.definition_id, false) if item else null"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 193,
+      "text": "if not weapon:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 195,
+      "text": "_equip_weapon_definition(weapon)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 196,
+      "text": "weapon_instance = item"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 197,
+      "text": "_weapon_instances_by_slot[active_weapon_slot] = item"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 202,
+      "text": "func switch_weapon(slot_id: StringName) -> bool:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 207,
+      "text": "or slot_id not in LoadoutState.WEAPON_SLOT_IDS"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 210,
+      "text": "if slot_id == active_weapon_slot:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 215,
+      "text": "if not item or not _initial_inventory.contains(item.instance_id) or not ContentDB.get_weapon(item.definition_id, false):"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 217,
+      "text": "if not _initial_session.get_weapon_runtime_state(item.instance_id):"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 219,
+      "text": "if not _activate_weapon_slot(slot_id):"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 221,
+      "text": "weapon_switched.emit(active_weapon_slot)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 225,
+      "text": "func toggle_weapon() -> bool:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 227,
+      "text": "LoadoutState.SLOT_WEAPON_SECONDARY"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 228,
+      "text": "if active_weapon_slot == LoadoutState.SLOT_WEAPON_PRIMARY"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 229,
+      "text": "else LoadoutState.SLOT_WEAPON_PRIMARY"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 231,
+      "text": "return switch_weapon(target_slot)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 234,
+      "text": "func get_weapon_instance(slot_id: StringName = &\"\") -> ItemInstance:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 235,
+      "text": "var resolved_slot := active_weapon_slot if slot_id.is_empty() else slot_id"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 236,
+      "text": "return _weapon_instances_by_slot.get(resolved_slot) as ItemInstance"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 239,
+      "text": "func get_weapon_definition(slot_id: StringName = &\"\") -> WeaponDefinition:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 240,
+      "text": "var item := get_weapon_instance(slot_id)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 241,
+      "text": "return ContentDB.get_weapon(item.definition_id, false) if item else null"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 244,
+      "text": "func get_weapon_status(slot_id: StringName) -> Dictionary:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 245,
+      "text": "var item := get_weapon_instance(slot_id)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 246,
+      "text": "var definition := get_weapon_definition(slot_id)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 247,
+      "text": "var state: Variant = _initial_session.get_weapon_runtime_state(item.instance_id) if _initial_session and item else null"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 257,
+      "text": "func _activate_weapon_slot(slot_id: StringName) -> bool:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 258,
+      "text": "var item := _weapon_instances_by_slot.get(slot_id) as ItemInstance"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 259,
+      "text": "var definition := ContentDB.get_weapon(item.definition_id, false) if item else null"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 262,
+      "text": "active_weapon_slot = slot_id"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 263,
+      "text": "weapon_instance = item"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 264,
+      "text": "_equip_weapon_definition(definition)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 287,
+      "text": "func equip_weapon(weapon: WeaponDefinition) -> void:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 288,
+      "text": "weapon_instance = null"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 289,
+      "text": "_equip_weapon_definition(weapon)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 293,
+      "text": "func _equip_weapon_definition(weapon: WeaponDefinition) -> void:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 294,
+      "text": "weapon_data = weapon"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 295,
+      "text": "_clear_weapon_sockets()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 296,
+      "text": "equipped_weapon_visual = _attach_equipment(weapon)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 349,
+      "text": "if _get_weapon_runtime_state():"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 350,
+      "text": "reload_weapon()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 358,
+      "text": "and weapon_instance != null"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 359,
+      "text": "and _initial_session.can_reload_weapon(weapon_instance.instance_id)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 363,
+      "text": "func reload_weapon() -> bool:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 366,
+      "text": "var loaded_rounds := _initial_session.reload_weapon(weapon_instance.instance_id)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 377,
+      "text": "var weapon_state: Variant = _get_weapon_runtime_state()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 378,
+      "text": "return weapon_state.magazine_ammo if weapon_state else 0"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 382,
+      "text": "var weapon_state: Variant = _get_weapon_runtime_state()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 383,
+      "text": "return weapon_state.magazine_capacity if weapon_state else 0"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 387,
+      "text": "if not _initial_session or not weapon_instance:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 389,
+      "text": "return _initial_session.get_reserve_ammo(weapon_instance.instance_id)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 428,
+      "text": "animation_source_skeleton = animation_source_model.find_child(\"Skeleton3D\", true, false) as Skeleton3D"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 432,
+      "text": "var bundled_melee_weapon := character_model.find_child(\"Wep\", true, false)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 433,
+      "text": "if bundled_melee_weapon:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 434,
+      "text": "_set_mesh_visibility(bundled_melee_weapon, false)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 435,
+      "text": "character_skeleton = character_model.find_child(\"Skeleton3D\", true, false) as Skeleton3D"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 462,
+      "text": "weapon_root = Node3D.new()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 463,
+      "text": "weapon_root.name = \"WeaponRoot\""
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 464,
+      "text": "body_visual.add_child(weapon_root)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 486,
+      "text": "_add_socket(weapon_root, \"HandL\", Vector3(-0.42, 1.13, -0.15))"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 487,
+      "text": "_add_socket(weapon_root, \"HandR\", Vector3(0.42, 1.13, -0.15))"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 505,
+      "text": "parent: Skeleton3D,"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 511,
+      "text": "var attachment := BoneAttachment3D.new()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 533,
+      "text": "func _create_shared_bone_profile(source: Skeleton3D, target: Skeleton3D) -> SkeletonProfile:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 546,
+      "text": "func _rename_character_bones(target: Skeleton3D) -> void:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 563,
+      "text": "func _build_character_animation_player(skeleton: Skeleton3D) -> AnimationPlayer:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 630,
+      "text": "func _retarget_animation_tracks(animation: Animation, skeleton: Skeleton3D) -> void:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 648,
+      "text": "if data is WeaponDefinition and data.uses_combat_rig and combat_rig:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 649,
+      "text": "if not combat_rig.mount_weapon(instance):"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 650,
+      "text": "push_error(\"Weapon is missing combat grip markers: %s\" % data.id)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 660,
+      "text": "if data is WeaponDefinition:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 686,
+      "text": "func _clear_weapon_sockets() -> void:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 688,
+      "text": "combat_rig.clear_weapon()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 703,
+      "text": "var aim_range := weapon_data.weapon_range if weapon_data else 30.0"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 755,
+      "text": "if weapon_data:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 756,
+      "text": "movement_bonus += weapon_data.movement_modifier"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 779,
+      "text": "if not combat_rig or not combat_rig.has_weapon() or locomotion_direction.length_squared() < 0.01:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 788,
+      "text": "if not weapon_data or _shot_cooldown > 0.0 or is_dead or (combat_rig and combat_rig.is_reloading()):"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 790,
+      "text": "var weapon_state: Variant = _get_weapon_runtime_state()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 791,
+      "text": "if weapon_state and not _initial_session.fire_weapon(weapon_instance.instance_id):"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 793,
+      "text": "if _initial_session and weapon_instance and not weapon_state:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 795,
+      "text": "_shot_cooldown = 1.0 / weapon_data.fire_rate"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 796,
+      "text": "var muzzle_position := combat_rig.get_muzzle_position() if combat_rig and combat_rig.has_weapon() else global_position + Vector3.UP * 1.25 + aim_direction * 0.55"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 797,
+      "text": "var shot_direction := _shot_direction_from(muzzle_position)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 798,
+      "text": "AudioDirector.play_weapon(weapon_data.id)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 799,
+      "text": "CombatEffects.muzzle_flash(get_tree().current_scene, muzzle_position, shot_direction, weapon_data.tracer_color, weapon_data.muzzle_scale)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 800,
+      "text": "_apply_weapon_recoil(shot_direction)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 801,
+      "text": "if weapon_data.action_type == &\"projectile\":"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 804,
+      "text": "rocket.global_position = muzzle_position"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 805,
+      "text": "rocket.setup(self, shot_direction, weapon_data)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 807,
+      "text": "_fire_hitscan(muzzle_position, shot_direction)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 808,
+      "text": "weapon_fired.emit(weapon_data.recoil_strength)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 813,
+      "text": "func _get_weapon_runtime_state():"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 814,
+      "text": "if not _initial_session or not weapon_instance:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 816,
+      "text": "return _initial_session.get_weapon_runtime_state(weapon_instance.instance_id)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 820,
+      "text": "var weapon_state: Variant = _get_weapon_runtime_state()"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 821,
+      "text": "if weapon_state:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 822,
+      "text": "ammo_changed.emit(weapon_state.magazine_ammo, weapon_state.magazine_capacity, get_reserve_ammo())"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 832,
+      "text": "var to := from + shot_direction * weapon_data.weapon_range"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 844,
+      "text": "weapon_data.damage + armor_damage_modifier,"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 845,
+      "text": "weapon_data.armor_penetration,"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 846,
+      "text": "weapon_data.structure_damage,"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 848,
+      "text": "weapon_data.id,"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 852,
+      "text": "shot_direction * weapon_data.knockback"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 855,
+      "text": "CombatEffects.hit(get_tree().current_scene, hit_position, weapon_data.tracer_color, weapon_data.impact_scale)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 856,
+      "text": "CombatEffects.tracer(get_tree().current_scene, from, hit_position, weapon_data.tracer_color, weapon_data.tracer_width)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 859,
+      "text": "func _apply_weapon_recoil(shot_direction: Vector3) -> void:"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 860,
+      "text": "if combat_rig and combat_rig.has_weapon():"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 861,
+      "text": "combat_rig.fire_recoil(weapon_data.recoil_strength)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 865,
+      "text": "var local_recoil := global_basis.inverse() * (-shot_direction * weapon_data.recoil_strength * 0.65)"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 867,
+      "text": "body_visual.rotation.z = weapon_data.recoil_strength * 0.12"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "line": 869,
+      "text": "_recoil_tween.tween_property(body_visual, \"position\", Vector3.ZERO, 0.1 + weapon_data.recoil_strength * 0.18)"
+    },
+    {
+      "path": "scripts/presentation/combat_accents.gd",
+      "line": 22,
+      "text": "static func muzzle(root: Node3D, color: Color, intensity: float) -> void:"
+    },
+    {
+      "path": "scripts/presentation/enemy_drone_presentation.gd",
+      "line": 10,
+      "text": "var legacy: HumanoidRetargetVisual"
+    },
+    {
+      "path": "scripts/presentation/enemy_drone_presentation.gd",
+      "line": 23,
+      "text": "if not enemy or not enemy.humanoid_visual:"
+    },
+    {
+      "path": "scripts/presentation/enemy_drone_presentation.gd",
+      "line": 25,
+      "text": "legacy = enemy.humanoid_visual"
+    },
+    {
+      "path": "scripts/presentation/enemy_drone_presentation.gd",
+      "line": 29,
+      "text": "legacy.weapon_visual.visible = false"
+    },
+    {
+      "path": "scripts/presentation/enemy_drone_presentation.gd",
+      "line": 54,
+      "text": "var direction := legacy.get_muzzle_direction()"
+    },
+    {
+      "path": "scripts/presentation/enemy_drone_presentation.gd",
+      "line": 66,
+      "text": "# Authored gun origin is its bore. Never move/reparent the gameplay Muzzle."
+    },
+    {
+      "path": "scripts/presentation/enemy_drone_presentation.gd",
+      "line": 67,
+      "text": "gun.global_transform = Transform3D(Basis.looking_at(direction, Vector3.UP), legacy.get_muzzle_position())"
+    },
+    {
+      "path": "scripts/presentation/enemy_drone_presentation.gd",
+      "line": 86,
+      "text": "var transform_at_death := source.global_transform"
+    },
+    {
+      "path": "scripts/presentation/enemy_drone_presentation.gd",
+      "line": 96,
+      "text": "wreck.global_transform = transform_at_death"
+    },
+    {
+      "path": "scripts/presentation/unitychan/hand_modifier.gd",
+      "line": 5,
+      "text": "var weapon: Node3D"
+    },
+    {
+      "path": "scripts/presentation/unitychan/hand_modifier.gd",
+      "line": 9,
+      "text": "if pose.is_empty() or not is_instance_valid(weapon):"
+    },
+    {
+      "path": "scripts/presentation/unitychan/hand_modifier.gd",
+      "line": 16,
+      "text": "hand.basis = sk.global_basis.inverse() * weapon.global_basis.orthonormalized() * authored.basis"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 2,
+      "text": "## Isolated subclass. Base gameplay-facing has_weapon/reload/recoil behavior unchanged."
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 10,
+      "text": "func setup(driver: Skeleton3D, target: Skeleton3D, retarget: RetargetModifier3D) -> void:"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 17,
+      "text": "func clear_weapon() -> void:"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 18,
+      "text": "super.clear_weapon()"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 23,
+      "text": "hand_modifier.weapon = null"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 28,
+      "text": "weapon_pose_root.transform = _raw_pose"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 30,
+      "text": "var weapon: Node3D = equipped_weapon if is_instance_valid(equipped_weapon) else _socket_visual"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 31,
+      "text": "if not is_instance_valid(weapon):"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 33,
+      "text": "_raw_pose = weapon_pose_root.transform"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 35,
+      "text": "selected_pose = {\"assault_rifle\":\"Rifle\",\"smg\":\"SMG\",\"rocket_launcher\":\"Rocket\"}.get(weapon.scene_file_path.get_file().get_basename(), \"\")"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 37,
+      "text": "push_error(\"UnityChan adapter cannot resolve weapon presentation: \" + weapon.scene_file_path)"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 40,
+      "text": "var offset := vector(data.weapon_origin) - Vector3(0,1.13,-0.06)"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 41,
+      "text": "weapon_pose_root.global_position += weapon_pose_root.global_basis.orthonormalized() * offset"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 43,
+      "text": "_socket_visual.global_transform = weapon_pose_root.global_transform * Transform3D(Basis.IDENTITY.scaled(Vector3.ONE*0.44),Vector3.ZERO)"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 44,
+      "text": "var basis := weapon.global_basis.orthonormalized()"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 45,
+      "text": "right_hand_target.global_position = weapon.global_position + basis * vector(data.Right.wrist_from_weapon)"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 46,
+      "text": "var support := weapon.global_position + basis * vector(data.Left.wrist_from_weapon)"
+    },
+    {
+      "path": "scripts/presentation/unitychan/pose_adapter.gd",
+      "line": 51,
+      "text": "hand_modifier.weapon = weapon"
+    },
+    {
+      "path": "scripts/presentation/unitychan/presentation_adapter.gd",
+      "line": 4,
+      "text": "func setup(driver: Skeleton3D,target: Skeleton3D,retarget: RetargetModifier3D) -> void:"
+    },
+    {
+      "path": "scripts/presentation/unitychan/presentation_adapter.gd",
+      "line": 39,
+      "text": "# Rotate both offset and visual orientation; leave weapon/IK sockets alone."
+    },
+    {
+      "path": "scripts/presentation/urban_defense.gd",
+      "line": 22,
+      "text": "visual.global_transform = body.global_transform"
+    },
+    {
+      "path": "scripts/systems/audio_director.gd",
+      "line": 74,
+      "text": "func play_weapon(weapon_id: StringName) -> void:"
+    },
+    {
+      "path": "scripts/systems/audio_director.gd",
+      "line": 75,
+      "text": "match weapon_id:"
+    },
+    {
+      "path": "scripts/systems/audio_director.gd",
+      "line": 76,
+      "text": "&\"weapon.smg_01\":"
+    },
+    {
+      "path": "scripts/systems/audio_director.gd",
+      "line": 78,
+      "text": "&\"weapon.rocket_launcher_01\":"
+    },
+    {
+      "path": "scripts/systems/content_db.gd",
+      "line": 23,
+      "text": "func get_weapon(content_id: StringName, report_missing := true) -> WeaponDefinition:"
+    },
+    {
+      "path": "scripts/systems/content_db.gd",
+      "line": 25,
+      "text": "if definition is WeaponDefinition:"
+    },
+    {
+      "path": "scripts/systems/content_db.gd",
+      "line": 26,
+      "text": "return definition as WeaponDefinition"
+    },
+    {
+      "path": "scripts/systems/content_db.gd",
+      "line": 28,
+      "text": "push_warning(\"Content ID is not a weapon: %s\" % content_id)"
+    },
+    {
+      "path": "scripts/systems/enemy_spawn_service.gd",
+      "line": 18,
+      "text": "enemy.global_transform = spawn_transform"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 8,
+      "text": "var weapon_label: Label"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 10,
+      "text": "var secondary_weapon_label: Label"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 12,
+      "text": "var active_weapon_label: Label"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 92,
+      "text": "weapon_label = Label.new()"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 93,
+      "text": "weapon_label.text = \"PRIMARY  ASSAULT RIFLE\""
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 94,
+      "text": "weapon_label.add_theme_color_override(\"font_color\", Color(\"70edf2\"))"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 95,
+      "text": "status_box.add_child(weapon_label)"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 100,
+      "text": "secondary_weapon_label = Label.new()"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 101,
+      "text": "secondary_weapon_label.text = \"SECONDARY  UNARMED\""
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 102,
+      "text": "secondary_weapon_label.add_theme_color_override(\"font_color\", Color(\"8da8bb\"))"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 103,
+      "text": "status_box.add_child(secondary_weapon_label)"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 108,
+      "text": "active_weapon_label = Label.new()"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 109,
+      "text": "active_weapon_label.text = \"ACTIVE  PRIMARY\""
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 110,
+      "text": "active_weapon_label.add_theme_color_override(\"font_color\", Color(\"70edf2\"))"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 111,
+      "text": "status_box.add_child(active_weapon_label)"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 205,
+      "text": "func set_weapon(display_name: String) -> void:"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 206,
+      "text": "weapon_label.text = display_name.to_upper()"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 213,
+      "text": "func set_weapon_slots(primary: Dictionary, secondary: Dictionary, active_slot: StringName) -> void:"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 214,
+      "text": "var primary_active := active_slot == LoadoutState.SLOT_WEAPON_PRIMARY"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 215,
+      "text": "weapon_label.text = \"PRIMARY  %s\" % str(primary.get(\"display_name\", \"UNARMED\")).to_upper()"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 221,
+      "text": "secondary_weapon_label.text = \"SECONDARY  %s\" % str(secondary.get(\"display_name\", \"UNARMED\")).to_upper()"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 227,
+      "text": "active_weapon_label.text = \"ACTIVE  %s\" % (\"PRIMARY\" if primary_active else \"SECONDARY\")"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 228,
+      "text": "weapon_label.add_theme_color_override(\"font_color\", Color(\"70edf2\") if primary_active else Color(\"8da8bb\"))"
+    },
+    {
+      "path": "scripts/ui/battle_hud.gd",
+      "line": 230,
+      "text": "secondary_weapon_label.add_theme_color_override(\"font_color\", Color(\"8da8bb\") if primary_active else Color(\"70edf2\"))"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 4,
+      "text": "signal weapon_selected(instance_id: String)"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 5,
+      "text": "signal secondary_weapon_selected(instance_id: String)"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 10,
+      "text": "var weapon_option: OptionButton"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 11,
+      "text": "var secondary_weapon_option: OptionButton"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 66,
+      "text": "weapon_option = _add_inventory_option(content, \"PRIMARY WEAPON\", &\"weapon\")"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 67,
+      "text": "secondary_weapon_option = _add_inventory_option(content, \"SECONDARY WEAPON\", &\"weapon\")"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 85,
+      "text": "weapon_option.item_selected.connect(func(index: int) -> void:"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 87,
+      "text": "weapon_selected.emit(_instance_id_at(weapon_option, index))"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 89,
+      "text": "secondary_weapon_option.item_selected.connect(func(index: int) -> void:"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 91,
+      "text": "secondary_weapon_selected.emit(_instance_id_at(secondary_weapon_option, index))"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 106,
+      "text": "_select_instance(weapon_option, loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY))"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 107,
+      "text": "_select_instance(secondary_weapon_option, loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_SECONDARY))"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 159,
+      "text": "for category in [\"WEAPONS\", \"AMMO\", \"EQUIPMENT\", \"SALVAGE\"]:"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 213,
+      "text": "if definition.has_tag(&\"weapon\"):"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 214,
+      "text": "return \"WEAPONS\""
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 224,
+      "text": "LoadoutState.SLOT_WEAPON_PRIMARY:"
+    },
+    {
+      "path": "scripts/ui/hanger_ui.gd",
+      "line": 226,
+      "text": "LoadoutState.SLOT_WEAPON_SECONDARY:"
+    },
+    {
+      "path": "scripts/ui/result_ui.gd",
+      "line": 102,
+      "text": "var weapon_item := outcome.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, outcome.inventory)"
+    },
+    {
+      "path": "scripts/ui/result_ui.gd",
+      "line": 103,
+      "text": "var weapon := ContentDB.get_weapon(weapon_item.definition_id, false) if weapon_item else null"
+    },
+    {
+      "path": "scripts/ui/result_ui.gd",
+      "line": 104,
+      "text": "if weapon:"
+    },
+    {
+      "path": "scripts/ui/result_ui.gd",
+      "line": 105,
+      "text": "_add_stat(content, \"PRIMARY WEAPON\", weapon.display_name)"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 2,
+      "text": "## WeaponDefinition.scene owns model selection and authored attachment markers."
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 3,
+      "text": "var muzzle: Marker3D"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 4,
+      "text": "var muzzle_flash: MeshInstance3D"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 7,
+      "text": "muzzle = $Muzzle"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 8,
+      "text": "muzzle_flash = VisualFactory.sphere(muzzle, 0.13, Vector3.ZERO, Color(\"fff3a8\"), \"MuzzleFlash\")"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 9,
+      "text": "muzzle_flash.material_override = VisualFactory.material(Color(\"fff3a8\"), 0.0, 0.1, Color(\"ffb72d\"), 5.0)"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 10,
+      "text": "muzzle_flash.visible = false"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 12,
+      "text": "func get_muzzle_position() -> Vector3:"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 13,
+      "text": "return muzzle.global_position if muzzle else global_position"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 16,
+      "text": "if not muzzle_flash:"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 18,
+      "text": "muzzle_flash.visible = true"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 19,
+      "text": "muzzle_flash.scale = Vector3.ONE"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 21,
+      "text": "tween.tween_property(muzzle_flash, \"scale\", Vector3(0.15, 0.15, 0.15), 0.055)"
+    },
+    {
+      "path": "scripts/weapons/weapon_visual.gd",
+      "line": 22,
+      "text": "tween.tween_callback(func() -> void: muzzle_flash.visible = false)"
+    },
+    {
+      "path": "scenes/weapons/assault_rifle.tscn",
+      "line": 3,
+      "text": "[ext_resource type=\"Script\" path=\"res://scripts/weapons/weapon_visual.gd\" id=\"1\"]"
+    },
+    {
+      "path": "scenes/weapons/assault_rifle.tscn",
+      "line": 4,
+      "text": "[ext_resource type=\"PackedScene\" path=\"res://assets/weapons/kenney_blaster_kit/blaster-e.glb\" id=\"2\"]"
+    },
+    {
+      "path": "scenes/weapons/assault_rifle.tscn",
+      "line": 6,
+      "text": "[ext_resource type=\"Material\" path=\"res://resources/materials/weapon_palette.tres\" id=\"4\"]"
+    },
+    {
+      "path": "scenes/weapons/assault_rifle.tscn",
+      "line": 20,
+      "text": "[node name=\"Muzzle\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "path": "scenes/weapons/rocket_launcher.tscn",
+      "line": 3,
+      "text": "[ext_resource type=\"Script\" path=\"res://scripts/weapons/weapon_visual.gd\" id=\"1\"]"
+    },
+    {
+      "path": "scenes/weapons/rocket_launcher.tscn",
+      "line": 4,
+      "text": "[ext_resource type=\"PackedScene\" path=\"res://assets/weapons/kenney_blaster_kit/blaster-o.glb\" id=\"2\"]"
+    },
+    {
+      "path": "scenes/weapons/rocket_launcher.tscn",
+      "line": 6,
+      "text": "[ext_resource type=\"Material\" path=\"res://resources/materials/weapon_palette.tres\" id=\"4\"]"
+    },
+    {
+      "path": "scenes/weapons/rocket_launcher.tscn",
+      "line": 20,
+      "text": "[node name=\"Muzzle\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "path": "scenes/weapons/smg.tscn",
+      "line": 3,
+      "text": "[ext_resource type=\"Script\" path=\"res://scripts/weapons/weapon_visual.gd\" id=\"1\"]"
+    },
+    {
+      "path": "scenes/weapons/smg.tscn",
+      "line": 4,
+      "text": "[ext_resource type=\"PackedScene\" path=\"res://assets/weapons/kenney_blaster_kit/blaster-g.glb\" id=\"2\"]"
+    },
+    {
+      "path": "scenes/weapons/smg.tscn",
+      "line": 6,
+      "text": "[ext_resource type=\"Material\" path=\"res://resources/materials/weapon_palette.tres\" id=\"4\"]"
+    },
+    {
+      "path": "scenes/weapons/smg.tscn",
+      "line": 20,
+      "text": "[node name=\"Muzzle\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 55,
+      "text": "check(ContentDB.get_weapon(&\"weapon.assault_rifle_01\", false) != null, \"stable rifle content ID resolves\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 70,
+      "text": "check(AudioDirector._sfx_players.size() >= 16, \"rapid weapon fire uses a reusable sound-player pool\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 73,
+      "text": "for weapon_audio in [[&\"weapon.assault_rifle_01\", &\"ar_fire\"], [&\"weapon.smg_01\", &\"smg_fire\"], [&\"weapon.rocket_launcher_01\", &\"rocket_fire\"]]:"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 74,
+      "text": "AudioDirector.play_weapon(weapon_audio[0])"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 75,
+      "text": "check(AudioDirector.last_cue == weapon_audio[1], \"%s uses its distinct weapon sound\" % weapon_audio[0])"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 78,
+      "text": "for weapon_id in [&\"weapon.assault_rifle_01\", &\"weapon.smg_01\", &\"weapon.rocket_launcher_01\"]:"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 79,
+      "text": "var weapon := ContentDB.get_weapon(weapon_id)"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 80,
+      "text": "check(weapon != null and weapon.scene != null, \"%s has a visible PackedScene\" % weapon_id)"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 81,
+      "text": "check(weapon.damage > 0.0 and weapon.fire_rate > 0.0, \"%s has live combat stats\" % weapon_id)"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 82,
+      "text": "var rocket := ContentDB.get_weapon(&\"weapon.rocket_launcher_01\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 84,
+      "text": "var rifle := ContentDB.get_weapon(&\"weapon.assault_rifle_01\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 85,
+      "text": "var smg := ContentDB.get_weapon(&\"weapon.smg_01\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 86,
+      "text": "check(smg.fire_rate > rifle.fire_rate and smg.weapon_range < rifle.weapon_range, \"SMG is the fast close-range weapon\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 87,
+      "text": "check(rifle.damage > smg.damage and rifle.weapon_range >= 30.0, \"assault rifle is the stable medium-range weapon\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 100,
+      "text": "check(ui != null and ui.weapon_option.item_count == 4, \"hanger exposes all primary weapon choices plus unequip\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 101,
+      "text": "check(ui != null and ui.secondary_weapon_option.item_count == 4, \"hanger exposes all secondary weapon choices plus unequip\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 104,
+      "text": "check(player.weapon_instance == profile.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, profile.inventory), \"hanger preview equips the selected owned weapon instance\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 105,
+      "text": "var secondary := profile.loadout.get_item(LoadoutState.SLOT_WEAPON_SECONDARY, profile.inventory)"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 106,
+      "text": "check(secondary != null and secondary.definition_id == &\"weapon.rocket_launcher_01\", \"new profile equips a concrete rocket launcher instance as secondary\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 115,
+      "text": "check(InputMap.has_action(\"switch_weapon\"), \"combat input exposes weapon switching on the player controller\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 121,
+      "text": "check(warehouse_summary != null and warehouse_summary.text.contains(\"WEAPONS\") and warehouse_summary.text.contains(\"AMMO\") and warehouse_summary.text.contains(\"EQUIPMENT\"), \"hanger Warehouse groups persistent inventory by gameplay category\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 123,
+      "text": "for weapon_id in [&\"weapon.assault_rifle_01\", &\"weapon.smg_01\", &\"weapon.rocket_launcher_01\"]:"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 124,
+      "text": "var weapon := ContentDB.get_weapon(weapon_id)"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 125,
+      "text": "player.equip_weapon(weapon)"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 128,
+      "text": "if weapon_id == &\"weapon.assault_rifle_01\":"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 129,
+      "text": "check(player.combat_rig.has_weapon(), \"assault rifle visibly mounts on the two-hand combat rig\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 138,
+      "text": "check(player.combat_rig.is_reloading(), \"reload starts a visible upper-body weapon pose\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 141,
+      "text": "check(_socket_contains(player, weapon.socket_name, weapon_id), \"%s visibly mounts on %s\" % [weapon_id, weapon.socket_name])"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 176,
+      "text": "check(active_session != null and active_session.inventory.contains(explicit_ammo_id) and active_session.inventory.contains(explicit_rocket_ammo_id), \"both weapon reserves enter the active sortie inventory\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 220,
+      "text": "check(player.weapon_instance == active_session.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, active_session.inventory), \"battle player resolves its weapon through the active SortieSession\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 228,
+      "text": "check(player.reload_weapon(), \"partial magazine reload succeeds\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 231,
+      "text": "var primary_state: Variant = active_session.get_weapon_runtime_state(player.weapon_instance.instance_id)"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 232,
+      "text": "var secondary_item := active_session.loadout.get_item(LoadoutState.SLOT_WEAPON_SECONDARY, active_session.inventory)"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 233,
+      "text": "var secondary_state: Variant = active_session.get_weapon_runtime_state(secondary_item.instance_id) if secondary_item else null"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 244,
+      "text": "packet_basic.receive_damage(DamagePacket.new(10.0, 0.0, 0.0, player, &\"weapon.acceptance\", &\"player\"))"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 245,
+      "text": "packet_heavy.receive_damage(DamagePacket.new(10.0, 0.0, 0.0, player, &\"weapon.acceptance\", &\"player\"))"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 277,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), \"battle switches from primary rifle to concrete secondary launcher\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 278,
+      "text": "check(player.active_weapon_slot == LoadoutState.SLOT_WEAPON_SECONDARY and player.weapon_data.id == &\"weapon.rocket_launcher_01\", \"secondary Definition becomes the active combat weapon\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 289,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_PRIMARY), \"battle switches back to primary rifle\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 290,
+      "text": "check(player.get_magazine_ammo() == 30 and battle.hud.active_weapon_label.text == \"ACTIVE  PRIMARY\", \"primary magazine and HUD active slot survive switching\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 315,
+      "text": "var enemy_visual := humanoid_enemy.humanoid_visual"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 318,
+      "text": "check(enemy_visual.character_model != null and enemy_visual.character_model.name == \"EnemyVRMModel\", \"enemy uses the complete VRM character model\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 319,
+      "text": "check(enemy_visual.character_skeleton != null and enemy_visual.character_skeleton.get_bone_count() >= 90, \"enemy uses a complete humanoid Skeleton3D\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 322,
+      "text": "check(enemy_visual.combat_rig != null and enemy_visual.combat_rig.has_weapon(), \"enemy rifle is mounted through the shared combat rig\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 336,
+      "text": "var muzzle_to_aim := enemy_visual.get_muzzle_position().direction_to(enemy_aim_point)"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 337,
+      "text": "check(enemy_visual.get_muzzle_direction().dot(muzzle_to_aim) > 0.97, \"enemy muzzle direction matches its combat aim ray\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 346,
+      "text": "player.equip_weapon(ContentDB.get_weapon(&\"weapon.assault_rifle_01\"))"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 366,
+      "text": "var rocket: Variant = load(\"res://scenes/weapons/rocket_projectile.tscn\").instantiate()"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 369,
+      "text": "rocket.setup(player, Vector3(1.0, -0.7, 0.0), ContentDB.get_weapon(&\"weapon.rocket_launcher_01\"))"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 380,
+      "text": "var test_rocket_weapon := ContentDB.get_weapon(&\"weapon.rocket_launcher_01\").duplicate() as WeaponDefinition"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 381,
+      "text": "test_rocket_weapon.damage = 10.0"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 382,
+      "text": "player.equip_weapon(test_rocket_weapon)"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 489,
+      "text": "check(debug_page.humanoid_visual != null, \"enemy debug page displays the shared humanoid visual\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 491,
+      "text": "check(debug_page.find_child(\"DirectionInfo\", true, false) != null, \"enemy debug page reports forward, movement, aim, and muzzle directions\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 494,
+      "text": "check(debug_page.humanoid_visual.get_locomotion_state() == &\"Run\", \"enemy debug page previews run locomotion\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 635,
+      "text": "check(player.reload_weapon(), \"failed-path reload consumes sortie reserve before death\")"
+    },
+    {
+      "path": "tests/acceptance_smoke.gd",
+      "line": 658,
+      "text": "check(not player.debug_fire_once() and not player.reload_weapon(), \"dead player cannot fire or reload\")"
+    },
+    {
+      "path": "tests/ammo_carried_foundation_test.gd",
+      "line": 37,
+      "text": "var equipped_weapon_id := profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)"
+    },
+    {
+      "path": "tests/ammo_carried_foundation_test.gd",
+      "line": 38,
+      "text": "check(not request.add_carried_item(equipped_weapon_id, profile.inventory), \"request does not duplicate a loadout item as explicit cargo\")"
+    },
+    {
+      "path": "tests/ammo_carried_foundation_test.gd",
+      "line": 94,
+      "text": "var warehouse_smg := _find_item(profile.inventory, &\"weapon.smg_01\")"
+    },
+    {
+      "path": "tests/ammo_carried_foundation_test.gd",
+      "line": 95,
+      "text": "check(profile.loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, warehouse_smg.instance_id, profile.inventory), \"test changes current profile loadout after sortie creation\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 4,
+      "text": "const WEAPON_RUNTIME_STATE_SCRIPT := preload(\"res://scripts/data/weapon_runtime_state.gd\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 34,
+      "text": "var weapon_id: String = fixture.weapon_id"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 35,
+      "text": "var state: Variant = session.get_weapon_runtime_state(weapon_id)"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 37,
+      "text": "check(session.get_reserve_ammo(weapon_id) == 120, \"initial magazine does not consume reserve ammunition\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 47,
+      "text": "check(session.get_reserve_ammo(weapon_id) == 120, \"firing does not consume reserve ammunition\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 57,
+      "text": "var weapon_id: String = fixture.weapon_id"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 59,
+      "text": "check(session.fire_weapon(weapon_id), \"available magazine round fires\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 61,
+      "text": "check(not session.fire_weapon(weapon_id), \"empty magazine rejects firing\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 62,
+      "text": "check(session.get_weapon_runtime_state(weapon_id).magazine_ammo == 0, \"empty magazine remains at zero\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 69,
+      "text": "var weapon_id: String = fixture.weapon_id"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 71,
+      "text": "session.fire_weapon(weapon_id)"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 72,
+      "text": "check(session.get_weapon_runtime_state(weapon_id).magazine_ammo == 10, \"reload fixture reaches 10 rounds\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 73,
+      "text": "check(session.reload_weapon(weapon_id) == 20, \"partial magazine reloads the required 20 rounds\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 74,
+      "text": "check(session.get_weapon_runtime_state(weapon_id).magazine_ammo == 30, \"reload fills the magazine\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 75,
+      "text": "check(session.get_reserve_ammo(weapon_id) == 30, \"reload consumes exactly 20 reserve rounds\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 81,
+      "text": "var weapon_id: String = fixture.weapon_id"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 83,
+      "text": "session.fire_weapon(weapon_id)"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 84,
+      "text": "check(session.reload_weapon(weapon_id) == 12, \"reload uses all available reserve when it cannot fill the magazine\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 85,
+      "text": "check(session.get_weapon_runtime_state(weapon_id).magazine_ammo == 22, \"partial reserve raises magazine from 10 to 22\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 86,
+      "text": "check(session.get_reserve_ammo(weapon_id) == 0, \"partial reload removes the exhausted reserve stack\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 92,
+      "text": "var incompatible_state = WEAPON_RUNTIME_STATE_SCRIPT.new(\"rifle\", &\"ammo.556_standard\", 30, 10)"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 94,
+      "text": "check(incompatible_state.reload(incompatible_inventory) == 0, \"standard-ammo weapon rejects AP reserve\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 99,
+      "text": "var full_state = WEAPON_RUNTIME_STATE_SCRIPT.new(\"rifle\", &\"ammo.556_standard\", 30, 30)"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 110,
+      "text": "var state = WEAPON_RUNTIME_STATE_SCRIPT.new(\"rifle\", &\"ammo.556_standard\", 40, 0)"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 119,
+      "text": "var weapon_id: String = fixture.weapon_id"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 123,
+      "text": "session.fire_weapon(weapon_id)"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 124,
+      "text": "check(session.get_weapon_runtime_state(weapon_id).magazine_ammo == 20, \"extraction fixture has 20 rounds remaining in magazine\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 127,
+      "text": "check(session.get_weapon_runtime_state(weapon_id).magazine_ammo == 0, \"materialized magazine is cleared exactly once\")"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 143,
+      "text": "var weapon_id := profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)"
+    },
+    {
+      "path": "tests/ammo_runtime_test.gd",
+      "line": 151,
+      "text": "\"weapon_id\": weapon_id,"
+    },
+    {
+      "path": "tests/carried_inventory_test.gd",
+      "line": 43,
+      "text": "var uncarried_weapon := _find_item(profile.inventory, &\"weapon.smg_01\")"
+    },
+    {
+      "path": "tests/carried_inventory_test.gd",
+      "line": 44,
+      "text": "check(uncarried_weapon != null and not session.inventory.contains(uncarried_weapon.instance_id), \"uncarried warehouse weapon is absent from the sortie\")"
+    },
+    {
+      "path": "tests/carried_inventory_test.gd",
+      "line": 70,
+      "text": "var carried_weapon := session.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, session.inventory)"
+    },
+    {
+      "path": "tests/carried_inventory_test.gd",
+      "line": 71,
+      "text": "carried_weapon.durability = 52.0"
+    },
+    {
+      "path": "tests/carried_inventory_test.gd",
+      "line": 85,
+      "text": "check(profile.inventory.get_item(carried_weapon.instance_id).durability == 52.0, \"warehouse merge updates carried item state\")"
+    },
+    {
+      "path": "tests/carried_inventory_test.gd",
+      "line": 117,
+      "text": "outcome.loadout = LoadoutState.from_dict({String(LoadoutState.SLOT_WEAPON_PRIMARY): \"missing_instance\"})"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 7,
+      "text": "const WEAPON_CASES := ["
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 9,
+      "text": "\"id\": &\"weapon.assault_rifle_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 11,
+      "text": "\"secondary\": &\"weapon.rocket_launcher_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 14,
+      "text": "\"id\": &\"weapon.smg_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 16,
+      "text": "\"secondary\": &\"weapon.rocket_launcher_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 19,
+      "text": "\"id\": &\"weapon.rocket_launcher_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 21,
+      "text": "\"secondary\": &\"weapon.assault_rifle_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 38,
+      "text": "\"primary\": &\"weapon.assault_rifle_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 39,
+      "text": "\"secondary\": &\"weapon.smg_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 43,
+      "text": "\"primary\": &\"weapon.assault_rifle_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 44,
+      "text": "\"secondary\": &\"weapon.rocket_launcher_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 48,
+      "text": "\"primary\": &\"weapon.smg_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 49,
+      "text": "\"secondary\": &\"weapon.rocket_launcher_01\","
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 79,
+      "text": "for weapon_case in WEAPON_CASES:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 80,
+      "text": "var weapon_id: StringName = weapon_case.id"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 81,
+      "text": "metrics[weapon_id] = {}"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 83,
+      "text": "var result := await _measure_enemy_engagement(weapon_case, target_case)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 84,
+      "text": "metrics[weapon_id][target_case.label] = result"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 85,
+      "text": "var blast_value := \"%.2f\" % result.blast_center_damage if weapon_id == &\"weapon.rocket_launcher_01\" else \"n/a\""
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 87,
+      "text": "\"COMBAT_BASELINE weapon=%s target=%s shots_to_kill=%d damage_per_hit=%.2f ammo_spent=%d blast_center_damage=%s\" % ["
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 88,
+      "text": "weapon_case.label,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 100,
+      "text": "func _measure_enemy_engagement(weapon_case: Dictionary, target_case: Dictionary) -> Dictionary:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 101,
+      "text": "var fixture := await _create_player_fixture(weapon_case.id, weapon_case.secondary)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 106,
+      "text": "var weapon_state: WeaponRuntimeState = fixture.primary_state"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 112,
+      "text": "check(enemy != null, \"%s engagement spawns %s through EnemySpawnService\" % [weapon_case.label, target_case.label])"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 119,
+      "text": "var ammo_before := _runtime_ammo_total(session, weapon_state)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 124,
+      "text": "if weapon_state.magazine_ammo == 0:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 125,
+      "text": "var loaded := session.reload_weapon(fixture.primary_id)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 126,
+      "text": "check(loaded > 0, \"%s reloads through SortieSession while recording %s\" % [weapon_case.label, target_case.label])"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 130,
+      "text": "var fire_result := await _fire_player_weapon(player, enemy.global_position)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 131,
+      "text": "check(fire_result.fired, \"%s fires through PlayerController against %s\" % [weapon_case.label, target_case.label])"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 139,
+      "text": "if player.weapon_data.action_type == &\"projectile\":"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 141,
+      "text": "var ammo_after := _runtime_ammo_total(session, weapon_state)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 146,
+      "text": "\"blast_center_damage\": ContentDB.get_weapon(weapon_case.id).damage if weapon_case.id == &\"weapon.rocket_launcher_01\" else 0.0,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 148,
+      "text": "check(killed, \"%s defeats %s through the production attack path\" % [weapon_case.label, target_case.label])"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 149,
+      "text": "check(result.ammo_spent == shots, \"%s spends exactly one runtime round per accepted shot against %s\" % [weapon_case.label, target_case.label])"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 158,
+      "text": "for weapon_case in WEAPON_CASES:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 159,
+      "text": "var weapon_id: StringName = weapon_case.id"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 160,
+      "text": "var cover_result := await _measure_cover_interaction(weapon_case)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 161,
+      "text": "var barrier_result := await _measure_barrier_interaction(weapon_case)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 162,
+      "text": "metrics[weapon_id] = {"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 167,
+      "text": "\"WORLD_BASELINE weapon=%s target=Cover blocked=%s structure_damage=%.2f shots_to_destroy=%s target_damage=%.2f\" % ["
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 168,
+      "text": "weapon_case.label,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 176,
+      "text": "\"WORLD_BASELINE weapon=%s target=Barrier blocked=%s structure_damage=%.2f shots_to_destroy=%s\" % ["
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 177,
+      "text": "weapon_case.label,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 187,
+      "text": "func _measure_cover_interaction(weapon_case: Dictionary) -> Dictionary:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 188,
+      "text": "var fixture := await _create_player_fixture(weapon_case.id, weapon_case.secondary)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 204,
+      "text": "var weapon := ContentDB.get_weapon(weapon_case.id)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 206,
+      "text": "if weapon.action_type == &\"projectile\":"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 207,
+      "text": "fire_result = await _fire_player_weapon(player, Vector3(0.0, 0.0, -3.5))"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 209,
+      "text": "fire_result = await _fire_player_weapon(player, enemy.global_position)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 210,
+      "text": "check(fire_result.fired, \"%s fires once at the authored Cover relationship\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 219,
+      "text": "check(cover_collision != null and not cover_collision.disabled and not cover.has_method(\"receive_damage\"), \"%s leaves permanent Cover collision intact\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 227,
+      "text": "func _measure_barrier_interaction(weapon_case: Dictionary) -> Dictionary:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 228,
+      "text": "var fixture := await _create_player_fixture(weapon_case.id, weapon_case.secondary)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 233,
+      "text": "var weapon_state: WeaponRuntimeState = fixture.primary_state"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 242,
+      "text": "var weapon := ContentDB.get_weapon(weapon_case.id)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 243,
+      "text": "var max_shots := 1 if is_zero_approx(weapon.structure_damage) else 64"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 245,
+      "text": "if weapon_state.magazine_ammo == 0:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 246,
+      "text": "var loaded := session.reload_weapon(fixture.primary_id)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 247,
+      "text": "check(loaded > 0, \"%s reloads while recording Barrier interaction\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 251,
+      "text": "var fire_result := await _fire_player_weapon(player, barrier.global_position)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 252,
+      "text": "check(fire_result.fired, \"%s fires through PlayerController at Barrier\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 271,
+      "text": "for weapon_case in WEAPON_CASES:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 272,
+      "text": "var fixture := await _create_player_fixture(weapon_case.id, weapon_case.secondary)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 278,
+      "text": "var state: WeaponRuntimeState = fixture.primary_state"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 283,
+      "text": "var fire_result := await _fire_player_weapon(player, Vector3(0.0, 0.0, -12.0))"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 284,
+      "text": "check(fire_result.fired, \"%s ammo baseline fires through PlayerController\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 287,
+      "text": "check(player.reload_weapon(), \"%s ammo baseline reloads through PlayerController\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 290,
+      "text": "check(reserve_after_fire == reserve_before, \"%s fire consumes magazine rather than reserve\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 291,
+      "text": "check(reserve_after_reload == reserve_after_fire - 1, \"%s reload consumes the one fired round from reserve\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 292,
+      "text": "check(magazine_before_extract == state.magazine_capacity, \"%s reload restores its authored magazine capacity\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 293,
+      "text": "check(session.complete_extraction(), \"%s ammo baseline completes extraction\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 295,
+      "text": "check(outcome != null and SortieOutcomeService.commit_outcome(profile, outcome) == OK, \"%s ammo baseline commits through the existing recovery boundary\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 297,
+      "text": "check(state.magazine_ammo == 0, \"%s extraction clears materialized runtime magazine\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 298,
+      "text": "check(recovered_after_extract == total_before - 1, \"%s extraction recovers every unspent round exactly once\" % weapon_case.label)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 300,
+      "text": "\"AMMO_BASELINE weapon=%s ammo=%s magazine_capacity=%d reserve_before=%d magazine_before=%d reserve_after_fire=%d magazine_after_fire=%d reload_consumption=%d reserve_after_reload=%d magazine_before_extract=%d recovered_after_extract=%d\" % ["
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 301,
+      "text": "weapon_case.label,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 319,
+      "text": "var primary := ContentDB.get_weapon(loadout_case.primary)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 320,
+      "text": "var secondary := ContentDB.get_weapon(loadout_case.secondary)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 323,
+      "text": "_weapon_label(primary.id),"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 325,
+      "text": "_weapon_label(secondary.id),"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 329,
+      "text": "_weapon_label(primary.id),"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 331,
+      "text": "_weapon_label(secondary.id),"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 336,
+      "text": "_weapon_label(primary.id),"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 337,
+      "text": "_weapon_label(secondary.id),"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 390,
+      "text": "for weapon_case in WEAPON_CASES:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 391,
+      "text": "var weapon_id: StringName = weapon_case.id"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 394,
+      "text": "weapon_case.label,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 395,
+      "text": "combat_metrics[weapon_id].Heavy.damage_per_hit,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 396,
+      "text": "combat_metrics[weapon_id].Heavy.shots_to_kill,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 401,
+      "text": "weapon_case.label,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 402,
+      "text": "world_metrics[weapon_id].Barrier.structure_damage,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 403,
+      "text": "world_metrics[weapon_id].Barrier.shots_to_destroy,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 408,
+      "text": "weapon_case.label,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 409,
+      "text": "world_metrics[weapon_id].Cover.blocked,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 410,
+      "text": "world_metrics[weapon_id].Cover.target_damage,"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 416,
+      "text": "_check_metric(metrics, &\"weapon.assault_rifle_01\", \"Basic\", 20.0, 3)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 417,
+      "text": "_check_metric(metrics, &\"weapon.assault_rifle_01\", \"Heavy\", 12.0, 10)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 418,
+      "text": "_check_metric(metrics, &\"weapon.smg_01\", \"Basic\", 10.0, 6)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 419,
+      "text": "_check_metric(metrics, &\"weapon.smg_01\", \"Heavy\", 2.0, 60)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 420,
+      "text": "_check_metric(metrics, &\"weapon.rocket_launcher_01\", \"Basic\", 60.0, 1)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 421,
+      "text": "_check_metric(metrics, &\"weapon.rocket_launcher_01\", \"Heavy\", 84.0, 2)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 422,
+      "text": "check(is_equal_approx(metrics[&\"weapon.rocket_launcher_01\"].Basic.blast_center_damage, 92.0), \"Rocket center packet retains its authored ninety-two base damage before target health caps\")"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 423,
+      "text": "check(is_equal_approx(metrics[&\"weapon.rocket_launcher_01\"].Heavy.blast_center_damage, 92.0), \"Rocket center packet is identical for Basic and Heavy targets\")"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 427,
+      "text": "var rifle_cover: Dictionary = metrics[&\"weapon.assault_rifle_01\"].Cover"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 428,
+      "text": "var smg_cover: Dictionary = metrics[&\"weapon.smg_01\"].Cover"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 429,
+      "text": "var rocket_cover: Dictionary = metrics[&\"weapon.rocket_launcher_01\"].Cover"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 433,
+      "text": "var rifle_barrier: Dictionary = metrics[&\"weapon.assault_rifle_01\"].Barrier"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 434,
+      "text": "var smg_barrier: Dictionary = metrics[&\"weapon.smg_01\"].Barrier"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 435,
+      "text": "var rocket_barrier: Dictionary = metrics[&\"weapon.rocket_launcher_01\"].Barrier"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 441,
+      "text": "func _check_metric(metrics: Dictionary, weapon_id: StringName, target_label: String, damage: float, shots: int) -> void:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 442,
+      "text": "var metric: Dictionary = metrics[weapon_id][target_label]"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 443,
+      "text": "check(is_equal_approx(metric.damage_per_hit, damage), \"%s baseline damage against %s remains %.2f\" % [_weapon_label(weapon_id), target_label, damage])"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 444,
+      "text": "check(metric.shots_to_kill == shots, \"%s baseline shots-to-kill against %s remains %d\" % [_weapon_label(weapon_id), target_label, shots])"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 445,
+      "text": "check(metric.ammo_spent == shots, \"%s baseline ammo spent against %s equals accepted shots\" % [_weapon_label(weapon_id), target_label])"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 452,
+      "text": "check(primary_item != null and secondary_item != null, \"Baseline fixture owns requested weapon pair\")"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 455,
+      "text": "profile.loadout.unequip(LoadoutState.SLOT_WEAPON_PRIMARY)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 456,
+      "text": "profile.loadout.unequip(LoadoutState.SLOT_WEAPON_SECONDARY)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 457,
+      "text": "check(profile.loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, primary_item.instance_id, profile.inventory), \"Baseline fixture equips requested primary\")"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 458,
+      "text": "check(profile.loadout.equip(LoadoutState.SLOT_WEAPON_SECONDARY, secondary_item.instance_id, profile.inventory), \"Baseline fixture equips requested secondary\")"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 475,
+      "text": "var primary_state: WeaponRuntimeState = session.get_weapon_runtime_state(primary_item.instance_id)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 476,
+      "text": "check(player.weapon_data != null and player.weapon_data.id == primary_definition_id, \"PlayerController activates the requested primary WeaponDefinition\")"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 477,
+      "text": "check(primary_state != null, \"SortieSession owns the requested primary WeaponRuntimeState\")"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 487,
+      "text": "func _fire_player_weapon(player: PlayerController, projectile_impact_position: Vector3) -> Dictionary:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 491,
+      "text": "if player.weapon_data.action_type == &\"projectile\":"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 512,
+      "text": "for slot_id in LoadoutState.WEAPON_SLOT_IDS:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 513,
+      "text": "var weapon_item := profile.loadout.get_item(slot_id, profile.inventory)"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 514,
+      "text": "var weapon_definition := ContentDB.get_weapon(weapon_item.definition_id, false) if weapon_item else null"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 515,
+      "text": "var ammo_definition_id := weapon_definition.get_runtime_ammo_definition_id() if weapon_definition else &\"\""
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 525,
+      "text": "func _runtime_ammo_total(session: SortieSession, state: WeaponRuntimeState) -> int:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 544,
+      "text": "func _weapon_label(weapon_id: StringName) -> String:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 545,
+      "text": "match weapon_id:"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 546,
+      "text": "&\"weapon.assault_rifle_01\":"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 548,
+      "text": "&\"weapon.smg_01\":"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 550,
+      "text": "&\"weapon.rocket_launcher_01\":"
+    },
+    {
+      "path": "tests/combat_tuning_baseline_test.gd",
+      "line": 552,
+      "text": "return String(weapon_id)"
+    },
+    {
+      "path": "tests/content_inventory_test.gd",
+      "line": 24,
+      "text": "var rifle := ContentDB.get_weapon(&\"weapon.assault_rifle_01\", false)"
+    },
+    {
+      "path": "tests/content_inventory_test.gd",
+      "line": 26,
+      "text": "check(rifle != null and rifle.id == &\"weapon.assault_rifle_01\", \"ContentDB resolves a known weapon ID\")"
+    },
+    {
+      "path": "tests/content_inventory_test.gd",
+      "line": 33,
+      "text": "var rifle_a := ItemInstance.new(&\"weapon.assault_rifle_01\", 1, 100.0)"
+    },
+    {
+      "path": "tests/content_inventory_test.gd",
+      "line": 34,
+      "text": "var rifle_b := ItemInstance.new(&\"weapon.assault_rifle_01\", 1, 61.0)"
+    },
+    {
+      "path": "tests/content_inventory_test.gd",
+      "line": 45,
+      "text": "var rifle := ItemInstance.new(&\"weapon.assault_rifle_01\")"
+    },
+    {
+      "path": "tests/content_inventory_test.gd",
+      "line": 47,
+      "text": "var launcher := ItemInstance.new(&\"weapon.rocket_launcher_01\")"
+    },
+    {
+      "path": "tests/damage_packet_test.gd",
+      "line": 14,
+      "text": "_test_weapon_boundary()"
+    },
+    {
+      "path": "tests/damage_packet_test.gd",
+      "line": 28,
+      "text": "var packet := DamagePacket.new(10.0, 0.0, 3.0, self, &\"weapon.test\", &\"player\", Vector3(1.0, 2.0, 3.0), Vector3.UP)"
+    },
+    {
+      "path": "tests/damage_packet_test.gd",
+      "line": 29,
+      "text": "check(packet.structure_damage == 3.0 and packet.source_actor == self and packet.source_weapon == &\"weapon.test\" and packet.source_faction == &\"player\", \"packet carries source and structure context\")"
+    },
+    {
+      "path": "tests/damage_packet_test.gd",
+      "line": 72,
+      "text": "basic.receive_damage(DamagePacket.new(1000.0, 1000.0, 0.0, self, &\"weapon.test\", &\"player\", basic.global_position, Vector3.UP))"
+    },
+    {
+      "path": "tests/damage_packet_test.gd",
+      "line": 85,
+      "text": "shooter.equip_weapon(ContentDB.get_weapon(&\"weapon.assault_rifle_01\"))"
+    },
+    {
+      "path": "tests/damage_packet_test.gd",
+      "line": 131,
+      "text": "func _test_weapon_boundary() -> void:"
+    },
+    {
+      "path": "tests/damage_packet_test.gd",
+      "line": 135,
+      "text": "check(not player_source.contains(\"EnemyDefinition\") and not player_source.contains(\"prototype_heavy_enemy\") and not player_source.contains(\"target.definition_id\"), \"weapon firing does not inspect enemy type or EnemyDefinition\")"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 5,
+      "text": "const ROCKET_SCENE := preload(\"res://scenes/weapons/rocket_projectile.tscn\")"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 13,
+      "text": "await _test_weapon_definitions_and_cover_boundary()"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 48,
+      "text": "func _test_weapon_definitions_and_cover_boundary() -> void:"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 49,
+      "text": "var rifle := ContentDB.get_weapon(&\"weapon.assault_rifle_01\")"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 50,
+      "text": "var rocket := ContentDB.get_weapon(&\"weapon.rocket_launcher_01\")"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 54,
+      "text": "rifle_target.receive_damage(_packet_from_weapon(rifle))"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 55,
+      "text": "rocket_target.receive_damage(_packet_from_weapon(rocket))"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 57,
+      "text": "check(rocket_target.destroyed, \"rocket packet destroys the same structure without weapon-ID branches\")"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 77,
+      "text": "shooter.equip_weapon(ContentDB.get_weapon(&\"weapon.assault_rifle_01\"))"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 112,
+      "text": "rocket.setup(shooter, Vector3.FORWARD, ContentDB.get_weapon(&\"weapon.rocket_launcher_01\"))"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 138,
+      "text": "func _packet_from_weapon(weapon: WeaponDefinition) -> DamagePacket:"
+    },
+    {
+      "path": "tests/destructible_world_object_test.gd",
+      "line": 139,
+      "text": "return DamagePacket.new(weapon.damage, weapon.armor_penetration, weapon.structure_damage, self, weapon.id, &\"player\")"
+    },
+    {
+      "path": "tests/enemy_definition_test.gd",
+      "line": 66,
+      "text": "check(basic_damage == 20.0 and heavy_damage == 12.0, \"the same incoming damage resolves differently through runtime armor without weapon type checks\")"
+    },
+    {
+      "path": "tests/enemy_spawn_test.gd",
+      "line": 61,
+      "text": "var enemy := EnemySpawnService.spawn(definition, spawn_point.global_transform, container)"
+    },
+    {
+      "path": "tests/enemy_spawn_test.gd",
+      "line": 62,
+      "text": "check(enemy != null and enemy.global_transform.is_equal_approx(spawn_point.global_transform), \"spawn service applies authored spawn transform\")"
+    },
+    {
+      "path": "tests/extraction_vertical_slice_test.gd",
+      "line": 32,
+      "text": "var rifle := ItemInstance.new(&\"weapon.assault_rifle_01\", 1, 100.0, \"capacity_rifle\")"
+    },
+    {
+      "path": "tests/extraction_vertical_slice_test.gd",
+      "line": 58,
+      "text": "check(inventory.add_item(ItemInstance.new(&\"weapon.assault_rifle_01\", 1, 100.0, \"full_rifle\")), \"capacity fixture fills inventory exactly\")"
+    },
+    {
+      "path": "tests/extraction_vertical_slice_test.gd",
+      "line": 77,
+      "text": "var uncarried_item := _find_item(profile.inventory, &\"weapon.smg_01\")"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 9,
+      "text": "\"primary\": &\"weapon.assault_rifle_01\","
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 10,
+      "text": "\"secondary\": &\"weapon.smg_01\","
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 15,
+      "text": "\"primary\": &\"weapon.assault_rifle_01\","
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 16,
+      "text": "\"secondary\": &\"weapon.rocket_launcher_01\","
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 21,
+      "text": "\"primary\": &\"weapon.smg_01\","
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 22,
+      "text": "\"secondary\": &\"weapon.rocket_launcher_01\","
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 32,
+      "text": "var weapon_metrics := await _collect_weapon_metrics()"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 34,
+      "text": "await _run_completed_loadout(loadout_case, weapon_metrics)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 48,
+      "text": "func _run_completed_loadout(loadout_case: Dictionary, weapon_metrics: Dictionary) -> void:"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 58,
+      "text": "var primary_state: WeaponRuntimeState = session.get_weapon_runtime_state(primary_id)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 59,
+      "text": "var secondary_state: WeaponRuntimeState = session.get_weapon_runtime_state(secondary_id)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 60,
+      "text": "var primary_definition := ContentDB.get_weapon(loadout_case.primary)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 61,
+      "text": "var secondary_definition := ContentDB.get_weapon(loadout_case.secondary)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 64,
+      "text": "check(primary_id != secondary_id, \"%s uses two distinct weapon instance IDs\" % label)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 68,
+      "text": "\"%s sortie weapon instances are deep snapshots\" % label"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 76,
+      "text": "check(session.get_initial_carried_instance_ids().has(primary_id) and session.get_initial_carried_instance_ids().has(secondary_id), \"%s snapshots both equipped weapons\" % label)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 78,
+      "text": "var primary_metrics: Dictionary = weapon_metrics[primary_definition.id]"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 79,
+      "text": "var secondary_metrics: Dictionary = weapon_metrics[secondary_definition.id]"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 83,
+      "text": "_format_weapon(primary_definition, primary_metrics),"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 84,
+      "text": "_format_weapon(secondary_definition, secondary_metrics),"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 94,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), \"%s switches to secondary\" % label)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 108,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_PRIMARY), \"%s switches back to primary\" % label)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 109,
+      "text": "check(player.reload_weapon(), \"%s reloads primary\" % label)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 110,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), \"%s returns to secondary\" % label)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 111,
+      "text": "check(player.reload_weapon(), \"%s reloads secondary\" % label)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 139,
+      "text": "check(_count_instance_id(profile.inventory, primary_id) == 1 and _count_instance_id(profile.inventory, secondary_id) == 1, \"%s keeps both weapon IDs unique\" % label)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 148,
+      "text": "var fixture := await _create_fixture(&\"weapon.smg_01\", &\"weapon.rocket_launcher_01\")"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 157,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), \"FAILED path switches to Rocket\")"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 185,
+      "text": "check(primary_item != null and secondary_item != null, \"Profile owns requested %s + %s weapons\" % [primary_definition_id, secondary_definition_id])"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 188,
+      "text": "check(profile.loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, primary_item.instance_id, profile.inventory), \"Profile equips requested primary %s\" % primary_definition_id)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 189,
+      "text": "check(profile.loadout.equip(LoadoutState.SLOT_WEAPON_SECONDARY, secondary_item.instance_id, profile.inventory), \"Profile equips requested secondary %s\" % secondary_definition_id)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 213,
+      "text": "func _collect_weapon_metrics() -> Dictionary:"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 215,
+      "text": "for definition_id in [&\"weapon.assault_rifle_01\", &\"weapon.smg_01\", &\"weapon.rocket_launcher_01\"]:"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 216,
+      "text": "var definition := ContentDB.get_weapon(definition_id)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 217,
+      "text": "metrics[definition_id] = await _measure_weapon(definition)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 221,
+      "text": "func _measure_weapon(definition: WeaponDefinition) -> Dictionary:"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 233,
+      "text": "var basic_damage := basic.receive_damage(_packet_from_weapon(definition)) if basic else -1.0"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 234,
+      "text": "var heavy_damage := heavy.receive_damage(_packet_from_weapon(definition)) if heavy else -1.0"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 235,
+      "text": "var structure_damage := barrier.receive_damage(_packet_from_weapon(definition)) if barrier else -1.0"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 258,
+      "text": "for slot_id in LoadoutState.WEAPON_SLOT_IDS:"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 259,
+      "text": "var weapon_item := profile.loadout.get_item(slot_id, profile.inventory)"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 260,
+      "text": "var weapon_definition := ContentDB.get_weapon(weapon_item.definition_id, false) if weapon_item else null"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 261,
+      "text": "var ammo_definition_id := weapon_definition.get_runtime_ammo_definition_id() if weapon_definition else &\"\""
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 280,
+      "text": "func _format_weapon(definition: WeaponDefinition, metrics: Dictionary) -> String:"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 287,
+      "text": "definition.weapon_range,"
+    },
+    {
+      "path": "tests/loadout_decision_test.gd",
+      "line": 306,
+      "text": "func _packet_from_weapon(definition: WeaponDefinition) -> DamagePacket:"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 23,
+      "text": "var rifle_a := ItemInstance.new(&\"weapon.assault_rifle_01\", 1, 100.0, \"item_001\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 24,
+      "text": "var rifle_b := ItemInstance.new(&\"weapon.assault_rifle_01\", 1, 61.0, \"item_002\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 33,
+      "text": "check(loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, rifle_a.instance_id, inventory), \"loadout equips a concrete weapon instance\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 34,
+      "text": "check(loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY) == \"item_001\", \"weapon slot stores the instance ID\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 35,
+      "text": "check(loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, inventory) == rifle_a, \"loadout resolves the selected ItemInstance through inventory\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 39,
+      "text": "check(not loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, \"item_999\", inventory), \"missing instance is rejected\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 40,
+      "text": "check(loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY) == \"item_001\", \"failed equip keeps the previous selection\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 41,
+      "text": "check(not loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, ammo.instance_id, inventory), \"definition type mismatch is rejected\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 44,
+      "text": "check(loadout.unequip(LoadoutState.SLOT_WEAPON_PRIMARY), \"unequip reports a removed selection\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 45,
+      "text": "check(not loadout.has_slot(LoadoutState.SLOT_WEAPON_PRIMARY), \"unequip clears the slot\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 46,
+      "text": "check(loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, rifle_a.instance_id, inventory), \"weapon can be equipped again\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 47,
+      "text": "check(loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, rifle_b.instance_id, inventory), \"slot accepts a replacement instance\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 48,
+      "text": "check(loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY) == \"item_002\", \"replacement is the only selected weapon instance\")"
+    },
+    {
+      "path": "tests/loadout_state_test.gd",
+      "line": 53,
+      "text": "check(restored.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY) == \"item_002\", \"serialization preserves weapon instance identity\")"
+    },
+    {
+      "path": "tests/mission_objective_test.gd",
+      "line": 100,
+      "text": "var weapon_id := session.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)"
+    },
+    {
+      "path": "tests/mission_objective_test.gd",
+      "line": 102,
+      "text": "check(session.fire_weapon(weapon_id), \"objective runtime does not block weapon fire\")"
+    },
+    {
+      "path": "tests/mission_objective_test.gd",
+      "line": 103,
+      "text": "check(session.reload_weapon(weapon_id) == 5, \"objective runtime preserves reserve-to-magazine reload\")"
+    },
+    {
+      "path": "tests/presentation_gameplay_test.gd",
+      "line": 88,
+      "text": "check(player.debug_fire_once(), \"real Player weapon fires inside the authored building\")"
+    },
+    {
+      "path": "tests/presentation_gameplay_test.gd",
+      "line": 151,
+      "text": "for slot_id in LoadoutState.WEAPON_SLOT_IDS:"
+    },
+    {
+      "path": "tests/presentation_gameplay_test.gd",
+      "line": 152,
+      "text": "var weapon_item := profile.loadout.get_item(slot_id, profile.inventory)"
+    },
+    {
+      "path": "tests/presentation_gameplay_test.gd",
+      "line": 153,
+      "text": "var weapon := ContentDB.get_weapon(weapon_item.definition_id, false) if weapon_item else null"
+    },
+    {
+      "path": "tests/presentation_gameplay_test.gd",
+      "line": 154,
+      "text": "if weapon:"
+    },
+    {
+      "path": "tests/presentation_gameplay_test.gd",
+      "line": 155,
+      "text": "ammo_definition_ids[weapon.get_runtime_ammo_definition_id()] = true"
+    },
+    {
+      "path": "tests/profile_state_test.gd",
+      "line": 34,
+      "text": "var rifle := ItemInstance.new(&\"weapon.assault_rifle_01\", 1, 87.0, \"item_001\")"
+    },
+    {
+      "path": "tests/profile_state_test.gd",
+      "line": 41,
+      "text": "loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, rifle.instance_id, inventory)"
+    },
+    {
+      "path": "tests/profile_state_test.gd",
+      "line": 51,
+      "text": "check(restored_rifle != null and restored_rifle.definition_id == &\"weapon.assault_rifle_01\", \"definition ID survives profile serialization\")"
+    },
+    {
+      "path": "tests/profile_state_test.gd",
+      "line": 54,
+      "text": "check(restored.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY) == \"item_001\", \"loadout instance ID survives profile serialization\")"
+    },
+    {
+      "path": "tests/profile_state_test.gd",
+      "line": 55,
+      "text": "check(ContentDB.get_weapon(restored_rifle.definition_id, false) != null, \"restored definition ID resolves through ContentDB\")"
+    },
+    {
+      "path": "tests/profile_state_test.gd",
+      "line": 58,
+      "text": "invalid_data[\"loadout\"][String(LoadoutState.SLOT_WEAPON_PRIMARY)] = \"item_999\""
+    },
+    {
+      "path": "tests/save_service_test.gd",
+      "line": 27,
+      "text": "var weapon := profile.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, profile.inventory)"
+    },
+    {
+      "path": "tests/save_service_test.gd",
+      "line": 28,
+      "text": "weapon.durability = 73.0"
+    },
+    {
+      "path": "tests/save_service_test.gd",
+      "line": 38,
+      "text": "var restored_weapon := restored.inventory.get_item(weapon.instance_id) if restored else null"
+    },
+    {
+      "path": "tests/save_service_test.gd",
+      "line": 40,
+      "text": "check(restored_weapon != null and restored_weapon.durability == 73.0, \"save round trip preserves durability and instance ID\")"
+    },
+    {
+      "path": "tests/save_service_test.gd",
+      "line": 42,
+      "text": "check(restored != null and restored.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY) == weapon.instance_id, \"save round trip preserves loadout instance reference\")"
+    },
+    {
+      "path": "tests/save_service_test.gd",
+      "line": 43,
+      "text": "check(restored_weapon != null and ContentDB.get_weapon(restored_weapon.definition_id, false) != null, \"loaded item definition resolves through ContentDB\")"
+    },
+    {
+      "path": "tests/save_service_test.gd",
+      "line": 50,
+      "text": "invalid_profile_data[\"loadout\"][String(LoadoutState.SLOT_WEAPON_PRIMARY)] = \"item_999\""
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 32,
+      "text": "var weapon_id: String = fixture.weapon_id"
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 35,
+      "text": "check(session.fire_weapon(weapon_id), \"failure fixture consumes an available magazine round\")"
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 36,
+      "text": "var weapon_state: Variant = session.get_weapon_runtime_state(weapon_id)"
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 37,
+      "text": "check(weapon_state.magazine_ammo == 20 and session.get_reserve_ammo(weapon_id) == 80, \"failure fixture has magazine 20 and reserve 80\")"
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 49,
+      "text": "var failed_magazine: int = weapon_state.magazine_ammo"
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 51,
+      "text": "check(not session.fire_weapon(weapon_id), \"FAILED session cannot fire\")"
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 52,
+      "text": "check(session.reload_weapon(weapon_id) == 0, \"FAILED session cannot reload\")"
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 53,
+      "text": "check(weapon_state.magazine_ammo == failed_magazine and session.inventory.to_dict() == failed_inventory, \"failed fire and reload leave runtime ammo unchanged\")"
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 54,
+      "text": "check(weapon_state.magazine_ammo == 20 and session.get_reserve_ammo(weapon_id) == 80, \"death does not materialize magazine ammunition\")"
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 86,
+      "text": "var weapon_id: String = fixture.weapon_id"
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 88,
+      "text": "session.fire_weapon(weapon_id)"
+    },
+    {
+      "path": "tests/sortie_failure_test.gd",
+      "line": 132,
+      "text": "\"weapon_id\": profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY),"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 62,
+      "text": "var weapon_id := session.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 63,
+      "text": "var alternate_weapon := ItemInstance.new(&\"weapon.smg_01\", 1, 100.0, \"outcome_smg_001\")"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 64,
+      "text": "check(session.inventory.add_item(alternate_weapon), \"outcome fixture adds a recovered alternate weapon\")"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 65,
+      "text": "check(session.loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, alternate_weapon.instance_id, session.inventory), \"outcome fixture equips the recovered weapon\")"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 74,
+      "text": "session.inventory.get_item(weapon_id).durability = 12.0"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 75,
+      "text": "session.loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, weapon_id, session.inventory)"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 85,
+      "text": "var uncarried_item := _find_item(profile.inventory, &\"weapon.smg_01\")"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 90,
+      "text": "var session_weapon := session.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, session.inventory)"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 91,
+      "text": "session_weapon.durability = 61.0"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 105,
+      "text": "check(profile.inventory.get_item(session_weapon.instance_id).durability == 61.0, \"carried item state is updated from the recovered snapshot\")"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 106,
+      "text": "check(profile.inventory.get_item(session_weapon.instance_id) != outcome.inventory.get_item(session_weapon.instance_id), \"profile item objects are copied from outcome\")"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 123,
+      "text": "var weapon := session.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, session.inventory)"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 124,
+      "text": "weapon.durability = 35.0"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 138,
+      "text": "var weapon := session.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, session.inventory)"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 139,
+      "text": "weapon.durability = 47.0"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 158,
+      "text": "var uncarried_item := _find_item(profile.inventory, &\"weapon.smg_01\")"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 165,
+      "text": "var weapon := session.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, session.inventory)"
+    },
+    {
+      "path": "tests/sortie_outcome_test.gd",
+      "line": 166,
+      "text": "weapon.durability = 73.0"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 24,
+      "text": "var profile_weapon := profile.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, profile.inventory)"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 25,
+      "text": "var profile_weapon_id := profile_weapon.instance_id"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 26,
+      "text": "var profile_loadout_id := profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 45,
+      "text": "var session_weapon := session.inventory.get_item(profile_weapon_id)"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 46,
+      "text": "check(session_weapon != null and session_weapon != profile_weapon, \"sortie item object is independent from profile item object\")"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 47,
+      "text": "check(session_weapon != null and session_weapon.instance_id == profile_weapon.instance_id, \"sortie snapshot preserves stable business item ID\")"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 48,
+      "text": "check(session_weapon != null and ContentDB.get_weapon(session_weapon.definition_id, false) != null, \"sortie item definition resolves through ContentDB\")"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 50,
+      "text": "session_weapon.durability = 50.0"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 54,
+      "text": "check(profile_weapon.durability == 100.0, \"sortie durability changes do not mutate profile\")"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 56,
+      "text": "var session_smg := ItemInstance.new(&\"weapon.smg_01\", 1, 100.0, \"sortie_smg_001\")"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 57,
+      "text": "check(session.inventory.add_item(session_smg), \"sortie can own a recovered alternate weapon\")"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 58,
+      "text": "check(session.loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, session_smg.instance_id, session.inventory), \"sortie loadout can select another owned snapshot instance\")"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 59,
+      "text": "check(profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY) == profile_loadout_id, \"sortie loadout changes do not mutate profile loadout\")"
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 71,
+      "text": "invalid_data[\"loadout\"][String(LoadoutState.SLOT_WEAPON_PRIMARY)] = \"item_999\""
+    },
+    {
+      "path": "tests/sortie_session_test.gd",
+      "line": 75,
+      "text": "var invalid_loadout := LoadoutState.from_dict({String(LoadoutState.SLOT_WEAPON_PRIMARY): \"item_999\"})"
+    },
+    {
+      "path": "tests/visual_combat_acceptance.gd",
+      "line": 64,
+      "text": "await _wait_for_enter(\"DODGE | WEAPON STAYS BETWEEN HANDS\")"
+    },
+    {
+      "path": "tests/visual_enemy_acceptance.gd",
+      "line": 71,
+      "text": "enemy.humanoid_visual.update_visual(aim_point, Vector3.LEFT, 1.2, delta)"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 2,
+      "text": "## Regression for shared weapon identity, imported art and presentation-only fixtures."
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 11,
+      "text": "for id in [&\"weapon.assault_rifle_01\", &\"weapon.smg_01\", &\"weapon.rocket_launcher_01\"]:"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 17,
+      "text": "ui.secondary_weapon_selected.emit(\"\")"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 18,
+      "text": "ui.weapon_selected.emit(item.instance_id)"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 21,
+      "text": "check(player.weapon_data.id == id, \"Hanger selection retains definition identity\")"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 22,
+      "text": "check(player.equipped_weapon_visual.get_meta(\"equipment_id\") == id, \"shared scene receives definition identity\")"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 23,
+      "text": "check(player.equipped_weapon_visual.has_node(\"Art/Model\"), \"weapon uses an imported GLB\")"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 24,
+      "text": "check(player.combat_rig.has_weapon() == player.weapon_data.uses_combat_rig, \"socket pose correction preserves the production weapon path\")"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 25,
+      "text": "check(player.equipped_weapon_visual.find_children(\"*\", \"MeshInstance3D\", true, false).size() > 1, \"GLB has renderable geometry\")"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 26,
+      "text": "check(player.equipped_weapon_visual.find_children(\"*\", \"CollisionObject3D\", true, false).is_empty(), \"weapon art adds no collision\")"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 28,
+      "text": "check(ui.warehouse_summary.text.contains(\"[PRIMARY]\") and ui.warehouse_summary.text.contains(player.weapon_data.display_name), \"Warehouse reflects equipped identity\")"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 29,
+      "text": "await capture(\"hanger_\" + String(id).trim_prefix(\"weapon.\").trim_suffix(\"_01\"))"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 75,
+      "text": "for id in [&\"weapon.assault_rifle_01\", &\"weapon.smg_01\", &\"weapon.rocket_launcher_01\"]:"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 76,
+      "text": "player.equip_weapon(ContentDB.get_weapon(id))"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 91,
+      "text": "check(player.equipped_weapon_visual.has_node(\"Art/Model\"), \"gameplay uses the same imported model\")"
+    },
+    {
+      "path": "tests/visual_slice_assets_test.gd",
+      "line": 92,
+      "text": "await capture(\"gameplay_\" + String(id).trim_prefix(\"weapon.\").trim_suffix(\"_01\"))"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 5,
+      "text": "const ROCKET_SCENE := preload(\"res://scenes/weapons/rocket_projectile.tscn\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 12,
+      "text": "await _test_weapon_enemy_tradeoffs()"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 14,
+      "text": "await _test_cover_changes_weapon_behavior()"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 15,
+      "text": "await _test_barrier_changes_weapon_behavior()"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 21,
+      "text": "print(\"WEAPON_BEHAVIOR_TEST: PASS\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 25,
+      "text": "push_error(\"WEAPON_BEHAVIOR_TEST: %s\" % failure)"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 26,
+      "text": "print(\"WEAPON_BEHAVIOR_TEST: FAIL (%d)\" % failures.size())"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 30,
+      "text": "func _test_weapon_enemy_tradeoffs() -> void:"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 31,
+      "text": "var rifle := ContentDB.get_weapon(&\"weapon.assault_rifle_01\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 32,
+      "text": "var launcher := ContentDB.get_weapon(&\"weapon.rocket_launcher_01\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 37,
+      "text": "var rifle_basic_damage := basic.receive_damage(_packet_from_weapon(rifle))"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 38,
+      "text": "var rifle_heavy_damage := heavy.receive_damage(_packet_from_weapon(rifle))"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 41,
+      "text": "check(not basic.is_dead and not heavy.is_dead, \"one rifle round does not turn either enemy into a weapon-specific hard gate\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 62,
+      "text": "var smg := ContentDB.get_weapon(&\"weapon.smg_01\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 66,
+      "text": "shooter.equip_weapon(smg)"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 114,
+      "text": "func _test_cover_changes_weapon_behavior() -> void:"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 115,
+      "text": "var rifle := ContentDB.get_weapon(&\"weapon.assault_rifle_01\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 116,
+      "text": "var launcher := ContentDB.get_weapon(&\"weapon.rocket_launcher_01\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 120,
+      "text": "shooter.equip_weapon(rifle)"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 148,
+      "text": "func _test_barrier_changes_weapon_behavior() -> void:"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 149,
+      "text": "var rifle := ContentDB.get_weapon(&\"weapon.assault_rifle_01\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 150,
+      "text": "var launcher := ContentDB.get_weapon(&\"weapon.rocket_launcher_01\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 154,
+      "text": "shooter.equip_weapon(rifle)"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 188,
+      "text": "var primary_state: WeaponRuntimeState = session.get_weapon_runtime_state(primary_id)"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 189,
+      "text": "var secondary_state: WeaponRuntimeState = session.get_weapon_runtime_state(secondary_id)"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 193,
+      "text": "check(session.fire_weapon(primary_id), \"primary rifle consumes its runtime magazine\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 195,
+      "text": "check(session.fire_weapon(secondary_id), \"secondary launcher consumes its runtime magazine\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 201,
+      "text": "check(session.complete_extraction(), \"dual-weapon behavior fixture extracts successfully\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 205,
+      "text": "check(outcome != null and SortieOutcomeService.commit_outcome(profile, outcome) == OK, \"dual-weapon ammunition commits through the existing recovery boundary\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 212,
+      "text": "check(failure_session.fire_weapon(failure_fixture.primary_id) and failure_session.fire_weapon(failure_fixture.secondary_id), \"failure fixture consumes both runtime magazines\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 213,
+      "text": "check(failure_session.fail(), \"dual-weapon behavior fixture can fail\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 215,
+      "text": "check(failure_outcome != null and SortieOutcomeService.commit_outcome(failure_profile, failure_outcome) == OK, \"failed dual-weapon outcome uses the existing no-op commit\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 243,
+      "text": "check(session != null and session.activate(), \"weapon behavior fixture creates an active dual-weapon sortie\")"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 247,
+      "text": "\"primary_id\": profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY),"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 248,
+      "text": "\"secondary_id\": profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_SECONDARY),"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 269,
+      "text": "func _explode_at(position_value: Vector3, weapon: WeaponDefinition) -> void:"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 275,
+      "text": "rocket.setup(shooter, Vector3.FORWARD, weapon)"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 280,
+      "text": "func _packet_from_weapon(weapon: WeaponDefinition) -> DamagePacket:"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 282,
+      "text": "weapon.damage,"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 283,
+      "text": "weapon.armor_penetration,"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 284,
+      "text": "weapon.structure_damage,"
+    },
+    {
+      "path": "tests/weapon_behavior_test.gd",
+      "line": 286,
+      "text": "weapon.id,"
+    },
+    {
+      "path": "tests/weapon_behavior_test.tscn",
+      "line": 3,
+      "text": "[ext_resource type=\"Script\" path=\"res://tests/weapon_behavior_test.gd\" id=\"1_test\"]"
+    },
+    {
+      "path": "tests/weapon_behavior_test.tscn",
+      "line": 5,
+      "text": "[node name=\"WeaponBehaviorTest\" type=\"Node3D\"]"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 17,
+      "text": "print(\"WEAPON_SWITCHING_TEST: PASS\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 21,
+      "text": "push_error(\"WEAPON_SWITCHING_TEST: %s\" % failure)"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 22,
+      "text": "print(\"WEAPON_SWITCHING_TEST: FAIL (%d)\" % failures.size())"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 37,
+      "text": "var primary_state: WeaponRuntimeState = session.get_weapon_runtime_state(primary_id)"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 38,
+      "text": "var secondary_state: WeaponRuntimeState = session.get_weapon_runtime_state(secondary_id)"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 40,
+      "text": "check(profile_primary != null and profile_secondary != null, \"profile owns concrete primary and secondary weapon instances\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 42,
+      "text": "check(sortie_primary != profile_primary and sortie_secondary != profile_secondary, \"sortie owns deep copies of both weapon instances\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 43,
+      "text": "check(primary_state != null and secondary_state != null and primary_state != secondary_state, \"primary and secondary own independent WeaponRuntimeState objects\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 44,
+      "text": "check(primary_state.weapon_definition_id == &\"weapon.assault_rifle_01\" and secondary_state.weapon_definition_id == &\"weapon.rocket_launcher_01\", \"each runtime state records its own WeaponDefinition ID\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 46,
+      "text": "check(player.active_weapon_slot == LoadoutState.SLOT_WEAPON_PRIMARY, \"player starts with the primary slot active\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 47,
+      "text": "check(InputMap.has_action(\"switch_weapon\"), \"prototype input exposes one weapon-switch action\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 49,
+      "text": "check(player.debug_fire_once(), \"active primary weapon fires\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 51,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), \"player switches to the equipped secondary slot\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 52,
+      "text": "check(player.active_weapon_slot == LoadoutState.SLOT_WEAPON_SECONDARY and player.weapon_instance.instance_id == secondary_id, \"secondary slot resolves its concrete ItemInstance\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 53,
+      "text": "check(player.debug_fire_once(), \"active secondary weapon fires\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 55,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_PRIMARY), \"player switches back to primary\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 61,
+      "text": "check(player.reload_weapon(), \"reload applies to the active primary only\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 64,
+      "text": "var active_before := player.active_weapon_slot"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 65,
+      "text": "check(not player.switch_weapon(&\"weapon_missing\"), \"unknown weapon slot is rejected\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 66,
+      "text": "check(player.active_weapon_slot == active_before, \"rejected switch keeps the active slot\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 67,
+      "text": "check(player.switch_weapon(active_before), \"switching to the already active slot is a stable no-op\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 69,
+      "text": "check(not player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), \"FAILED sortie rejects weapon switching\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 70,
+      "text": "check(not player.debug_fire_once() and not player.reload_weapon(), \"FAILED sortie rejects fire and reload\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 82,
+      "text": "var primary_state: WeaponRuntimeState = session.get_weapon_runtime_state(primary_id)"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 83,
+      "text": "var secondary_state: WeaponRuntimeState = session.get_weapon_runtime_state(secondary_id)"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 86,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), \"extraction fixture activates secondary\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 88,
+      "text": "check(player.reload_weapon(), \"secondary reload uses only rocket reserve\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 91,
+      "text": "check(profile.to_dict() == profile_before, \"dual-weapon fire and reload leave the warehouse unchanged\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 98,
+      "text": "check(outcome != null and SortieOutcomeService.commit_outcome(profile, outcome) == OK, \"dual-weapon outcome commits through the existing recovery boundary\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 99,
+      "text": "check(profile.inventory.contains(primary_id) and profile.inventory.contains(secondary_id), \"both recovered weapon instances return to the warehouse\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 100,
+      "text": "check(_count_instance_id(profile.inventory, primary_id) == 1 and _count_instance_id(profile.inventory, secondary_id) == 1, \"weapon instance IDs remain unique after recovery\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 105,
+      "text": "check(SortieOutcomeService.commit_outcome(profile, outcome) == OK and profile.to_dict() == committed, \"repeated dual-weapon commit is idempotent\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 117,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), \"failure fixture switches secondary\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 122,
+      "text": "check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, \"failed dual-weapon outcome uses no-op commit\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 123,
+      "text": "check(profile.to_dict() == profile_before, \"failure preserves the exact pre-sortie warehouse and both weapons\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 128,
+      "text": "var fixture := await _create_fixture(&\"weapon.smg_01\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 134,
+      "text": "var smg_state: WeaponRuntimeState = session.get_weapon_runtime_state(smg_id)"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 135,
+      "text": "var rocket_state: WeaponRuntimeState = session.get_weapon_runtime_state(rocket_id)"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 138,
+      "text": "check(profile.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, profile.inventory).definition_id == &\"weapon.smg_01\", \"Hanger-compatible LoadoutState equips the owned SMG instance as primary\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 146,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), \"SMG fixture switches to Rocket\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 148,
+      "text": "check(player.reload_weapon(), \"Rocket reload consumes compatible Rocket reserve\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 150,
+      "text": "check(player.switch_weapon(LoadoutState.SLOT_WEAPON_PRIMARY), \"SMG fixture switches back to primary\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 152,
+      "text": "check(player.reload_weapon(), \"SMG reload consumes compatible 5.56 reserve\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 171,
+      "text": "var failure_fixture := await _create_fixture(&\"weapon.smg_01\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 177,
+      "text": "check(failure_player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), \"failed SMG fixture switches to Rocket\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 192,
+      "text": "func _create_fixture(primary_definition_id: StringName = &\"weapon.assault_rifle_01\") -> Dictionary:"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 194,
+      "text": "if primary_definition_id != &\"weapon.assault_rifle_01\":"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 196,
+      "text": "check(requested_primary != null and profile.loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, requested_primary.instance_id, profile.inventory), \"fixture equips requested primary weapon\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 197,
+      "text": "var primary_id := profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 198,
+      "text": "var secondary_id := profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_SECONDARY)"
+    },
+    {
+      "path": "tests/weapon_switching_test.gd",
+      "line": 208,
+      "text": "check(session != null and session.activate(), \"fixture creates an active dual-weapon sortie\")"
+    },
+    {
+      "path": "tests/weapon_switching_test.tscn",
+      "line": 3,
+      "text": "[ext_resource type=\"Script\" path=\"res://tests/weapon_switching_test.gd\" id=\"1_test\"]"
+    },
+    {
+      "path": "tests/weapon_switching_test.tscn",
+      "line": 5,
+      "text": "[node name=\"WeaponSwitchingTest\" type=\"Node3D\"]"
+    },
+    {
+      "path": "tests/world_interaction_test.gd",
+      "line": 95,
+      "text": "shooter.equip_weapon(ContentDB.get_weapon(&\"weapon.assault_rifle_01\"))"
+    },
+    {
+      "path": "resources/content/content_manifest.tres",
+      "line": 5,
+      "text": "[ext_resource type=\"Resource\" path=\"res://resources/weapons/assault_rifle.tres\" id=\"3_rifle\"]"
+    },
+    {
+      "path": "resources/content/content_manifest.tres",
+      "line": 6,
+      "text": "[ext_resource type=\"Resource\" path=\"res://resources/weapons/smg.tres\" id=\"4_smg\"]"
+    },
+    {
+      "path": "resources/content/content_manifest.tres",
+      "line": 7,
+      "text": "[ext_resource type=\"Resource\" path=\"res://resources/weapons/rocket_launcher.tres\" id=\"5_rocket\"]"
+    },
+    {
+      "path": "resources/enemies/prototype_basic_enemy.tres",
+      "line": 4,
+      "text": "[ext_resource type=\"PackedScene\" path=\"res://scenes/enemies/enemy.tscn\" id=\"2_scene\"]"
+    },
+    {
+      "path": "resources/enemies/prototype_heavy_enemy.tres",
+      "line": 4,
+      "text": "[ext_resource type=\"PackedScene\" path=\"res://scenes/enemies/enemy.tscn\" id=\"2_scene\"]"
+    },
+    {
+      "path": "resources/materials/weapon_palette.tres",
+      "line": 4,
+      "text": "[ext_resource type=\"Texture2D\" path=\"res://assets/weapons/kenney_blaster_kit/Textures/colormap.png\" id=\"2\"]"
+    },
+    {
+      "path": "resources/weapons/assault_rifle.tres",
+      "line": 1,
+      "text": "[gd_resource type=\"Resource\" script_class=\"WeaponDefinition\" load_steps=3 format=3]"
+    },
+    {
+      "path": "resources/weapons/assault_rifle.tres",
+      "line": 3,
+      "text": "[ext_resource type=\"Script\" path=\"res://scripts/data/weapon_definition.gd\" id=\"1\"]"
+    },
+    {
+      "path": "resources/weapons/assault_rifle.tres",
+      "line": 4,
+      "text": "[ext_resource type=\"PackedScene\" path=\"res://scenes/weapons/assault_rifle.tscn\" id=\"2\"]"
+    },
+    {
+      "path": "resources/weapons/assault_rifle.tres",
+      "line": 8,
+      "text": "id = &\"weapon.assault_rifle_01\""
+    },
+    {
+      "path": "resources/weapons/assault_rifle.tres",
+      "line": 13,
+      "text": "item_tags = PackedStringArray(\"weapon\", \"primary\", \"rifle\")"
+    },
+    {
+      "path": "resources/weapons/assault_rifle.tres",
+      "line": 17,
+      "text": "weapon_type = &\"rifle\""
+    },
+    {
+      "path": "resources/weapons/assault_rifle.tres",
+      "line": 27,
+      "text": "weapon_range = 34.0"
+    },
+    {
+      "path": "resources/weapons/assault_rifle.tres",
+      "line": 31,
+      "text": "muzzle_scale = 1.0"
+    },
+    {
+      "path": "resources/weapons/rocket_launcher.tres",
+      "line": 1,
+      "text": "[gd_resource type=\"Resource\" script_class=\"WeaponDefinition\" load_steps=3 format=3]"
+    },
+    {
+      "path": "resources/weapons/rocket_launcher.tres",
+      "line": 3,
+      "text": "[ext_resource type=\"Script\" path=\"res://scripts/data/weapon_definition.gd\" id=\"1\"]"
+    },
+    {
+      "path": "resources/weapons/rocket_launcher.tres",
+      "line": 4,
+      "text": "[ext_resource type=\"PackedScene\" path=\"res://scenes/weapons/rocket_launcher.tscn\" id=\"2\"]"
+    },
+    {
+      "path": "resources/weapons/rocket_launcher.tres",
+      "line": 8,
+      "text": "id = &\"weapon.rocket_launcher_01\""
+    },
+    {
+      "path": "resources/weapons/rocket_launcher.tres",
+      "line": 13,
+      "text": "item_tags = PackedStringArray(\"weapon\", \"primary\", \"launcher\")"
+    },
+    {
+      "path": "resources/weapons/rocket_launcher.tres",
+      "line": 17,
+      "text": "weapon_type = &\"launcher\""
+    },
+    {
+      "path": "resources/weapons/rocket_launcher.tres",
+      "line": 26,
+      "text": "weapon_range = 30.0"
+    },
+    {
+      "path": "resources/weapons/rocket_launcher.tres",
+      "line": 32,
+      "text": "muzzle_scale = 1.8"
+    },
+    {
+      "path": "resources/weapons/smg.tres",
+      "line": 1,
+      "text": "[gd_resource type=\"Resource\" script_class=\"WeaponDefinition\" load_steps=3 format=3]"
+    },
+    {
+      "path": "resources/weapons/smg.tres",
+      "line": 3,
+      "text": "[ext_resource type=\"Script\" path=\"res://scripts/data/weapon_definition.gd\" id=\"1\"]"
+    },
+    {
+      "path": "resources/weapons/smg.tres",
+      "line": 4,
+      "text": "[ext_resource type=\"PackedScene\" path=\"res://scenes/weapons/smg.tscn\" id=\"2\"]"
+    },
+    {
+      "path": "resources/weapons/smg.tres",
+      "line": 8,
+      "text": "id = &\"weapon.smg_01\""
+    },
+    {
+      "path": "resources/weapons/smg.tres",
+      "line": 10,
+      "text": "description = \"Light close-range automatic weapon.\""
+    },
+    {
+      "path": "resources/weapons/smg.tres",
+      "line": 13,
+      "text": "item_tags = PackedStringArray(\"weapon\", \"primary\", \"smg\")"
+    },
+    {
+      "path": "resources/weapons/smg.tres",
+      "line": 17,
+      "text": "weapon_type = &\"smg\""
+    },
+    {
+      "path": "resources/weapons/smg.tres",
+      "line": 26,
+      "text": "weapon_range = 18.0"
+    },
+    {
+      "path": "resources/weapons/smg.tres",
+      "line": 30,
+      "text": "muzzle_scale = 0.72"
+    },
+    {
+      "path": "project.godot",
+      "line": 101,
+      "text": "switch_weapon={"
+    }
+  ]
+}

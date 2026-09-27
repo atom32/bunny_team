@@ -1,0 +1,44 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5090
+
+PHASE4E_ROUTE: AUTOMATED INPUT/API, NOT MANUAL; NORMAL AI; NO TELEPORT/INVULNERABILITY
+CAPTURE 01_hanger (1280, 720) error=0
+CAPTURE combat_MuzzleFlash (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 26.0) reached (-15.72299, -0.024161, 26.18364)
+CAPTURE 02_entrance (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 24.7) reached (-16.04663, -0.025154, 25.13015)
+WAYPOINT (-16.0, 0.0, 21.5) reached (-16.0477, -0.004176, 21.87123)
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.17531, -0.005838, 21.18254)
+CAPTURE 03_inside (1280, 720) error=0
+CAPTURE combat_RocketTrail (1280, 720) error=0
+CAPTURE combat_Explosion (1280, 720) error=0
+CAPTURE switch_0_Rocket (1280, 720) error=0
+CAPTURE switch_1_Rifle (1280, 720) error=0
+CAPTURE combat_HitEffect (1280, 720) error=0
+CAPTURE combat_ImpactSmoke (1280, 720) error=0
+CAPTURE switch_2_Rocket (1280, 720) error=0
+CAPTURE combat_enemy_fire (1280, 720) error=0
+CAPTURE switch_3_Rifle (1280, 720) error=0
+WAYPOINT (-19.5, 0.0, 13.1) reached (-19.50779, -0.004173, 13.47253)
+CAPTURE 04_terminal (1280, 720) error=0
+CAPTURE 04_combat_completed (1280, 720) error=0
+CAPTURE 04b_terminal_interacted (1280, 720) error=0
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.48975, -0.004528, 20.62081)
+WAYPOINT (-16.0, 0.0, 21.5) reached (-16.35915, -0.005851, 21.56643)
+CAPTURE combat_enemy_death_1 (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 26.0) reached (-15.82715, -0.024161, 25.71937)
+CAPTURE combat_DodgeStreak (1280, 720) error=0
+CAPTURE 05b_after_dodge (1280, 720) error=0
+CAPTURE 05_exit (1280, 720) error=0
+CAPTURE combat_enemy_death_2 (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 32.0) reached (-15.62208, -0.02416, 32.19985)
+WAYPOINT (-30.0, 0.0, 32.0) reached (-29.71741, -0.024161, 32.17744)
+CAPTURE 05c_enemy_engagement (1280, 720) error=0
+CAPTURE combat_enemy_death_3 (1280, 720) error=0
+CAPTURE combat_enemy_death_4 (1280, 720) error=0
+WAYPOINT (0.0, 0.0, 30.0) reached (-0.385375, -0.02416, 30.17796)
+WAYPOINT (2.5, 0.0, 32.0) reached (2.055278, -0.024161, 32.0457)
+OUTCOME enemies_defeated=4 damage_taken=12 mission_completed=false
+CAPTURE 06_result (1280, 720) error=0
+CAPTURE 07_return_hanger (1280, 720) error=0
+{"checks":{"1280x720 evidence":true,"Combat still works":true,"Dodge executed":true,"Door interaction":true,"Drone production spawns":true,"Enemy actual muzzle flash":true,"Enemy attack telegraph":true,"Enemy hit and death in same sortie":true,"Enemy moved":true,"Enter Field Office":true,"Existing save loaded":true,"Exit Field Office":true,"Extraction":true,"Field Office entrance visible":true,"Hanger launches":true,"Initial weapon restored":true,"Interior traversal":true,"No enemy humanoid skeleton":true,"No legacy Avatar loaded":true,"Phase4C barriers retained":true,"Player hit by real enemy attack":true,"Player movement":true,"Presentation retained after return":true,"Production camera":true,"Result":true,"Result uses same session identity":true,"Return to original route":true,"Returned to Hanger":true,"Same logical profile object":true,"Same sortie Player actor":true,"Same sortie session":true,"Session cleared after commit":true,"Terminal area reachable":true,"Terminal interaction completed":true,"reload_0":true,"reload_1":true,"reload_2":true,"reload_3":true,"switch_pose_0":true,"switch_pose_1":true,"switch_pose_2":true,"switch_pose_3":true},"combat":{"damage_taken":12,"enemies_defeated":4,"mission_completed":false,"shots":24},"combat_events":{"DodgeStreak":1,"EnemyDied":4,"Explosion":8,"HitEffect":13,"ImpactSmoke":12,"MuzzleFlash":43,"RocketTrail":2},"combat_scope":"normal AI + input/API route; additional 8 second terminal firefight; effects observed from production tree","failure":"","method":"automated input/API, not manual","mission_completed":false,"weapon_checks":[{"ammo_after":1,"ammo_before":0,"expected_pose":"Rocket","fired":true,"id":"weapon.rocket_launcher_01","reload":true,"selected_pose":"Rocket"},{"ammo_after":30,"ammo_before":29,"expected_pose":"Rifle","fired":true,"id":"weapon.assault_rifle_01","reload":true,"selected_pose":"Rifle"},{"ammo_after":1,"ammo_before":0,"expected_pose":"Rocket","fired":true,"id":"weapon.rocket_launcher_01","reload":true,"selected_pose":"Rocket"},{"ammo_after":30,"ammo_before":29,"expected_pose":"Rifle","fired":true,"id":"weapon.assault_rifle_01","reload":true,"selected_pose":"Rifle"}]}

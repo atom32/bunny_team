@@ -1,0 +1,103 @@
+{
+  "checks": {
+    "1280x720 evidence": true,
+    "Combat still works": true,
+    "Dodge executed": true,
+    "Door interaction": true,
+    "Drone production spawns": true,
+    "Enemy actual muzzle flash": true,
+    "Enemy attack telegraph": true,
+    "Enemy hit and death in same sortie": true,
+    "Enemy moved": true,
+    "Enter Field Office": true,
+    "Existing save loaded": true,
+    "Exit Field Office": true,
+    "Extraction": true,
+    "Field Office entrance visible": true,
+    "Hanger launches": true,
+    "Initial weapon restored": true,
+    "Interior traversal": true,
+    "No enemy humanoid skeleton": true,
+    "No legacy Avatar loaded": true,
+    "Phase4C barriers retained": true,
+    "Player hit by real enemy attack": true,
+    "Player movement": true,
+    "Presentation retained after return": true,
+    "Production camera": true,
+    "Result": true,
+    "Result uses same session identity": true,
+    "Return to original route": true,
+    "Returned to Hanger": true,
+    "Same logical profile object": true,
+    "Same sortie Player actor": true,
+    "Same sortie session": true,
+    "Session cleared after commit": true,
+    "Terminal area reachable": true,
+    "Terminal interaction completed": true,
+    "reload_0": true,
+    "reload_1": true,
+    "reload_2": true,
+    "reload_3": true,
+    "switch_pose_0": true,
+    "switch_pose_1": true,
+    "switch_pose_2": true,
+    "switch_pose_3": true
+  },
+  "combat": {
+    "damage_taken": 12,
+    "enemies_defeated": 4,
+    "mission_completed": false,
+    "shots": 24
+  },
+  "combat_events": {
+    "DodgeStreak": 1,
+    "EnemyDied": 4,
+    "Explosion": 8,
+    "HitEffect": 13,
+    "ImpactSmoke": 12,
+    "MuzzleFlash": 43,
+    "RocketTrail": 2
+  },
+  "combat_scope": "normal AI + input/API route; additional 8 second terminal firefight; effects observed from production tree",
+  "failure": "",
+  "method": "automated input/API, not manual",
+  "mission_completed": false,
+  "weapon_checks": [
+    {
+      "ammo_after": 1,
+      "ammo_before": 0,
+      "expected_pose": "Rocket",
+      "fired": true,
+      "id": "weapon.rocket_launcher_01",
+      "reload": true,
+      "selected_pose": "Rocket"
+    },
+    {
+      "ammo_after": 30,
+      "ammo_before": 29,
+      "expected_pose": "Rifle",
+      "fired": true,
+      "id": "weapon.assault_rifle_01",
+      "reload": true,
+      "selected_pose": "Rifle"
+    },
+    {
+      "ammo_after": 1,
+      "ammo_before": 0,
+      "expected_pose": "Rocket",
+      "fired": true,
+      "id": "weapon.rocket_launcher_01",
+      "reload": true,
+      "selected_pose": "Rocket"
+    },
+    {
+      "ammo_after": 30,
+      "ammo_before": 29,
+      "expected_pose": "Rifle",
+      "fired": true,
+      "id": "weapon.assault_rifle_01",
+      "reload": true,
+      "selected_pose": "Rifle"
+    }
+  ]
+}
