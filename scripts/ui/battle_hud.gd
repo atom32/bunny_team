@@ -59,8 +59,8 @@ func _ready() -> void:
 
 	var status_panel := PanelContainer.new()
 	status_panel.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
-	status_panel.position = Vector2(24, -222)
-	status_panel.size = Vector2(420, 198)
+	status_panel.position = Vector2(24, -278)
+	status_panel.size = Vector2(420, 254)
 	status_panel.add_theme_stylebox_override("panel", UIFactory.panel_style(Color("111a26e8"), Color("4f718b")))
 	root.add_child(status_panel)
 	var status_box := VBoxContainer.new()

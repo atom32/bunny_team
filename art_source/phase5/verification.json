@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "baseline": "7ddb981",
+  "engine": "4.7.2",
+  "tests": "33/33",
+  "main_exit": 0,
+  "main_warnings": [
+    "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+  ],
+  "cold_import": {
+    "errors": 0,
+    "warnings": 0,
+    "isolated_fresh_cache": true
+  },
+  "routes": {
+    "Rifle": {
+      "checks_passed": 64,
+      "checks_total": 64,
+      "combat": {
+        "damage_taken": 15,
+        "enemies_defeated": 4,
+        "mission_completed": true,
+        "shots": 25
+      },
+      "method": "automated input/API, not manual"
+    },
+    "SMG": {
+      "checks_passed": 64,
+      "checks_total": 64,
+      "combat": {
+        "damage_taken": 9,
+        "enemies_defeated": 3,
+        "mission_completed": true,
+        "shots": 44
+      },
+      "method": "automated input/API, not manual"
+    }
+  },
+  "save_load": "PASS: two terminated/relaunched processes; complete serialized gameplay data equal",
+  "player_character_modified": false,
+  "official_source_modified": false,
+  "combat_semantics_modified": false,
+  "level_change": "112 x 112 -> 112 x 168, north districts + boundary/navigation extension only",
+  "tests_modified": false,
+  "unrelated_wip_modified": false,
+  "live_profile_modified": false
+}

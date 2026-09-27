@@ -53,7 +53,12 @@ func set_music_context(context: StringName, immediate: bool = false) -> void:
 	if not music_player:
 		return
 	var target_volume := -8.0
+	music_player.pitch_scale = 0.88 if context in [&"menu", &"hideout"] else 1.0
 	match context:
+		&"menu", &"hideout":
+			target_volume = -12.0
+		&"deployment":
+			target_volume = -6.0
 		&"battle":
 			target_volume = -4.5
 		&"debug":

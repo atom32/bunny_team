@@ -1,0 +1,66 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5090
+
+PHASE5_ROUTE: AUTOMATED INPUT/API, NOT MANUAL; NORMAL AI; NO TELEPORT/INVULNERABILITY
+CAPTURE 00_opening (1280, 720) error=0
+CAPTURE 00_menu (1280, 720) error=0
+CAPTURE 00_settings (1280, 720) error=0
+CAPTURE 00_hideout (1280, 720) error=0
+CAPTURE 00_hub_Workshop (1280, 720) error=0
+CAPTURE 00_hub_Rest (1280, 720) error=0
+CAPTURE 00_hub_Hanger (1280, 720) error=0
+CAPTURE 01_hanger (1280, 720) error=0
+CAPTURE 01_mission (1280, 720) error=0
+CAPTURE 01_deployment (1280, 720) error=0
+CAPTURE 01_arrival (1280, 720) error=0
+WAYPOINT (0.0, 0.0, 30.0) reached (0.000851, -0.024167, 30.41)
+CAPTURE 01_loot_open (1280, 720) error=0
+CAPTURE 01_loot_taken (1280, 720) error=0
+CAPTURE combat_MuzzleFlash (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 26.0) reached (-15.60717, -0.024161, 26.19011)
+CAPTURE 02_entrance (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 24.7) reached (-16.08093, -0.02416, 24.98539)
+WAYPOINT (-16.0, 0.0, 21.5) reached (-16.07763, -0.0049, 21.84024)
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.07621, -0.006385, 21.04313)
+CAPTURE 03_inside (1280, 720) error=0
+CAPTURE combat_RocketTrail (1280, 720) error=0
+CAPTURE combat_Explosion (1280, 720) error=0
+CAPTURE switch_0_Rocket (1280, 720) error=0
+CAPTURE switch_1_SMG (1280, 720) error=0
+CAPTURE combat_enemy_fire (1280, 720) error=0
+CAPTURE combat_HitEffect (1280, 720) error=0
+CAPTURE combat_ImpactSmoke (1280, 720) error=0
+CAPTURE switch_2_Rocket (1280, 720) error=0
+CAPTURE switch_3_SMG (1280, 720) error=0
+AIM_VERIFY expected=(775.0924, 64.7667) viewport=(775.0, 64.0) focus=true camera=/root/Battle/HighAngleCamera
+AIM_VERIFY expected=(705.0554, 129.0585) viewport=(705.0, 129.0) focus=true camera=/root/Battle/HighAngleCamera
+AIM_VERIFY expected=(708.1375, 131.4177) viewport=(708.0, 131.0) focus=true camera=/root/Battle/HighAngleCamera
+AIM_VERIFY expected=(710.7278, 134.046) viewport=(710.0, 134.0) focus=true camera=/root/Battle/HighAngleCamera
+AIM_VERIFY expected=(713.0357, 136.8578) viewport=(713.0, 136.0) focus=true camera=/root/Battle/HighAngleCamera
+AIM_VERIFY expected=(714.7956, 139.8156) viewport=(714.0, 139.0) focus=true camera=/root/Battle/HighAngleCamera
+AIM_VERIFY expected=(716.5294, 142.928) viewport=(716.0, 142.0) focus=true camera=/root/Battle/HighAngleCamera
+AIM_VERIFY expected=(717.8131, 146.1293) viewport=(717.0, 146.0) focus=true camera=/root/Battle/HighAngleCamera
+WAYPOINT (-19.5, 0.0, 13.1) reached (-19.37253, -0.0051, 13.37667)
+CAPTURE 04_terminal (1280, 720) error=0
+CAPTURE 04_combat_completed (1280, 720) error=0
+CAPTURE 04b_terminal_interacted (1280, 720) error=0
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.35135, -0.004719, 20.71997)
+WAYPOINT (-10.5, 0.0, 21.7) reached (-10.76833, -0.004916, 21.89404)
+WAYPOINT (-16.0, 0.0, 21.5) reached (-15.616, -0.005096, 21.70492)
+WAYPOINT (-16.0, 0.0, 26.0) reached (-15.99074, -0.024161, 25.5655)
+CAPTURE combat_DodgeStreak (1280, 720) error=0
+CAPTURE 05b_after_dodge (1280, 720) error=0
+CAPTURE 05_exit (1280, 720) error=0
+CAPTURE combat_enemy_death_1 (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 32.0) reached (-15.7164, -0.024161, 32.17545)
+WAYPOINT (-30.0, 0.0, 32.0) reached (-29.72513, -0.024161, 32.18957)
+CAPTURE combat_enemy_death_2 (1280, 720) error=0
+CAPTURE combat_enemy_death_3 (1280, 720) error=0
+CAPTURE 05c_enemy_engagement (1280, 720) error=0
+WAYPOINT (0.0, 0.0, 30.0) reached (-0.31159, -0.024161, 30.20586)
+WAYPOINT (2.5, 0.0, 32.0) reached (2.171994, -0.024161, 31.97107)
+CAPTURE 05d_extraction (1280, 720) error=0
+OUTCOME enemies_defeated=3 damage_taken=9 mission_completed=true
+CAPTURE 06_result (1280, 720) error=0
+CAPTURE 07_return_hanger (1280, 720) error=0
+{"checks":{"1280x720 evidence":true,"All mission objectives completed":true,"Arrival camera":true,"Boot enters opening":true,"Cargo HUD within viewport":true,"Combat still works":true,"Container closes":true,"Container opened with E":true,"Contents exposed":true,"Deployment sequence":true,"Dodge executed":true,"Door interaction":true,"Drone production spawns":true,"Enemy actual muzzle flash":true,"Enemy attack telegraph":true,"Enemy hit and death in same sortie":true,"Enemy moved":true,"Enter Field Office":true,"Existing save loaded":true,"Exit Field Office":true,"Extraction":true,"Extraction camera / confirmation":true,"Field Office entrance visible":true,"Hanger launches":true,"Hideout Hanger":true,"Hideout Rest":true,"Hideout Workshop":true,"Initial weapon restored":true,"Interior traversal":true,"Loadout leads to mission terminal":true,"Loot click does not fire weapon":true,"Main Menu Start available":true,"Menu transitions into Hideout":true,"Mission confirmation available":true,"No enemy humanoid skeleton":true,"No legacy Avatar loaded":true,"North districts added":true,"Opening completes or skips to menu":true,"Operations selected by loadout UI":true,"Phase4C barriers retained":true,"Pickup changes carried cargo":true,"Pickup does not change warehouse before extraction":true,"Player hit by real enemy attack":true,"Player movement":true,"Presentation retained after return":true,"Production camera":true,"Result":true,"Result uses same session identity":true,"Return to original route":true,"Returned to Hanger":true,"Same logical profile object":true,"Same sortie Player actor":true,"Same sortie session":true,"Session cleared after commit":true,"Terminal area reachable":true,"Terminal interaction completed":true,"reload_0":true,"reload_1":true,"reload_2":true,"reload_3":true,"switch_pose_0":true,"switch_pose_1":true,"switch_pose_2":true,"switch_pose_3":true},"combat":{"damage_taken":9,"enemies_defeated":3,"mission_completed":true,"shots":44},"combat_events":{"DodgeStreak":1,"EnemyDied":3,"Explosion":8,"HitEffect":20,"ImpactSmoke":20,"MuzzleFlash":62,"RocketTrail":2},"combat_scope":"normal AI + input/API route; additional 8 second terminal firefight; effects observed from production tree","failure":"","method":"automated input/API, not manual","mission_completed":true,"weapon_checks":[{"ammo_after":1,"ammo_before":0,"expected_pose":"Rocket","fired":true,"id":"weapon.rocket_launcher_01","reload":true,"selected_pose":"Rocket"},{"ammo_after":36,"ammo_before":35,"expected_pose":"SMG","fired":true,"id":"weapon.smg_01","reload":true,"selected_pose":"SMG"},{"ammo_after":1,"ammo_before":0,"expected_pose":"Rocket","fired":true,"id":"weapon.rocket_launcher_01","reload":true,"selected_pose":"Rocket"},{"ammo_after":36,"ammo_before":35,"expected_pose":"SMG","fired":true,"id":"weapon.smg_01","reload":true,"selected_pose":"SMG"}]}

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Neon Bastion"
-run/main_scene="res://scenes/hanger/hanger.tscn"
+run/main_scene="res://scenes/presentation/slice/boot.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]

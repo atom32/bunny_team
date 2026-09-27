@@ -28,13 +28,15 @@ func _ready() -> void:
 
 	var panel := PanelContainer.new()
 	panel.set_anchors_preset(Control.PRESET_CENTER)
-	panel.position = Vector2(-320, -310)
-	panel.size = Vector2(640, 620)
+	panel.position = Vector2(70, -310)
+	panel.size = Vector2(530, 620)
 	panel.add_theme_stylebox_override("panel", UIFactory.panel_style(Color("101925f2"), Color("587994")))
 	root.add_child(panel)
+	SliceUI.label(root, "FIELD RECORDER\nDEBRIEF", Vector2(48,48), 38, SliceUI.CYAN)
+	SliceUI.label(root, "BASTION 07 / RETURN CHANNEL", Vector2(50,155), 16, SliceUI.MUTED)
 	var content := VBoxContainer.new()
 	content.alignment = BoxContainer.ALIGNMENT_CENTER
-	content.add_theme_constant_override("separation", 12)
+	content.add_theme_constant_override("separation", 9)
 	panel.add_child(content)
 
 	var extracted := outcome.result_type == SortieOutcome.ResultType.COMPLETED
@@ -50,7 +52,7 @@ func _ready() -> void:
 		_:
 			status_label.text = "SORTIE ENDED"
 	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	status_label.add_theme_font_size_override("font_size", 38)
+	status_label.add_theme_font_size_override("font_size", 28)
 	status_label.add_theme_color_override("font_color", Color("79f1e7") if extracted else Color("ff5b6f"))
 	content.add_child(status_label)
 	var mission := ContentDB.get_mission(outcome.mission_id, false)
@@ -97,6 +99,12 @@ func _ready() -> void:
 		content.add_child(recovery_label)
 	var divider := HSeparator.new()
 	content.add_child(divider)
+	_add_stat(content, "SURVIVAL", "EXTRACTED" if extracted else "UNIT LOST")
+	_add_stat(content, "RECOVERED CARGO" if extracted else "CARGO AT SIGNAL LOSS", "%.1f / %.1f kg" % [outcome.inventory.get_used_capacity(), outcome.inventory.capacity])
+	var recovered := 0
+	for item in outcome.inventory.get_items():
+		if item.instance_id not in outcome.initial_carried_instance_ids: recovered += item.quantity
+	_add_stat(content, "LOOT RECOVERED" if extracted else "LOOT AT SIGNAL LOSS", str(recovered))
 	_add_stat(content, "ENEMIES DEFEATED", str(outcome.enemies_defeated))
 	_add_stat(content, "DAMAGE TAKEN", str(outcome.damage_taken))
 	var weapon_item := outcome.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, outcome.inventory)
@@ -104,7 +112,7 @@ func _ready() -> void:
 	if weapon:
 		_add_stat(content, "PRIMARY WEAPON", weapon.display_name)
 	var spacer := Control.new()
-	spacer.custom_minimum_size.y = 24
+	spacer.custom_minimum_size.y = 4
 	content.add_child(spacer)
 	return_error_label = Label.new()
 	return_error_label.name = "ReturnError"
@@ -114,8 +122,8 @@ func _ready() -> void:
 	content.add_child(return_error_label)
 	return_button = Button.new()
 	return_button.name = "ReturnButton"
-	return_button.text = "RETURN TO HANGER"
-	return_button.custom_minimum_size = Vector2(0, 58)
+	return_button.text = "RETURN TO HIDEOUT" if GameState.presentation_enabled else "RETURN TO HANGER"
+	return_button.custom_minimum_size = Vector2(0, 52)
 	content.add_child(return_button)
 	return_button.pressed.connect(func() -> void:
 		AudioDirector.play_sfx(&"ui_confirm")
@@ -126,7 +134,7 @@ func _ready() -> void:
 func set_return_pending(pending: bool) -> void:
 	if return_button:
 		return_button.disabled = pending
-		return_button.text = "FINALIZING..." if pending else "RETURN TO HANGER"
+		return_button.text = "FINALIZING..." if pending else ("RETURN TO HIDEOUT" if GameState.presentation_enabled else "RETURN TO HANGER")
 	if pending and return_error_label:
 		return_error_label.visible = false
 

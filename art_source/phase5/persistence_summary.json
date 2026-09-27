@@ -1,0 +1,26 @@
+{
+  "Rifle": {
+    "checks": {
+      "Player actor retained": true,
+      "existing save loaded": true,
+      "full gameplay serialization preserved": true,
+      "gameplay capsule unchanged": true,
+      "selected presentation survives process restart": true
+    },
+    "stage": "reload",
+    "separate_process": true,
+    "profile_sha256": "403feaa3317a729dee0a5e29bc8ad4634e814cf54107732f99703740c9da1e34"
+  },
+  "SMG": {
+    "checks": {
+      "Player actor retained": true,
+      "existing save loaded": true,
+      "full gameplay serialization preserved": true,
+      "gameplay capsule unchanged": true,
+      "selected presentation survives process restart": true
+    },
+    "stage": "reload",
+    "separate_process": true,
+    "profile_sha256": "5cf3e232c3797fb8d10756c1fbb25da7a495eefc76a48752ea3a47ca7e6b6daa"
+  }
+}

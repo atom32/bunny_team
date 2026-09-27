@@ -16,6 +16,7 @@ func _ready() -> void:
 	_build_city_blocks()
 	_build_combat_spaces()
 	_build_street_props()
+	SliceArenaDistricts.build(self)
 	_build_boundaries()
 
 
@@ -30,6 +31,7 @@ func _build_navigation_region() -> void:
 			if _interval_is_road(x_min, x_max) or _interval_is_road(z_min, z_max):
 				_add_navigation_quad(x_min, x_max, z_min, z_max)
 
+	SliceArenaDistricts.add_navigation(self)
 	var navigation_mesh := NavigationMesh.new()
 	navigation_mesh.vertices = _navigation_vertices
 	for polygon in _navigation_polygons:
@@ -205,7 +207,7 @@ func _add_rubble(position: Vector3) -> void:
 
 
 func _build_boundaries() -> void:
-	VisualFactory.static_box(self, Vector3(MAP_SIZE, 2.2, 0.4), Vector3(0.0, 1.1, -MAP_HALF), Color("302e2c"), "NorthWall")
+	VisualFactory.static_box(self, Vector3(MAP_SIZE, 2.2, 0.4), Vector3(0.0, 1.1, -112.0), Color("302e2c"), "NorthWall")
 	VisualFactory.static_box(self, Vector3(MAP_SIZE, 2.2, 0.4), Vector3(0.0, 1.1, MAP_HALF), Color("302e2c"), "SouthWall")
-	VisualFactory.static_box(self, Vector3(0.4, 2.2, MAP_SIZE), Vector3(-MAP_HALF, 1.1, 0.0), Color("302e2c"), "WestWall")
-	VisualFactory.static_box(self, Vector3(0.4, 2.2, MAP_SIZE), Vector3(MAP_HALF, 1.1, 0.0), Color("302e2c"), "EastWall")
+	VisualFactory.static_box(self, Vector3(0.4, 2.2, 168.0), Vector3(-MAP_HALF, 1.1, -28.0), Color("302e2c"), "WestWall")
+	VisualFactory.static_box(self, Vector3(0.4, 2.2, 168.0), Vector3(MAP_HALF, 1.1, -28.0), Color("302e2c"), "EastWall")
