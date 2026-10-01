@@ -26,6 +26,7 @@ var objective_states: Array[ObjectiveState] = []
 var mission_completed := false
 var enemies_defeated := 0
 var damage_taken := 0
+var ar_damage_upgraded := false
 var outcome_created := false
 var threat_level := ThreatLevel.NORMAL
 var _initial_carried_instance_ids: Array[String] = []
@@ -70,6 +71,7 @@ static func create_from_profile(request: SortieRequest, profile: ProfileState) -
 		"",
 		initial_carried_instance_ids
 	)
+	session.ar_damage_upgraded = profile.ar_damage_upgraded
 	if not session._initialize_weapon_runtime_state():
 		return null
 	if not session._objective_runtime_is_valid():
@@ -137,7 +139,9 @@ func fire_weapon(weapon_instance_id: String) -> bool:
 	if status != Status.ACTIVE:
 		return false
 	var weapon_state: Variant = get_weapon_runtime_state(weapon_instance_id)
-	return weapon_state != null and weapon_state.consume_round()
+	var fired: bool = weapon_state != null and weapon_state.consume_round()
+	_sync_loaded_weight()
+	return fired
 
 
 func can_reload_weapon(weapon_instance_id: String) -> bool:
@@ -149,7 +153,9 @@ func reload_weapon(weapon_instance_id: String) -> int:
 	if status != Status.ACTIVE:
 		return 0
 	var weapon_state: Variant = get_weapon_runtime_state(weapon_instance_id)
-	return weapon_state.reload(inventory) if weapon_state else 0
+	var loaded: int = weapon_state.reload(inventory) if weapon_state else 0
+	_sync_loaded_weight()
+	return loaded
 
 
 func get_reserve_ammo(weapon_instance_id: String) -> int:
@@ -160,19 +166,37 @@ func get_reserve_ammo(weapon_instance_id: String) -> int:
 func finalize_runtime_ammo() -> bool:
 	if status != Status.ACTIVE:
 		return false
+	# Stage every magazine together. No partial mutation if materialization fails.
+	var recovered := InventoryState.from_dict(inventory.to_dict())
+	if not recovered:
+		return false
 	for weapon_state in _weapon_runtime_states.values():
-		if not weapon_state.can_materialize(inventory):
+		if weapon_state.magazine_ammo > 0 and not recovered.add_item(ItemInstance.new(weapon_state.ammo_definition_id, weapon_state.magazine_ammo)):
 			return false
+	if not recovered.validate():
+		return false
+	inventory._items = recovered.get_items()
 	for weapon_state in _weapon_runtime_states.values():
-		if not weapon_state.materialize(inventory):
-			return false
-	return inventory.validate()
+		weapon_state.magazine_ammo = 0
+	_sync_loaded_weight()
+	return true
+
+
+func _sync_loaded_weight() -> void:
+	inventory.reserved_weight = 0.0
+	for weapon_state in _weapon_runtime_states.values():
+		var ammo := ContentDB.get_ammo(weapon_state.ammo_definition_id, false)
+		if ammo:
+			inventory.reserved_weight += ammo.weight * weapon_state.magazine_ammo
 
 
 func activate() -> bool:
 	if status != Status.PREPARING or not validate() or not _initial_carried_items_are_present():
 		return false
 	status = Status.ACTIVE
+	for weapon_state in _weapon_runtime_states.values():
+		weapon_state.reload(inventory)
+	_sync_loaded_weight()
 	return true
 
 
@@ -303,22 +327,14 @@ func _initialize_weapon_runtime_state() -> bool:
 			continue
 		if not ContentDB.get_ammo(ammo_definition_id, false):
 			return false
-		var initial_magazine := weapon_definition.magazine_capacity if _inventory_has_ammo(ammo_definition_id) else 0
 		_weapon_runtime_states[weapon_item.instance_id] = WEAPON_RUNTIME_STATE_SCRIPT.new(
 			weapon_item.instance_id,
 			ammo_definition_id,
 			weapon_definition.magazine_capacity,
-			initial_magazine,
+			0,
 			weapon_definition.id
 		)
 	return true
-
-
-func _inventory_has_ammo(ammo_definition_id: StringName) -> bool:
-	for item in inventory.get_items():
-		if item.definition_id == ammo_definition_id and item.quantity > 0:
-			return true
-	return false
 
 
 func _weapon_runtime_states_are_valid() -> bool:
@@ -367,3 +383,7 @@ func _finish(final_status: Status) -> bool:
 
 static func _generate_session_id() -> String:
 	return Crypto.new().generate_random_bytes(16).hex_encode()
+
+
+func get_weapon_damage(definition: WeaponDefinition) -> float:
+	return definition.damage * (1.1 if ar_damage_upgraded and definition.id == &"weapon.assault_rifle_01" else 1.0)

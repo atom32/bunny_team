@@ -30,10 +30,15 @@ func open_hideout() -> Error:
 func open_menu() -> Error:
 	return present_scene("res://scenes/presentation/slice/boot.tscn", "BASTION 07 / STANDBY")
 
+func is_transitioning() -> bool:
+	return is_instance_valid(_transition)
+
 func present_scene(path: String, caption: String) -> Error:
-	if is_instance_valid(_transition): return ERR_BUSY
+	if is_transitioning(): return ERR_BUSY
 	if not ResourceLoader.exists(path): return ERR_FILE_NOT_FOUND
+	var scene := load(path) as PackedScene
+	if not scene or not scene.can_instantiate(): return ERR_INVALID_DATA
 	_transition = SliceTransition.new()
 	add_child(_transition)
-	_transition.travel(path, caption)
+	_transition.travel(scene, caption)
 	return OK

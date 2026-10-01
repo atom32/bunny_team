@@ -1,0 +1,5 @@
+{
+  "runtime_test_files": 664,
+  "changed_after_final_suite": [],
+  "check": "SHA-256 of assets, scenes, resources, scripts, tests and project.godot vs full-07 source manifest; documentation edits and route probe correction tracked separately."
+}

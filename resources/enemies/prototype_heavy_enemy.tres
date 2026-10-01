@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_definition")
 id = &"prototype_heavy_enemy"
-display_name = "Prototype Heavy"
+display_name = "KITE Heavy Drone"
 scene = ExtResource("2_scene")
 max_health = 120.0
 armor = 8.0

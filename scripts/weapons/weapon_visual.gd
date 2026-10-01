@@ -1,5 +1,13 @@
 extends Node3D
 ## WeaponDefinition.scene owns model selection and authored attachment markers.
+@export var hand_pose: StringName = &""
+@export var authored_grips := false
+@export var pose_offset := Vector3.ZERO
+@export var mount_scale := 0.44
+@export var reload_offset := Vector3.ZERO
+@export var support_thumb_contact := Vector3.ZERO
+@export var primary_thumb_contact := Vector3.ZERO
+@export var support_finger_contacts := PackedVector3Array()
 var muzzle: Marker3D
 var muzzle_flash: MeshInstance3D
 

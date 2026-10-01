@@ -20,8 +20,19 @@ func _setup() -> void:
 	layer.layer = 25
 	add_child(layer)
 	screen = SliceUI.root(layer)
-	notice = SliceUI.label(screen,"",Vector2(480,40),20,SliceUI.CYAN)
+	GameLanguage.language_changed.connect(func():
+		if is_instance_valid(panel): _show_loot()
+	)
+	notice = SliceUI.label(screen,"",Vector2.ZERO,15,SliceUI.CYAN)
+	notice.set_anchors_preset(Control.PRESET_CENTER_TOP)
+	notice.offset_left = -240
+	notice.offset_right = 240
+	notice.offset_top = 82
+	notice.offset_bottom = 130
+	notice.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	notice.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	for point in battle.area_root.find_children("*","LootSpawnPoint",true,false):
+		if not point.enabled: continue
 		var crate := SliceLootContainer.new()
 		point.add_child(crate)
 		crates[point.get_instance_id()] = crate
@@ -66,7 +77,7 @@ func _process(delta: float) -> void:
 			Input.action_release("fire")
 	elif not battle.ending:
 		var target = battle.player.interaction_component._current_target
-		if target is LootPickup:
+		if is_instance_valid(target) and target is LootPickup:
 			battle.hud.set_interaction_prompt("E  OPEN SUPPLY CASE")
 
 func _input(event: InputEvent) -> void:
@@ -80,7 +91,7 @@ func _input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("interact"):
 		var target = battle.player.interaction_component._current_target
-		if target is LootPickup and crates.has(target.get_parent().get_instance_id()):
+		if is_instance_valid(target) and target is LootPickup and crates.has(target.get_parent().get_instance_id()):
 			container = crates[target.get_parent().get_instance_id()]
 			container.set_open(true)
 			_show_loot()
@@ -94,11 +105,11 @@ func _show_loot(feedback: String = "Inspect contents. Combat remains live.") -> 
 	panel = SliceUI.panel(screen,Vector2(790,174),Vector2(450,410))
 	SliceUI.label(panel,"SUPPLY CACHE / CONTENTS",Vector2(22,20),23,SliceUI.CYAN)
 	var used: float = battle.session.inventory.get_used_capacity()
-	SliceUI.label(panel,"CARGO  %.1f / %.1f kg" % [used,battle.session.inventory.capacity],Vector2(22,66),18)
+	SliceUI.label(panel,tr("CARGO  %.1f / %.1f kg") % [used,battle.session.inventory.capacity],Vector2(22,66),18)
 	var index := 0
 	for pickup in container.contents():
 		var definition := ContentDB.get_item(pickup.item_instance.definition_id)
-		SliceUI.label(panel,"%s × %d" % [definition.display_name,pickup.item_instance.quantity],Vector2(22,126+index*70),17)
+		SliceUI.label(panel,tr("%s × %d") % [GameLanguage.item_name(definition.display_name),pickup.item_instance.quantity],Vector2(22,126+index*70),17)
 		SliceUI.button(panel,"TAKE",Vector2(326,112+index*70),Vector2(100,48),func(): _take(pickup))
 		index += 1
 	if index == 0: SliceUI.label(panel,"CACHE SECURED / EMPTY",Vector2(22,126),18,SliceUI.CYAN)

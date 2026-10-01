@@ -38,6 +38,7 @@ func _ready() -> void:
 	AudioDirector.set_music_context(&"hideout")
 	AudioDirector.play_sfx(&"ui_confirm", -4)
 	show_section(GameState.hideout_section)
+	GameLanguage.language_changed.connect(func(): show_section(section))
 	GameState.hideout_section = "Overview"
 
 func _process(delta: float) -> void:
@@ -101,29 +102,64 @@ func show_section(value: String) -> void:
 	camera_tween.tween_property(camera, "quaternion", target_basis.get_rotation_quaternion(), 0.65)
 	if value != "Hanger":
 		SliceUI.label(screen, "BASTION 07  /  HIDEOUT", Vector2(42,30), 30)
-		SliceUI.label(screen, "HOME SIGNAL STABLE    •    ALL SYSTEMS READY", Vector2(44,72), 14, SliceUI.CYAN)
+		SliceUI.label(screen, "HOME SIGNAL STABLE    •    ESC / PAUSE", Vector2(44,72), 14, SliceUI.CYAN)
 	if value in ["Operations", "Workshop", "Rest"]:
 		var panel := SliceUI.panel(screen, Vector2(882,150), Vector2(360,430))
-		SliceUI.label(panel, value.to_upper(), Vector2(24,24), 28, SliceUI.CYAN)
+		SliceUI.label(panel, tr(value).to_upper(), Vector2(24,24), 28, SliceUI.CYAN)
 		var description := "Your forward operating base.\n\nEquip in the Hanger.\nReview the operation at the Terminal.\nReturn here with what you recover."
 		if value == "Operations":
-			description = "OPERATION / SIGNAL RECOVERY\nURBAN DISTRICT 07\n\n"
-			var mission := ContentDB.get_mission(SortieRequest.PROTOTYPE_MISSION_ID)
+			description = tr("OPERATION / SIGNAL RECOVERY\nURBAN DISTRICT 07\n\n")
+			var mission := ContentDB.get_mission(&"first_mission" if not ProfileRuntime.get_profile().first_mission_completed else SortieRequest.PROTOTYPE_MISSION_ID)
 			for objective in mission.objective_definitions:
-				description += "• " + objective.display_name + "\n"
-			description += "\nRecover supplies. Reach the south\nextraction beacon to return alive."
-		elif value == "Workshop": description = "MAINTENANCE BAY\n\nWeapons serviced. Mounts calibrated.\nAR / SMG / Breach Launcher ready.\n\nLoadout changes use the Hanger's\nexisting warehouse inventory."
+				description += "• " + tr(objective.display_name) + "\n"
+			description += tr("\nRecover supplies. Reach the south\nextraction beacon to return alive.")
+		elif value == "Workshop": description = "MODERN ARMORY\n\nPistol / SMG / Assault Rifle\nShotgun / Sniper / Light Machine Gun\nRPG Field Launcher\n\nSelect two weapons in the Hanger.\nAmmo is carried for your loadout.\nHold Shift with the sniper to survey."
 		elif value == "Rest": description = "PERSONAL QUARTERS\n\nKohaku — field operator.\nThe city's security network is hostile.\nThis room is still yours.\n\nRecover. Re-equip. Come home."
-		SliceUI.label(panel, description, Vector2(24,88), 16, SliceUI.MUTED)
-		SliceUI.button(panel, "CONFIRM DEPLOYMENT" if value == "Operations" else "MISSION TERMINAL", Vector2(24,338), Vector2(312,58), _deploy if value == "Operations" else func(): show_section("Operations"))
+		if value == "Workshop":
+			var profile := ProfileRuntime.get_profile()
+			description = tr("WAREHOUSE / SALVAGE CORE × %d\n\nAR / WEAPON UPGRADE\nCost: 1 Salvage Core\nDamage: 20 → 22 (+10%%)\n\n%s") % [FirstMissionPreparation.salvage_count(profile), tr("INSTALLED / READY FOR SORTIE 02" if profile.ar_damage_upgraded else ("Materials secured. Install your upgrade." if profile.first_mission_completed else "Bring materials home from First Mission."))]
+			if profile.first_mission_completed and not profile.ar_damage_upgraded:
+				var upgrade := SliceUI.button(panel, "UPGRADE AR / 1 SALVAGE CORE", Vector2(24,276), Vector2(312,48), _upgrade_weapon)
+				upgrade.disabled = FirstMissionPreparation.salvage_count(profile) < 1
+		var detail := SliceUI.label(panel, description, Vector2(24,88), 16, SliceUI.MUTED)
+		detail.size = Vector2(312, 180)
+		detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		SliceUI.button(panel, "CONFIRM DEPLOYMENT" if value == "Operations" else ("SECOND SORTIE / LOADOUT" if value == "Workshop" and ProfileRuntime.get_profile().ar_damage_upgraded else "MISSION TERMINAL"), Vector2(24,338), Vector2(312,58), _deploy if value == "Operations" else func(): show_section("Hanger" if value == "Workshop" and ProfileRuntime.get_profile().ar_damage_upgraded else "Operations"))
 	if value == "Overview":
+		_first_mission_panel()
 		SliceUI.label(screen, "SELECT A BAY BELOW  /  PREPARE • DEPLOY • RECOVER", Vector2(44,104),16,SliceUI.MUTED)
 	for index in 5:
 		var names := ["Overview", "Hanger", "Operations", "Workshop", "Rest"]
 		var key: String = names[index]
-		SliceUI.button(screen, "%02d  %s" % [index+1,key.to_upper()], Vector2(42+index*226,644), Vector2(212,48), func(): show_section(key))
-	if value != "Hanger": SliceUI.button(screen, "MENU", Vector2(1140,30), Vector2(100,36), func(): GameState.open_menu())
+		SliceUI.button(screen, tr("%02d  %s") % [index+1,tr(key).to_upper()], Vector2(42+index*226,644), Vector2(212,48), func(): show_section(key))
+	if value != "Hanger": SliceUI.button(screen, "MENU", Vector2(1140,30), Vector2(100,36), func(): FlowMenu.request_leave("menu"))
 
 func _deploy() -> void:
-	ui.hide()
 	hanger._on_deploy_requested()
+
+func _first_mission_panel() -> void:
+	var profile := ProfileRuntime.get_profile()
+	if profile.ar_damage_upgraded: return
+	var panel := SliceUI.panel(screen, Vector2(882,150), Vector2(360,430))
+	SliceUI.label(panel, "FIRST MISSION / 10 MIN", Vector2(24,24), 23, SliceUI.CYAN)
+	if profile.first_mission_completed:
+		SliceUI.label(panel, "HOME SIGNAL RECOVERED\n\nSalvage is now in your warehouse.\nVisit Workshop for your first upgrade.", Vector2(24,92), 17)
+		SliceUI.button(panel, "WORKSHOP / FIRST UPGRADE", Vector2(24,338), Vector2(312,58), func(): show_section("Workshop"))
+		return
+	SliceUI.label(panel, "BUNNY / FIELD OPERATOR\n\nAR + SMG / starter kit\n\nLearn. Investigate. Choose your risk.\nExtract. Upgrade. Deploy again.", Vector2(24,92), 17)
+	if not profile.bunny_selected and not FirstMissionPreparation.has_starter_kit(profile):
+		SliceUI.button(panel, "SELECT BUNNY", Vector2(24,338), Vector2(312,58), func(): profile.bunny_selected = true; show_section("Overview"))
+	elif not FirstMissionPreparation.has_starter_kit(profile):
+		SliceUI.button(panel, "SELECT AR + SMG", Vector2(24,338), Vector2(312,58), func(): FirstMissionPreparation.equip_starter_kit(profile); hanger._build_preview_character(profile.inventory, profile.loadout); hanger.hanger_ui.configure(profile.inventory, profile.loadout); hanger.hanger_ui.sync_loadout_selection(); show_section("Overview"))
+	else:
+		SliceUI.button(panel, "FIRST MISSION / DEPLOY", Vector2(24,338), Vector2(312,58), func(): show_section("Operations"))
+
+func _upgrade_weapon() -> void:
+	var error := FirstMissionPreparation.upgrade_weapon()
+	if error != OK:
+		FlowMenu.show_error(tr("Upgrade could not be saved: %s. Your materials are unchanged.") % error_string(error))
+		return
+	hanger.hanger_ui.configure(ProfileRuntime.get_profile().inventory, ProfileRuntime.get_profile().loadout)
+	hanger.hanger_ui.sync_loadout_selection()
+	AudioDirector.play_sfx(&"ui_confirm")
+	show_section("Workshop")

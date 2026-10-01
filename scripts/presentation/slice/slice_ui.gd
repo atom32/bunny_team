@@ -43,6 +43,7 @@ static func panel(parent: Node, at: Vector2, size: Vector2) -> Panel:
 
 static func sign(parent: Node3D, text: String, at: Vector3, color: Color = CYAN) -> Label3D:
 	var item := Label3D.new()
+	item.font = UIFactory.FONT
 	item.text = text
 	item.position = at
 	item.font_size = 48

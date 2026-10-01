@@ -1,0 +1,34 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+MCO_POSE_RETARGET clip=W2_Stand_Relaxed_Idle_v2 bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000019782659
+MCO_POSE_RETARGET clip=W2_Stand_Relaxed_Idle_v2 bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000014901161
+MCO_POSE_RETARGET clip=W2_Stand_Relaxed_Idle_v2 bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000025991744
+MCO_POSE_RETARGET clip=W2_Stand_Aim_Idle_v2 bones=52
+MCO_CONTACT primary_error=0.00000001490116 support_error=0.00000023513635
+MCO_POSE_RETARGET clip=W2_Stand_Aim_Idle_v2 bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000023276358
+MCO_POSE_RETARGET clip=W2_Stand_Aim_Idle_v2 bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000025288108
+MCO_POSE_RETARGET clip=W2_Stand_Aim_To_Relaxed bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000024027401
+MCO_POSE_RETARGET clip=W2_Stand_Aim_To_Relaxed bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000026749555
+MCO_POSE_RETARGET clip=W2_Stand_Aim_To_Relaxed bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000014770201
+MCO_POSE_RETARGET clip=W2_Walk_Aim_F_Loop_IPC bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000017881393
+MCO_POSE_RETARGET clip=W2_Walk_Aim_F_Loop_IPC bones=52
+MCO_CONTACT primary_error=0.00000002980232 support_error=0.00000021696418
+MCO_POSE_RETARGET clip=W2_Walk_Aim_F_Loop_IPC bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000013328004
+MCO_POSE_RETARGET clip=W2_Jog_Aim_F_Loop_IPC bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000029839552
+MCO_POSE_RETARGET clip=W2_Jog_Aim_F_Loop_IPC bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000013411045
+MCO_POSE_RETARGET clip=W2_Jog_Aim_F_Loop_IPC bones=52
+MCO_CONTACT primary_error=0.0 support_error=0.00000021542358
+RIFLE_CONTACT_TEST failures=[]
+RIFLE_CONTACT_TEST PASS

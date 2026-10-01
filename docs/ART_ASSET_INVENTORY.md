@@ -1,5 +1,9 @@
 # Art Asset Inventory / 当前资产质量审计
 
+> **2026-09-30 当前试装**：主角已换为无围巾 Artoria Bunny Suit，显示模型 157,293 三角形 / 52 骨 / 11 网格；仍由原 Unity-Chan 动画驱动。普通敌人为在库 Quaternius SciFi 人型，重型敌人为 KITE 无人机。人型死亡保留导入模型，不生成方块人。范围、限制与证据见 [ARTORIA_BUNNY_TRIAL.md](ARTORIA_BUNNY_TRIAL.md)。[剧情制作包](narrative/README.md) 是原创设计稿，十二章尚未实装。下列武器/Phase 5 记录保留其历史时间点。
+
+> 2026-09-29 武器更新：当前已是六类现代枪械加独立贴图 RPG，全部通过 combat rig 握持。下面关于三把 Kenney 武器及其 socket 路径的描述是历史快照；当前模型、玩法和验证见 [MODERN_ARSENAL.md](MODERN_ARSENAL.md)。角色本体未修改。
+
 > **Current checkpoint (2026-09-27):** Phase 5 `bc4984b`, Godot 4.7.2.
 > Player = production Unity-Chan (Phase 3D + Phase 4B fidelity); Enemy = native
 > KITE-07, no legacy humanoid dependency (Phase 4E). Phase 5 validation: 33/33,

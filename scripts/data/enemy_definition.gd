@@ -4,6 +4,7 @@ extends Resource
 @export var id: StringName
 @export var display_name: String
 @export var scene: PackedScene
+@export var humanoid_presentation := false
 @export_range(1.0, 100000.0, 1.0, "or_greater") var max_health := 60.0
 @export_range(0.0, 10000.0, 0.1, "or_greater") var armor := 0.0
 @export_range(0.1, 100.0, 0.1, "or_greater") var move_speed := 3.2

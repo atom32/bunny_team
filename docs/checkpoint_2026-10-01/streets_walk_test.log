@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+STREETS_WALK reached StreetTerminal at (-24.86039, 0.075055, 24.66288)
+STREETS_WALK reached StreetSurvey at (-20.10162, -0.02416, -8.884641)
+STREETS_WALK reached IndoorLoot0_0 at (-24.88421, 0.075455, -24.48549)
+STREETS_WALK reached Exit2 at (-47.8491, -0.02416, -51.98588)
+STREETS_WALK_TEST failures=[]
+STREETS_WALK_TEST PASS

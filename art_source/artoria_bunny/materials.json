@@ -1,0 +1,112 @@
+{
+  "ArtoriaBunny_Fur": {
+    "maps": {
+      "base": "ArtoriaBunny_Fur_base.png",
+      "roughness": "ArtoriaBunny_Fur_roughness.png",
+      "normal": "ArtoriaBunny_Fur_normal.png"
+    },
+    "values": {
+      "metallic": 0.0,
+      "alpha": 1.0
+    }
+  },
+  "ArtoriaBunny_Headress": {
+    "maps": {
+      "base": "ArtoriaBunny_Headress_base.png",
+      "roughness": "ArtoriaBunny_Headress_roughness.png",
+      "metallic": "ArtoriaBunny_Headress_metallic.png",
+      "normal": "ArtoriaBunny_Headress_normal.png"
+    },
+    "values": {
+      "alpha": 1.0
+    }
+  },
+  "ArtoriaBunny_Stockings": {
+    "maps": {
+      "base": "ArtoriaBunny_Stockings_base.png",
+      "roughness": "ArtoriaBunny_Stockings_roughness.png",
+      "metallic": "ArtoriaBunny_Stockings_metallic.png",
+      "alpha": "ArtoriaBunny_Stockings_alpha.png",
+      "normal": "ArtoriaBunny_Stockings_normal.png"
+    },
+    "values": {}
+  },
+  "ArtoriaBunny_Suit": {
+    "maps": {
+      "base": "ArtoriaBunny_Suit_base.png",
+      "roughness": "ArtoriaBunny_Suit_roughness.png",
+      "metallic": "ArtoriaBunny_Suit_metallic.png",
+      "normal": "ArtoriaBunny_Suit_normal.png"
+    },
+    "values": {
+      "alpha": 1.0
+    }
+  },
+  "ArtoriaLancer_Body": {
+    "maps": {
+      "base": "ArtoriaLancer_Body_base.png",
+      "roughness": "ArtoriaLancer_Body_roughness.png",
+      "normal": "ArtoriaLancer_Body_normal.png"
+    },
+    "values": {
+      "metallic": 0.0,
+      "alpha": 1.0
+    }
+  },
+  "ArtoriaLancer_Eyes": {
+    "maps": {
+      "base": "ArtoriaLancer_Eyes_base.png",
+      "roughness": "ArtoriaLancer_Eyes_roughness.png",
+      "normal": "ArtoriaLancer_Eyes_normal.png"
+    },
+    "values": {
+      "metallic": 0.0,
+      "alpha": 1.0
+    }
+  },
+  "ArtoriaLancer_Hair": {
+    "maps": {
+      "base": "ArtoriaLancer_Hair_base.png",
+      "alpha": "ArtoriaLancer_Hair_alpha.png",
+      "normal": "ArtoriaLancer_Hair_normal.png"
+    },
+    "values": {
+      "roughness": 0.5,
+      "metallic": 0.0
+    }
+  },
+  "ArtoriaLancer_Head": {
+    "maps": {
+      "base": "ArtoriaLancer_Head_base.png",
+      "roughness": "ArtoriaLancer_Head_roughness.png",
+      "normal": "ArtoriaLancer_Head_normal.png"
+    },
+    "values": {
+      "metallic": 0.0,
+      "alpha": 1.0
+    }
+  },
+  "Eyelashes": {
+    "maps": {
+      "base": "Eyelashes_base.png",
+      "alpha": "Eyelashes_alpha.png"
+    },
+    "values": {
+      "roughness": 0.858578622341156,
+      "metallic": 0.0
+    }
+  },
+  "Eyes_Cornea": {
+    "cornea": true
+  },
+  "Eyeshadow": {
+    "maps": {
+      "base": "Eyeshadow_base.png",
+      "alpha": "Eyeshadow_alpha.png"
+    },
+    "values": {
+      "roughness": 0.858578622341156,
+      "metallic": 0.0
+    }
+  }
+}

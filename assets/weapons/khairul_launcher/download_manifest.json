@@ -1,0 +1,27 @@
+[
+  {
+    "path": "art_source/modern_arsenal/launcher_source/README.txt",
+    "sha256": "68599d34c93a531d8bd09bac8495f7a70a0fe9bd6fd98bf3b3a5034afef58fcf",
+    "bytes": 284
+  },
+  {
+    "path": "art_source/modern_arsenal/launcher_source/rocket_launcher.blend",
+    "sha256": "763251a23c9a43e0560075d093c91057d331c9c3ca8cbf578a844f9dcdad5563",
+    "bytes": 644340
+  },
+  {
+    "path": "art_source/modern_arsenal/launcher_source/tex/launcher_diffuse.png",
+    "sha256": "809a009dc520e8a204d81bdc27472021d2aaff9d6ed3de57750a302b9e2a8e62",
+    "bytes": 215533
+  },
+  {
+    "path": "art_source/modern_arsenal/launcher_source/tex/rocket_diffuse.png",
+    "sha256": "cae534d9be799ffa4a98759cdc021e2156499061f2b417b77653c7c7ad00b491",
+    "bytes": 144023
+  },
+  {
+    "path": "rocket_launcher_0.zip (download archive)",
+    "sha256": "01fbc2e00adb40bb92c00eab293d9c7fefcc8685b434a5ff006a02a24c2eb48c",
+    "bytes": 1209335
+  }
+]

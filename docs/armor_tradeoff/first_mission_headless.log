@@ -1,0 +1,97 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS / Base button selects Bunny
+PASS / Base button selects starter kit
+PASS / Old saves receive First Mission without losing inventory
+PASS / Previously purchased pack upgrade migrates to AR upgrade without a second charge
+PASS / Starter kit equips AR and SMG
+PASS / First Mission is registered and deployable
+PASS / Training starts safely with no visible supplies or active PMC
+PASS / Cannot skip mission from the spawn beacon
+PASS / Cannot investigate before training
+PASS / Actual travel advances movement training
+PASS / Aim change advances aiming training
+PASS / Training shot consumes real ammo
+PASS / Real shot activates first PMC
+PASS / PMC death reveals guaranteed upgrade material
+PASS / Reload uses real reserve ammunition
+PASS / Finished reload advances to search tutorial
+PASS / Patrol material enters carried inventory
+PASS / Taking salvage unlocks investigation
+PASS / Investigation starts at terminal
+PASS / Walking away cancels investigation
+PASS / Investigation completes and exposes risk choice
+PASS / Both routes are available after the alarm
+PASS / Alarm activates exactly one PMC response group
+PASS / Alarm never duplicates the wave
+PASS / Leaving beacon cancels extraction
+PASS / Defending beacon completes extraction
+PASS / Failed settlement save does not publish first completion
+PASS / Real debrief return saves and opens Workshop
+PASS / Extraction persists settlement
+PASS / Chosen route transfers exact material count to warehouse
+PASS / Retry does not duplicate recovered material
+PASS / Failed upgrade save preserves materials
+PASS / Workshop consumes one core and saves upgrade
+PASS / Upgrade has exact cost
+PASS / Upgrade cannot charge twice
+PASS / Progress survives profile reload
+PASS / Workshop exposes second sortie after upgrade
+PASS / Selecting Heavy Armor refreshes real loadout protection
+PASS / Equipment details keep mission button above hub navigation
+PASS / Single weapon upgrade leaves carried capacity at 100kg
+PASS / Next sortie AR damage increases from 20 to 22
+PASS / SMG damage remains unchanged
+PASS / Shared weapon definition remains at base damage
+PASS / Upgraded next sortie activates
+PASS / Actual AR hitscan delivers 22 damage after upgrade
+PASS / Battle HUD marks upgraded AR
+PASS / Upgraded player switches to SMG
+PASS / Switching to SMG does not inherit AR damage bonus
+PASS / Starter kit equips AR and SMG
+PASS / First Mission is registered and deployable
+PASS / Training starts safely with no visible supplies or active PMC
+PASS / Cannot skip mission from the spawn beacon
+PASS / Cannot investigate before training
+PASS / Actual travel advances movement training
+PASS / Aim change advances aiming training
+PASS / Training shot consumes real ammo
+PASS / Real shot activates first PMC
+PASS / PMC death reveals guaranteed upgrade material
+PASS / Reload uses real reserve ammunition
+PASS / Finished reload advances to search tutorial
+PASS / Patrol material enters carried inventory
+PASS / Taking salvage unlocks investigation
+PASS / Investigation starts at terminal
+PASS / Walking away cancels investigation
+PASS / Investigation completes and exposes risk choice
+PASS / Both routes are available after the alarm
+PASS / Alarm activates exactly one PMC response group
+PASS / Alarm never duplicates the wave
+PASS / Optional salvage redirects player home
+PASS / Leaving beacon cancels extraction
+PASS / Defending beacon completes extraction
+PASS / Failed settlement save does not publish first completion
+PASS / Real debrief return saves and opens Workshop
+PASS / Extraction persists settlement
+PASS / Chosen route transfers exact material count to warehouse
+PASS / Retry does not duplicate recovered material
+PASS / Failed upgrade save preserves materials
+PASS / Workshop consumes one core and saves upgrade
+PASS / Upgrade has exact cost
+PASS / Upgrade cannot charge twice
+PASS / Progress survives profile reload
+PASS / Workshop exposes second sortie after upgrade
+PASS / Selecting Heavy Armor refreshes real loadout protection
+PASS / Equipment details keep mission button above hub navigation
+PASS / Single weapon upgrade leaves carried capacity at 100kg
+PASS / Next sortie AR damage increases from 20 to 22
+PASS / SMG damage remains unchanged
+PASS / Shared weapon definition remains at base damage
+PASS / Upgraded next sortie activates
+PASS / Actual AR hitscan delivers 22 damage after upgrade
+PASS / Battle HUD marks upgraded AR
+PASS / Upgraded player switches to SMG
+PASS / Switching to SMG does not inherit AR damage bonus
+PASS / Death does not skip first mission
+FIRST_MISSION_TEST PASS

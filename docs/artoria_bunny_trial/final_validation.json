@@ -1,0 +1,81 @@
+{
+  "date": "2026-09-30",
+  "engine": "Godot 4.7.2 / GL Compatibility",
+  "source_snapshot": "regression/source_manifest.json",
+  "scope": "uncommitted working tree; isolated copies and profiles; automated, not manual",
+  "cold_import": {
+    "name": "cold_import",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-artoria-full-07/project",
+      "--headless",
+      "--editor",
+      "--import"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "f2349bed2573da0d8ec6ec1bfe9ec01158f822215b27c43928bccfdc7d454de9"
+  },
+  "regressions": {
+    "passed": 35,
+    "total": 35
+  },
+  "main": {
+    "name": "main",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-artoria-full-07/project",
+      "--headless",
+      "--quit-after",
+      "180"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ],
+    "sha256": "502a050014c602e0d5fadf654260b67dda3a96b363dfc696f04946fde0112894"
+  },
+  "initial_route": {
+    "pass": false,
+    "evidence": "initial_route_failure/route_result.json",
+    "cause": "Probe aimed at door hinge x=-17.1 instead of opening center x=-16.0; no runtime geometry/collision change."
+  },
+  "corrected_route": {
+    "pass": true,
+    "evidence": "route/route_result.json",
+    "checks": 13,
+    "combat": {
+      "damage_taken": 3,
+      "enemies_defeated": 0,
+      "shots": 57
+    },
+    "mission_completed": false,
+    "probe_sha256": "51f996e261f27a4bb0b9eb1d5c1d6332da6bec14793ce396a75cfb153f2b80c2"
+  },
+  "graphics": [
+    "weapons.log",
+    "motion.log",
+    "lineup.log"
+  ],
+  "known_limits": [
+    "No manual-play or performance certification",
+    "No facial/cloth/hair animation",
+    "High-poly PBR protagonist and lower-detail enemies/environment remain visually mismatched",
+    "Prototype rights and inherited enemy package provenance unresolved"
+  ],
+  "protected_sources": {
+    "unitychan_source_files_vs_HEAD": 59,
+    "unitychan_source_changed": [],
+    "official_1_1_vs_original_baseline": 68,
+    "official_changed": [],
+    "artoria_source_sha256": "1fa53fe6e60a54c4243b2a8dc2b656bf2f4d3c3080fc69cbdf05c4495ccda06a",
+    "artoria_unchanged": true,
+    "note": "Source asset bytes only; importer settings and historical presentation metadata are excluded."
+  }
+}

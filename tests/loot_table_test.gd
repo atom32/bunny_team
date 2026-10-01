@@ -31,7 +31,7 @@ func _test_content_and_rolls() -> void:
 	check(table != null and table.validate_definition(), "prototype loot table resolves through ContentDB")
 	if not table:
 		return
-	check(table.entries.size() == 3, "prototype loot table contains three weighted entries")
+	check(table.entries.size() == 6, "prototype loot table contains salvage and all five ammunition calibers")
 
 	var rng_a := RandomNumberGenerator.new()
 	var rng_b := RandomNumberGenerator.new()
@@ -63,7 +63,7 @@ func _test_content_and_rolls() -> void:
 		check(not seen_instance_ids.has(item.instance_id), "multiple rolls never reuse an item instance ID")
 		seen_instance_ids[item.instance_id] = true
 		seen_definitions[item.definition_id] = true
-	check(seen_definitions.size() == 3, "seeded weighted rolls can reach every prototype entry")
+	check(seen_definitions.size() == 6, "seeded weighted rolls can reach every prototype entry")
 
 	var different_seed_rng := RandomNumberGenerator.new()
 	different_seed_rng.seed = 98765
@@ -181,8 +181,12 @@ func _quantity_is_valid(item: ItemInstance) -> bool:
 	match item.definition_id:
 		&"loot.salvage_core_01":
 			return item.quantity == 1
-		&"ammo.556_standard":
+		&"ammo.556_standard", &"ammo.9mm_standard":
 			return item.quantity >= 30 and item.quantity <= 60
+		&"ammo.12g_buckshot":
+			return item.quantity >= 6 and item.quantity <= 12
+		&"ammo.762_standard":
+			return item.quantity >= 5 and item.quantity <= 10
 		&"ammo.rocket_standard":
 			return item.quantity >= 1 and item.quantity <= 2
 	return false

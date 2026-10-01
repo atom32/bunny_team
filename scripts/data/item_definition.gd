@@ -5,6 +5,7 @@ extends Resource
 @export var display_name: String
 @export_multiline var description: String
 @export var icon: Texture2D
+@export var stash_size := Vector2i(1, 1)
 @export_range(0.0, 1000.0, 0.001, "or_greater") var weight: float = 0.0
 @export_range(0, 1000000, 1, "or_greater") var base_value: int = 0
 @export var item_tags := PackedStringArray()

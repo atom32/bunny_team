@@ -32,18 +32,20 @@ func update_pose(point: Vector3, direction: Vector3, dodge: float, delta: float,
   return
  _raw_pose = weapon_pose_root.transform
  _has_raw_pose = true
- selected_pose = {"assault_rifle":"Rifle","smg":"SMG","rocket_launcher":"Rocket"}.get(weapon.scene_file_path.get_file().get_basename(), "")
+ selected_pose = String(weapon.get("hand_pose")) if weapon.get("hand_pose") else {"assault_rifle":"Rifle","smg":"SMG","rocket_launcher":"Rocket"}.get(weapon.scene_file_path.get_file().get_basename(), "")
  if selected_pose.is_empty():
   push_error("UnityChan adapter cannot resolve weapon presentation: " + weapon.scene_file_path)
   return
  var data: Dictionary = poses[selected_pose]
  var offset := vector(data.weapon_origin) - Vector3(0,1.13,-0.06)
+ offset += weapon.pose_offset
  weapon_pose_root.global_position += weapon_pose_root.global_basis.orthonormalized() * offset
  if is_instance_valid(_socket_visual):
   _socket_visual.global_transform = weapon_pose_root.global_transform * Transform3D(Basis.IDENTITY.scaled(Vector3.ONE*0.44),Vector3.ZERO)
  var basis := weapon.global_basis.orthonormalized()
- right_hand_target.global_position = weapon.global_position + basis * vector(data.Right.wrist_from_weapon)
- var support := weapon.global_position + basis * vector(data.Left.wrist_from_weapon)
+ var authored_grips: bool = bool(weapon.get("authored_grips"))
+ right_hand_target.global_position = primary_grip.global_position if authored_grips else weapon.global_position + basis * vector(data.Right.wrist_from_weapon)
+ var support := support_grip.global_position if authored_grips else weapon.global_position + basis * vector(data.Left.wrist_from_weapon)
  # Preserve existing reload trajectory delta; don't reinterpret its gameplay duration/state.
  support += (reload_grip.global_position-support_grip.global_position) * _reload_hand_weight()
  left_hand_target.global_position = support

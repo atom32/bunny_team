@@ -34,7 +34,7 @@ func _test_initial_magazine_and_player_fire() -> void:
 	var weapon_id: String = fixture.weapon_id
 	var state: Variant = session.get_weapon_runtime_state(weapon_id)
 	check(state != null and state.magazine_ammo == 30 and state.magazine_capacity == 30, "session initializes the rifle magazine to 30")
-	check(session.get_reserve_ammo(weapon_id) == 120, "initial magazine does not consume reserve ammunition")
+	check(session.get_reserve_ammo(weapon_id) == 90, "initial magazine transfers 30 rounds from carried stock")
 	var capacity_before := session.inventory.get_used_capacity()
 	var profile_before := profile.to_dict()
 	var player := PLAYER_SCENE.instantiate() as PlayerController
@@ -44,8 +44,8 @@ func _test_initial_magazine_and_player_fire() -> void:
 	player.aim_world_point = player.global_position + Vector3.FORWARD * 20.0 + Vector3.UP
 	check(player.debug_fire_once(), "player fire path accepts a shot with magazine ammunition")
 	check(state.magazine_ammo == 29, "one successful player shot consumes one magazine round")
-	check(session.get_reserve_ammo(weapon_id) == 120, "firing does not consume reserve ammunition")
-	check(is_equal_approx(session.inventory.get_used_capacity(), capacity_before), "magazine consumption does not change inventory capacity")
+	check(session.get_reserve_ammo(weapon_id) == 90, "firing does not consume reserve ammunition")
+	check(is_equal_approx(session.inventory.get_used_capacity(), capacity_before - ContentDB.get_ammo(&"ammo.556_standard").weight), "firing reduces total carried weight by one round")
 	check(profile.to_dict() == profile_before, "player firing leaves the warehouse unchanged")
 	player.queue_free()
 	await get_tree().process_frame
@@ -72,11 +72,11 @@ func _test_reload() -> void:
 	check(session.get_weapon_runtime_state(weapon_id).magazine_ammo == 10, "reload fixture reaches 10 rounds")
 	check(session.reload_weapon(weapon_id) == 20, "partial magazine reloads the required 20 rounds")
 	check(session.get_weapon_runtime_state(weapon_id).magazine_ammo == 30, "reload fills the magazine")
-	check(session.get_reserve_ammo(weapon_id) == 30, "reload consumes exactly 20 reserve rounds")
+	check(session.get_reserve_ammo(weapon_id) == 0, "reload consumes exactly 20 reserve rounds")
 
 
 func _test_partial_reserve() -> void:
-	var fixture := _create_session_fixture(12)
+	var fixture := _create_session_fixture(42)
 	var session: SortieSession = fixture.session
 	var weapon_id: String = fixture.weapon_id
 	for _round in 20:
@@ -125,12 +125,12 @@ func _test_extraction_materialization_and_profile_isolation() -> void:
 	check(profile.to_dict() == profile_before, "sortie fire still leaves profile unchanged before extraction")
 	check(session.complete_extraction(), "successful extraction materializes runtime ammunition")
 	check(session.get_weapon_runtime_state(weapon_id).magazine_ammo == 0, "materialized magazine is cleared exactly once")
-	check(_total_ammo(session.inventory, &"ammo.556_standard") == 140, "reserve 120 plus remaining magazine 20 becomes recovered ammo 140")
+	check(_total_ammo(session.inventory, &"ammo.556_standard") == 110, "reserve 90 plus remaining magazine 20 returns 110 of the original 120 rounds")
 	check(profile.to_dict() == profile_before, "extraction alone does not mutate profile")
 	var outcome := SortieOutcomeService.create_outcome(session)
-	check(outcome != null and _total_ammo(outcome.inventory, &"ammo.556_standard") == 140, "outcome stores materialized ammo only in recovered inventory")
+	check(outcome != null and _total_ammo(outcome.inventory, &"ammo.556_standard") == 110, "outcome stores materialized ammo only in recovered inventory")
 	check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, "ammo outcome commits through the existing boundary")
-	check(_total_ammo(profile.inventory, &"ammo.556_standard") == 140, "commit replaces initial carried ammo with recovered ammo")
+	check(_total_ammo(profile.inventory, &"ammo.556_standard") == 110, "commit replaces initial carried ammo with recovered ammo")
 	check(profile.inventory.contains(ammo_id), "commit preserves the original carried stack identity when possible")
 	var committed := profile.to_dict()
 	check(SortieOutcomeService.commit_outcome(profile, outcome) == OK and profile.to_dict() == committed, "repeated ammo outcome commit is idempotent")

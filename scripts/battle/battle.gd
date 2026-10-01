@@ -16,24 +16,30 @@ var result_transition_enabled := true
 var _camera_trauma := 0.0
 var _camera_time := 0.0
 var _last_health := 0.0
+var _camera_basis := Basis.IDENTITY
+var _camera_occlusion: Node
 
 
 func _ready() -> void:
 	session = SortieRuntime.get_current_session()
 	if not session or session.status != SortieSession.Status.ACTIVE:
-		push_error("Battle requires an active SortieSession")
+		FlowMenu.show_error("No active mission is available. Return to base and deploy again.", true)
 		return
 	if not _load_area():
+		FlowMenu.show_error("The mission area could not be loaded. Return to base to retry.", true)
 		return
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	AudioDirector.set_music_context(&"battle")
 	if not _spawn_player():
+		FlowMenu.show_error("The player could not spawn. Return to base to retry.", true)
 		return
 	_build_camera()
 	if not _spawn_enemies():
+		FlowMenu.show_error("Enemy setup failed. Return to base to retry.", true)
 		return
 	hud = HUD_SCENE.instantiate() as BattleHUD
 	add_child(hud)
+	hud.set_health(player.health, player.max_health)
 	hud.set_enemy_count(enemies_remaining)
 	_sync_objective_hud()
 	_sync_weapon_hud()
@@ -51,19 +57,35 @@ func _ready() -> void:
 	_configure_objective_world()
 	hud.set_inventory_capacity(session.inventory.get_used_capacity(), session.inventory.capacity)
 	_last_health = player.health
+	GameLanguage.language_changed.connect(_refresh_language)
+	if area_root.has_method("create_route_map"):
+		area_root.create_route_map(player)
+	elif area_root.has_meta("sortie_brief"):
+		hud.show_banner(area_root.get_meta("sortie_brief"), Color("c7c3a3"))
+	if session.mission_id == &"first_mission":
+		var director := preload("res://scripts/first_mission/director.gd").new()
+		director.name = "FirstMissionDirector"
+		add_child(director)
 
 
 func _process(delta: float) -> void:
 	if not is_instance_valid(player) or not camera:
 		return
+	if hud:
+		hud.set_reload_remaining(player.get_reload_remaining())
 	_camera_time += delta
 	_camera_trauma = move_toward(_camera_trauma, 0.0, delta * 1.85)
 	var shake_strength := _camera_trauma * _camera_trauma
 	var shake := Vector3(sin(_camera_time * 43.0), 0.0, cos(_camera_time * 37.0)) * shake_strength
 	var focus := player.global_position + player.aim_direction * 1.45 + Vector3.UP * 0.85
+	var aim_extension := player.weapon_data.aim_camera_extension if player.weapon_data and Input.is_action_pressed("precision_walk") else 0.0
+	camera.size = lerpf(camera.size, 24.5 + aim_extension, 1.0 - exp(-6.0 * delta))
+	focus += player.aim_direction * aim_extension * 0.25
 	var target_position := focus + Vector3(0.0, 18.2, 13.7) + shake
 	camera.global_position = camera.global_position.lerp(target_position, 1.0 - exp(-9.5 * delta))
-	camera.look_at(focus + shake * 0.28, Vector3.UP)
+	camera.global_basis = _camera_basis
+	if _camera_occlusion:
+		_camera_occlusion.update_occlusion(camera, player, delta)
 
 
 func _load_area() -> bool:
@@ -84,13 +106,19 @@ func _load_area() -> bool:
 
 func _spawn_player() -> bool:
 	var spawn_points := _get_area_group_nodes(&"player_spawn_point")
-	if spawn_points.size() != 1:
-		push_error("Area %s requires exactly one player spawn point" % session.area_id)
+	if spawn_points.is_empty():
+		push_error("Area %s requires at least one player spawn point" % session.area_id)
 		return false
 	player = PLAYER_SCENE.instantiate() as PlayerController
 	player.configure_sortie(session)
 	add_child(player)
-	player.global_position = spawn_points[0].global_position
+	var rng := RandomNumberGenerator.new()
+	if loot_seed == 0: rng.randomize()
+	else: rng.seed = loot_seed
+	var spawn: Node3D = spawn_points[rng.randi_range(0, spawn_points.size()-1)]
+	player.global_position = spawn.global_position
+	if area_root.has_method("configure_sortie_layout"):
+		area_root.configure_sortie_layout(spawn, rng)
 	return true
 
 
@@ -99,10 +127,13 @@ func _build_camera() -> void:
 	camera.name = "HighAngleCamera"
 	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
 	camera.size = 24.5
-	camera.position = player.position + Vector3(0.0, 18.2, 13.7)
+	camera.position = player.position + Vector3.UP * 0.85 + Vector3(0.0, 18.2, 13.7)
 	camera.current = true
 	add_child(camera)
 	camera.look_at(player.position + Vector3.UP * 0.85, Vector3.UP)
+	_camera_basis = camera.global_basis
+	_camera_occlusion = preload("res://scripts/battle/camera_occlusion.gd").new()
+	add_child(_camera_occlusion)
 
 
 func _on_player_weapon_fired(recoil_strength: float) -> void:
@@ -123,11 +154,20 @@ func _on_player_weapon_switched(_slot_id: StringName) -> void:
 func _sync_weapon_hud() -> void:
 	if not hud or not player:
 		return
+	hud.set_armor_stats(player.get_movement_speed(), player.get_protection(), player.armor_data.weight if player.armor_data else 0.0)
 	hud.set_weapon_slots(
 		player.get_weapon_status(LoadoutState.SLOT_WEAPON_PRIMARY),
 		player.get_weapon_status(LoadoutState.SLOT_WEAPON_SECONDARY),
 		player.active_weapon_slot
 	)
+
+func _refresh_language() -> void:
+	if not hud or not is_instance_valid(player): return
+	_sync_weapon_hud()
+	_sync_objective_hud()
+	hud.set_health(player.health, player.max_health)
+	hud.set_inventory_capacity(session.inventory.get_used_capacity(), session.inventory.capacity)
+	hud.set_threat_level(session.threat_level)
 
 
 func _on_player_health_changed(current: float, maximum: float) -> void:
@@ -337,5 +377,7 @@ func _fail_battle() -> void:
 func _transition_to_result() -> void:
 	if not result_transition_enabled:
 		return
-	await get_tree().create_timer(2.4).timeout
-	GameState.finish_mission()
+	await get_tree().create_timer(2.4, false).timeout
+	var error := GameState.finish_mission()
+	if error != OK:
+		FlowMenu.show_error("Could not open debrief: %s. Use Return to base to recover this sortie." % error_string(error))

@@ -6,6 +6,10 @@ var status: Label
 var camera: Camera3D
 
 func _ready() -> void:
+	if not SortieRuntime.get_current_session():
+		launched = true
+		FlowMenu.show_error("Deployment has no session. Return to base and retry.", true)
+		return
 	var hanger = load("res://scenes/hanger/hanger.tscn").instantiate()
 	add_child(hanger)
 	hanger.hanger_ui.hide()
@@ -37,7 +41,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _launch() -> void:
 	if launched: return
-	if GameState.present_scene("res://scenes/battle/battle.tscn", "DISTRICT 07 / ARRIVAL") != OK:
-		return # The preceding fade may still own the transition during an early skip.
+	var error := GameState.present_scene("res://scenes/battle/battle.tscn", "DISTRICT 07 / ARRIVAL")
+	if error != OK:
+		if error != ERR_BUSY:
+			launched = true
+			FlowMenu.show_error("Could not open the mission. Return to base and retry.", true)
+		return
 	launched = true
 	GameState.arrival_pending = true

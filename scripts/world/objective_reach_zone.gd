@@ -39,6 +39,7 @@ func _build_visual() -> void:
 	var marker := VisualFactory.cylinder(self, 2.4, 0.04, Vector3(0.0, 0.03, 0.0), Color("485e8c"), "ReachZoneMarker")
 	marker.material_override = VisualFactory.material(Color("25365c"), 0.4, 0.25, Color("74a8ff"), 1.8)
 	var label := Label3D.new()
+	label.font = UIFactory.FONT
 	label.text = "SURVEY ZONE"
 	label.position = Vector3(0.0, 0.65, 0.0)
 	label.font_size = 26

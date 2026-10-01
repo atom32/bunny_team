@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="MissionDefinition" load_steps=5 format=3]
+[ext_resource type="Script" path="res://scripts/data/mission_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/objective_definition.gd" id="2"]
+[sub_resource type="Resource" id="terminal"]
+script = ExtResource("2")
+objective_id = &"streets_terminal"
+display_name = "Recover district records"
+objective_type = 1
+target = 1
+target_id = &"street_terminal"
+required = true
+[sub_resource type="Resource" id="survey"]
+script = ExtResource("2")
+objective_id = &"streets_survey"
+display_name = "Survey the opposite courtyard"
+objective_type = 2
+target = 1
+target_id = &"street_survey"
+required = true
+[resource]
+script = ExtResource("1")
+mission_id = &"streets_recon"
+display_name = "Old Town / Records Run"
+description = "Search a district interior for records, survey the opposite courtyard, and carry salvage to an assigned exit across the district."
+objective_definitions = Array[ExtResource("2")]([SubResource("terminal"), SubResource("survey")])

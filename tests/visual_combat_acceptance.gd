@@ -6,11 +6,17 @@ var battle: Node3D
 var player: PlayerController
 var phase_label: Label
 var _advance_requested := false
+var _capture_dir := OS.get_environment("VISUAL_COMBAT_CAPTURE_DIR")
+var _capture_index := 0
 
 
 func _ready() -> void:
 	var profile := ProfileRuntime.new_profile()
-	SortieRuntime.start_sortie(profile.create_sortie_request(), profile)
+	var ammo: Array[String] = []
+	for item in profile.inventory.get_items():
+		if ContentDB.get_item(item.definition_id).has_tag(&"ammo"):
+			ammo.append(item.instance_id)
+	SortieRuntime.start_sortie(profile.create_sortie_request(SortieRequest.PROTOTYPE_AREA_ID, SortieRequest.PROTOTYPE_MISSION_ID, ammo), profile)
 	battle = BATTLE_SCENE.instantiate()
 	add_child(battle)
 	player = battle.player
@@ -19,6 +25,9 @@ func _ready() -> void:
 	player.health = 10000.0
 	player.global_position = Vector3(0.0, 0.1, 12.0)
 	player.collision_mask = 0
+	if not _capture_dir.is_empty():
+		player.collision_mask = 4
+		battle.set_process(false)
 	battle.camera.size = 4.0
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		enemy.process_mode = Node.PROCESS_MODE_DISABLED
@@ -70,7 +79,7 @@ func _ready() -> void:
 
 	_release_actions()
 	phase_label.text = "VISUAL PASS COMPLETE | R TO REPLAY"
-	if DisplayServer.get_name() == "headless":
+	if DisplayServer.get_name() == "headless" or not _capture_dir.is_empty():
 		await _finish_headless()
 
 
@@ -82,6 +91,19 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _wait_for_enter(title: String) -> void:
+	if not _capture_dir.is_empty() and DisplayServer.get_name() != "headless":
+		phase_label.text = title
+		var frames := 60 if title.begins_with("DODGE") else (40 if title.begins_with("AR RELOAD") else 12)
+		for frame in frames:
+			battle._process(1.0 / 60.0)
+			battle.camera.size = 4.0
+			await get_tree().process_frame
+		DirAccess.make_dir_recursive_absolute(_capture_dir)
+		await RenderingServer.frame_post_draw
+		get_viewport().get_texture().get_image().save_png(_capture_dir.path_join("phase_%02d.png" % _capture_index))
+		print("VISUAL_CAPTURE ", _capture_index, " ", title)
+		_capture_index += 1
+		return
 	if DisplayServer.get_name() == "headless":
 		await get_tree().create_timer(0.12).timeout
 		return

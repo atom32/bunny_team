@@ -8,9 +8,12 @@ var screen: Control
 var intro_time := 0.0
 var intro_card := -1
 var opening := true
+var settings_open := false
 var preferences := ConfigFile.new()
 
 func _ready() -> void:
+	GameLanguage.initialize_game_language()
+	GameLanguage.language_changed.connect(_refresh_language)
 	GameState.presentation_enabled = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	preferences.load("user://presentation.cfg")
@@ -20,13 +23,17 @@ func _ready() -> void:
 	AudioDirector.set_music_context(&"menu")
 	for bus in ["Music", "SFX"]:
 		if preferences.has_section_key("audio", bus):
-			AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), linear_to_db(preferences.get_value("audio", bus)))
+			var value: Variant = preferences.get_value("audio", bus)
+			if SaveService.is_number(value):
+				AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), linear_to_db(clampf(value, 0.0, 1.0)))
 	var layer := CanvasLayer.new()
 	layer.layer = 30
 	add_child(layer)
 	screen = SliceUI.root(layer)
 	if preferences.get_value("opening", "seen", false): show_menu()
 	else: _intro(0)
+	if ProfileRuntime.recovery_required:
+		FlowMenu.call_deferred("show_save_recovery")
 
 func _process(delta: float) -> void:
 	if not opening: return
@@ -35,7 +42,10 @@ func _process(delta: float) -> void:
 	elif int(intro_time / 8.0) != intro_card: _intro(int(intro_time / 8.0))
 
 func _unhandled_input(event: InputEvent) -> void:
-	if opening and (event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel")):
+	if settings_open and event.is_action_pressed("ui_cancel"):
+		show_menu()
+		get_viewport().set_input_as_handled()
+	elif opening and (event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel")):
 		show_menu()
 		get_viewport().set_input_as_handled()
 
@@ -55,6 +65,7 @@ func _intro(index: int) -> void:
 
 func show_menu() -> void:
 	opening = false
+	settings_open = false
 	preferences.set_value("opening", "seen", true)
 	preferences.save("user://presentation.cfg")
 	_clear()
@@ -62,17 +73,26 @@ func show_menu() -> void:
 	SliceUI.label(screen, "BASTION 07 / FIELD OPERATIONS", Vector2(46,66), 15, SliceUI.CYAN)
 	SliceUI.label(screen, "NEON\nBASTION", Vector2(40,106), 62)
 	SliceUI.label(screen, "GO OUT. RECOVER. COME HOME.", Vector2(46,280), 15, SliceUI.MUTED)
-	SliceUI.button(screen, "CONTINUE" if SaveService.save_exists() else "START", Vector2(46,352), Vector2(342,60), _enter)
+	SliceUI.button(screen, "CONTINUE / BASE" if SaveService.save_exists() and not ProfileRuntime.recovery_required else "START", Vector2(46,352), Vector2(342,60), _enter)
 	SliceUI.button(screen, "LOADOUT", Vector2(46,426), Vector2(342,50), func(): GameState.hideout_section = "Hanger"; _enter())
 	SliceUI.button(screen, "SETTINGS", Vector2(46,490), Vector2(342,50), _settings)
-	SliceUI.button(screen, "QUIT", Vector2(46,554), Vector2(342,50), func(): get_tree().quit())
+	SliceUI.button(screen, "QUIT", Vector2(46,554), Vector2(342,50), func(): FlowMenu.request_leave("quit"))
 	SliceUI.label(screen, "INTERNAL VERTICAL SLICE  /  07", Vector2(46,659), 13, SliceUI.MUTED)
 	SliceUI.label(screen, "KOHAKU\nBATTLE FRAME / STANDBY", Vector2(892,574), 17, SliceUI.CYAN)
 
 func _enter() -> void:
-	GameState.open_hideout()
+	if ProfileRuntime.recovery_required:
+		FlowMenu.show_save_recovery()
+		return
+	FlowMenu.request_leave("base")
+
+func _refresh_language() -> void:
+	if opening: _intro(intro_card)
+	elif settings_open: _settings()
+	else: show_menu()
 
 func _settings() -> void:
+	settings_open = true
 	_clear()
 	var panel := SliceUI.panel(screen, Vector2(50,110), Vector2(470,490))
 	SliceUI.label(panel, "SIGNAL / SETTINGS", Vector2(28,26), 28, SliceUI.CYAN)
@@ -93,5 +113,6 @@ func _settings() -> void:
 			preferences.save("user://presentation.cfg")
 		)
 		index += 1
-	SliceUI.label(panel, "WASD move / Mouse aim / LMB fire\nQ switch / R reload / Space dodge / E interact", Vector2(28,326), 15, SliceUI.MUTED)
-	SliceUI.button(panel, "BACK", Vector2(28,402), Vector2(405,54), show_menu)
+	SliceUI.button(panel, "DISPLAY / FULLSCREEN & RESOLUTION", Vector2(28,318), Vector2(405,48), func(): FlowMenu.show_display_settings(false))
+	SliceUI.button(panel, "LANGUAGE / 中文 & ENGLISH", Vector2(28,370), Vector2(405,40), func(): FlowMenu.show_language_settings(false))
+	SliceUI.button(panel, "BACK", Vector2(28,422), Vector2(405,46), show_menu)

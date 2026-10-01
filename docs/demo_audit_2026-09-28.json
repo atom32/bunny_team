@@ -1,0 +1,301 @@
+{
+  "date": "2026-09-28",
+  "commit": "41c4db55a2de85cd7004f6c20c0e0ad07783fb6d",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "declared_project_baseline": "Godot 4.7.2",
+  "method": "Fresh runtime-only copy, no .godot cache; application name changed only in copy to isolate user data. Headless tests, not a new graphical/manual playthrough. Production files and personal saves untouched.",
+  "local_log_directory": "/var/folders/96/kqt4bhy12rs4sx3c0bsj03wm0000gp/T/bunny-demo-audit-20260928-5bfkh2gi",
+  "cold_import": {
+    "exit": 0,
+    "sha256": "4b5e274a4201fefaab969fb95a8855cfc063b63a91f2c88312699e0c1f91d0ed",
+    "errors": [],
+    "warnings": []
+  },
+  "existing_suite": {
+    "passed": 33,
+    "total": 33,
+    "runs": [
+      {
+        "name": "acceptance_smoke",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "ammo_carried_foundation_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "ammo_runtime_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "area_definition_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "carried_inventory_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "combat_tuning_baseline_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "content_inventory_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "damage_packet_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "destructible_world_object_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "enemy_definition_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "enemy_spawn_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "extraction_vertical_slice_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "loadout_decision_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "loadout_state_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "loot_table_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "mission_flow_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "mission_objective_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "objective_world_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "presentation_gameplay_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "profile_state_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "result_return_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "save_service_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "sortie_failure_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "sortie_outcome_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "sortie_session_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "threat_escalation_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "visual_combat_acceptance",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "visual_enemy_acceptance",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "visual_slice_assets_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "weapon_behavior_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "weapon_switching_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "world_interaction_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "name": "world_traversal_test",
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": []
+      }
+    ]
+  },
+  "normal_main": {
+    "exit": 0,
+    "sha256": "a0c906399bdb382ff21ab8ed6298848f904a42b2f14a71d2e28a74a770eceeee",
+    "errors": [],
+    "warnings": [
+      "WARNING: ObjectDB instances leaked at exit (run with --verbose for details)."
+    ]
+  },
+  "edge_probe": {
+    "armor_damage": {
+      "heavy": 25.0,
+      "light": 25.0
+    },
+    "failed_deploy_created_session": false,
+    "hideout_ui_visible_after_failed_deploy": false,
+    "immediate_extraction": true,
+    "large_ammo_stock_added": true,
+    "large_stock_profile_valid": true,
+    "overweight_sortie_created": false,
+    "user_data_dir": "/Users/xudawei/Library/Application Support/Godot/app_userdata/Neon Bastion Audit bunny-demo-audit-20260928-5bfkh2gi",
+    "zero_shot_roundtrip": {
+      "rifle_after": 150,
+      "rifle_before": 120,
+      "rocket_after": 5,
+      "rocket_before": 4
+    }
+  },
+  "expected_diagnostic_errors": {
+    "overweight_deployment": {
+      "sha256": "953498e07ef699973c6dc69403c1bcf0ebcd307c7e350478de96f0c09c8feb6d",
+      "errors": [
+        "ERROR: Could not start prototype sortie"
+      ],
+      "warnings": []
+    },
+    "corrupt_save_boot": {
+      "sha256": "fce4240d762d8482c21caa6846840e418e6537fa9ef9f3d43f8d428ef1b1a57c",
+      "errors": [
+        "ERROR: Could not parse profile save: Expected key",
+        "ERROR: Hanger requires a loaded ProfileState",
+        "SCRIPT ERROR: Invalid call. Nonexistent function 'hide' in base 'Nil'.",
+        "SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'Nil'."
+      ],
+      "warnings": [
+        "WARNING: ObjectDB instances leaked at exit (run with --verbose for details)."
+      ]
+    }
+  },
+  "edge_probe_source": "extends Node3D\nfunc total(inv: InventoryState, id: StringName) -> int:\n\tvar result := 0\n\tfor item in inv.get_items():\n\t\tif item.definition_id == id: result += item.quantity\n\treturn result\nfunc request_for(profile: ProfileState) -> SortieRequest:\n\tvar ids: Array[String] = []\n\tfor item in profile.inventory.get_items():\n\t\tif item.definition_id in [&\"ammo.556_standard\", &\"ammo.rocket_standard\"]: ids.append(item.instance_id)\n\treturn profile.create_sortie_request(SortieRequest.PROTOTYPE_AREA_ID, SortieRequest.PROTOTYPE_MISSION_ID, ids)\nfunc _ready() -> void:\n\tawait get_tree().process_frame\n\tvar result := {\"user_data_dir\": OS.get_user_data_dir()}\n\tvar profile := ProfileState.create_new()\n\tvar before := total(profile.inventory, &\"ammo.556_standard\")\n\tvar rockets_before := total(profile.inventory, &\"ammo.rocket_standard\")\n\tvar session := SortieSession.create_from_profile(request_for(profile),profile)\n\tsession.activate()\n\tresult[\"immediate_extraction\"] = session.complete_extraction()\n\tvar outcome := SortieOutcomeService.create_outcome(session)\n\tSortieOutcomeService.commit_outcome(profile,outcome)\n\tresult[\"zero_shot_roundtrip\"] = {\"rifle_before\":before,\"rifle_after\":total(profile.inventory,&\"ammo.556_standard\"),\"rocket_before\":rockets_before,\"rocket_after\":total(profile.inventory,&\"ammo.rocket_standard\")}\n\tvar player := load(\"res://scenes/player/player.tscn\").instantiate() as PlayerController\n\tplayer.configure_loadout(profile.inventory,profile.loadout)\n\tadd_child(player)\n\tawait get_tree().process_frame\n\tvar light_damage := player.receive_damage(DamagePacket.new(25.0))\n\tplayer.equip_armor(ContentDB.get_item(&\"armor.bulwark_plate_01\") as EquipmentDefinition)\n\tvar heavy_damage := player.receive_damage(DamagePacket.new(25.0))\n\tresult[\"armor_damage\"] = {\"light\":light_damage,\"heavy\":heavy_damage}\n\tplayer.queue_free()\n\tawait get_tree().process_frame\n\tprofile = ProfileRuntime.new_profile()\n\tresult[\"large_ammo_stock_added\"] = profile.inventory.add_item(ItemInstance.new(&\"ammo.556_standard\",10000))\n\tresult[\"large_stock_profile_valid\"] = profile.validate()\n\tresult[\"overweight_sortie_created\"] = SortieSession.create_from_profile(request_for(profile),profile) != null\n\tvar hideout = load(\"res://scenes/presentation/slice/hideout.tscn\").instantiate()\n\tadd_child(hideout)\n\thideout.show_section(\"Operations\")\n\thideout._deploy()\n\tresult[\"hideout_ui_visible_after_failed_deploy\"] = hideout.ui.visible\n\tresult[\"failed_deploy_created_session\"] = SortieRuntime.get_current_session() != null\n\thideout.queue_free()\n\tawait get_tree().process_frame\n\tvar f := FileAccess.open(OS.get_environment(\"BUNNY_EVIDENCE\").path_join(\"edge_probe.json\"),FileAccess.WRITE)\n\tf.store_string(JSON.stringify(result,\"  \")); f.close()\n\tprint(\"AUDIT_EDGE_PROBE \",JSON.stringify(result))\n\tvar bad_save := FileAccess.open(\"user://profile.json\",FileAccess.WRITE)\n\tbad_save.store_string(\"{broken\"); bad_save.close()\n\tAudioDirector.shutdown_for_test()\n\tawait get_tree().create_timer(0.3).timeout\n\tget_tree().quit()\n",
+  "historical_graphical_evidence": "art_source/phase5/route_Rifle/route_result.json and route_SMG/route_result.json; retained, not rerun."
+}

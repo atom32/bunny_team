@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+STREETS_COMBAT_LAYOUT seed=8 spawn=2 task=1 exits=["SOUTH SERVICE GATE", "SOUTH TRAM CHECKPOINT"]
+STREETS_COMBAT reached StreetTerminal health=260.0 fired=10
+STREETS_COMBAT reached StreetSurvey health=260.0 fired=19
+STREETS_COMBAT reached IndoorLoot2_6 health=260.0 fired=28
+STREETS_COMBAT reached Exit0 health=260.0 fired=28
+STREETS_COMBAT_RUN fired=28 reloads=1 kills=9 moved_enemies=9 recovered=1 failures=[]

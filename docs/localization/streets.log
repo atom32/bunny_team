@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+SESSION <RefCounted#-9223371919431038781>
+SPAWN 0 EXITS ["NORTH ARCHWAY", "NORTH LOADING GATE"] LOOT 18
+NAV ACTIVE true iteration 1 closest (-48.0, 0.03, 49.0)
+MAP RID(165927471546368) regions [RID(165923176579072)] polys 3230
+NAV TO TERMINAL 39 end (-25.0, 0.03, 24.5)
+CAMERA_BASIS_UNCHANGED true

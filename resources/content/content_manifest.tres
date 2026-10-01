@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ContentManifest" load_steps=24 format=3]
+[gd_resource type="Resource" script_class="ContentManifest" load_steps=35 format=3]
 
 [ext_resource type="Script" path="res://scripts/data/content_manifest.gd" id="1_manifest"]
 [ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="2_item"]
@@ -24,10 +24,24 @@
 [ext_resource type="Resource" path="res://resources/enemies/prototype_heavy_enemy.tres" id="22_prototype_heavy_enemy"]
 [ext_resource type="Resource" path="res://resources/loot/prototype_high_value_loot.tres" id="23_prototype_high_value_loot"]
 
+[ext_resource type="Resource" path="res://resources/weapons/pistol.tres" id="24_modern"]
+[ext_resource type="Resource" path="res://resources/weapons/shotgun.tres" id="25_modern"]
+[ext_resource type="Resource" path="res://resources/weapons/sniper.tres" id="26_modern"]
+[ext_resource type="Resource" path="res://resources/weapons/lmg.tres" id="27_modern"]
+[ext_resource type="Resource" path="res://resources/ammo/9mm_standard.tres" id="28_modern"]
+[ext_resource type="Resource" path="res://resources/ammo/12g_buckshot.tres" id="29_modern"]
+[ext_resource type="Resource" path="res://resources/ammo/762_standard.tres" id="30_modern"]
+
+[ext_resource type="Resource" path="res://resources/missions/first_mission.tres" id="31_first"]
+[ext_resource type="Resource" path="res://resources/areas/first_mission.tres" id="32_first"]
+
+[ext_resource type="Resource" path="res://resources/areas/street_district.tres" id="33_streets"]
+[ext_resource type="Resource" path="res://resources/missions/streets_recon.tres" id="34_streets"]
+
 [resource]
 script = ExtResource("1_manifest")
-definitions = Array[ExtResource("2_item")]([ExtResource("3_rifle"), ExtResource("4_smg"), ExtResource("5_rocket"), ExtResource("6_light"), ExtResource("7_heavy"), ExtResource("8_pack"), ExtResource("9_thruster"), ExtResource("10_standard"), ExtResource("11_ap"), ExtResource("12_salvage"), ExtResource("13_rocket_ammo")])
-missions = Array[ExtResource("14_mission_definition")]([ExtResource("15_prototype_combat")])
+definitions = Array[ExtResource("2_item")]([ExtResource("3_rifle"), ExtResource("4_smg"), ExtResource("5_rocket"), ExtResource("6_light"), ExtResource("7_heavy"), ExtResource("8_pack"), ExtResource("9_thruster"), ExtResource("10_standard"), ExtResource("11_ap"), ExtResource("12_salvage"), ExtResource("13_rocket_ammo"), ExtResource("24_modern"), ExtResource("25_modern"), ExtResource("26_modern"), ExtResource("27_modern"), ExtResource("28_modern"), ExtResource("29_modern"), ExtResource("30_modern")])
+missions = Array[ExtResource("14_mission_definition")]([ExtResource("15_prototype_combat"), ExtResource("31_first"), ExtResource("34_streets")])
 loot_tables = Array[ExtResource("16_loot_table_definition")]([ExtResource("17_prototype_basic_loot"), ExtResource("23_prototype_high_value_loot")])
-areas = Array[ExtResource("18_area_definition")]([ExtResource("19_prototype_arena")])
+areas = Array[ExtResource("18_area_definition")]([ExtResource("19_prototype_arena"), ExtResource("32_first"), ExtResource("33_streets")])
 enemies = Array[ExtResource("20_enemy_definition")]([ExtResource("21_prototype_basic_enemy"), ExtResource("22_prototype_heavy_enemy")])

@@ -1,0 +1,68 @@
+{
+  "chapters": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "C11",
+    "C12"
+  ],
+  "bosses": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08"
+  ],
+  "key_scenes": [
+    "K01",
+    "K02",
+    "K03",
+    "K04",
+    "K05",
+    "K06",
+    "K07",
+    "K08",
+    "K09",
+    "K10",
+    "K11",
+    "K12",
+    "K13",
+    "K14",
+    "K15",
+    "K16",
+    "K17",
+    "K18"
+  ],
+  "fan_service": [
+    "FS01",
+    "FS02",
+    "FS03",
+    "FS04",
+    "FS05"
+  ],
+  "supporting_women": [
+    "C-SM",
+    "C-SY",
+    "C-QY",
+    "C-TK",
+    "C-LN",
+    "C-WX",
+    "C-GQ",
+    "C-CX"
+  ],
+  "dialogue_count": 95,
+  "dialogue_missing": [],
+  "missing_links": [],
+  "link_scope": "Narrative package and current trial/readme/tracker/handoff section; historical intentionally local-only media excluded.",
+  "implementation_status": "Narrative design only; campaign not implemented."
+}

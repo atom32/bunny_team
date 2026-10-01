@@ -1,9 +1,11 @@
 class_name UIFactory
 extends RefCounted
+const FONT := preload("res://resources/fonts/game_ui.tres")
 
 
 static func theme() -> Theme:
 	var result := Theme.new()
+	result.default_font = FONT
 	result.default_font_size = 18
 	result.set_font_size("font_size", "Label", 18)
 	result.set_font_size("font_size", "Button", 18)
@@ -31,4 +33,3 @@ static func panel_style(fill: Color, border: Color) -> StyleBoxFlat:
 	style.content_margin_top = 12.0
 	style.content_margin_bottom = 12.0
 	return style
-

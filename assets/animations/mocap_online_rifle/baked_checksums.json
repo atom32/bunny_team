@@ -1,0 +1,37 @@
+[
+  {
+    "file": "W2_Jog_Aim_F_Loop.tres",
+    "sha256": "c77b434ce615ea5c61dc6cc811a77a88722288b8e393a6a009b69ae4024fa5ce",
+    "source_sha256": "4e40a964753930da5317d29f80a3cdc48061628729ba59aabf07d411fbf6e2d5"
+  },
+  {
+    "file": "W2_Jog_Aim_F_Loop_IPC.tres",
+    "sha256": "9fb08f855a7c853e140ae4a349e51d685804c76cc644fe786b4c013e82fddff1",
+    "source_sha256": "fc4d24b1fbf8e16ff0ad2c8674f1c34ab5dd5904e265818d79986b7204a34e3d"
+  },
+  {
+    "file": "W2_Stand_Aim_Idle_v2.tres",
+    "sha256": "c18852a886d60d0ce44d57754738a18e0f671a462ea2eb4f1694bedc14656199",
+    "source_sha256": "8f04425978faf4cc05e918f0149328cda66066b05bc81cf452cae1aad08be48f"
+  },
+  {
+    "file": "W2_Stand_Aim_To_Relaxed.tres",
+    "sha256": "c75aa1f4ba736ac8574a37f5cee134f8758b5dc6dc8ac9d0d16ce861b5a1bd92",
+    "source_sha256": "30acedf20321db598e9e0da6cb2360e2f5008613b012eb65ec32c66d6bd54a5a"
+  },
+  {
+    "file": "W2_Stand_Relaxed_Idle_v2.tres",
+    "sha256": "5fcceacc16a16d4a2fe3f6b887a32cc369823b0ac17e579d27a3e01550652804",
+    "source_sha256": "5e2761a86c712c12c14cd32a6b9acad08a140d9b4a4810705b698401a14647fb"
+  },
+  {
+    "file": "W2_Walk_Aim_F_Loop.tres",
+    "sha256": "34449a0e8e00afc45b776e576beaf697fd97ed422629108d3812a739ebb1c642",
+    "source_sha256": "fab7af72e2762b898e7e8adde480b062f103e4407d2a68d0e547507d03a3d21e"
+  },
+  {
+    "file": "W2_Walk_Aim_F_Loop_IPC.tres",
+    "sha256": "65363f5f80f392bb6a40345694f31396aa52324be376adc9afa698e83d8b21ed",
+    "source_sha256": "450398481d2b8bffd0dfe03d0ca825a22296dfa721110dd69471366dcc2093f4"
+  }
+]

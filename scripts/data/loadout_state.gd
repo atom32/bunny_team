@@ -81,6 +81,8 @@ func to_dict() -> Dictionary:
 static func from_dict(data: Dictionary) -> LoadoutState:
 	var loadout := LoadoutState.new()
 	for serialized_slot in data:
+		if typeof(serialized_slot) != TYPE_STRING or typeof(data[serialized_slot]) != TYPE_STRING:
+			return null
 		var slot_id := StringName(serialized_slot)
 		if slot_id not in SLOT_IDS:
 			return null

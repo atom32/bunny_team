@@ -1,0 +1,7 @@
+Low Poly Rocket Launcher — Khairul Hidayat (khairul169)
+CC0 1.0 Universal (CC0 1.0), Public Domain Dedication
+Author's license declaration: https://opengameart.org/content/low-poly-rocket-launcher
+License text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The original archive's separate README says MIT; it is retained unmodified at
+art_source/modern_arsenal/launcher_source/README.txt. See SOURCE.md.

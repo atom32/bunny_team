@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapons/weapon_visual.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/weapons/modern_arsenal/pistol.glb" id="2"]
+
+[node name="Pistol" type="Node3D"]
+script = ExtResource("1")
+hand_pose = &"Rifle"
+authored_grips = true
+
+[node name="Art" type="Node3D" parent="."]
+
+[node name="Model" parent="Art" instance=ExtResource("2")]
+scale = Vector3(2.272727, 2.272727, 2.272727)
+
+[node name="Muzzle" type="Marker3D" parent="."]
+position = Vector3(0.000000, 0.058603, -0.599623)
+
+[node name="PrimaryGrip" type="Marker3D" parent="."]
+position = Vector3(0.070000, -0.160000, -0.150000)
+
+[node name="SupportGrip" type="Marker3D" parent="."]
+position = Vector3(-0.045455, -0.188636, -0.170455)
+
+[node name="ReloadGrip" type="Marker3D" parent="."]
+position = Vector3(0.000000, -0.363636, -0.150000)

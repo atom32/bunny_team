@@ -34,7 +34,7 @@ func _test_failed_sortie_data_boundary() -> void:
 	for _round in 10:
 		check(session.fire_weapon(weapon_id), "failure fixture consumes an available magazine round")
 	var weapon_state: Variant = session.get_weapon_runtime_state(weapon_id)
-	check(weapon_state.magazine_ammo == 20 and session.get_reserve_ammo(weapon_id) == 80, "failure fixture has magazine 20 and reserve 80")
+	check(weapon_state.magazine_ammo == 20 and session.get_reserve_ammo(weapon_id) == 50, "failure fixture has magazine 20 and reserve 50")
 	var recovered_loot := ItemInstance.new(&"loot.salvage_core_01", 1, 100.0, "failed_sortie_loot")
 	check(session.inventory.add_item(recovered_loot), "failure fixture picks up sortie-only loot")
 	check(profile.to_dict() == profile_before, "fire and loot leave warehouse unchanged before death")
@@ -51,7 +51,7 @@ func _test_failed_sortie_data_boundary() -> void:
 	check(not session.fire_weapon(weapon_id), "FAILED session cannot fire")
 	check(session.reload_weapon(weapon_id) == 0, "FAILED session cannot reload")
 	check(weapon_state.magazine_ammo == failed_magazine and session.inventory.to_dict() == failed_inventory, "failed fire and reload leave runtime ammo unchanged")
-	check(weapon_state.magazine_ammo == 20 and session.get_reserve_ammo(weapon_id) == 80, "death does not materialize magazine ammunition")
+	check(weapon_state.magazine_ammo == 20 and session.get_reserve_ammo(weapon_id) == 50, "death does not materialize magazine ammunition")
 
 	var blocked_pickup := LOOT_PICKUP_SCENE.instantiate() as LootPickup
 	blocked_pickup.setup(ItemInstance.new(&"loot.salvage_core_01", 1, 100.0, "blocked_failed_loot"))
@@ -87,11 +87,11 @@ func _test_completed_path_regression() -> void:
 	for _round in 10:
 		session.fire_weapon(weapon_id)
 	check(session.complete_extraction(), "completed regression still extracts successfully")
-	check(_total_ammo(session.inventory, &"ammo.556_standard") == 140, "completed extraction still materializes remaining magazine ammo")
+	check(_total_ammo(session.inventory, &"ammo.556_standard") == 110, "completed extraction still materializes remaining magazine ammo")
 	var outcome := SortieOutcomeService.create_outcome(session)
 	check(outcome != null and outcome.result_type == SortieOutcome.ResultType.COMPLETED, "completed regression creates recovered outcome")
 	check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, "completed regression commits recovery")
-	check(_total_ammo(profile.inventory, &"ammo.556_standard") == 140, "completed regression updates warehouse ammo")
+	check(_total_ammo(profile.inventory, &"ammo.556_standard") == 110, "completed regression updates warehouse ammo")
 
 
 func _test_player_death_integration() -> void:
@@ -108,7 +108,7 @@ func _test_player_death_integration() -> void:
 	var player := battle.find_child("Player", true, false) as PlayerController
 	check(player != null and session.status == SortieSession.Status.ACTIVE, "death integration starts with active player and session")
 	if player:
-		player.take_damage(player.max_health + 1.0)
+		player.take_damage(player.max_health / (1.0 - player.get_protection()) + 1.0)
 		await get_tree().process_frame
 		check(player.is_dead, "lethal health damage marks player dead")
 		check(session.status == SortieSession.Status.FAILED, "player death transitions active session to FAILED")

@@ -2,6 +2,8 @@ class_name InventoryState
 extends RefCounted
 
 var capacity: float
+# Loaded rounds still occupy carrying capacity; this is runtime-only, never a warehouse field.
+var reserved_weight := 0.0
 var current_weight: float:
 	get:
 		return _calculate_weight()
@@ -94,12 +96,14 @@ func get_remaining_capacity() -> float:
 
 
 func validate() -> bool:
+	if not is_finite(capacity) or capacity < 0 or not is_finite(reserved_weight) or reserved_weight < 0:
+		return false
 	var instance_ids: Dictionary = {}
 	var total_weight := 0.0
 	for item in _items:
 		if not item or item.instance_id.is_empty() or item.definition_id.is_empty() or item.quantity <= 0:
 			return false
-		if item.durability < 0.0 or item.durability > 100.0 or instance_ids.has(item.instance_id):
+		if not is_finite(item.durability) or item.durability < 0.0 or item.durability > 100.0 or instance_ids.has(item.instance_id):
 			return false
 		var definition := ContentDB.get_item(item.definition_id, false)
 		if not definition:
@@ -111,7 +115,7 @@ func validate() -> bool:
 			return false
 		instance_ids[item.instance_id] = true
 		total_weight += definition.weight * item.quantity
-	return total_weight <= capacity + 0.0001
+	return total_weight + reserved_weight <= capacity + 0.0001
 
 
 func to_dict() -> Dictionary:
@@ -127,13 +131,18 @@ func to_dict() -> Dictionary:
 static func from_dict(data: Dictionary) -> InventoryState:
 	var serialized_items: Variant = data.get("items", null)
 	var serialized_capacity: Variant = data.get("capacity", null)
-	if typeof(serialized_items) != TYPE_ARRAY or serialized_capacity == null or float(serialized_capacity) < 0.0:
+	if typeof(serialized_items) != TYPE_ARRAY or not SaveService.is_number(serialized_capacity) or serialized_capacity < 0.0 or serialized_capacity > 1000000000.0:
+		return null
+	if serialized_items.size() > 10000:
 		return null
 	var inventory := InventoryState.new(float(serialized_capacity))
 	for item_data in serialized_items:
 		if typeof(item_data) != TYPE_DICTIONARY:
 			return null
-		inventory._items.append(ItemInstance.from_dict(item_data))
+		var item := ItemInstance.from_dict(item_data)
+		if not item:
+			return null
+		inventory._items.append(item)
 	return inventory
 
 
@@ -184,4 +193,4 @@ func _calculate_weight() -> float:
 		var definition := ContentDB.get_item(item.definition_id, false)
 		if definition:
 			total += definition.weight * item.quantity
-	return total
+	return total + reserved_weight

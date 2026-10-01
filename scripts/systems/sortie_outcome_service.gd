@@ -22,6 +22,9 @@ static func commit_outcome(profile: ProfileState, outcome: SortieOutcome) -> Err
 				inventory_snapshot.remove_item(carried_instance_id)
 			for recovered_item in outcome.inventory.get_items():
 				inventory_snapshot.remove_item(recovered_item.instance_id)
+				# Overflow expands warehouse storage, never blocks recovery or discards loot.
+				var definition := ContentDB.get_item(recovered_item.definition_id, false)
+				inventory_snapshot.capacity = maxf(inventory_snapshot.capacity, inventory_snapshot.current_weight + definition.weight * recovered_item.quantity)
 				var recovered_snapshot := ItemInstance.from_dict(recovered_item.to_dict())
 				if not recovered_snapshot or not inventory_snapshot.add_item_preserving_instance(recovered_snapshot):
 					return ERR_INVALID_DATA

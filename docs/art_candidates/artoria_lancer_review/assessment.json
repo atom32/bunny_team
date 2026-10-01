@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-29",
+  "source": {
+    "path": "/Users/xudawei/Downloads/ArtoriaLancer_AllVersion_ARP_MustardUI.blend",
+    "bytes": 984015022,
+    "sha256": "1fa53fe6e60a54c4243b2a8dc2b656bf2f4d3c3080fc69cbdf05c4495ccda06a",
+    "modified_ns": 1790673600906313506
+  },
+  "inspection_only": true,
+  "source_saved_or_replaced": false,
+  "game_integration_tested": false,
+  "renderer": "Blender 5.2.1 LTS / Cycles, neutral studio lighting, saved BasePose",
+  "variant_reviewed": "ArtoriaLancer Default + default hair, body and eyes",
+  "visible_meshes": 18,
+  "visible_base_triangles": 334846,
+  "current_player_runtime_triangles": 37359,
+  "hair_triangles": 171168,
+  "cape_fur_triangles": 50308,
+  "main_rig_bones": 1083,
+  "main_rig_deform_flags": 523,
+  "main_rig_drivers": 665,
+  "active_materials": 13,
+  "all_image_datablocks": 162,
+  "packed_images": 160,
+  "missing_external_file_images": [],
+  "active_material_referenced_images": 67,
+  "undefined_nodes_in_active_materials": [],
+  "height_m": 1.7972737711388618,
+  "animation_observation": "Named walk actions and static poses found; complete shooter/run/dodge/reload set not identified. Actions not retargeted or gameplay-tested.",
+  "license_observation": "No accompanying license/readme found beside the provided file; no embedded text blocks. Distribution permissions not established by this inspection."
+}

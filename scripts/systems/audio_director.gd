@@ -5,6 +5,10 @@ const SFX_STREAMS := {
 	&"ar_fire": preload("res://assets/audio/ar_fire.wav"),
 	&"smg_fire": preload("res://assets/audio/smg_fire.wav"),
 	&"rocket_fire": preload("res://assets/audio/rocket_fire.wav"),
+	&"pistol_fire": preload("res://assets/audio/modern_pistol.wav"),
+	&"shotgun_fire": preload("res://assets/audio/modern_shotgun.wav"),
+	&"sniper_fire": preload("res://assets/audio/modern_sniper.wav"),
+	&"lmg_fire": preload("res://assets/audio/modern_lmg.wav"),
 	&"enemy_fire": preload("res://assets/audio/enemy_fire.wav"),
 	&"impact": preload("res://assets/audio/impact.wav"),
 	&"player_hurt": preload("res://assets/audio/player_hurt.wav"),
@@ -78,6 +82,14 @@ func set_music_context(context: StringName, immediate: bool = false) -> void:
 
 func play_weapon(weapon_id: StringName) -> void:
 	match weapon_id:
+		&"weapon.pistol_01":
+			play_sfx(&"pistol_fire", -2.0, 0.02)
+		&"weapon.shotgun_01":
+			play_sfx(&"shotgun_fire", -1.0, 0.025)
+		&"weapon.sniper_01":
+			play_sfx(&"sniper_fire", -1.0, 0.015)
+		&"weapon.lmg_01":
+			play_sfx(&"lmg_fire", -2.5, 0.025)
 		&"weapon.smg_01":
 			play_sfx(&"smg_fire", 0.0, 0.035)
 		&"weapon.rocket_launcher_01":

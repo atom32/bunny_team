@@ -10,7 +10,7 @@ var hanger_ui: HangerUI
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	AudioDirector.set_music_context(&"hanger")
-	VisualFactory.add_world_environment(self, Color("0a111b"))
+	VisualFactory.add_world_environment(self, Color("0a111b"), 0.65)
 	_build_hanger()
 	var profile := ProfileRuntime.get_profile()
 	if not profile:
@@ -26,6 +26,11 @@ func _ready() -> void:
 	hanger_ui.armor_selected.connect(_on_armor_selected)
 	hanger_ui.backpack_selected.connect(_on_backpack_selected)
 	hanger_ui.deploy_requested.connect(_on_deploy_requested)
+	hanger_ui.equipment_changed.connect(func():
+		var current := ProfileRuntime.get_profile()
+		_build_preview_character(current.inventory, current.loadout)
+		hanger_ui.sync_loadout_selection()
+	)
 
 
 func _build_hanger() -> void:
@@ -82,8 +87,8 @@ func _build_camera() -> void:
 	key_light.position = Vector3(-4.2, 5.6, 3.6)
 	add_child(key_light)
 	key_light.look_at(Vector3(-2.2, 1.0, 0.0), Vector3.UP)
-	key_light.light_color = Color("c9f6ff")
-	key_light.light_energy = 2.6
+	key_light.light_color = Color("f5f3ed")
+	key_light.light_energy = 0.75
 	key_light.spot_range = 10.0
 	key_light.shadow_enabled = true
 
@@ -138,30 +143,34 @@ func _on_backpack_selected(instance_id: String) -> void:
 	hanger_ui.sync_loadout_selection()
 
 
-func _on_deploy_requested() -> void:
+func _on_deploy_requested() -> bool:
+	if ProfileRuntime.recovery_required:
+		FlowMenu.show_save_recovery()
+		return false
+	if GameState.is_transitioning():
+		return false
 	var profile := ProfileRuntime.get_profile()
-	var carried_ammo_ids := _get_carried_ammo_ids(profile) if profile else [] as Array[String]
-	var request := profile.create_sortie_request(
-		SortieRequest.PROTOTYPE_AREA_ID,
-		SortieRequest.PROTOTYPE_MISSION_ID,
-		carried_ammo_ids
-	) if profile else null
-	if not request or not SortieRuntime.start_sortie(request, profile):
-		push_error("Could not start prototype sortie")
-		return
-	GameState.begin_mission()
+	var plan := DeploymentPlan.build(profile)
+	if not plan.error.is_empty():
+		FlowMenu.show_error(plan.error)
+		return false
+	var first := GameState.presentation_enabled and not profile.first_mission_completed
+	if first and not FirstMissionPreparation.has_starter_kit(profile):
+		FlowMenu.show_error("First Mission requires AR in PRIMARY WEAPON and SMG in SECONDARY WEAPON. Equip them in the Hanger, then confirm deployment.")
+		return false
+	var request := profile.create_sortie_request(&"first_mission_area" if first else (&"street_district" if GameState.presentation_enabled else SortieRequest.PROTOTYPE_AREA_ID), &"first_mission" if first else (&"streets_recon" if GameState.presentation_enabled else SortieRequest.PROTOTYPE_MISSION_ID), plan.ammo_ids)
+	if not SortieRuntime.start_sortie(request, profile):
+		FlowMenu.show_error(SortieRuntime.last_error)
+		return false
+	var scene_error := GameState.begin_mission()
+	if scene_error != OK:
+		SortieRuntime.clear_session()
+		FlowMenu.show_error("Could not open deployment: %s. Retry from loadout." % error_string(scene_error))
+		return false
+	if first:
+		profile.bunny_selected = true
+	return true
 
 
 func _get_carried_ammo_ids(profile: ProfileState) -> Array[String]:
-	var instance_ids: Array[String] = []
-	var ammo_definition_ids: Dictionary = {}
-	for slot_id in LoadoutState.WEAPON_SLOT_IDS:
-		var weapon_item := profile.loadout.get_item(slot_id, profile.inventory)
-		var weapon_definition := ContentDB.get_weapon(weapon_item.definition_id, false) if weapon_item else null
-		var ammo_definition_id := weapon_definition.get_runtime_ammo_definition_id() if weapon_definition else &""
-		if not ammo_definition_id.is_empty():
-			ammo_definition_ids[ammo_definition_id] = true
-	for item in profile.inventory.get_items():
-		if ammo_definition_ids.has(item.definition_id):
-			instance_ids.append(item.instance_id)
-	return instance_ids
+	return DeploymentPlan.build(profile).ammo_ids

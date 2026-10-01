@@ -1,0 +1,7 @@
+{
+	"device": "Apple M5 (Apple9)",
+	"frame_ms_median": 16.708,
+	"frame_ms_p95": 18.217,
+	"renderer": "forward_plus",
+	"sample_frames": 90
+}

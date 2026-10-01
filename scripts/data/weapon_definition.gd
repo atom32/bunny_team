@@ -7,6 +7,10 @@ extends EquipmentDefinition
 @export var fire_mode: StringName
 @export var action_type: StringName = &"hitscan"
 @export var uses_combat_rig := false
+@export_range(1, 32, 1) var pellets_per_shot := 1
+@export_range(0.0, 20.0, 0.1) var spread_degrees := 0.0
+@export_range(0.1, 10.0, 0.1) var reload_seconds := 0.9
+@export_range(0.0, 30.0, 0.1) var aim_camera_extension := 0.0
 
 @export var damage: float = 10.0
 @export_range(0.0, 10000.0, 0.1, "or_greater") var armor_penetration := 0.0

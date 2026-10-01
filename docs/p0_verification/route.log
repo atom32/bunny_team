@@ -1,0 +1,22 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+PHASE2B_ROUTE: AUTOMATED INPUT/API, NOT MANUAL; NORMAL AI; NO TELEPORT/INVULNERABILITY
+CAPTURE 01_hanger (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 26.0) reached (-15.63162, -0.024161, 26.19434)
+CAPTURE 02_entrance (1280, 720) error=0
+WAYPOINT (-16.0, 0.0, 24.7) reached (-16.05285, -0.02416, 25.0124)
+WAYPOINT (-16.0, 0.0, 21.5) reached (-16.05275, -0.004168, 21.88035)
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.09188, -0.005112, 21.10827)
+CAPTURE 03_inside (1280, 720) error=0
+WAYPOINT (-19.5, 0.0, 13.1) reached (-19.68423, -0.004171, 13.3839)
+CAPTURE 04_terminal (1280, 720) error=0
+WAYPOINT (-19.5, 0.0, 21.0) reached (-19.68347, -0.004402, 20.69722)
+WAYPOINT (-16.0, 0.0, 21.5) reached (-16.42413, -0.005848, 21.56873)
+WAYPOINT (-16.0, 0.0, 26.0) reached (-15.86356, -0.024161, 25.66795)
+CAPTURE 05_exit (1280, 720) error=0
+WAYPOINT (0.0, 0.0, 30.0) reached (-0.31108, -0.02416, 30.20063)
+WAYPOINT (2.5, 0.0, 32.0) reached (2.150426, -0.024161, 32.12524)
+OUTCOME enemies_defeated=0 damage_taken=3 mission_completed=false
+CAPTURE 06_result (1280, 720) error=0
+{"checks":{"Combat still works":true,"Door interaction":true,"Enter Field Office":true,"Exit Field Office":true,"Extraction":true,"Field Office entrance visible":true,"Hanger launches":true,"Interior traversal":true,"Player movement":true,"Production camera":true,"Result":true,"Return to original route":true,"Terminal area reachable":true},"combat":{"damage_taken":3,"enemies_defeated":0,"shots":58},"combat_scope":"weapon fire and normal enemy AI; kill/damage semantics are covered by regression suites","failure":"","method":"automated input/API, not manual","mission_completed":false}

@@ -1,16 +1,21 @@
-[gd_resource type="Resource" script_class="EquipmentDefinition" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="EquipmentDefinition" load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/data/equipment_definition.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/equipment/heavy_armor.tscn" id="2"]
 
+[ext_resource type="Texture2D" path="res://assets/ui/stash/bulwark_plate_01.png" id="stash_icon"]
+
 [resource]
 script = ExtResource("1")
+icon = ExtResource("stash_icon")
+stash_size = Vector2i(3, 3)
 id = &"armor.bulwark_plate_01"
 display_name = "Bulwark Plate"
-description = "Heavy armor that trades speed for protection."
+description = "Heavy armor: lower mobility, 40% incoming damage reduction, 8 kg carry weight."
 weight = 8.0
 base_value = 1800
 item_tags = PackedStringArray("equipment", "armor")
 socket_name = &"Chest"
 scene = ExtResource("2")
-movement_modifier = -0.65
+movement_modifier = -1.5
+damage_reduction = 0.4

@@ -6,8 +6,9 @@
 [resource]
 script = ExtResource("1_definition")
 id = &"prototype_basic_enemy"
-display_name = "Prototype Basic Enemy"
+display_name = "PMC Patrol"
 scene = ExtResource("2_scene")
+humanoid_presentation = true
 max_health = 60.0
 armor = 0.0
 move_speed = 3.2

@@ -1,6 +1,37 @@
 # Bunny Team — Current Project Handoff
 
-## Current checkpoint — Phase 5 + portable development sync (2026-09-27)
+## Current checkpoint — First Mission, Streets, bilingual UI and spatial warehouse (2026-10-01)
+
+- Godot 4.7.2 / Forward+, normal entry `scenes/presentation/slice/boot.tscn`. This checkpoint collects the improvements since `41c4db5`; the older sections below retain historical context.
+- [First Mission](docs/FIRST_MISSION.md) is an authored tutorial sortie with investigation, alarm reinforcements, optional extra salvage, timed extraction and a single permanent Workshop upgrade: 1 Salvage Core → AR damage 20 to 22. Manual AR-primary/SMG-secondary loadouts can deploy. The 8–10 minute target still needs a newcomer timing pass.
+- [Armor](docs/ARMOR_TRADEOFF.md) now trades mobility for actual protection: light 10% reduction / 3 kg, heavy 40% / 8 kg. HUD and equipment readouts use runtime calculations.
+- After the first mission, [Streets](docs/STREETS_DISTRICT.md) provides six randomized spawn candidates, two assigned exits, randomized investigation, four enterable interiors and indoor/outdoor loot. Camera orientation stays fixed; occluders fade. Six combat-active automated routes have passed; this is not human difficulty validation.
+- Seven weapons and the scarf-free imported Bunny remain playable. The production AR uses the MCO pack M4 and calibrated hand IK. The [master-shot study](docs/bunny_master/README.md) is not a final visual standard; MCO pose samples are not a replacement for gameplay locomotion.
+- English / Simplified Chinese can switch live; new launches default to Chinese until a preference is saved. Font and translations are bundled. Fullscreen, window resolution and F11 are available. The compact battle HUD and tutorial preserve the central view.
+- Hanger warehouse has item footprints, model thumbnails, native mouse drag/drop, R rotation, sorting, selected-item details and persistent cell positions. Drag equipment icons to unequip or swap slots; names retain dropdown selection. Grid rows grow for recovered items; no finite-slot capacity or nested containers are implemented.
+- Existing P0 pause, recovery, atomic save and ammunition conservation remain. Death/abandonment preserve pre-sortie warehouse equipment; Continue restores base state, not an interrupted battle.
+- Narrative chapters/Bosses remain design documents. Original-source/asset notices remain in [THIRD_PARTY_ASSETS.md](THIRD_PARTY_ASSETS.md). Model/material fidelity, manual first play and target-platform performance remain open.
+- This checkpoint verification: **43/43 scene tests**, **5/5 actual quit paths**, Main and a graphical warehouse probe pass. Cold import has zero errors and two known source-FBX UTF-8 metadata warnings; Main retains its known ObjectDB exit warning. Evidence: [checkpoint report](docs/checkpoint_2026-10-01/README.md).
+- Validation tooling now expects the current 43 test scenes. Recent targeted evidence is in `docs/stash/`, `docs/localization/`, `docs/hud_layout/` and `docs/streets/`. Use isolated saves for all checks.
+- The discussion about separating base presentation from a dedicated warehouse screen is a proposed next UI change; it is not implemented in this checkpoint.
+
+## Historical working tree — P0 recovery / shared rendering / modern arsenal (2026-09-30)
+
+- `main @ 41c4db5` plus uncommitted WIP. An earlier requested pull brought in the recent upstream work; this implementation is not committed or pushed.
+- Godot 4.7.2 / **Forward+ desktop + 4× MSAA**; shared AgX/environment reflection/SSAO/glow in `scripts/systems/render_profile.gd`. Compatibility launch fallback remains. Normal Boot → Hideout → Hanger → Battle → Result loop remains.
+- Seven modern weapons: P9, SMG-9, AR-556, S12, R7, LMG-56 and separately textured RPG. See [arsenal](docs/MODERN_ARSENAL.md).
+- Visible player: user-selected **Artoria Bunny Suit with scarf hidden**; imported geometry, baked textures, 157,293 triangles, 52 display joints and 11 meshes. Existing Unity-Chan locomotion remains a hidden driver; original Unity-Chan geometry/textures were not edited. Source blend remains unchanged. This is an internal prototype, not commercial asset clearance.
+- Actual enemies now include imported Quaternius SciFi human patrols and KITE drones. Human death keeps authored geometry/animation; player defeat keeps the skinned model with a posed fall. This is not full physical ragdoll animation. No procedural human/NPC mesh was added.
+- Current runtime evidence, reproduction and remaining limitations: [model trial](docs/ARTORIA_BUNNY_TRIAL.md). Human package provenance has an inherited Males/Women notice mismatch; it is explicitly recorded, not silently approved.
+- P0: strict save validation + atomic temp/backup replacement + explicit corrupt-save recovery; bounded ammo deployment with visible errors; magazine conservation/weight; atomic result commit/save/retry; warehouse overflow recovery; shared Esc/pause/resume/abandon/base/menu/quit flow, including window close and pending enemy-shot timers. Continue starts at the saved base, not a mid-mission checkpoint. See [updated demo audit](docs/DEMO_READINESS_2026-09-28.md).
+- Verification: fresh cold import 0/0, **37/37**, **5 actual quit subprocess paths**, and a Forward+ graphical route passing **13 checks**, normal AI, 58 shots / 3 damage / 0 kills, `mission_completed=false`. Main exits 0 without script errors; forced headless `--quit-after` retains the known 2 ObjectDB instances warning. Latest targeted checks passed after the final cleanup. All profiles isolated; no personal-save modification. [Machine report](docs/p0_verification/verification.json), [UI captures](docs/p0_verification/presentation/05_pause_battle.png).
+- Forward+ presentation route also exercised menus, deployment, pause, abandonment, return, save failure and corrupt-save recovery on Apple M5. Short 90-frame battle sample: median 16.708 ms, p95 18.217 ms; not a performance certification. Compatibility fallback rendered successfully. Windows rendering and manual first-player acceptance remain unverified. Temporary Artoria geometry/textures were not revised in this pipeline pass.
+- [Narrative production package](docs/narrative/README.md): all seventeen requested sections, twelve chapters, eight bosses, eight adult supporting women, six factions, eighteen key scenes, five relationship scenes, five endings and the first chapter's 95 lines. This is original design work; those chapters, NPC cast and boss encounters are not implemented yet.
+- Preserve pre-existing importer WIP and local files. No reset/clean/stash, automatic commits or removal of original character assets. The old Unity-Chan source restrictions still protect those original files; the user's new Artoria trial authorization changes the visible player choice.
+
+The sections below are historical. Their player choice, test counts and earlier scope restrictions describe those checkpoints, not this working tree.
+
+## Historical checkpoint — Phase 5 + portable development sync (2026-09-27)
 
 - Branch `main`; runtime baseline **`bc4984b`** (Phase 5), enemy decoupling **`7ddb981`** (Phase 4E).
 - **Godot 4.7.2 / GL Compatibility**; normal entry `scenes/presentation/slice/boot.tscn`.

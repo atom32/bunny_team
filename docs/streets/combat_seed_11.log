@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+STREETS_COMBAT_LAYOUT seed=11 spawn=1 task=0 exits=["NORTH ARCHWAY", "NORTH LOADING GATE"]
+STREETS_COMBAT reached StreetTerminal health=260.0 fired=24
+STREETS_COMBAT reached StreetSurvey health=260.0 fired=27
+STREETS_COMBAT reached IndoorLoot1_3 health=260.0 fired=27
+STREETS_COMBAT reached Exit2 health=260.0 fired=27
+STREETS_COMBAT_RUN fired=27 reloads=1 kills=9 moved_enemies=9 recovered=1 failures=[]

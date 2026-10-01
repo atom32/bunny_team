@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="MissionDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/mission_definition.gd" id="1_mission"]
+[ext_resource type="Script" path="res://scripts/data/objective_definition.gd" id="2_objective"]
+
+[sub_resource type="Resource" id="ObjectiveDefinition_eliminate"]
+script = ExtResource("2_objective")
+objective_id = &"eliminate_prototype_enemies"
+display_name = "Defeat the PMC patrol"
+objective_type = 0
+target = 1
+required = true
+
+[sub_resource type="Resource" id="ObjectiveDefinition_interact"]
+script = ExtResource("2_objective")
+objective_id = &"interact_prototype_terminal"
+display_name = "Access field terminal"
+objective_type = 1
+target = 1
+target_id = &"prototype_terminal"
+required = true
+
+[resource]
+script = ExtResource("1_mission")
+mission_id = &"first_mission"
+display_name = "First Mission / Home Signal"
+description = "Learn your frame. Search the PMC supplies. Investigate the terminal, then choose salvage or extraction."
+objective_definitions = Array[ExtResource("2_objective")]([SubResource("ObjectiveDefinition_eliminate"), SubResource("ObjectiveDefinition_interact")])

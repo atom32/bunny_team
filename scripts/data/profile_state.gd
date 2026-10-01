@@ -12,10 +12,18 @@ const DEFAULT_DEFINITIONS := {
 const DEFAULT_AMMO_QUANTITIES := {
 	&"ammo.556_standard": 120,
 	&"ammo.rocket_standard": 4,
+	&"ammo.9mm_standard": 120,
+	&"ammo.12g_buckshot": 24,
+	&"ammo.762_standard": 30,
 }
 
 var inventory: InventoryState # Persistent warehouse inventory.
+var bunny_selected := false
+var first_mission_completed := false
+var ar_damage_upgraded := false
 var loadout: LoadoutState
+# Presentation positions only; equipped gear remains owned by inventory.
+var stash_layout: Dictionary = {}
 
 
 func _init(p_inventory: InventoryState = null, p_loadout: LoadoutState = null) -> void:
@@ -62,7 +70,11 @@ func create_sortie_request(
 func to_dict() -> Dictionary:
 	return {
 		"inventory": inventory.to_dict(),
+		"stash_layout": stash_layout.duplicate(true),
 		"loadout": loadout.to_dict(),
+		"bunny_selected": bunny_selected,
+		"first_mission_completed": first_mission_completed,
+		"ar_damage_upgraded": ar_damage_upgraded,
 	}
 
 
@@ -75,7 +87,23 @@ static func from_dict(data: Dictionary) -> ProfileState:
 		restored_inventory = InventoryState.from_dict(inventory_data)
 	if typeof(loadout_data) == TYPE_DICTIONARY:
 		restored_loadout = LoadoutState.from_dict(loadout_data)
-	return ProfileState.new(restored_inventory, restored_loadout)
+	var profile := ProfileState.new(restored_inventory, restored_loadout)
+	# Old saves have no positions. Invalid presentation entries are repaired on opening.
+	if typeof(data.get("stash_layout")) == TYPE_DICTIONARY:
+		for instance_id in data["stash_layout"]:
+			var entry: Variant = data["stash_layout"][instance_id]
+			if typeof(entry) == TYPE_ARRAY and entry.size() == 3 and SaveService.is_number(entry[0]) and SaveService.is_number(entry[1]) and typeof(entry[2]) == TYPE_BOOL:
+				profile.stash_layout[instance_id] = [int(entry[0]), int(entry[1]), entry[2]]
+	for key in ["bunny_selected", "first_mission_completed", "ar_damage_upgraded"]:
+		if typeof(data.get(key, false)) != TYPE_BOOL:
+			return null
+		profile.set(key, data.get(key, false))
+	# Replace the previous one-off pack upgrade without charging recovered materials again.
+	if not data.has("ar_damage_upgraded"):
+		if typeof(data.get("field_pack_upgraded", false)) != TYPE_BOOL:
+			return null
+		profile.ar_damage_upgraded = data.get("field_pack_upgraded", false)
+	return profile
 
 
 func _equip_first_definition(slot_id: StringName, definition_id: StringName) -> void:

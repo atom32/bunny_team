@@ -1,21 +1,25 @@
-[gd_resource type="Resource" script_class="WeaponDefinition" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="WeaponDefinition" load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/data/weapon_definition.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/weapons/smg.tscn" id="2"]
 
+[ext_resource type="Texture2D" path="res://assets/ui/stash/smg_01.png" id="stash_icon"]
+
 [resource]
 script = ExtResource("1")
+icon = ExtResource("stash_icon")
+stash_size = Vector2i(3, 2)
 id = &"weapon.smg_01"
-display_name = "Vector SMG"
+display_name = "SMG-9 Compact"
 description = "Light close-range automatic weapon."
 weight = 2.6
 base_value = 850
-item_tags = PackedStringArray("weapon", "primary", "smg")
+item_tags = PackedStringArray("weapon", "modern", "primary", "smg")
 socket_name = &"HandR"
 scene = ExtResource("2")
 movement_modifier = 0.9
 weapon_type = &"smg"
-compatible_ammo_ids = PackedStringArray("ammo.556_standard")
+compatible_ammo_ids = PackedStringArray("ammo.9mm_standard")
 magazine_capacity = 36
 fire_mode = &"automatic"
 action_type = &"hitscan"
@@ -25,8 +29,10 @@ structure_damage = 0.0
 fire_rate = 14.0
 weapon_range = 18.0
 knockback = 1.25
-tracer_color = Color(1, 0.82, 0.25, 1)
+tracer_color = Color(1, 0.85, 0.55, 1)
 tracer_width = 0.035
 muzzle_scale = 0.72
 recoil_strength = 0.035
 impact_scale = 0.72
+uses_combat_rig = true
+reload_seconds = 1.35

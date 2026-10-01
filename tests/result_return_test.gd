@@ -14,6 +14,10 @@ func _run() -> void:
 	await get_tree().process_frame
 	_cleanup_save()
 	var legacy_profile := ProfileState.create_new()
+	# Reproduce the original three-weapon save before the arsenal content grant.
+	for item in legacy_profile.inventory.get_items():
+		if item.definition_id in [&"weapon.pistol_01", &"weapon.shotgun_01", &"weapon.sniper_01", &"weapon.lmg_01", &"ammo.9mm_standard", &"ammo.12g_buckshot", &"ammo.762_standard"]:
+			legacy_profile.inventory.remove_item(item.instance_id)
 	legacy_profile.inventory.capacity = 100.0
 	for index in 10:
 		check(

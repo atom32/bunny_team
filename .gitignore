@@ -10,3 +10,6 @@
 !.env.example
 Github_PAT.txt
 export_credentials.cfg
+
+# Windows thumbnail cache bundled with imported assets.
+Thumbs.db

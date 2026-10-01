@@ -3,6 +3,7 @@ extends Node3D
 
 signal extracted(session: SortieSession, extraction_id: StringName)
 
+@export var available := true
 @export var extraction_id: StringName = &"prototype_extract_south"
 
 
@@ -12,7 +13,7 @@ func _ready() -> void:
 
 
 func can_extract(session: SortieSession) -> bool:
-	return session != null and session.status == SortieSession.Status.ACTIVE
+	return available and session != null and session.status == SortieSession.Status.ACTIVE
 
 
 func extract(session: SortieSession) -> bool:
@@ -42,6 +43,7 @@ func _build_visual() -> void:
 		marker.rotation.y = -angle
 		marker.material_override = VisualFactory.material(Color("27768d"), 0.35, 0.3, Color("72ddff"), 3.0)
 	var label := Label3D.new()
+	label.font = UIFactory.FONT
 	label.text = "EXTRACTION"
 	label.position = Vector3(0.0, 1.0, 0.0)
 	label.font_size = 34

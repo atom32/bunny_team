@@ -1,0 +1,514 @@
+{
+  "bounds_min": [
+    -0.7196717262268066,
+    -0.21945719420909882,
+    -0.0009800161933526397
+  ],
+  "bounds_max": [
+    0.7196717262268066,
+    0.21441802382469177,
+    1.9591810703277588
+  ],
+  "height": 1.9601610865211114,
+  "active_material_count": 11,
+  "active_materials": [
+    "ArtoriaBunny_Fur",
+    "ArtoriaBunny_Headress",
+    "ArtoriaBunny_Stockings",
+    "ArtoriaBunny_Suit",
+    "ArtoriaLancer_Body",
+    "ArtoriaLancer_Eyes",
+    "ArtoriaLancer_Hair",
+    "ArtoriaLancer_Head",
+    "Eyelashes",
+    "Eyes_Cornea",
+    "Eyeshadow"
+  ],
+  "active_image_count": 60,
+  "active_images": [
+    {
+      "name": "ArtoriaBunny_Stockings_BaseColor.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Stockings_AO.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Suit_Normal.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Suit_Metallic.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Eyes_Normal.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Eyes_Emissive.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Head_Roughness_Wet.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Head_Roughness_Wetter.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Hair_opacity.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Body_BaseColor.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Suit_BaseColor_Alter.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Eyes_BaseColor.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Head_Roughness.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Scarf_SSS.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Body_AO.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "Artoria_LancerAlter_Body_BaseColor.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Headress_Metallic.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Suit_BaseColor.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Head_Normal.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Hair_normal.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Scarf_Roughness.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Body_SSS_Color.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Headress_Normal.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Headress_BaseColor_Alter.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Eyelashes_Alter.tga",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Suit_AO.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Head_BaseColor_Blush.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "Artoria_LancerAlter_Head_BaseColor_Blush.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Hair_BaseColor.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Scarf_Normal.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Body_SSS.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Headress_BaseColor.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Eyelashes.tga",
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Stockings_Roughness.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Head_BaseColor.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "Artoria_LancerAlter_Head_BaseColor.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Body_Roughness_Wetter.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Headress_AO.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Headress_Roughness.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Stockings_Normal.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "eyeshadow.tga",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Head_AO.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Hair_AO.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Scarf_BaseColor_Alter.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Body_Roughness_Wet.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Stockings_Metallic.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Eyes_Specular.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "Artoria_LancerAlter_Eyes_Emissive.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Head_SSS_Color.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Scarf_BaseColor.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Body_Roughness.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Body_Normal.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Stockings_BaseColor_Alter.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Suit_Roughness.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Eyes_Roughness.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "Artoria_LancerAlter_Eyes_BaseColor.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Head_SSS.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Hair_specular.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Scarf_AO.tga",
+      "size": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Body_Normal_CleanButtSeam.tga",
+      "size": [
+        4096,
+        4096
+      ]
+    }
+  ],
+  "undefined_nodes": [],
+  "node_groups": [
+    "InvertNormal",
+    "NodeGroup",
+    "NodeGroup.002",
+    "NodeGroup.009",
+    "NodeGroup.010",
+    "NodeGroup.011",
+    "NodeGroup.012",
+    "NodeGroup.013",
+    "WetnessMix"
+  ],
+  "rig_action": "BasePose",
+  "visible_meshes": [
+    {
+      "name": "ArtoriaLancer_Body",
+      "base_triangles": 48132
+    },
+    {
+      "name": "ArtoriaLancer_Eyes",
+      "base_triangles": 4704
+    },
+    {
+      "name": "ArtoriaLancer Hair Default",
+      "base_triangles": 171168
+    },
+    {
+      "name": "ArtoriaLancer Bunny Suit - Headress",
+      "base_triangles": 2520
+    },
+    {
+      "name": "ArtoriaLancer Bunny Suit - Heels",
+      "base_triangles": 3260
+    },
+    {
+      "name": "ArtoriaLancer Bunny Suit - Tail",
+      "base_triangles": 768
+    },
+    {
+      "name": "ArtoriaLancer Bunny Suit - Stockings",
+      "base_triangles": 8388
+    },
+    {
+      "name": "ArtoriaLancer Bunny Suit - Suit",
+      "base_triangles": 10130
+    },
+    {
+      "name": "ArtoriaLancer Bunny Suit - Thigh Strap",
+      "base_triangles": 3940
+    },
+    {
+      "name": "ArtoriaLancer Bunny Suit - Scarf",
+      "base_triangles": 1984
+    },
+    {
+      "name": "ArtoriaLancer Bunny Suit - Wrist",
+      "base_triangles": 2920
+    },
+    {
+      "name": "ArtoriaLancer Bunny Suit - Collar",
+      "base_triangles": 4064
+    }
+  ],
+  "base_triangles": 261978
+}

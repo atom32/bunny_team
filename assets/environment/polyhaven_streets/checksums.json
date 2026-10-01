@@ -1,0 +1,47 @@
+[
+  {
+    "file": "asphalt_02_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_diff_1k.jpg",
+    "sha256": "1aa5ce99f58a625c71d48cfc3e68b65ca85ccb00f39e045c0a928608a0ea25ed"
+  },
+  {
+    "file": "asphalt_02_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_nor_gl_1k.jpg",
+    "sha256": "42a1c381b53204e83a982db2864479a30bc127bbdeebb1006f8ee51bff099df3"
+  },
+  {
+    "file": "asphalt_02_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_rough_1k.jpg",
+    "sha256": "70ba3edc65525eb4dc366cf010ca7ae0bd34e0251ff0225c2dad627a873d0712"
+  },
+  {
+    "file": "wall_bricks_plaster_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wall_bricks_plaster/wall_bricks_plaster_diff_1k.jpg",
+    "sha256": "90e626cadb36f61327c68e485247f15fdf265371ce549c621df6cb84da40c17f"
+  },
+  {
+    "file": "wall_bricks_plaster_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wall_bricks_plaster/wall_bricks_plaster_nor_gl_1k.jpg",
+    "sha256": "92a9ccd2ad67ce621d7b50be1b4ef44f47aa842cea9f8707ca969548eb5f80c9"
+  },
+  {
+    "file": "wall_bricks_plaster_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wall_bricks_plaster/wall_bricks_plaster_rough_1k.jpg",
+    "sha256": "88a3ca287f989805384fda36329eb6a8d9e0c37157253e1833ed24296ddeb6e8"
+  },
+  {
+    "file": "painted_plaster_wall_diff_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/painted_plaster_wall/painted_plaster_wall_diff_1k.jpg",
+    "sha256": "440310f05af089f2c93353167573403cbc3f805948203237b5d26431eeb9e19c"
+  },
+  {
+    "file": "painted_plaster_wall_nor_gl_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/painted_plaster_wall/painted_plaster_wall_nor_gl_1k.jpg",
+    "sha256": "8eb01647d126eb5341e2c325821ad48c8ca11349dbef53447c95422c5d91cc9d"
+  },
+  {
+    "file": "painted_plaster_wall_rough_1k.jpg",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/painted_plaster_wall/painted_plaster_wall_rough_1k.jpg",
+    "sha256": "e0564c297b22ab1cf4ef02a82157b84ce3b92eb4fd49d9c64b7256a8b300af82"
+  }
+]

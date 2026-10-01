@@ -58,7 +58,7 @@ func interact(_actor: Node3D, session: SortieSession) -> Dictionary:
 func get_interaction_prompt(_actor: Node3D, session: SortieSession) -> String:
 	if not session or session.status != SortieSession.Status.ACTIVE:
 		return ""
-	return "E  %s" % ("CLOSE DOOR" if is_open() else interaction_prompt.to_upper())
+	return tr("E  %s") % tr("CLOSE DOOR" if is_open() else interaction_prompt.to_upper())
 
 
 func _apply_state() -> void:

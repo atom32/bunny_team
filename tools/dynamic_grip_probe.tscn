@@ -1,0 +1,4 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://tools/dynamic_grip_probe.gd" id="1"]
+[node name="DynamicGripProbe" type="Node3D"]
+script = ExtResource("1")

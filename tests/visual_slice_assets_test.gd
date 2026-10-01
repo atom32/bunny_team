@@ -8,7 +8,7 @@ func _ready() -> void:
 	var hanger: Node3D = load("res://scenes/hanger/hanger.tscn").instantiate()
 	add_child(hanger)
 	await get_tree().process_frame
-	for id in [&"weapon.assault_rifle_01", &"weapon.smg_01", &"weapon.rocket_launcher_01"]:
+	for id in ModernArsenal.WEAPON_IDS:
 		var item: ItemInstance
 		for candidate in profile.inventory.get_items():
 			if candidate.definition_id == id:
@@ -22,7 +22,7 @@ func _ready() -> void:
 		check(player.equipped_weapon_visual.get_meta("equipment_id") == id, "shared scene receives definition identity")
 		check(player.equipped_weapon_visual.has_node("Art/Model"), "weapon uses an imported GLB")
 		check(player.combat_rig.has_weapon() == player.weapon_data.uses_combat_rig, "socket pose correction preserves the production weapon path")
-		check(player.equipped_weapon_visual.find_children("*", "MeshInstance3D", true, false).size() > 1, "GLB has renderable geometry")
+		check(player.equipped_weapon_visual.find_children("*", "MeshInstance3D", true, false).size() >= 1, "GLB has renderable geometry")
 		check(player.equipped_weapon_visual.find_children("*", "CollisionObject3D", true, false).is_empty(), "weapon art adds no collision")
 		check(player.animation_tree.active and player.animation_player.get_animation(&"Idle_Gun").loop_mode == Animation.LOOP_PINGPONG, "idle remains active and ping-pong")
 		check(ui.warehouse_summary.text.contains("[PRIMARY]") and ui.warehouse_summary.text.contains(player.weapon_data.display_name), "Warehouse reflects equipped identity")
@@ -71,8 +71,8 @@ func _ready() -> void:
 		await get_tree().process_frame
 	check(not art.get_node("RoofShell").visible, "interior cutaway leaves route visible")
 	await capture("office_interior")
-	# All three visual scenes through the actual gameplay player; this does not change definitions.
-	for id in [&"weapon.assault_rifle_01", &"weapon.smg_01", &"weapon.rocket_launcher_01"]:
+	# All seven visual scenes through the actual gameplay player; this does not change definitions.
+	for id in ModernArsenal.WEAPON_IDS:
 		player.equip_weapon(ContentDB.get_weapon(id))
 		player.global_position = building.to_global(Vector3(-3, .1, 3))
 		player.rotation.y = 0.0

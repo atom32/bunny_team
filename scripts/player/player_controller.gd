@@ -8,8 +8,8 @@ signal ammo_changed(magazine: int, magazine_capacity: int, reserve: int)
 signal weapon_switched(slot_id: StringName)
 
 const ROCKET_SCENE := preload("res://scenes/weapons/rocket_projectile.tscn")
-const RAGDOLL_SCENE := preload("res://scenes/player/ragdoll_proxy.tscn")
-const CHARACTER_SCENE := preload("res://assets/characters/unitychan_battle/battle_presentation.glb")
+const CORPSE_SCRIPT := preload("res://scripts/presentation/skinned_corpse.gd")
+const CHARACTER_SCENE_PATH := "res://assets/characters/artoria_bunny/bunny_player.glb"
 const CHARACTER_ANIMATION_SOURCE_SCENE := preload("res://assets/characters/unitychan_battle/animations/idle.fbx")
 const BODY_VISUAL_SCALE := Vector3.ONE
 const CHARACTER_ANIMATION_SCENES := {
@@ -81,6 +81,7 @@ var combat_rig: CharacterCombatRig
 var interaction_component: InteractionComponent
 var player_marker: MeshInstance3D
 var _shot_cooldown := 0.0
+var _reload_remaining_by_weapon: Dictionary = {}
 var _dodge_time := 0.0
 var _dodge_cooldown_time := 0.0
 var _dodge_direction := Vector3.ZERO
@@ -143,6 +144,10 @@ func _process(delta: float) -> void:
 		player_marker.scale = Vector3(pulse, 1.0, pulse)
 
 
+func clear_buffered_input() -> void:
+	_fire_queued = false
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not preview_mode and event.is_action_pressed("fire"):
 		_fire_queued = true
@@ -155,6 +160,8 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
+	for instance_id in _reload_remaining_by_weapon.keys():
+		_reload_remaining_by_weapon[instance_id] = maxf(_reload_remaining_by_weapon[instance_id] - delta, 0.0)
 	_shot_cooldown = maxf(_shot_cooldown - delta, 0.0)
 	_dodge_cooldown_time = maxf(_dodge_cooldown_time - delta, 0.0)
 	_update_aim(delta)
@@ -169,7 +176,7 @@ func _physics_process(delta: float) -> void:
 		animation_source_skeleton.advance(delta)
 	if combat_rig:
 		combat_rig.apply_skeleton_ik(delta)
-	if Input.is_action_pressed("fire") or _fire_queued:
+	if _fire_queued or (weapon_data and weapon_data.fire_mode == &"automatic" and Input.is_action_pressed("fire")):
 		_try_fire()
 	_fire_queued = false
 
@@ -192,8 +199,8 @@ func equip_weapon_instance(item: ItemInstance) -> bool:
 	var weapon := ContentDB.get_weapon(item.definition_id, false) if item else null
 	if not weapon:
 		return false
-	_equip_weapon_definition(weapon)
 	weapon_instance = item
+	_equip_weapon_definition(weapon)
 	_weapon_instances_by_slot[active_weapon_slot] = item
 	_emit_ammo_changed()
 	return true
@@ -247,7 +254,7 @@ func get_weapon_status(slot_id: StringName) -> Dictionary:
 	var state: Variant = _initial_session.get_weapon_runtime_state(item.instance_id) if _initial_session and item else null
 	return {
 		"slot_id": slot_id,
-		"display_name": definition.display_name if definition else "UNARMED",
+		"display_name": (definition.display_name + (" [+10% DMG]" if _initial_session and _initial_session.ar_damage_upgraded and definition.id == &"weapon.assault_rifle_01" else "")) if definition else "UNARMED",
 		"magazine": state.magazine_ammo if state else 0,
 		"magazine_capacity": state.magazine_capacity if state else 0,
 		"reserve": _initial_session.get_reserve_ammo(item.instance_id) if _initial_session and item and state else 0,
@@ -294,6 +301,9 @@ func _equip_weapon_definition(weapon: WeaponDefinition) -> void:
 	weapon_data = weapon
 	_clear_weapon_sockets()
 	equipped_weapon_visual = _attach_equipment(weapon)
+	if combat_rig and get_reload_remaining() > 0.0:
+		combat_rig.reload_duration = get_reload_remaining()
+		combat_rig.start_reload()
 
 
 func equip_armor(armor: EquipmentDefinition) -> void:
@@ -321,7 +331,7 @@ func _equip_backpack_definition(backpack: EquipmentDefinition) -> void:
 func receive_damage(packet: DamagePacket) -> float:
 	if is_dead or preview_mode:
 		return 0.0
-	var applied_damage := packet.base_damage
+	var applied_damage := maxf(packet.base_damage, 0.0) * (1.0 - get_protection())
 	health = maxf(health - applied_damage, 0.0)
 	velocity += packet.knockback_impulse
 	AudioDirector.play_sfx(&"player_hurt", 0.0, 0.04)
@@ -349,6 +359,7 @@ func debug_reload_once() -> void:
 	if _get_weapon_runtime_state():
 		reload_weapon()
 	elif combat_rig:
+		combat_rig.reload_duration = weapon_data.reload_seconds if weapon_data else 0.9
 		combat_rig.start_reload()
 
 
@@ -356,6 +367,7 @@ func can_reload() -> bool:
 	return (
 		_initial_session != null
 		and weapon_instance != null
+		and get_reload_remaining() <= 0.0
 		and _initial_session.can_reload_weapon(weapon_instance.instance_id)
 	)
 
@@ -366,7 +378,9 @@ func reload_weapon() -> bool:
 	var loaded_rounds := _initial_session.reload_weapon(weapon_instance.instance_id)
 	if loaded_rounds <= 0:
 		return false
+	_reload_remaining_by_weapon[weapon_instance.instance_id] = weapon_data.reload_seconds
 	if combat_rig:
+		combat_rig.reload_duration = weapon_data.reload_seconds
 		combat_rig.start_reload()
 	AudioDirector.play_sfx(&"reload")
 	_emit_ammo_changed()
@@ -427,7 +441,7 @@ func _build_character() -> void:
 	_set_mesh_visibility(animation_source_model, false)
 	animation_source_skeleton = animation_source_model.find_child("Skeleton3D", true, false) as Skeleton3D
 
-	character_model = CHARACTER_SCENE.instantiate() as Node3D
+	character_model = load(CHARACTER_SCENE_PATH).instantiate() as Node3D
 	character_model.name = "CombatAvatarModel"
 	var bundled_melee_weapon := character_model.find_child("Wep", true, false)
 	if bundled_melee_weapon:
@@ -463,7 +477,7 @@ func _build_character() -> void:
 	weapon_root.name = "WeaponRoot"
 	body_visual.add_child(weapon_root)
 	if character_skeleton:
-		combat_rig = preload("res://scripts/presentation/unitychan/presentation_adapter.gd").new()
+		combat_rig = preload("res://scripts/presentation/artoria_bunny/pose_adapter.gd").new()
 		combat_rig.name = "UpperBodyAim"
 		body_visual.add_child(combat_rig)
 		combat_rig.setup(animation_source_skeleton, character_skeleton, retarget_modifier)
@@ -747,14 +761,7 @@ func _update_movement(delta: float) -> void:
 		velocity.x = _dodge_direction.x * dodge_speed
 		velocity.z = _dodge_direction.z * dodge_speed
 	else:
-		var movement_bonus := 0.0
-		if armor_data:
-			movement_bonus += armor_data.movement_modifier
-		if backpack_data:
-			movement_bonus += backpack_data.movement_modifier
-		if weapon_data:
-			movement_bonus += weapon_data.movement_modifier
-		var movement_speed := maxf(base_speed + movement_bonus, 4.5)
+		var movement_speed := get_movement_speed()
 		if Input.is_action_pressed("precision_walk"):
 			movement_speed *= 0.5
 		var target_velocity := move_direction * movement_speed
@@ -785,7 +792,7 @@ func _combat_facing_rotation(locomotion_direction: Vector3) -> float:
 
 
 func _try_fire() -> bool:
-	if not weapon_data or _shot_cooldown > 0.0 or is_dead or (combat_rig and combat_rig.is_reloading()):
+	if not weapon_data or _shot_cooldown > 0.0 or is_dead or get_reload_remaining() > 0.0 or (combat_rig and combat_rig.is_reloading()):
 		return false
 	var weapon_state: Variant = _get_weapon_runtime_state()
 	if weapon_state and not _initial_session.fire_weapon(weapon_instance.instance_id):
@@ -804,10 +811,15 @@ func _try_fire() -> bool:
 		rocket.global_position = muzzle_position
 		rocket.setup(self, shot_direction, weapon_data)
 	else:
-		_fire_hitscan(muzzle_position, shot_direction)
+		for pellet_index in weapon_data.pellets_per_shot:
+			_fire_hitscan(muzzle_position, _spread_direction(shot_direction, pellet_index))
 	weapon_fired.emit(weapon_data.recoil_strength)
 	_emit_ammo_changed()
 	return true
+
+
+func get_reload_remaining() -> float:
+	return float(_reload_remaining_by_weapon.get(weapon_instance.instance_id, 0.0)) if weapon_instance else 0.0
 
 
 func _get_weapon_runtime_state():
@@ -828,6 +840,24 @@ func _shot_direction_from(from: Vector3) -> Vector3:
 	return aim_direction
 
 
+func _spread_direction(direction: Vector3, pellet_index: int) -> Vector3:
+	if weapon_data.spread_degrees <= 0.0:
+		return direction
+	var side := direction.cross(Vector3.UP).normalized()
+	if side.length_squared() < 0.01:
+		side = Vector3.RIGHT
+	var up := side.cross(direction).normalized()
+	# An even pellet pattern keeps a shotgun useful at close range without every
+	# pellet randomly missing the reticle. Automatic weapons use a random cone.
+	var angle := randf() * TAU
+	var radius := sqrt(randf())
+	if weapon_data.pellets_per_shot > 1:
+		angle = float(pellet_index) * 2.399963
+		radius = sqrt(float(pellet_index) / float(weapon_data.pellets_per_shot - 1))
+	var spread := tan(deg_to_rad(weapon_data.spread_degrees)) * radius
+	return (direction + (side * cos(angle) + up * sin(angle)) * spread).normalized()
+
+
 func _fire_hitscan(from: Vector3, shot_direction: Vector3) -> void:
 	var to := from + shot_direction * weapon_data.weapon_range
 	var query := PhysicsRayQueryParameters3D.create(from, to, 6)
@@ -841,7 +871,7 @@ func _fire_hitscan(from: Vector3, shot_direction: Vector3) -> void:
 		if target and target.has_method("receive_damage"):
 			var armor_damage_modifier := armor_data.damage_modifier if armor_data else 0.0
 			var packet := DamagePacket.new(
-				weapon_data.damage + armor_damage_modifier,
+				(_initial_session.get_weapon_damage(weapon_data) if _initial_session else weapon_data.damage) + armor_damage_modifier,
 				weapon_data.armor_penetration,
 				weapon_data.structure_damage,
 				self,
@@ -891,8 +921,21 @@ func _die(impulse: Vector3) -> void:
 	var collision := get_node("Hitbox") as CollisionShape3D
 	collision.set_deferred("disabled", true)
 	body_visual.visible = false
-	var ragdoll := RAGDOLL_SCENE.instantiate() as RagdollProxy
-	get_parent().add_child(ragdoll)
-	ragdoll.global_position = global_position
-	ragdoll.build(Color("dce8eb"), impulse + -aim_direction * 2.0)
+	var corpse := CORPSE_SCRIPT.new() as Node3D
+	corpse.name = "AuthoredPlayerCorpse"
+	get_parent().add_child(corpse)
+	corpse.global_transform = global_transform
+	corpse.capture(character_skeleton, impulse - aim_direction * 2.0)
 	died.emit()
+
+
+static func movement_speed_for(weapon: WeaponDefinition, armor: EquipmentDefinition, backpack: EquipmentDefinition, speed: float = 7.8) -> float:
+	return maxf(speed + (weapon.movement_modifier if weapon else 0.0) + (armor.movement_modifier if armor else 0.0) + (backpack.movement_modifier if backpack else 0.0), 4.5)
+
+
+func get_movement_speed() -> float:
+	return movement_speed_for(weapon_data, armor_data, backpack_data, base_speed)
+
+
+func get_protection() -> float:
+	return clampf(armor_data.damage_reduction, 0.0, 0.8) if armor_data else 0.0

@@ -1,20 +1,26 @@
-[gd_resource type="Resource" script_class="WeaponDefinition" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="WeaponDefinition" load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/data/weapon_definition.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/weapons/rocket_launcher.tscn" id="2"]
 
+[ext_resource type="Texture2D" path="res://assets/ui/stash/rocket_launcher_01.png" id="stash_icon"]
+
 [resource]
 script = ExtResource("1")
+icon = ExtResource("stash_icon")
+stash_size = Vector2i(5, 2)
 id = &"weapon.rocket_launcher_01"
-display_name = "Breach Launcher"
-description = "Shoulder-mounted explosive launcher."
+display_name = "RPG Field Launcher"
+description = "Single-shot shoulder launcher. Explosive rockets break barriers and damage groups."
 weight = 8.0
 base_value = 2600
-item_tags = PackedStringArray("weapon", "primary", "launcher")
+item_tags = PackedStringArray("weapon", "primary", "launcher", "modern")
 socket_name = &"ShoulderR"
 scene = ExtResource("2")
 movement_modifier = -0.8
 weapon_type = &"launcher"
+uses_combat_rig = true
+reload_seconds = 2.7
 compatible_ammo_ids = PackedStringArray("ammo.rocket_standard")
 magazine_capacity = 1
 fire_mode = &"single"

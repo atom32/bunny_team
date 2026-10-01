@@ -1,0 +1,5 @@
+00:00.327  blend            | Read blend: "/Users/xudawei/Downloads/ArtoriaLancer_AllVersion_ARP_MustardUI.blend"
+{"source_head_vertices": 8344, "exported_head_vertices_including_uv_splits": 8472, "max_bind_position_error_m": 1.4300894690677524e-08, "mean_bind_position_error_m": 9.610292478636365e-09, "scope": "Bind-space positions, matched by nearest source head vertex after coordinate conversion; not animation deformation validation.", "source_blush_value": 1.0, "source_blush_connections": [{"node": "Mix.002", "input": "Factor_Float", "other_images": ["ArtoriaLancer_Head_BaseColor.tga", "ArtoriaLancer_Head_BaseColor_Blush.tga"]}, {"node": "Mix.003", "input": "Factor_Float", "other_images": ["Artoria_LancerAlter_Head_BaseColor.tga", "Artoria_LancerAlter_Head_BaseColor_Blush.tga"]}]}
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

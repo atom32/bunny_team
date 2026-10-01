@@ -13,6 +13,7 @@ var explicit_rocket_ammo_id := ""
 var expected_extracted_ammo_quantity := 0
 var expected_extracted_rocket_quantity := 0
 var generated_ammo_quantity := 0
+var uncarried_standard_ammo := 0
 
 
 func _ready() -> void:
@@ -51,7 +52,7 @@ func _ready() -> void:
 func _test_resources() -> void:
 	var profile := ProfileRuntime.get_profile()
 	check(profile != null and profile.validate(), "ProfileRuntime owns a valid current profile")
-	check(ContentDB.get_items().size() == 11, "content manifest registers all prototype definitions")
+	check(ContentDB.get_items().size() == 18, "content manifest registers all prototype definitions")
 	check(ContentDB.get_weapon(&"weapon.assault_rifle_01", false) != null, "stable rifle content ID resolves")
 	check(ContentDB.get_ammo(&"ammo.556_ap", false) != null, "stable ammunition content ID resolves")
 	check(ContentDB.get_ammo(&"ammo.rocket_standard", false) != null, "rocket ammunition content ID resolves")
@@ -61,7 +62,7 @@ func _test_resources() -> void:
 	var area := ContentDB.get_area_definition(&"prototype_arena", false)
 	check(area != null and area.scene != null, "prototype area resolves to an authored scene through ContentDB")
 	var loot_table := ContentDB.get_loot_table(&"prototype_basic_loot", false)
-	check(loot_table != null and loot_table.entries.size() == 3, "prototype loot table resolves through ContentDB")
+	check(loot_table != null and loot_table.entries.size() == 6, "prototype loot table resolves through ContentDB")
 	check(AudioServer.get_bus_index(&"Music") >= 0 and AudioServer.get_bus_index(&"SFX") >= 0, "music and sound effects use dedicated audio buses")
 	check(AudioDirector.music_player != null and AudioDirector.music_player.stream is AudioStreamWAV, "the synthwave background loop is loaded")
 	if AudioDirector.music_player and AudioDirector.music_player.stream is AudioStreamWAV:
@@ -97,8 +98,8 @@ func _test_hanger_and_equipment() -> void:
 	var player := hanger.find_child("Player", true, false) as PlayerController
 	var ui := hanger.find_child("HangerUI", true, false) as HangerUI
 	check(player != null, "hanger contains a 3D character")
-	check(ui != null and ui.weapon_option.item_count == 4, "hanger exposes all primary weapon choices plus unequip")
-	check(ui != null and ui.secondary_weapon_option.item_count == 4, "hanger exposes all secondary weapon choices plus unequip")
+	check(ui != null and ui.weapon_option.item_count == 8, "hanger exposes all primary weapon choices plus unequip")
+	check(ui != null and ui.secondary_weapon_option.item_count == 8, "hanger exposes all secondary weapon choices plus unequip")
 	if player:
 		var profile := ProfileRuntime.get_profile()
 		check(player.weapon_instance == profile.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, profile.inventory), "hanger preview equips the selected owned weapon instance")
@@ -107,7 +108,7 @@ func _test_hanger_and_equipment() -> void:
 		check(player.armor_instance == profile.loadout.get_item(LoadoutState.SLOT_ARMOR, profile.inventory), "hanger preview equips the selected owned armor instance")
 		check(player.backpack_instance == profile.loadout.get_item(LoadoutState.SLOT_BACKPACK, profile.inventory), "hanger preview equips the selected owned backpack instance")
 		check(player.find_child("CombatAvatarModel", true, false) != null, "hanger uses the complete imported character presentation")
-		check(player.character_skeleton != null and player.character_skeleton.get_bone_count() >= 90, "avatar uses the complete humanoid animation rig")
+		check(player.character_skeleton != null and player.character_skeleton.get_bone_count() == 52, "avatar uses the clean 52-bone Bunny Suit game rig")
 		check(player.find_child("CharacterRetarget", true, false) != null, "locomotion source retargets onto the display humanoid rig")
 		check(player.animation_player != null and player.animation_player.has_animation(&"Run"), "combat android includes locomotion animations")
 		check(player.animation_tree != null and player.animation_tree.active, "locomotion runs through an active AnimationTree")
@@ -120,20 +121,20 @@ func _test_hanger_and_equipment() -> void:
 		var warehouse_summary := ui.warehouse_summary if ui else null
 		check(warehouse_summary != null and warehouse_summary.text.contains("WEAPONS") and warehouse_summary.text.contains("AMMO") and warehouse_summary.text.contains("EQUIPMENT"), "hanger Warehouse groups persistent inventory by gameplay category")
 		check(warehouse_summary != null and warehouse_summary.text.contains("kg") and warehouse_summary.text.contains("[PRIMARY]"), "hanger Warehouse shows weight and equipped state")
-		for weapon_id in [&"weapon.assault_rifle_01", &"weapon.smg_01", &"weapon.rocket_launcher_01"]:
+		for weapon_id in ModernArsenal.WEAPON_IDS:
 			var weapon := ContentDB.get_weapon(weapon_id)
 			player.equip_weapon(weapon)
-			for _frame in 3:
+			for _frame in 12:
 				await get_tree().process_frame
-			if weapon_id == &"weapon.assault_rifle_01":
+			if weapon.uses_combat_rig:
 				check(player.combat_rig.has_weapon(), "assault rifle visibly mounts on the two-hand combat rig")
 				check(player.combat_rig.uses_modifier_ik(), "assault rifle hands use Godot TwoBoneIK3D modifiers")
 				check(player.combat_rig.uses_model_forward_axis(), "upper-body aim uses the display model's -Z forward axis")
 				check(player.combat_rig.uses_forward_axis_correction(), "locomotion retarget mirrors the +Z source animation onto the display model's -Z forward axis")
 				var right_hand_error := player.combat_rig.get_hand_error(&"right")
 				var left_hand_error := player.combat_rig.get_hand_error(&"left")
-				check(right_hand_error < 0.01, "right hand stays on the assault-rifle primary grip (error %.3f m)" % right_hand_error)
-				check(left_hand_error < 0.01, "left hand stays on the assault-rifle support grip (error %.3f m)" % left_hand_error)
+				check(right_hand_error < 0.01, "%s right hand stays on primary grip (error %.3f m)" % [weapon_id, right_hand_error])
+				check(left_hand_error < 0.01, "%s left hand stays on support grip (error %.3f m)" % [weapon_id, left_hand_error])
 				player.debug_reload_once()
 				check(player.combat_rig.is_reloading(), "reload starts a visible upper-body weapon pose")
 				check(player.combat_rig.get_upper_body_state_name() in [&"AIM", &"RELOAD"], "upper-body state remains independent from locomotion")
@@ -156,6 +157,7 @@ func _test_battle() -> void:
 	var explicit_ammo := ItemInstance.new(&"ammo.556_standard", 60, 100.0, "acceptance_ammo")
 	check(profile.inventory.add_item(explicit_ammo), "profile warehouse accepts explicit sortie ammunition")
 	explicit_ammo_id = explicit_ammo.instance_id
+	uncarried_standard_ammo = _total_quantity(profile.inventory, &"ammo.556_standard") - explicit_ammo.quantity
 	var rocket_ammo := _find_item_by_definition(profile.inventory, &"ammo.rocket_standard")
 	check(rocket_ammo != null, "profile warehouse owns secondary rocket ammunition")
 	explicit_rocket_ammo_id = rocket_ammo.instance_id if rocket_ammo else ""
@@ -220,20 +222,20 @@ func _test_battle() -> void:
 		check(player.weapon_instance == active_session.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, active_session.inventory), "battle player resolves its weapon through the active SortieSession")
 		var profile_before_runtime_ammo := profile.to_dict()
 		var initial_capacity := active_session.inventory.get_used_capacity()
-		check(player.get_magazine_ammo() == 30 and player.get_reserve_ammo() == 60, "battle starts with a full magazine and explicit reserve ammunition")
+		check(player.get_magazine_ammo() == 30 and player.get_reserve_ammo() == 30, "battle starts with a full magazine and explicit reserve ammunition")
 		for _shot in 5:
 			check(player.debug_fire_once(), "runtime-ammo acceptance shot fires")
-		check(player.get_magazine_ammo() == 25 and player.get_reserve_ammo() == 60, "fire consumes magazine rounds without consuming reserve")
-		check(is_equal_approx(active_session.inventory.get_used_capacity(), initial_capacity), "magazine rounds do not count toward carried capacity")
+		check(player.get_magazine_ammo() == 25 and player.get_reserve_ammo() == 30, "fire consumes magazine rounds without consuming reserve")
+		check(is_equal_approx(active_session.inventory.get_used_capacity(), initial_capacity - 0.06), "fired rounds leave total carried weight")
 		check(player.reload_weapon(), "partial magazine reload succeeds")
-		check(player.get_magazine_ammo() == 30 and player.get_reserve_ammo() == 55, "reload fills magazine and consumes reserve ammunition")
-		check(is_equal_approx(active_session.inventory.get_used_capacity(), initial_capacity - 0.06), "reload removes transferred rounds from reserve capacity")
+		check(player.get_magazine_ammo() == 30 and player.get_reserve_ammo() == 25, "reload fills magazine and consumes reserve ammunition")
+		check(is_equal_approx(active_session.inventory.get_used_capacity(), initial_capacity - 0.06), "reload preserves total carried weight")
 		var primary_state: Variant = active_session.get_weapon_runtime_state(player.weapon_instance.instance_id)
 		var secondary_item := active_session.loadout.get_item(LoadoutState.SLOT_WEAPON_SECONDARY, active_session.inventory)
 		var secondary_state: Variant = active_session.get_weapon_runtime_state(secondary_item.instance_id) if secondary_item else null
 		check(primary_state != null and secondary_state != null and primary_state != secondary_state, "battle owns independent primary and secondary runtime states")
 		check(profile.to_dict() == profile_before_runtime_ammo, "fire and reload leave the warehouse unchanged")
-		expected_extracted_ammo_quantity = 85
+		expected_extracted_ammo_quantity = 55
 	check(enemies.size() == 12, "expanded battle spawns twelve enemies")
 	check(_count_runtime_enemies(enemies, &"prototype_basic_enemy") == 9 and _count_runtime_enemies(enemies, &"prototype_heavy_enemy") == 3, "Battle configures nine basic and three heavy runtime enemies without type branches")
 	var packet_basic := _find_runtime_enemy(enemies, &"prototype_basic_enemy")
@@ -290,7 +292,7 @@ func _test_battle() -> void:
 		check(player.get_magazine_ammo() == 30 and battle.hud.active_weapon_label.text == "ACTIVE  PRIMARY", "primary magazine and HUD active slot survive switching")
 		player._fire_hitscan(barrier_shot_origin, Vector3.FORWARD)
 		check(is_equal_approx(heavy_health_after_rocket - packet_heavy.health, 12.0), "after breaching, rifle follow-up reaches Heavy and still resolves armor")
-		expected_extracted_rocket_quantity = 4
+		expected_extracted_rocket_quantity = 3
 		packet_heavy.process_mode = Node.PROCESS_MODE_DISABLED
 	check(navigation != null and navigation.navigation_mesh != null, "urban arena provides Godot navigation")
 	if navigation and navigation.navigation_mesh:
@@ -308,12 +310,15 @@ func _test_battle() -> void:
 	)
 	check(extraction_point != null, "battle contains one authored extraction point")
 	check(objective_terminal != null and objective_reach_zone != null, "battle contains authored interaction and reach objectives")
-	if not enemies.is_empty():
-		var humanoid_enemy := enemies[0] as EnemyController
+	var drones := enemies.filter(func(enemy): return not enemy.humanoid_presentation)
+	check(not drones.is_empty(), "battle retains nonhuman KITE enemies alongside humanoid patrols")
+	check(enemies.any(func(enemy): return enemy.humanoid_presentation), "battle spawns imported humanoid patrols")
+	if not drones.is_empty():
+		var drone_enemy := drones[0] as EnemyController
 		var door_body := authored_door.find_child("DoorBody", true, false) as StaticBody3D if authored_door else null
-		check(door_body != null and (humanoid_enemy.collision_mask & door_body.collision_layer) != 0, "authored door collision blocks enemies through the shared world layer")
-		var enemy_visual := humanoid_enemy.presentation
-		check(enemy_visual != null and humanoid_enemy.body_visual == enemy_visual, "enemy owns an independent presentation target for movement, attack and hit")
+		check(door_body != null and (drone_enemy.collision_mask & door_body.collision_layer) != 0, "authored door collision blocks enemies through the shared world layer")
+		var enemy_visual := drone_enemy.presentation as KiteEnemyPresentation
+		check(enemy_visual != null and drone_enemy.body_visual == enemy_visual, "enemy owns an independent presentation target for movement, attack and hit")
 		if enemy_visual:
 			check(enemy_visual.visual != null and enemy_visual.visual.is_visible_in_tree() and enemy_visual.model != null, "enemy has a visible KITE-07 asset instance")
 			check(enemy_visual.model.find_children("*", "MeshInstance3D", true, false).size() == 6, "enemy presentation contains all six authored drone parts")
@@ -321,7 +326,7 @@ func _test_battle() -> void:
 			check(enemy_visual.find_children("*", "AnimationTree", true, false).is_empty() and enemy_visual.find_child("EnemyVRMModel", true, false) == null, "native enemy presentation has no legacy animation/model fallback")
 			check(enemy_visual.weapon_presentation != null and enemy_visual.muzzle == enemy_visual.get_node_or_null("WeaponPresentation/FireReload/WeaponMount/Muzzle"), "native weapon presentation owns the firing marker independently of bones")
 			check(enemy_visual.muzzle.global_transform.is_finite() and is_equal_approx(enemy_visual.get_muzzle_direction().length(), 1.0), "enemy muzzle has a finite world frame and normalized forward direction")
-			var enemy_aim_point := player.global_position + Vector3.UP * 1.05 if player else humanoid_enemy.global_position - humanoid_enemy.global_basis.z * 8.0
+			var enemy_aim_point := player.global_position + Vector3.UP * 1.05 if player else drone_enemy.global_position - drone_enemy.global_basis.z * 8.0
 			var pod := enemy_visual.model.find_child("PortPod", true, false) as Node3D
 			var sensor := enemy_visual.model.find_child("Sensor", true, false) as Node3D
 			var idle_sensor_position := sensor.position
@@ -329,7 +334,7 @@ func _test_battle() -> void:
 			enemy_visual._sync_visual(0.25)
 			check(sensor.position.distance_to(idle_sensor_position) > 0.00001, "enemy idle presentation produces hover motion")
 			for frame_index in 36:
-				enemy_visual.update_visual(enemy_aim_point, -humanoid_enemy.global_basis.z, 3.2, 1.0 / 60.0)
+				enemy_visual.update_visual(enemy_aim_point, -drone_enemy.global_basis.z, 3.2, 1.0 / 60.0)
 				enemy_visual._sync_visual(1.0 / 60.0)
 				await get_tree().process_frame
 			check(pod.rotation.x < -0.04, "enemy movement presentation tilts the propulsion pods without humanoid locomotion")
@@ -400,7 +405,7 @@ func _test_battle() -> void:
 		var previous_health := player.health
 		var enemy_source := packet_heavy if packet_heavy else packet_basic
 		player.receive_damage(DamagePacket.new(10.0, 0.0, 0.0, enemy_source, &"enemy.prototype_rifle", &"enemy"))
-		check(is_equal_approx(previous_health - player.health, 10.0), "player receives enemy attack context through DamagePacket")
+		check(is_equal_approx(previous_health - player.health, 10.0 * (1.0 - player.armor_data.damage_reduction)), "player receives enemy attack context through DamagePacket with equipped armor protection")
 	if not enemies.is_empty():
 		var enemy := packet_basic if packet_basic else enemies[0] as EnemyController
 		check(enemy.find_child("EnemyMarker", true, false) != null, "enemies have red combat readability markers")
@@ -409,9 +414,11 @@ func _test_battle() -> void:
 		var previous_enemy_health := enemy.health
 		enemy.take_damage(5.0, Vector3.RIGHT)
 		check(enemy.health < previous_enemy_health, "enemy receives damage and hit reaction")
-		check(enemy.presentation.gun.material_overlay != null and not enemy.body_visual.scale.is_equal_approx(EnemyController.BASE_VISUAL_SCALE), "damage drives native enemy hit flash and presentation reaction")
+		var hit_mesh := enemy.body_visual.find_children("*", "MeshInstance3D", true, false)[0] as MeshInstance3D
+		check(hit_mesh.material_overlay != null and not enemy.body_visual.scale.is_equal_approx(EnemyController.BASE_VISUAL_SCALE), "damage drives imported enemy hit flash and presentation reaction")
 		battle.ending = true
-		enemy.take_damage(999.0, Vector3.UP * 2.0)
+		var wreck_enemy := packet_heavy if packet_heavy else drones[0] as EnemyController
+		wreck_enemy.take_damage(999.0, Vector3.UP * 2.0)
 		await get_tree().process_frame
 		check(battle.find_child("RagdollProxy", true, false) != null, "enemy death creates a physics ragdoll")
 		var native_wreck_parts := 0
@@ -485,7 +492,7 @@ func _test_battle() -> void:
 		check(objective_reach_zone.try_reach(player), "player entering authored zone completes REACH objective")
 		check(not objective_reach_zone.try_reach(player), "authored reach zone cannot advance its completed objective twice")
 		check(active_session.is_mission_completed(), "world objectives combine with reinforcement defeats to complete the Mission")
-		check(battle.hud.objective_label.text.contains("ACCESS FIELD TERMINAL") and battle.hud.objective_label.text.contains("REACH SURVEY ZONE"), "Battle HUD reads and displays all ObjectiveState entries")
+		check(battle.hud.objective_label.text.contains("OBJECTIVE COMPLETE / REACH EXTRACTION"), "Compact Battle HUD replaces completed objectives with extraction guidance")
 	check(not battle.ending and active_session.status == SortieSession.Status.ACTIVE, "mission completion and ALERT do not complete or lock the sortie")
 	var objective := active_session.get_objective_state(&"eliminate_prototype_enemies")
 	check(objective != null and objective.progress == 3 and active_session.is_mission_completed(), "authored reinforcement defeats satisfy the combat objective")
@@ -549,12 +556,13 @@ func _test_result() -> void:
 	check(result.finalize_sortie(acceptance_save_path) == OK, "result finalizes extraction through outcome commit and save")
 	var profile := ProfileRuntime.get_profile()
 	check(not extracted_loot_id.is_empty() and profile.inventory.contains(extracted_loot_id), "extracted loot reaches persistent profile only after finalize")
-	check(profile.inventory.contains(explicit_ammo_id) and profile.inventory.get_item(explicit_ammo_id).quantity == expected_extracted_ammo_quantity, "remaining magazine ammunition materializes into the recovered warehouse stack")
+	check(profile.inventory.contains(explicit_ammo_id) and _total_quantity(profile.inventory, &"ammo.556_standard") == uncarried_standard_ammo + expected_extracted_ammo_quantity, "remaining magazine ammunition materializes into warehouse stacks without losing or creating rounds")
 	check(profile.inventory.contains(explicit_rocket_ammo_id) and profile.inventory.get_item(explicit_rocket_ammo_id).quantity == expected_extracted_rocket_quantity, "secondary reserve survives extraction without duplicate magazine ammunition")
 	check(not uncarried_warehouse_id.is_empty() and profile.inventory.contains(uncarried_warehouse_id), "finalize preserves an uncarried warehouse item")
 	for instance_id in high_value_loot_ids:
 		check(profile.inventory.contains(instance_id), "finalize recovers high-value alert loot %s" % instance_id)
-	check(profile.inventory.get_items().size() == warehouse_count_before + 3 and profile.validate(), "finalize merges standard and high-value loot into a valid warehouse")
+	var overflow_stacks := maxi(ceili(float(expected_extracted_ammo_quantity) / ContentDB.get_ammo(&"ammo.556_standard").max_stack) - 1, 0)
+	check(profile.inventory.get_items().size() == warehouse_count_before + 3 + overflow_stacks and profile.validate(), "finalize merges standard and high-value loot with any required ammo overflow stack")
 	var restored := SaveService.load_profile(acceptance_save_path, false)
 	check(restored != null and restored.inventory.contains(extracted_loot_id), "saved profile reload contains extracted loot")
 	check(restored != null and restored.inventory.contains(uncarried_warehouse_id), "saved profile reload preserves uncarried warehouse items")
@@ -650,7 +658,7 @@ func _test_failed_sortie() -> void:
 	for _shot in 5:
 		check(player.debug_fire_once(), "failed-path runtime shot fires before death")
 	check(player.reload_weapon(), "failed-path reload consumes sortie reserve before death")
-	check(player.get_magazine_ammo() == 30 and player.get_reserve_ammo() == 115, "failed path has magazine and reserve runtime state")
+	check(player.get_magazine_ammo() == 30 and player.get_reserve_ammo() == 85, "failed path has magazine and reserve runtime state")
 	check(profile.to_dict() == profile_before, "failed-path fire and reload leave warehouse unchanged")
 	var enemy_count_before_alert: int = battle.enemy_container.get_child_count()
 	check(bool(objective_terminal.interact(player, session).get("success", false)), "failed path accesses the terminal before taking high-value loot")
@@ -671,7 +679,7 @@ func _test_failed_sortie() -> void:
 	check(player.is_dead and battle.ending, "lethal player damage enters the failed battle presentation")
 	check(session.status == SortieSession.Status.FAILED and session.threat_level == SortieSession.ThreatLevel.ALERT, "player death transitions the ALERT sortie to FAILED")
 	check(not session.is_mission_completed(), "player death cannot mark mission complete")
-	check(player.get_magazine_ammo() == 30 and player.get_reserve_ammo() == 115, "death does not materialize magazine ammunition")
+	check(player.get_magazine_ammo() == 30 and player.get_reserve_ammo() == 85, "death does not materialize magazine ammunition")
 	check(not player.debug_fire_once() and not player.reload_weapon(), "dead player cannot fire or reload")
 	check(blocked_loot.try_pickup(session) == LootPickup.PickupResult.INVALID_SESSION, "failed sortie rejects further loot pickup")
 	check(not extraction_point.extract(session), "failed sortie cannot extract")

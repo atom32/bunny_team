@@ -100,20 +100,14 @@ static func static_box(
 	return body
 
 
-static func add_world_environment(parent: Node, background: Color) -> void:
-	var environment := Environment.new()
-	environment.background_mode = Environment.BG_COLOR
-	environment.background_color = background
-	environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	environment.ambient_light_color = Color("66645f")
-	environment.ambient_light_energy = 0.8
-	environment.tonemap_mode = Environment.TONE_MAPPER_FILMIC
+static func add_world_environment(parent: Node, background: Color, key_energy: float = 1.25) -> void:
+	var environment := RenderProfile.create_environment(background)
 	var world := WorldEnvironment.new()
 	world.environment = environment
 	parent.add_child(world)
 	var light := DirectionalLight3D.new()
 	light.rotation_degrees = Vector3(-52.0, -35.0, 0.0)
-	light.light_color = Color(0.88, 0.93, 1.0)
-	light.light_energy = 1.25
+	light.light_color = Color(1.0, 0.98, 0.96)
+	light.light_energy = key_energy
 	light.shadow_enabled = true
 	parent.add_child(light)

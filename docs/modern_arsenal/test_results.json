@@ -1,0 +1,614 @@
+[
+  {
+    "name": "cold_import",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "--editor",
+      "--import"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "aa4693aba037cb84df5b5cf749f71292b1b71c35b83c9ef3a4e1ac87eb51db36"
+  },
+  {
+    "name": "acceptance_smoke",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/acceptance_smoke.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "6636548bb1d5aaebbaa6922a95b0f1f699a08dcdb2f8cde7c733fcfb07cf104d"
+  },
+  {
+    "name": "ammo_carried_foundation_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/ammo_carried_foundation_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "99796a71e8135de2dc76fecad41563a56dafc2856e0b27d3e03ac5a5c8afda25"
+  },
+  {
+    "name": "ammo_runtime_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/ammo_runtime_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "2783302cf52b74debe2cc3fccb67dd2225b8264d70a5caf55d5e48b726c9e84d"
+  },
+  {
+    "name": "area_definition_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/area_definition_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "d3fa9133ec181d7b5e473bb7291007414f2b9c8db884ac9f0d1f60145e689c90"
+  },
+  {
+    "name": "carried_inventory_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/carried_inventory_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "e173ada00bd56c78c2aee93a898a2e26eb0dbad5b8bf0a55cd9545f1dffcaf95"
+  },
+  {
+    "name": "combat_tuning_baseline_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/combat_tuning_baseline_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "0e0542ea8cdcdcc423a060ce6686767e10ba3ed7411c5643acd4d2ca73c65ac8"
+  },
+  {
+    "name": "content_inventory_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/content_inventory_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "432828e2dbe085ac83490086c140876f1004ddc7de094d6727f7afeeb018c455"
+  },
+  {
+    "name": "damage_packet_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/damage_packet_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "5d732e735c0a0c3a720149a7f2fbfbde2026aaa2c16f6ae8a45f2c56ba6741f5"
+  },
+  {
+    "name": "destructible_world_object_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/destructible_world_object_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "26ce5fcd9c002c54200594bd009a6ca1eb849060c063af26bc223e0a0a10b922"
+  },
+  {
+    "name": "enemy_definition_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/enemy_definition_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "1af90debba902389a8e88ae8d62b7791690623a29f586c79591e3b66e8e2eb82"
+  },
+  {
+    "name": "enemy_spawn_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/enemy_spawn_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "c15ddf0f4f8d98dfe62838788390be5ea6ff2bd8f2fbc3446b52f752e660cf03"
+  },
+  {
+    "name": "extraction_vertical_slice_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/extraction_vertical_slice_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "1abc4bd142fe96928d2f7c1180c7a1adec3bca0030e88d06b4d4a9083398f89c"
+  },
+  {
+    "name": "loadout_decision_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/loadout_decision_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "11766cb1423b2c5b2a34ea2b54024a640743f795891416e097aced80f6248cfa"
+  },
+  {
+    "name": "loadout_state_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/loadout_state_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "6087dabd3556b159af0f3879cc3f8781a17803092ba4e87a5b4d8b8ecb7d23ec"
+  },
+  {
+    "name": "loot_table_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/loot_table_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "9946a1fddbf83597823590161d8e832a226881848a708b777af743c114aadd19"
+  },
+  {
+    "name": "mission_flow_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/mission_flow_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "f4e8aa0dbdd0c25980af38a6cd91a9486c94ca01bd6df8b9f20106a3b915222f"
+  },
+  {
+    "name": "mission_objective_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/mission_objective_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "b2e8e78e7b82c68ca660c66e5efa37b576dd3969d97efe3fc25bb0add3f48257"
+  },
+  {
+    "name": "modern_arsenal_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/modern_arsenal_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "ff79f27c60cec9d7fce78af8020deb450b9ebf96ae98b5f6edf91659227494f6"
+  },
+  {
+    "name": "objective_world_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/objective_world_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "69710631a81d44fe098f258d71b438da43347a054be4b8dcc4ceb35e8ea0442b"
+  },
+  {
+    "name": "presentation_gameplay_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/presentation_gameplay_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "8340b90346efe009453677b962f00115c9c32ec8f706b1d530aa9d09d2effeb0"
+  },
+  {
+    "name": "profile_state_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/profile_state_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "29c395646ed5a0320dea862c074e27a3b0966d19242d91ec52a6218f894da0b7"
+  },
+  {
+    "name": "result_return_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/result_return_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "53814bc5e84f65d49f7dd166177710de8696f5d5fc2949018e6159aec62fc6f3"
+  },
+  {
+    "name": "save_service_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/save_service_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "9655da5add2bb52a6d8690444eb198d21fff293a469e2dd3bc03c5298a10edd8"
+  },
+  {
+    "name": "sortie_failure_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/sortie_failure_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "e372c883c9810e8fe5068772a82f3c08862439498a1881e16f3e5d2f6edf9e09"
+  },
+  {
+    "name": "sortie_outcome_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/sortie_outcome_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "c6b1a90d03d1b485953c6de88ad2b9adb7988a3a26289f8785cc01faaa469ad6"
+  },
+  {
+    "name": "sortie_session_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/sortie_session_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "ea2743de8d7d73fbe2d7c1343b079f3930ea91685dd33d11fb44efcb47d19244"
+  },
+  {
+    "name": "threat_escalation_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/threat_escalation_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "fed6190205214a37e1173b77e73010caafcf41f2d35c6baa23401c4c6a2fd1db"
+  },
+  {
+    "name": "visual_combat_acceptance",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/visual_combat_acceptance.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "7bcf8a40a289ae89cf9bef614c2e1063552bc8e3c553bd9661634e1cbc04f843"
+  },
+  {
+    "name": "visual_enemy_acceptance",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/visual_enemy_acceptance.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "c4f175a43ea2e16fc3254f65c7cc89a517cc8316cf020ce05e34bb726fd46e03"
+  },
+  {
+    "name": "visual_slice_assets_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/visual_slice_assets_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "3847da7e871cf67da18f624f5011cbec34532bd69a60eb6e8830995f831247e3"
+  },
+  {
+    "name": "weapon_behavior_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/weapon_behavior_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "f90c0f26762f32288804dde472d1d327042dcc7b7d8984c0704716a1c99ff2bf"
+  },
+  {
+    "name": "weapon_switching_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/weapon_switching_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "db24bb31be7f87ea53bd99ee61b7fc1c11a2ae08963525912e82bf16370bf315"
+  },
+  {
+    "name": "world_interaction_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/world_interaction_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "d6420817ef1c3d697d47b0c25745071ccec7889be4bd202f8268898f4a811471"
+  },
+  {
+    "name": "world_traversal_test",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "res://tests/world_traversal_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "baf1b4c5dba8f39b732cd452f0216768bbcc9e276d59654fbea3b20732b470a4"
+  },
+  {
+    "name": "main",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "--quit-after",
+      "180"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ],
+    "sha256": "502a050014c602e0d5fadf654260b67dda3a96b363dfc696f04946fde0112894"
+  }
+]

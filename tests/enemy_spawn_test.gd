@@ -29,7 +29,7 @@ func _test_definition_resolution() -> void:
 	check(definition != null and definition.validate_definition(), "prototype enemy resolves through ContentDB")
 	if definition:
 		check(definition.id == &"prototype_basic_enemy", "enemy definition exposes a stable content ID")
-		check(definition.display_name == "Prototype Basic Enemy", "enemy definition exposes authored display content")
+		check(definition.display_name == "PMC Patrol" and definition.humanoid_presentation, "enemy definition exposes the imported PMC patrol")
 		check(definition.scene != null and definition.scene.resource_path == "res://scenes/enemies/enemy.tscn", "enemy definition points to the existing enemy runtime scene")
 	check(ContentDB.get_enemy_definition(&"does_not_exist", false) == null, "unknown enemy ID fails without fallback")
 	check(not ContentDB.has_enemy(&"does_not_exist"), "unknown enemy ID is absent from the registry")

@@ -1,0 +1,68 @@
+{
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "tests_passed": 34,
+  "total_test_scenes": 34,
+  "cold_import": {
+    "name": "cold_import",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "--editor",
+      "--import"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "aa4693aba037cb84df5b5cf749f71292b1b71c35b83c9ef3a4e1ac87eb51db36"
+  },
+  "main": {
+    "name": "main",
+    "command": [
+      "/Applications/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/bunny-modern-full-03/project",
+      "--headless",
+      "--quit-after",
+      "180"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ],
+    "sha256": "502a050014c602e0d5fadf654260b67dda3a96b363dfc696f04946fde0112894"
+  },
+  "runtime_matches_passing_snapshot": true,
+  "graphical_weapons": "VISUAL_SLICE_ASSETS_TEST: PASS (7 Hanger and 7 Battle weapon views)",
+  "preview": "MODERN_ARSENAL_PREVIEW: PASS",
+  "route": {
+    "checks": {
+      "Combat still works": true,
+      "Door interaction": true,
+      "Enter Field Office": true,
+      "Exit Field Office": true,
+      "Extraction": true,
+      "Field Office entrance visible": true,
+      "Hanger launches": true,
+      "Interior traversal": true,
+      "Player movement": true,
+      "Production camera": true,
+      "Result": true,
+      "Return to original route": true,
+      "Terminal area reachable": true
+    },
+    "combat": {
+      "damage_taken": 6,
+      "enemies_defeated": 0,
+      "shots": 60
+    },
+    "combat_scope": "weapon fire and normal enemy AI; kill/damage semantics are covered by regression suites",
+    "failure": "",
+    "method": "automated input/API, not manual",
+    "mission_completed": false
+  }
+}

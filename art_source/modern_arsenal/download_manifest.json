@@ -1,0 +1,32 @@
+[
+  {
+    "name": "AssaultRifle_1",
+    "bytes": 576376,
+    "sha256": "f2ba5fc57776661d237734959c7972f3b5962ed698de6a2af6e6c172048d4e69",
+    "download_url": "https://drive.google.com/uc?export=download&id=1hbOSyrQtht1fjtiWP9Fuubl0ZBTPpBFq"
+  },
+  {
+    "name": "SubmachineGun_1",
+    "bytes": 564696,
+    "sha256": "b0547980843ac1d5e68790029ddfd34cba85bc66c88b9005fa7397d6354f0185",
+    "download_url": "https://drive.google.com/uc?export=download&id=1_Ysee7C6mJ7ZmWVJa4cc_PFaQ1FBwrpD"
+  },
+  {
+    "name": "Pistol_1",
+    "bytes": 573992,
+    "sha256": "1b3932f219113677e712a05c20162e0f4e9ba92bd8adc53a04ab032820663968",
+    "download_url": "https://drive.google.com/uc?export=download&id=1uNges1FjC5ezIja_9mGDPD_0miDtXRh_"
+  },
+  {
+    "name": "Shotgun_1",
+    "bytes": 571188,
+    "sha256": "442eda63e8f2529f6879df711d7949e181a86c39613434cacd86a456bddb4801",
+    "download_url": "https://drive.google.com/uc?export=download&id=1727ij1mrTob74WfsR0K5r9YIEDt2Rxni"
+  },
+  {
+    "name": "SniperRifle_1",
+    "bytes": 588272,
+    "sha256": "6b0c5982558b97e32c63b2bb70f1a250811acd6c68d17f3e4af5c792d232c764",
+    "download_url": "https://drive.google.com/uc?export=download&id=1HOZHFxD90GdmsA3JKvLo8DzwCCYEOBOs"
+  }
+]

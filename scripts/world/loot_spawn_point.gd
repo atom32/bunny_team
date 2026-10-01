@@ -6,6 +6,7 @@ const LOOT_PICKUP_SCENE := preload("res://scenes/world/loot_pickup.tscn")
 @export var loot_table_id: StringName
 @export_range(1, 32, 1, "or_greater") var roll_count := 1
 
+@export var enabled := true
 var has_rolled := false
 
 
@@ -16,7 +17,7 @@ func setup(p_loot_table_id: StringName, p_roll_count := 1) -> void:
 
 func spawn(rng: RandomNumberGenerator) -> Array[LootPickup]:
 	var pickups: Array[LootPickup] = []
-	if has_rolled or not rng:
+	if not enabled or has_rolled or not rng:
 		return pickups
 	var table := ContentDB.get_loot_table(loot_table_id, false)
 	if not table:

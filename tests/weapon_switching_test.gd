@@ -146,22 +146,22 @@ func _test_smg_rocket_lifecycle() -> void:
 	check(player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), "SMG fixture switches to Rocket")
 	check(player.debug_fire_once() and rocket_state.magazine_ammo == 0, "Rocket fire consumes only Rocket magazine")
 	check(player.reload_weapon(), "Rocket reload consumes compatible Rocket reserve")
-	check(rocket_state.magazine_ammo == 1 and session.get_reserve_ammo(rocket_id) == 3, "Rocket reload does not consume 5.56 reserve")
+	check(rocket_state.magazine_ammo == 1 and session.get_reserve_ammo(rocket_id) == 2, "Rocket reload does not consume 9mm reserve")
 	check(player.switch_weapon(LoadoutState.SLOT_WEAPON_PRIMARY), "SMG fixture switches back to primary")
 	check(smg_state.magazine_ammo == 31, "SMG magazine survives the Rocket round trip")
-	check(player.reload_weapon(), "SMG reload consumes compatible 5.56 reserve")
-	check(smg_state.magazine_ammo == 36 and session.get_reserve_ammo(smg_id) == 115, "SMG reload restores five rounds without consuming Rocket reserve")
-	check(rocket_state.magazine_ammo == 1 and session.get_reserve_ammo(rocket_id) == 3, "SMG reload leaves Rocket runtime unchanged")
+	check(player.reload_weapon(), "SMG reload consumes compatible 9mm reserve")
+	check(smg_state.magazine_ammo == 36 and session.get_reserve_ammo(smg_id) == 79, "SMG reload restores five rounds without consuming Rocket reserve")
+	check(rocket_state.magazine_ammo == 1 and session.get_reserve_ammo(rocket_id) == 2, "SMG reload leaves Rocket runtime unchanged")
 	check(profile.to_dict() == profile_before, "SMG and Rocket runtime use leaves Warehouse unchanged before extraction")
 
 	var expected_standard := session.get_reserve_ammo(smg_id) + smg_state.magazine_ammo
 	var expected_rockets := session.get_reserve_ammo(rocket_id) + rocket_state.magazine_ammo
 	check(session.complete_extraction(), "SMG and Rocket fixture extracts successfully")
-	check(_total_quantity(session.inventory, &"ammo.556_standard") == expected_standard, "extraction materializes remaining SMG magazine exactly once")
+	check(_total_quantity(session.inventory, &"ammo.9mm_standard") == expected_standard, "extraction materializes remaining SMG magazine exactly once")
 	check(_total_quantity(session.inventory, &"ammo.rocket_standard") == expected_rockets, "extraction materializes remaining Rocket magazine exactly once")
 	var outcome := SortieOutcomeService.create_outcome(session)
 	check(outcome != null and SortieOutcomeService.commit_outcome(profile, outcome) == OK, "SMG and Rocket recovery commits through SortieOutcome")
-	check(_total_quantity(profile.inventory, &"ammo.556_standard") == expected_standard, "Warehouse receives final SMG ammunition without duplication")
+	check(_total_quantity(profile.inventory, &"ammo.9mm_standard") == expected_standard, "Warehouse receives final SMG ammunition without duplication")
 	check(_total_quantity(profile.inventory, &"ammo.rocket_standard") == expected_rockets, "Warehouse receives final Rocket ammunition without duplication")
 	check(_count_instance_id(profile.inventory, smg_id) == 1 and _count_instance_id(profile.inventory, rocket_id) == 1, "SMG and Rocket business instance IDs remain unique")
 	var committed := profile.to_dict()
@@ -196,7 +196,7 @@ func _create_fixture(primary_definition_id: StringName = &"weapon.assault_rifle_
 		check(requested_primary != null and profile.loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, requested_primary.instance_id, profile.inventory), "fixture equips requested primary weapon")
 	var primary_id := profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)
 	var secondary_id := profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_SECONDARY)
-	var standard_ammo := _find_item(profile.inventory, &"ammo.556_standard")
+	var standard_ammo := _find_item(profile.inventory, ContentDB.get_weapon(primary_definition_id).get_runtime_ammo_definition_id())
 	var rocket_ammo := _find_item(profile.inventory, &"ammo.rocket_standard")
 	var carried_ids: Array[String] = [standard_ammo.instance_id, rocket_ammo.instance_id]
 	var request := profile.create_sortie_request(

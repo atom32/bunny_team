@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "Combat still works": true,
+    "Door interaction": true,
+    "Field Office entrance visible": true,
+    "Hanger launches": true,
+    "Player movement": true,
+    "Production camera": true
+  },
+  "combat": {
+    "damage_taken": 12,
+    "enemies_defeated": 0,
+    "shots": 81
+  },
+  "combat_scope": "weapon fire and normal enemy AI; kill/damage semantics are covered by regression suites",
+  "failure": "Entrance traversal failed",
+  "method": "automated input/API, not manual",
+  "mission_completed": false
+}

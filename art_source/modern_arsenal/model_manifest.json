@@ -1,0 +1,176 @@
+[
+  {
+    "weapon": "assault_rifle",
+    "source": "AssaultRifle_1.blend",
+    "length_m": 0.88,
+    "triangles": 1432,
+    "surfaces": 3,
+    "markers_m": {
+      "Muzzle": [
+        0.0,
+        0.08953786076054242,
+        -0.6623768521164446
+      ],
+      "PrimaryGrip": [
+        0.0308,
+        -0.0704,
+        -0.066
+      ],
+      "SupportGrip": [
+        -0.029855067341967922,
+        -0.017087379746485862,
+        -0.24299789924166693
+      ],
+      "ReloadGrip": [
+        0,
+        -0.17,
+        -0.14
+      ]
+    }
+  },
+  {
+    "weapon": "smg",
+    "source": "SubmachineGun_1.blend",
+    "length_m": 0.62,
+    "triangles": 1340,
+    "surfaces": 2,
+    "markers_m": {
+      "Muzzle": [
+        0.0,
+        0.09344825848077018,
+        -0.46159911746077664
+      ],
+      "PrimaryGrip": [
+        0.0308,
+        -0.0704,
+        -0.066
+      ],
+      "SupportGrip": [
+        -0.024933430638378076,
+        -0.016971220060618415,
+        -0.24409593313127195
+      ],
+      "ReloadGrip": [
+        0,
+        -0.17,
+        -0.14
+      ]
+    }
+  },
+  {
+    "weapon": "pistol",
+    "source": "Pistol_1.blend",
+    "length_m": 0.25,
+    "triangles": 1040,
+    "surfaces": 5,
+    "markers_m": {
+      "Muzzle": [
+        0.0,
+        0.025785503024154346,
+        -0.2638339728500238
+      ],
+      "PrimaryGrip": [
+        0.0308,
+        -0.0704,
+        -0.066
+      ],
+      "SupportGrip": [
+        -0.02,
+        -0.083,
+        -0.075
+      ],
+      "ReloadGrip": [
+        0,
+        -0.16,
+        -0.066
+      ]
+    }
+  },
+  {
+    "weapon": "shotgun",
+    "source": "Shotgun_1.blend",
+    "length_m": 0.93,
+    "triangles": 1270,
+    "surfaces": 4,
+    "markers_m": {
+      "Muzzle": [
+        0.0,
+        0.004499645122847354,
+        -0.7259317735038624
+      ],
+      "PrimaryGrip": [
+        0.0308,
+        -0.0704,
+        -0.066
+      ],
+      "SupportGrip": [
+        -0.024966548374282454,
+        -0.0400834769740856,
+        -0.2407658386199772
+      ],
+      "ReloadGrip": [
+        0,
+        -0.17,
+        -0.14
+      ]
+    }
+  },
+  {
+    "weapon": "sniper",
+    "source": "SniperRifle_1.blend",
+    "length_m": 1.08,
+    "triangles": 1382,
+    "surfaces": 5,
+    "markers_m": {
+      "Muzzle": [
+        0.0,
+        -0.011178377030026374,
+        -0.8256962091009032
+      ],
+      "PrimaryGrip": [
+        0.0308,
+        -0.0704,
+        -0.066
+      ],
+      "SupportGrip": [
+        -0.020727568039490774,
+        -0.04078918851501319,
+        -0.2288594631674275
+      ],
+      "ReloadGrip": [
+        0,
+        -0.17,
+        -0.14
+      ]
+    }
+  },
+  {
+    "weapon": "lmg",
+    "source": "AssaultRifle_1.blend",
+    "length_m": 1.02,
+    "triangles": 1784,
+    "surfaces": 3,
+    "markers_m": {
+      "Muzzle": [
+        0.0,
+        0.0778558114874228,
+        -0.8230930200882898
+      ],
+      "PrimaryGrip": [
+        0.0308,
+        -0.0704,
+        -0.066
+      ],
+      "SupportGrip": [
+        -0.027674418144318928,
+        -0.001213954639202694,
+        -0.2597209270102325
+      ],
+      "ReloadGrip": [
+        0,
+        -0.17,
+        -0.14
+      ]
+    }
+  }
+]

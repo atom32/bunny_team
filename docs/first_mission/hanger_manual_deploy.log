@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS / Manual Hanger selections equip the starter weapons
+PASS / Manual selection does not require the Overview character button
+PASS / Overview recognizes manually equipped weapons
+PASS / Hanger mission button opens Operations
+PASS / Confirm starts First Mission without hidden selection flag
+PASS / Successful first deployment records Bunny selection
+PASS / Deployment scene opens
+PASS / Manual loadout reaches the playable first mission
+HANGER_FIRST_MISSION_TEST PASS
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)

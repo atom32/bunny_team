@@ -39,14 +39,15 @@ func _run() -> void:
 		return
 	player.weapon_fired.connect(func(_recoil: float): shots += 1)
 	checks["Production camera"] = root.get_camera_3d() == battle.get("camera")
-	if not await _move_to(Vector3(-17.1, 0, 26.0)):
+	# FieldOffice center is x=-16; x=-17.1 is the door hinge, beside the opening.
+	if not await _move_to(Vector3(-16.0, 0, 26.0)):
 		await _finish("Could not approach Field Office")
 		return
 	checks["Player movement"] = true
 	var door = battle.find_child("SouthAccessDoor", true, false)
 	checks["Field Office entrance visible"] = door != null and not root.get_camera_3d().is_position_behind(door.global_position)
 	await _capture("02_entrance")
-	if not await _move_to(Vector3(-17.1, 0, 24.7)):
+	if not await _move_to(Vector3(-16.0, 0, 24.7)):
 		await _finish("Door approach failed")
 		return
 	await _tap(KEY_E)
@@ -54,7 +55,7 @@ func _run() -> void:
 	if not checks["Door interaction"]:
 		await _finish("Door did not open through interaction input")
 		return
-	if not await _move_to(Vector3(-17.1, 0, 21.5)) or not await _move_to(Vector3(-19.5, 0, 21.0)):
+	if not await _move_to(Vector3(-16.0, 0, 21.5)) or not await _move_to(Vector3(-19.5, 0, 21.0)):
 		await _finish("Entrance traversal failed")
 		return
 	checks["Enter Field Office"] = true
@@ -67,7 +68,7 @@ func _run() -> void:
 	checks["Terminal area reachable"] = player.global_position.distance_to(terminal.global_position) < 2.6
 	await _capture("04_terminal")
 	await _tap(KEY_E)
-	if not await _move_to(Vector3(-19.5, 0, 21.0)) or not await _move_to(Vector3(-17.1, 0, 21.5)) or not await _move_to(Vector3(-17.1, 0, 26.0)):
+	if not await _move_to(Vector3(-19.5, 0, 21.0)) or not await _move_to(Vector3(-16.0, 0, 21.5)) or not await _move_to(Vector3(-16.0, 0, 26.0)):
 		await _finish("Exit traversal failed")
 		return
 	checks["Exit Field Office"] = true

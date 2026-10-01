@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapons/weapon_visual.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/weapons/modern_arsenal/sniper.glb" id="2"]
+
+[node name="Sniper" type="Node3D"]
+script = ExtResource("1")
+hand_pose = &"Rifle"
+authored_grips = true
+
+[node name="Art" type="Node3D" parent="."]
+
+[node name="Model" parent="Art" instance=ExtResource("2")]
+scale = Vector3(2.272727, 2.272727, 2.272727)
+
+[node name="Muzzle" type="Marker3D" parent="."]
+position = Vector3(0.000000, -0.025405, -1.876582)
+
+[node name="PrimaryGrip" type="Marker3D" parent="."]
+position = Vector3(0.070000, -0.160000, -0.150000)
+
+[node name="SupportGrip" type="Marker3D" parent="."]
+position = Vector3(-0.047108, -0.092703, -0.520135)
+
+[node name="ReloadGrip" type="Marker3D" parent="."]
+position = Vector3(0.000000, -0.386364, -0.318182)

@@ -1,0 +1,41 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS / Language preference saves separately from profile
+PASS / Saved language is Simplified Chinese
+PASS / Unsupported language rejects without changing locale
+PASS / Native translation catalog translates menu controls
+PASS / Bundled font contains Chinese gameplay glyphs
+PASS / Upgraded weapon names preserve localized base name
+PASS / Armor tradeoff and numeric stats translate
+PASS / Warehouse summary translates item names and dynamic loadout
+PASS / Existing Hanger updates back to English
+PASS / Tutorial fits three lines zh_CN stage 0
+PASS / Tutorial fits three lines zh_CN stage 1
+PASS / Tutorial fits three lines zh_CN stage 2
+PASS / Tutorial fits three lines zh_CN stage 3
+PASS / Tutorial fits three lines zh_CN stage 4
+PASS / Tutorial fits three lines zh_CN stage 5
+PASS / Tutorial fits three lines zh_CN stage 6
+PASS / Tutorial fits three lines zh_CN stage 7
+PASS / Tutorial fits three lines zh_CN stage 8
+PASS / Tutorial fits three lines zh_CN stage 9
+PASS / Tutorial fits three lines en stage 0
+PASS / Tutorial fits three lines en stage 1
+PASS / Tutorial fits three lines en stage 2
+PASS / Tutorial fits three lines en stage 3
+PASS / Tutorial fits three lines en stage 4
+PASS / Tutorial fits three lines en stage 5
+PASS / Tutorial fits three lines en stage 6
+PASS / Tutorial fits three lines en stage 7
+PASS / Tutorial fits three lines en stage 8
+PASS / Tutorial fits three lines en stage 9
+PASS / Active weapon HUD updates language without restarting battle
+PASS / Dynamic ammunition HUD translates
+PASS / Objective names translate without changing IDs
+PASS / Investigation countdown is localized
+PASS / Open loot panel updates language without changing contents
+PASS / Debrief localizes mission name
+PASS / Debrief returns to English live
+LANGUAGE_TEST failures=[]
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)

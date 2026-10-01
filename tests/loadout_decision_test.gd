@@ -8,7 +8,7 @@ const LOADOUT_CASES := [
 		"label": "AR + SMG",
 		"primary": &"weapon.assault_rifle_01",
 		"secondary": &"weapon.smg_01",
-		"shared_ammo": true,
+		"shared_ammo": false,
 	},
 	{
 		"label": "AR + Rocket",
@@ -290,7 +290,7 @@ func _format_weapon(definition: WeaponDefinition, metrics: Dictionary) -> String
 
 func _format_ammo_totals(totals: Dictionary) -> String:
 	var parts: Array[String] = []
-	for ammo_definition_id in [&"ammo.556_standard", &"ammo.rocket_standard"]:
+	for ammo_definition_id in [&"ammo.556_standard", &"ammo.9mm_standard", &"ammo.rocket_standard"]:
 		if totals.has(ammo_definition_id):
 			parts.append("%s=%d" % [ammo_definition_id, totals[ammo_definition_id]])
 	return ", ".join(parts)

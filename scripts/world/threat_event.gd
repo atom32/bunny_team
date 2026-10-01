@@ -53,6 +53,7 @@ func _build_visual() -> void:
 	var marker := VisualFactory.cylinder(self, 2.8, 0.04, Vector3(0.0, 0.03, 0.0), Color("713842"), "AlertZoneMarker")
 	marker.material_override = VisualFactory.material(Color("4a2029"), 0.35, 0.35, Color("ff536d"), 1.6)
 	var label := Label3D.new()
+	label.font = UIFactory.FONT
 	label.text = "LOCAL ALERT ZONE"
 	label.position = Vector3(0.0, 0.72, 0.0)
 	label.font_size = 25

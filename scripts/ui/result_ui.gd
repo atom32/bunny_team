@@ -18,6 +18,17 @@ func configure(p_outcome: SortieOutcome) -> void:
 
 
 func _ready() -> void:
+	GameLanguage.language_changed.connect(_refresh_language)
+	_build_ui()
+
+func _refresh_language() -> void:
+	for child in get_children():
+		remove_child(child)
+		child.queue_free()
+	objective_labels.clear()
+	_build_ui()
+
+func _build_ui() -> void:
 	if not outcome:
 		push_error("ResultUI requires a SortieOutcome")
 		return
@@ -58,7 +69,7 @@ func _ready() -> void:
 	var mission := ContentDB.get_mission(outcome.mission_id, false)
 	mission_label = Label.new()
 	mission_label.name = "MissionName"
-	mission_label.text = "MISSION  /  %s" % (mission.display_name if mission else String(outcome.mission_id))
+	mission_label.text = tr("MISSION  /  %s") % (GameLanguage.item_name(mission.display_name) if mission else String(outcome.mission_id))
 	mission_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	mission_label.add_theme_color_override("font_color", Color("a9c4d4"))
 	content.add_child(mission_label)
@@ -76,9 +87,9 @@ func _ready() -> void:
 		var definition := mission.get_objective(StringName(summary.get("objective_id", ""))) if mission else null
 		var completed := int(summary.get("status", ObjectiveState.Status.PENDING)) == ObjectiveState.Status.COMPLETED
 		var objective_label := Label.new()
-		objective_label.text = "%s  %s    %d / %d" % [
-			"COMPLETE" if completed else "INCOMPLETE",
-			definition.display_name if definition else str(summary.get("objective_id", "Unknown")),
+		objective_label.text = tr("%s  %s    %d / %d") % [
+			tr("COMPLETE" if completed else "INCOMPLETE"),
+			GameLanguage.item_name(definition.display_name) if definition else str(summary.get("objective_id", "Unknown")),
 			int(summary.get("progress", 0)),
 			int(summary.get("target", 0)),
 		]
@@ -100,17 +111,23 @@ func _ready() -> void:
 	var divider := HSeparator.new()
 	content.add_child(divider)
 	_add_stat(content, "SURVIVAL", "EXTRACTED" if extracted else "UNIT LOST")
-	_add_stat(content, "RECOVERED CARGO" if extracted else "CARGO AT SIGNAL LOSS", "%.1f / %.1f kg" % [outcome.inventory.get_used_capacity(), outcome.inventory.capacity])
+	_add_stat(content, "RECOVERED CARGO" if extracted else "CARGO AT SIGNAL LOSS", tr("%.1f / %.1f kg") % [outcome.inventory.get_used_capacity(), outcome.inventory.capacity])
 	var recovered := 0
 	for item in outcome.inventory.get_items():
 		if item.instance_id not in outcome.initial_carried_instance_ids: recovered += item.quantity
 	_add_stat(content, "LOOT RECOVERED" if extracted else "LOOT AT SIGNAL LOSS", str(recovered))
+	if outcome.mission_id == &"first_mission" and extracted:
+		var cores := 0
+		for item in outcome.inventory.get_items():
+			if item.definition_id == &"loot.salvage_core_01": cores += item.quantity
+		_add_stat(content, "SALVAGE → WAREHOUSE ON RETURN", str(cores))
+		_add_stat(content, "NEXT", "WORKSHOP / FIRST UPGRADE" if outcome.mission_completed else "RETRY FIRST MISSION")
 	_add_stat(content, "ENEMIES DEFEATED", str(outcome.enemies_defeated))
 	_add_stat(content, "DAMAGE TAKEN", str(outcome.damage_taken))
 	var weapon_item := outcome.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, outcome.inventory)
 	var weapon := ContentDB.get_weapon(weapon_item.definition_id, false) if weapon_item else null
 	if weapon:
-		_add_stat(content, "PRIMARY WEAPON", weapon.display_name)
+		_add_stat(content, "PRIMARY WEAPON", GameLanguage.item_name(weapon.display_name))
 	var spacer := Control.new()
 	spacer.custom_minimum_size.y = 4
 	content.add_child(spacer)

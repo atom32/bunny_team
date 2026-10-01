@@ -29,6 +29,14 @@ func to_dict() -> Dictionary:
 
 
 static func from_dict(data: Dictionary) -> ItemInstance:
+	if typeof(data.get("instance_id")) != TYPE_STRING or typeof(data.get("definition_id")) != TYPE_STRING:
+		return null
+	var quantity_value: Variant = data.get("quantity")
+	var durability_value: Variant = data.get("durability")
+	if not SaveService.is_number(quantity_value) or quantity_value < 1 or quantity_value > 1000000 or floor(quantity_value) != quantity_value:
+		return null
+	if not SaveService.is_number(durability_value) or durability_value < 0 or durability_value > 100:
+		return null
 	var item := ItemInstance.new()
 	item.instance_id = str(data.get("instance_id", ""))
 	item.definition_id = StringName(data.get("definition_id", ""))

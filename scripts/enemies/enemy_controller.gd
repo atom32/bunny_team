@@ -21,7 +21,8 @@ var detection_range := 24.0
 var target: PlayerController
 var navigation_agent: NavigationAgent3D
 var body_visual: Node3D
-var presentation: KiteEnemyPresentation
+var presentation
+var humanoid_presentation := false
 var is_dead := false
 var _shot_cooldown := 0.7
 var _path_refresh := 0.0
@@ -47,6 +48,7 @@ func configure_from_definition(definition: EnemyDefinition) -> bool:
 	attack_range = definition.attack_range
 	attack_cooldown_min = definition.attack_cooldown_min
 	attack_cooldown_max = definition.attack_cooldown_max
+	humanoid_presentation = definition.humanoid_presentation
 	return true
 
 
@@ -156,7 +158,7 @@ func _build_navigation() -> void:
 
 
 func _build_visual() -> void:
-	presentation = KiteEnemyPresentation.new()
+	presentation = HumanoidEnemyPresentation.new() if humanoid_presentation else KiteEnemyPresentation.new()
 	presentation.name = "EnemyPresentation"
 	presentation.scale = BASE_VISUAL_SCALE
 	body_visual = presentation
@@ -230,15 +232,15 @@ func _telegraph_shot() -> void:
 	_is_telegraphing = true
 	_shot_cooldown = randf_range(attack_cooldown_min, attack_cooldown_max)
 	_shot_aim_point = target.global_position + Vector3.UP * 1.05
-	var from := presentation.get_muzzle_position()
+	var from: Vector3 = presentation.get_muzzle_position()
 	CombatEffects.telegraph(get_tree().current_scene, from, _shot_aim_point)
-	await get_tree().create_timer(0.38).timeout
+	await get_tree().create_timer(0.38, false).timeout
 	if not is_inside_tree() or is_dead or not is_instance_valid(target) or not target.is_inside_tree() or target.is_dead:
 		_is_telegraphing = false
 		_shot_aim_point = Vector3.ZERO
 		return
 	from = presentation.get_muzzle_position()
-	var shot_direction := presentation.get_muzzle_direction()
+	var shot_direction: Vector3 = presentation.get_muzzle_direction()
 	var ray_length := maxf(from.distance_to(_shot_aim_point) + 2.0, 16.0)
 	var ray_end := from + shot_direction * ray_length
 	var query := PhysicsRayQueryParameters3D.create(from, ray_end, 5)
@@ -269,10 +271,19 @@ func _telegraph_shot() -> void:
 func _die(impact: Vector3) -> void:
 	is_dead = true
 	CombatEffects.hit(get_tree().current_scene, global_position + Vector3.UP * 1.15, Color("ff6b55"), 1.65)
-	var ragdoll := RAGDOLL_SCENE.instantiate() as RagdollProxy
-	get_parent().add_child(ragdoll)
-	ragdoll.global_position = global_position
-	ragdoll.rotation.y = rotation.y
-	ragdoll.build(Color("a53d4f"), impact + Vector3.UP * 1.8)
+	if humanoid_presentation:
+		if _hit_tween and _hit_tween.is_valid():
+			_hit_tween.kill()
+		_clear_hit_flash()
+		presentation.scale = BASE_VISUAL_SCALE
+		presentation.rotation.z = 0
+		presentation.reparent(get_parent(), true)
+		presentation.play_death(impact)
+	else:
+		var ragdoll := RAGDOLL_SCENE.instantiate() as RagdollProxy
+		get_parent().add_child(ragdoll)
+		ragdoll.global_position = global_position
+		ragdoll.rotation.y = rotation.y
+		ragdoll.build(Color("a53d4f"), impact + Vector3.UP * 1.8)
 	died.emit(self)
 	queue_free()

@@ -1,0 +1,7 @@
+{
+	"device": "Apple M5",
+	"frame_ms_median": 13.667,
+	"frame_ms_p95": 14.967,
+	"renderer": "gl_compatibility",
+	"sample_frames": 90
+}

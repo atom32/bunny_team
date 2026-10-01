@@ -1,0 +1,37 @@
+[
+  {
+    "mode": "base",
+    "exit": 0,
+    "seconds": 0.569,
+    "pass": true,
+    "log_sha256": "59f6a5accb578e6572334268dc25a212140381773f5376d5477778c74a452893"
+  },
+  {
+    "mode": "battle",
+    "exit": 0,
+    "seconds": 0.57,
+    "pass": true,
+    "log_sha256": "59f6a5accb578e6572334268dc25a212140381773f5376d5477778c74a452893"
+  },
+  {
+    "mode": "failure",
+    "exit": 0,
+    "seconds": 0.567,
+    "pass": true,
+    "log_sha256": "59f6a5accb578e6572334268dc25a212140381773f5376d5477778c74a452893"
+  },
+  {
+    "mode": "transition",
+    "exit": 0,
+    "seconds": 1.815,
+    "pass": true,
+    "log_sha256": "59f6a5accb578e6572334268dc25a212140381773f5376d5477778c74a452893"
+  },
+  {
+    "mode": "recovery",
+    "exit": 0,
+    "seconds": 0.566,
+    "pass": true,
+    "log_sha256": "59f6a5accb578e6572334268dc25a212140381773f5376d5477778c74a452893"
+  }
+]

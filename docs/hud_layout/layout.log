@@ -1,0 +1,49 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M5 (Apple9)
+
+PASS / Window preferences save independently of profile
+PASS / Selected resolution survives preference reload
+PASS / Invalid resolution is rejected
+PASS / Objectives stays inside viewport (1280, 720)
+PASS / Objectives leaves combat centre clear (1280, 720)
+PASS / Vitals stays inside viewport (1280, 720)
+PASS / Vitals leaves combat centre clear (1280, 720)
+PASS / Weapons stays inside viewport (1280, 720)
+PASS / Weapons leaves combat centre clear (1280, 720)
+PASS / Tutorial leaves combat centre clear (1280, 720)
+PASS / Objectives stays inside viewport (1920, 1080)
+PASS / Objectives leaves combat centre clear (1920, 1080)
+PASS / Vitals stays inside viewport (1920, 1080)
+PASS / Vitals leaves combat centre clear (1920, 1080)
+PASS / Weapons stays inside viewport (1920, 1080)
+PASS / Weapons leaves combat centre clear (1920, 1080)
+PASS / Tutorial leaves combat centre clear (1920, 1080)
+PASS / Objectives stays inside viewport (2560, 1440)
+PASS / Objectives leaves combat centre clear (2560, 1440)
+PASS / Vitals stays inside viewport (2560, 1440)
+PASS / Vitals leaves combat centre clear (2560, 1440)
+PASS / Weapons stays inside viewport (2560, 1440)
+PASS / Weapons leaves combat centre clear (2560, 1440)
+PASS / Tutorial leaves combat centre clear (2560, 1440)
+PASS / Objectives stays inside viewport (1920, 1200)
+PASS / Objectives leaves combat centre clear (1920, 1200)
+PASS / Vitals stays inside viewport (1920, 1200)
+PASS / Vitals leaves combat centre clear (1920, 1200)
+PASS / Weapons stays inside viewport (1920, 1200)
+PASS / Weapons leaves combat centre clear (1920, 1200)
+PASS / Tutorial leaves combat centre clear (1920, 1200)
+PASS / Objectives stays inside viewport (2560, 1080)
+PASS / Objectives leaves combat centre clear (2560, 1080)
+PASS / Vitals stays inside viewport (2560, 1080)
+PASS / Vitals leaves combat centre clear (2560, 1080)
+PASS / Weapons stays inside viewport (2560, 1080)
+PASS / Weapons leaves combat centre clear (2560, 1080)
+PASS / Tutorial leaves combat centre clear (2560, 1080)
+PASS / Risk choice button remains on screen
+PASS / Risk choice button remains on screen
+PASS / Risk choice buttons do not overlap
+PASS / Combat notification expires rather than obstructing indefinitely
+PASS / Display settings pause gameplay
+PASS / Closing settings resumes gameplay
+PASS / Fullscreen applies to the actual window
+HUD_LAYOUT_TEST failures=[]

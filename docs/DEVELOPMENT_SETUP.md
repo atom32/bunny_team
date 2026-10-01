@@ -1,5 +1,15 @@
 # Development checkout / 环境同步
 
+2026-10-01 checkpoint: First Mission and the single AR upgrade, real armor protection, Streets district, bilingual UI, display settings and spatial warehouse are now included alongside the modern arsenal and Bunny trial. See the current [handoff](../Handoff.md) and [README](../README.md). Validation tooling checks **43** test scenes in an isolated copy. The WIP notices below describe earlier checkpoints.
+
+2026-09-30 current WIP: seven modern weapons, the scarf-free Artoria playable prototype, imported human patrols plus drones, and 37 regression scenes. See [the model trial](ARTORIA_BUNNY_TRIAL.md) and [modern arsenal](MODERN_ARSENAL.md). `tools/verify_migration.py` snapshots current Git-visible WIP and isolates `user://` on macOS/Linux as well as Windows. The checkpoint results below remain historical. These working-tree changes are not yet committed; pulling the current remote alone will not obtain them.
+
+Run `python3 tools/verify_migration.py --godot <godot-executable> --output <new-directory-outside-repo> --route` for cold import, all 37 scenes, five quit subprocess checks, Main and an automated graphical route. The route checks traversal, interaction and extraction; it is not manual playtesting or a complete campaign mission clear. Godot needs only the self-contained Artoria GLB; the original Downloads blend and Blender 5.2.1 are needed only to rebuild that derivative.
+
+Current desktop renderer: **Forward+**, 4× MSAA, AgX/neutral environment reflection, light SSAO and glow. The shared implementation is `scripts/systems/render_profile.gd`. Use `<godot> --path . --rendering-method gl_compatibility` to launch the fallback. `verify_migration.py --route` now verifies Forward+ by default; `--renderer gl_compatibility` selects the fallback route. Windows GPU/drivers still need a real-machine graphics check.
+
+Current saves remain schema 1. A save is written to `.tmp`, verified, then replaces the primary; the previous valid primary is kept as `.bak`. Corrupt profiles open a recovery menu. Explicit recovery copies the broken primary to `.recovery-<timestamp>-<ticks>` before saving a backup/new profile. Never copy personal saves into test snapshots. Continue returns to base with saved inventory/loadout, not an in-progress battle. Saving failures offer retry and explicit in-memory continuation.
+
 2026-09-27. Runtime checkpoint `bc4984b` (Phase 5); this follow-up only synchronizes
 required configuration/source/dependency records. Use **Godot 4.7.2**, GL Compatibility.
 
@@ -54,8 +64,8 @@ To repeat manually in a fresh clone:
 <godot> --headless --path . res://tests/acceptance_smoke.tscn --quit-after 1200
 <godot> --headless --path . --quit-after 180
 ```
-Run each of the 33 `tests/*.tscn` for the full regression, not only acceptance_smoke.
-`tools/verify_migration.py` is retained historical tooling: it includes local WIP in
-its snapshot, so it does **not** prove a clean checkout; its optional Phase 2B route
-is historical. Current full graphical evidence/tools are under `art_source/phase5/`;
-their local executable/workspace paths must be configured on the destination machine.
+Run each of the 37 `tests/*.tscn` for the current full regression, not only acceptance_smoke.
+`tools/verify_migration.py` includes local WIP in its snapshot, so it does **not** prove
+a clean committed checkout. Its optional route retains the Phase 2B route's bounded
+scope while exercising the current runtime. Current trial evidence is under
+`docs/artoria_bunny_trial/`; `art_source/phase5/` retains earlier checkpoint evidence.

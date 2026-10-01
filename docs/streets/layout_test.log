@@ -1,0 +1,821 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS Streets mission and area are registered
+PASS Route map tracks the deployed player
+PASS M opens the in-raid route map
+PASS M closes the route map
+PASS Sedan cabin blocks a firing ray at shoulder height (@StaticBody3D@3188:<StaticBody3D#303751508392>)
+PASS Foliage does not become a solid bullet shield
+PASS Tree trunk retains real collision
+PASS Instanced foliage fades when it hides the actor
+PASS Foliage occlusion never changes camera angle
+PASS Instanced foliage restores after the actor clears it
+PASS Seed 1 assigns two far-side exits
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Seed 1 reaches StreetTerminal (end (-24.0, 0.03, -17.5) target (-24.0, 0.0, -17.5))
+PASS Seed 1 reaches StreetSurvey (end (-21.0, 0.03, 33.0) target (-21.0, 0.0, 33.0))
+PASS Seed 1 reaches Exit0 (end (-48.0, 0.03, 52.0) target (-48.0, 0.0, 52.0))
+PASS Seed 1 reaches Exit1 (end (48.0, 0.03, 52.0) target (48.0, 0.0, 52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 2 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Seed 2 reaches StreetTerminal (end (18.0, 0.03, 25.5) target (18.0, 0.0, 25.5))
+PASS Seed 2 reaches StreetSurvey (end (21.0, 0.03, -8.0) target (21.0, 0.0, -8.0))
+PASS Seed 2 reaches Exit1 (end (48.0, 0.03, 52.0) target (48.0, 0.0, 52.0))
+PASS Seed 2 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 3 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Seed 3 reaches StreetTerminal (end (-25.0, 0.03, 24.5) target (-25.0, 0.0, 24.5))
+PASS Seed 3 reaches StreetSurvey (end (-20.0, 0.03, -9.0) target (-20.0, 0.0, -9.0))
+PASS Seed 3 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Seed 3 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 4 assigns two far-side exits
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Seed 4 reaches StreetTerminal (end (18.0, 0.03, 25.5) target (18.0, 0.0, 25.5))
+PASS Seed 4 reaches StreetSurvey (end (21.0, 0.03, -8.0) target (21.0, 0.0, -8.0))
+PASS Seed 4 reaches Exit0 (end (-48.0, 0.03, 52.0) target (-48.0, 0.0, 52.0))
+PASS Seed 4 reaches Exit1 (end (48.0, 0.03, 52.0) target (48.0, 0.0, 52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 5 assigns two far-side exits
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Seed 5 reaches StreetTerminal (end (17.0, 0.03, -16.5) target (17.0, 0.0, -16.5))
+PASS Seed 5 reaches StreetSurvey (end (22.0, 0.03, 34.0) target (22.0, 0.0, 34.0))
+PASS Seed 5 reaches Exit0 (end (-48.0, 0.03, 52.0) target (-48.0, 0.0, 52.0))
+PASS Seed 5 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 6 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Seed 6 reaches StreetTerminal (end (-25.0, 0.03, 24.5) target (-25.0, 0.0, 24.5))
+PASS Seed 6 reaches StreetSurvey (end (-20.0, 0.03, -9.0) target (-20.0, 0.0, -9.0))
+PASS Seed 6 reaches Exit1 (end (48.0, 0.03, 52.0) target (48.0, 0.0, 52.0))
+PASS Seed 6 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 7 assigns two far-side exits
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Seed 7 reaches StreetTerminal (end (17.0, 0.03, -16.5) target (17.0, 0.0, -16.5))
+PASS Seed 7 reaches StreetSurvey (end (22.0, 0.03, 34.0) target (22.0, 0.0, 34.0))
+PASS Seed 7 reaches Exit0 (end (-48.0, 0.03, 52.0) target (-48.0, 0.0, 52.0))
+PASS Seed 7 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 8 assigns two far-side exits
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Seed 8 reaches StreetTerminal (end (17.0, 0.03, -16.5) target (17.0, 0.0, -16.5))
+PASS Seed 8 reaches StreetSurvey (end (22.0, 0.03, 34.0) target (22.0, 0.0, 34.0))
+PASS Seed 8 reaches Exit0 (end (-48.0, 0.03, 52.0) target (-48.0, 0.0, 52.0))
+PASS Seed 8 reaches Exit1 (end (48.0, 0.03, 52.0) target (48.0, 0.0, 52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 9 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Seed 9 reaches StreetTerminal (end (17.0, 0.03, -16.5) target (17.0, 0.0, -16.5))
+PASS Seed 9 reaches StreetSurvey (end (22.0, 0.03, 34.0) target (22.0, 0.0, 34.0))
+PASS Seed 9 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Seed 9 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 10 assigns two far-side exits
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Seed 10 reaches StreetTerminal (end (-25.0, 0.03, 24.5) target (-25.0, 0.0, 24.5))
+PASS Seed 10 reaches StreetSurvey (end (-20.0, 0.03, -9.0) target (-20.0, 0.0, -9.0))
+PASS Seed 10 reaches Exit0 (end (-48.0, 0.03, 52.0) target (-48.0, 0.0, 52.0))
+PASS Seed 10 reaches Exit1 (end (48.0, 0.03, 52.0) target (48.0, 0.0, 52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 11 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Seed 11 reaches StreetTerminal (end (-24.0, 0.03, -17.5) target (-24.0, 0.0, -17.5))
+PASS Seed 11 reaches StreetSurvey (end (-21.0, 0.03, 33.0) target (-21.0, 0.0, 33.0))
+PASS Seed 11 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Seed 11 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 12 assigns two far-side exits
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Seed 12 reaches StreetTerminal (end (-24.0, 0.03, -17.5) target (-24.0, 0.0, -17.5))
+PASS Seed 12 reaches StreetSurvey (end (-21.0, 0.03, 33.0) target (-21.0, 0.0, 33.0))
+PASS Seed 12 reaches Exit0 (end (-48.0, 0.03, 52.0) target (-48.0, 0.0, 52.0))
+PASS Seed 12 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 13 assigns two far-side exits
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Seed 13 reaches StreetTerminal (end (-25.0, 0.03, 24.5) target (-25.0, 0.0, 24.5))
+PASS Seed 13 reaches StreetSurvey (end (-20.0, 0.03, -9.0) target (-20.0, 0.0, -9.0))
+PASS Seed 13 reaches Exit0 (end (-48.0, 0.03, 52.0) target (-48.0, 0.0, 52.0))
+PASS Seed 13 reaches Exit1 (end (48.0, 0.03, 52.0) target (48.0, 0.0, 52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 14 assigns two far-side exits
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Seed 14 reaches StreetTerminal (end (-24.0, 0.03, -17.5) target (-24.0, 0.0, -17.5))
+PASS Seed 14 reaches StreetSurvey (end (-21.0, 0.03, 33.0) target (-21.0, 0.0, 33.0))
+PASS Seed 14 reaches Exit0 (end (-48.0, 0.03, 52.0) target (-48.0, 0.0, 52.0))
+PASS Seed 14 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 15 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Seed 15 reaches StreetTerminal (end (-25.0, 0.03, 24.5) target (-25.0, 0.0, 24.5))
+PASS Seed 15 reaches StreetSurvey (end (-20.0, 0.03, -9.0) target (-20.0, 0.0, -9.0))
+PASS Seed 15 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Seed 15 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 16 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Seed 16 reaches StreetTerminal (end (-25.0, 0.03, 24.5) target (-25.0, 0.0, 24.5))
+PASS Seed 16 reaches StreetSurvey (end (-20.0, 0.03, -9.0) target (-20.0, 0.0, -9.0))
+PASS Seed 16 reaches Exit1 (end (48.0, 0.03, 52.0) target (48.0, 0.0, 52.0))
+PASS Seed 16 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 17 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Seed 17 reaches StreetTerminal (end (17.0, 0.03, -16.5) target (17.0, 0.0, -16.5))
+PASS Seed 17 reaches StreetSurvey (end (22.0, 0.03, 34.0) target (22.0, 0.0, 34.0))
+PASS Seed 17 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Seed 17 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 18 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Seed 18 reaches StreetTerminal (end (-25.0, 0.03, 24.5) target (-25.0, 0.0, 24.5))
+PASS Seed 18 reaches StreetSurvey (end (-20.0, 0.03, -9.0) target (-20.0, 0.0, -9.0))
+PASS Seed 18 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Seed 18 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 19 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Seed 19 reaches StreetTerminal (end (18.0, 0.03, 25.5) target (18.0, 0.0, 25.5))
+PASS Seed 19 reaches StreetSurvey (end (21.0, 0.03, -8.0) target (21.0, 0.0, -8.0))
+PASS Seed 19 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Seed 19 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 20 assigns two far-side exits
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Seed 20 reaches StreetTerminal (end (17.0, 0.03, -16.5) target (17.0, 0.0, -16.5))
+PASS Seed 20 reaches StreetSurvey (end (22.0, 0.03, 34.0) target (22.0, 0.0, 34.0))
+PASS Seed 20 reaches Exit0 (end (-48.0, 0.03, 52.0) target (-48.0, 0.0, 52.0))
+PASS Seed 20 reaches Exit1 (end (48.0, 0.03, 52.0) target (48.0, 0.0, 52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 21 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Seed 21 reaches StreetTerminal (end (-24.0, 0.03, -17.5) target (-24.0, 0.0, -17.5))
+PASS Seed 21 reaches StreetSurvey (end (-21.0, 0.03, 33.0) target (-21.0, 0.0, 33.0))
+PASS Seed 21 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Seed 21 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 22 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Seed 22 reaches StreetTerminal (end (-25.0, 0.03, 24.5) target (-25.0, 0.0, 24.5))
+PASS Seed 22 reaches StreetSurvey (end (-20.0, 0.03, -9.0) target (-20.0, 0.0, -9.0))
+PASS Seed 22 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Seed 22 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_1 accessible (end (-15.0, 0.03, -16.0) target (-15.0, 0.0, -16.0))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS Loot StreetLoot17 accessible (end (32.0, 0.03, -7.0) target (32.0, 0.0, -7.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 23 assigns two far-side exits
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Unassigned exit rejects extraction
+PASS Seed 23 reaches StreetTerminal (end (18.0, 0.03, 25.5) target (18.0, 0.0, 25.5))
+PASS Seed 23 reaches StreetSurvey (end (21.0, 0.03, -8.0) target (21.0, 0.0, -8.0))
+PASS Seed 23 reaches Exit0 (end (-48.0, 0.03, 52.0) target (-48.0, 0.0, 52.0))
+PASS Seed 23 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_7 accessible (end (-16.0, 0.03, 26.0) target (-16.0, 0.0, 26.0))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot12 accessible (end (-47.0, 0.03, 36.0) target (-47.0, 0.0, 36.0))
+PASS Loot StreetLoot14 accessible (end (-31.0, 0.03, 8.0) target (-31.0, 0.0, 8.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seed 24 assigns two far-side exits
+PASS Unassigned exit rejects extraction
+PASS Unassigned exit rejects extraction
+PASS Assigned exit crosses the district
+PASS Assigned exit crosses the district
+PASS Seed 24 reaches StreetTerminal (end (17.0, 0.03, -16.5) target (17.0, 0.0, -16.5))
+PASS Seed 24 reaches StreetSurvey (end (22.0, 0.03, 34.0) target (22.0, 0.0, 34.0))
+PASS Seed 24 reaches Exit2 (end (-48.0, 0.03, -52.0) target (-48.0, 0.0, -52.0))
+PASS Seed 24 reaches Exit3 (end (48.0, 0.03, -52.0) target (48.0, 0.0, -52.0))
+PASS Loot IndoorLoot0_0 accessible (end (-25.0, 0.03, -24.5) target (-25.0, 0.0, -24.5))
+PASS Loot IndoorLoot0_2 accessible (end (-23.0, 0.03, -15.5) target (-23.0, 0.0, -15.5))
+PASS Loot IndoorLoot1_3 accessible (end (16.0, 0.03, -23.5) target (16.0, 0.0, -23.5))
+PASS Loot IndoorLoot1_4 accessible (end (26.0, 0.03, -15.0) target (26.0, 0.0, -15.0))
+PASS Loot IndoorLoot1_5 accessible (end (18.0, 0.03, -14.5) target (18.0, 0.0, -14.5))
+PASS Loot IndoorLoot2_6 accessible (end (-26.0, 0.03, 17.5) target (-26.0, 0.0, 17.5))
+PASS Loot IndoorLoot2_8 accessible (end (-24.0, 0.03, 26.5) target (-24.0, 0.0, 26.5))
+PASS Loot IndoorLoot3_9 accessible (end (17.0, 0.03, 18.5) target (17.0, 0.0, 18.5))
+PASS Loot IndoorLoot3_10 accessible (end (27.0, 0.03, 27.0) target (27.0, 0.0, 27.0))
+PASS Loot IndoorLoot3_11 accessible (end (19.0, 0.03, 27.5) target (19.0, 0.0, 27.5))
+PASS Loot StreetLoot13 accessible (end (47.0, 0.03, -36.0) target (47.0, 0.0, -36.0))
+PASS Loot StreetLoot15 accessible (end (32.0, 0.03, 9.0) target (32.0, 0.0, 9.0))
+PASS Loot StreetLoot16 accessible (end (-32.0, 0.03, -8.0) target (-32.0, 0.0, -8.0))
+PASS High-value loot remains inside four risk-bearing interiors
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS PMC does not spawn beside player
+PASS Seeded deployment covers all six player spawn candidates
+PASS Follow/aim changes never alter camera angle
+PASS Occlusion fades geometry without moving the camera
+PASS Fading keeps collision active
+PASS Occluder opacity restores after sightline clears
+PASS Records interaction advances the current mission
+PASS Opposite courtyard advances the survey objective
+PASS Records and survey complete the district mission
+PASS An assigned exit completes the district sortie
+STREETS_LAYOUT_TEST failures=0

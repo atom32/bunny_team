@@ -66,7 +66,7 @@ func mount_weapon(weapon: Node3D) -> bool:
 	clear_weapon()
 	equipped_weapon = weapon
 	weapon_mount.add_child(equipped_weapon)
-	equipped_weapon.scale = Vector3.ONE * 0.44
+	equipped_weapon.scale = Vector3.ONE * equipped_weapon.mount_scale
 	primary_grip = equipped_weapon.find_child("PrimaryGrip", true, false) as Marker3D
 	support_grip = equipped_weapon.find_child("SupportGrip", true, false) as Marker3D
 	reload_grip = equipped_weapon.find_child("ReloadGrip", true, false) as Marker3D

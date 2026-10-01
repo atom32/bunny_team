@@ -11,6 +11,7 @@ func _ready() -> void:
 	await _test_enemy_receivers_and_death()
 	await _test_hitscan_and_cover()
 	await _test_player_receiver()
+	await _test_player_armor_tradeoff()
 	_test_weapon_boundary()
 	AudioDirector.shutdown_for_test()
 	await get_tree().create_timer(0.2).timeout
@@ -139,3 +140,66 @@ func _test_weapon_boundary() -> void:
 func check(condition: bool, description: String) -> void:
 	if not condition:
 		failures.append(description)
+
+
+func _test_player_armor_tradeoff() -> void:
+	var floor := VisualFactory.static_box(self, Vector3(80,0.2,16), Vector3(100,-0.1,50), Color("27333d"), "ArmorTestFloor")
+	var light := PlayerController.new()
+	var heavy := PlayerController.new()
+	add_child(light)
+	add_child(heavy)
+	light.set_physics_process(false)
+	heavy.set_physics_process(false)
+	light.global_position = Vector3(80,0.1,48)
+	heavy.global_position = Vector3(80,0.1,53)
+	light.equip_weapon(ContentDB.get_weapon(&"weapon.assault_rifle_01"))
+	heavy.equip_weapon(ContentDB.get_weapon(&"weapon.assault_rifle_01"))
+	light.equip_armor(ContentDB.get_item(&"armor.recon_shell_01"))
+	heavy.equip_armor(ContentDB.get_item(&"armor.bulwark_plate_01"))
+	var light_before := light.health
+	var heavy_before := heavy.health
+	var light_hit := light.receive_damage(DamagePacket.new(25.0))
+	var heavy_hit := heavy.receive_damage(DamagePacket.new(25.0))
+	check(is_equal_approx(light_hit, 22.5) and is_equal_approx(light_before-light.health,22.5), "Light Armor reduces actual 25 damage to 22.5 (10% protection)")
+	check(is_equal_approx(heavy_hit, 15.0) and is_equal_approx(heavy_before-heavy.health,15.0), "Heavy Armor reduces actual 25 damage to 15 (40% protection)")
+	check(is_equal_approx(light.get_movement_speed(),8.2) and is_equal_approx(heavy.get_movement_speed(),6.2), "Same AR loadout has 8.2 vs 6.2 m/s mobility")
+	check(light.armor_data.weight == 3.0 and heavy.armor_data.weight == 8.0, "Armor carry weight is 3 vs 8 kg")
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	Input.action_press("move_right")
+	var light_start := light.global_position
+	var heavy_start := heavy.global_position
+	for _frame in 60:
+		await get_tree().physics_frame
+		light._update_movement(1.0/60.0)
+		heavy._update_movement(1.0/60.0)
+	Input.action_release("move_right")
+	var light_distance := ((light.global_position-light_start) * Vector3(1, 0, 1)).length()
+	var heavy_distance := ((heavy.global_position-heavy_start) * Vector3(1, 0, 1)).length()
+	print("ARMOR TRADEOFF / 25 damage: light %.1f HP, heavy %.1f HP / travel: light %.2fm, heavy %.2fm" % [light_hit,heavy_hit,light_distance,heavy_distance])
+	check(light_distance > heavy_distance + 1.5 and heavy_distance > 5.0, "Actual one-second traversal differs: light %.2fm, heavy %.2fm" % [light_distance,heavy_distance])
+	var profile := ProfileState.create_new()
+	profile._equip_first_definition(LoadoutState.SLOT_ARMOR, &"armor.bulwark_plate_01")
+	var save_path := "user://armor_tradeoff_%s.json" % OS.get_process_id()
+	check(SaveService.save_profile(profile,save_path) == OK, "Heavy Armor loadout saves")
+	var restored := SaveService.load_profile(save_path,false)
+	var session := SortieSession.create_from_profile(restored.create_sortie_request(),restored)
+	check(session.activate(), "Saved Heavy Armor sortie activates")
+	var deployed := PlayerController.new()
+	deployed.configure_sortie(session)
+	add_child(deployed)
+	deployed.set_physics_process(false)
+	check(is_equal_approx(deployed.get_protection(),0.4) and is_equal_approx(deployed.get_movement_speed(),6.2), "Saved Heavy Armor selection applies protection and mobility after deployment")
+	check(deployed.receive_damage(DamagePacket.new(25.0)) == 15.0, "Deployed Heavy Armor mitigates real incoming damage")
+	var hud := BattleHUD.new()
+	add_child(hud)
+	hud.set_armor_stats(heavy.get_movement_speed(),heavy.get_protection(),heavy.armor_data.weight)
+	check(hud.armor_label.text.contains("6.2 m/s") and hud.armor_label.text.contains("40%") and hud.armor_label.text.contains("8.0 kg"), "HUD exposes actual mobility, protection and carry weight")
+	var hanger_ui := HangerUI.new()
+	hanger_ui.configure(restored.inventory,restored.loadout)
+	add_child(hanger_ui)
+	check(hanger_ui.armor_detail.text.contains("6.2 m/s") and hanger_ui.armor_detail.text.contains("40%") and hanger_ui.armor_detail.text.contains("8.0 kg"), "Loadout screen exposes Heavy Armor tradeoff")
+	for suffix in ["", ".bak", ".tmp"]:
+		if FileAccess.file_exists(save_path+suffix): DirAccess.remove_absolute(ProjectSettings.globalize_path(save_path+suffix))
+	for node in [light,heavy,deployed,hud,hanger_ui,floor]: node.queue_free()
+	await get_tree().process_frame

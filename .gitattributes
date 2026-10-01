@@ -1,2 +1,4 @@
-# Preserve recovered official source bytes, including Unity text/meta files.
-/art_source/unitychan_battle_legacy/official_1_1/** -text
+# Preserve original publisher notices and raw validation logs byte-for-byte.
+assets/animations/mocap_online_rifle/READ_ME!_Rifle_Position_NOTES.txt -text whitespace=-trailing-space
+assets/fonts/noto_sans_sc/OFL.txt -text whitespace=-trailing-space
+*.log -text whitespace=-blank-at-eof

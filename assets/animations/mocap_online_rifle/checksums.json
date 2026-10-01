@@ -1,0 +1,42 @@
+[
+  {
+    "file": "MotusMan_v55.fbx",
+    "sha256": "7f7c5fc7491f1f2c23894940167a1aed134c949515378dea3be6c9ed02db1e16",
+    "source": "MotusMan/MotusMan_v55.fbx"
+  },
+  {
+    "file": "source/W2_Jog_Aim_F_Loop.fbx",
+    "sha256": "4e40a964753930da5317d29f80a3cdc48061628729ba59aabf07d411fbf6e2d5",
+    "source": "Animation/Rifle/Animation/Root_Motion/W2_Jog_Aim_F_Loop.fbx"
+  },
+  {
+    "file": "source/W2_Jog_Aim_F_Loop_IPC.fbx",
+    "sha256": "fc4d24b1fbf8e16ff0ad2c8674f1c34ab5dd5904e265818d79986b7204a34e3d",
+    "source": "Animation/Rifle/Animation/In-Place/W2_Jog_Aim_F_Loop_IPC.fbx"
+  },
+  {
+    "file": "source/W2_Stand_Aim_Idle_v2.fbx",
+    "sha256": "8f04425978faf4cc05e918f0149328cda66066b05bc81cf452cae1aad08be48f",
+    "source": "Animation/Rifle/Animation/Root_Motion/W2_Stand_Aim_Idle_v2.fbx"
+  },
+  {
+    "file": "source/W2_Stand_Aim_To_Relaxed.fbx",
+    "sha256": "30acedf20321db598e9e0da6cb2360e2f5008613b012eb65ec32c66d6bd54a5a",
+    "source": "Animation/Rifle/Animation/Root_Motion/W2_Stand_Aim_To_Relaxed.fbx"
+  },
+  {
+    "file": "source/W2_Stand_Relaxed_Idle_v2.fbx",
+    "sha256": "5e2761a86c712c12c14cd32a6b9acad08a140d9b4a4810705b698401a14647fb",
+    "source": "Animation/Rifle/Animation/Root_Motion/W2_Stand_Relaxed_Idle_v2.fbx"
+  },
+  {
+    "file": "source/W2_Walk_Aim_F_Loop.fbx",
+    "sha256": "fab7af72e2762b898e7e8adde480b062f103e4407d2a68d0e547507d03a3d21e",
+    "source": "Animation/Rifle/Animation/Root_Motion/W2_Walk_Aim_F_Loop.fbx"
+  },
+  {
+    "file": "source/W2_Walk_Aim_F_Loop_IPC.fbx",
+    "sha256": "450398481d2b8bffd0dfe03d0ca825a22296dfa721110dd69471366dcc2093f4",
+    "source": "Animation/Rifle/Animation/In-Place/W2_Walk_Aim_F_Loop_IPC.fbx"
+  }
+]

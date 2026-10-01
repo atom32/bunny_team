@@ -25,6 +25,7 @@ func _ready() -> void:
 	add_to_group("interactable")
 	_build_visual()
 	_update_label()
+	GameLanguage.language_changed.connect(_update_label)
 
 
 func try_pickup(session: SortieSession) -> PickupResult:
@@ -48,7 +49,7 @@ func interact(_actor: Node3D, session: SortieSession) -> Dictionary:
 	var result := try_pickup(session)
 	match result:
 		PickupResult.SUCCESS:
-			return {"success": true, "result": result, "message": "Picked up: %s" % definition.display_name}
+			return {"success": true, "result": result, "message": tr("Picked up: %s") % GameLanguage.item_name(definition.display_name)}
 		PickupResult.CAPACITY_FULL:
 			return {"success": false, "result": result, "message": "Inventory Full"}
 		PickupResult.INVALID_SESSION:
@@ -58,7 +59,7 @@ func interact(_actor: Node3D, session: SortieSession) -> Dictionary:
 
 func get_interaction_prompt(_actor: Node3D, session: SortieSession) -> String:
 	var definition := ContentDB.get_item(item_instance.definition_id, false) if item_instance else null
-	return "E  PICK UP  %s" % definition.display_name.to_upper() if definition and not consumed and session and session.status == SortieSession.Status.ACTIVE else ""
+	return tr("E  PICK UP  %s") % GameLanguage.item_name(definition.display_name).to_upper() if definition and not consumed and session and session.status == SortieSession.Status.ACTIVE else ""
 
 
 func _item_is_valid() -> bool:
@@ -78,6 +79,7 @@ func _build_visual() -> void:
 	core.rotation_degrees = Vector3(0.0, 45.0, 0.0)
 	core.material_override = VisualFactory.material(Color("2b6e70"), 0.55, 0.25, Color("65f2df"), 3.0)
 	_name_label = Label3D.new()
+	_name_label.font = UIFactory.FONT
 	_name_label.position = Vector3(0.0, 1.05, 0.0)
 	_name_label.font_size = 28
 	_name_label.outline_size = 8
@@ -90,4 +92,4 @@ func _update_label() -> void:
 	if not _name_label:
 		return
 	var definition := ContentDB.get_item(item_instance.definition_id, false) if item_instance else null
-	_name_label.text = definition.display_name if definition else "UNKNOWN LOOT"
+	_name_label.text = GameLanguage.item_name(definition.display_name) if definition else "UNKNOWN LOOT"

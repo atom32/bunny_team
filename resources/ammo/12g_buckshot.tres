@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AmmoDefinition" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/ammo_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/stash/ammo.svg" id="stash_icon"]
+
+[resource]
+script = ExtResource("1")
+icon = ExtResource("stash_icon")
+id = &"ammo.12g_buckshot"
+display_name = "12 Gauge Buckshot"
+description = "Modern firearm ammunition."
+weight = 0.04
+base_value = 4
+item_tags = PackedStringArray("ammo", "modern")
+stackable = true
+max_stack = 24
+damage = 12.0
+armor_penetration = 0.0
+effect_tags = PackedStringArray("kinetic")
