@@ -45,9 +45,22 @@ func _build_ui() -> void:
 	root.add_child(panel)
 	SliceUI.label(root, "FIELD RECORDER\nDEBRIEF", Vector2(48,48), 38, SliceUI.CYAN)
 	SliceUI.label(root, "BASTION 07 / RETURN CHANNEL", Vector2(50,155), 16, SliceUI.MUTED)
+	var profile := ProfileRuntime.get_profile()
+	if profile.first_mission_completed:
+		var preview := ProfileState.from_dict(profile.to_dict())
+		# Preview only; real progress waits for the atomic result/save transaction.
+		if outcome.outcome_id not in preview.settled_outcomes: CampaignService.record_outcome(preview, outcome)
+		var quest := CampaignService.current(preview)
+		if not quest.is_empty():
+			var text := tr("ON RETURN / BASTION CONTRACT") + "\n\n" + tr(quest.title)
+			text += "\n\n" + (tr("PROJECTED ON RETURN / %d / %d") % [preview.campaign.progress, quest.target] if quest.target > 0 else tr("Turn in warehouse materials at Hideout Overview."))
+			var contract := SliceUI.label(root, text, Vector2(50, 235), 18, SliceUI.MUTED)
+			contract.name = "CampaignPreview"
+			contract.size = Vector2(360, 260)
+			contract.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	var content := VBoxContainer.new()
 	content.alignment = BoxContainer.ALIGNMENT_CENTER
-	content.add_theme_constant_override("separation", 9)
+	content.add_theme_constant_override("separation", 6)
 	panel.add_child(content)
 
 	var extracted := outcome.result_type == SortieOutcome.ResultType.COMPLETED
@@ -111,11 +124,15 @@ func _build_ui() -> void:
 	var divider := HSeparator.new()
 	content.add_child(divider)
 	_add_stat(content, "SURVIVAL", "EXTRACTED" if extracted else "UNIT LOST")
-	_add_stat(content, "RECOVERED CARGO" if extracted else "CARGO AT SIGNAL LOSS", tr("%.1f / %.1f kg") % [outcome.inventory.get_used_capacity(), outcome.inventory.capacity])
+	# Outcome inventory is recovered cargo, never a snapshot of carried gear at death.
+	_add_stat(content, "RECOVERED CARGO", tr("%.1f / %.1f kg") % [outcome.inventory.get_used_capacity(), outcome.inventory.capacity])
 	var recovered := 0
-	for item in outcome.inventory.get_items():
-		if item.instance_id not in outcome.initial_carried_instance_ids: recovered += item.quantity
-	_add_stat(content, "LOOT RECOVERED" if extracted else "LOOT AT SIGNAL LOSS", str(recovered))
+	for quantity in SortieOutcomeService.recovered_quantities(outcome,ProfileRuntime.get_profile()).values(): recovered += int(quantity)
+	_add_stat(content, "NEW SUPPLIES", str(recovered))
+	var reward := SortieOutcomeService.credit_reward(outcome,ProfileRuntime.get_profile())
+	_add_stat(content, "CREDIT REWARD", "0 / NO NEW SUPPLIES" if extracted and reward == 0 else str(reward))
+	if not extracted:
+		_add_stat(content, "DEPLOYED STACKS LOST", str(outcome.initial_carried_instance_ids.size()))
 	if outcome.mission_id == &"first_mission" and extracted:
 		var cores := 0
 		for item in outcome.inventory.get_items():

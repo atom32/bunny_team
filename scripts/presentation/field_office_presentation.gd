@@ -5,6 +5,10 @@ const PALETTE := preload("res://resources/materials/office_palette.tres")
 var _player: Node3D
 
 func _ready() -> void:
+	# Fade visual-only overhead pieces without adding collision or changing the doorway.
+	for mesh in find_children("*", "MeshInstance3D", true, false):
+		if str(mesh.name).contains("Canopy") or str(mesh.name).begins_with("Lintel") or str(mesh.name).begins_with("RoofEdge") or str(mesh.name).ends_with("Header") or mesh.name == &"EntryLightStrip":
+			mesh.add_to_group("camera_occluder")
 	call_deferred("_dress_existing_fixtures")
 
 func _process(_delta: float) -> void:

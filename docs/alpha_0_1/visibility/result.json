@@ -1,0 +1,48 @@
+{
+	"checks": 6,
+	"failures": [],
+	"pass": true,
+	"records": [
+		{
+			"blocked": false,
+			"enemy_visible": true,
+			"frame": "01_observed",
+			"health": 260.0,
+			"heard": "(0.0, 0.0, 0.0)",
+			"root_visible": true
+		},
+		{
+			"blocked": true,
+			"enemy_visible": false,
+			"frame": "02_occluded",
+			"health": 260.0,
+			"heard": "(0.0, 0.0, -1.0)",
+			"root_visible": true
+		},
+		{
+			"blocked": false,
+			"enemy_visible": true,
+			"frame": "03_reacquired",
+			"health": 260.0,
+			"heard": "(0.0, 0.0, -1.0)",
+			"root_visible": true
+		},
+		{
+			"blocked": false,
+			"enemy_visible": false,
+			"frame": "04_rear_fire",
+			"health": 257.12,
+			"heard": "(0.0, 0.0, 1.0)",
+			"root_visible": true
+		},
+		{
+			"blocked": true,
+			"enemy_visible": false,
+			"frame": "05_cover",
+			"health": 257.12,
+			"heard": "(0.0, 0.0, 1.0)",
+			"root_visible": true
+		}
+	],
+	"scope": "Controlled rendered fixture: production actors, damage, ammo, physics, HUD. Fixed placements / faded test wall; not manual play or full mission."
+}

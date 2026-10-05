@@ -212,8 +212,8 @@ func _test_ammo_lifecycle_isolation() -> void:
 	check(failure_session.fire_weapon(failure_fixture.primary_id) and failure_session.fire_weapon(failure_fixture.secondary_id), "failure fixture consumes both runtime magazines")
 	check(failure_session.fail(), "dual-weapon behavior fixture can fail")
 	var failure_outcome := SortieOutcomeService.create_outcome(failure_session)
-	check(failure_outcome != null and SortieOutcomeService.commit_outcome(failure_profile, failure_outcome) == OK, "failed dual-weapon outcome uses the existing no-op commit")
-	check(failure_profile.to_dict() == failure_before, "death recovers neither magazine and leaves warehouse byte-for-byte unchanged")
+	check(failure_outcome != null and SortieOutcomeService.commit_outcome(failure_profile, failure_outcome) == OK, "failed dual-weapon outcome settles equipment loss")
+	check(ArmoryFixture.loss_matches(failure_profile, failure_before, failure_outcome.initial_carried_instance_ids), "death loses both deployed magazines and equipment while preserving base storage")
 
 
 func _test_authored_tactical_layout() -> void:
@@ -230,7 +230,7 @@ func _test_authored_tactical_layout() -> void:
 
 
 func _create_sortie_fixture() -> Dictionary:
-	var profile := ProfileState.create_new()
+	var profile := ArmoryFixture.create_profile()
 	var standard_ammo := _find_item(profile.inventory, &"ammo.556_standard")
 	var rocket_ammo := _find_item(profile.inventory, &"ammo.rocket_standard")
 	var carried_ids: Array[String] = [standard_ammo.instance_id, rocket_ammo.instance_id]

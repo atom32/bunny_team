@@ -14,9 +14,14 @@ var secondary_weapon_label: Label
 var secondary_ammo_label: Label
 var active_weapon_label: Label
 var capacity_label: Label
+var medical_label: Label
+var medical_progress: ProgressBar
 var threat_label: Label
 var banner: Label
 var reticle: Label
+var cover_hint: Label
+var impact_dot: Label
+var sound_hint: Label
 var interaction_prompt: Label
 var interaction_feedback: Label
 var damage_flash: ColorRect
@@ -24,6 +29,7 @@ var health_fill: StyleBoxFlat
 var _damage_flash_tween: Tween
 var _feedback_tween: Tween
 var _active_weapon_text := "ACTIVE  PRIMARY"
+var _inactive_weapon_text := "SWITCH WEAPON"
 
 
 func _ready() -> void:
@@ -70,6 +76,14 @@ func _ready() -> void:
 	armor_label = _line(status, "", 11, Color("9badb7"))
 	armor_label.name = "ArmorTradeoff"
 	capacity_label = _line(status, "", 11, Color("9badb7"))
+	medical_label = _line(status, "", 12, Color("92ead7"))
+	medical_label.name = "MedicalSupplies"
+	medical_progress = ProgressBar.new()
+	medical_progress.name = "TreatmentProgress"
+	medical_progress.custom_minimum_size = Vector2(250, 6)
+	medical_progress.show_percentage = false
+	medical_progress.hide()
+	status.add_child(medical_progress)
 
 	var weapons := _card(root, "Weapons", Control.PRESET_BOTTOM_RIGHT, Vector2(-318,-130), Vector2(300,112))
 	active_weapon_label = _line(weapons, "PRIMARY", 11, Color("9badb7"))
@@ -100,6 +114,23 @@ func _ready() -> void:
 	reticle.add_theme_font_size_override("font_size", 22)
 	reticle.add_theme_color_override("font_color", Color("dffaffb8"))
 	root.add_child(reticle)
+	cover_hint = _line(root, "MUZZLE / COVER", 12, Color("ffd08a"))
+	cover_hint.name = "CoverHint"
+	cover_hint.size = Vector2(210, 24)
+	cover_hint.hide()
+	impact_dot = _line(root, "×", 19, Color("ffd08a"))
+	impact_dot.name = "CenterlineImpact"
+	impact_dot.size = Vector2(20, 26)
+	impact_dot.hide()
+	sound_hint = _line(root, "", 13, Color("f0d3a1"))
+	sound_hint.name = "SoundBearing"
+	sound_hint.set_anchors_preset(Control.PRESET_CENTER_TOP)
+	sound_hint.offset_left = -180
+	sound_hint.offset_right = 180
+	sound_hint.offset_top = 82
+	sound_hint.offset_bottom = 110
+	sound_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	sound_hint.hide()
 	interaction_prompt = Label.new()
 	interaction_prompt.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
 	interaction_prompt.position = Vector2(-260,-58)
@@ -151,6 +182,7 @@ func _line(parent: Control, text: String, font_size: int, color := Color("c3d6d9
 
 
 func _process(_delta: float) -> void:
+	inactive_weapon_label.text = ControlBindings.label("switch_weapon") + " / " + _inactive_weapon_text
 	if _banner_remaining > 0.0:
 		_banner_remaining = maxf(0.0, _banner_remaining-_delta)
 		if _banner_remaining == 0.0: banner.hide()
@@ -171,6 +203,22 @@ func set_health(current: float, maximum: float) -> void:
 		damage_flash.color = Color("ff30402e")
 		_damage_flash_tween = create_tween()
 		_damage_flash_tween.tween_property(damage_flash, "color", Color("ff304000"), 0.2)
+
+
+func set_perception(sensor: PlayerVisibility, camera: Camera3D) -> void:
+	var trace := sensor.aim_trace()
+	cover_hint.visible = trace.blocked
+	cover_hint.position = (reticle.position + Vector2(24, 26)).clamp(Vector2(8, 8), get_viewport().get_visible_rect().size - cover_hint.size - Vector2(8, 8))
+	reticle.modulate = Color("ffd08a") if trace.blocked else Color.WHITE
+	impact_dot.visible = trace.blocked and not camera.is_position_behind(trace.point)
+	if impact_dot.visible:
+		impact_dot.position = camera.unproject_position(trace.point) - Vector2(7, 12)
+	sound_hint.visible = sensor.heard_remaining > 0.0
+	if sound_hint.visible:
+		var bearings := ["S", "SE", "E", "NE", "N", "NW", "W", "SW"]
+		var index := posmod(roundi(atan2(sensor.heard_direction.x, sensor.heard_direction.z) / (PI / 4.0)), 8)
+		sound_hint.text = tr("HEARD / %s / %s") % [tr("GUNFIRE" if sensor.heard_kind == &"gunfire" else "MOVEMENT"), tr(bearings[index])]
+		sound_hint.modulate.a = minf(1.0, sensor.heard_remaining * 2.0)
 
 
 func set_enemy_count(count: int) -> void:
@@ -231,7 +279,8 @@ func set_weapon_slots(primary: Dictionary, secondary: Dictionary, active_slot: S
 	ammo_label.visible = primary_active
 	secondary_weapon_label.visible = not primary_active
 	secondary_ammo_label.visible = not primary_active
-	inactive_weapon_label.text = tr("Q / ") + GameLanguage.item_name(str((secondary if primary_active else primary).get("display_name", "UNARMED"))).to_upper()
+	_inactive_weapon_text = GameLanguage.item_name(str((secondary if primary_active else primary).get("display_name", "UNARMED"))).to_upper()
+	inactive_weapon_label.text = ControlBindings.label("switch_weapon") + " / " + _inactive_weapon_text
 	_active_weapon_text = tr("ACTIVE  %s") % tr("PRIMARY" if primary_active else "SECONDARY")
 	active_weapon_label.text = _active_weapon_text
 	weapon_label.add_theme_color_override("font_color", Color("70edf2") if primary_active else Color("8da8bb"))
@@ -246,6 +295,17 @@ func set_reload_remaining(seconds: float) -> void:
 
 func set_inventory_capacity(used: float, maximum: float) -> void:
 	capacity_label.text = tr("CARGO  %.1f / %.1f") % [used, maximum]
+
+
+func set_medical(treatment: MedicalTreatment) -> void:
+	medical_progress.visible = treatment.is_active()
+	var definition := treatment.definition()
+	if definition:
+		medical_label.text = tr("TREATING / %.1fs / stay still") % treatment.remaining
+		medical_progress.max_value = definition.use_seconds
+		medical_progress.value = definition.use_seconds - treatment.remaining
+	else:
+		medical_label.text = tr("%s / DRESSING %d   %s / MEDKIT %d") % [ControlBindings.label("use_dressing"), treatment.count(MedicalTreatment.IDS[0]), ControlBindings.label("use_medkit"), treatment.count(MedicalTreatment.IDS[1])]
 
 
 func set_interaction_prompt(text: String) -> void:

@@ -79,6 +79,8 @@ var character_skeleton: Skeleton3D
 var retarget_modifier: RetargetModifier3D
 var combat_rig: CharacterCombatRig
 var interaction_component: InteractionComponent
+var _footstep_distance := 0.0
+var medical: MedicalTreatment
 var player_marker: MeshInstance3D
 var _shot_cooldown := 0.0
 var _reload_remaining_by_weapon: Dictionary = {}
@@ -88,6 +90,8 @@ var _dodge_direction := Vector3.ZERO
 var _visual_time := 0.0
 var _recoil_tween: Tween
 var _fire_queued := false
+# A live interaction panel owns aiming/fire input, not movement or combat timers.
+var aim_input_captured := false
 var _move_direction := Vector3.ZERO
 var _initial_inventory: InventoryState
 var _initial_loadout: LoadoutState
@@ -106,6 +110,7 @@ func configure_sortie(session: SortieSession) -> void:
 
 
 func _ready() -> void:
+	MedicalTreatment.install_input_actions()
 	name = "Player"
 	add_to_group("player")
 	_build_collision()
@@ -120,6 +125,11 @@ func _ready() -> void:
 	else:
 		_build_player_marker()
 		if _initial_session:
+			medical = MedicalTreatment.new()
+			medical.name = "MedicalTreatment"
+			medical.actor = self
+			medical.session = _initial_session
+			add_child(medical)
 			interaction_component = InteractionComponent.new()
 			interaction_component.name = "InteractionComponent"
 			add_child(interaction_component)
@@ -149,7 +159,13 @@ func clear_buffered_input() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not preview_mode and event.is_action_pressed("fire"):
+	if medical and not event.is_echo():
+		for index in MedicalTreatment.ACTIONS.size():
+			if event.is_action_pressed(MedicalTreatment.ACTIONS[index]):
+				medical.begin(MedicalTreatment.IDS[index])
+				get_viewport().set_input_as_handled()
+				return
+	if not preview_mode and not aim_input_captured and event.is_action_pressed("fire"):
 		_fire_queued = true
 	if not preview_mode and event.is_action_pressed("reload"):
 		reload_weapon()
@@ -166,6 +182,7 @@ func _physics_process(delta: float) -> void:
 	_dodge_cooldown_time = maxf(_dodge_cooldown_time - delta, 0.0)
 	_update_aim(delta)
 	_update_movement(delta)
+	if medical: medical.tick(delta)
 	_animate_stride(delta)
 	if animation_tree:
 		animation_tree.advance(delta)
@@ -176,7 +193,7 @@ func _physics_process(delta: float) -> void:
 		animation_source_skeleton.advance(delta)
 	if combat_rig:
 		combat_rig.apply_skeleton_ik(delta)
-	if _fire_queued or (weapon_data and weapon_data.fire_mode == &"automatic" and Input.is_action_pressed("fire")):
+	if not aim_input_captured and (_fire_queued or (weapon_data and weapon_data.fire_mode == &"automatic" and Input.is_action_pressed("fire"))):
 		_try_fire()
 	_fire_queued = false
 
@@ -223,6 +240,7 @@ func switch_weapon(slot_id: StringName) -> bool:
 		return false
 	if not _initial_session.get_weapon_runtime_state(item.instance_id):
 		return false
+	if medical: medical.cancel()
 	if not _activate_weapon_slot(slot_id):
 		return false
 	weapon_switched.emit(active_weapon_slot)
@@ -332,6 +350,7 @@ func receive_damage(packet: DamagePacket) -> float:
 	if is_dead or preview_mode:
 		return 0.0
 	var applied_damage := maxf(packet.base_damage, 0.0) * (1.0 - get_protection())
+	if applied_damage > 0 and medical: medical.cancel()
 	health = maxf(health - applied_damage, 0.0)
 	velocity += packet.knockback_impulse
 	AudioDirector.play_sfx(&"player_hurt", 0.0, 0.04)
@@ -359,7 +378,7 @@ func debug_reload_once() -> void:
 	if _get_weapon_runtime_state():
 		reload_weapon()
 	elif combat_rig:
-		combat_rig.reload_duration = weapon_data.reload_seconds if weapon_data else 0.9
+		combat_rig.reload_duration = weapon_data.reload_seconds * WeaponFitting.reload_factor(weapon_instance) if weapon_data else 0.9
 		combat_rig.start_reload()
 
 
@@ -373,14 +392,15 @@ func can_reload() -> bool:
 
 
 func reload_weapon() -> bool:
+	if medical: medical.cancel()
 	if not can_reload():
 		return false
 	var loaded_rounds := _initial_session.reload_weapon(weapon_instance.instance_id)
 	if loaded_rounds <= 0:
 		return false
-	_reload_remaining_by_weapon[weapon_instance.instance_id] = weapon_data.reload_seconds
+	_reload_remaining_by_weapon[weapon_instance.instance_id] = weapon_data.reload_seconds * WeaponFitting.reload_factor(weapon_instance)
 	if combat_rig:
-		combat_rig.reload_duration = weapon_data.reload_seconds
+		combat_rig.reload_duration = weapon_data.reload_seconds * WeaponFitting.reload_factor(weapon_instance)
 		combat_rig.start_reload()
 	AudioDirector.play_sfx(&"reload")
 	_emit_ammo_changed()
@@ -706,6 +726,7 @@ func _clear_weapon_sockets() -> void:
 
 
 func _update_aim(delta: float) -> void:
+	if aim_input_captured: return
 	var stick := Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down")
 	var camera := get_viewport().get_camera_3d()
 	if stick.length() > 0.25:
@@ -730,6 +751,12 @@ func _world_aim_point(camera: Camera3D, screen_position: Vector2) -> Vector3:
 	var query := PhysicsRayQueryParameters3D.create(ray_origin, ray_origin + ray_direction * 1000.0, 6)
 	query.exclude = [get_rid()]
 	var result := get_world_3d().direct_space_state.intersect_ray(query)
+	# An unseen actor must not act as a hidden aim magnet under the cursor.
+	# The cutaway is visual only: retain its collision for actual projectiles,
+	# but do not aim up at an invisible ceiling instead of the room beneath it.
+	while not result.is_empty() and (result.collider.is_in_group("active_aim_cutaway") or (result.collider is EnemyController and not PlayerVisibility.enemy_observed(self, result.collider))):
+		query.exclude = query.exclude + [result.collider.get_rid()]
+		result = get_world_3d().direct_space_state.intersect_ray(query)
 	if not result.is_empty():
 		return result.position
 	var ground_intersection = Plane(Vector3.UP, 0.0).intersects_ray(ray_origin, ray_direction)
@@ -778,7 +805,13 @@ func _update_movement(delta: float) -> void:
 	var target_rotation := _combat_facing_rotation(locomotion_direction)
 	var facing_speed := 14.0 if _dodge_time > 0.0 else 10.5
 	rotation.y = lerp_angle(rotation.y, target_rotation, 1.0 - exp(-facing_speed * delta))
+	var before_step := global_position
 	move_and_slide()
+	var travelled := Vector2(global_position.x - before_step.x, global_position.z - before_step.z).length()
+	_footstep_distance += travelled
+	if _footstep_distance >= 1.4:
+		_footstep_distance = fmod(_footstep_distance, 1.4)
+		CombatNoise.emit_at(self, global_position, 12.0 if _dodge_time > 0 else (3.0 if Input.is_action_pressed("precision_walk") else 10.0), &"footstep")
 
 
 func _combat_facing_rotation(locomotion_direction: Vector3) -> float:
@@ -792,6 +825,7 @@ func _combat_facing_rotation(locomotion_direction: Vector3) -> float:
 
 
 func _try_fire() -> bool:
+	if medical: medical.cancel()
 	if not weapon_data or _shot_cooldown > 0.0 or is_dead or get_reload_remaining() > 0.0 or (combat_rig and combat_rig.is_reloading()):
 		return false
 	var weapon_state: Variant = _get_weapon_runtime_state()
@@ -801,7 +835,9 @@ func _try_fire() -> bool:
 		return false
 	_shot_cooldown = 1.0 / weapon_data.fire_rate
 	var muzzle_position := combat_rig.get_muzzle_position() if combat_rig and combat_rig.has_weapon() else global_position + Vector3.UP * 1.25 + aim_direction * 0.55
+	muzzle_position = effective_fire_origin(muzzle_position)
 	var shot_direction := _shot_direction_from(muzzle_position)
+	CombatNoise.emit_at(self, global_position, CombatNoise.weapon_radius(weapon_data.id) * WeaponFitting.noise_factor(weapon_instance), &"gunfire")
 	AudioDirector.play_weapon(weapon_data.id)
 	CombatEffects.muzzle_flash(get_tree().current_scene, muzzle_position, shot_direction, weapon_data.tracer_color, weapon_data.muzzle_scale)
 	_apply_weapon_recoil(shot_direction)
@@ -834,6 +870,19 @@ func _emit_ammo_changed() -> void:
 		ammo_changed.emit(weapon_state.magazine_ammo, weapon_state.magazine_capacity, get_reserve_ammo())
 
 
+func effective_fire_origin(muzzle: Vector3) -> Vector3:
+	# A long barrel may visually enter cover. Never spawn a shot on the far side
+	# of that cover. Clear-space origins remain exactly the authored muzzle.
+	var chest := global_position + Vector3.UP * 1.25
+	var query := PhysicsRayQueryParameters3D.create(chest, muzzle, 4)
+	query.hit_from_inside = true
+	var hit := get_world_3d().direct_space_state.intersect_ray(query)
+	if hit.is_empty(): return muzzle
+	var normal: Vector3 = hit.normal
+	if normal.is_zero_approx(): normal = muzzle.direction_to(chest)
+	return hit.position + normal * .02
+
+
 func _shot_direction_from(from: Vector3) -> Vector3:
 	if from.distance_squared_to(aim_world_point) > 0.01:
 		return from.direction_to(aim_world_point)
@@ -862,6 +911,7 @@ func _fire_hitscan(from: Vector3, shot_direction: Vector3) -> void:
 	var to := from + shot_direction * weapon_data.weapon_range
 	var query := PhysicsRayQueryParameters3D.create(from, to, 6)
 	query.exclude = [get_rid()]
+	query.hit_from_inside = true
 	var result := get_world_3d().direct_space_state.intersect_ray(query)
 	var hit_position := to
 	if not result.is_empty():
@@ -917,6 +967,7 @@ func _animate_stride(_delta: float) -> void:
 
 
 func _die(impulse: Vector3) -> void:
+	if medical: medical.cancel()
 	is_dead = true
 	var collision := get_node("Hitbox") as CollisionShape3D
 	collision.set_deferred("disabled", true)

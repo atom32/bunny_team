@@ -36,6 +36,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func interact_with_current() -> Dictionary:
+	if actor is PlayerController and actor.medical: actor.medical.cancel()
 	if not session or session.status != SortieSession.Status.ACTIVE:
 		return {"success": false, "message": "No active sortie"}
 	if not is_instance_valid(_current_target):

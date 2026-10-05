@@ -1,0 +1,67 @@
+[
+  {
+    "albedo": "(1.0, 1.0, 1.0, 1.0)",
+    "diffuse_mode": 0,
+    "emission": "(0.0, 0.0, 0.0, 1.0)",
+    "emission_enabled": false,
+    "metallic": 0.0,
+    "name": "Battle_Unity2016_C_Add",
+    "override": false,
+    "roughness": 0.800000011920929,
+    "shading_mode": 1,
+    "specular": 0.5,
+    "texture": "res://assets/characters/unitychan_battle/battle_presentation.glb::ImageTexture_hc1si"
+  },
+  {
+    "albedo": "(1.0, 1.0, 1.0, 1.0)",
+    "diffuse_mode": 0,
+    "emission": "(0.0, 0.0, 0.0, 1.0)",
+    "emission_enabled": false,
+    "metallic": 0.0,
+    "name": "Battle_Unity2016_C_Body",
+    "override": false,
+    "roughness": 0.800000011920929,
+    "shading_mode": 1,
+    "specular": 0.5,
+    "texture": "res://assets/characters/unitychan_battle/battle_presentation.glb::ImageTexture_7vouc"
+  },
+  {
+    "albedo": "(1.0, 1.0, 1.0, 1.0)",
+    "diffuse_mode": 0,
+    "emission": "(0.0, 0.0, 0.0, 1.0)",
+    "emission_enabled": false,
+    "metallic": 0.0,
+    "name": "Battle_face3_main",
+    "override": false,
+    "roughness": 0.800000011920929,
+    "shading_mode": 1,
+    "specular": 0.5,
+    "texture": "res://assets/characters/unitychan_battle/battle_presentation.glb::ImageTexture_o100n"
+  },
+  {
+    "albedo": "(0.9373, 0.8314, 0.6784, 1.0)",
+    "diffuse_mode": 0,
+    "emission": "(0.0, 0.0, 0.0, 1.0)",
+    "emission_enabled": false,
+    "metallic": 0.0,
+    "name": "Battle_Unity2016_C_Hair_Spow",
+    "override": false,
+    "roughness": 0.800000011920929,
+    "shading_mode": 1,
+    "specular": 0.5,
+    "texture": "none"
+  },
+  {
+    "albedo": "(1.0, 1.0, 1.0, 1.0)",
+    "diffuse_mode": 0,
+    "emission": "(0.0, 0.0, 0.0, 1.0)",
+    "emission_enabled": false,
+    "metallic": 0.0,
+    "name": "Battle_Unity2016_C_Skin",
+    "override": false,
+    "roughness": 0.800000011920929,
+    "shading_mode": 1,
+    "specular": 0.5,
+    "texture": "res://assets/characters/unitychan_battle/battle_presentation.glb::ImageTexture_mtq3e"
+  }
+]

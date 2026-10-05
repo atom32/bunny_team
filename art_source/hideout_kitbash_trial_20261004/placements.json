@@ -1,0 +1,750 @@
+[
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_0_0",
+    "floor_center": [
+      -3,
+      0,
+      -2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_0_0",
+    "floor_center": [
+      -3,
+      3,
+      -2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_0_2",
+    "floor_center": [
+      -3,
+      0,
+      0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_0_2",
+    "floor_center": [
+      -3,
+      3,
+      0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_0_4",
+    "floor_center": [
+      -3,
+      0,
+      2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_0_4",
+    "floor_center": [
+      -3,
+      3,
+      2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_2_0",
+    "floor_center": [
+      -1,
+      0,
+      -2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_2_0",
+    "floor_center": [
+      -1,
+      3,
+      -2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_2_2",
+    "floor_center": [
+      -1,
+      0,
+      0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_2_2",
+    "floor_center": [
+      -1,
+      3,
+      0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_2_4",
+    "floor_center": [
+      -1,
+      0,
+      2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_2_4",
+    "floor_center": [
+      -1,
+      3,
+      2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_4_0",
+    "floor_center": [
+      1,
+      0,
+      -2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_4_0",
+    "floor_center": [
+      1,
+      3,
+      -2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_4_2",
+    "floor_center": [
+      1,
+      0,
+      0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_4_2",
+    "floor_center": [
+      1,
+      3,
+      0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_4_4",
+    "floor_center": [
+      1,
+      0,
+      2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_4_4",
+    "floor_center": [
+      1,
+      3,
+      2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_6_0",
+    "floor_center": [
+      3,
+      0,
+      -2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_6_0",
+    "floor_center": [
+      3,
+      3,
+      -2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_6_2",
+    "floor_center": [
+      3,
+      0,
+      0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_6_2",
+    "floor_center": [
+      3,
+      3,
+      0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_6_4",
+    "floor_center": [
+      3,
+      0,
+      2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_6_4",
+    "floor_center": [
+      3,
+      3,
+      2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "West_0",
+    "floor_center": [
+      -3.2,
+      0,
+      -2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "East_0",
+    "floor_center": [
+      4.8,
+      0,
+      -2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "West_2",
+    "floor_center": [
+      -3.2,
+      0,
+      0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "East_2",
+    "floor_center": [
+      4.8,
+      0,
+      0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "West_4",
+    "floor_center": [
+      -3.2,
+      0,
+      2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "East_4",
+    "floor_center": [
+      4.8,
+      0,
+      2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "North_0",
+    "floor_center": [
+      -3,
+      0,
+      -3.8
+    ],
+    "scale": 1,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "Front_0",
+    "floor_center": [
+      -3,
+      0,
+      3.8
+    ],
+    "scale": 1,
+    "yaw": -1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "North_2",
+    "floor_center": [
+      -1,
+      0,
+      -3.8
+    ],
+    "scale": 1,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "concrete/WallDoorway.glb",
+    "name": "Front_2",
+    "floor_center": [
+      -1,
+      0,
+      3.8
+    ],
+    "scale": 1,
+    "yaw": -1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "North_4",
+    "floor_center": [
+      1,
+      0,
+      -3.8
+    ],
+    "scale": 1,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "Front_4",
+    "floor_center": [
+      1,
+      0,
+      3.8
+    ],
+    "scale": 1,
+    "yaw": -1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "North_6",
+    "floor_center": [
+      3,
+      0,
+      -3.8
+    ],
+    "scale": 1,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "Front_6",
+    "floor_center": [
+      3,
+      0,
+      3.8
+    ],
+    "scale": 1,
+    "yaw": -1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "Partition_0",
+    "floor_center": [
+      1.8,
+      0,
+      -2
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/WallDoorway.glb",
+    "name": "Partition_2",
+    "floor_center": [
+      1.8,
+      0,
+      0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Pillar.glb",
+    "name": "OldColumn",
+    "floor_center": [
+      -0.7,
+      0,
+      -0.9
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/steel_frame_shelves_01/steel_frame_shelves_01.gltf",
+    "name": "StockShelves",
+    "floor_center": [
+      -3.15,
+      0,
+      -2.55
+    ],
+    "scale": 0.1,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/metal_tool_chest/metal_tool_chest.gltf",
+    "name": "ToolChest",
+    "floor_center": [
+      -1.8,
+      0,
+      -2.48
+    ],
+    "scale": 1.6,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/desk.glb",
+    "name": "RepairBench",
+    "floor_center": [
+      -3.0,
+      0,
+      -0.45
+    ],
+    "scale": 2,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "furniture/chair.glb",
+    "name": "BenchChair",
+    "floor_center": [
+      -2.0,
+      0,
+      -0.4
+    ],
+    "scale": 2,
+    "yaw": -1.5707963267948966
+  },
+  {
+    "asset": "furniture/computerScreen.glb",
+    "name": "BenchMonitor",
+    "floor_center": [
+      -3.25,
+      0.77,
+      -0.75
+    ],
+    "scale": 1.4,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "furniture/computerKeyboard.glb",
+    "name": "Keyboard",
+    "floor_center": [
+      -2.95,
+      0.77,
+      -0.65
+    ],
+    "scale": 1.1,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "furniture/radio.glb",
+    "name": "Radio",
+    "floor_center": [
+      -3.0,
+      0.77,
+      0.05
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/lampRoundTable.glb",
+    "name": "BenchLamp",
+    "floor_center": [
+      -3.24,
+      0.77,
+      0.11
+    ],
+    "scale": 1.2,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/bedSingle.glb",
+    "name": "RestBed",
+    "floor_center": [
+      2.8,
+      0,
+      -1.7
+    ],
+    "scale": 2,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/sideTable.glb",
+    "name": "BedsideTable",
+    "floor_center": [
+      1.75,
+      0,
+      -2.1
+    ],
+    "scale": 1.7,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/lampRoundTable.glb",
+    "name": "BedsideLamp",
+    "floor_center": [
+      1.75,
+      0.654,
+      -2.1
+    ],
+    "scale": 1.1,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/books.glb",
+    "name": "ReadingBooks",
+    "floor_center": [
+      1.75,
+      0.654,
+      -1.94
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/rugRectangle.glb",
+    "name": "RestRug",
+    "floor_center": [
+      2.5,
+      0.006,
+      0.0
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/bookcaseOpen.glb",
+    "name": "LivingShelf",
+    "floor_center": [
+      3.6,
+      0,
+      1.5
+    ],
+    "scale": 2,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "furniture/kitchenFridgeSmall.glb",
+    "name": "SmallFridge",
+    "floor_center": [
+      2.25,
+      0,
+      2.25
+    ],
+    "scale": 1.5,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/coatRackStanding.glb",
+    "name": "CoatRack",
+    "floor_center": [
+      3.4,
+      0,
+      2.35
+    ],
+    "scale": 2,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/trashcan.glb",
+    "name": "Bin",
+    "floor_center": [
+      -3.55,
+      0,
+      0.65
+    ],
+    "scale": 1.4,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/cardboardBoxClosed.glb",
+    "name": "SupplyBox0",
+    "floor_center": [
+      -2.85,
+      0,
+      -2.5
+    ],
+    "scale": 1.6,
+    "yaw": 0.0
+  },
+  {
+    "asset": "furniture/cardboardBoxClosed.glb",
+    "name": "SupplyBox1",
+    "floor_center": [
+      -3.45,
+      0,
+      -2.5
+    ],
+    "scale": 1.8,
+    "yaw": 0.12
+  },
+  {
+    "asset": "furniture/cardboardBoxClosed.glb",
+    "name": "SupplyBox2",
+    "floor_center": [
+      -2.6,
+      0,
+      1.8
+    ],
+    "scale": 2,
+    "yaw": 0.24
+  },
+  {
+    "asset": "furniture/cardboardBoxClosed.glb",
+    "name": "SupplyBox3",
+    "floor_center": [
+      -2.05,
+      0,
+      1.75
+    ],
+    "scale": 1.8,
+    "yaw": 0.36
+  },
+  {
+    "asset": "furniture/cardboardBoxClosed.glb",
+    "name": "SupplyBox4",
+    "floor_center": [
+      -2.6,
+      0.56,
+      1.8
+    ],
+    "scale": 1.5,
+    "yaw": 0.48
+  },
+  {
+    "asset": "furniture/cardboardBoxOpen.glb",
+    "name": "OpenBox",
+    "floor_center": [
+      -1.7,
+      0,
+      2.15
+    ],
+    "scale": 2,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/cardboardBoxClosed.glb",
+    "name": "ShelfBox0",
+    "floor_center": [
+      -3.4,
+      0.48,
+      -2.55
+    ],
+    "scale": 1.4,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/cardboardBoxClosed.glb",
+    "name": "ShelfBox1",
+    "floor_center": [
+      -2.95,
+      0.48,
+      -2.55
+    ],
+    "scale": 1.6,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/cardboardBoxClosed.glb",
+    "name": "ShelfBox2",
+    "floor_center": [
+      -3.4,
+      0.99,
+      -2.55
+    ],
+    "scale": 1.5,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/cardboardBoxClosed.glb",
+    "name": "ShelfBox3",
+    "floor_center": [
+      -2.95,
+      1.5,
+      -2.55
+    ],
+    "scale": 1.6,
+    "yaw": 0
+  }
+]

@@ -12,6 +12,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import time
 
 
 def main():
@@ -65,7 +66,7 @@ def main():
             result = subprocess.run(command, env=child_env, stdout=f, stderr=subprocess.STDOUT,
                                     timeout=30 if name.startswith("quit_") else 180, creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
         data = log.read_bytes()
-        text = data.decode("utf-8", errors="replace")
+        text = data.decode("utf-8", errors="replace").replace("\r\n", "\n")
         errors = re.findall(r"^(?:SCRIPT )?ERROR:.*$", text, re.M)
         warnings = re.findall(r"^WARNING:.*$", text, re.M)
         passed = result.returncode == 0 and not errors and not re.search(r"(?:ROUTE_FAIL|: FAIL)", text)
@@ -90,21 +91,62 @@ def main():
     if args.import_only:
         return
     scenes = sorted((project / "tests").glob("*.tscn"))
-    if len(scenes) != 43:
-        raise RuntimeError(f"Expected 43 tests, got {len(scenes)}; review the test inventory")
+    if len(scenes) != 59:
+        raise RuntimeError(f"Expected 59 tests (43 regressions + Alpha economy + sortie checkpoint + medical treatment + enemy perception + player visibility + tactical roles + campaign + weapon fittings + exact ammo packing + regional loot + exit choices + records alarm + control settings + relay operation + cargo exchange + Hideout idle presentation), got {len(scenes)}; review the test inventory")
     for scene in scenes:
         frame_budget = "12000" if scene.stem.startswith("streets_") else "1200"
         if not run(scene.stem, ["--headless", "--fixed-fps", "60", "res://tests/" + scene.name, "--quit-after", frame_budget]):
             raise SystemExit(1)
+    if not run("records_alarm_read", ["--headless", "res://tests/records_alarm_test.tscn", "--", "--read"]):
+        raise SystemExit(1)
+    if not run("controls_read", ["--headless", "res://tests/control_settings_test.tscn", "--", "--read"]):
+        raise SystemExit(1)
+    if not run("relay_read", ["--headless", "res://tests/relay_operation_test.tscn", "--", "--read"]):
+        raise SystemExit(1)
+    if not run("relay_combat", ["--headless", "--fixed-fps", "60", "res://tests/streets_combat_run.tscn", "--", "--relay"]):
+        raise SystemExit(1)
     for mode in ["base", "battle", "failure", "transition", "recovery"]:
         if not run("quit_" + mode, ["--headless", "--script", "res://tools/p0_exit_probe.gd", "--", mode]):
             raise SystemExit(1)
+    checkpoint_args = ["--headless", "--fixed-fps", "60", "res://tests/sortie_checkpoint_test.tscn", "--"]
+    if not run("checkpoint_write", checkpoint_args + ["--write"]) or not run("checkpoint_read", checkpoint_args + ["--read"]):
+        raise SystemExit(1)
+    # Kill only our explicitly launched, isolated writer AFTER its durable-save
+    # marker and live process handle are verified. This never targets an editor.
+    crash_log = out / "checkpoint_crash_writer.log"
+    with crash_log.open("wb") as f:
+        child = subprocess.Popen([str(args.godot.resolve()), "--path", str(project)] + checkpoint_args + ["--write", "--wait-for-kill"],
+                                 env=env, stdout=f, stderr=subprocess.STDOUT,
+                                 creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
+        deadline = time.monotonic() + 90
+        while child.poll() is None and time.monotonic() < deadline:
+            if "CHECKPOINT_WRITER_READY" in crash_log.read_text(encoding="utf-8", errors="replace"):
+                break
+            time.sleep(0.1)
+        ready = child.poll() is None and "CHECKPOINT_WRITER_READY" in crash_log.read_text(encoding="utf-8", errors="replace")
+        if child.poll() is None:
+            child.kill()
+        child.wait(timeout=10)
+        if not ready:
+            raise RuntimeError("Checkpoint crash writer did not reach verified live/ready state")
+    if not run("checkpoint_crash_read", checkpoint_args + ["--read"]):
+        raise SystemExit(1)
+    medical_args = ["--headless", "--fixed-fps", "60", "res://tests/medical_treatment_test.tscn", "--"]
+    if not run("medical_write", medical_args + ["--write"]) or not run("medical_read", medical_args + ["--read"]):
+        raise SystemExit(1)
+    campaign_args = ["--headless", "--fixed-fps", "60", "res://tests/campaign_test.tscn", "--"]
+    if not run("campaign_write", campaign_args + ["--write"]) or not run("campaign_read", campaign_args + ["--read"]):
+        raise SystemExit(1)
+    if not run("fitting_read", ["--headless", "--fixed-fps", "60", "res://tests/weapon_fitting_test.tscn", "--", "--read"]):
+        raise SystemExit(1)
+    if not run("packing_read", ["--headless", "--fixed-fps", "60", "res://tests/ammo_packing_test.tscn", "--", "--read"]):
+        raise SystemExit(1)
     if not run("main", ["--headless", "--quit-after", "180"]):
         raise SystemExit(1)
     if args.route and not run("route", ["--rendering-method", args.renderer, "--resolution", "1280x720",
                                         "--script", "res://tools/phase2b_route_probe.gd"], route=True):
         raise SystemExit(1)
-    print("ALL TESTS 43/43 PASS; manual input NOT claimed; release permission NOT implied")
+    print(f"ALL TESTS {len(scenes)}/{len(scenes)} PASS; manual input NOT claimed; release permission NOT implied")
 
 
 if __name__ == "__main__":

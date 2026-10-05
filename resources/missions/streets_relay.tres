@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="MissionDefinition" load_steps=6 format=3]
+[ext_resource type="Script" path="res://scripts/data/mission_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/objective_definition.gd" id="2"]
+[sub_resource type="Resource" id="relay_a"]
+script = ExtResource("2")
+objective_id = &"relay_office"
+display_name = "Restore the municipal relay"
+objective_type = 1
+target = 1
+target_id = &"relay_office"
+required = true
+[sub_resource type="Resource" id="relay_b"]
+script = ExtResource("2")
+objective_id = &"relay_repair"
+display_name = "Restore the repair-shop relay"
+objective_type = 1
+target = 1
+target_id = &"relay_repair"
+required = true
+[sub_resource type="Resource" id="records"]
+script = ExtResource("2")
+objective_id = &"streets_terminal"
+display_name = "Optional: records unlock the alternate exit"
+objective_type = 1
+target = 1
+target_id = &"street_terminal"
+required = false
+[resource]
+script = ExtResource("1")
+mission_id = &"streets_relay"
+display_name = "Old Town / Restore the Relay"
+description = "Restore two relays, then extract. Each takes 12 seconds nearby; damage or leaving cancels the current attempt. Starting repairs makes local noise. No materials required."
+objective_definitions = Array[ExtResource("2")]([SubResource("relay_a"), SubResource("relay_b"), SubResource("records")])

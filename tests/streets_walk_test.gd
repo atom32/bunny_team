@@ -63,7 +63,12 @@ func _run() -> void:
 			failures.append("Cannot physically reach "+target.name)
 			break
 		print("STREETS_WALK reached ",target.name," at ",battle.player.global_position)
-		if target is ObjectiveInteractable: target.interact(battle.player,session)
+		if target is ObjectiveInteractable:
+			target.interact(battle.player,session)
+			if target is RecordsTerminal:
+				for frame in 600:
+					await get_tree().physics_frame
+					if session.get_objective_state(target.objective_id).status == ObjectiveState.Status.COMPLETED: break
 		if target is ObjectiveReachZone: target.try_reach(battle.player)
 	if failures.is_empty() and not session.is_mission_completed(): failures.append("Walk did not complete both mission objectives")
 	battle.queue_free()

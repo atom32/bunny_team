@@ -22,12 +22,15 @@ func _controls(destination: Vector3) -> void:
 	_axis("move_left","move_right",motion.x)
 	_axis("move_forward","move_back",motion.z)
 	var aim := motion if motion!=Vector3.ZERO else player.aim_direction
+	if battle.player_visibility.heard_remaining > 0:
+		aim = battle.player_visibility.heard_direction
 	var nearest: EnemyController
 	var distance := 24.0
 	for candidate in battle.enemy_container.get_children():
 		if not candidate is EnemyController: continue
 		var enemy := candidate as EnemyController
 		if enemy.is_dead: continue
+		if not battle.player_visibility.can_see_enemy(enemy): continue
 		var separation := player.global_position.distance_to(enemy.global_position)
 		if separation>=distance: continue
 		var ray := PhysicsRayQueryParameters3D.create(player.global_position+Vector3.UP*1.25,enemy.global_position+Vector3.UP*1.25,6)
@@ -67,10 +70,19 @@ func _walk(target: Vector3) -> bool:
 	return true
 
 func _run() -> void:
-	if DisplayServer.get_name()!="headless": get_tree().root.size=Vector2i(1600,1000)
+	if DisplayServer.get_name()!="headless" and "--keep-window-size" not in OS.get_cmdline_user_args(): get_tree().root.size=Vector2i(1280,720)
 	var profile := ProfileRuntime.new_profile()
+	var relay_run := "--relay" in OS.get_cmdline_user_args()
+	if relay_run:
+		profile.first_mission_completed = true
+		profile.campaign.stage = 4
+	if "--campaign-ready" in OS.get_cmdline_user_args():
+		# Explicit previous-sortie fixture; this run must earn the next step via
+		# the real combat/objectives/extraction route, not a progress assignment.
+		profile.first_mission_completed = true
+		profile.campaign.progress = 1
 	var plan := DeploymentPlan.build(profile)
-	var session := SortieRuntime.start_sortie(profile.create_sortie_request(&"street_district",&"streets_recon",plan.ammo_ids),profile)
+	var session := SortieRuntime.start_sortie(profile.create_sortie_request(&"street_district",&"streets_relay" if relay_run else &"streets_recon",plan.ammo_ids),profile)
 	battle=load("res://scenes/battle/battle.tscn").instantiate()
 	battle.loot_seed=907
 	var arguments := OS.get_cmdline_user_args()
@@ -91,13 +103,14 @@ func _run() -> void:
 		NavigationServer3D.map_force_update(map)
 		if not NavigationServer3D.map_get_path(map,battle.player.position,area.get_node("StreetTerminal").position,true).is_empty(): break
 	var targets: Array[Node3D] = [area.get_node("StreetTerminal"),area.get_node("StreetSurvey")]
+	if relay_run: targets = [area.get_node("RelayOffice"),area.get_node("RelayRepair")]
 	var loot_room: int = (area.task_index+1)%4
 	for loot in area.loot_points:
 		if loot.loot_table_id==&"prototype_high_value_loot" and loot.position.distance_to(area.ROOMS[loot_room])<9:
 			targets.append(loot)
 			break
 	for exit in area.find_children("*","ExtractionPoint",true,false):
-		if exit.available:
+		if exit.available and (not relay_run or exit.can_extract(session)):
 			targets.append(exit)
 			break
 	for target in targets:
@@ -107,10 +120,19 @@ func _run() -> void:
 		print("STREETS_COMBAT reached ",target.name," health=",battle.player.health," fired=",fired)
 		if DisplayServer.get_name()!="headless" and "--combat-capture" in OS.get_cmdline_user_args():
 			await RenderingServer.frame_post_draw
-			get_tree().root.get_texture().get_image().save_png("/tmp/streets_combat_%s.png"%target.name)
+			var capture_dir := OS.get_environment("BUNNY_EVIDENCE")
+			if capture_dir.is_empty(): capture_dir = OS.get_user_data_dir()
+			DirAccess.make_dir_recursive_absolute(capture_dir)
+			get_tree().root.get_texture().get_image().save_png(capture_dir.path_join("streets_combat_%s.png"%target.name))
 		if target is ObjectiveInteractable:
 			target.interact(battle.player,session)
 			if battle.player.reload_weapon(): reloads+=1
+			if target is RelayStation or target is RecordsTerminal:
+				for tick in 1800:
+					await get_tree().physics_frame
+					if battle.player.is_dead or session.get_objective_state(target.objective_id).status == ObjectiveState.Status.COMPLETED: break
+					_controls(battle.player.global_position) # Defend without walking out of the repair radius.
+					if target.remaining == 0: target.interact(battle.player,session)
 		if target is LootSpawnPoint:
 			for pickup in target.get_children():
 				if pickup is LootPickup:
@@ -130,6 +152,10 @@ func _run() -> void:
 	if recovered_ids.is_empty(): failures.append("No indoor loot recovered")
 	if session.status==SortieSession.Status.COMPLETED:
 		if SortieOutcomeService.commit_outcome(profile,SortieOutcomeService.create_outcome(session))!=OK: failures.append("Outcome commit failed")
+		if "--campaign-ready" in OS.get_cmdline_user_args():
+			if profile.campaign.progress != 2: failures.append("Actual Streets completion did not advance campaign")
+			print("STREETS_CAMPAIGN progress=",profile.campaign.progress," ready=",CampaignService.ready(profile))
+		if relay_run and profile.campaign.progress != 1: failures.append("Relay completion did not advance final base contract")
 		for id in recovered_ids:
 			if not profile.inventory.contains(id): failures.append("Recovered instance missing from warehouse")
 	print("STREETS_COMBAT_RUN fired=",fired," reloads=",reloads," kills=",kills," moved_enemies=",moved," recovered=",recovered_ids.size()," failures=",failures)

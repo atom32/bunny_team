@@ -26,4 +26,4 @@ func _process(delta: float) -> void:
 
 func get_interaction_prompt(_actor: Node3D, session: SortieSession) -> String:
 	if extraction_remaining > 0: return tr("EXTRACTING  %.1fs / DEFEND THE BEACON") % extraction_remaining
-	return "E  EXTRACT / DEFEND FOR 8s" if can_extract(session) else "LINK LOCKED / INVESTIGATE THE TERMINAL"
+	return tr("%s  EXTRACT / DEFEND FOR 8s") % ControlBindings.label("interact") if can_extract(session) else "LINK LOCKED / INVESTIGATE THE TERMINAL"

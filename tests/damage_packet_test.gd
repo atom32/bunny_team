@@ -61,7 +61,7 @@ func _test_enemy_receivers_and_death() -> void:
 	check(is_equal_approx(fully_blocked, 0.0), "target-side armor resolution cannot create negative health damage")
 	heavy.armor = configured_armor
 
-	var profile := ProfileState.create_new()
+	var profile := ArmoryFixture.create_profile()
 	var session := SortieSession.create_from_profile(profile.create_sortie_request(), profile)
 	check(session != null and session.activate(), "enemy death fixture starts an active Sortie")
 	# Battle connects this same signal to the session objective boundary.
@@ -178,7 +178,7 @@ func _test_player_armor_tradeoff() -> void:
 	var heavy_distance := ((heavy.global_position-heavy_start) * Vector3(1, 0, 1)).length()
 	print("ARMOR TRADEOFF / 25 damage: light %.1f HP, heavy %.1f HP / travel: light %.2fm, heavy %.2fm" % [light_hit,heavy_hit,light_distance,heavy_distance])
 	check(light_distance > heavy_distance + 1.5 and heavy_distance > 5.0, "Actual one-second traversal differs: light %.2fm, heavy %.2fm" % [light_distance,heavy_distance])
-	var profile := ProfileState.create_new()
+	var profile := ArmoryFixture.create_profile()
 	profile._equip_first_definition(LoadoutState.SLOT_ARMOR, &"armor.bulwark_plate_01")
 	var save_path := "user://armor_tradeoff_%s.json" % OS.get_process_id()
 	check(SaveService.save_profile(profile,save_path) == OK, "Heavy Armor loadout saves")

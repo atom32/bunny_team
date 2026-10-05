@@ -1,0 +1,8 @@
+{
+  "commit": "10e9d822b2f9c67c7d61bc5885dee9002b746f0b",
+  "parent": "955ce1ffc79b5c120e507118264d616774867aac",
+  "files_match_scoped_manifest": true,
+  "staged_empty": true,
+  "preexisting_tracked_wip_status_preserved": true,
+  "push": false
+}

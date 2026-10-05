@@ -5,6 +5,10 @@ const ACCENTS := preload("res://scripts/presentation/combat_accents.gd")
 
 
 static func tracer(parent: Node, from: Vector3, to: Vector3, color: Color, width: float = 0.045) -> MeshInstance3D:
+	var segment := PlayerVisibility.visible_segment(parent, from, to)
+	if segment.size() != 2: return null
+	from = segment[0]
+	to = segment[1]
 	var distance := from.distance_to(to)
 	if distance < 0.05:
 		return null
@@ -30,6 +34,7 @@ static func tracer(parent: Node, from: Vector3, to: Vector3, color: Color, width
 
 
 static func telegraph(parent: Node, from: Vector3, to: Vector3, duration: float = 0.38) -> void:
+	if not PlayerVisibility.point_visible(parent, from): return
 	var distance := from.distance_to(to)
 	if distance < 0.05:
 		return
@@ -58,6 +63,7 @@ static func muzzle_flash(
 	color: Color,
 	intensity: float = 1.0
 ) -> void:
+	if not PlayerVisibility.point_visible(parent, position): return
 	var root := Node3D.new()
 	root.name = "MuzzleFlash"
 	parent.add_child(root)
@@ -99,6 +105,7 @@ static func dodge_pulse(parent: Node, position: Vector3, direction: Vector3) -> 
 
 
 static func rocket_trail(parent: Node, position: Vector3) -> void:
+	if not PlayerVisibility.point_visible(parent, position): return
 	var trail := SoftSmoke.create(parent, position, 0.22, Color("c0c5c9ff"), "RocketTrail")
 	trail.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	var material := trail.material_override as StandardMaterial3D
@@ -111,6 +118,7 @@ static func rocket_trail(parent: Node, position: Vector3) -> void:
 
 
 static func hit(parent: Node, position: Vector3, color: Color = Color("68f6ff"), intensity: float = 1.0) -> void:
+	if not PlayerVisibility.point_visible(parent, position): return
 	var spark := ACCENTS.impact(parent, position, color, intensity)
 	var tween := spark.create_tween()
 	tween.set_parallel(true)
@@ -131,6 +139,7 @@ static func hit(parent: Node, position: Vector3, color: Color = Color("68f6ff"),
 
 
 static func explosion(parent: Node, position: Vector3, radius: float) -> void:
+	if not PlayerVisibility.point_visible(parent, position): return
 	var blast := VisualFactory.sphere(parent, 0.45, position, Color("fff0a0"), "Explosion")
 	blast.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	var blast_material := VisualFactory.material(Color("fff0a0"), 0.0, 0.05, Color("ff4b16"), 7.0)

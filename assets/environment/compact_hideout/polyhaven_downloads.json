@@ -1,0 +1,237 @@
+[
+  {
+    "sha256": "F07032A5EE89AACCEEBF10FD9FA192C22775AE81861CFB0BDB1594497179373C",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/metal_office_desk/metal_office_desk_1k.gltf",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_office_desk\\metal_office_desk.gltf"
+  },
+  {
+    "sha256": "F57EB004937E46392151B803E0CB1D88983958D01AD11D93DF78A82CFCC6C407",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_office_desk/metal_office_desk_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_office_desk\\textures\\metal_office_desk_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "1F02E3E77E8F82A3600664C991BD45C1C187452D61E9EDE4336C6F90F7FA3139",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_office_desk/metal_office_desk_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_office_desk\\textures\\metal_office_desk_diff_1k.jpg"
+  },
+  {
+    "sha256": "752916DD9BF8A163DC7E0D3673900791EE6D558BBE23894263AC92B42387F51B",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_office_desk/metal_office_desk_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_office_desk\\textures\\metal_office_desk_arm_1k.jpg"
+  },
+  {
+    "sha256": "65B558F41A75AD4822E31CC2A97EB34ED359199279A6BFBD650DEB27CEF78767",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/metal_office_desk/metal_office_desk.bin",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_office_desk\\metal_office_desk.bin"
+  },
+  {
+    "sha256": "E69A99778CACBBF0A2447971D8917A2463B411CDD2A50FF2C53C2230B4C43881",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/metal_stool_01/metal_stool_01_1k.gltf",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_stool_01\\metal_stool_01.gltf"
+  },
+  {
+    "sha256": "55D71CB01DD9AFBA245D4513728CE0CDE8B112D5A7E1695A68578445C7B02B82",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_stool_01/metal_stool_01_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_stool_01\\textures\\metal_stool_01_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "D11949DF1F0C59B5A85145395703A2AA7617E76B80759A5EF80B09E1798ACB3D",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_stool_01/metal_stool_01_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_stool_01\\textures\\metal_stool_01_diff_1k.jpg"
+  },
+  {
+    "sha256": "EB13E80E9FE232D022B4136E817D4590A7279D8DA327D35E525E1AA4CF30E334",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_stool_01/metal_stool_01_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_stool_01\\textures\\metal_stool_01_arm_1k.jpg"
+  },
+  {
+    "sha256": "A57DAE498990E7B56CBA33B64721D1D0B940CA6352248DE149740CD4678D451D",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/metal_stool_01/metal_stool_01.bin",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_stool_01\\metal_stool_01.bin"
+  },
+  {
+    "sha256": "EF4B69DCA61542C4D724C4807233161129150220695742B5137ED65D8D2E1F24",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/old_military_crate/old_military_crate_1k.gltf",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\old_military_crate\\old_military_crate.gltf"
+  },
+  {
+    "sha256": "88935171626BE79C4A44D0C52A33BC8D88B7B232AE48157D639A9ADA0AB6E92B",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/old_military_crate/old_military_crate_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\old_military_crate\\textures\\old_military_crate_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "9E74A72787364FEE09A450E442DB97A687D237051E98F8ED709AF516434E895D",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/old_military_crate/old_military_crate_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\old_military_crate\\textures\\old_military_crate_diff_1k.jpg"
+  },
+  {
+    "sha256": "7B3A94F18F15783D9940FE4BD25316E8DAFFD0BDCBDFBE3E234B3CBB636BF5DA",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/old_military_crate/old_military_crate_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\old_military_crate\\textures\\old_military_crate_arm_1k.jpg"
+  },
+  {
+    "sha256": "80EB5AD690AAA6F4F401DF0F8E323666BF8F3F9943C7CB703EB37002F5084CE1",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/old_military_crate/old_military_crate.bin",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\old_military_crate\\old_military_crate.bin"
+  },
+  {
+    "sha256": "5A2C0D8BDB52FE168727F4200818AC0C2ADBDED32F0B9DC09CFE224249F9E266",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/industrial_wall_lamp/industrial_wall_lamp_1k.gltf",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\industrial_wall_lamp\\industrial_wall_lamp.gltf"
+  },
+  {
+    "sha256": "CF80EEEB6FEC87499FB8444F554EAE62E471AD79F8906D6FD693D7FDE53B012F",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_lamp/industrial_wall_lamp_emissive_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\industrial_wall_lamp\\textures\\industrial_wall_lamp_emissive_1k.jpg"
+  },
+  {
+    "sha256": "427BAFA2F14D9F81A5949507D5D6915BFB4B70A8E5E5076A3A18C7DE49B3D78B",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_lamp/industrial_wall_lamp_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\industrial_wall_lamp\\textures\\industrial_wall_lamp_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "E0F824B7E639FCEB7CA5B7B7F67A8168BC53DB184B818770126167D16D424B2E",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_lamp/industrial_wall_lamp_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\industrial_wall_lamp\\textures\\industrial_wall_lamp_diff_1k.jpg"
+  },
+  {
+    "sha256": "70ADEF2921BFCF985F951F9F85FCA8DBFB63DC84535613C3872684FEA65AB025",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_lamp/industrial_wall_lamp_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\industrial_wall_lamp\\textures\\industrial_wall_lamp_arm_1k.jpg"
+  },
+  {
+    "sha256": "73CE4F34D90AEE29DB9A5E301934C0642BF89136353D7E400F63DB1C2F99F345",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_lamp/industrial_wall_lamp_glass_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\industrial_wall_lamp\\textures\\industrial_wall_lamp_glass_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "215457A5D41AE5D999E94F4EA0F424FF769940E71E1449CE712F35687E33AF67",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_lamp/industrial_wall_lamp_glass_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\industrial_wall_lamp\\textures\\industrial_wall_lamp_glass_diff_1k.jpg"
+  },
+  {
+    "sha256": "A3BA7F76FF395ADA04A804B94F4F2F506BC994336189916D2A414173E2360069",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/industrial_wall_lamp/industrial_wall_lamp_glass_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\industrial_wall_lamp\\textures\\industrial_wall_lamp_glass_arm_1k.jpg"
+  },
+  {
+    "sha256": "D0A6A08B5E2E83FF8D6EB61BB5DAA74654B4FF8D9C634348C87F83DBDA4837A2",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/industrial_wall_lamp/industrial_wall_lamp.bin",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\industrial_wall_lamp\\industrial_wall_lamp.bin"
+  },
+  {
+    "sha256": "455D3A0FE95B7900A08CBEBB23CFB2C341672FCB67AE7355D776E53CFA3D0688",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/modular_industrial_pipes_01/modular_industrial_pipes_01_1k.gltf",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_industrial_pipes_01\\modular_industrial_pipes_01.gltf"
+  },
+  {
+    "sha256": "4C65DCB651A3D345517FA93AD7C6E48F2388F4E8BB347446F70317C16049867B",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_industrial_pipes_01/modular_industrial_pipes_01_group02_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_industrial_pipes_01\\textures\\modular_industrial_pipes_01_group02_arm_1k.jpg"
+  },
+  {
+    "sha256": "C0233F66B18E3374DFBBB8C8078A41F6571A0809D3EB14DD9D3C332265CFDE7B",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_industrial_pipes_01/modular_industrial_pipes_01_group01_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_industrial_pipes_01\\textures\\modular_industrial_pipes_01_group01_diff_1k.jpg"
+  },
+  {
+    "sha256": "84A43CA11A4F1AC84F7FC8336A4E9B7B333D30C13E540F3FF42E662DC6F91B53",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_industrial_pipes_01/modular_industrial_pipes_01_group02_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_industrial_pipes_01\\textures\\modular_industrial_pipes_01_group02_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "2E11E1A7DABD56B1E158364F48B0B388BF316FCAB61A01274740DB75DBAFA448",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/modular_industrial_pipes_01/modular_industrial_pipes_01.bin",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_industrial_pipes_01\\modular_industrial_pipes_01.bin"
+  },
+  {
+    "sha256": "ED4728FDE567EFE420E3A6E1BDC4238B26C2782218737C7E2DE88EECA1E91FB2",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_industrial_pipes_01/modular_industrial_pipes_01_group01_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_industrial_pipes_01\\textures\\modular_industrial_pipes_01_group01_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "7FFF7D4604491EEB7531AD5F7520517015C72EC7316D1E865D62F23F976DFED6",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_industrial_pipes_01/modular_industrial_pipes_01_group01_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_industrial_pipes_01\\textures\\modular_industrial_pipes_01_group01_arm_1k.jpg"
+  },
+  {
+    "sha256": "EF8A75C402A8871903DCAA147B023D57C640D0DE4C7A8ACDFDEE822861656A92",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_industrial_pipes_01/modular_industrial_pipes_01_group02_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_industrial_pipes_01\\textures\\modular_industrial_pipes_01_group02_diff_1k.jpg"
+  },
+  {
+    "sha256": "FB255992B6E651DE9709B17C083A14B405E99CBC26774B31BF252E38CF9287FB",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/vintage_day_bed/vintage_day_bed_1k.gltf",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\vintage_day_bed\\vintage_day_bed.gltf"
+  },
+  {
+    "sha256": "2902F47F4778FCE0667C2A1DBFF7E2E861A0AED475668EA3FCE8A485487598EB",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/vintage_day_bed/vintage_day_bed_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\vintage_day_bed\\textures\\vintage_day_bed_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "78B7036A3254C780052B87AC962AC6BA212501821AF03C56FAA2D7A9CCB955CE",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/vintage_day_bed/vintage_day_bed_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\vintage_day_bed\\textures\\vintage_day_bed_diff_1k.jpg"
+  },
+  {
+    "sha256": "B60E71C345FC1D16396A94A133390B4CDDE5C05A38EBAADF2F5DC96BE2895B11",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/vintage_day_bed/vintage_day_bed_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\vintage_day_bed\\textures\\vintage_day_bed_arm_1k.jpg"
+  },
+  {
+    "sha256": "08172858C3F9D4225780013E4E9AFD01BB9DB42E17001FC6C790A183227ECF07",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/vintage_day_bed/vintage_day_bed.bin",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\vintage_day_bed\\vintage_day_bed.bin"
+  },
+  {
+    "sha256": "2AC8389AFC1519449A9CFDF7EFD9FA36780A2177BB47AB58F7A7DDA7D247DC8C",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/desk_lamp_arm_01/desk_lamp_arm_01_1k.gltf",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\desk_lamp_arm_01\\desk_lamp_arm_01.gltf"
+  },
+  {
+    "sha256": "FEEFEDC3835ECEF3634E97A24977451671F8F57747A023F48CD14C84BC73513A",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/desk_lamp_arm_01/desk_lamp_arm_01_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\desk_lamp_arm_01\\textures\\desk_lamp_arm_01_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "206404C79FB7DCF8E2C4558C13544342F87D2190526231A1750C3C9ADC256FBC",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/desk_lamp_arm_01/desk_lamp_arm_01_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\desk_lamp_arm_01\\textures\\desk_lamp_arm_01_arm_1k.jpg"
+  },
+  {
+    "sha256": "159EB178ABA3271BD555CBE07CA36431D8AF9A006F0B8E9D8C67030CBDC9E4D3",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/desk_lamp_arm_01/desk_lamp_arm_01_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\desk_lamp_arm_01\\textures\\desk_lamp_arm_01_diff_1k.jpg"
+  },
+  {
+    "sha256": "07F34E32ABECBAA63D28B9D12D6A0EB82B775A0F50C92327655909D72FF8489B",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/desk_lamp_arm_01/desk_lamp_arm_01.bin",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\desk_lamp_arm_01\\desk_lamp_arm_01.bin"
+  },
+  {
+    "sha256": "9B8D240F1E41E83119771A063E4F4B4BB9DDFEFD47F9F5BAEDA998107AA135C5",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/metal_toolbox/metal_toolbox_1k.gltf",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_toolbox\\metal_toolbox.gltf"
+  },
+  {
+    "sha256": "7BA19A233BCFFF9C3D95B62C3A992C8E19CB2D6355C98D6E12BDC756A8AF44CF",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_toolbox/metal_toolbox_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_toolbox\\textures\\metal_toolbox_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "21E1D21880E49DB3FDE0457D53B78A70DB61234A201DA9F0181DD0880B110473",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_toolbox/metal_toolbox_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_toolbox\\textures\\metal_toolbox_diff_1k.jpg"
+  },
+  {
+    "sha256": "97676B2324B105B710904B20BFDEB32BFCE3C6B4CCAAF215827B37961FC22763",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_toolbox/metal_toolbox_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_toolbox\\textures\\metal_toolbox_arm_1k.jpg"
+  },
+  {
+    "sha256": "FE5551028E5B398C78C86911ABF549010F83831C30B01593CA3EB3D8BA7CEAE7",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/metal_toolbox/metal_toolbox.bin",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_toolbox\\metal_toolbox.bin"
+  }
+]

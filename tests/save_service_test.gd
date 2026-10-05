@@ -32,7 +32,7 @@ func _test_save_round_trip() -> void:
 
 	var file := FileAccess.open(test_path, FileAccess.READ)
 	var envelope: Variant = JSON.parse_string(file.get_as_text()) if file else null
-	check(typeof(envelope) == TYPE_DICTIONARY and int(envelope.get("schema_version", -1)) == 1, "save envelope contains schema_version 1")
+	check(typeof(envelope) == TYPE_DICTIONARY and int(envelope.get("schema_version", -1)) == SaveService.SCHEMA_VERSION, "save envelope contains current schema version")
 	var restored := SaveService.load_profile(test_path, false)
 	check(restored != null and restored.validate(), "SaveService loads a valid profile")
 	var restored_weapon := restored.inventory.get_item(weapon.instance_id) if restored else null

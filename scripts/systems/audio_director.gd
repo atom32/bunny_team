@@ -35,6 +35,34 @@ const CUE_GAIN_DB := {
 	&"victory": 8.0,
 	&"defeat": 7.0,
 }
+const MOVEMENT_STREAMS := [
+	preload("res://assets/audio/kenney_impact/footstep_concrete_000.ogg"),
+	preload("res://assets/audio/kenney_impact/footstep_concrete_001.ogg"),
+	preload("res://assets/audio/kenney_impact/impactMetal_light_000.ogg"),
+	preload("res://assets/audio/kenney_impact/impactMetal_light_001.ogg")]
+var _movement_players: Array[AudioStreamPlayer2D] = []
+var _next_movement := 0
+var movement_events := 0
+
+# Separate bounded pool: footsteps cannot steal weapon or interaction voices.
+# Gain comes from the existing hearing model; this never emits AI noise.
+func play_movement(gain: float, pan: float = 0.0, mechanical := false) -> void:
+	if gain <= 0 or get_tree().paused or _movement_players.is_empty(): return
+	var voice := _movement_players[_next_movement % _movement_players.size()]
+	voice.stop()
+	voice.stream = MOVEMENT_STREAMS[(2 if mechanical else 0) + _next_movement % 2]
+	var viewport := get_viewport().get_visible_rect().size
+	voice.position = viewport * .5 + Vector2(clampf(pan,-1,1) * viewport.x * .4,0)
+	voice.volume_db = -10.0 + linear_to_db(clampf(gain,.01,1.0))
+	voice.play()
+	_next_movement += 1
+	movement_events += 1
+
+func clear_movement() -> void:
+	for voice in _movement_players:
+		voice.stop()
+		voice.stream = null
+
 const SFX_POOL_SIZE := 20
 
 var music_player: AudioStreamPlayer
@@ -50,10 +78,19 @@ func _ready() -> void:
 	_ensure_bus(&"SFX", -1.0)
 	_build_music_player()
 	_build_sfx_pool()
+	for index in 8:
+		var voice := AudioStreamPlayer2D.new()
+		voice.bus = &"SFX"
+		voice.process_mode = Node.PROCESS_MODE_PAUSABLE
+		voice.max_distance = 100000.0
+		voice.attenuation = 0.0 # Hearing has already applied range and wall attenuation.
+		add_child(voice)
+		_movement_players.append(voice)
 	set_music_context(&"hanger", true)
 
 
 func set_music_context(context: StringName, immediate: bool = false) -> void:
+	clear_movement()
 	if not music_player:
 		return
 	var target_volume := -8.0
@@ -117,6 +154,7 @@ func has_cue(cue: StringName) -> bool:
 
 
 func stop_all() -> void:
+	clear_movement()
 	if _music_tween and _music_tween.is_valid():
 		_music_tween.kill()
 	if music_player:
@@ -135,6 +173,8 @@ func shutdown_for_test() -> void:
 	for player in _sfx_players:
 		player.free()
 	_sfx_players.clear()
+	for voice in _movement_players: voice.free()
+	_movement_players.clear()
 	# stop() is consumed on the audio thread. A test's SceneTreeTimer can
 	# expire in the same long frame, before the Dummy driver has mixed again.
 	# Drain two driver periods in wall time; normal playback never calls this.

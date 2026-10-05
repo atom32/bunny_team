@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/supply/data_drive.svg" id="2"]
+[resource]
+script = ExtResource("1")
+icon = ExtResource("2")
+id = &"material.data_drive"
+display_name = "Sealed Data Drive"
+description = "Valuable recovered telemetry. Sell for credits to fund the next sortie."
+weight = 0.15
+base_value = 650
+item_tags = PackedStringArray("loot", "material")
+stackable = true
+max_stack = 20

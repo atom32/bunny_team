@@ -54,6 +54,21 @@ func _run() -> void:
 	presentation._show_loot()
 	await _escape()
 	check(not is_instance_valid(presentation.panel) and not FlowMenu.is_open(), "Esc closes loot before opening pause")
+	await _loot_input_contract(battle, presentation, player)
+	await _cargo_exchange_contract(battle, presentation, player)
+	# Reproduce focus notification during a busy child traversal. The real
+	# pause UI must be deferred, not allocated into a temporarily locked parent.
+	var focus_event := func(_child: Node): FlowMenu._notification(NOTIFICATION_APPLICATION_FOCUS_OUT)
+	FlowMenu.child_entered_tree.connect(focus_event)
+	var focus_fixture := Node.new()
+	FlowMenu.add_child(focus_fixture)
+	FlowMenu.child_entered_tree.disconnect(focus_event)
+	check(not get_tree().paused, "Focus-loss pause waits for safe tree mutation")
+	await get_tree().process_frame
+	await get_tree().process_frame
+	check(get_tree().paused and FlowMenu.mode == "pause" and FlowMenu.screen.is_inside_tree(), "Deferred focus pause has a real attached UI")
+	FlowMenu.close()
+	focus_fixture.free()
 	var enemy := battle.enemy_container.get_child(0) as EnemyController
 	enemy.target = player
 	enemy._telegraph_shot()
@@ -130,3 +145,94 @@ func _button(caption: String) -> Button:
 
 func check(condition: bool, description: String) -> void:
 	if not condition: failures.append(description)
+
+func _loot_input_contract(battle: Node, presentation: Node, player: PlayerController) -> void:
+	var original := player.global_position
+	player.global_position = presentation.container.global_position + Vector3.RIGHT
+	player.velocity = Vector3.ZERO
+	await get_tree().physics_frame
+	presentation._show_loot()
+	check(player.aim_input_captured and not get_tree().paused, "Loot captures aim without pausing combat")
+	var aim := player.aim_direction
+	var point := player.aim_world_point
+	var ammo := player.get_magazine_ammo()
+	await _loot_capture("loot_open")
+	get_viewport().warp_mouse(Vector2(1100,210))
+	Input.action_press("aim_left")
+	Input.action_press("fire")
+	player._fire_queued = true
+	for frame in 8: await get_tree().physics_frame
+	check(player.aim_direction.is_equal_approx(aim) and player.aim_world_point.is_equal_approx(point), "Loot cursor/stick cannot rotate player or camera aim lead")
+	check(player.get_magazine_ammo()==ammo and not player._fire_queued, "Loot blocks held and buffered fire without consuming rounds")
+	Input.action_release("aim_left")
+	await _loot_capture("loot_cursor_moved")
+	var health := player.health
+	player.take_damage(1.0)
+	check(player.health<health, "Loot does not grant damage immunity")
+	var start := player.global_position
+	Input.action_press("move_right")
+	for frame in 6: await get_tree().physics_frame
+	Input.action_release("move_right")
+	check(player.global_position.distance_to(start)>.05, "Movement remains available while inspecting loot")
+	presentation._close_loot()
+	check(not player.aim_input_captured and not Input.is_action_pressed("fire"), "Closing loot releases capture without replaying held fire")
+	Input.action_press("aim_right")
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	Input.action_release("aim_right")
+	check(not player.aim_direction.is_equal_approx(aim), "Aiming resumes after closing loot")
+	player.global_position = presentation.container.global_position + Vector3.RIGHT
+	player.velocity = Vector3.ZERO
+	presentation._show_loot()
+	player.global_position += Vector3.RIGHT * 5
+	await get_tree().process_frame
+	await get_tree().process_frame
+	check(not is_instance_valid(presentation.panel) and not player.aim_input_captured, "Walking out of range closes loot and releases aim capture")
+	player.global_position = original
+	player.velocity = Vector3.ZERO
+
+func _loot_capture(label: String) -> void:
+	if not "--capture" in OS.get_cmdline_user_args(): return
+	await get_tree().create_timer(.8).timeout
+	await RenderingServer.frame_post_draw
+	get_viewport().get_texture().get_image().save_png(OS.get_environment("BUNNY_EVIDENCE").path_join(label+".png"))
+
+func _cargo_exchange_contract(battle: Node, presentation: Node, player: PlayerController) -> void:
+	var original := player.position
+	var cargo := ItemInstance.new(&"material.scrap",1)
+	check(battle.session.inventory.add_item_preserving_instance(cargo), "Exchange fixture uses actual carried cargo")
+	var pickup: LootPickup = presentation.container.contents()[0]
+	var incoming_id := pickup.item_instance.instance_id
+	player.global_position = presentation.container.global_position + Vector3.RIGHT
+	player.velocity = Vector3.ZERO
+	presentation.exchange_id = cargo.instance_id
+	presentation._show_loot()
+	await _loot_capture("cargo_exchange_before")
+	var exchange: Button
+	for button in presentation.panel.find_children("*","Button",true,false):
+		if button.text == "EXCHANGE":
+			exchange = button
+			break
+	check(exchange != null and not exchange.disabled, "Actual UI exposes selected cargo exchange")
+	if exchange: exchange.pressed.emit()
+	check(battle.session.inventory.contains(incoming_id) and not battle.session.inventory.contains(cargo.instance_id), "UI exchange changes actual carried inventory")
+	check(pickup.item_instance == cargo and not pickup.consumed, "Replaced cargo remains in original world pickup")
+	check(player.aim_input_captured and not get_tree().paused, "Exchange retains loot input capture without stopping battle")
+	var world := SortieCheckpoint.capture_world(battle)
+	check(SortieCheckpoint.validate_world(world,battle), "Checkpoint accepts swapped ownership without duplicate item IDs")
+	var restored := SortieCheckpoint.restore_session(SortieCheckpoint.session_data(battle.session))
+	check(restored != null and restored.inventory.contains(incoming_id) and not restored.inventory.contains(cargo.instance_id), "Session roundtrip preserves exchanged cargo")
+	await _loot_capture("cargo_exchange_after")
+	# A stale click after leaving range cannot remotely move items.
+	presentation.exchange_id = incoming_id
+	player.global_position += Vector3.RIGHT * 10
+	presentation._exchange(pickup)
+	check(pickup.item_instance == cargo and battle.session.inventory.contains(incoming_id), "Out-of-range exchange rejected")
+	presentation._close_loot()
+	check(SortieCheckpoint.restore_world(world,battle), "World roundtrip restores exchanged cache through existing checkpoint format")
+	var restored_cargo := false
+	for remaining in presentation.container.contents():
+		if remaining.item_instance.instance_id == cargo.instance_id: restored_cargo = true
+	check(restored_cargo, "Left-behind salvage remains available after world restoration")
+	player.position = original
+	player.velocity = Vector3.ZERO

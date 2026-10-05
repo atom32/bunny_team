@@ -3,6 +3,7 @@ extends Node
 var failures: Array[String] = []
 var extracted_loot_id := ""
 var high_value_loot_ids: Array[String] = []
+var rejected_loot_ids: Array[String] = []
 var acceptance_save_path := ""
 var early_extraction_save_path := ""
 var failure_save_path := ""
@@ -34,6 +35,7 @@ func _ready() -> void:
 	await _test_result()
 	await _test_early_extraction()
 	await _test_failed_sortie()
+	_test_light_salvage_capacity()
 	_cleanup_save(acceptance_save_path)
 	_cleanup_save(early_extraction_save_path)
 	_cleanup_save(failure_save_path)
@@ -52,7 +54,10 @@ func _ready() -> void:
 func _test_resources() -> void:
 	var profile := ProfileRuntime.get_profile()
 	check(profile != null and profile.validate(), "ProfileRuntime owns a valid current profile")
-	check(ContentDB.get_items().size() == 18, "content manifest registers all prototype definitions")
+	check(ContentDB.get_items().size() == 27, "content manifest registers the 25 combat/supply definitions plus two medical consumables")
+	for medical_id in [&"medical.field_dressing", &"medical.medkit"]:
+		var medical := ContentDB.get_item(medical_id, false) as MedicalDefinition
+		check(medical != null and medical.healing > 0 and medical.use_seconds > 0 and medical.weight > 0, "medical consumable resolves with real healing, use time and carried weight")
 	check(ContentDB.get_weapon(&"weapon.assault_rifle_01", false) != null, "stable rifle content ID resolves")
 	check(ContentDB.get_ammo(&"ammo.556_ap", false) != null, "stable ammunition content ID resolves")
 	check(ContentDB.get_ammo(&"ammo.rocket_standard", false) != null, "rocket ammunition content ID resolves")
@@ -91,6 +96,9 @@ func _test_resources() -> void:
 
 
 func _test_hanger_and_equipment() -> void:
+	var starter := ProfileRuntime.get_profile()
+	check(starter.inventory.get_items().size() == 6 and starter.loadout.get_item(LoadoutState.SLOT_WEAPON_SECONDARY, starter.inventory).definition_id == &"weapon.smg_01", "new profile provides limited AR + SMG supplies, not the full armory")
+	ArmoryFixture.grant(starter) # Preserve seven-weapon coverage with explicitly owned fixtures.
 	var hanger: Node = load("res://scenes/hanger/hanger.tscn").instantiate()
 	add_child(hanger)
 	await get_tree().process_frame
@@ -104,7 +112,7 @@ func _test_hanger_and_equipment() -> void:
 		var profile := ProfileRuntime.get_profile()
 		check(player.weapon_instance == profile.loadout.get_item(LoadoutState.SLOT_WEAPON_PRIMARY, profile.inventory), "hanger preview equips the selected owned weapon instance")
 		var secondary := profile.loadout.get_item(LoadoutState.SLOT_WEAPON_SECONDARY, profile.inventory)
-		check(secondary != null and secondary.definition_id == &"weapon.rocket_launcher_01", "new profile equips a concrete rocket launcher instance as secondary")
+		check(secondary != null and secondary.definition_id == &"weapon.rocket_launcher_01", "test armory equips a concrete owned rocket launcher as secondary")
 		check(player.armor_instance == profile.loadout.get_item(LoadoutState.SLOT_ARMOR, profile.inventory), "hanger preview equips the selected owned armor instance")
 		check(player.backpack_instance == profile.loadout.get_item(LoadoutState.SLOT_BACKPACK, profile.inventory), "hanger preview equips the selected owned backpack instance")
 		check(player.find_child("CombatAvatarModel", true, false) != null, "hanger uses the complete imported character presentation")
@@ -266,14 +274,16 @@ func _test_battle() -> void:
 		covered_basic.queue_free()
 		await get_tree().process_frame
 	if player and packet_heavy and destructible_barrier:
-		player.global_position = destructible_barrier.global_position + Vector3(0.0, 0.0, 4.0)
+		# Stand BETWEEN the entry cover and barrier, not inside EntryCover at +4.
+		# The same damage/breach assertions now use a physically legal origin.
+		player.global_position = destructible_barrier.global_position + Vector3(0.0, 0.0, 3.0)
 		packet_heavy.process_mode = Node.PROCESS_MODE_INHERIT
 		packet_heavy.set_physics_process(false)
 		packet_heavy.global_position = destructible_barrier.global_position + Vector3(0.0, 0.0, -2.8)
 		await get_tree().physics_frame
 		await get_tree().physics_frame
 		var protected_heavy_health := packet_heavy.health
-		var barrier_shot_origin := destructible_barrier.global_position + Vector3(0.0, 1.0, 4.0)
+		var barrier_shot_origin := destructible_barrier.global_position + Vector3(0.0, 1.0, 3.0)
 		player._fire_hitscan(barrier_shot_origin, Vector3.FORWARD)
 		check(destructible_barrier.current_structure_health == 15.0 and packet_heavy.health == protected_heavy_health, "primary rifle damages the barrier while it shields Heavy")
 		check(player.switch_weapon(LoadoutState.SLOT_WEAPON_SECONDARY), "battle switches from primary rifle to concrete secondary launcher")
@@ -320,7 +330,7 @@ func _test_battle() -> void:
 		var enemy_visual := drone_enemy.presentation as KiteEnemyPresentation
 		check(enemy_visual != null and drone_enemy.body_visual == enemy_visual, "enemy owns an independent presentation target for movement, attack and hit")
 		if enemy_visual:
-			check(enemy_visual.visual != null and enemy_visual.visual.is_visible_in_tree() and enemy_visual.model != null, "enemy has a visible KITE-07 asset instance")
+			check(enemy_visual.visual != null and enemy_visual.visual.visible and enemy_visual.model != null, "enemy has a renderable KITE-07 asset; tactical visibility is independently tested")
 			check(enemy_visual.model.find_children("*", "MeshInstance3D", true, false).size() == 6, "enemy presentation contains all six authored drone parts")
 			check(enemy_visual.find_children("*", "Skeleton3D", true, false).is_empty() and enemy_visual.find_children("*", "BoneAttachment3D", true, false).is_empty(), "enemy presentation does not retain a hidden humanoid or bone attachment")
 			check(enemy_visual.find_children("*", "AnimationTree", true, false).is_empty() and enemy_visual.find_child("EnemyVRMModel", true, false) == null, "native enemy presentation has no legacy animation/model fallback")
@@ -387,6 +397,8 @@ func _test_battle() -> void:
 		test_enemy.set_physics_process(false)
 		test_enemy.global_position = player.global_position + Vector3(0.0, 0.0, -6.0)
 		await get_tree().physics_frame
+		player.aim_direction = player.global_position.direction_to(test_enemy.global_position)
+		battle.player_visibility.refresh()
 		var enemy_screen_position: Vector2 = battle.camera.unproject_position(test_enemy.global_position + Vector3.UP)
 		player.aim_world_point = player._world_aim_point(battle.camera, enemy_screen_position)
 		var test_rocket_weapon := ContentDB.get_weapon(&"weapon.rocket_launcher_01").duplicate() as WeaponDefinition
@@ -409,7 +421,7 @@ func _test_battle() -> void:
 	if not enemies.is_empty():
 		var enemy := packet_basic if packet_basic else enemies[0] as EnemyController
 		check(enemy.find_child("EnemyMarker", true, false) != null, "enemies have red combat readability markers")
-		check(enemy.approach_speed >= 1.0 and enemy.approach_speed < enemy.movement_speed * 0.5, "distant enemies advance toward the player without immediately swarming")
+		check(enemy.approach_speed >= 1.0 and enemy.approach_speed < enemy.movement_speed * 0.5, "unaware enemy patrol speed stays below combat movement speed")
 		check(enemy.detection_range >= 24.0, "enemy activation range keeps nearby groups discoverable")
 		var previous_enemy_health := enemy.health
 		enemy.take_damage(5.0, Vector3.RIGHT)
@@ -483,10 +495,19 @@ func _test_battle() -> void:
 	check(eliminate_after_reinforcement != null and eliminate_after_reinforcement.progress == 3, "reinforcement deaths advance the existing ELIMINATE objective")
 	check(high_value_pickups.size() == 2, "alert-side high-value spawn produces two Salvage Core pickups")
 	high_value_loot_ids.clear()
+	rejected_loot_ids.clear()
 	for pickup_node in high_value_pickups:
 		var high_value_pickup := pickup_node as LootPickup
-		high_value_loot_ids.append(high_value_pickup.item_instance.instance_id)
-		check(high_value_pickup.try_pickup(active_session) == LootPickup.PickupResult.SUCCESS, "high-value alert loot enters carried inventory")
+		var fits := active_session.inventory.can_add_item(high_value_pickup.item_instance)
+		var before := active_session.inventory.to_dict()
+		var response := high_value_pickup.try_pickup(active_session)
+		if fits:
+			high_value_loot_ids.append(high_value_pickup.item_instance.instance_id)
+			check(response == LootPickup.PickupResult.SUCCESS, "high-value alert loot enters available carried space")
+		else:
+			rejected_loot_ids.append(high_value_pickup.item_instance.instance_id)
+			check(response == LootPickup.PickupResult.CAPACITY_FULL and not high_value_pickup.consumed and active_session.inventory.to_dict() == before, "heavy loadout leaves excess core in world without changing inventory")
+	check(high_value_loot_ids.size() == 1 and rejected_loot_ids.size() == 1, "heavy AR/Rocket loadout must leave one alert core behind at 35kg")
 	check(profile.to_dict() == profile_before_pickup, "threat, reinforcements, and high-value loot leave Profile unchanged before extraction")
 	if player and objective_reach_zone:
 		check(objective_reach_zone.try_reach(player), "player entering authored zone completes REACH objective")
@@ -562,7 +583,7 @@ func _test_result() -> void:
 	for instance_id in high_value_loot_ids:
 		check(profile.inventory.contains(instance_id), "finalize recovers high-value alert loot %s" % instance_id)
 	var overflow_stacks := maxi(ceili(float(expected_extracted_ammo_quantity) / ContentDB.get_ammo(&"ammo.556_standard").max_stack) - 1, 0)
-	check(profile.inventory.get_items().size() == warehouse_count_before + 3 + overflow_stacks and profile.validate(), "finalize merges standard and high-value loot with any required ammo overflow stack")
+	check(profile.inventory.get_items().size() == warehouse_count_before + 1 + high_value_loot_ids.size() + overflow_stacks and profile.validate(), "finalize merges only recovered cores with any required ammo overflow stack")
 	var restored := SaveService.load_profile(acceptance_save_path, false)
 	check(restored != null and restored.inventory.contains(extracted_loot_id), "saved profile reload contains extracted loot")
 	check(restored != null and restored.inventory.contains(uncarried_warehouse_id), "saved profile reload preserves uncarried warehouse items")
@@ -570,6 +591,8 @@ func _test_result() -> void:
 	check(restored != null and restored.inventory.contains(explicit_rocket_ammo_id), "saved profile reload preserves secondary ammunition")
 	for instance_id in high_value_loot_ids:
 		check(restored != null and restored.inventory.contains(instance_id), "saved profile reload preserves high-value alert loot %s" % instance_id)
+	for instance_id in rejected_loot_ids:
+		check(not profile.inventory.contains(instance_id) and restored != null and not restored.inventory.contains(instance_id), "rejected world core never appears in warehouse or save")
 	check(SortieRuntime.get_current_session() == null, "successful finalize clears the active sortie")
 	result.queue_free()
 	await get_tree().process_frame
@@ -695,13 +718,13 @@ func _test_failed_sortie() -> void:
 	check(ui != null and ui.recovery_label != null and ui.recovery_label.text == "RECOVERED: NOTHING", "failed Result reports that nothing was recovered")
 	check(ui != null and ui.mission_completion_label.text == "MISSION INCOMPLETE", "failed Result reports mission incomplete")
 	check(ui != null and ui.objective_labels.size() == 3 and ui.objective_labels[0].text.contains("1 / 3"), "failed Result preserves partial three-objective summary")
-	check(result.finalize_sortie(failure_save_path) == OK, "failed Result finalizes through Outcome, no-op commit, and save")
-	check(profile.to_dict() == profile_before, "failed Outcome commit preserves the exact pre-sortie warehouse")
+	check(result.finalize_sortie(failure_save_path) == OK, "failed Result finalizes through Outcome, loss settlement, and save")
+	check(ArmoryFixture.loss_matches(profile, profile_before, session.get_initial_carried_instance_ids()), "failed Outcome removes carried gear and preserves base-only items")
 	check(not profile.inventory.contains(failed_loot_id), "loot collected before death is absent from the warehouse")
 	check(_has_unique_instance_ids(profile.inventory), "failed finalize leaves warehouse instance IDs unique")
 	check(SortieRuntime.get_current_session() == null, "failed finalize clears the terminal sortie only after save")
 	var restored := SaveService.load_profile(failure_save_path, false)
-	check(restored != null and restored.to_dict() == profile_before, "failed-path save reload matches the pre-sortie profile")
+	check(restored != null and restored.to_dict() == profile.to_dict(), "failed-path save reload preserves settled losses")
 
 	result.queue_free()
 	await get_tree().process_frame
@@ -809,3 +832,33 @@ func _animation_has_clean_lead_in(animation: Animation) -> bool:
 func check(condition: bool, description: String) -> void:
 	if not condition:
 		failures.append(description)
+
+
+func _test_light_salvage_capacity() -> void:
+	SortieRuntime.clear_session()
+	var profile := ProfileRuntime.new_profile()
+	profile.loadout.unequip(LoadoutState.SLOT_WEAPON_SECONDARY)
+	profile.loadout.unequip(LoadoutState.SLOT_ARMOR)
+	var before := profile.to_dict()
+	var deployment := DeploymentPlan.deploy(profile, SortieRequest.PROTOTYPE_AREA_ID, SortieRequest.PROTOTYPE_MISSION_ID, acceptance_save_path)
+	check(deployment.error == OK, "light salvage loadout deploys through production packing")
+	if deployment.error != OK: return
+	var session: SortieSession = deployment.session
+	check(session.inventory.capacity == 35.0, "light salvage uses real field pack, not a capacity override")
+	var ids: Array[String] = []
+	for index in 3:
+		var pickup := LootPickup.new()
+		var item := ItemInstance.new(&"loot.salvage_core_01", 1)
+		pickup.setup(item)
+		add_child(pickup)
+		ids.append(item.instance_id)
+		check(pickup.try_pickup(session) == LootPickup.PickupResult.SUCCESS, "light loadout picks up core %d without sacrificing instance identity" % index)
+		pickup.queue_free()
+	check(session.inventory.get_used_capacity() <= 35.0 and session.complete_extraction(), "light loadout extracts all three cores within pack limit")
+	check(SortieRuntime.finalize_sortie(acceptance_save_path) == OK, "light salvage commits through real result service")
+	var restored := SaveService.load_profile(acceptance_save_path, false)
+	for id in ids:
+		check(profile.inventory.contains(id) and restored != null and restored.inventory.contains(id), "all three light-salvage IDs survive warehouse and reload")
+	check(SupplyService.count(profile, &"loot.salvage_core_01") == 3, "light salvage adds exactly three cores")
+	for raw in before.inventory.items:
+		check(profile.inventory.contains(raw.instance_id), "light salvage preserves all previous warehouse possessions")

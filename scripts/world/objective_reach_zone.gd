@@ -42,8 +42,9 @@ func _build_visual() -> void:
 	label.font = UIFactory.FONT
 	label.text = "SURVEY ZONE"
 	label.position = Vector3(0.0, 0.65, 0.0)
-	label.font_size = 26
-	label.outline_size = 8
+	label.font_size = 48
+	label.pixel_size = 0.012
+	label.outline_size = 4
 	label.modulate = Color("b9d4ff")
 	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	add_child(label)

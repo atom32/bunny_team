@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/supply/parts.svg" id="2"]
+[resource]
+script = ExtResource("1")
+icon = ExtResource("2")
+id = &"material.parts"
+display_name = "Mechanical Parts"
+description = "Precision components used to exchange for protective equipment."
+weight = 0.6
+base_value = 140
+item_tags = PackedStringArray("loot", "material")
+stackable = true
+max_stack = 20

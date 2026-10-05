@@ -58,4 +58,4 @@ func recover_profile(use_backup: bool) -> Error:
 
 func _upgrade(profile: ProfileState) -> void:
 	profile.inventory.capacity = maxf(profile.inventory.capacity, ProfileState.DEFAULT_WAREHOUSE_CAPACITY)
-	ModernArsenal.upgrade_profile(profile)
+	# Alpha ownership is persistent. Never regrant sold/lost guns on load.

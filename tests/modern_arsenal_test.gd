@@ -29,16 +29,15 @@ func _test_migration() -> void:
 	var loadout_before := profile.loadout.to_dict()
 	profile.inventory.capacity = profile.inventory.get_used_capacity()
 	var path := "user://modern_arsenal_migration.json"
-	check(SaveService.save_profile(profile, path) == OK and ProfileRuntime.load_profile(path), "schema-1 save loads through the production content migration")
+	check(SaveService.save_profile(profile, path) == OK and ProfileRuntime.load_profile(path), "existing save loads without regranting missing equipment")
 	profile = ProfileRuntime.get_profile()
 	check(profile.validate() and profile.loadout.to_dict() == loadout_before, "migration retains a valid existing loadout")
 	for old in old_items:
 		check(profile.inventory.get_item(old.instance_id).to_dict() == old.to_dict(), "migration preserves existing item IDs, quantities and durability")
-	for id in ModernArsenal.WEAPON_IDS:
-		check(_find(profile, id) != null, "all seven weapon classes available after upgrade")
+	check(profile.inventory.get_items().size() == old_items.size(), "loading never grants missing weapons or ammunition")
 	var once := profile.to_dict()
-	ModernArsenal.upgrade_profile(profile)
-	check(profile.to_dict() == once, "repeated migration grants neither weapons nor ammunition twice")
+	check(SaveService.save_profile(profile, path) == OK and ProfileRuntime.load_profile(path), "updated save reloads")
+	check(ProfileRuntime.get_profile().to_dict() == once, "repeated loading does not restore sold or lost items")
 	DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
 
 func _test_trigger_modes() -> void:
@@ -103,7 +102,7 @@ func _test_shotgun_and_sniper() -> void:
 	check(camera.size > 38.0, "holding precision input extends the actual battle camera")
 	Input.action_release(&"precision_walk")
 	controller._process(1.0)
-	check(absf(camera.size - 24.5) < .1, "releasing precision input restores the normal camera")
+	check(absf(camera.size - controller.COMBAT_CAMERA_SIZE) < .1, "releasing precision input restores the normal camera")
 	controller.free()
 	camera.queue_free()
 	player.queue_free()
@@ -125,7 +124,7 @@ func _test_reload_switching() -> void:
 	await get_tree().process_frame
 
 func _player(id: StringName) -> PlayerController:
-	var profile := ProfileState.create_new()
+	var profile := ArmoryFixture.create_profile()
 	profile.loadout.unequip(LoadoutState.SLOT_WEAPON_SECONDARY)
 	profile.loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, _find(profile, id).instance_id, profile.inventory)
 	if id != &"weapon.pistol_01":

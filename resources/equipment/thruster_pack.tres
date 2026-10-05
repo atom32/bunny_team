@@ -13,6 +13,7 @@ id = &"equipment.thruster_pack_01"
 display_name = "Dash Thrusters"
 description = "Mobility pack with compact maneuvering thrusters."
 weight = 4.0
+carry_capacity_bonus = 7.0
 base_value = 1400
 item_tags = PackedStringArray("equipment", "backpack")
 socket_name = &"Backpack"

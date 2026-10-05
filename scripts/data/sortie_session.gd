@@ -53,7 +53,7 @@ func _init(
 static func create_from_profile(request: SortieRequest, profile: ProfileState) -> SortieSession:
 	if not request or not profile or not profile.validate() or not request.validate(profile.inventory):
 		return null
-	var inventory_snapshot := InventoryState.new(ProfileState.DEFAULT_CARRIED_CAPACITY)
+	var inventory_snapshot := InventoryState.new(profile.get_carried_capacity(request.loadout))
 	var loadout_snapshot := LoadoutState.from_dict(request.loadout.to_dict())
 	var initial_carried_instance_ids := request.get_initial_carried_instance_ids()
 	for instance_id in initial_carried_instance_ids:

@@ -1,0 +1,9 @@
+{
+  "substitutions": {
+    "character_model = CHARACTER_SCENE.instantiate()": "character_model = preload(\"res://spike/presentation_switch.gd\").character_scene(CHARACTER_SCENE).instantiate()",
+    "combat_rig = CharacterCombatRig.new()": "combat_rig = preload(\"res://spike/presentation_switch.gd\").create_rig()"
+  },
+  "default": "legacy",
+  "selector": "BUNNY_PRESENTATION=unitychan",
+  "production_edits": false
+}

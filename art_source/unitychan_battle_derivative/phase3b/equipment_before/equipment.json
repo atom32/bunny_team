@@ -1,0 +1,202 @@
+{
+  "materials": [
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/armcover",
+      "name": "Battle_Unity2016_C_Add",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/belt",
+      "name": "Battle_Unity2016_C_Add",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/body",
+      "name": "Battle_Unity2016_C_Body",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/collar",
+      "name": "Battle_Unity2016_C_Body",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/cuffs",
+      "name": "Battle_Unity2016_C_Body",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/eyeBall",
+      "name": "Battle_face3_main",
+      "type": "ShaderMaterial"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/eyeHighLightShape",
+      "name": "Battle_face3_main",
+      "type": "ShaderMaterial"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/frill",
+      "name": "Battle_Unity2016_C_Add",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/hairBack",
+      "name": "Battle_Unity2016_C_Hair_Spow",
+      "type": "ShaderMaterial"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/hairFront",
+      "name": "Battle_Unity2016_C_Hair_Spow",
+      "type": "ShaderMaterial"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/hairSide",
+      "name": "Battle_Unity2016_C_Hair_Spow",
+      "type": "ShaderMaterial"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/hairUnder",
+      "name": "Battle_Unity2016_C_Hair_Spow",
+      "type": "ShaderMaterial"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/head_Def",
+      "name": "Battle_face3_main",
+      "type": "ShaderMaterial"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/headNose",
+      "name": "Battle_face3_main",
+      "type": "ShaderMaterial"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/horn",
+      "name": "Battle_Unity2016_C_Body",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/legs",
+      "name": "Battle_Unity2016_C_Skin",
+      "type": "ShaderMaterial"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/mantle",
+      "name": "Battle_Unity2016_C_Add",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/pants",
+      "name": "Battle_Unity2016_C_Body",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/scarf",
+      "name": "Battle_Unity2016_C_Body",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/shirt",
+      "name": "Battle_Unity2016_C_Body",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/shoes",
+      "name": "Battle_Unity2016_C_Body",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/shoesExtend",
+      "name": "Battle_Unity2016_C_Add",
+      "type": "StandardMaterial3D"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/skin",
+      "name": "Battle_Unity2016_C_Skin",
+      "type": "ShaderMaterial"
+    },
+    {
+      "mesh": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/wristband",
+      "name": "Battle_Unity2016_C_Body",
+      "type": "StandardMaterial3D"
+    }
+  ],
+  "sockets": {
+    "Backpack": {
+      "basis": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0)]",
+      "body_local": "(0.066115, 1.009515, -0.134519)",
+      "body_relative_basis": "[X: (-0.905058, 0.000061, -0.42529), Y: (-0.067975, 0.987124, 0.144798), Z: (0.419822, 0.15996, -0.893399)]",
+      "children": [
+        {
+          "name": "StandardPack",
+          "position": "(0.0, 0.0, 0.0)",
+          "scale": "(0.46, 0.46, 0.46)"
+        }
+      ],
+      "path": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/BackpackAttachment/Backpack",
+      "position": "(0.0, -0.06, 0.16)"
+    },
+    "Chest": {
+      "basis": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0)]",
+      "body_local": "(-0.072306, 1.017555, 0.160057)",
+      "body_relative_basis": "[X: (-0.905058, 0.000061, -0.42529), Y: (-0.067975, 0.987124, 0.144798), Z: (0.419822, 0.15996, -0.893399)]",
+      "children": [
+        {
+          "name": "LightArmor",
+          "position": "(0.0, 0.0, 0.0)",
+          "scale": "(0.48, 0.48, 0.48)"
+        }
+      ],
+      "path": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/ChestAttachment/Chest",
+      "position": "(0.0, 0.0, -0.16)"
+    },
+    "HandL": {
+      "basis": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0)]",
+      "body_local": "(-0.026396, 1.0728, -0.288801)",
+      "body_relative_basis": "[X: (-0.039757, 0.229431, -0.972513), Y: (-0.042396, 0.972018, 0.231048), Z: (0.99831, 0.050416, -0.028918)]",
+      "children": [],
+      "path": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/HandLAttachment/HandL",
+      "position": "(0.0, 0.0, 0.0)"
+    },
+    "HandR": {
+      "basis": "[X: (0.882948, 0.0, 0.469472), Y: (-0.398134, 0.529919, 0.748782), Z: (-0.248782, -0.848048, 0.467891)]",
+      "body_local": "(-0.212985, 0.944994, 0.036185)",
+      "body_relative_basis": "[X: (-0.602024, 0.07515, -0.794934), Y: (0.638669, 0.642847, -0.422908), Z: (0.479239, -0.7623, -0.435005)]",
+      "children": [],
+      "path": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/HandRAttachment/HandR",
+      "position": "(0.18, -0.08, -0.12)"
+    },
+    "HipL": {
+      "basis": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0)]",
+      "body_local": "(0.1154, 0.738528, 0.029809)",
+      "body_relative_basis": "[X: (-0.990997, -0.003712, -0.133828), Y: (-0.0069, 0.999703, 0.023368), Z: (0.133702, 0.024081, -0.990729)]",
+      "children": [],
+      "path": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/HipLAttachment/HipL",
+      "position": "(-0.12, -0.05, 0.0)"
+    },
+    "HipR": {
+      "basis": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0)]",
+      "body_local": "(-0.122439, 0.737637, -0.00231)",
+      "body_relative_basis": "[X: (-0.990997, -0.003712, -0.133828), Y: (-0.0069, 0.999703, 0.023368), Z: (0.133702, 0.024081, -0.990729)]",
+      "children": [],
+      "path": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/HipRAttachment/HipR",
+      "position": "(0.12, -0.05, 0.0)"
+    },
+    "ShoulderL": {
+      "basis": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0)]",
+      "body_local": "(-0.046542, 1.166997, 0.05117)",
+      "body_relative_basis": "[X: (-0.819144, -0.382032, -0.42785), Y: (-0.409246, 0.911906, -0.030725), Z: (0.401897, 0.149928, -0.903327)]",
+      "children": [],
+      "path": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/ShoulderLAttachment/ShoulderL",
+      "position": "(0.0, 0.0, 0.0)"
+    },
+    "ShoulderR": {
+      "basis": "[X: (0.978148, -0.043227, -0.203368), Y: (0.207912, 0.203368, 0.956773), Z: (0.0, -0.978148, 0.207912)]",
+      "body_local": "(0.128337, 1.045283, 0.20334)",
+      "body_relative_basis": "[X: (-0.96772, -0.075142, -0.240566), Y: (0.199678, 0.353807, -0.913756), Z: (0.153775, -0.932295, -0.327382)]",
+      "children": [],
+      "path": "/root/Hanger/Player/Body/AnimationSource/group1/Character1_Reference/Skeleton3D/CharacterRetarget/Skeleton3D/ShoulderRAttachment/ShoulderR",
+      "position": "(-0.2, 0.02, -0.11)"
+    }
+  }
+}

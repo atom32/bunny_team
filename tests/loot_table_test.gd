@@ -130,8 +130,8 @@ func _test_failed_sortie_loses_generated_loot() -> void:
 	var outcome := SortieOutcomeService.create_outcome(session)
 	check(outcome != null and outcome.result_type == SortieOutcome.ResultType.FAILED, "failed generated-loot sortie creates a failed outcome")
 	check(outcome != null and outcome.inventory.get_items().is_empty(), "failed outcome recovers no generated loot")
-	check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, "failed generated-loot outcome commits as a no-op")
-	check(profile.to_dict() == profile_before and not profile.inventory.contains(item.instance_id), "failed sortie never adds generated loot to warehouse")
+	check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, "failed generated-loot outcome settles deployed losses")
+	check(ArmoryFixture.loss_matches(profile, profile_before, outcome.initial_carried_instance_ids) and not profile.inventory.contains(item.instance_id), "failed sortie never adds generated loot to warehouse")
 	pickup.free()
 
 

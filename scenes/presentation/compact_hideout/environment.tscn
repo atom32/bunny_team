@@ -1,0 +1,694 @@
+[gd_scene load_steps=31 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/concrete/Floor.glb" id="1"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/concrete/Ceiling.glb" id="2"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/concrete/Wall.glb" id="3"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/concrete/WallDoorway.glb" id="4"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/furniture/computerKeyboard.glb" id="15"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/furniture/computerScreen.glb" id="16"]
+
+
+
+
+
+
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/furniture/radio.glb" id="20"]
+
+
+
+
+
+
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/polyhaven/desk_lamp_arm_01/desk_lamp_arm_01.gltf" id="24"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/polyhaven/industrial_wall_lamp/industrial_wall_lamp.gltf" id="25"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/polyhaven/metal_office_desk/metal_office_desk.gltf" id="26"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/polyhaven/metal_stool_01/metal_stool_01.gltf" id="27"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/polyhaven/metal_toolbox/metal_toolbox.gltf" id="28"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/polyhaven/metal_tool_chest/metal_tool_chest.gltf" id="29"]
+
+
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/polyhaven/old_military_crate/old_military_crate.gltf" id="31"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/polyhaven/steel_frame_shelves_01/steel_frame_shelves_01.gltf" id="32"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/polyhaven/vintage_day_bed/vintage_day_bed.gltf" id="33"]
+
+
+
+
+
+
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/kit/door-double-closed.glb" id="37"]
+
+
+
+
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/kit/wall-detail.glb" id="40"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/kit/wall-switch.glb" id="41"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/pipes/modular_industrial_pipes_01_pipe01.glb" id="42"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/pipes/modular_industrial_pipes_01_pipe02.glb" id="43"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/weapons/assault_rifle.glb" id="50"]
+
+[ext_resource type="Script" path="res://scenes/presentation/compact_hideout/appearance.gd" id="appearance"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/kit/container-tall.glb" id="locker"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/pipes/modular_industrial_pipes_01_pipe04.glb" id="bend"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/cables/cable_straight_medium.glb" id="cable_straight_medium"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/cables/cable_box_turn.glb" id="cable_box_turn"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/cables/cable_plug_covered.glb" id="cable_plug_covered"]
+
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/cables/cable_lightswitch.glb" id="cable_lightswitch"]
+
+[sub_resource type="Environment" id="environment"]
+
+background_mode = 1
+
+background_color = Color(0.018,0.025,0.03,1)
+
+ambient_light_source = 3
+
+ambient_light_color = Color(0.58,0.64,0.68,1)
+
+ambient_light_energy = 0.28
+
+ssao_enabled = true
+
+tonemap_mode = 2
+
+[node name="CompactHideoutEnvironment" type="Node3D"]
+
+script = ExtResource("appearance")
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+
+environment = SubResource("environment")
+
+[node name="Floor_0_0" parent="." instance=ExtResource("1")]
+
+position = Vector3(-2,0,-1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Ceiling_0_0" parent="." instance=ExtResource("2")]
+
+position = Vector3(-2,3,-1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Floor_0_2" parent="." instance=ExtResource("1")]
+
+position = Vector3(-2,0,1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Ceiling_0_2" parent="." instance=ExtResource("2")]
+
+position = Vector3(-2,3,1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Floor_2_0" parent="." instance=ExtResource("1")]
+
+position = Vector3(0,0,-1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Ceiling_2_0" parent="." instance=ExtResource("2")]
+
+position = Vector3(0,3,-1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Floor_2_2" parent="." instance=ExtResource("1")]
+
+position = Vector3(0,0,1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Ceiling_2_2" parent="." instance=ExtResource("2")]
+
+position = Vector3(0,3,1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Floor_4_0" parent="." instance=ExtResource("1")]
+
+position = Vector3(2,0,-1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Ceiling_4_0" parent="." instance=ExtResource("2")]
+
+position = Vector3(2,3,-1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Floor_4_2" parent="." instance=ExtResource("1")]
+
+position = Vector3(2,0,1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Ceiling_4_2" parent="." instance=ExtResource("2")]
+
+position = Vector3(2,3,1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="West_0" parent="." instance=ExtResource("3")]
+
+position = Vector3(-2.2,0,-1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="East_0" parent="." instance=ExtResource("3")]
+
+position = Vector3(3.8,0,-1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="West_2" parent="." instance=ExtResource("3")]
+
+position = Vector3(-2.2,0,1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="East_2" parent="." instance=ExtResource("3")]
+
+position = Vector3(3.8,0,1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Rear_0" parent="." instance=ExtResource("3")]
+
+position = Vector3(-2,0,-2.8)
+
+rotation = Vector3(0,1.5707963267948966,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Front_0" parent="." instance=ExtResource("3")]
+
+position = Vector3(-2,0,2.8)
+
+rotation = Vector3(0,-1.5707963267948966,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Rear_2" parent="." instance=ExtResource("3")]
+
+position = Vector3(0,0,-2.8)
+
+rotation = Vector3(0,1.5707963267948966,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Front_2" parent="." instance=ExtResource("4")]
+
+position = Vector3(0,0,2.8)
+
+rotation = Vector3(0,-1.5707963267948966,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Rear_4" parent="." instance=ExtResource("3")]
+
+position = Vector3(2,0,-2.8)
+
+rotation = Vector3(0,1.5707963267948966,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Front_4" parent="." instance=ExtResource("3")]
+
+position = Vector3(2,0,2.8)
+
+rotation = Vector3(0,-1.5707963267948966,0)
+
+scale = Vector3(1,1,1)
+
+[node name="RestPartition" parent="." instance=ExtResource("3")]
+
+position = Vector3(1.8,0,-1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="RestDoorway" parent="." instance=ExtResource("4")]
+
+position = Vector3(1.8,0,1)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="MaintenanceBench" parent="." instance=ExtResource("26")]
+
+position = Vector3(-1.7999990000000001,0.0,-1.374497)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="BenchStool" parent="." instance=ExtResource("27")]
+
+position = Vector3(-1.9000003099999998,-1.178e-05,-0.34996962)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.62,0.62,0.62)
+
+[node name="TaskLamp" parent="." instance=ExtResource("24")]
+
+position = Vector3(-2.5385544749999998,0.8471961,-1.506694025)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.65,0.65,0.65)
+
+[node name="OpenToolbox" parent="." instance=ExtResource("28")]
+
+position = Vector3(-2.0799965,0.79,-1.37734765)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.7,0.7,0.7)
+
+[node name="MissionMonitor" parent="." instance=ExtResource("16")]
+
+position = Vector3(-1.3161612,0.79,-1.5353979)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1.05,1.05,1.05)
+
+[node name="Keyboard" parent="." instance=ExtResource("15")]
+
+position = Vector3(-1.2411,0.79,-1.230904)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="Radio" parent="." instance=ExtResource("20")]
+
+position = Vector3(-1.08025,0.79,-1.685875)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.7,0.7,0.7)
+
+[node name="BenchRifle" parent="." instance=ExtResource("50")]
+
+position = Vector3(-1.30545495,0.8956804,-1.020000325)
+
+rotation = Vector3(0,1.5707963267948966,0)
+
+scale = Vector3(0.65,0.65,0.65)
+
+[node name="ToolChest" parent="." instance=ExtResource("29")]
+
+position = Vector3(-2.53923175,-0.0012135000000000002,0.5098870000000001)
+
+rotation = Vector3(0,1.5707963267948966,0)
+
+scale = Vector3(1.5,1.5,1.5)
+
+[node name="StockShelves" parent="." instance=ExtResource("32")]
+
+position = Vector3(0.24998100999999998,0.0009611099999999999,-1.689999955)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.09,0.09,0.09)
+
+[node name="MilitaryCrate0" parent="." instance=ExtResource("31")]
+
+position = Vector3(0.25224406,0.05000588,-1.57401066)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.42,0.42,0.42)
+
+[node name="MilitaryCrate1" parent="." instance=ExtResource("31")]
+
+position = Vector3(0.25224406,0.5500058800000001,-1.57401066)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.42,0.42,0.42)
+
+[node name="MilitaryCrate2" parent="." instance=ExtResource("31")]
+
+position = Vector3(0.25224406,1.00000588,-1.57401066)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.42,0.42,0.42)
+
+[node name="EquipmentLocker" parent="." instance=ExtResource("locker")]
+position = Vector3(-2.5,0,1.5)
+scale = Vector3(1.5,1.5,1.5)
+
+[node name="SealedSupply" parent="." instance=ExtResource("31")]
+
+position = Vector3(-1.52706135,7.7e-06,1.73950985)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.55,0.55,0.55)
+
+[node name="SupplyOnTop" parent="." instance=ExtResource("31")]
+
+position = Vector3(-1.5273285,0.17000700000000002,1.7304635)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.5,0.5,0.5)
+
+[node name="RestCot" parent="." instance=ExtResource("33")]
+
+position = Vector3(2.152065,6e-06,-0.6699985)
+
+rotation = Vector3(0,1.5707963267948966,0)
+
+scale = Vector3(1,1,1)
+
+[node name="PersonalTrunk" parent="." instance=ExtResource("31")]
+
+position = Vector3(1.6067307,0.0000063,1.7843091)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.38,0.38,0.38)
+
+[node name="RestFixture" parent="." instance=ExtResource("25")]
+
+position = Vector3(2.1599935,2.064953,-1.9301890000000002)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="WorkshopFixture" parent="." instance=ExtResource("25")]
+
+position = Vector3(-1.5000065,2.534953,-1.9401890000000002)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="ServicePanel" parent="." instance=ExtResource("40")]
+
+position = Vector3(-2.9099995,1.45,0.1)
+
+rotation = Vector3(0,1.5707963267948966,0)
+
+scale = Vector3(1,1,1)
+
+[node name="DoorControl" parent="." instance=ExtResource("41")]
+
+position = Vector3(0.79,1.25,1.88)
+
+rotation = Vector3(0,3.141592653589793,0)
+
+scale = Vector3(1.5,1.5,1.5)
+
+[node name="EntranceDoor" parent="." instance=ExtResource("37")]
+
+position = Vector3(0.0,0.0,1.97)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(2.75,2.75,2.75)
+
+[node name="FeedRiser" parent="." instance=ExtResource("43")]
+
+position = Vector3(-2.22,1.08232,-1.735)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(1,1,1)
+
+[node name="FeedExtension" parent="." instance=ExtResource("42")]
+
+position = Vector3(-3.008,2.4832696,-1.74825)
+
+rotation = Vector3(0,0,0)
+
+scale = Vector3(0.47,0.47,0.47)
+
+[node name="FrontFixture" parent="." instance=ExtResource("25")]
+
+position = Vector3(0.10000649999999998,2.314953,1.9301890000000002)
+
+rotation = Vector3(0,3.141592653589793,0)
+
+scale = Vector3(1,1,1)
+
+[node name="BenchLight" type="OmniLight3D" parent="."]
+
+position = Vector3(-1.5,2.34,-1.57)
+
+light_color = Color(0.83,0.9,1,1)
+
+light_energy = 1.2
+
+omni_range = 4
+
+shadow_enabled = true
+
+omni_shadow_mode = 1
+
+[node name="TaskLight" type="OmniLight3D" parent="."]
+
+position = Vector3(-2.47,1.3,-1.23)
+
+light_color = Color(1,0.88,0.69,1)
+
+light_energy = 0.4
+
+omni_range = 1.5
+
+shadow_enabled = true
+
+omni_shadow_mode = 1
+
+[node name="RestLight" type="OmniLight3D" parent="."]
+
+position = Vector3(2.16,2.04,-1.64)
+
+light_color = Color(1,0.72,0.43,1)
+
+light_energy = 0.8
+
+omni_range = 2.8
+
+shadow_enabled = true
+
+omni_shadow_mode = 1
+
+[node name="CharacterFill" type="OmniLight3D" parent="."]
+
+position = Vector3(0.1,2.25,1.61)
+
+light_color = Color(0.8,0.86,1,1)
+
+light_energy = 0.95
+
+omni_range = 3.5
+
+shadow_enabled = true
+
+omni_shadow_mode = 1
+
+[node name="EntryLight" type="OmniLight3D" parent="."]
+
+position = Vector3(0,2.0,1.7)
+
+light_color = Color(0.53,0.67,0.6,1)
+
+light_energy = 0.2
+
+omni_range = 1.5
+
+shadow_enabled = true
+
+omni_shadow_mode = 1
+
+[node name="OverheadRun0" type="Node3D" parent="."]
+
+position = Vector3(-1.522,2.78,-1.76)
+
+rotation = Vector3(0,0,1.57079632679)
+
+[node name="Pipe" parent="OverheadRun0" instance=ExtResource("43")]
+
+position = Vector3(0.6,0.025000000000000133,0.025000499999999995)
+
+[node name="OverheadRun1" type="Node3D" parent="."]
+
+position = Vector3(0.432,2.78,-1.76)
+
+rotation = Vector3(0,0,1.57079632679)
+
+[node name="Pipe" parent="OverheadRun1" instance=ExtResource("43")]
+
+position = Vector3(0.6,0.025000000000000133,0.025000499999999995)
+
+
+[node name="RestSeat" parent="." instance=ExtResource("27") ]
+position = Vector3(2.12,-0.00001178,0.90006138)
+scale = Vector3(0.62,0.62,0.62)
+
+[node name="RiserBend" parent="." instance=ExtResource("bend")]
+position = Vector3(-2.89,3.367,-1.735)
+scale = Vector3(1,1,1)
+rotation = Vector3(0,0,3.14159265359)
+
+[node name="WorkshopCable0" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(-1.5,0.986126,-1.9802)
+
+[node name="WorkshopCable1" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(-1.5,1.193378,-1.9802)
+
+[node name="WorkshopCable2" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(-1.5,1.40063,-1.9802)
+
+[node name="WorkshopCable3" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(-1.5,1.607882,-1.9802)
+
+[node name="WorkshopCable4" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(-1.5,1.815134,-1.9802)
+
+[node name="WorkshopCable5" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(-1.5,2.022386,-1.9802)
+
+[node name="WorkshopCable6" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(-1.5,2.229638,-1.9802)
+
+[node name="WorkshopOutlet" parent="." instance=ExtResource("cable_plug_covered")]
+position = Vector3(-1.5,0.8324999999999999,-1.9725)
+
+[node name="RestCable0" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(2.16,0.243626,-1.9802)
+
+[node name="RestCable1" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(2.16,0.450878,-1.9802)
+
+[node name="RestCable2" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(2.16,0.65813,-1.9802)
+
+[node name="RestCable3" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(2.16,0.865382,-1.9802)
+
+[node name="RestCable4" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(2.16,1.0726339999999999,-1.9802)
+
+[node name="RestCable5" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(2.16,1.2798859999999999,-1.9802)
+
+[node name="RestCable6" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(2.16,1.4871379999999998,-1.9802)
+
+[node name="RestCable7" parent="." instance=ExtResource("cable_straight_medium")]
+position = Vector3(2.16,1.6943899999999998,-1.9802)
+
+[node name="RestOutlet" parent="." instance=ExtResource("cable_plug_covered")]
+position = Vector3(2.16,0.09000000000000001,-1.9725)
+
+[node name="BenchJunction" parent="." instance=ExtResource("cable_box_turn")]
+position = Vector3(-1.5,0.83,-1.9815)
+
+[node name="RestSwitch" parent="." instance=ExtResource("cable_lightswitch")]
+position = Vector3(2.16,1.86,-1.973)
+
+

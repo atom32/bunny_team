@@ -2,9 +2,12 @@ extends Node3D
 
 const PLAYER_SCENE := preload("res://scenes/player/player.tscn")
 const HUD_SCENE := preload("res://scenes/ui/battle_hud.tscn")
+const COMBAT_CAMERA_SIZE := 19.5
+const PRECISION_CAMERA_BASE_SIZE := 24.5
 
 var player: PlayerController
 var camera: Camera3D
+var player_visibility: PlayerVisibility
 var hud: BattleHUD
 var session: SortieSession
 var area_root: Node3D
@@ -18,10 +21,12 @@ var _camera_time := 0.0
 var _last_health := 0.0
 var _camera_basis := Basis.IDENTITY
 var _camera_occlusion: Node
+var checkpoint_layout_signature := ""
 
 
 func _ready() -> void:
 	session = SortieRuntime.get_current_session()
+	if SortieRuntime.layout_seed != 0: loot_seed = SortieRuntime.layout_seed
 	if not session or session.status != SortieSession.Status.ACTIVE:
 		FlowMenu.show_error("No active mission is available. Return to base and deploy again.", true)
 		return
@@ -50,6 +55,8 @@ func _ready() -> void:
 	player.ammo_changed.connect(_on_player_ammo_changed)
 	player.weapon_switched.connect(_on_player_weapon_switched)
 	player.died.connect(_on_player_died)
+	if player.medical:
+		player.medical.feedback.connect(hud.show_interaction_feedback)
 	if player.interaction_component:
 		player.interaction_component.prompt_changed.connect(hud.set_interaction_prompt)
 		player.interaction_component.interaction_finished.connect(_on_interaction_finished)
@@ -66,6 +73,9 @@ func _ready() -> void:
 		var director := preload("res://scripts/first_mission/director.gd").new()
 		director.name = "FirstMissionDirector"
 		add_child(director)
+	checkpoint_layout_signature = SortieCheckpoint.layout_signature(area_root)
+	if not SortieRuntime.attach_battle(self):
+		FlowMenu.show_checkpoint_error(SortieRuntime.last_error)
 
 
 func _process(delta: float) -> void:
@@ -73,19 +83,26 @@ func _process(delta: float) -> void:
 		return
 	if hud:
 		hud.set_reload_remaining(player.get_reload_remaining())
+		if player.medical:
+			hud.set_medical(player.medical)
+			hud.set_inventory_capacity(session.inventory.get_used_capacity(), session.inventory.capacity)
 	_camera_time += delta
 	_camera_trauma = move_toward(_camera_trauma, 0.0, delta * 1.85)
 	var shake_strength := _camera_trauma * _camera_trauma
 	var shake := Vector3(sin(_camera_time * 43.0), 0.0, cos(_camera_time * 37.0)) * shake_strength
 	var focus := player.global_position + player.aim_direction * 1.45 + Vector3.UP * 0.85
 	var aim_extension := player.weapon_data.aim_camera_extension if player.weapon_data and Input.is_action_pressed("precision_walk") else 0.0
-	camera.size = lerpf(camera.size, 24.5 + aim_extension, 1.0 - exp(-6.0 * delta))
+	# Preserve the long-range survey view while improving ordinary combat framing.
+	var camera_size := PRECISION_CAMERA_BASE_SIZE + aim_extension if aim_extension > 0.0 else COMBAT_CAMERA_SIZE
+	camera.size = lerpf(camera.size, camera_size, 1.0 - exp(-6.0 * delta))
 	focus += player.aim_direction * aim_extension * 0.25
 	var target_position := focus + Vector3(0.0, 18.2, 13.7) + shake
 	camera.global_position = camera.global_position.lerp(target_position, 1.0 - exp(-9.5 * delta))
 	camera.global_basis = _camera_basis
 	if _camera_occlusion:
 		_camera_occlusion.update_occlusion(camera, player, delta)
+	if hud and player_visibility:
+		hud.set_perception(player_visibility, camera)
 
 
 func _load_area() -> bool:
@@ -126,7 +143,7 @@ func _build_camera() -> void:
 	camera = Camera3D.new()
 	camera.name = "HighAngleCamera"
 	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
-	camera.size = 24.5
+	camera.size = COMBAT_CAMERA_SIZE
 	camera.position = player.position + Vector3.UP * 0.85 + Vector3(0.0, 18.2, 13.7)
 	camera.current = true
 	add_child(camera)
@@ -134,6 +151,10 @@ func _build_camera() -> void:
 	_camera_basis = camera.global_basis
 	_camera_occlusion = preload("res://scripts/battle/camera_occlusion.gd").new()
 	add_child(_camera_occlusion)
+	player_visibility = PlayerVisibility.new()
+	player_visibility.name = "PlayerVisibility"
+	player_visibility.actor = player
+	add_child(player_visibility)
 
 
 func _on_player_weapon_fired(recoil_strength: float) -> void:
@@ -247,6 +268,10 @@ func _spawn_enemy_at_point(spawn_point: EnemySpawnPoint) -> EnemyController:
 		enemy.queue_free()
 		return null
 	enemy.died.connect(_on_enemy_died)
+	enemy.set_meta("spawn_key", String(area_root.get_path_to(spawn_point)))
+	if spawn_point.tactical_role >= 0:
+		enemy.tactics.role = spawn_point.tactical_role
+	player_visibility.track_enemy(enemy)
 	enemies_remaining += 1
 	return enemy
 
@@ -274,11 +299,15 @@ func _on_threat_event_activated(event: ThreatEvent, group_id: StringName) -> voi
 		push_error("Threat event could not spawn reinforcement group: %s" % group_id)
 		return
 	event.mark_reinforcement_spawned()
+	CombatNoise.emit_at(event, event.global_position, 90.0, &"alarm")
 	hud.set_threat_level(session.threat_level)
 	hud.show_banner("LOCAL ALERT  /  REINFORCEMENTS INBOUND", Color("ff6b7f"))
 
 
 func _configure_objective_world() -> void:
+	for terminal in area_root.find_children("*", "ObjectiveInteractable", true, false):
+		if not terminal.objective_interacted.is_connected(_on_world_objective_recorded):
+			terminal.objective_interacted.connect(_on_world_objective_recorded)
 	for reach_zone in area_root.find_children("*", "ObjectiveReachZone", true, false):
 		reach_zone.setup(session)
 		if not reach_zone.objective_reached.is_connected(_on_world_objective_recorded):
@@ -307,6 +336,7 @@ func _on_enemy_died(_enemy: EnemyController) -> void:
 		hud.show_banner("MISSION OBJECTIVE COMPLETE  /  EXTRACT WHEN READY", Color("79f1e7"))
 	elif enemies_remaining <= 0:
 		hud.show_banner("AREA SECURE  /  EXTRACT WHEN READY", Color("79f1e7"))
+	SortieRuntime.request_checkpoint()
 
 
 func _sync_objective_hud() -> void:
@@ -338,11 +368,13 @@ func _on_interaction_finished(message: String, success: bool) -> void:
 	if success:
 		_sync_objective_hud()
 		_show_mission_complete_if_ready()
+		SortieRuntime.request_checkpoint()
 
 
 func _on_world_objective_recorded(_objective_id: StringName) -> void:
 	_sync_objective_hud()
 	_show_mission_complete_if_ready()
+	SortieRuntime.request_checkpoint()
 
 
 func _show_mission_complete_if_ready() -> void:
@@ -375,6 +407,10 @@ func _fail_battle() -> void:
 
 
 func _transition_to_result() -> void:
+	if not SortieRuntime.checkpoint_path.is_empty():
+		var save_error := SortieRuntime.save_checkpoint()
+		if save_error != OK:
+			FlowMenu.show_error("The mission ended, but its result could not be saved. Retry from exit options.")
 	if not result_transition_enabled:
 		return
 	await get_tree().create_timer(2.4, false).timeout

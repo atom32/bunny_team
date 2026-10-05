@@ -4,6 +4,8 @@ extends Marker3D
 @export var enemy_definition_id: StringName
 @export var initial_spawn := true
 @export var activation_group_id: StringName
+## -1 uses the definition; an authored duty does not change enemy stats/type.
+@export_range(-1, 3) var tactical_role := -1
 
 var has_spawned := false
 

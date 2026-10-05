@@ -52,13 +52,14 @@ func interact(_actor: Node3D, session: SortieSession) -> Dictionary:
 	if not session or session.status != SortieSession.Status.ACTIVE:
 		return {"success": false, "message": "Door Unavailable"}
 	toggle()
+	CombatNoise.emit_at(self, global_position, 8.0, &"door")
 	return {"success": true, "message": "Door Opened" if is_open() else "Door Closed"}
 
 
 func get_interaction_prompt(_actor: Node3D, session: SortieSession) -> String:
 	if not session or session.status != SortieSession.Status.ACTIVE:
 		return ""
-	return tr("E  %s") % tr("CLOSE DOOR" if is_open() else interaction_prompt.to_upper())
+	return ControlBindings.label("interact") + "  " + tr("CLOSE DOOR" if is_open() else interaction_prompt.to_upper())
 
 
 func _apply_state() -> void:

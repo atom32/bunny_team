@@ -1,0 +1,7 @@
+{
+  "body": "[X: (-0.766629, 0.0, 0.64209), Y: (0.0, 1.0, 0.0), Z: (-0.64209, 0.0, -0.766629), O: (-2.2, 0.34, 0.0)]",
+  "camera": "[X: (1.0, 0.0, 0.0), Y: (0.0, 0.970684, -0.24036), Z: (0.0, 0.24036, 0.970684), O: (-2.2, 2.45, 5.25)]",
+  "fov": 39.0,
+  "method": "paired frozen same production camera/lighting/pose; source materials + original socket frame vs integrated candidate",
+  "player": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-2.2, 0.34, 0.0)]"
+}

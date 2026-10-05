@@ -1,0 +1,79 @@
+{
+  "triangles": 37359,
+  "bones": 328,
+  "source_materials": 5,
+  "runtime_material_types": {
+    "standard": 2,
+    "shader": 3
+  },
+  "textures": [
+    {
+      "name": "kohaku_A_Add",
+      "width": 2048,
+      "height": 2048,
+      "rgba8_mips_approx_bytes": 22369621
+    },
+    {
+      "name": "kohaku_A_Body",
+      "width": 2048,
+      "height": 2048,
+      "rgba8_mips_approx_bytes": 22369621
+    },
+    {
+      "name": "kohaku_A_face3_main",
+      "width": 2048,
+      "height": 2048,
+      "rgba8_mips_approx_bytes": 22369621
+    },
+    {
+      "name": "kohaku_A_skin",
+      "width": 1024,
+      "height": 1024,
+      "rgba8_mips_approx_bytes": 5592405
+    }
+  ],
+  "texture_total_approx_bytes": 72701268,
+  "texture_estimate_note": "Character four RGBA8 textures with full mip chain; estimate only, compression/backend allocation can differ",
+  "hanger_runtime": {
+    "draw_calls": {
+      "mean": 226.8587979724837,
+      "min": 226.0,
+      "max": 228.0,
+      "median": 227.0
+    },
+    "primitives": {
+      "mean": 129169.58797972483,
+      "min": 128449.0,
+      "max": 130945.0,
+      "median": 129245.0
+    },
+    "process_ms": {
+      "mean": 1.65979905865315,
+      "min": 1.553,
+      "max": 1.734,
+      "median": 1.704
+    },
+    "texture_memory_bytes": {
+      "mean": 83434305.0,
+      "min": 83434305.0,
+      "max": 83434305.0,
+      "median": 83434305.0
+    },
+    "video_memory_bytes": {
+      "mean": 103081693.0,
+      "min": 103081693.0,
+      "max": 103081693.0,
+      "median": 103081693.0
+    },
+    "wall_frame_ms": {
+      "mean": 1.0864724837074584,
+      "min": 1.031,
+      "max": 1.805,
+      "median": 1.063
+    }
+  },
+  "runtime_scope": "whole Hanger, production 1280x720; wall-frame intervals not GPU timer, CPU monitor separate",
+  "warmup_seconds": 3,
+  "sample_seconds": 3,
+  "sample_count": 2762
+}

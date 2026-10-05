@@ -15,15 +15,23 @@ func _run() -> void:
 	battle.result_transition_enabled=false
 	battle.player.set_physics_process(false)
 	for enemy in battle.enemy_container.get_children(): enemy.set_physics_process(false)
+	await get_tree().process_frame
 	var area = battle.area_root
 	check(area.route_map.actor == battle.player,"Route map tracks the deployed player")
 	var map_key := InputEventKey.new()
 	map_key.physical_keycode = KEY_M
 	map_key.pressed = true
-	area.route_map._unhandled_key_input(map_key)
+	Input.parse_input_event(map_key.duplicate())
+	await get_tree().process_frame
 	check(area.route_map.expanded,"M opens the in-raid route map")
-	area.route_map._unhandled_key_input(map_key)
+	map_key.pressed = false
+	Input.parse_input_event(map_key.duplicate())
+	map_key.pressed = true
+	Input.parse_input_event(map_key.duplicate())
+	await get_tree().process_frame
 	check(not area.route_map.expanded,"M closes the route map")
+	map_key.pressed = false
+	Input.parse_input_event(map_key.duplicate())
 	var map: RID = area.get_node("StreetNavigation").get_navigation_map()
 	for tick in 60:
 		await get_tree().create_timer(.05).timeout
@@ -96,8 +104,10 @@ func _run() -> void:
 	await get_tree().physics_frame
 	for step in 20: battle._camera_occlusion.update_occlusion(battle.camera,battle.player,.05)
 	check(body.get_node("Mesh").transparency<.01,"Occluder opacity restores after sightline clears")
-	var records := area.get_node("StreetTerminal") as ObjectiveInteractable
-	check(records.interact(battle.player,session).success,"Records interaction advances the current mission")
+	var records := area.get_node("StreetTerminal") as RecordsTerminal
+	battle.player.global_position = records.global_position + Vector3(0,0,1)
+	check(records.interact(battle.player,session).success,"Records interaction starts local download")
+	records.tick(8)
 	check(area.get_node("StreetSurvey").try_reach(battle.player),"Opposite courtyard advances the survey objective")
 	check(session.is_mission_completed(),"Records and survey complete the district mission")
 	for exit in area.find_children("*","ExtractionPoint",true,false):

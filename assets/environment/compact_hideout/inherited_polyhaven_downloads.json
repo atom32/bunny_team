@@ -1,0 +1,52 @@
+[
+  {
+    "sha256": "4EFF8994825D654E337F8DC425E959ED6ADD7F4773188C87BA64402D9EDD9842",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/steel_frame_shelves_01/steel_frame_shelves_01_1k.gltf",
+    "path": "D:\\bunny_team\\art_source\\hideout_kitbash_trial_20261004\\project\\polyhaven\\steel_frame_shelves_01\\steel_frame_shelves_01.gltf"
+  },
+  {
+    "sha256": "85E205B334E15E05BEC9B02BE1258DA6AB949AE908AA57E0BEE6B94BA45B4415",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/steel_frame_shelves_01/steel_frame_shelves_01_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_kitbash_trial_20261004\\project\\polyhaven\\steel_frame_shelves_01\\textures\\steel_frame_shelves_01_diff_1k.jpg"
+  },
+  {
+    "sha256": "2A67ED7DD4F53C3E225396E6381992B768FE58B5261BE703D540678E366E46ED",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/steel_frame_shelves_01/steel_frame_shelves_01_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_kitbash_trial_20261004\\project\\polyhaven\\steel_frame_shelves_01\\textures\\steel_frame_shelves_01_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "858629EEAA8F68DDB4FC1A813AFE6ED988DED3D6D49184EC45A14611760F0BB3",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/steel_frame_shelves_01/steel_frame_shelves_01_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_kitbash_trial_20261004\\project\\polyhaven\\steel_frame_shelves_01\\textures\\steel_frame_shelves_01_arm_1k.jpg"
+  },
+  {
+    "sha256": "306D7E72D12A5D3047B8A189F8D0ADD51075EAF7F51F935286FDA4E1C16DD066",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/steel_frame_shelves_01/steel_frame_shelves_01.bin",
+    "path": "D:\\bunny_team\\art_source\\hideout_kitbash_trial_20261004\\project\\polyhaven\\steel_frame_shelves_01\\steel_frame_shelves_01.bin"
+  },
+  {
+    "sha256": "2F66FBB723CD52382F73DAEC184B68D9B36842A488ECAF120E5C3A6354E9DEA4",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/metal_tool_chest/metal_tool_chest_1k.gltf",
+    "path": "D:\\bunny_team\\art_source\\hideout_kitbash_trial_20261004\\project\\polyhaven\\metal_tool_chest\\metal_tool_chest.gltf"
+  },
+  {
+    "sha256": "C2BDE4E96AF4AAD171E57E00FF78F0AA9E3B603286A2C74CD6D7C2A20C487342",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/metal_tool_chest/metal_tool_chest.bin",
+    "path": "D:\\bunny_team\\art_source\\hideout_kitbash_trial_20261004\\project\\polyhaven\\metal_tool_chest\\metal_tool_chest.bin"
+  },
+  {
+    "sha256": "BC5A4009A544A9504849B951AFD984D6AC7C5ADB0D43C5A08C0A834F8E811A01",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_tool_chest/metal_tool_chest_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_kitbash_trial_20261004\\project\\polyhaven\\metal_tool_chest\\textures\\metal_tool_chest_nor_gl_1k.jpg"
+  },
+  {
+    "sha256": "D5552EE63AC9BC53527EE1BF19BCBD31D8424BCC15FE9861F79BBA917E857828",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_tool_chest/metal_tool_chest_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_kitbash_trial_20261004\\project\\polyhaven\\metal_tool_chest\\textures\\metal_tool_chest_arm_1k.jpg"
+  },
+  {
+    "sha256": "DA37BA2A8D064637C7206CB091597275986E788CE379BEE58A96C949CCE06511",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/metal_tool_chest/metal_tool_chest_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_kitbash_trial_20261004\\project\\polyhaven\\metal_tool_chest\\textures\\metal_tool_chest_diff_1k.jpg"
+  }
+]

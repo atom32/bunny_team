@@ -4,7 +4,7 @@ var failures: Array[String] = []
 var capture_dir := OS.get_environment("VISUAL_SLICE_CAPTURE_DIR")
 
 func _ready() -> void:
-	var profile := ProfileRuntime.new_profile()
+	var profile := ArmoryFixture.grant(ProfileRuntime.new_profile())
 	var hanger: Node3D = load("res://scenes/hanger/hanger.tscn").instantiate()
 	add_child(hanger)
 	await get_tree().process_frame
@@ -29,7 +29,7 @@ func _ready() -> void:
 		await capture("hanger_" + String(id).trim_prefix("weapon.").trim_suffix("_01"))
 	hanger.queue_free()
 	await get_tree().process_frame
-	profile = ProfileRuntime.new_profile()
+	profile = ArmoryFixture.grant(ProfileRuntime.new_profile())
 	var ammo: Array[String] = []
 	for item in profile.inventory.get_items():
 		if ContentDB.get_item(item.definition_id).has_tag(&"ammo"):

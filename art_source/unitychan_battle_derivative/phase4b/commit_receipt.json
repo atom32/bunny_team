@@ -1,0 +1,11 @@
+{
+  "commit": "cc81d3034d364d51f213cb9b5d1128d1564222a6",
+  "branch": "main",
+  "parent": "10e9d822b2f9c67c7d61bc5885dee9002b746f0b",
+  "push": false,
+  "commit_scope_verified": true,
+  "preexisting_WIP_preserved": true,
+  "runtime_files_changed": 3,
+  "evidence_and_documentation_included": true,
+  "raw_evidence_whitespace": "git diff --check reported trailing blank lines in captured old shader and two raw logs only; runtime diff passed"
+}

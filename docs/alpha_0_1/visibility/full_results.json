@@ -1,0 +1,1155 @@
+[
+  {
+    "name": "cold_import",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--editor",
+      "--import"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+      "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+    ],
+    "sha256": "2130bb5c1caa75269184a1f7b4d14b2527482e73d7a3d44500eab7b67b5225b6"
+  },
+  {
+    "name": "acceptance_smoke",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/acceptance_smoke.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "cf3047efc21b325e1ae79c3d27e26e2d6108bd4381b208ac13808d59918184c6"
+  },
+  {
+    "name": "alpha_economy_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/alpha_economy_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "6acda87864cbe86e114295b8811b82c54ba1321e8987ea7c1e1c2ef3082b40a2"
+  },
+  {
+    "name": "ammo_carried_foundation_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/ammo_carried_foundation_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "e0c468147849e2f7ef13af6dd50a58c4c766b99059cf6c8b6c7db488f3d90ef9"
+  },
+  {
+    "name": "ammo_runtime_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/ammo_runtime_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "74dae0be1ebd9517457ba821fffdafe661e253c18047c6474b2ed7f539493df2"
+  },
+  {
+    "name": "area_definition_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/area_definition_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "4f00c94e60d99bcd72cbc9a4376274ee86cb1749878568f225f47cc96052dee1"
+  },
+  {
+    "name": "carried_inventory_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/carried_inventory_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "0f74e789f004d5ed185a8fd7515dceb1b48a01ecf2fd8e5c8c3b9137c3b7b1d0"
+  },
+  {
+    "name": "character_presentation_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/character_presentation_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "91d15163769849b43b1ee373c09b76bd71b5e3b3d8a636385fe75d843fb47369"
+  },
+  {
+    "name": "combat_tuning_baseline_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/combat_tuning_baseline_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "14caa82f02c031ec0b11b26dff55eaec0fd4ed9b5d459b6a5affce7a8b318d16"
+  },
+  {
+    "name": "content_inventory_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/content_inventory_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "929ebe56f5e5e5e51a2f9f62365d09d4c4dc987ff04084a40b0bf661b7edd7ce"
+  },
+  {
+    "name": "damage_packet_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/damage_packet_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "9a91e5472a0003b00ec933d3e37f2326cfbcd7f74886d2aa75176c99868d031e"
+  },
+  {
+    "name": "destructible_world_object_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/destructible_world_object_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "a92098b524931bb4f7c94af98d7aef1d84a434ba1c28ce2448e315b8c07ca92f"
+  },
+  {
+    "name": "enemy_definition_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/enemy_definition_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "fad7f3e0d94ffe98dbfb6eb25a57f8a14a3305fb3a767f7fc0031324a84e1e5b"
+  },
+  {
+    "name": "enemy_perception_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/enemy_perception_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "a9f676a51f12af04c34209acbdf83f6d4848e3012b23ff5c32c434b44d9d594c"
+  },
+  {
+    "name": "enemy_spawn_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/enemy_spawn_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "182181d5c6838192b7fe54537355585808ec531c18c92b12991269030ffbaf60"
+  },
+  {
+    "name": "extraction_vertical_slice_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/extraction_vertical_slice_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "b42ad1ec4d83142c8034577171bd36eb8f9ebeb29ee794637062e64adcf6dca6"
+  },
+  {
+    "name": "first_mission_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/first_mission_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "fd41f86da64ced7680e55a147bd1470001282417483eaaa87172975be1d6e9ec"
+  },
+  {
+    "name": "hanger_first_mission_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/hanger_first_mission_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "09374c0351733430a368deeec0e40c293a5062d0a31512b078cbde916bcd3dfe"
+  },
+  {
+    "name": "loadout_decision_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/loadout_decision_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "f79a1f1671ce9317fb36be5f4677deb4b167293a92e3c75b9695010d9976bca3"
+  },
+  {
+    "name": "loadout_state_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/loadout_state_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "a01c3d9801d46522fa8ab49b0b9c01f39b91923f1346b7269d6275284c7cbac7"
+  },
+  {
+    "name": "loot_table_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/loot_table_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "cb8b95eee494560b0090fd3e2101570ddb9cc0bbd939359cf3c461dfc410a3dd"
+  },
+  {
+    "name": "medical_treatment_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/medical_treatment_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "f851a6e42c8c4ad7594bd9e9f62e576f054b8ee174640688f27bd55ffd65d20a"
+  },
+  {
+    "name": "mission_flow_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/mission_flow_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "d8810c81df93dcc0cd8b2323616056fa1aa2cbf0618ee65c10b62a0051ceb984"
+  },
+  {
+    "name": "mission_objective_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/mission_objective_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "996830f87e4162bf5d1676d79e8c4ba58cab010d0f25d9f4b813f95220aaee55"
+  },
+  {
+    "name": "modern_arsenal_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/modern_arsenal_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "c62aa0a75d97cb163a3e2a0d0a93c1a989526230f988cb5e01be80d32b46b07e"
+  },
+  {
+    "name": "objective_world_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/objective_world_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "f669bc89fc2a304be3f572f901dbbedbd6446f40107ce4a5b01149b14e9704c7"
+  },
+  {
+    "name": "p0_flow_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/p0_flow_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "f75da8c80c42597f50934412261d7299d383550f295ed7e602d7c3c4eba98320"
+  },
+  {
+    "name": "p0_recovery_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/p0_recovery_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+  },
+  {
+    "name": "player_visibility_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/player_visibility_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "e6f2c04515c39cd699fabb31e8666412525dd97d4316d9017ac73f94fbd72655"
+  },
+  {
+    "name": "presentation_gameplay_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/presentation_gameplay_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "ae73643e9a4fe8ad17c70a8bb142d225944cd59d9506bfa7ab836e039c8d2cd6"
+  },
+  {
+    "name": "profile_state_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/profile_state_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "33f0ea9d822ed2036eedec3dc08c57a3cff32a01abca14e7162e4928d404eb19"
+  },
+  {
+    "name": "result_return_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/result_return_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "9985118cd4cbd5cb1f239a038576b027c3c7391fc26cbf4267e4a133d12f8e66"
+  },
+  {
+    "name": "rifle_contact_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/rifle_contact_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "bf11d1eddd67413d04e22a1e14f2d3f1172e3ad1c8f984f65b9996c60d6697db"
+  },
+  {
+    "name": "save_service_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/save_service_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "24d5b9bac3fac687a7cc964cc5e285070adfa0744e18230f1ebe2c89377be51d"
+  },
+  {
+    "name": "sortie_checkpoint_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/sortie_checkpoint_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "0737364971c4527f2c27e67820d27fbd22c3b1bc3f5cbb888ac460aa9073443a"
+  },
+  {
+    "name": "sortie_failure_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/sortie_failure_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "c1817d555972e58a67c66a37fefebfcf3db4b22f511a1c6e256f6bac42523614"
+  },
+  {
+    "name": "sortie_outcome_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/sortie_outcome_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "f2ccb0bcac153ce02a91b1a095631f37f546a5b1747a8b85429ead2795ec4ccf"
+  },
+  {
+    "name": "sortie_session_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/sortie_session_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "df5a421250cbe693d64d5e60e2b1a871774b450656eb57e876103e110d2c64b4"
+  },
+  {
+    "name": "streets_combat_run",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/streets_combat_run.tscn",
+      "--quit-after",
+      "12000"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "35131d85186005fad6e6710ce24f7375688fa88a1b7d9f4ee7f9b2bf3a99bf28"
+  },
+  {
+    "name": "streets_layout_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/streets_layout_test.tscn",
+      "--quit-after",
+      "12000"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "55028375a33edcf7e8c17a1155251dc006daeb10ddd19157b6eb10dcd9afd7c2"
+  },
+  {
+    "name": "streets_walk_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/streets_walk_test.tscn",
+      "--quit-after",
+      "12000"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "1d63e0e723fac147da950bf46818912f95568222b568b2848af05121c4489fe2"
+  },
+  {
+    "name": "threat_escalation_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/threat_escalation_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "57f31d59f83f742bbb6fdba28e3c974e0755c6d22b20160be8d5adacc3673e2d"
+  },
+  {
+    "name": "visual_combat_acceptance",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/visual_combat_acceptance.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "9f6b93e11ebbf4e8c6e9d832f41652299ac2e97550593ad6e1a8ef0cd6ce2704"
+  },
+  {
+    "name": "visual_enemy_acceptance",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/visual_enemy_acceptance.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "5682059b30245191e06771f4a151fa636776744662b84be926f57a2b184e7c5b"
+  },
+  {
+    "name": "visual_slice_assets_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/visual_slice_assets_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "3b1df4d1c790620a6b0d8b41cf1afdeb7869005edc0344c1b76e597d881760a8"
+  },
+  {
+    "name": "weapon_behavior_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/weapon_behavior_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "264f3cfaaf3d2b6b4d5eebf057246896cda1fb1e8b171c739b191441f58308dc"
+  },
+  {
+    "name": "weapon_switching_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/weapon_switching_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "d361035a78a2eef17eb8ea503a07e0dd2f18e8269360a367aa10df65977b8d60"
+  },
+  {
+    "name": "world_interaction_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/world_interaction_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "91c770f650f8c253f1a0e0b8233b5524d582f7395ffe0f00a0f420cfebe9c8f7"
+  },
+  {
+    "name": "world_traversal_test",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/world_traversal_test.tscn",
+      "--quit-after",
+      "1200"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "8264c29f377b92f3150d3a714b06fb9db370a7d7ce63951334525146ec9ee739"
+  },
+  {
+    "name": "quit_base",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--script",
+      "res://tools/p0_exit_probe.gd",
+      "--",
+      "base"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+  },
+  {
+    "name": "quit_battle",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--script",
+      "res://tools/p0_exit_probe.gd",
+      "--",
+      "battle"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+  },
+  {
+    "name": "quit_failure",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--script",
+      "res://tools/p0_exit_probe.gd",
+      "--",
+      "failure"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+  },
+  {
+    "name": "quit_transition",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--script",
+      "res://tools/p0_exit_probe.gd",
+      "--",
+      "transition"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+  },
+  {
+    "name": "quit_recovery",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--script",
+      "res://tools/p0_exit_probe.gd",
+      "--",
+      "recovery"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+  },
+  {
+    "name": "checkpoint_write",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/sortie_checkpoint_test.tscn",
+      "--",
+      "--write"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "2d8dea666169c45dd62021273c9793b224cc906b700f68c3a51de286fee3b677"
+  },
+  {
+    "name": "checkpoint_read",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/sortie_checkpoint_test.tscn",
+      "--",
+      "--read"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "78b04682e601b9091c6e7db2f955428f07acf15f86272ca9d15069480ce702af"
+  },
+  {
+    "name": "checkpoint_crash_read",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/sortie_checkpoint_test.tscn",
+      "--",
+      "--read"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "78b04682e601b9091c6e7db2f955428f07acf15f86272ca9d15069480ce702af"
+  },
+  {
+    "name": "medical_write",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/medical_treatment_test.tscn",
+      "--",
+      "--write"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "7338a601ebf27b47970a7314307d0efac575c1030aadef6fd76dea7687f8a37d"
+  },
+  {
+    "name": "medical_read",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "res://tests/medical_treatment_test.tscn",
+      "--",
+      "--read"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "2dabb9b99e771b793e953a80e76630a219467c17b2c1f9a6bfecdf9f745762d8"
+  },
+  {
+    "name": "main",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--headless",
+      "--quit-after",
+      "180"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+    ],
+    "sha256": "31402bba8d15a0f12f00af9e09d59443f98ce7d178bdbc81e6d9ecb5f1a965da"
+  },
+  {
+    "name": "route",
+    "command": [
+      "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+      "--path",
+      "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_alpha_20261003_m1iewf__\\visibility_release_check\\project",
+      "--rendering-method",
+      "forward_plus",
+      "--resolution",
+      "1280x720",
+      "--script",
+      "res://tools/phase2b_route_probe.gd"
+    ],
+    "exit": 0,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "sha256": "5cd14616975292ace4020cb2d8ea867f69868e956ed88465bd38538d47528d3f"
+  }
+]

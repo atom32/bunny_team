@@ -13,3 +13,42 @@ export_credentials.cfg
 
 # Windows thumbnail cache bundled with imported assets.
 Thumbs.db
+
+# Local Python caches and isolated verification runtime data.
+__pycache__/
+*.pyc
+isolated_userdata/
+isolated_localdata/
+shader_cache/
+*.blend1
+
+# Local captures and verification outputs (retain on disk).
+art_source/**/*.log
+art_source/**/*.png
+art_source/**/*.jpg
+art_source/**/*.mp4
+art_source/**/*.avi
+art_source/**/evidence/
+art_source/**/integration_evidence/
+art_source/**/integration_backup/
+art_source/alpha_playthrough_20261004/take*/
+art_source/alpha_playthrough_20261004/exit.json
+art_source/alpha_playthrough_20261004/recording.json
+art_source/hideout_mechanized_trial_20261005/integration.diff
+art_source/hideout_mechanized_trial_20261005/character_before.json
+art_source/hideout_mechanized_trial_20261005/COMPLETION_AUDIT.json
+
+# Download archives and duplicate isolated Hideout trial assets.
+art_source/hideout_kitbash_trial_20261004/*.zip
+art_source/hideout_kitbash_trial_20261004/furniture_source/
+art_source/hideout_kitbash_trial_20261004/source/
+art_source/hideout_kitbash_trial_20261004/project/
+art_source/hideout_mechanized_trial_20261005/project/
+docs/alpha_0_1/**/*.png
+docs/alpha_0_1/**/*.log
+docs/alpha_0_1/**/*validation.json
+docs/phase2b/captures/
+
+# Local patch snapshots from verification/integration trials.
+art_source/**/*.diff
+art_source/**/*.patch

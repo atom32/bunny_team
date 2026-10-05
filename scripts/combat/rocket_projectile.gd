@@ -15,6 +15,9 @@ var _trail_cooldown := 0.0
 
 
 func _ready() -> void:
+	# Only hide the rendered subtree; Area3D collision and movement stay active.
+	add_to_group("sight_sensitive")
+	set_meta("sight_height", 0.0)
 	collision_layer = 8
 	collision_mask = 6
 	var shape := SphereShape3D.new()
@@ -73,6 +76,7 @@ func _physics_process(delta: float) -> void:
 func _explode() -> void:
 	set_physics_process(false)
 	AudioDirector.play_sfx(&"explosion", 0.0, 0.025)
+	CombatNoise.emit_at(self, global_position, 65.0, &"explosion")
 	var sphere := SphereShape3D.new()
 	sphere.radius = blast_radius
 	var query := PhysicsShapeQueryParameters3D.new()

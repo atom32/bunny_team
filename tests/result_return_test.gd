@@ -13,7 +13,7 @@ func _ready() -> void:
 func _run() -> void:
 	await get_tree().process_frame
 	_cleanup_save()
-	var legacy_profile := ProfileState.create_new()
+	var legacy_profile := ArmoryFixture.create_profile()
 	# Reproduce the original three-weapon save before the arsenal content grant.
 	for item in legacy_profile.inventory.get_items():
 		if item.definition_id in [&"weapon.pistol_01", &"weapon.shotgun_01", &"weapon.sniper_01", &"weapon.lmg_01", &"ammo.9mm_standard", &"ammo.12g_buckshot", &"ammo.762_standard"]:
@@ -32,7 +32,7 @@ func _run() -> void:
 
 	var request := profile.create_sortie_request()
 	var session := SortieRuntime.start_sortie(request, profile)
-	check(session != null and session.inventory.capacity == ProfileState.DEFAULT_CARRIED_CAPACITY, "sortie keeps independent carried capacity after warehouse upgrade")
+	check(session != null and session.inventory.capacity == profile.get_carried_capacity() and session.inventory.capacity == 35.0 and session.inventory.capacity != profile.inventory.capacity, "sortie uses equipped pack capacity independently of upgraded warehouse")
 	if not session:
 		_finish()
 		return

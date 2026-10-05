@@ -8,6 +8,7 @@ var start_aim: Vector3
 var moved_distance := 0.0
 var last_position: Vector3
 var guide: Label
+var _controls_revision := -1
 var destination: Label
 var elapsed := 0.0
 var reload_seen := false
@@ -78,6 +79,7 @@ func _ready() -> void:
 	GameLanguage.language_changed.connect(func(): _refresh_guide(); _refresh_destination())
 
 func _process(delta: float) -> void:
+	if _controls_revision != ControlBindings.revision: _refresh_guide()
 	if battle.ending: return
 	elapsed += delta
 	var current: Vector3 = battle.player.global_position
@@ -150,19 +152,24 @@ func _set_loot_enabled(point: Node3D, enabled: bool) -> void:
 			else: child.remove_from_group("interactable")
 
 func _refresh_guide() -> void:
+	_controls_revision = ControlBindings.revision
 	var lines := [
-		"01 / FIND YOUR FEET\nWASD / left stick — move 3 metres.",
+		"01 / FIND YOUR FEET\n%s / left stick — move 3 metres.",
 		"02 / LOOK BEFORE YOU SHOOT\nMouse / right stick — turn your aim.",
-		"03 / LIVE FIRE\nLeft click / right trigger — fire your AR.",
-		"04 / FIRST PMC\nUse cover. Fire at the patrol. Q switches to SMG.",
-		"05 / A FRESH MAGAZINE\nR — reload. Then search the fallen patrol's case.",
-		"06 / YOUR FIRST SALVAGE\nE — open the case. TAKE the Salvage Core.",
-		"07 / RECOVER THE HOME SIGNAL\nFind the field terminal. E — investigate for 8s.",
+		"03 / LIVE FIRE\n%s / right trigger — fire your weapon.",
+		"04 / FIRST PMC\nUse cover. Fire at the patrol. %s switches equipped weapons.",
+		"05 / A FRESH MAGAZINE\n%s — reload. Then search the fallen patrol's case.",
+		"06 / YOUR FIRST SALVAGE\n%s — open the case. TAKE the Salvage Core.",
+		"07 / RECOVER THE HOME SIGNAL\nFind the field terminal. %s — investigate for 8s.",
 		"08 / THE ALARM IS LIVE\nOne core secured. Extra salvage or a safe return?",
 		"09 / SOMETHING WORTH THE RISK\nSearch the north cache. You can still extract anytime.",
-		"10 / COME HOME\nE at the south beacon. Defend for 8s."
+		"10 / COME HOME\n%s at the south beacon. Defend for 8s."
 	]
+	var keys := {Stage.MOVE: "/".join([ControlBindings.label("move_forward"),ControlBindings.label("move_left"),ControlBindings.label("move_back"),ControlBindings.label("move_right")])}
 	guide.text = tr(lines[stage])
+	var stage_actions := {2:"fire",3:"switch_weapon",4:"reload",5:"interact",6:"interact",9:"interact"}
+	if stage == 0: guide.text = guide.text % keys[Stage.MOVE]
+	elif stage in stage_actions: guide.text = guide.text % ControlBindings.label(stage_actions[stage])
 
 func _refresh_destination() -> void:
 	var target: Node3D
@@ -177,6 +184,14 @@ func _refresh_destination() -> void:
 		Stage.TERMINAL:
 			target = battle.area_root.find_child("PrototypeTerminal", true, false)
 			name_text = "FIELD TERMINAL"
+			if not _inside_office():
+				var door := battle.area_root.find_child("SouthAccessDoor", true, false) as Node3D
+				if door:
+					target = door
+					name_text = "FIELD OFFICE / SOUTH ENTRANCE"
+					guide.text = tr("07 / RECOVER THE HOME SIGNAL\nGo around to the south door. %s opens it; enter the office.") % ControlBindings.label("interact")
+			else:
+				guide.text = tr("07 / RECOVER THE HOME SIGNAL\nFind the field terminal. %s — investigate for 8s.") % ControlBindings.label("interact")
 		Stage.CHOICE, Stage.SALVAGE:
 			target = battle.area_root.find_child("HighValueLootSpawn", true, false)
 			name_text = "HIGH VALUE SALVAGE / 2 CORES"
@@ -184,6 +199,9 @@ func _refresh_destination() -> void:
 			target = battle.area_root.find_child("ExtractionPoint", true, false)
 			name_text = "SOUTH EXTRACTION"
 	marker.visible = is_instance_valid(target)
+	if target is EnemyController and not PlayerVisibility.enemy_observed(self, target):
+		marker.hide()
+		name_text = "LISTEN / SEARCH FOR PATROL"
 	if marker.visible:
 		marker.global_position = target.global_position + Vector3.UP * 2.2
 		marker.text = "▼"
@@ -193,3 +211,12 @@ func _refresh_destination() -> void:
 		name_text += tr(" / %s %.0fm") % [heading, offset.length()]
 	destination.text = tr("%02d:%02d  /  %s") % [int(elapsed) / 60, int(elapsed) % 60, tr(name_text)]
 	if reinforcements_remaining > 0: destination.text += tr(" / PMC %.0fs") % reinforcements_remaining
+
+# Presentation hint only: use the authored floor footprint, not a new trigger/collision.
+func _inside_office() -> bool:
+	var building := battle.area_root.find_child("FieldOffice", true, false) as Node3D
+	var floor_shape := building.get_node_or_null("InteriorFloor/CollisionShape3D") as CollisionShape3D if building else null
+	if not floor_shape or not floor_shape.shape is BoxShape3D: return true
+	var local := floor_shape.to_local(battle.player.global_position)
+	var half := (floor_shape.shape as BoxShape3D).size * .5
+	return absf(local.x) < half.x and absf(local.z) < half.z

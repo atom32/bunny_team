@@ -446,7 +446,7 @@ func _check_metric(metrics: Dictionary, weapon_id: StringName, target_label: Str
 
 
 func _create_player_fixture(primary_definition_id: StringName, secondary_definition_id: StringName) -> Dictionary:
-	var profile := ProfileState.create_new()
+	var profile := ArmoryFixture.create_profile()
 	var primary_item := _find_item(profile.inventory, primary_definition_id)
 	var secondary_item := _find_item(profile.inventory, secondary_definition_id)
 	check(primary_item != null and secondary_item != null, "Baseline fixture owns requested weapon pair")

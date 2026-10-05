@@ -1,0 +1,9 @@
+{
+  "repo": "https://github.com/pixiv/ChatVRM",
+  "commit": "b542aa00e19dccf9fc48ba340cf7eee011d2329a",
+  "path": "public/idle_loop.vrma",
+  "access_date": "2026-10-04",
+  "sha256": "ace95ba6dcc0bdf2ed1081c002332b4184441117c8d543b6f642b3d2c5cf99be",
+  "runtime_sha256": "2e62aeadf2a1fe955c9e61dc63c194d3b74f018b32822e3be9fe76be620d5e2c",
+  "conversion": "convert.py / rotation-only hierarchy evaluation, 30 Hz, original duration"
+}

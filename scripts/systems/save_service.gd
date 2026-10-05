@@ -1,7 +1,7 @@
 class_name SaveService
 extends RefCounted
 
-const SCHEMA_VERSION := 1
+const SCHEMA_VERSION := 4
 const DEFAULT_SAVE_PATH := "user://profile.json"
 const MAX_SAVE_BYTES := 8 * 1024 * 1024
 
@@ -47,11 +47,18 @@ static func load_profile(path: String = DEFAULT_SAVE_PATH, report_errors := true
 		return _load_failure("Profile save is not valid JSON data", report_errors)
 	var envelope := json.data as Dictionary
 	var version: Variant = envelope.get("schema_version")
-	if not is_number(version) or version != SCHEMA_VERSION:
+	if not is_number(version) or float(version) not in [1.0, 2.0, 3.0, 4.0]:
 		return _load_failure("Unsupported profile schema version", report_errors)
 	var profile_data: Variant = envelope.get("profile")
 	if typeof(profile_data) != TYPE_DICTIONARY:
 		return _load_failure("Profile save is missing profile data", report_errors)
+	if float(version) >= 2.0:
+		for key in ["credits", "successful_sorties", "failed_sorties", "relief_claimed_after", "settled_outcomes"]:
+			if not profile_data.has(key): return _load_failure("Profile save is missing economy data", report_errors)
+	if float(version) >= 3.0 and not profile_data.has("sortie_checkpoint"):
+		return _load_failure("Profile save is missing sortie checkpoint data", report_errors)
+	if float(version) >= 4.0 and not profile_data.has("campaign"):
+		return _load_failure("Profile save is missing campaign data", report_errors)
 	var profile := ProfileState.from_dict(profile_data)
 	if not profile or not profile.validate():
 		return _load_failure("Profile save failed validation", report_errors)

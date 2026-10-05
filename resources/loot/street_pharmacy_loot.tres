@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="LootTableDefinition" load_steps=7 format=3]
+[ext_resource type="Script" path="res://scripts/data/loot_table_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/loot_table_entry.gd" id="2"]
+
+[sub_resource type="Resource" id="Entry0"]
+script = ExtResource("2")
+definition_id = &"medical.field_dressing"
+weight = 45.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="Entry1"]
+script = ExtResource("2")
+definition_id = &"medical.medkit"
+weight = 25.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="Entry2"]
+script = ExtResource("2")
+definition_id = &"material.fabric"
+weight = 25.0
+min_quantity = 1
+max_quantity = 3
+
+[sub_resource type="Resource" id="Entry3"]
+script = ExtResource("2")
+definition_id = &"material.parts"
+weight = 5.0
+min_quantity = 1
+max_quantity = 1
+
+[resource]
+script = ExtResource("1")
+table_id = &"street_pharmacy_loot"
+entries = Array[ExtResource("2")]([SubResource("Entry0"), SubResource("Entry1"), SubResource("Entry2"), SubResource("Entry3")])

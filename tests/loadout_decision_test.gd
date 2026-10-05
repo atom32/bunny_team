@@ -164,22 +164,19 @@ func _run_failed_loadout() -> void:
 	check(session.fail(), "FAILED path enters terminal failure state")
 	var outcome := SortieOutcomeService.create_outcome(session)
 	check(outcome != null and outcome.result_type == SortieOutcome.ResultType.FAILED, "FAILED path creates no-recovery outcome")
-	check(outcome != null and SortieOutcomeService.commit_outcome(profile, outcome) == OK, "FAILED path uses no-op commit")
-	check(profile.to_dict() == profile_before, "FAILED path preserves Warehouse and Loadout exactly")
+	check(outcome != null and SortieOutcomeService.commit_outcome(profile, outcome) == OK, "FAILED path commits deployed equipment loss")
+	check(ArmoryFixture.loss_matches(profile, profile_before, outcome.initial_carried_instance_ids), "FAILED path removes carried SMG and Rocket while preserving base-only gear")
 	check(not profile.inventory.contains(lost_loot.instance_id), "FAILED path loses sortie loot")
-	var retry_request := profile.create_sortie_request(
-		SortieRequest.PROTOTYPE_AREA_ID,
-		SortieRequest.PROTOTYPE_MISSION_ID,
-		_get_carried_ammo_ids(profile)
-	)
+	check(not profile.inventory.contains(fixture.primary_id) and not profile.inventory.contains(fixture.secondary_id), "lost SMG and Rocket cannot be redeployed")
+	profile._equip_first_definition(LoadoutState.SLOT_WEAPON_PRIMARY, &"weapon.assault_rifle_01")
+	var retry_request := profile.create_sortie_request(SortieRequest.PROTOTYPE_AREA_ID, SortieRequest.PROTOTYPE_MISSION_ID, _get_carried_ammo_ids(profile))
 	var retry_session := SortieSession.create_from_profile(retry_request, profile) if retry_request else null
-	check(retry_session != null and retry_session.activate(), "unchanged Warehouse can start the next SMG + Rocket sortie")
-	print("LOADOUT_TRACE | SMG + Rocket | failed=true | warehouse_unchanged=%s | loot_recovered=%s | retry_ready=%s" % [profile.to_dict() == profile_before, profile.inventory.contains(lost_loot.instance_id), retry_session != null and retry_session.status == SortieSession.Status.ACTIVE])
+	check(retry_session != null and retry_session.activate(), "a weapon left at base can support the next sortie")
 	await _cleanup_fixture(player)
 
 
 func _create_fixture(primary_definition_id: StringName, secondary_definition_id: StringName) -> Dictionary:
-	var profile := ProfileState.create_new()
+	var profile := ArmoryFixture.create_profile()
 	var primary_item := _find_item(profile.inventory, primary_definition_id)
 	var secondary_item := _find_item(profile.inventory, secondary_definition_id)
 	check(primary_item != null and secondary_item != null, "Profile owns requested %s + %s weapons" % [primary_definition_id, secondary_definition_id])

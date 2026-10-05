@@ -20,7 +20,9 @@ func _ready() -> void:
 			for visual in pickup.get_children():
 				if visual is Node3D: visual.hide()
 	var tag := SliceUI.sign(self, "SUPPLY CASE", Vector3(0,1.0,0))
-	tag.font_size = 26
+	tag.font_size = 48
+	tag.pixel_size = 0.012
+	tag.outline_size = 4
 	tag.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 
 func set_open(value: bool) -> void:

@@ -74,7 +74,7 @@ func _test_stack_and_consume() -> void:
 
 
 func _test_outcome_commit_uses_initial_snapshot() -> void:
-	var profile := ProfileState.create_new()
+	var profile := ArmoryFixture.create_profile()
 	var ammo := ItemInstance.new(&"ammo.556_ap", 60, 100.0, "commit_ammo")
 	check(profile.inventory.add_item(ammo), "commit fixture owns carried ammunition")
 	var carried_ids: Array[String] = [ammo.instance_id]

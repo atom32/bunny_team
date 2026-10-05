@@ -67,12 +67,12 @@ func _test_failed_sortie_data_boundary() -> void:
 		return
 	check(outcome.inventory.get_items().is_empty(), "FAILED outcome contains no recovered ItemInstances")
 	check(outcome.loadout.to_dict().is_empty(), "FAILED outcome contains no recovered loadout")
-	check(outcome.initial_carried_instance_ids == session.get_initial_carried_instance_ids(), "FAILED outcome retains initial carried IDs for audit only")
+	check(outcome.initial_carried_instance_ids == session.get_initial_carried_instance_ids(), "FAILED outcome retains initial carried IDs for loss settlement")
 	check(SortieOutcome.from_dict(outcome.to_dict()).to_dict() == outcome.to_dict(), "FAILED outcome serialization preserves empty recovery state")
 	check(SortieOutcomeService.create_outcome(session) == null, "same FAILED session cannot create a second outcome")
 
-	check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, "FAILED outcome commit succeeds as a no-op")
-	check(profile.to_dict() == profile_before, "FAILED commit preserves warehouse byte-for-byte")
+	check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, "FAILED outcome settles the deployed loss")
+	check(ArmoryFixture.loss_matches(profile, profile_before, outcome.initial_carried_instance_ids), "FAILED commit removes only deployed equipment and reserves; base storage and credits are safe")
 	check(not profile.inventory.contains(recovered_loot.instance_id), "sortie loot is lost and never enters warehouse")
 	var first_commit := profile.to_dict()
 	check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, "repeated FAILED commit remains valid")

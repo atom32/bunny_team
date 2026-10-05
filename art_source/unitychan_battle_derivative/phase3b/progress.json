@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETE \u2014 Demo Presentation Candidate PASS (not production-ready)",
+  "completed": [
+    "Fresh isolated import 0 ERROR / 0 WARNING",
+    "Actual material parameters captured",
+    "Same-camera Hanger single-variable standard material trials",
+    "Field Office production and diagnostic before/after",
+    "Rejected skin albedo darkening due dark/gray shadows",
+    "Bounded diffuse material prototype preserves source colors and recovers highlight detail in both scenes",
+    "Normal graphical route all checks true",
+    "Blender master now authors material response parameters + Chest/Backpack equipment frame correction metadata",
+    "Geometry / skin weights / rest bones / pose channels fingerprint unchanged across save+reload",
+    "Three source-color-preserving ShaderMaterials applied by derivative adapter; other two materials unchanged",
+    "Confirmed torso local frame mismatch; 180-degree Y correction of Chest/Backpack only; weapon and IK sockets untouched",
+    "Hanger front/back/side show restored torso silhouette and back-mounted pack",
+    "Regression 32/33 (sole unchanged Face assertion); Main exit 0; relevant presentation/world/visual suites PASS",
+    "Rifle normal route PASS",
+    "Solo SMG replay exit 0 / all checks true; initial timeout retained, no gameplay or route code changed",
+    "Final matched before/after at both production cameras exit0; transforms asserted unchanged",
+    "Warmed 3-second Hanger performance sampled with no other graphical probes running",
+    "Final 68 official hash / source snapshot / test boundary audit PASS"
+  ],
+  "selected_candidate": {
+    "shader": "soft_diffuse_trial.gdshader",
+    "direct_response_gain": 0.2,
+    "ambient": "preserved",
+    "albedo": "original unchanged",
+    "materials": [
+      "Battle_face3_main",
+      "Battle_Unity2016_C_Skin",
+      "Battle_Unity2016_C_Hair_Spow"
+    ]
+  },
+  "next": []
+}

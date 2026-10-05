@@ -1,0 +1,8 @@
+{
+  "commit": "955ce1ffc79b5c120e507118264d616774867aac",
+  "push": false,
+  "existing_wip_preserved": true,
+  "production_switch": "PASS",
+  "tests": "33/33",
+  "receipt": "local post-commit receipt, not in its own commit"
+}

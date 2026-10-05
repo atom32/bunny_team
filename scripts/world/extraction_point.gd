@@ -4,6 +4,7 @@ extends Node3D
 signal extracted(session: SortieSession, extraction_id: StringName)
 
 @export var available := true
+@export var required_objective_id: StringName = &""
 @export var extraction_id: StringName = &"prototype_extract_south"
 
 
@@ -13,7 +14,10 @@ func _ready() -> void:
 
 
 func can_extract(session: SortieSession) -> bool:
-	return available and session != null and session.status == SortieSession.Status.ACTIVE
+	if not available or not session or session.status != SortieSession.Status.ACTIVE: return false
+	if required_objective_id.is_empty(): return true
+	var state := session.get_objective_state(required_objective_id)
+	return state != null and state.status == ObjectiveState.Status.COMPLETED
 
 
 func extract(session: SortieSession) -> bool:
@@ -24,13 +28,17 @@ func extract(session: SortieSession) -> bool:
 
 
 func interact(_actor: Node3D, session: SortieSession) -> Dictionary:
+	if available and not required_objective_id.is_empty() and not can_extract(session):
+		return {"success":false,"message":"Recover this sortie's records to unlock this exit. The other assigned exit remains open."}
 	if extract(session):
 		return {"success": true, "message": "Extraction Successful"}
 	return {"success": false, "message": "Extraction Unavailable"}
 
 
 func get_interaction_prompt(_actor: Node3D, session: SortieSession) -> String:
-	return "E  EXTRACT" if can_extract(session) else ""
+	if can_extract(session): return tr("%s  EXTRACT") % ControlBindings.label("interact")
+	if available and session and session.status == SortieSession.Status.ACTIVE and not required_objective_id.is_empty(): return "LOCKED / RECOVER RECORDS FIRST"
+	return ""
 
 
 func _build_visual() -> void:
@@ -46,8 +54,9 @@ func _build_visual() -> void:
 	label.font = UIFactory.FONT
 	label.text = "EXTRACTION"
 	label.position = Vector3(0.0, 1.0, 0.0)
-	label.font_size = 34
-	label.outline_size = 10
+	label.font_size = 48
+	label.pixel_size = 0.012
+	label.outline_size = 4
 	label.modulate = Color("a9efff")
 	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	add_child(label)

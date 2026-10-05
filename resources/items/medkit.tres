@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MedicalDefinition" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/medical_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/supply/medkit.svg" id="2"]
+[resource]
+script = ExtResource("1")
+icon = ExtResource("2")
+id = &"medical.medkit"
+display_name = "Field Medkit"
+description = "J / Restore up to 100 HP in 5 seconds. More recovery, but heavier and a longer exposure. Consumed only on completion."
+weight = 0.6
+base_value = 150
+stash_size = Vector2i(2, 1)
+item_tags = PackedStringArray("medical", "consumable")
+healing = 100.0
+use_seconds = 5.0

@@ -10,6 +10,7 @@ var selected_spawn := -1
 var task_index := 0
 var route_map: Control
 var active_exit_names: Array[String] = []
+const REGIONAL_LOOT := [&"street_office_loot", &"street_pharmacy_loot", &"street_apartment_loot", &"street_repair_loot"]
 var district_names := ["MUNICIPAL OFFICE","PHARMACY","APARTMENT LOBBY","REPAIR SHOP"]
 var brick: ShaderMaterial
 var plaster: Material
@@ -114,7 +115,8 @@ func _room(center: Vector3, index: int) -> void:
 	for z in [-7,7]:
 		for x in [-4.8,4.8]: _box(Vector3(6.4,3.5,.4),center+Vector3(x,1.75,z),plaster,"ShopFrontWall")
 		_box(Vector3(3.2,.5,.4),center+Vector3(0,3.25,z),plaster,"DoorLintel",true,false)
-	_box(Vector3(16,.18,14),center+Vector3(0,3.6,0),concrete,"ShopRoof",true,false)
+	var roof := _box(Vector3(16,.18,14),center+Vector3(0,3.6,0),concrete,"ShopRoof",true,false)
+	roof.add_to_group("aim_cutaway_roof")
 	_box(Vector3(.35,2.7,8),center+Vector3(1.5,1.35,-1),plaster,"InteriorPartition")
 	_box(Vector3(3,.9,.8),center+Vector3(-3,.45,-3),VisualFactory.material(Color("595244")),"Counter")
 	for x in [-6,6]:
@@ -283,18 +285,32 @@ func _build_points() -> void:
 	for index in 4:
 		for offset in [Vector3(-5,0,-4.5),Vector3(5,0,4),Vector3(-3,0,4.5)]:
 			var loot := LootSpawnPoint.new();loot.name="IndoorLoot%d_%d"%[index,loot_points.size()]
-			loot.position=ROOMS[index]+offset;loot.setup(&"prototype_high_value_loot" if offset.z<0 else &"prototype_basic_loot")
+			loot.position=ROOMS[index]+offset;loot.setup(&"prototype_high_value_loot" if offset.z<0 else REGIONAL_LOOT[index])
 			add_child(loot);loot_points.append(loot)
 	for at in [Vector3(-47,0,36),Vector3(47,0,-36),Vector3(-31,0,8),Vector3(32,0,9),Vector3(-32,0,-8),Vector3(32,0,-7)]:
-		var loot := LootSpawnPoint.new();loot.name="StreetLoot%d"%loot_points.size();loot.position=at;loot.setup(&"prototype_basic_loot");add_child(loot);loot_points.append(loot)
+		var loot := LootSpawnPoint.new();loot.name="StreetLoot%d"%loot_points.size();loot.position=at;loot.setup(&"street_supply_loot");add_child(loot);loot_points.append(loot)
 	for at in [Vector3(-43,.1,-30),Vector3(43,.1,30),Vector3(0,.1,-20),Vector3(0,.1,23),Vector3(-32,.1,4),Vector3(32,.1,4),Vector3(-20,.1,-9),Vector3(21,.1,-7),Vector3(-21,.1,10),Vector3(22,.1,11)]:
 		var point := EnemySpawnPoint.new();point.name="StreetPMC%d"%enemy_points.size();point.position=at
 		point.enemy_definition_id=&"prototype_basic_enemy";point.activation_group_id=&"streets_reserve"
+		# Outer posts hold territory; street teams flank or close distance. Reuse
+		# the same actors/stats, positions and spawn eligibility, not extra spawns.
+		point.tactical_role = [1, 1, 0, 2, 1, 1, 2, 2, 3, 3][enemy_points.size()]
 		add_child(point);enemy_points.append(point)
-	var terminal := load("res://scenes/world/objective_interactable.tscn").instantiate() as ObjectiveInteractable
+	var terminal := RecordsTerminal.new()
 	terminal.name="StreetTerminal";terminal.objective_id=&"streets_terminal";terminal.position=terminals[0];add_child(terminal)
+	var alarm := RecordsAlarm.new();alarm.name="RecordsAlarm";terminal.add_child(alarm)
+	terminal.objective_interacted.connect(func(_id: StringName): alarm.arm(SortieRuntime.get_current_session()))
 	var survey := load("res://scenes/world/objective_reach_zone.tscn").instantiate() as ObjectiveReachZone
 	survey.name="StreetSurvey";survey.objective_id=&"streets_survey";survey.position=Vector3(23,0,-6);add_child(survey)
+	var session := SortieRuntime.get_current_session()
+	if session and session.mission_id == &"streets_relay":
+		survey.hide()
+		for index in [0,3]:
+			var relay := RelayStation.new()
+			relay.name = "RelayOffice" if index == 0 else "RelayRepair"
+			relay.objective_id = &"relay_office" if index == 0 else &"relay_repair"
+			relay.position = ROOMS[index] + Vector3(3,0,2.5)
+			add_child(relay)
 
 func configure_sortie_layout(spawn: Node3D, rng: RandomNumberGenerator) -> void:
 	selected_spawn=SPAWNS.find(spawn.position)
@@ -304,6 +320,9 @@ func configure_sortie_layout(spawn: Node3D, rng: RandomNumberGenerator) -> void:
 	for index in EXITS.size():
 		var exit := get_node("Exit%d"%index) as ExtractionPoint
 		exit.available = index in ranked.slice(0,2)
+		# A guaranteed retreat remains possible without mission completion.
+		# The second, no-farther assigned route rewards recovering the records.
+		exit.required_objective_id = &"streets_terminal" if index == ranked[1] else &""
 		exit.visible=exit.available
 		var exit_name: String = ["SOUTH SERVICE GATE","SOUTH TRAM CHECKPOINT","NORTH ARCHWAY","NORTH LOADING GATE"][index]
 		for label in exit.find_children("*","Label3D",true,false): label.text = exit_name

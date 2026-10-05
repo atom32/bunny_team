@@ -33,7 +33,7 @@ func _run() -> void:
 				button.pressed.emit()
 				break
 		var saved = save_service.load_profile(flow.save_path, false)
-		_finish(saved != null and saved.to_dict() == before and runtime.get_current_session() == null)
+		_finish(saved != null and load("res://tests/support/armory_fixture.gd").loss_matches(saved, before, session.get_initial_carried_instance_ids()) and runtime.get_current_session() == null)
 	elif mode == "transition":
 		game.present_scene("res://scenes/presentation/slice/hideout.tscn", "EXIT DURING TRANSITION")
 		await flow.request_leave("quit")

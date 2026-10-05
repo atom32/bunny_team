@@ -40,8 +40,8 @@ func _test_sortie_carries_only_loadout() -> void:
 		check(sortie_item != null and sortie_item.instance_id == profile_item.instance_id, "carried copy preserves its business instance ID")
 		var definition := ContentDB.get_item(profile_item.definition_id, false)
 		expected_capacity += definition.weight * profile_item.quantity
-	var uncarried_weapon := _find_item(profile.inventory, &"weapon.smg_01")
-	check(uncarried_weapon != null and not session.inventory.contains(uncarried_weapon.instance_id), "uncarried warehouse weapon is absent from the sortie")
+	var uncarried_weapon := _find_item(profile.inventory, &"ammo.9mm_standard")
+	check(uncarried_weapon != null and not session.inventory.contains(uncarried_weapon.instance_id), "uncarried warehouse ammunition is absent from the sortie")
 	check(is_equal_approx(session.inventory.get_used_capacity(), expected_capacity), "sortie capacity counts carried instances only")
 	check(session.activate(), "carried inventory fixture activates")
 	var used_before_loot := session.inventory.get_used_capacity()
@@ -103,7 +103,7 @@ func _test_non_completed_outcomes() -> void:
 		check(session.abandon() if abandoned else session.fail(), "non-completed fixture reaches terminal status")
 		var outcome := SortieOutcomeService.create_outcome(session)
 		check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, "non-completed outcome commit returns success")
-		check(profile.to_dict() == before, "failed and abandoned sorties leave warehouse unchanged")
+		check(ArmoryFixture.loss_matches(profile, before, outcome.initial_carried_instance_ids), "failed and abandoned sorties lose carried gear but preserve base storage")
 
 
 func _test_invalid_commit_is_atomic() -> void:

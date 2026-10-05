@@ -157,8 +157,8 @@ func _test_alert_failure_path() -> void:
 	await get_tree().process_frame
 	check(session.status == SortieSession.Status.FAILED and session.threat_level == SortieSession.ThreatLevel.ALERT, "player death ends an ALERT Sortie as FAILED")
 	var outcome := SortieOutcomeService.create_outcome(session)
-	check(outcome != null and SortieOutcomeService.commit_outcome(profile, outcome) == OK, "failed ALERT outcome remains a valid no-op commit")
-	check(profile.to_dict() == profile_before, "failed ALERT leaves Warehouse inventory and loadout unchanged")
+	check(outcome != null and SortieOutcomeService.commit_outcome(profile, outcome) == OK, "failed ALERT outcome settles deployed losses")
+	check(ArmoryFixture.loss_matches(profile, profile_before, outcome.initial_carried_instance_ids), "failed ALERT loses carried items but preserves base storage")
 	check(lost_loot_id.is_empty() or not profile.inventory.contains(lost_loot_id), "high-value loot is lost on failed ALERT Sortie")
 
 	battle.queue_free()

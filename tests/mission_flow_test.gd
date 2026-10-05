@@ -169,7 +169,7 @@ func _test_failed_mission_flow() -> void:
 	check(outcome != null and outcome.result_type == SortieOutcome.ResultType.FAILED, "failed mission produces a FAILED outcome")
 	check(outcome != null and not outcome.mission_completed, "failed mission outcome cannot report mission completed")
 	check(outcome != null and SortieOutcomeService.commit_outcome(profile, outcome) == OK, "FAILED outcome follows the existing no-op commit policy")
-	check(profile.to_dict() == profile_before, "failed mission leaves Warehouse inventory and loadout unchanged")
+	check(ArmoryFixture.loss_matches(profile, profile_before, outcome.initial_carried_instance_ids), "failed mission loses carried loadout but preserves base-only inventory")
 	check(lost_loot_id.is_empty() or not profile.inventory.contains(lost_loot_id), "failed mission loses target loot carried only by the Sortie")
 	await _free_battle(battle)
 

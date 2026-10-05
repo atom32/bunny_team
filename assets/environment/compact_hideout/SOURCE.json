@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-05",
+  "scope": "Production Compact Hideout environment; existing Hanger owns game state",
+  "selected_instances": [
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\concrete\\Floor.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\concrete\\Floor.glb",
+      "sha256": "eb9ce1ee35b8692ee93d032d6f2f872aff8a38c210ffbdfde37dbeb6ab0fec65"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\concrete\\Ceiling.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\concrete\\Ceiling.glb",
+      "sha256": "2eebd3928ccbbb1096b16281c4053bddf10785f3b951ba7cd910d7bba7044fa2"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\concrete\\Wall.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\concrete\\Wall.glb",
+      "sha256": "a268b360925d7a4679afa8fff42013a8f51536158ef9e9ec22a3fd60077050e7"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\concrete\\WallDoorway.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\concrete\\WallDoorway.glb",
+      "sha256": "4941b73325150162ba77a7a43e6f2edd344bf2f1289b714e886f992172c96339"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\furniture\\computerKeyboard.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\furniture\\computerKeyboard.glb",
+      "sha256": "9d9135789de2120e9f41ce3f0a56dd1b15f40adcc7888739bb842a2d820da322"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\furniture\\computerScreen.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\furniture\\computerScreen.glb",
+      "sha256": "5942cbad29a2d2b956619569926e81d50a4174403d592fece6556e57632dc643"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\furniture\\radio.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\furniture\\radio.glb",
+      "sha256": "1ba93d6ba6f049750853b4652b92f286f2898e527695a0705b75cc7615897fed"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\desk_lamp_arm_01\\desk_lamp_arm_01.gltf",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\polyhaven\\desk_lamp_arm_01\\desk_lamp_arm_01.gltf",
+      "sha256": "2ac8389afc1519449a9cfdf7efd9fa36780a2177bb47ab58f7a7dda7d247dc8c"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\industrial_wall_lamp\\industrial_wall_lamp.gltf",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\polyhaven\\industrial_wall_lamp\\industrial_wall_lamp.gltf",
+      "sha256": "5a2c0d8bdb52fe168727f4200818ac0c2adbded32f0b9dc09cfe224249f9e266"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_office_desk\\metal_office_desk.gltf",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\polyhaven\\metal_office_desk\\metal_office_desk.gltf",
+      "sha256": "f07032a5ee89aacceebf10fd9fa192c22775ae81861cfb0bdb1594497179373c"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_stool_01\\metal_stool_01.gltf",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\polyhaven\\metal_stool_01\\metal_stool_01.gltf",
+      "sha256": "e69a99778cacbbf0a2447971d8917a2463b411cdd2a50ff2c53c2230b4c43881"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_toolbox\\metal_toolbox.gltf",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\polyhaven\\metal_toolbox\\metal_toolbox.gltf",
+      "sha256": "9b8d240f1e41e83119771a063e4f4b4bb9ddfefd47f9f5baeda998107aa135c5"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\metal_tool_chest\\metal_tool_chest.gltf",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\polyhaven\\metal_tool_chest\\metal_tool_chest.gltf",
+      "sha256": "2f66fbb723cd52382f73daec184b68d9b36842a488ecaf120e5c3a6354e9dea4"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\old_military_crate\\old_military_crate.gltf",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\polyhaven\\old_military_crate\\old_military_crate.gltf",
+      "sha256": "ef4b69dca61542c4d724c4807233161129150220695742b5137ed65d8d2e1f24"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\steel_frame_shelves_01\\steel_frame_shelves_01.gltf",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\polyhaven\\steel_frame_shelves_01\\steel_frame_shelves_01.gltf",
+      "sha256": "4eff8994825d654e337f8dc425e959ed6add7f4773188c87ba64402d9edd9842"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\vintage_day_bed\\vintage_day_bed.gltf",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\polyhaven\\vintage_day_bed\\vintage_day_bed.gltf",
+      "sha256": "fb255992b6e651de9709b17c083a14b405e99cbc26774b31bf252e38cf9287fb"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\kit\\door-double-closed.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\kit\\door-double-closed.glb",
+      "sha256": "131dcf41b0a37c25974261a510b1d20950e27ecf17ce25232a4e37573fd988ca"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\kit\\wall-detail.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\kit\\wall-detail.glb",
+      "sha256": "7cee7abe1ea412acdf182da770bd3920bf023ecd165d5c9b3db3a60a0d7ae7d8"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\kit\\wall-switch.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\kit\\wall-switch.glb",
+      "sha256": "2b297783053aa9b091972f31f5fc3892b7cb7572d017dd37fc22af9ac2640c20"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\pipes\\modular_industrial_pipes_01_pipe01.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\pipes\\modular_industrial_pipes_01_pipe01.glb",
+      "sha256": "70fb771883868f296631298732124a1ec1f027e4277462a205300b7f47893903"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\pipes\\modular_industrial_pipes_01_pipe02.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\pipes\\modular_industrial_pipes_01_pipe02.glb",
+      "sha256": "0d4e92bf1c156310b5ad052d52133f9d6ba7c777176eca537803a215621a9f9f"
+    },
+    {
+      "source": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\weapons\\assault_rifle.glb",
+      "destination": "D:\\bunny_team\\assets\\environment\\compact_hideout\\weapons\\assault_rifle.glb",
+      "sha256": "114215d254f0d55d2f8e5f471da6dcf6e70bcbc3324417d78f7d15f34cf54c6d"
+    }
+  ],
+  "polyhaven_license": "CC0 https://polyhaven.com/license",
+  "trial_provenance": "art_source/hideout_mechanized_trial_20261005/README.md",
+  "additional_sources": {
+    "cables": "https://polyhaven.com/a/modular_electric_cables",
+    "license": "CC0 https://polyhaven.com/license",
+    "pipe_extraction": "art_source/hideout_mechanized_trial_20261005/extract_pipes.py",
+    "cable_extraction": "art_source/hideout_mechanized_trial_20261005/extract_cables.py",
+    "existing_kit_subset": "https://kenney.nl/assets/space-station-kit"
+  }
+}

@@ -1,0 +1,102 @@
+[gd_resource type="Resource" script_class="LootTableDefinition" load_steps=17 format=3]
+[ext_resource type="Script" path="res://scripts/data/loot_table_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/loot_table_entry.gd" id="2"]
+
+[sub_resource type="Resource" id="Entry0"]
+script = ExtResource("2")
+definition_id = &"material.scrap"
+weight = 15.0
+min_quantity = 1
+max_quantity = 3
+
+[sub_resource type="Resource" id="Entry1"]
+script = ExtResource("2")
+definition_id = &"material.propellant"
+weight = 15.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="Entry2"]
+script = ExtResource("2")
+definition_id = &"material.electronics"
+weight = 15.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="Entry3"]
+script = ExtResource("2")
+definition_id = &"material.fabric"
+weight = 15.0
+min_quantity = 1
+max_quantity = 3
+
+[sub_resource type="Resource" id="Entry4"]
+script = ExtResource("2")
+definition_id = &"material.parts"
+weight = 15.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="Entry5"]
+script = ExtResource("2")
+definition_id = &"material.wiring"
+weight = 15.0
+min_quantity = 1
+max_quantity = 3
+
+[sub_resource type="Resource" id="Entry6"]
+script = ExtResource("2")
+definition_id = &"material.data_drive"
+weight = 3.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="Entry7"]
+script = ExtResource("2")
+definition_id = &"ammo.556_standard"
+weight = 15.0
+min_quantity = 15
+max_quantity = 30
+
+[sub_resource type="Resource" id="Entry8"]
+script = ExtResource("2")
+definition_id = &"ammo.9mm_standard"
+weight = 15.0
+min_quantity = 20
+max_quantity = 40
+
+[sub_resource type="Resource" id="Entry9"]
+script = ExtResource("2")
+definition_id = &"ammo.12g_buckshot"
+weight = 8.0
+min_quantity = 4
+max_quantity = 8
+
+[sub_resource type="Resource" id="Entry10"]
+script = ExtResource("2")
+definition_id = &"ammo.762_standard"
+weight = 8.0
+min_quantity = 4
+max_quantity = 8
+
+[sub_resource type="Resource" id="Entry11"]
+script = ExtResource("2")
+definition_id = &"loot.salvage_core_01"
+weight = 6.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="Medical0"]
+script = ExtResource("2")
+definition_id = &"medical.field_dressing"
+weight = 12.0
+
+[sub_resource type="Resource" id="Medical1"]
+script = ExtResource("2")
+definition_id = &"medical.medkit"
+weight = 6.0
+
+[resource]
+script = ExtResource("1")
+table_id = &"street_supply_loot"
+entries = Array[ExtResource("2")]([SubResource("Entry0"), SubResource("Entry1"), SubResource("Entry2"), SubResource("Entry3"), SubResource("Entry4"), SubResource("Entry5"), SubResource("Entry6"), SubResource("Entry7"), SubResource("Entry8"), SubResource("Entry9"), SubResource("Entry10"), SubResource("Entry11"), SubResource("Medical0"), SubResource("Medical1")])

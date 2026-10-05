@@ -1,0 +1,552 @@
+[
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_0_0",
+    "floor_center": [
+      -2,
+      0,
+      -1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_0_0",
+    "floor_center": [
+      -2,
+      3,
+      -1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_0_2",
+    "floor_center": [
+      -2,
+      0,
+      1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_0_2",
+    "floor_center": [
+      -2,
+      3,
+      1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_2_0",
+    "floor_center": [
+      0,
+      0,
+      -1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_2_0",
+    "floor_center": [
+      0,
+      3,
+      -1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_2_2",
+    "floor_center": [
+      0,
+      0,
+      1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_2_2",
+    "floor_center": [
+      0,
+      3,
+      1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_4_0",
+    "floor_center": [
+      2,
+      0,
+      -1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_4_0",
+    "floor_center": [
+      2,
+      3,
+      -1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Floor.glb",
+    "name": "Floor_4_2",
+    "floor_center": [
+      2,
+      0,
+      1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Ceiling.glb",
+    "name": "Ceiling_4_2",
+    "floor_center": [
+      2,
+      3,
+      1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "West_0",
+    "floor_center": [
+      -2.2,
+      0,
+      -1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "East_0",
+    "floor_center": [
+      3.8,
+      0,
+      -1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "West_2",
+    "floor_center": [
+      -2.2,
+      0,
+      1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "East_2",
+    "floor_center": [
+      3.8,
+      0,
+      1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "Rear_0",
+    "floor_center": [
+      -2,
+      0,
+      -2.8
+    ],
+    "scale": 1,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "Front_0",
+    "floor_center": [
+      -2,
+      0,
+      2.8
+    ],
+    "scale": 1,
+    "yaw": -1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "Rear_2",
+    "floor_center": [
+      0,
+      0,
+      -2.8
+    ],
+    "scale": 1,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "concrete/WallDoorway.glb",
+    "name": "Front_2",
+    "floor_center": [
+      0,
+      0,
+      2.8
+    ],
+    "scale": 1,
+    "yaw": -1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "Rear_4",
+    "floor_center": [
+      2,
+      0,
+      -2.8
+    ],
+    "scale": 1,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "Front_4",
+    "floor_center": [
+      2,
+      0,
+      2.8
+    ],
+    "scale": 1,
+    "yaw": -1.5707963267948966
+  },
+  {
+    "asset": "concrete/Wall.glb",
+    "name": "RestPartition",
+    "floor_center": [
+      1.8,
+      0,
+      -1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "concrete/WallDoorway.glb",
+    "name": "RestDoorway",
+    "floor_center": [
+      1.8,
+      0,
+      1
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/metal_office_desk/metal_office_desk.gltf",
+    "name": "MaintenanceBench",
+    "floor_center": [
+      -1.8,
+      0,
+      -1.37
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/metal_stool_01/metal_stool_01.gltf",
+    "name": "BenchStool",
+    "floor_center": [
+      -1.9,
+      0,
+      -0.35
+    ],
+    "scale": 0.62,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/desk_lamp_arm_01/desk_lamp_arm_01.gltf",
+    "name": "TaskLamp",
+    "floor_center": [
+      -2.55,
+      0.79,
+      -1.5
+    ],
+    "scale": 0.65,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/metal_toolbox/metal_toolbox.gltf",
+    "name": "OpenToolbox",
+    "floor_center": [
+      -2.08,
+      0.79,
+      -1.4
+    ],
+    "scale": 0.7,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/computerScreen.glb",
+    "name": "MissionMonitor",
+    "floor_center": [
+      -1.11,
+      0.79,
+      -1.59
+    ],
+    "scale": 1.05,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/computerKeyboard.glb",
+    "name": "Keyboard",
+    "floor_center": [
+      -1.1,
+      0.79,
+      -1.29
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "furniture/radio.glb",
+    "name": "Radio",
+    "floor_center": [
+      -0.97,
+      0.79,
+      -1.72
+    ],
+    "scale": 0.7,
+    "yaw": 0
+  },
+  {
+    "asset": "weapons/assault_rifle.glb",
+    "name": "BenchRifle",
+    "floor_center": [
+      -1.45,
+      0.81,
+      -1.02
+    ],
+    "scale": 0.65,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "polyhaven/metal_tool_chest/metal_tool_chest.gltf",
+    "name": "ToolChest",
+    "floor_center": [
+      -2.53,
+      0,
+      0.55
+    ],
+    "scale": 1.5,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "polyhaven/steel_frame_shelves_01/steel_frame_shelves_01.gltf",
+    "name": "StockShelves",
+    "floor_center": [
+      0.25,
+      0,
+      -1.69
+    ],
+    "scale": 0.09,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/old_military_crate/old_military_crate.gltf",
+    "name": "MilitaryCrate0",
+    "floor_center": [
+      0.25,
+      0.05,
+      -1.65
+    ],
+    "scale": 0.42,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/old_military_crate/old_military_crate.gltf",
+    "name": "MilitaryCrate1",
+    "floor_center": [
+      0.25,
+      0.55,
+      -1.65
+    ],
+    "scale": 0.42,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/old_military_crate/old_military_crate.gltf",
+    "name": "MilitaryCrate2",
+    "floor_center": [
+      0.25,
+      1.0,
+      -1.65
+    ],
+    "scale": 0.42,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/old_military_crate/old_military_crate.gltf",
+    "name": "EquipmentLocker",
+    "floor_center": [
+      -2.37,
+      0,
+      1.3
+    ],
+    "scale": 0.65,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/old_military_crate/old_military_crate.gltf",
+    "name": "SealedSupply",
+    "floor_center": [
+      -1.53,
+      0,
+      1.64
+    ],
+    "scale": 0.55,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/old_military_crate/old_military_crate.gltf",
+    "name": "SupplyOnTop",
+    "floor_center": [
+      -1.53,
+      0.17,
+      1.64
+    ],
+    "scale": 0.5,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/vintage_day_bed/vintage_day_bed.gltf",
+    "name": "RestCot",
+    "floor_center": [
+      2.11,
+      0,
+      -0.67
+    ],
+    "scale": 1,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "polyhaven/old_military_crate/old_military_crate.gltf",
+    "name": "PersonalTrunk",
+    "floor_center": [
+      2.05,
+      0,
+      1.05
+    ],
+    "scale": 0.65,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/industrial_wall_lamp/industrial_wall_lamp.gltf",
+    "name": "RestFixture",
+    "floor_center": [
+      2.16,
+      1.85,
+      -1.86
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/industrial_wall_lamp/industrial_wall_lamp.gltf",
+    "name": "WorkshopFixture",
+    "floor_center": [
+      -1.5,
+      2.32,
+      -1.87
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "kit/wall-detail.glb",
+    "name": "ServicePanel",
+    "floor_center": [
+      -2.91,
+      1.45,
+      0.1
+    ],
+    "scale": 1,
+    "yaw": 1.5707963267948966
+  },
+  {
+    "asset": "kit/wall-switch.glb",
+    "name": "DoorControl",
+    "floor_center": [
+      0.79,
+      1.25,
+      1.88
+    ],
+    "scale": 1.5,
+    "yaw": 3.141592653589793
+  },
+  {
+    "asset": "kit/door-double-closed.glb",
+    "name": "EntranceDoor",
+    "floor_center": [
+      0,
+      0,
+      1.97
+    ],
+    "scale": 2.75,
+    "yaw": 0
+  },
+  {
+    "asset": "pipes/modular_industrial_pipes_01_pipe02.glb",
+    "name": "FeedRiser",
+    "floor_center": [
+      -2.82,
+      0.08,
+      -0.8
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "pipes/modular_industrial_pipes_01_pipe01.glb",
+    "name": "FeedExtension",
+    "floor_center": [
+      -2.82,
+      2.034,
+      -0.8
+    ],
+    "scale": 1,
+    "yaw": 0
+  },
+  {
+    "asset": "polyhaven/industrial_wall_lamp/industrial_wall_lamp.gltf",
+    "name": "FrontFixture",
+    "floor_center": [
+      0.1,
+      2.1,
+      1.86
+    ],
+    "scale": 1,
+    "yaw": 3.141592653589793
+  }
+]

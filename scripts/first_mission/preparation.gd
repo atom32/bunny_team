@@ -7,10 +7,14 @@ static func has_starter_kit(profile: ProfileState) -> bool:
 	return primary != null and secondary != null and primary.definition_id == &"weapon.assault_rifle_01" and secondary.definition_id == &"weapon.smg_01"
 
 static func equip_starter_kit(profile: ProfileState) -> void:
+	if not owns_starter_weapons(profile): return
 	profile.loadout.unequip(LoadoutState.SLOT_WEAPON_PRIMARY)
 	profile.loadout.unequip(LoadoutState.SLOT_WEAPON_SECONDARY)
 	profile._equip_first_definition(LoadoutState.SLOT_WEAPON_PRIMARY, &"weapon.assault_rifle_01")
 	profile._equip_first_definition(LoadoutState.SLOT_WEAPON_SECONDARY, &"weapon.smg_01")
+
+static func owns_starter_weapons(profile: ProfileState) -> bool:
+	return SupplyService.count(profile, &"weapon.assault_rifle_01") > 0 and SupplyService.count(profile, &"weapon.smg_01") > 0
 
 static func salvage_count(profile: ProfileState) -> int:
 	var total := 0

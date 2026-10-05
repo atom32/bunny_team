@@ -82,7 +82,7 @@ func _test_outcome_independence() -> void:
 func _test_completed_commit() -> void:
 	var profile := ProfileState.create_new()
 	var warehouse_size_before := profile.inventory.get_items().size()
-	var uncarried_item := _find_item(profile.inventory, &"weapon.smg_01")
+	var uncarried_item := _find_item(profile.inventory, &"ammo.9mm_standard")
 	var uncarried_before := uncarried_item.to_dict()
 	var session := _create_session(profile)
 	if not session:
@@ -126,7 +126,7 @@ func _test_non_completed_commit(abandoned: bool) -> void:
 	check(finished, "active session reaches requested non-completed state")
 	var outcome := SortieOutcomeService.create_outcome(session)
 	check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, "non-completed outcome commit returns success")
-	check(profile.to_dict() == before, "failed or abandoned outcome leaves profile unchanged")
+	check(ArmoryFixture.loss_matches(profile, before, outcome.initial_carried_instance_ids), "failed or abandoned outcome loses carried items but preserves base-only possessions")
 
 
 func _test_idempotent_commit() -> void:
@@ -155,7 +155,7 @@ func _test_result_finalize_integration() -> void:
 	SortieRuntime.clear_session()
 	var profile := ProfileRuntime.new_profile()
 	var warehouse_size_before := profile.inventory.get_items().size()
-	var uncarried_item := _find_item(profile.inventory, &"weapon.smg_01")
+	var uncarried_item := _find_item(profile.inventory, &"ammo.9mm_standard")
 	var request := profile.create_sortie_request()
 	var session := SortieRuntime.start_sortie(request, profile)
 	check(session != null, "runtime starts integration sortie")

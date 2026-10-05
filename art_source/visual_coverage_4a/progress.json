@@ -1,0 +1,26 @@
+{
+  "status": "IN_PROGRESS",
+  "implemented": [
+    "3 Blender-authored reusable service props",
+    "Hanger background instance",
+    "Office exterior instance",
+    "shared soft smoke material and quad helper",
+    "rocket trail/explosion visual-only substitution"
+  ],
+  "verified_initial": [
+    "33/33 tests before final prop tint/layout adjustment",
+    "Rifle/Rocket route + restart",
+    "SMG/Rocket route + restart"
+  ],
+  "remaining": [
+    "FX before/after visual review",
+    "FieldOffice final tint/layout review",
+    "final regression after material/layout tuning",
+    "budget/source integrity/scope audit",
+    "dedicated Phase4A commit"
+  ],
+  "production_player": "UNCHANGED",
+  "enemy": "UNCHANGED",
+  "terminal": "UNCHANGED",
+  "push": false
+}

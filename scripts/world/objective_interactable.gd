@@ -25,7 +25,7 @@ func get_interaction_prompt(_actor: Node3D, session: SortieSession) -> String:
 	var state := session.get_objective_state(objective_id)
 	if not state or state.objective_type != ObjectiveDefinition.Type.INTERACT or state.status == ObjectiveState.Status.COMPLETED:
 		return ""
-	return tr("E  %s") % tr(interaction_prompt.to_upper())
+	return ControlBindings.label("interact") + "  " + tr(interaction_prompt.to_upper())
 
 
 func _build_visual() -> void:
@@ -34,11 +34,13 @@ func _build_visual() -> void:
 	var screen := VisualFactory.box(self, Vector3(0.68, 0.42, 0.06), Vector3(0.0, 0.82, -0.3), Color("3fd9ca"), "TerminalScreen")
 	screen.material_override = VisualFactory.material(Color("164a4e"), 0.25, 0.2, Color("54f4df"), 3.0)
 	var label := Label3D.new()
+	label.name = "WorldLabel"
 	label.font = UIFactory.FONT
 	label.text = "FIELD TERMINAL"
 	label.position = Vector3(0.0, 1.45, 0.0)
-	label.font_size = 26
-	label.outline_size = 8
+	label.font_size = 48
+	label.pixel_size = 0.012
+	label.outline_size = 4
 	label.modulate = Color("bffdf6")
 	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	add_child(label)

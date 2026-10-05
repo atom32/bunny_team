@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MedicalDefinition" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/medical_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/supply/field_dressing.svg" id="2"]
+[resource]
+script = ExtResource("1")
+icon = ExtResource("2")
+id = &"medical.field_dressing"
+display_name = "Field Dressing"
+description = "H / Restore up to 40 HP in 2.5 seconds. Stand still; movement, combat and damage interrupt treatment. Consumed only on completion."
+weight = 0.15
+base_value = 60
+item_tags = PackedStringArray("medical", "consumable")
+healing = 40.0
+use_seconds = 2.5

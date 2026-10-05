@@ -155,17 +155,18 @@ func _on_deploy_requested() -> bool:
 		FlowMenu.show_error(plan.error)
 		return false
 	var first := GameState.presentation_enabled and not profile.first_mission_completed
-	if first and not FirstMissionPreparation.has_starter_kit(profile):
-		FlowMenu.show_error("First Mission requires AR in PRIMARY WEAPON and SMG in SECONDARY WEAPON. Equip them in the Hanger, then confirm deployment.")
-		return false
-	var request := profile.create_sortie_request(&"first_mission_area" if first else (&"street_district" if GameState.presentation_enabled else SortieRequest.PROTOTYPE_AREA_ID), &"first_mission" if first else (&"streets_recon" if GameState.presentation_enabled else SortieRequest.PROTOTYPE_MISSION_ID), plan.ammo_ids)
-	if not SortieRuntime.start_sortie(request, profile):
-		FlowMenu.show_error(SortieRuntime.last_error)
+	# The starter pair teaches switching, but a recovered/replacement weapon must
+	# also be able to retry the mission after an Alpha equipment loss.
+	var chosen := DeploymentPlan.selected_street_mission
+	if chosen not in DeploymentPlan.STREET_MISSIONS: chosen = &"streets_recon"
+	var deployed := DeploymentPlan.deploy(profile, &"first_mission_area" if first else (&"street_district" if GameState.presentation_enabled else SortieRequest.PROTOTYPE_AREA_ID), &"first_mission" if first else (chosen if GameState.presentation_enabled else SortieRequest.PROTOTYPE_MISSION_ID), FlowMenu.save_path, GameState.presentation_enabled)
+	if deployed.error != OK:
+		FlowMenu.show_error(deployed.message)
 		return false
 	var scene_error := GameState.begin_mission()
 	if scene_error != OK:
 		SortieRuntime.clear_session()
-		FlowMenu.show_error("Could not open deployment: %s. Retry from loadout." % error_string(scene_error))
+		FlowMenu.show_error("Could not open deployment: %s. Resume the saved sortie from the main menu." % error_string(scene_error))
 		return false
 	if first:
 		profile.bunny_selected = true

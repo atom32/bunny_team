@@ -1,0 +1,42 @@
+[
+  {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/modular_electric_cables/modular_electric_cables_1k.gltf",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_electric_cables\\modular_electric_cables.gltf",
+    "sha256": "F9292A9EFF5BEA32DDE06356633DA84615C508C9C0EE0246FC96C301CFD71FE8"
+  },
+  {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_electric_cables/modular_electric_cables_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_electric_cables\\textures\\modular_electric_cables_nor_gl_1k.jpg",
+    "sha256": "C32EEB9C064AFC0265F38B7F133F41BEBEE559E416D7064D441098C4821C7DCD"
+  },
+  {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_electric_cables/modular_electric_cables_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_electric_cables\\textures\\modular_electric_cables_diff_1k.jpg",
+    "sha256": "181C8811D6F3D3F5A0EA02497CD6C375868C558AEDF70A8221F301D323430C1A"
+  },
+  {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_electric_cables/modular_electric_cables_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_electric_cables\\textures\\modular_electric_cables_arm_1k.jpg",
+    "sha256": "D8D48AE3499F575BE301FE0B9AE91D4E0316A51C1E1234E186E0E0E9409F1A32"
+  },
+  {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_electric_cables/modular_electric_cables_boxes_nor_gl_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_electric_cables\\textures\\modular_electric_cables_boxes_nor_gl_1k.jpg",
+    "sha256": "5E3D896E8BCEAA8D843B30941C8D6F50779D4FBDE534080DD3837F499471AF5A"
+  },
+  {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_electric_cables/modular_electric_cables_boxes_diff_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_electric_cables\\textures\\modular_electric_cables_boxes_diff_1k.jpg",
+    "sha256": "7DBA8BFDD0A9C46294B5EC4930B4420B102A817469BF002D24136F8C3310C519"
+  },
+  {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/modular_electric_cables/modular_electric_cables_boxes_arm_1k.jpg",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_electric_cables\\textures\\modular_electric_cables_boxes_arm_1k.jpg",
+    "sha256": "3E1E8F5E854CDAE94C5F5EEE57241E4679C4198AA95D800873CA2CAB87BD6BCC"
+  },
+  {
+    "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/modular_electric_cables/modular_electric_cables.bin",
+    "path": "D:\\bunny_team\\art_source\\hideout_mechanized_trial_20261005\\project\\polyhaven\\modular_electric_cables\\modular_electric_cables.bin",
+    "sha256": "3990F8B60C244ECFC64F80B1242D2A0FEF0A3E39288C9BA9FD31BECAD4734D8A"
+  }
+]

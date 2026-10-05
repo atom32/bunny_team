@@ -9,6 +9,9 @@ func _run() -> void:
 	await get_tree().process_frame
 	get_tree().current_scene = null
 	ProfileRuntime.new_profile()
+	check(FirstMissionPreparation.has_starter_kit(ProfileRuntime.get_profile()), "New profile already has the limited starter loadout")
+	# Exercise the re-equip buttons with genuinely unequipped owned gear.
+	ProfileRuntime.get_profile().loadout.unequip(LoadoutState.SLOT_WEAPON_SECONDARY)
 	var hideout = load("res://scenes/presentation/slice/hideout.tscn").instantiate()
 	get_tree().root.add_child(hideout)
 	get_tree().current_scene = hideout
@@ -71,11 +74,34 @@ func _run() -> void:
 			if pickup is LootPickup: check(pickup.try_pickup(session) == LootPickup.PickupResult.SUCCESS, "Patrol material enters carried inventory")
 		director._process(0.1)
 		check(director.stage == director.Stage.TERMINAL, "Taking salvage unlocks investigation")
+		var entry := battle.area_root.find_child("SouthAccessDoor",true,false) as Door
+		battle.player.global_position = entry.global_position + Vector3(7,0,3)
+		director._refresh_destination()
+		check(director.marker.global_position.is_equal_approx(entry.global_position+Vector3.UP*2.2), "Outside office, guidance points at the entrance instead of through the wall")
+		check(director.guide.text.contains("south door") and not entry.is_open(), "Entrance guidance explains the door without opening it")
+		await _capture("entrance_guidance")
 		battle.player.global_position = terminal.global_position
+		director._refresh_destination()
+		check(director.marker.global_position.is_equal_approx(terminal.global_position+Vector3.UP*2.2), "Inside authored floor, guidance returns to actual terminal")
+		check(director.stage==director.Stage.TERMINAL and not session.is_mission_completed(), "Guidance never advances objective state")
+		battle.player.interaction_component._physics_process(0.0)
+		var presentation = battle.get_node("SlicePresentation")
+		presentation._update_world_label_focus()
+		check(not terminal.get_node("WorldLabel").visible and not battle.player.interaction_component._last_prompt.is_empty(), "Focused terminal uses HUD prompt instead of a label over the player")
+		battle.player.interaction_component.set_enabled(false)
+		presentation._update_world_label_focus()
+		check(terminal.get_node("WorldLabel").visible, "Disabled interaction restores label instead of silently losing both prompts")
+		battle.player.interaction_component.set_enabled(true)
+		battle.player.interaction_component._physics_process(0.0)
+		presentation._update_world_label_focus()
+		await _capture("terminal_guidance")
 		check(terminal.interact(battle.player, session).success, "Investigation starts at terminal")
 		battle.player.global_position += Vector3(4,0,0)
 		terminal._process(0.1)
 		check(terminal.investigation_remaining == 0.0 and not session.is_mission_completed(), "Walking away cancels investigation")
+		battle.player.interaction_component._physics_process(0.0)
+		presentation._update_world_label_focus()
+		check(terminal.get_node("WorldLabel").visible, "Walking away restores terminal world landmark")
 		battle.player.global_position = terminal.global_position
 		terminal.interact(battle.player, session)
 		terminal._process(8.1)
@@ -127,6 +153,9 @@ func _run() -> void:
 		workshop.show_section("Workshop")
 		check(_button(workshop.screen, "SECOND SORTIE / LOADOUT") != null, "Workshop exposes second sortie after upgrade")
 		await _capture("workshop")
+		check(SupplyService.transact("buy", "armor.bulwark_plate_01", 1, save_path).error == OK, "Survival credits can buy Heavy Armor")
+		workshop.hanger.hanger_ui.configure(profile.inventory, profile.loadout)
+		workshop.hanger.hanger_ui.refresh_owned_items()
 		for armor in profile.inventory.get_items():
 			if armor.definition_id == &"armor.bulwark_plate_01":
 				workshop.hanger._on_armor_selected(armor.instance_id)
@@ -137,7 +166,7 @@ func _run() -> void:
 			if button.text == "MISSION TERMINAL":
 				check(button.get_global_rect().end.y < 644.0, "Equipment details keep mission button above hub navigation")
 		var next := SortieSession.create_from_profile(profile.create_sortie_request(), profile)
-		check(next.inventory.capacity == 100.0, "Single weapon upgrade leaves carried capacity at 100kg")
+		check(next.inventory.capacity == profile.get_carried_capacity() and next.inventory.capacity == 35.0, "Weapon upgrade does not change field pack capacity")
 		check(is_equal_approx(next.get_weapon_damage(ContentDB.get_weapon(&"weapon.assault_rifle_01")), 22.0), "Next sortie AR damage increases from 20 to 22")
 		check(is_equal_approx(next.get_weapon_damage(ContentDB.get_weapon(&"weapon.smg_01")), ContentDB.get_weapon(&"weapon.smg_01").damage), "SMG damage remains unchanged")
 		check(ContentDB.get_weapon(&"weapon.assault_rifle_01").damage == 20.0, "Shared weapon definition remains at base damage")
@@ -172,7 +201,10 @@ func _capture(label: String) -> void:
 	if DisplayServer.get_name() == "headless": return
 	await get_tree().create_timer(0.75).timeout
 	await RenderingServer.frame_post_draw
-	get_viewport().get_texture().get_image().save_png("/tmp/first_mission_%s.png" % label)
+	var directory := OS.get_environment("BUNNY_EVIDENCE")
+	if directory.is_empty(): directory = ProjectSettings.globalize_path("user://first_mission_captures")
+	check(DirAccess.make_dir_recursive_absolute(directory) == OK, "Graphical evidence directory is writable")
+	check(get_viewport().get_texture().get_image().save_png(directory.path_join("first_mission_%s.png" % label)) == OK, "Graphical evidence saved: " + label)
 
 func _test_upgraded_hit(session: SortieSession) -> void:
 	check(session.activate(), "Upgraded next sortie activates")

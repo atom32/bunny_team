@@ -1,9 +1,30 @@
 extends Node
 var failures: Array[String] = []
 var path := "user://stash_probe_%s.json" % OS.get_process_id()
+var embedded_input := "--embedded-input" in OS.get_cmdline_user_args()
 
 func _ready() -> void:
-	_run.call_deferred()
+	_start.call_deferred()
+
+func _start() -> void:
+	if embedded_input:
+		# Render the real UI, but keep its test pointer independent of the Windows
+		# desktop cursor. Window.warp_mouse can be ignored by an unfocused window.
+		var surface := SubViewport.new()
+		surface.size = Vector2i(1280, 720)
+		surface.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+		surface.handle_input_locally = true
+		get_tree().root.add_child(surface)
+		var display := TextureRect.new()
+		display.texture = surface.get_texture()
+		display.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		get_tree().root.add_child(display)
+		reparent(surface)
+	_run()
+
+func _inject(event: InputEvent) -> void:
+	if embedded_input: get_viewport().push_input(event)
+	else: Input.parse_input_event(event)
 
 func _check(condition: bool, message: String) -> void:
 	print("PASS / " if condition else "FAIL / ", message)
@@ -32,54 +53,54 @@ func _drag(source: Control, target: Vector2, instance_id: String, grid: Warehous
 	if source is StashTile or source is StashSlotHandle:
 		ghost.free()
 		var start := source.global_position + source.size * 0.5
-		get_viewport().warp_mouse(start)
+		if not embedded_input: get_viewport().warp_mouse(start)
 		var press := InputEventMouseButton.new()
 		press.position = start
 		press.global_position = start
 		press.button_index = MOUSE_BUTTON_LEFT
 		press.pressed = true
-		Input.parse_input_event(press)
+		_inject(press)
 		await get_tree().process_frame
-		get_viewport().warp_mouse(start + Vector2(24, 0))
+		if not embedded_input: get_viewport().warp_mouse(start + Vector2(24, 0))
 		var drag_motion := InputEventMouseMotion.new()
 		drag_motion.position = start + Vector2(24, 0)
 		drag_motion.global_position = drag_motion.position
 		drag_motion.relative = Vector2(24, 0)
 		drag_motion.button_mask = MOUSE_BUTTON_MASK_LEFT
-		Input.parse_input_event(drag_motion)
+		_inject(drag_motion)
 		await get_tree().process_frame
 		_check(get_viewport().gui_is_dragging(), "Mouse press and movement start an actual item drag")
 		if rotated:
 			var key := InputEventKey.new()
 			key.keycode = KEY_R
 			key.pressed = true
-			Input.parse_input_event(key)
+			_inject(key)
 			await get_tree().process_frame
 			_check(get_viewport().gui_get_drag_data().rotated, "R rotates the item while dragging")
 	else:
 		source.force_drag(data, ghost)
 	await get_tree().process_frame
-	get_viewport().warp_mouse(target)
+	if not embedded_input: get_viewport().warp_mouse(target)
 	await get_tree().process_frame
 	var motion := InputEventMouseMotion.new()
 	motion.position = target
 	motion.global_position = target
 	motion.button_mask = MOUSE_BUTTON_MASK_LEFT
-	Input.parse_input_event(motion)
+	_inject(motion)
 	await get_tree().process_frame
 	var release := InputEventMouseButton.new()
 	release.position = target
 	release.global_position = target
 	release.button_index = MOUSE_BUTTON_LEFT
 	release.pressed = false
-	Input.parse_input_event(release)
+	_inject(release)
 	await get_tree().process_frame
 	await get_tree().process_frame
 
 func _run() -> void:
 	get_window().size = Vector2i(1280, 720)
 	GameLanguage.set_language("zh_CN", false)
-	var profile := ProfileRuntime.new_profile()
+	var profile := ArmoryFixture.grant(ProfileRuntime.new_profile(), false)
 	FirstMissionPreparation.equip_starter_kit(profile)
 	profile.inventory.add_item(ItemInstance.new(&"loot.salvage_core_01"))
 	var original := profile.inventory.to_dict()
@@ -97,6 +118,9 @@ func _run() -> void:
 	hideout.show_section("Hanger")
 	await get_tree().process_frame
 	var ui: HangerUI = hideout.hanger.hanger_ui
+	_check(not ui.warehouse_panel.visible, "Hanger opens with an unobstructed character preview")
+	ui.warehouse_button.pressed.emit()
+	_check(ui.warehouse_panel.visible, "Warehouse opens through its visible button")
 	var grid := ui.stash_grid
 	var pistol := _owned(profile, &"weapon.pistol_01")
 	var rifle := _owned(profile, &"weapon.assault_rifle_01")

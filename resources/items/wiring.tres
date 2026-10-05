@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/supply/wiring.svg" id="2"]
+[resource]
+script = ExtResource("1")
+icon = ExtResource("2")
+id = &"material.wiring"
+display_name = "Insulated Wiring"
+description = "Pair with ballistic fabric to obtain a field pack."
+weight = 0.2
+base_value = 80
+item_tags = PackedStringArray("loot", "material")
+stackable = true
+max_stack = 20

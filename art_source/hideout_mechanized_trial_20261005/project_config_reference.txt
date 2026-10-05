@@ -1,0 +1,10 @@
+config_version=5
+[application]
+config/name="Hideout Kitbash Trial - isolated"
+run/main_scene="res://trial.tscn"
+[display]
+window/size/viewport_width=1600
+window/size/viewport_height=900
+[rendering]
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.02,0.025,0.03,1)

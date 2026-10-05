@@ -1,0 +1,2969 @@
+{
+  "pattern": "avatar_sample|vrm_avatar|\\bFace\\b|J_Bip_|Character1_|CombatAvatarModel|CharacterRetarget|CHARACTER_SCENE|CHARACTER_ANIMATION|BODY_VISUAL_SCALE|Skeleton3D|AnimationTree|AnimationPlayer|Hand[LR]|Shoulder[LR]|Backpack|Hip[LR]|PrimaryGrip|SupportGrip|ReloadGrip|Muzzle|find_child\\(|get_node(?:_or_null)?\\(|\\$Character|person_id|camera.*(?:height|size|offset)|collision.*(?:size|radius|height)",
+  "scanned_files": [
+    "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3a2/capture.gd",
+    "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3a3/animation_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3a3/hand_modifier.gd",
+    "art_source/unitychan_battle_derivative/phase3a3/live_dodge_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3a3/presentation_adapter.gd",
+    "art_source/unitychan_battle_derivative/phase3a3/route_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3a3/switch_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3b/ambient_only_diagnostic.gdshader",
+    "art_source/unitychan_battle_derivative/phase3b/anime_surface.gdshader",
+    "art_source/unitychan_battle_derivative/phase3b/equipment_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3b/final_hanger_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3b/final_office_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3b/material_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3b/office_material_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3b/paired_capture.gd",
+    "art_source/unitychan_battle_derivative/phase3b/presentation_adapter.gd",
+    "art_source/unitychan_battle_derivative/phase3b/route_probe.gd",
+    "art_source/unitychan_battle_derivative/phase3b/soft_diffuse_trial.gdshader",
+    "art_source/unitychan_battle_derivative/phase3b/soft_no_ambient_diagnostic.gdshader",
+    "art_source/unitychan_battle_derivative/phase3b/zero_light_diagnostic.gdshader",
+    "art_source/unitychan_battle_derivative/presentation_probe.gd",
+    "project.godot",
+    "resources/ammo/556_ap.tres",
+    "resources/ammo/556_standard.tres",
+    "resources/ammo/rocket_standard.tres",
+    "resources/areas/prototype_arena.tres",
+    "resources/content/content_manifest.tres",
+    "resources/enemies/prototype_basic_enemy.tres",
+    "resources/enemies/prototype_heavy_enemy.tres",
+    "resources/equipment/heavy_armor.tres",
+    "resources/equipment/light_armor.tres",
+    "resources/equipment/standard_pack.tres",
+    "resources/equipment/thruster_pack.tres",
+    "resources/items/salvage_core.tres",
+    "resources/loot/prototype_basic_loot.tres",
+    "resources/loot/prototype_high_value_loot.tres",
+    "resources/materials/office_floor.tres",
+    "resources/materials/office_palette.tres",
+    "resources/materials/slice_palette.gdshader",
+    "resources/materials/weapon_palette.tres",
+    "resources/missions/prototype_combat.tres",
+    "resources/weapons/assault_rifle.tres",
+    "resources/weapons/rocket_launcher.tres",
+    "resources/weapons/smg.tres",
+    "scenes/areas/field_office_art.tscn",
+    "scenes/areas/prototype_arena.tscn",
+    "scenes/areas/prototype_field_office.tscn",
+    "scenes/battle/battle.tscn",
+    "scenes/battle/urban_arena.tscn",
+    "scenes/debug/enemy_character_debug.tscn",
+    "scenes/enemies/enemy.tscn",
+    "scenes/equipment/heavy_armor.tscn",
+    "scenes/equipment/light_armor.tscn",
+    "scenes/equipment/standard_pack.tscn",
+    "scenes/equipment/thruster_pack.tscn",
+    "scenes/hanger/hanger.tscn",
+    "scenes/player/player.tscn",
+    "scenes/player/ragdoll_proxy.tscn",
+    "scenes/result/result.tscn",
+    "scenes/ui/battle_hud.tscn",
+    "scenes/ui/hanger_ui.tscn",
+    "scenes/ui/result_ui.tscn",
+    "scenes/weapons/assault_rifle.tscn",
+    "scenes/weapons/rocket_launcher.tscn",
+    "scenes/weapons/rocket_projectile.tscn",
+    "scenes/weapons/smg.tscn",
+    "scenes/world/cover_obstacle.tscn",
+    "scenes/world/destructible_world_object.tscn",
+    "scenes/world/door.tscn",
+    "scenes/world/enemy_spawn_point.tscn",
+    "scenes/world/extraction_point.tscn",
+    "scenes/world/loot_pickup.tscn",
+    "scenes/world/loot_spawn_point.tscn",
+    "scenes/world/objective_interactable.tscn",
+    "scenes/world/objective_reach_zone.tscn",
+    "scenes/world/threat_event.tscn",
+    "scripts/battle/battle.gd",
+    "scripts/battle/urban_arena.gd",
+    "scripts/characters/humanoid_retarget_visual.gd",
+    "scripts/combat/combat_effects.gd",
+    "scripts/combat/damage_packet.gd",
+    "scripts/combat/ragdoll_proxy.gd",
+    "scripts/combat/rocket_projectile.gd",
+    "scripts/data/ammo_definition.gd",
+    "scripts/data/area_definition.gd",
+    "scripts/data/content_manifest.gd",
+    "scripts/data/enemy_definition.gd",
+    "scripts/data/equipment_definition.gd",
+    "scripts/data/inventory_state.gd",
+    "scripts/data/item_definition.gd",
+    "scripts/data/item_instance.gd",
+    "scripts/data/loadout_state.gd",
+    "scripts/data/loot_table_definition.gd",
+    "scripts/data/loot_table_entry.gd",
+    "scripts/data/mission_definition.gd",
+    "scripts/data/objective_definition.gd",
+    "scripts/data/objective_state.gd",
+    "scripts/data/profile_state.gd",
+    "scripts/data/sortie_outcome.gd",
+    "scripts/data/sortie_request.gd",
+    "scripts/data/sortie_session.gd",
+    "scripts/data/weapon_definition.gd",
+    "scripts/data/weapon_runtime_state.gd",
+    "scripts/debug/enemy_character_debug.gd",
+    "scripts/enemies/enemy_controller.gd",
+    "scripts/equipment/equipment_visual.gd",
+    "scripts/hanger/hanger.gd",
+    "scripts/player/character_combat_rig.gd",
+    "scripts/player/forward_axis_retarget_modifier.gd",
+    "scripts/player/interaction_component.gd",
+    "scripts/player/player_controller.gd",
+    "scripts/presentation/field_office_presentation.gd",
+    "scripts/presentation/model_palette.gd",
+    "scripts/result/result.gd",
+    "scripts/systems/area_loader.gd",
+    "scripts/systems/audio_director.gd",
+    "scripts/systems/content_db.gd",
+    "scripts/systems/enemy_spawn_service.gd",
+    "scripts/systems/game_state.gd",
+    "scripts/systems/loot_roll_service.gd",
+    "scripts/systems/profile_runtime.gd",
+    "scripts/systems/save_service.gd",
+    "scripts/systems/sortie_outcome_service.gd",
+    "scripts/systems/sortie_runtime.gd",
+    "scripts/systems/ui_factory.gd",
+    "scripts/systems/visual_factory.gd",
+    "scripts/ui/battle_hud.gd",
+    "scripts/ui/hanger_ui.gd",
+    "scripts/ui/result_ui.gd",
+    "scripts/weapons/weapon_visual.gd",
+    "scripts/world/cover_obstacle.gd",
+    "scripts/world/destructible_world_object.gd",
+    "scripts/world/door.gd",
+    "scripts/world/enemy_spawn_point.gd",
+    "scripts/world/extraction_point.gd",
+    "scripts/world/loot_pickup.gd",
+    "scripts/world/loot_spawn_point.gd",
+    "scripts/world/objective_interactable.gd",
+    "scripts/world/objective_reach_zone.gd",
+    "scripts/world/prototype_arena.gd",
+    "scripts/world/threat_event.gd",
+    "tests/acceptance_smoke.gd",
+    "tests/acceptance_smoke.tscn",
+    "tests/ammo_carried_foundation_test.gd",
+    "tests/ammo_carried_foundation_test.tscn",
+    "tests/ammo_runtime_test.gd",
+    "tests/ammo_runtime_test.tscn",
+    "tests/area_definition_test.gd",
+    "tests/area_definition_test.tscn",
+    "tests/carried_inventory_test.gd",
+    "tests/carried_inventory_test.tscn",
+    "tests/combat_tuning_baseline_test.gd",
+    "tests/combat_tuning_baseline_test.tscn",
+    "tests/content_inventory_test.gd",
+    "tests/content_inventory_test.tscn",
+    "tests/damage_packet_test.gd",
+    "tests/damage_packet_test.tscn",
+    "tests/destructible_world_object_test.gd",
+    "tests/destructible_world_object_test.tscn",
+    "tests/enemy_definition_test.gd",
+    "tests/enemy_definition_test.tscn",
+    "tests/enemy_spawn_test.gd",
+    "tests/enemy_spawn_test.tscn",
+    "tests/extraction_vertical_slice_test.gd",
+    "tests/extraction_vertical_slice_test.tscn",
+    "tests/loadout_decision_test.gd",
+    "tests/loadout_decision_test.tscn",
+    "tests/loadout_state_test.gd",
+    "tests/loadout_state_test.tscn",
+    "tests/loot_table_test.gd",
+    "tests/loot_table_test.tscn",
+    "tests/mission_flow_test.gd",
+    "tests/mission_flow_test.tscn",
+    "tests/mission_objective_test.gd",
+    "tests/mission_objective_test.tscn",
+    "tests/objective_world_test.gd",
+    "tests/objective_world_test.tscn",
+    "tests/presentation_gameplay_test.gd",
+    "tests/presentation_gameplay_test.tscn",
+    "tests/profile_state_test.gd",
+    "tests/profile_state_test.tscn",
+    "tests/result_return_test.gd",
+    "tests/result_return_test.tscn",
+    "tests/save_service_test.gd",
+    "tests/save_service_test.tscn",
+    "tests/sortie_failure_test.gd",
+    "tests/sortie_failure_test.tscn",
+    "tests/sortie_outcome_test.gd",
+    "tests/sortie_outcome_test.tscn",
+    "tests/sortie_session_test.gd",
+    "tests/sortie_session_test.tscn",
+    "tests/threat_escalation_test.gd",
+    "tests/threat_escalation_test.tscn",
+    "tests/visual_combat_acceptance.gd",
+    "tests/visual_combat_acceptance.tscn",
+    "tests/visual_enemy_acceptance.gd",
+    "tests/visual_enemy_acceptance.tscn",
+    "tests/visual_slice_assets_test.gd",
+    "tests/visual_slice_assets_test.tscn",
+    "tests/weapon_behavior_test.gd",
+    "tests/weapon_behavior_test.tscn",
+    "tests/weapon_switching_test.gd",
+    "tests/weapon_switching_test.tscn",
+    "tests/world_interaction_test.gd",
+    "tests/world_interaction_test.tscn",
+    "tests/world_traversal_test.gd",
+    "tests/world_traversal_test.tscn",
+    "tools/phase2b_route_probe.gd"
+  ],
+  "counts": {
+    "derivative/reference": 79,
+    "runtime_or_test": 379
+  },
+  "hits": [
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 4,
+      "text": "var skeleton: Skeleton3D"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 21,
+      "text": "camera.size = 2.1"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 38,
+      "text": "skeleton = model.find_child(\"Skeleton3D\", true, false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 39,
+      "text": "skeleton.modifier_callback_mode_process = Skeleton3D.MODIFIER_CALLBACK_MODE_PROCESS_MANUAL"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 51,
+      "text": "var marker = weapon.get_node(\"PrimaryGrip\" if side == \"Right\" else \"SupportGrip\")"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 61,
+      "text": "ik.set_root_bone_name(0, \"Character1_\" + side + \"Arm\")"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 62,
+      "text": "ik.set_middle_bone_name(0, \"Character1_\" + side + \"ForeArm\")"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 63,
+      "text": "ik.set_end_bone_name(0, \"Character1_\" + side + \"Hand\")"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 64,
+      "text": "ik.set_target_node(0, ik.get_path_to(target))"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 72,
+      "text": "var marker = weapon.get_node(\"PrimaryGrip\" if side == \"Right\" else \"SupportGrip\")"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 74,
+      "text": "row[\"muzzle_direction_error_deg\"] = rad_to_deg((-weapon.get_node(\"Muzzle\").global_basis.z.normalized()).angle_to(Vector3.FORWARD))"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a1/static_probe.gd",
+      "line": 87,
+      "text": "return skeleton.to_global(skeleton.get_bone_global_pose(skeleton.find_bone(\"Character1_\" + suffix)).origin)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 4,
+      "text": "var skeleton: Skeleton3D"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 21,
+      "text": "camera.size = 0.65"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 38,
+      "text": "skeleton = model.find_child(\"Skeleton3D\", true, false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 39,
+      "text": "skeleton.modifier_callback_mode_process = Skeleton3D.MODIFIER_CALLBACK_MODE_PROCESS_MANUAL"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 51,
+      "text": "var marker = weapon.get_node(\"PrimaryGrip\" if side == \"Right\" else \"SupportGrip\")"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 61,
+      "text": "ik.set_root_bone_name(0, \"Character1_\" + side + \"Arm\")"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 62,
+      "text": "ik.set_middle_bone_name(0, \"Character1_\" + side + \"ForeArm\")"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 63,
+      "text": "ik.set_end_bone_name(0, \"Character1_\" + side + \"Hand\")"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 64,
+      "text": "ik.set_target_node(0, ik.get_path_to(target))"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 72,
+      "text": "var marker = weapon.get_node(\"PrimaryGrip\" if side == \"Right\" else \"SupportGrip\")"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 74,
+      "text": "row[\"muzzle_direction_error_deg\"] = rad_to_deg((-weapon.get_node(\"Muzzle\").global_basis.z.normalized()).angle_to(Vector3.FORWARD))"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a2/inspection_probe.gd",
+      "line": 87,
+      "text": "return skeleton.to_global(skeleton.get_bone_global_pose(skeleton.find_bone(\"Character1_\" + suffix)).origin)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/animation_probe.gd",
+      "line": 46,
+      "text": "player.equip_weapon(root.get_node(\"ContentDB\").get_weapon(id))"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/animation_probe.gd",
+      "line": 90,
+      "text": "var sk: Skeleton3D=player.character_skeleton"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/animation_probe.gd",
+      "line": 93,
+      "text": "var pos:=sk.get_bone_global_pose(sk.find_bone(\"Character1_\"+suffix)).origin"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/hand_modifier.gd",
+      "line": 12,
+      "text": "var hand_name: String = \"Character1_\" + side + \"Hand\""
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/live_dodge_probe.gd",
+      "line": 43,
+      "text": "player.equip_weapon(root.get_node(\"ContentDB\").get_weapon(id))"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/live_dodge_probe.gd",
+      "line": 73,
+      "text": "print(\"LIVE_DODGE_CAPTURE_COMPLETE: real input, physics, AnimationTree; review required\")"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/live_dodge_probe.gd",
+      "line": 74,
+      "text": "root.get_node(\"AudioDirector\").shutdown_for_test()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/presentation_adapter.gd",
+      "line": 10,
+      "text": "func setup(driver: Skeleton3D, target: Skeleton3D, retarget: RetargetModifier3D) -> void:"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/route_probe.gd",
+      "line": 27,
+      "text": "var profile = root.get_node(\"ProfileRuntime\").get_profile()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/route_probe.gd",
+      "line": 54,
+      "text": "var door = battle.find_child(\"SouthAccessDoor\", true, false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/route_probe.gd",
+      "line": 90,
+      "text": "var terminal = battle.find_child(\"PrototypeTerminal\", true, false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/route_probe.gd",
+      "line": 94,
+      "text": "var active_session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/route_probe.gd",
+      "line": 112,
+      "text": "var session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/route_probe.gd",
+      "line": 199,
+      "text": "var session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/route_probe.gd",
+      "line": 208,
+      "text": "root.get_node(\"AudioDirector\").shutdown_for_test()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3a3/switch_probe.gd",
+      "line": 15,
+      "text": "p.equip_weapon(root.get_node(\"ContentDB\").get_weapon(ids[label]))"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/equipment_probe.gd",
+      "line": 14,
+      "text": "for name in [\"Chest\",\"ShoulderL\",\"ShoulderR\",\"Backpack\",\"HipL\",\"HipR\",\"HandL\",\"HandR\"]:"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/equipment_probe.gd",
+      "line": 15,
+      "text": "var socket=player.find_child(name,true,false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/equipment_probe.gd",
+      "line": 32,
+      "text": "camera.global_position=player.global_position+player.body_visual.global_basis.orthonormalized()*offset"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/equipment_probe.gd",
+      "line": 38,
+      "text": "root.get_node(\"AudioDirector\").shutdown_for_test();quit(0)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/final_hanger_probe.gd",
+      "line": 18,
+      "text": "root.get_node(\"AudioDirector\").shutdown_for_test();quit(0)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/final_office_probe.gd",
+      "line": 27,
+      "text": "var profile = root.get_node(\"ProfileRuntime\").get_profile()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/final_office_probe.gd",
+      "line": 54,
+      "text": "var door = battle.find_child(\"SouthAccessDoor\", true, false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/final_office_probe.gd",
+      "line": 90,
+      "text": "var terminal = battle.find_child(\"PrototypeTerminal\", true, false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/final_office_probe.gd",
+      "line": 95,
+      "text": "var active_session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/final_office_probe.gd",
+      "line": 113,
+      "text": "var session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/final_office_probe.gd",
+      "line": 200,
+      "text": "var session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/final_office_probe.gd",
+      "line": 209,
+      "text": "root.get_node(\"AudioDirector\").shutdown_for_test()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/material_probe.gd",
+      "line": 29,
+      "text": "var face: bool=mat.resource_name==\"Battle_face3_main\" or mat.resource_name==\"Battle_Unity2016_C_Skin\""
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/material_probe.gd",
+      "line": 31,
+      "text": "if (face and variant.begins_with(\"face_\")) or (hair and variant.begins_with(\"hair_\")):"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/material_probe.gd",
+      "line": 38,
+      "text": "if variant==\"combined045_055\" and (face or hair):"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/material_probe.gd",
+      "line": 39,
+      "text": "var factor:=0.45 if face else 0.55"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/material_probe.gd",
+      "line": 42,
+      "text": "if (face and variant==\"face_soft\") or (hair and variant==\"hair_soft\") or ((face or hair) and variant in [\"combined_soft\",\"zero_light_diagnostic\",\"soft_no_ambient_diagnostic\",\"ambient_only_diagnostic\"]):"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/material_probe.gd",
+      "line": 58,
+      "text": "root.get_node(\"AudioDirector\").shutdown_for_test()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/office_material_probe.gd",
+      "line": 27,
+      "text": "var profile = root.get_node(\"ProfileRuntime\").get_profile()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/office_material_probe.gd",
+      "line": 54,
+      "text": "var door = battle.find_child(\"SouthAccessDoor\", true, false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/office_material_probe.gd",
+      "line": 90,
+      "text": "var terminal = battle.find_child(\"PrototypeTerminal\", true, false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/office_material_probe.gd",
+      "line": 95,
+      "text": "var active_session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/office_material_probe.gd",
+      "line": 113,
+      "text": "var session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/office_material_probe.gd",
+      "line": 200,
+      "text": "var session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/office_material_probe.gd",
+      "line": 209,
+      "text": "root.get_node(\"AudioDirector\").shutdown_for_test()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/paired_capture.gd",
+      "line": 17,
+      "text": "for name in [\"Chest\",\"Backpack\"]:"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/paired_capture.gd",
+      "line": 18,
+      "text": "var node=player.find_child(name,true,false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/presentation_adapter.gd",
+      "line": 4,
+      "text": "func setup(driver: Skeleton3D,target: Skeleton3D,retarget: RetargetModifier3D) -> void:"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/presentation_adapter.gd",
+      "line": 30,
+      "text": "var socket=display_skeleton.find_child(name,true,false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/route_probe.gd",
+      "line": 27,
+      "text": "var profile = root.get_node(\"ProfileRuntime\").get_profile()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/route_probe.gd",
+      "line": 54,
+      "text": "var door = battle.find_child(\"SouthAccessDoor\", true, false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/route_probe.gd",
+      "line": 90,
+      "text": "var terminal = battle.find_child(\"PrototypeTerminal\", true, false)"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/route_probe.gd",
+      "line": 94,
+      "text": "var active_session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/route_probe.gd",
+      "line": 112,
+      "text": "var session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/route_probe.gd",
+      "line": 199,
+      "text": "var session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/phase3b/route_probe.gd",
+      "line": 208,
+      "text": "root.get_node(\"AudioDirector\").shutdown_for_test()"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/presentation_probe.gd",
+      "line": 12,
+      "text": "for socket in [\"Chest\", \"ShoulderL\", \"ShoulderR\", \"Backpack\", \"HipL\", \"HipR\", \"HandL\", \"HandR\"]:"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/presentation_probe.gd",
+      "line": 13,
+      "text": "report.mounts[socket] = player.find_child(socket, true, false) != null"
+    },
+    {
+      "scope": "derivative/reference",
+      "file": "art_source/unitychan_battle_derivative/presentation_probe.gd",
+      "line": 17,
+      "text": "player.equip_weapon(root.get_node(\"ContentDB\").get_weapon(id))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "resources/equipment/standard_pack.tres",
+      "line": 13,
+      "text": "item_tags = PackedStringArray(\"equipment\", \"backpack\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "resources/equipment/standard_pack.tres",
+      "line": 14,
+      "text": "socket_name = &\"Backpack\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "resources/equipment/thruster_pack.tres",
+      "line": 13,
+      "text": "item_tags = PackedStringArray(\"equipment\", \"backpack\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "resources/equipment/thruster_pack.tres",
+      "line": 14,
+      "text": "socket_name = &\"Backpack\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "resources/weapons/assault_rifle.tres",
+      "line": 14,
+      "text": "socket_name = &\"HandR\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "resources/weapons/assault_rifle.tres",
+      "line": 31,
+      "text": "muzzle_scale = 1.0"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "resources/weapons/rocket_launcher.tres",
+      "line": 14,
+      "text": "socket_name = &\"ShoulderR\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "resources/weapons/rocket_launcher.tres",
+      "line": 32,
+      "text": "muzzle_scale = 1.8"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "resources/weapons/smg.tres",
+      "line": 14,
+      "text": "socket_name = &\"HandR\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "resources/weapons/smg.tres",
+      "line": 30,
+      "text": "muzzle_scale = 0.72"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/areas/field_office_art.tscn",
+      "line": 333,
+      "text": "[sub_resource type=\"BoxMesh\" id=\"LockerHandle0_mesh\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/areas/field_office_art.tscn",
+      "line": 353,
+      "text": "[sub_resource type=\"BoxMesh\" id=\"LockerHandle1_mesh\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/areas/field_office_art.tscn",
+      "line": 1235,
+      "text": "[node name=\"LockerHandle0\" type=\"MeshInstance3D\" parent=\"Furnishings\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/areas/field_office_art.tscn",
+      "line": 1237,
+      "text": "mesh = SubResource(\"LockerHandle0_mesh\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/areas/field_office_art.tscn",
+      "line": 1260,
+      "text": "[node name=\"LockerHandle1\" type=\"MeshInstance3D\" parent=\"Furnishings\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/areas/field_office_art.tscn",
+      "line": 1262,
+      "text": "mesh = SubResource(\"LockerHandle1_mesh\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/assault_rifle.tscn",
+      "line": 20,
+      "text": "[node name=\"Muzzle\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/assault_rifle.tscn",
+      "line": 23,
+      "text": "[node name=\"PrimaryGrip\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/assault_rifle.tscn",
+      "line": 26,
+      "text": "[node name=\"SupportGrip\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/assault_rifle.tscn",
+      "line": 29,
+      "text": "[node name=\"ReloadGrip\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/rocket_launcher.tscn",
+      "line": 20,
+      "text": "[node name=\"Muzzle\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/rocket_launcher.tscn",
+      "line": 23,
+      "text": "[node name=\"PrimaryGrip\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/rocket_launcher.tscn",
+      "line": 26,
+      "text": "[node name=\"SupportGrip\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/rocket_launcher.tscn",
+      "line": 29,
+      "text": "[node name=\"ReloadGrip\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/smg.tscn",
+      "line": 20,
+      "text": "[node name=\"Muzzle\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/smg.tscn",
+      "line": 23,
+      "text": "[node name=\"PrimaryGrip\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/smg.tscn",
+      "line": 26,
+      "text": "[node name=\"SupportGrip\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scenes/weapons/smg.tscn",
+      "line": 29,
+      "text": "[node name=\"ReloadGrip\" type=\"Marker3D\" parent=\".\"]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/battle/battle.gd",
+      "line": 101,
+      "text": "camera.size = 24.5"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 4,
+      "text": "const CHARACTER_SCENE := preload(\"res://assets/characters/vrm_avatar/avatar_sample_a.glb\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 13,
+      "text": "&\"J_Bip_C_Hips\": &\"Character1_Hips\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 14,
+      "text": "&\"J_Bip_C_Spine\": &\"Character1_Spine\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 15,
+      "text": "&\"J_Bip_C_Chest\": &\"Character1_Spine1\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 16,
+      "text": "&\"J_Bip_C_UpperChest\": &\"Character1_Spine2\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 17,
+      "text": "&\"J_Bip_C_Neck\": &\"Character1_Neck\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 18,
+      "text": "&\"J_Bip_C_Head\": &\"Character1_Head\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 19,
+      "text": "&\"J_Bip_L_Shoulder\": &\"Character1_LeftShoulder\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 20,
+      "text": "&\"J_Bip_L_UpperArm\": &\"Character1_LeftArm\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 21,
+      "text": "&\"J_Bip_L_LowerArm\": &\"Character1_LeftForeArm\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 22,
+      "text": "&\"J_Bip_L_Hand\": &\"Character1_LeftHand\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 23,
+      "text": "&\"J_Bip_R_Shoulder\": &\"Character1_RightShoulder\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 24,
+      "text": "&\"J_Bip_R_UpperArm\": &\"Character1_RightArm\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 25,
+      "text": "&\"J_Bip_R_LowerArm\": &\"Character1_RightForeArm\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 26,
+      "text": "&\"J_Bip_R_Hand\": &\"Character1_RightHand\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 27,
+      "text": "&\"J_Bip_L_UpperLeg\": &\"Character1_LeftUpLeg\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 28,
+      "text": "&\"J_Bip_L_LowerLeg\": &\"Character1_LeftLeg\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 29,
+      "text": "&\"J_Bip_L_Foot\": &\"Character1_LeftFoot\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 30,
+      "text": "&\"J_Bip_L_ToeBase\": &\"Character1_LeftToeBase\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 31,
+      "text": "&\"J_Bip_R_UpperLeg\": &\"Character1_RightUpLeg\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 32,
+      "text": "&\"J_Bip_R_LowerLeg\": &\"Character1_RightLeg\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 33,
+      "text": "&\"J_Bip_R_Foot\": &\"Character1_RightFoot\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 34,
+      "text": "&\"J_Bip_R_ToeBase\": &\"Character1_RightToeBase\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 38,
+      "text": "var animation_source_skeleton: Skeleton3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 40,
+      "text": "var character_skeleton: Skeleton3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 41,
+      "text": "var animation_player: AnimationPlayer"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 42,
+      "text": "var animation_tree: AnimationTree"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 102,
+      "text": "func get_muzzle_position() -> Vector3:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 103,
+      "text": "return combat_rig.get_muzzle_position() if combat_rig else global_position + Vector3.UP * 1.2"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 106,
+      "text": "func get_muzzle_direction() -> Vector3:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 107,
+      "text": "return combat_rig.get_muzzle_direction() if combat_rig else -global_basis.z.normalized()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 122,
+      "text": "animation_source_skeleton = animation_source_model.find_child(\"Skeleton3D\", true, false) as Skeleton3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 124,
+      "text": "character_model = CHARACTER_SCENE.instantiate() as Node3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 126,
+      "text": "var bundled_weapon := character_model.find_child(\"Wep\", true, false)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 129,
+      "text": "character_skeleton = character_model.find_child(\"Skeleton3D\", true, false) as Skeleton3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 168,
+      "text": "func _build_animation_player(source_skeleton: Skeleton3D) -> AnimationPlayer:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 169,
+      "text": "var result := AnimationPlayer.new()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 170,
+      "text": "result.name = \"EnemyAnimationPlayer\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 177,
+      "text": "var imported_player := animation_root.find_child(\"AnimationPlayer\", true, false) as AnimationPlayer"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 192,
+      "text": "animation_tree = AnimationTree.new()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 193,
+      "text": "animation_tree.name = \"EnemyAnimationTree\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 241,
+      "text": "func _create_shared_bone_profile(source: Skeleton3D, target: Skeleton3D) -> SkeletonProfile:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 254,
+      "text": "func _rename_character_bones(target: Skeleton3D) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 282,
+      "text": "func _retarget_animation_tracks(animation: Animation, source_skeleton: Skeleton3D) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 300,
+      "text": "if mesh_instance.name == \"Face\":"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 329,
+      "text": "&\"Character1_Spine2\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/characters/humanoid_retarget_visual.gd",
+      "line": 336,
+      "text": "&\"Character1_Head\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/combat/combat_effects.gd",
+      "line": 52,
+      "text": "static func muzzle_flash("
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/combat/combat_effects.gd",
+      "line": 60,
+      "text": "root.name = \"MuzzleFlash\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/combat/ragdoll_proxy.gd",
+      "line": 57,
+      "text": "_add_joint(\"ShoulderL\", Vector3(-0.33, 1.45, 0.0), bodies.Torso, bodies.ArmL)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/combat/ragdoll_proxy.gd",
+      "line": 58,
+      "text": "_add_joint(\"ShoulderR\", Vector3(0.33, 1.45, 0.0), bodies.Torso, bodies.ArmR)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/combat/ragdoll_proxy.gd",
+      "line": 59,
+      "text": "_add_joint(\"HipL\", Vector3(-0.18, 0.85, 0.0), bodies.Torso, bodies.LegL)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/combat/ragdoll_proxy.gd",
+      "line": 60,
+      "text": "_add_joint(\"HipR\", Vector3(0.18, 0.85, 0.0), bodies.Torso, bodies.LegR)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/data/loadout_state.gd",
+      "line": 7,
+      "text": "const SLOT_BACKPACK := &\"backpack\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/data/loadout_state.gd",
+      "line": 9,
+      "text": "const SLOT_IDS := [SLOT_WEAPON_PRIMARY, SLOT_WEAPON_SECONDARY, SLOT_ARMOR, SLOT_BACKPACK]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/data/loadout_state.gd",
+      "line": 100,
+      "text": "SLOT_BACKPACK:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/data/loadout_state.gd",
+      "line": 101,
+      "text": "return definition is EquipmentDefinition and not definition is WeaponDefinition and definition.has_tag(&\"backpack\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/data/profile_state.gd",
+      "line": 10,
+      "text": "LoadoutState.SLOT_BACKPACK: &\"equipment.field_pack_01\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/data/profile_state.gd",
+      "line": 29,
+      "text": "if definition.has_tag(&\"weapon\") or definition.has_tag(&\"armor\") or definition.has_tag(&\"backpack\"):"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/data/weapon_definition.gd",
+      "line": 21,
+      "text": "@export var muzzle_scale: float = 1.0"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/debug/enemy_character_debug.gd",
+      "line": 94,
+      "text": "for line_name in [&\"Forward\", &\"Movement\", &\"Aim\", &\"Muzzle\"]:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/debug/enemy_character_debug.gd",
+      "line": 136,
+      "text": "legend.text = \"GREEN Forward   CYAN Movement   YELLOW Aim   RED Muzzle\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/debug/enemy_character_debug.gd",
+      "line": 215,
+      "text": "direction_lines[&\"Muzzle\"],"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/debug/enemy_character_debug.gd",
+      "line": 216,
+      "text": "humanoid_visual.get_muzzle_position(),"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/debug/enemy_character_debug.gd",
+      "line": 217,
+      "text": "humanoid_visual.get_muzzle_direction(),"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/debug/enemy_character_debug.gd",
+      "line": 240,
+      "text": "\"State: %s\\nCharacter Forward: %s\\nMovement Direction: %s\\nAim Direction: %s\\nWeapon Muzzle Direction: %s\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/debug/enemy_character_debug.gd",
+      "line": 246,
+      "text": "_vector_text(humanoid_visual.get_muzzle_direction()),"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/enemies/enemy_controller.gd",
+      "line": 233,
+      "text": "var from := humanoid_visual.get_muzzle_position()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/enemies/enemy_controller.gd",
+      "line": 240,
+      "text": "from = humanoid_visual.get_muzzle_position()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/enemies/enemy_controller.gd",
+      "line": 241,
+      "text": "var shot_direction := humanoid_visual.get_muzzle_direction()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/enemies/enemy_controller.gd",
+      "line": 250,
+      "text": "CombatEffects.muzzle_flash(get_tree().current_scene, from, shot_direction, Color(\"ff3658\"), 0.68)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/equipment/equipment_visual.gd",
+      "line": 38,
+      "text": "VisualFactory.box(self, Vector3(0.42, 0.13, 0.08), Vector3(0.0, 0.36, 0.01), Color(\"75d6dd\"), \"Handle\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/hanger/hanger.gd",
+      "line": 27,
+      "text": "hanger_ui.backpack_selected.connect(_on_backpack_selected)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/hanger/hanger.gd",
+      "line": 129,
+      "text": "func _on_backpack_selected(instance_id: String) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/hanger/hanger.gd",
+      "line": 133,
+      "text": "var changed := profile.loadout.unequip(LoadoutState.SLOT_BACKPACK) if instance_id.is_empty() else profile.loadout.equip(LoadoutState.SLOT_BACKPACK, instance_id, profile.inventory)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 4,
+      "text": "const RIGHT_ARM := &\"Character1_RightArm\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 5,
+      "text": "const RIGHT_FOREARM := &\"Character1_RightForeArm\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 6,
+      "text": "const RIGHT_HAND := &\"Character1_RightHand\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 7,
+      "text": "const LEFT_ARM := &\"Character1_LeftArm\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 8,
+      "text": "const LEFT_FOREARM := &\"Character1_LeftForeArm\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 9,
+      "text": "const LEFT_HAND := &\"Character1_LeftHand\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 10,
+      "text": "const SPINE := &\"Character1_Spine2\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 11,
+      "text": "const HEAD := &\"Character1_Head\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 22,
+      "text": "var driver_skeleton: Skeleton3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 23,
+      "text": "var skeleton: Skeleton3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 24,
+      "text": "var display_skeleton: Skeleton3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 32,
+      "text": "var muzzle: Marker3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 52,
+      "text": "func setup(driver_skeleton: Skeleton3D, target_skeleton: Skeleton3D, retarget: RetargetModifier3D) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 56,
+      "text": "self.driver_skeleton.modifier_callback_mode_process = Skeleton3D.MODIFIER_CALLBACK_MODE_PROCESS_MANUAL"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 57,
+      "text": "display_skeleton.modifier_callback_mode_process = Skeleton3D.MODIFIER_CALLBACK_MODE_PROCESS_MANUAL"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 70,
+      "text": "primary_grip = equipped_weapon.find_child(\"PrimaryGrip\", true, false) as Marker3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 71,
+      "text": "support_grip = equipped_weapon.find_child(\"SupportGrip\", true, false) as Marker3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 72,
+      "text": "reload_grip = equipped_weapon.find_child(\"ReloadGrip\", true, false) as Marker3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 73,
+      "text": "muzzle = equipped_weapon.find_child(\"Muzzle\", true, false) as Marker3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 74,
+      "text": "var is_complete := primary_grip != null and support_grip != null and reload_grip != null and muzzle != null"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 82,
+      "text": "# has_weapon() stays false: gameplay keeps its original muzzle/reload path."
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 85,
+      "text": "primary_grip = weapon.get_node(\"PrimaryGrip\") as Marker3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 86,
+      "text": "support_grip = weapon.get_node(\"SupportGrip\") as Marker3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 87,
+      "text": "reload_grip = weapon.get_node(\"ReloadGrip\") as Marker3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 101,
+      "text": "muzzle = null"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 225,
+      "text": "return is_instance_valid(equipped_weapon) and primary_grip != null and support_grip != null and muzzle != null"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 228,
+      "text": "func get_muzzle_position() -> Vector3:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 229,
+      "text": "return muzzle.global_position if muzzle else global_position"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 232,
+      "text": "func get_muzzle_direction() -> Vector3:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 233,
+      "text": "return -muzzle.global_basis.z.normalized() if muzzle else -global_basis.z.normalized()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/character_combat_rig.gd",
+      "line": 310,
+      "text": "modifier.set_target_node(0, modifier.get_path_to(target))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/forward_axis_retarget_modifier.gd",
+      "line": 20,
+      "text": "func _skeleton_changed(_old_skeleton: Skeleton3D, _new_skeleton: Skeleton3D) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/forward_axis_retarget_modifier.gd",
+      "line": 41,
+      "text": "if target.get_bone_name(bone_index) == &\"Character1_LeftFoot\":"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/interaction_component.gd",
+      "line": 32,
+      "text": "func _unhandled_input(event: InputEvent) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/interaction_component.gd",
+      "line": 35,
+      "text": "get_viewport().set_input_as_handled()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/interaction_component.gd",
+      "line": 55,
+      "text": "set_process_unhandled_input(value)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 12,
+      "text": "const CHARACTER_SCENE := preload(\"res://assets/characters/vrm_avatar/avatar_sample_a.glb\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 13,
+      "text": "const CHARACTER_ANIMATION_SOURCE_SCENE := preload(\"res://assets/characters/unitychan_battle/animations/idle.fbx\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 14,
+      "text": "const BODY_VISUAL_SCALE := Vector3.ONE"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 15,
+      "text": "const CHARACTER_ANIMATION_SCENES := {"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 23,
+      "text": "&\"J_Bip_C_Hips\": &\"Character1_Hips\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 24,
+      "text": "&\"J_Bip_C_Spine\": &\"Character1_Spine\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 25,
+      "text": "&\"J_Bip_C_Chest\": &\"Character1_Spine1\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 26,
+      "text": "&\"J_Bip_C_UpperChest\": &\"Character1_Spine2\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 27,
+      "text": "&\"J_Bip_C_Neck\": &\"Character1_Neck\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 28,
+      "text": "&\"J_Bip_C_Head\": &\"Character1_Head\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 29,
+      "text": "&\"J_Bip_L_Shoulder\": &\"Character1_LeftShoulder\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 30,
+      "text": "&\"J_Bip_L_UpperArm\": &\"Character1_LeftArm\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 31,
+      "text": "&\"J_Bip_L_LowerArm\": &\"Character1_LeftForeArm\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 32,
+      "text": "&\"J_Bip_L_Hand\": &\"Character1_LeftHand\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 33,
+      "text": "&\"J_Bip_R_Shoulder\": &\"Character1_RightShoulder\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 34,
+      "text": "&\"J_Bip_R_UpperArm\": &\"Character1_RightArm\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 35,
+      "text": "&\"J_Bip_R_LowerArm\": &\"Character1_RightForeArm\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 36,
+      "text": "&\"J_Bip_R_Hand\": &\"Character1_RightHand\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 37,
+      "text": "&\"J_Bip_L_UpperLeg\": &\"Character1_LeftUpLeg\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 38,
+      "text": "&\"J_Bip_L_LowerLeg\": &\"Character1_LeftLeg\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 39,
+      "text": "&\"J_Bip_L_Foot\": &\"Character1_LeftFoot\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 40,
+      "text": "&\"J_Bip_L_ToeBase\": &\"Character1_LeftToeBase\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 41,
+      "text": "&\"J_Bip_R_UpperLeg\": &\"Character1_RightUpLeg\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 42,
+      "text": "&\"J_Bip_R_LowerLeg\": &\"Character1_RightLeg\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 43,
+      "text": "&\"J_Bip_R_Foot\": &\"Character1_RightFoot\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 44,
+      "text": "&\"J_Bip_R_ToeBase\": &\"Character1_RightToeBase\","
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 68,
+      "text": "var backpack_instance: ItemInstance"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 71,
+      "text": "var backpack_data: EquipmentDefinition"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 74,
+      "text": "var animation_source_skeleton: Skeleton3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 75,
+      "text": "var animation_player: AnimationPlayer"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 76,
+      "text": "var animation_tree: AnimationTree"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 78,
+      "text": "var character_skeleton: Skeleton3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 146,
+      "text": "func _unhandled_input(event: InputEvent) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 188,
+      "text": "equip_backpack_instance(loadout.get_item(LoadoutState.SLOT_BACKPACK, inventory))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 278,
+      "text": "func equip_backpack_instance(item: ItemInstance) -> bool:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 279,
+      "text": "var backpack := ContentDB.get_item(item.definition_id, false) as EquipmentDefinition if item else null"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 280,
+      "text": "if not backpack or not backpack.has_tag(&\"backpack\"):"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 282,
+      "text": "_equip_backpack_definition(backpack)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 283,
+      "text": "backpack_instance = item"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 310,
+      "text": "func equip_backpack(backpack: EquipmentDefinition) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 311,
+      "text": "backpack_instance = null"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 312,
+      "text": "_equip_backpack_definition(backpack)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 315,
+      "text": "func _equip_backpack_definition(backpack: EquipmentDefinition) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 316,
+      "text": "backpack_data = backpack"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 317,
+      "text": "_clear_socket(backpack.socket_name)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 318,
+      "text": "_attach_equipment(backpack)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 421,
+      "text": "body_visual.scale = BODY_VISUAL_SCALE"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 425,
+      "text": "animation_source_model = CHARACTER_ANIMATION_SOURCE_SCENE.instantiate() as Node3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 428,
+      "text": "animation_source_skeleton = animation_source_model.find_child(\"Skeleton3D\", true, false) as Skeleton3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 430,
+      "text": "character_model = CHARACTER_SCENE.instantiate() as Node3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 431,
+      "text": "character_model.name = \"CombatAvatarModel\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 432,
+      "text": "var bundled_melee_weapon := character_model.find_child(\"Wep\", true, false)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 435,
+      "text": "character_skeleton = character_model.find_child(\"Skeleton3D\", true, false) as Skeleton3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 444,
+      "text": "retarget_modifier.name = \"CharacterRetarget\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 455,
+      "text": "animation_player = _build_character_animation_player(animation_source_skeleton)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 471,
+      "text": "_add_bone_socket(character_skeleton, \"Chest\", &\"Character1_Spine2\", Vector3(0.0, 0.0, -0.16))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 472,
+      "text": "_add_bone_socket(character_skeleton, \"ShoulderL\", &\"Character1_LeftShoulder\", Vector3.ZERO)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 473,
+      "text": "_add_bone_socket(character_skeleton, \"ShoulderR\", &\"Character1_Spine2\", Vector3(-0.2, 0.02, -0.11), Vector3(78.0, 0.0, -12.0))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 474,
+      "text": "_add_bone_socket(character_skeleton, \"Backpack\", &\"Character1_Spine2\", Vector3(0.0, -0.06, 0.16))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 475,
+      "text": "_add_bone_socket(character_skeleton, \"HipL\", &\"Character1_Hips\", Vector3(-0.12, -0.05, 0.0))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 476,
+      "text": "_add_bone_socket(character_skeleton, \"HipR\", &\"Character1_Hips\", Vector3(0.12, -0.05, 0.0))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 477,
+      "text": "_add_bone_socket(character_skeleton, \"HandL\", &\"Character1_LeftHand\", Vector3.ZERO)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 478,
+      "text": "_add_bone_socket(character_skeleton, \"HandR\", &\"Character1_Spine2\", Vector3(0.18, -0.08, -0.12), Vector3(58.0, -28.0, 0.0))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 481,
+      "text": "_add_socket(equipment_root, \"ShoulderL\", Vector3(-0.38, 1.48, -0.01))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 482,
+      "text": "_add_socket(equipment_root, \"ShoulderR\", Vector3(0.38, 1.48, -0.01))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 483,
+      "text": "_add_socket(equipment_root, \"Backpack\", Vector3(0.0, 1.27, 0.2))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 484,
+      "text": "_add_socket(equipment_root, \"HipL\", Vector3(-0.23, 0.91, 0.0))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 485,
+      "text": "_add_socket(equipment_root, \"HipR\", Vector3(0.23, 0.91, 0.0))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 486,
+      "text": "_add_socket(weapon_root, \"HandL\", Vector3(-0.42, 1.13, -0.15))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 487,
+      "text": "_add_socket(weapon_root, \"HandR\", Vector3(0.42, 1.13, -0.15))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 488,
+      "text": "var shoulder_socket := _find_socket(&\"ShoulderR\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 505,
+      "text": "parent: Skeleton3D,"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 533,
+      "text": "func _create_shared_bone_profile(source: Skeleton3D, target: Skeleton3D) -> SkeletonProfile:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 546,
+      "text": "func _rename_character_bones(target: Skeleton3D) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 563,
+      "text": "func _build_character_animation_player(skeleton: Skeleton3D) -> AnimationPlayer:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 564,
+      "text": "var player := AnimationPlayer.new()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 565,
+      "text": "player.name = \"CharacterAnimationPlayer\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 569,
+      "text": "for animation_name: StringName in CHARACTER_ANIMATION_SCENES:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 570,
+      "text": "var animation_scene: PackedScene = CHARACTER_ANIMATION_SCENES[animation_name]"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 572,
+      "text": "var imported_player := animation_root.find_child(\"AnimationPlayer\", true, false) as AnimationPlayer"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 587,
+      "text": "animation_tree = AnimationTree.new()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 588,
+      "text": "animation_tree.name = \"AnimationTree\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 630,
+      "text": "func _retarget_animation_tracks(animation: Animation, skeleton: Skeleton3D) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 666,
+      "text": "elif data.socket_name == &\"Backpack\":"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 674,
+      "text": "return body_visual.find_child(String(socket_name), true, false) as Node3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 689,
+      "text": "_clear_socket(&\"HandL\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 690,
+      "text": "_clear_socket(&\"HandR\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 691,
+      "text": "_clear_socket(&\"ShoulderR\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 741,
+      "text": "body_visual.scale = BODY_VISUAL_SCALE * Vector3(0.9, 1.06, 0.9)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 743,
+      "text": "dodge_tween.tween_property(body_visual, \"scale\", BODY_VISUAL_SCALE, dodge_duration)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 753,
+      "text": "if backpack_data:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 754,
+      "text": "movement_bonus += backpack_data.movement_modifier"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 796,
+      "text": "var muzzle_position := combat_rig.get_muzzle_position() if combat_rig and combat_rig.has_weapon() else global_position + Vector3.UP * 1.25 + aim_direction * 0.55"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 797,
+      "text": "var shot_direction := _shot_direction_from(muzzle_position)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 799,
+      "text": "CombatEffects.muzzle_flash(get_tree().current_scene, muzzle_position, shot_direction, weapon_data.tracer_color, weapon_data.muzzle_scale)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 804,
+      "text": "rocket.global_position = muzzle_position"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 807,
+      "text": "_fire_hitscan(muzzle_position, shot_direction)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/player/player_controller.gd",
+      "line": 891,
+      "text": "var collision := get_node(\"Hitbox\") as CollisionShape3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/presentation/field_office_presentation.gd",
+      "line": 21,
+      "text": "var environment := lane.get_parent().get_parent().get_node_or_null(\"Environment\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/presentation/field_office_presentation.gd",
+      "line": 23,
+      "text": "var counter := environment.find_child(\"CourtyardCover\", true, false) as StaticBody3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/presentation/field_office_presentation.gd",
+      "line": 29,
+      "text": "var door := lane.get_node_or_null(\"SouthAccessDoor/DoorLeaf/DoorBody/DoorMesh\") as MeshInstance3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/presentation/field_office_presentation.gd",
+      "line": 39,
+      "text": "var cover := lane.get_node_or_null(cover_name + \"/CoverMesh\") as MeshInstance3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/presentation/field_office_presentation.gd",
+      "line": 42,
+      "text": "var barrier := lane.get_node_or_null(\"DestructibleBarrier/BarrierMesh\") as MeshInstance3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/ui/hanger_ui.gd",
+      "line": 7,
+      "text": "signal backpack_selected(instance_id: String)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/ui/hanger_ui.gd",
+      "line": 13,
+      "text": "var backpack_option: OptionButton"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/ui/hanger_ui.gd",
+      "line": 69,
+      "text": "backpack_option = _add_inventory_option(content, \"BACKPACK\", &\"backpack\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/ui/hanger_ui.gd",
+      "line": 97,
+      "text": "backpack_option.item_selected.connect(func(index: int) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/ui/hanger_ui.gd",
+      "line": 99,
+      "text": "backpack_selected.emit(_instance_id_at(backpack_option, index))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/ui/hanger_ui.gd",
+      "line": 109,
+      "text": "_select_instance(backpack_option, loadout.get_equipped_instance_id(LoadoutState.SLOT_BACKPACK))"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/ui/hanger_ui.gd",
+      "line": 230,
+      "text": "LoadoutState.SLOT_BACKPACK:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/ui/hanger_ui.gd",
+      "line": 231,
+      "text": "return \"BACKPACK\""
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 3,
+      "text": "var muzzle: Marker3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 4,
+      "text": "var muzzle_flash: MeshInstance3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 7,
+      "text": "muzzle = $Muzzle"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 8,
+      "text": "muzzle_flash = VisualFactory.sphere(muzzle, 0.13, Vector3.ZERO, Color(\"fff3a8\"), \"MuzzleFlash\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 9,
+      "text": "muzzle_flash.material_override = VisualFactory.material(Color(\"fff3a8\"), 0.0, 0.1, Color(\"ffb72d\"), 5.0)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 10,
+      "text": "muzzle_flash.visible = false"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 12,
+      "text": "func get_muzzle_position() -> Vector3:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 13,
+      "text": "return muzzle.global_position if muzzle else global_position"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 16,
+      "text": "if not muzzle_flash:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 18,
+      "text": "muzzle_flash.visible = true"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 19,
+      "text": "muzzle_flash.scale = Vector3.ONE"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 21,
+      "text": "tween.tween_property(muzzle_flash, \"scale\", Vector3(0.15, 0.15, 0.15), 0.055)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/weapons/weapon_visual.gd",
+      "line": 22,
+      "text": "tween.tween_callback(func() -> void: muzzle_flash.visible = false)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/world/destructible_world_object.gd",
+      "line": 18,
+      "text": "collision_shape = get_node(\"CollisionShape3D\") as CollisionShape3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/world/destructible_world_object.gd",
+      "line": 19,
+      "text": "visual = get_node(\"BarrierMesh\") as MeshInstance3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/world/prototype_arena.gd",
+      "line": 9,
+      "text": "var terminal := find_child(\"PrototypeTerminal\", true, false) as ObjectiveInteractable"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "scripts/world/prototype_arena.gd",
+      "line": 17,
+      "text": "var threat_event := find_child(\"LocalAlertEvent\", true, false) as ThreatEvent"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 77,
+      "text": "check((ContentDB.get_item(&\"equipment.field_pack_01\", false) as EquipmentDefinition) != null, \"backpack definition is registered\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 97,
+      "text": "var player := hanger.find_child(\"Player\", true, false) as PlayerController"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 98,
+      "text": "var ui := hanger.find_child(\"HangerUI\", true, false) as HangerUI"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 108,
+      "text": "check(player.backpack_instance == profile.loadout.get_item(LoadoutState.SLOT_BACKPACK, profile.inventory), \"hanger preview equips the selected owned backpack instance\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 109,
+      "text": "check(player.find_child(\"CombatAvatarModel\", true, false) != null, \"hanger uses the complete imported VRM avatar\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 111,
+      "text": "check(player.find_child(\"CharacterRetarget\", true, false) != null, \"locomotion source retargets onto the VRM humanoid rig\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 113,
+      "text": "check(player.animation_tree != null and player.animation_tree.active, \"locomotion runs through an active AnimationTree\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 142,
+      "text": "var face := player.find_child(\"Face\", true, false) as MeshInstance3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 143,
+      "text": "check(face != null and face.mesh.get_aabb().size.y > 0.2, \"avatar keeps its complete authored face mesh\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 145,
+      "text": "player.equip_backpack(ContentDB.get_item(&\"equipment.thruster_pack_01\") as EquipmentDefinition)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 148,
+      "text": "check(_socket_contains(player, &\"Backpack\", &\"equipment.thruster_pack_01\"), \"backpack selection replaces the back model\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 183,
+      "text": "var player := battle.find_child(\"Player\", true, false) as PlayerController"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 187,
+      "text": "var navigation := battle.find_child(\"NavigationRegion3D\", true, false) as NavigationRegion3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 189,
+      "text": "var extraction_point := battle.find_child(\"ExtractionPoint\", true, false) as ExtractionPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 190,
+      "text": "var objective_terminal := battle.find_child(\"PrototypeTerminal\", true, false) as ObjectiveInteractable"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 191,
+      "text": "var objective_reach_zone := battle.find_child(\"PrototypeSurveyZone\", true, false) as ObjectiveReachZone"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 192,
+      "text": "var authored_door := battle.find_child(\"SouthAccessDoor\", true, false) as Door"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 193,
+      "text": "var interior_lane := battle.find_child(\"InteriorCombatLane\", true, false) as Node3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 194,
+      "text": "var interior_cover := battle.find_child(\"InteriorEntryCover\", true, false) as CoverObstacle"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 195,
+      "text": "var destructible_barrier := battle.find_child(\"DestructibleBarrier\", true, false) as DestructibleWorldObject"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 196,
+      "text": "var threat_event := battle.find_child(\"LocalAlertEvent\", true, false) as ThreatEvent"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 203,
+      "text": "check(battle.find_child(\"AreaRoot\", false, false) != null, \"Battle keeps runtime orchestration outside the loaded AreaRoot\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 299,
+      "text": "check(battle.find_child(\"HighAngleCamera\", true, false) != null, \"battle uses a high-angle follow camera\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 312,
+      "text": "var door_body := authored_door.find_child(\"DoorBody\", true, false) as StaticBody3D if authored_door else null"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 318,
+      "text": "check(enemy_visual.character_skeleton != null and enemy_visual.character_skeleton.get_bone_count() >= 90, \"enemy uses a complete humanoid Skeleton3D\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 319,
+      "text": "check(enemy_visual.retarget_modifier != null and enemy_visual.find_child(\"ForwardAxisRetarget\", true, false) != null, \"enemy locomotion uses retarget and forward-axis correction\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 320,
+      "text": "check(enemy_visual.animation_tree != null and enemy_visual.animation_tree.active, \"enemy locomotion runs through an active AnimationTree\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 335,
+      "text": "var muzzle_to_aim := enemy_visual.get_muzzle_position().direction_to(enemy_aim_point)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 336,
+      "text": "check(enemy_visual.get_muzzle_direction().dot(muzzle_to_aim) > 0.97, \"enemy muzzle direction matches its combat aim ray\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 344,
+      "text": "check(battle.camera.size <= 25.0, \"camera framing keeps combatants readable\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 398,
+      "text": "check(enemy.find_child(\"EnemyMarker\", true, false) != null, \"enemies have red combat readability markers\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 407,
+      "text": "check(battle.find_child(\"RagdollProxy\", true, false) != null, \"enemy death creates a physics ragdoll\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 431,
+      "text": "var high_value_spawn := battle.area_root.find_child(\"HighValueLootSpawn\", true, false) as LootSpawnPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 489,
+      "text": "check(debug_page.find_child(\"DebugCamera\", true, false) != null, \"enemy debug page provides fixed character inspection views\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 490,
+      "text": "check(debug_page.find_child(\"DirectionInfo\", true, false) != null, \"enemy debug page reports forward, movement, aim, and muzzle directions\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 496,
+      "text": "check(debug_page.find_child(\"RagdollProxy\", true, false) != null, \"enemy debug page previews the existing death ragdoll\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 525,
+      "text": "var ui := result.find_child(\"ResultUI\", true, false) as ResultUI"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 553,
+      "text": "check(hanger.find_child(\"HangerUI\", true, false) != null and profile.inventory.contains(extracted_loot_id), \"return Hanger reads the profile containing extracted loot\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 554,
+      "text": "var warehouse_summary := hanger.find_child(\"WarehouseSummary\", true, false) as Label"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 577,
+      "text": "var ui := result.find_child(\"ResultUI\", true, false) as ResultUI"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 619,
+      "text": "var player := battle.find_child(\"Player\", true, false) as PlayerController"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 621,
+      "text": "var extraction_point := battle.find_child(\"ExtractionPoint\", true, false) as ExtractionPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 622,
+      "text": "var objective_terminal := battle.find_child(\"PrototypeTerminal\", true, false) as ObjectiveInteractable"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 623,
+      "text": "var threat_event := battle.find_child(\"LocalAlertEvent\", true, false) as ThreatEvent"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 624,
+      "text": "var high_value_spawn := battle.find_child(\"HighValueLootSpawn\", true, false) as LootSpawnPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 667,
+      "text": "var ui := result.find_child(\"ResultUI\", true, false) as ResultUI"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 685,
+      "text": "var warehouse_summary := hanger.find_child(\"WarehouseSummary\", true, false) as Label"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/acceptance_smoke.gd",
+      "line": 765,
+      "text": "var socket := player.find_child(String(socket_name), true, false)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/area_definition_test.gd",
+      "line": 41,
+      "text": "check(area.find_child(\"Environment\", true, false) != null, \"authored area owns terrain and environment content\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/combat_tuning_baseline_test.gd",
+      "line": 218,
+      "text": "var cover_collision := cover.find_child(\"CollisionShape3D\", true, false) as CollisionShape3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/damage_packet_test.gd",
+      "line": 125,
+      "text": "check(player.is_dead, \"lethal DamagePacket preserves player death handling\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/destructible_world_object_test.gd",
+      "line": 63,
+      "text": "var cover_collision := cover.find_child(\"CollisionShape3D\", true, false) as CollisionShape3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/destructible_world_object_test.gd",
+      "line": 124,
+      "text": "var barrier := area.find_child(\"DestructibleBarrier\", true, false) as DestructibleWorldObject"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/mission_flow_test.gd",
+      "line": 41,
+      "text": "var terminal := battle.area_root.find_child(\"PrototypeTerminal\", true, false) as ObjectiveInteractable"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/mission_flow_test.gd",
+      "line": 42,
+      "text": "var threat_event := battle.area_root.find_child(\"LocalAlertEvent\", true, false) as ThreatEvent"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/mission_flow_test.gd",
+      "line": 43,
+      "text": "var reach_zone := battle.area_root.find_child(\"PrototypeSurveyZone\", true, false) as ObjectiveReachZone"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/mission_flow_test.gd",
+      "line": 44,
+      "text": "var high_value_spawn := battle.area_root.find_child(\"HighValueLootSpawn\", true, false) as LootSpawnPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/mission_flow_test.gd",
+      "line": 45,
+      "text": "var extraction := battle.area_root.find_child(\"ExtractionPoint\", true, false) as ExtractionPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/mission_flow_test.gd",
+      "line": 121,
+      "text": "var extraction := battle.area_root.find_child(\"ExtractionPoint\", true, false) as ExtractionPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/mission_flow_test.gd",
+      "line": 122,
+      "text": "var threat_event := battle.area_root.find_child(\"LocalAlertEvent\", true, false) as ThreatEvent"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/mission_flow_test.gd",
+      "line": 148,
+      "text": "var terminal := battle.area_root.find_child(\"PrototypeTerminal\", true, false) as ObjectiveInteractable"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/mission_flow_test.gd",
+      "line": 149,
+      "text": "var threat_event := battle.area_root.find_child(\"LocalAlertEvent\", true, false) as ThreatEvent"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/mission_flow_test.gd",
+      "line": 150,
+      "text": "var high_value_spawn := battle.area_root.find_child(\"HighValueLootSpawn\", true, false) as LootSpawnPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/objective_world_test.gd",
+      "line": 30,
+      "text": "var terminal := area.find_child(\"PrototypeTerminal\", true, false) as ObjectiveInteractable"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/objective_world_test.gd",
+      "line": 31,
+      "text": "var reach_zone := area.find_child(\"PrototypeSurveyZone\", true, false) as ObjectiveReachZone"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/objective_world_test.gd",
+      "line": 34,
+      "text": "check(reach_zone != null and reach_zone.find_child(\"CollisionShape3D\", true, false) != null, \"authored reach zone owns an Area3D collision shape\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/presentation_gameplay_test.gd",
+      "line": 47,
+      "text": "var building := area.find_child(\"FieldOffice\", true, false) as Node3D if area else null"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/presentation_gameplay_test.gd",
+      "line": 48,
+      "text": "var door := area.find_child(\"SouthAccessDoor\", true, false) as Door if area else null"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/result_return_test.gd",
+      "line": 47,
+      "text": "var button := result.find_child(\"ReturnButton\", true, false) as Button"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/sortie_failure_test.gd",
+      "line": 108,
+      "text": "var player := battle.find_child(\"Player\", true, false) as PlayerController"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/threat_escalation_test.gd",
+      "line": 68,
+      "text": "var threat_event := battle.area_root.find_child(\"LocalAlertEvent\", true, false) as ThreatEvent"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/threat_escalation_test.gd",
+      "line": 69,
+      "text": "var high_value_spawn := battle.area_root.find_child(\"HighValueLootSpawn\", true, false) as LootSpawnPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/threat_escalation_test.gd",
+      "line": 70,
+      "text": "var extraction := battle.area_root.find_child(\"ExtractionPoint\", true, false) as ExtractionPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/threat_escalation_test.gd",
+      "line": 146,
+      "text": "var event := battle.area_root.find_child(\"LocalAlertEvent\", true, false) as ThreatEvent"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/threat_escalation_test.gd",
+      "line": 147,
+      "text": "var high_value_spawn := battle.area_root.find_child(\"HighValueLootSpawn\", true, false) as LootSpawnPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_combat_acceptance.gd",
+      "line": 22,
+      "text": "battle.camera.size = 4.0"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_combat_acceptance.gd",
+      "line": 77,
+      "text": "func _unhandled_input(event: InputEvent) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_enemy_acceptance.gd",
+      "line": 25,
+      "text": "battle.camera.size = 4.5"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_enemy_acceptance.gd",
+      "line": 56,
+      "text": "var extraction_point := battle.find_child(\"ExtractionPoint\", true, false) as ExtractionPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_enemy_acceptance.gd",
+      "line": 78,
+      "text": "func _unhandled_input(event: InputEvent) -> void:"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_slice_assets_test.gd",
+      "line": 47,
+      "text": "var building := battle.area_root.find_child(\"FieldOffice\", true, false) as Node3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_slice_assets_test.gd",
+      "line": 48,
+      "text": "var art := building.get_node(\"OfficeArt\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_slice_assets_test.gd",
+      "line": 50,
+      "text": "var door := battle.area_root.find_child(\"SouthAccessDoor\", true, false) as Door"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_slice_assets_test.gd",
+      "line": 51,
+      "text": "check(door.door_collision.shape.size == Vector3(2.2, 2.4, .24), \"door shape remains 2.2 x 2.4m\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_slice_assets_test.gd",
+      "line": 52,
+      "text": "check(door.get_node(\"DoorLeaf/DoorBody/DoorMesh\").get_child_count() > 0, \"door reskin follows real rotating leaf\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_slice_assets_test.gd",
+      "line": 53,
+      "text": "var barrier := battle.area_root.find_child(\"DestructibleBarrier\", true, false) as DestructibleWorldObject"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_slice_assets_test.gd",
+      "line": 65,
+      "text": "check(art.get_node(\"RoofShell\").visible, \"roof renders at exterior distance\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/visual_slice_assets_test.gd",
+      "line": 72,
+      "text": "check(not art.get_node(\"RoofShell\").visible, \"interior cutaway leaves route visible\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/weapon_behavior_test.gd",
+      "line": 139,
+      "text": "var cover_collision := cover.find_child(\"CollisionShape3D\", true, false) as CollisionShape3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/weapon_behavior_test.gd",
+      "line": 221,
+      "text": "var lane := area.find_child(\"InteriorCombatLane\", true, false) as Node3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/weapon_behavior_test.gd",
+      "line": 222,
+      "text": "var cover := area.find_child(\"InteriorEntryCover\", true, false) as CoverObstacle"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/weapon_behavior_test.gd",
+      "line": 223,
+      "text": "var barrier := area.find_child(\"DestructibleBarrier\", true, false) as DestructibleWorldObject"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/weapon_behavior_test.gd",
+      "line": 224,
+      "text": "var basic_spawn := area.find_child(\"InteriorBasicSpawn\", true, false) as EnemySpawnPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/weapon_behavior_test.gd",
+      "line": 225,
+      "text": "var heavy_spawn := area.find_child(\"BarrierHeavySpawn\", true, false) as EnemySpawnPoint"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_interaction_test.gd",
+      "line": 67,
+      "text": "var collision := door.find_child(\"CollisionShape3D\", true, false) as CollisionShape3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_interaction_test.gd",
+      "line": 106,
+      "text": "var cover_collision := cover.find_child(\"CollisionShape3D\", true, false) as CollisionShape3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_interaction_test.gd",
+      "line": 125,
+      "text": "var door := area.find_child(\"SouthAccessDoor\", true, false) as Door"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_traversal_test.gd",
+      "line": 31,
+      "text": "var building := area.find_child(\"FieldOffice\", true, false) as Node3D"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_traversal_test.gd",
+      "line": 32,
+      "text": "var door := area.find_child(\"SouthAccessDoor\", true, false) as Door"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_traversal_test.gd",
+      "line": 33,
+      "text": "var floor := building.find_child(\"InteriorFloor\", true, false) as StaticBody3D if building else null"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_traversal_test.gd",
+      "line": 34,
+      "text": "var ceiling := building.find_child(\"CeilingFrame\", true, false) as Node3D if building else null"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_traversal_test.gd",
+      "line": 35,
+      "text": "var terminal := area.find_child(\"PrototypeTerminal\", true, false) as ObjectiveInteractable"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_traversal_test.gd",
+      "line": 36,
+      "text": "var interior_cover := area.find_child(\"InteriorEntryCover\", true, false) as CoverObstacle"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_traversal_test.gd",
+      "line": 37,
+      "text": "var barrier := area.find_child(\"DestructibleBarrier\", true, false) as DestructibleWorldObject"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_traversal_test.gd",
+      "line": 39,
+      "text": "check(floor != null and floor.find_child(\"CollisionShape3D\", true, false) != null, \"Field Office owns a collidable interior floor\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tests/world_traversal_test.gd",
+      "line": 41,
+      "text": "check(building.find_child(\"WestWall\", true, false) != null and building.find_child(\"EastWall\", true, false) != null, \"Field Office owns collidable side walls\")"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tools/phase2b_route_probe.gd",
+      "line": 46,
+      "text": "var door = battle.find_child(\"SouthAccessDoor\", true, false)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tools/phase2b_route_probe.gd",
+      "line": 66,
+      "text": "var terminal = battle.find_child(\"PrototypeTerminal\", true, false)"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tools/phase2b_route_probe.gd",
+      "line": 81,
+      "text": "var session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tools/phase2b_route_probe.gd",
+      "line": 168,
+      "text": "var session = root.get_node(\"SortieRuntime\").get_current_session()"
+    },
+    {
+      "scope": "runtime_or_test",
+      "file": "tools/phase2b_route_probe.gd",
+      "line": 177,
+      "text": "root.get_node(\"AudioDirector\").shutdown_for_test()"
+    }
+  ]
+}

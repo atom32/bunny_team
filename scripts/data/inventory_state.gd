@@ -106,7 +106,7 @@ func validate() -> bool:
 		if not is_finite(item.durability) or item.durability < 0.0 or item.durability > 100.0 or instance_ids.has(item.instance_id):
 			return false
 		var definition := ContentDB.get_item(item.definition_id, false)
-		if not definition:
+		if not definition or not WeaponFitting.valid(item):
 			return false
 		if definition.stackable:
 			if definition.max_stack <= 0 or item.quantity > definition.max_stack:
@@ -114,7 +114,7 @@ func validate() -> bool:
 		elif item.quantity != 1:
 			return false
 		instance_ids[item.instance_id] = true
-		total_weight += definition.weight * item.quantity
+		total_weight += item.total_weight()
 	return total_weight + reserved_weight <= capacity + 0.0001
 
 
@@ -156,11 +156,11 @@ func can_add_item(item: ItemInstance) -> bool:
 	if contains(item.instance_id):
 		return false
 	var definition := ContentDB.get_item(item.definition_id, false)
-	if not definition:
+	if not definition or not WeaponFitting.valid(item):
 		return false
 	if not definition.stackable and item.quantity != 1:
 		return false
-	return current_weight + definition.weight * item.quantity <= capacity + 0.0001
+	return current_weight + item.total_weight() <= capacity + 0.0001
 
 
 func _can_add_exact_instance(item: ItemInstance) -> bool:
@@ -192,5 +192,5 @@ func _calculate_weight() -> float:
 	for item in _items:
 		var definition := ContentDB.get_item(item.definition_id, false)
 		if definition:
-			total += definition.weight * item.quantity
+			total += item.total_weight()
 	return total + reserved_weight

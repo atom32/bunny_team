@@ -1,0 +1,2 @@
+Screenshots from the real 1280x720 rendered production menu/Hideout, using an isolated profile and automated presentation API/button events. Not manual play. verification_driver.gd is an evidence driver, NOT a runtime scene; run only in an isolated project/user profile with BUNNY_EVIDENCE set. The driver creates a new test profile.
+See docs/ALPHA_ENTRANCE_IMPLEMENTATION.md for verification and limitations.

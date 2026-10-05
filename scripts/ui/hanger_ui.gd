@@ -17,6 +17,8 @@ var loadout: LoadoutState
 var warehouse_summary: Label
 var armor_detail: Label
 var stash_grid: WarehouseGrid
+var warehouse_panel: Panel
+var warehouse_button: Button
 
 
 func configure(p_inventory: InventoryState, p_loadout: LoadoutState) -> void:
@@ -39,20 +41,30 @@ func _ready() -> void:
 	add_child(root)
 
 	var title := Label.new()
-	title.position = Vector2(42, 34)
-	title.size = Vector2(680, 96)
+	title.position = Vector2(42, 24)
+	title.size = Vector2(680, 50)
 	title.text = "NEON BASTION"
-	title.add_theme_font_size_override("font_size", 44)
+	title.add_theme_font_size_override("font_size", 32)
 	title.add_theme_color_override("font_color", Color("eaf7ff"))
 	root.add_child(title)
 	var subtitle := Label.new()
-	subtitle.position = Vector2(46, 92)
+	subtitle.position = Vector2(46, 70)
 	subtitle.size = Vector2(620, 40)
 	subtitle.text = "HANGER 07  /  COMBAT LOADOUT  /  ESC PAUSE"
 	subtitle.add_theme_font_size_override("font_size", 16)
 	subtitle.add_theme_color_override("font_color", Color("68dce5"))
 	root.add_child(subtitle)
 	_build_warehouse_summary(root)
+	warehouse_button = Button.new()
+	warehouse_button.name = "WarehouseToggle"
+	warehouse_button.position = Vector2(42, 106)
+	warehouse_button.size = Vector2(300, 36)
+	root.add_child(warehouse_button)
+	warehouse_button.pressed.connect(func():
+		set_warehouse_open(not warehouse_panel.visible)
+		AudioDirector.play_sfx(&"ui_click")
+	)
+	set_warehouse_open(false)
 
 	var panel := PanelContainer.new()
 	panel.set_anchors_preset(Control.PRESET_TOP_RIGHT)
@@ -129,6 +141,8 @@ func sync_loadout_selection() -> void:
 	_select_instance(secondary_weapon_option, loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_SECONDARY))
 	_select_instance(armor_option, loadout.get_equipped_instance_id(LoadoutState.SLOT_ARMOR))
 	_select_instance(backpack_option, loadout.get_equipped_instance_id(LoadoutState.SLOT_BACKPACK))
+	var pack_label := backpack_option.get_meta("slot_label") as Label
+	pack_label.text = tr("BACKPACK / CAPACITY %.0f kg") % ProfileState.new(inventory, loadout).get_carried_capacity()
 	_refresh_weapon_details(weapon_option)
 	_refresh_weapon_details(secondary_weapon_option)
 	_refresh_armor_details()
@@ -136,8 +150,28 @@ func sync_loadout_selection() -> void:
 	if stash_grid: stash_grid.refresh()
 
 
+func refresh_owned_items() -> void:
+	for entry in [[weapon_option, &"weapon"], [secondary_weapon_option, &"weapon"], [armor_option, &"armor"], [backpack_option, &"backpack"]]:
+		_populate_inventory_option(entry[0], entry[1])
+	sync_loadout_selection()
+
+
+func _populate_inventory_option(option: OptionButton, required_tag: StringName) -> void:
+	option.clear()
+	option.add_item(tr("NONE"))
+	option.set_item_metadata(0, "")
+	for item in inventory.get_items():
+		var definition := ContentDB.get_item(item.definition_id)
+		if not definition or not definition.has_tag(required_tag): continue
+		option.add_icon_item(definition.icon, GameLanguage.item_name(definition.display_name))
+		option.set_item_metadata(option.item_count - 1, item.instance_id)
+		option.set_item_tooltip(option.item_count - 1, tr(definition.description))
+
+
 func _build_warehouse_summary(root: Control) -> void:
 	var panel := Panel.new()
+	warehouse_panel = panel
+	panel.name = "WarehousePanel"
 	panel.position = Vector2(42, 148)
 	panel.size = Vector2(800, 460)
 	panel.add_theme_stylebox_override("panel", UIFactory.panel_style(Color("121c1bed"), Color("606c5c")))
@@ -204,6 +238,12 @@ func _build_warehouse_summary(root: Control) -> void:
 	_refresh_warehouse_summary()
 
 
+func set_warehouse_open(opened: bool) -> void:
+	if warehouse_panel: warehouse_panel.visible = opened
+	if warehouse_button:
+		warehouse_button.text = "BACK TO CHARACTER" if opened else "WAREHOUSE / ORGANIZE"
+
+
 func _refresh_warehouse_summary() -> void:
 	if not warehouse_summary or not inventory or not loadout:
 		return
@@ -222,7 +262,7 @@ func _refresh_warehouse_summary() -> void:
 			continue
 		quantities[item.definition_id] = int(quantities.get(item.definition_id, 0)) + item.quantity
 		display_names[item.definition_id] = GameLanguage.item_name(definition.display_name)
-		weights[item.definition_id] = float(weights.get(item.definition_id, 0.0)) + definition.weight * item.quantity
+		weights[item.definition_id] = float(weights.get(item.definition_id, 0.0)) + item.total_weight()
 		categories[item.definition_id] = _category_for(definition)
 	var lines: Array[String] = [
 		tr("CAPACITY  %.2f / %.0f kg") % [inventory.get_used_capacity(), inventory.capacity],
@@ -244,7 +284,8 @@ func _refresh_warehouse_summary() -> void:
 					slot_markers.append(tr(equipped_labels[item.instance_id]))
 			var equipped_text := tr("  [%s]") % ", ".join(slot_markers) if not slot_markers.is_empty() else ""
 			lines.append(tr("%s  x%d  %.2f kg%s") % [display_names[definition_id], quantities[definition_id], weights[definition_id], equipped_text])
-	var plan := DeploymentPlan.build(ProfileState.new(inventory, loadout))
+	var profile := ProfileRuntime.get_profile()
+	var plan := DeploymentPlan.build(profile if profile.inventory == inventory else ProfileState.new(inventory, loadout))
 	warehouse_summary.text = plan.message + "\n" + tr(plan.error) + "\n\n" + "\n".join(lines)
 
 
@@ -255,6 +296,7 @@ func _add_inventory_option(parent: VBoxContainer, label_text: String, required_t
 	label.add_theme_color_override("font_color", Color("8faabe"))
 	parent.add_child(label)
 	var option := StashSlot.new()
+	option.set_meta("slot_label", label)
 	option.grid = stash_grid
 	option.slot_id = slot_id
 	option.custom_minimum_size = Vector2(0, 40)
@@ -263,15 +305,7 @@ func _add_inventory_option(parent: VBoxContainer, label_text: String, required_t
 	option.clip_text = true
 	option.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	option.add_theme_constant_override("icon_max_width", 56)
-	option.add_item("NONE")
-	option.set_item_metadata(0, "")
-	for item in inventory.get_items():
-		var definition := ContentDB.get_item(item.definition_id)
-		if not definition or not definition.has_tag(required_tag):
-			continue
-		option.add_icon_item(definition.icon, GameLanguage.item_name(definition.display_name))
-		option.set_item_metadata(option.item_count - 1, item.instance_id)
-		option.set_item_tooltip(option.item_count - 1, definition.description)
+	_populate_inventory_option(option, required_tag)
 	parent.add_child(option)
 	if required_tag == &"weapon":
 		var detail := Label.new()
@@ -295,7 +329,8 @@ func _refresh_weapon_details(option: OptionButton) -> void:
 	var damage := tr("%d x %d") % [roundi(weapon.damage), weapon.pellets_per_shot] if weapon.pellets_per_shot > 1 else str(roundi(weapon.damage))
 	if weapon.id == &"weapon.assault_rifle_01" and ProfileRuntime.get_profile().ar_damage_upgraded:
 		damage = tr("%.0f (+10%%)") % (weapon.damage * 1.1)
-	detail.text = tr("%s / %s / MAG %d\nDMG %s / %.1fs RELOAD / %.0fm") % [GameLanguage.item_name(ammo.display_name) if ammo else "", tr("AUTO" if weapon.fire_mode == &"automatic" else "SINGLE"), weapon.magazine_capacity, damage, weapon.reload_seconds, weapon.weapon_range]
+	detail.text = tr("%s / %s / MAG %d\nDMG %s / %.1fs RELOAD / %.0fm") % [GameLanguage.item_name(ammo.display_name) if ammo else "", tr("AUTO" if weapon.fire_mode == &"automatic" else "SINGLE"), weapon.magazine_capacity, damage, weapon.reload_seconds * WeaponFitting.reload_factor(item), weapon.weapon_range]
+	if not item.fitting.is_empty(): detail.text += " / " + tr(WeaponFitting.caption(item.fitting))
 
 
 func _select_instance(option: OptionButton, instance_id: String) -> void:

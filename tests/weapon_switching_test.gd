@@ -119,8 +119,8 @@ func _test_failure_isolation() -> void:
 	check(session.fail(), "failure fixture enters FAILED")
 	var outcome := SortieOutcomeService.create_outcome(session)
 	check(outcome != null and outcome.result_type == SortieOutcome.ResultType.FAILED, "FAILED sortie creates a failed outcome")
-	check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, "failed dual-weapon outcome uses no-op commit")
-	check(profile.to_dict() == profile_before, "failure preserves the exact pre-sortie warehouse and both weapons")
+	check(SortieOutcomeService.commit_outcome(profile, outcome) == OK, "failed dual-weapon outcome settles equipment loss")
+	check(ArmoryFixture.loss_matches(profile, profile_before, outcome.initial_carried_instance_ids), "failure loses both deployed weapons and keeps base-only inventory")
 	_cleanup_fixture(player)
 
 
@@ -183,14 +183,14 @@ func _test_smg_rocket_lifecycle() -> void:
 	pickup.free()
 	check(failure_session.fail(), "SMG and Rocket fixture enters FAILED")
 	var failed_outcome := SortieOutcomeService.create_outcome(failure_session)
-	check(failed_outcome != null and SortieOutcomeService.commit_outcome(failure_profile, failed_outcome) == OK, "failed SMG and Rocket outcome uses no-op commit")
-	check(failure_profile.to_dict() == failure_before, "FAILED SMG and Rocket sortie preserves Warehouse and Profile loadout")
+	check(failed_outcome != null and SortieOutcomeService.commit_outcome(failure_profile, failed_outcome) == OK, "failed SMG and Rocket outcome settles equipment loss")
+	check(ArmoryFixture.loss_matches(failure_profile, failure_before, failed_outcome.initial_carried_instance_ids), "FAILED SMG and Rocket sortie loses carried gear and clears its loadout")
 	check(not failure_profile.inventory.contains(lost_loot.instance_id), "FAILED SMG and Rocket sortie loses temporary loot")
 	_cleanup_fixture(failure_player)
 
 
 func _create_fixture(primary_definition_id: StringName = &"weapon.assault_rifle_01") -> Dictionary:
-	var profile := ProfileState.create_new()
+	var profile := ArmoryFixture.create_profile()
 	if primary_definition_id != &"weapon.assault_rifle_01":
 		var requested_primary := _find_item(profile.inventory, primary_definition_id)
 		check(requested_primary != null and profile.loadout.equip(LoadoutState.SLOT_WEAPON_PRIMARY, requested_primary.instance_id, profile.inventory), "fixture equips requested primary weapon")

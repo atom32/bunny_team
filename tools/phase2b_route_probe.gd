@@ -11,13 +11,23 @@ var player: Node3D
 var shots := 0
 
 func _initialize() -> void:
+	process_frame.connect(_resume_isolated_focus_pause)
 	_run.call_deferred()
+
+func _resume_isolated_focus_pause() -> void:
+	# Automated isolated route only: a window switch must not masquerade as a
+	# movement/AI regression. Use the real pause close path, not an input bypass.
+	var flow := root.get_node_or_null("FlowMenu")
+	if paused and flow and flow.mode == "pause":
+		print("ROUTE: resume isolated test after focus pause")
+		flow.close()
 
 func _run() -> void:
 	if evidence.is_empty() or DisplayServer.get_name() == "headless":
 		push_error("Requires an isolated profile, BUNNY_EVIDENCE and a real graphics renderer")
 		quit(2)
 		return
+	DirAccess.make_dir_recursive_absolute(evidence)
 	print("PHASE2B_ROUTE: AUTOMATED INPUT/API, NOT MANUAL; NORMAL AI; NO TELEPORT/INVULNERABILITY")
 	change_scene_to_file("res://scenes/hanger/hanger.tscn")
 	await create_timer(1.0).timeout
@@ -114,15 +124,23 @@ func _aim_and_fire() -> void:
 	var distance := 32.0
 	for enemy in get_nodes_in_group("enemies"):
 		if not enemy is Node3D or enemy.get("is_dead"): continue
+		if not battle.player_visibility.can_see_enemy(enemy): continue
 		var d: float = player.global_position.distance_to(enemy.global_position)
 		if d < distance:
 			distance = d
 			target = enemy
-	if target:
-		var motion := InputEventMouseMotion.new()
-		motion.position = root.get_camera_3d().unproject_position(target.global_position + Vector3.UP)
-		motion.global_position = motion.position
-		Input.parse_input_event(motion)
+	# Test driver only: scan along movement or last coarse heard bearing. Never
+	# aim at the precise coordinates of an unobserved actor.
+	var looking: Vector3 = player.velocity
+	looking.y = 0
+	if battle.player_visibility.heard_remaining > 0:
+		looking = battle.player_visibility.heard_direction
+	if looking.length_squared() < .01: looking = player.aim_direction
+	var aim_point: Vector3 = target.global_position + Vector3.UP if target else player.global_position + looking.normalized() * 12 + Vector3.UP
+	var motion := InputEventMouseMotion.new()
+	motion.position = root.get_camera_3d().unproject_position(aim_point)
+	motion.global_position = motion.position
+	Input.parse_input_event(motion)
 	var fire := InputEventMouseButton.new()
 	fire.button_index = MOUSE_BUTTON_LEFT
 	fire.position = root.get_mouse_position()

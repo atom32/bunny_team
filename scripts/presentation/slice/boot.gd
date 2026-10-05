@@ -73,12 +73,13 @@ func show_menu() -> void:
 	SliceUI.label(screen, "BASTION 07 / FIELD OPERATIONS", Vector2(46,66), 15, SliceUI.CYAN)
 	SliceUI.label(screen, "NEON\nBASTION", Vector2(40,106), 62)
 	SliceUI.label(screen, "GO OUT. RECOVER. COME HOME.", Vector2(46,280), 15, SliceUI.MUTED)
-	SliceUI.button(screen, "CONTINUE / BASE" if SaveService.save_exists() and not ProfileRuntime.recovery_required else "START", Vector2(46,352), Vector2(342,60), _enter)
+	var resume_pending := not ProfileRuntime.get_profile().sortie_checkpoint.is_empty()
+	SliceUI.button(screen, "RESUME SORTIE" if resume_pending else ("CONTINUE / BASE" if SaveService.save_exists() and not ProfileRuntime.recovery_required else "START"), Vector2(46,352), Vector2(342,60), _enter)
 	SliceUI.button(screen, "LOADOUT", Vector2(46,426), Vector2(342,50), func(): GameState.hideout_section = "Hanger"; _enter())
 	SliceUI.button(screen, "SETTINGS", Vector2(46,490), Vector2(342,50), _settings)
 	SliceUI.button(screen, "QUIT", Vector2(46,554), Vector2(342,50), func(): FlowMenu.request_leave("quit"))
-	SliceUI.label(screen, "INTERNAL VERTICAL SLICE  /  07", Vector2(46,659), 13, SliceUI.MUTED)
-	SliceUI.label(screen, "KOHAKU\nBATTLE FRAME / STANDBY", Vector2(892,574), 17, SliceUI.CYAN)
+	SliceUI.label(screen, "ALPHA  /  BASTION 07", Vector2(46,659), 13, SliceUI.MUTED)
+	SliceUI.label(screen, "FIELD OPERATOR\nREADY / HOME SIGNAL ONLINE", Vector2(910,642), 17, SliceUI.CYAN)
 
 func _enter() -> void:
 	if ProfileRuntime.recovery_required:
@@ -94,7 +95,7 @@ func _refresh_language() -> void:
 func _settings() -> void:
 	settings_open = true
 	_clear()
-	var panel := SliceUI.panel(screen, Vector2(50,110), Vector2(470,490))
+	var panel := SliceUI.panel(screen, Vector2(50,80), Vector2(470,550))
 	SliceUI.label(panel, "SIGNAL / SETTINGS", Vector2(28,26), 28, SliceUI.CYAN)
 	var index := 0
 	for bus in ["Music", "SFX"]:
@@ -115,4 +116,5 @@ func _settings() -> void:
 		index += 1
 	SliceUI.button(panel, "DISPLAY / FULLSCREEN & RESOLUTION", Vector2(28,318), Vector2(405,48), func(): FlowMenu.show_display_settings(false))
 	SliceUI.button(panel, "LANGUAGE / 中文 & ENGLISH", Vector2(28,370), Vector2(405,40), func(): FlowMenu.show_language_settings(false))
-	SliceUI.button(panel, "BACK", Vector2(28,422), Vector2(405,46), show_menu)
+	SliceUI.button(panel, "CONTROLS / KEY BINDINGS", Vector2(28,414), Vector2(405,40), func(): FlowMenu.show_control_settings(false))
+	SliceUI.button(panel, "BACK", Vector2(28,466), Vector2(405,46), show_menu)

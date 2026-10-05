@@ -1,0 +1,24 @@
+{
+  "branch": "main",
+  "HEAD": "ec5f18dbe81164f43c1613a8ab678f4e3c51bed9",
+  "remote": "origin\thttps://github.com/atom32/bunny_team.git (fetch)\norigin\thttps://github.com/atom32/bunny_team.git (push)\n",
+  "assets": {
+    "production_player_script": {
+      "path": "scripts/player/player_controller.gd",
+      "sha256": "48a36086c6bdf54f9ade39b97bdfa6910cf887ac816871a9a493c2db04d13b8c"
+    },
+    "production_character": {
+      "path": "assets/characters/vrm_avatar/avatar_sample_a.glb",
+      "sha256": "a8b4c8e0f3e350012e6c0d2c4a2ce68654f44c1267b0761a115ecb60c0fe74e7"
+    },
+    "derivative_asset": {
+      "path": "art_source/unitychan_battle_derivative/battle_presentation.glb",
+      "sha256": "32e030e3aa4dea44f699bd7ce260a87c6ea9d5f4c0ea4c5eaedd6e823a335e0f"
+    },
+    "master": {
+      "path": "art_source/unitychan_battle_derivative/battle_master.blend",
+      "sha256": "56d6d7b75940ebf80b79de0af123ff2440eaf3832ca75254d30351d96304fa44"
+    }
+  },
+  "rollback": "No production edits authorized. Preserve all existing WIP; experiment will use external fresh snapshot and reversible presentation selection only."
+}

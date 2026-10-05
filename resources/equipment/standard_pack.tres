@@ -13,6 +13,7 @@ id = &"equipment.field_pack_01"
 display_name = "Field Pack"
 description = "Standard carried equipment pack."
 weight = 2.0
+carry_capacity_bonus = 17.0
 base_value = 600
 item_tags = PackedStringArray("equipment", "backpack")
 socket_name = &"Backpack"
