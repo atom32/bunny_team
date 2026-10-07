@@ -1,0 +1,18 @@
+[
+  {
+    "name": "campaign_test",
+    "pass": true
+  },
+  {
+    "name": "q01_slice_test",
+    "pass": true
+  },
+  {
+    "name": "q02_slice_test",
+    "pass": true
+  },
+  {
+    "name": "q04_slice_test",
+    "pass": true
+  }
+]

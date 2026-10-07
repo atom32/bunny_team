@@ -4,6 +4,7 @@ extends CanvasLayer
 var inactive_weapon_label: Label
 var _banner_remaining := 0.0
 var enemy_label: Label
+var slice_label: Label
 var objective_label: Label
 var health_bar: ProgressBar
 var health_label: Label
@@ -24,6 +25,8 @@ var impact_dot: Label
 var sound_hint: Label
 var interaction_prompt: Label
 var interaction_feedback: Label
+var pharmacy_information: Label
+var receipt_information: Label
 var damage_flash: ColorRect
 var health_fill: StyleBoxFlat
 var _damage_flash_tween: Tween
@@ -54,6 +57,10 @@ func _ready() -> void:
 
 	var objectives := _card(root, "Objectives", Control.PRESET_TOP_LEFT, Vector2(18,18), Vector2(310,0))
 	objective_label = _line(objectives, "OBJECTIVE", 14, Color("c3d6d9"))
+	slice_label = _line(objectives, "", 12, Color("b9d4ff"))
+	slice_label.name = "Q01Status"
+	slice_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	slice_label.hide()
 	threat_label = _line(objectives, "", 12, Color("ff6b7f"))
 	threat_label.hide()
 	enemy_label = _line(objectives, "", 12)

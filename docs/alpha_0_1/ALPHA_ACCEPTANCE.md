@@ -1,9 +1,10 @@
 # Alpha 0.1 完整验收审计 / 真人试玩入口
 
-2026-10-03。目标仍是完整单机搜打撤Alpha，不缩减为单局Demo。状态：IN PROGRESS，尚未证明完成。
-最新回归快照：cargo_exchange_retry_20261003_145501（含背包容量、战利品交换与此前试玩修复），58/58 测试、79/79 验证步骤及 13 项图形路线通过，详见 cargo_exchange_validation.json。新增一项真实交换测试，原有测试保留。满包取舍已有可操作功能，长期体验仍未验收。
+当前状态（2026-10-05）：相关实现已在 `c1cebae` 提交并推送。目标仍是完整单机搜打撤 Alpha，状态 **IN PROGRESS**。
+最新已有验证是紧凑 Hideout 最终快照：59 个场景测试、79/79 验证项通过，跨进程恢复/退出通过，冷导入 0 ERROR / 2 已知 FBX warning。来源见 [集成报告](../../scenes/presentation/compact_hideout/INTEGRATION.md)。本机同步未重跑。
+后文 10 月 3 日的逐局记录、测试数字与临时目录为历史证据；不能当作当前运行路径或未提交状态。当前交接见 [Handoff](../../Handoff.md)。
 
-## 原有十项完成标准
+## 完整完成标准（含后来补充的入口与基地体验）
 
 | 要求 | 已有直接证据 | 尚缺证据 / 结论 |
 |---|---|---|
@@ -15,7 +16,8 @@
 | 委托/设施/改装/阶段终点 | CAMPAIGN / FITTINGS：五步链、实际配方/折扣、有限配件、12局第7局到终点 | 能到终点；自动完美操作偏快，不代表2–4小时目标达成 |
 | 地区/路线/撤离条件 | REGIONAL_LOOT / EXIT_CHOICES / RELAY_OPERATION / RECORDS_ALARM：四资源区、侦察/维修目的、双出口和延时声音后果 | 技术通过；探索变化与重复游玩未验收 |
 | 单机挂起/设置/旧档与异常恢复 | SUSPEND / CONTROLS：schema兼容、原子保存、五退出路径、强制结束/医疗/进度等跨进程恢复 | 自动验证通过；手柄改键不在当前实现内，不冒称已支持 |
-| 回归/正常UI路线/冷导入/目标硬件 | 58/58，独立route通过；cold 0ERROR/2原FBX warning；Main exit0；5090实际720/1080性能 | 第一次route失焦超时证据保留。目标最低配置未确定、较弱硬件未测；不能声称全平台通过 |
+| 回归/正常UI路线/冷导入/目标硬件 | 最新59场景/79项通过，独立route通过；cold 0ERROR/2原FBX warning；Main exit0；5090实际720/1080性能 | 第一次route失焦超时证据保留。目标最低配置未确定、较弱硬件未测；不能声称全平台通过 |
+| 入口与基地体验 | 紧凑6×4m Hideout、菜单/功能区相机、站立/休息动画；最终集成截图与59场景回归 | 集成已完成；坐姿过渡/环境音可继续改进，整体真人体验仍未验收 |
 | 10–15次/2–4h真人体验 | 尚无；自动12局不是此项证据 | 未达成，不可勾选 |
 
 ## 现在怎样试玩（不碰日常存档）
@@ -23,7 +25,7 @@
 启动器 `tools/start_alpha_playtest.py` 只启动正常BOOT，不加测试场景、自动控制、固定帧率或跳教学参数。
 使用已完成导入/回归的隔离build；不临时修改主仓库、不导入、不删除任何存档。每次使用同一个profile继续，不要每局换名字。
 
-当前机器可直接运行：
+原 Windows 环境的启动示例（临时路径可能已失效；换机需指定当地已验证副本）：
 
 ```powershell
 C:/Python314/python.exe -X utf8 D:/bunny_team/tools/start_alpha_playtest.py --project C:/Users/admin/AppData/Local/Temp/bunny_alpha_20261003_m1iewf__/carry_capacity_final_20261003_142616/project
@@ -49,7 +51,7 @@ C:/Python314/python.exe -X utf8 D:/bunny_team/tools/start_alpha_playtest.py --pr
 
 已按用户要求开展画面驱动的代理试玩：完成首任务闭环并探索正式城区，见 AGENT_PLAYTEST.md；整备缺口与 Loot 输入耦合已据此修复。真人长期体验及最低配置/目标硬件验收仍未关闭，但不妨碍继续处理已观察到的可读性与路线引导问题。
 可以根据具体反馈继续改，不会为了保持自动开发运行而无限叠加小系统或改难度。
-当前无commit/push；512项dirty路径含已有WIP和Alpha工作，不能全部暂存。
+相关实现已纳入 `c1cebae`；旧的 512 项 dirty 工作区描述已过期。新修改应按实际 `git status` 单独核对。
 
 ## 2026-10-03 — 正常低装回收路线补充
 

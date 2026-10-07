@@ -91,8 +91,8 @@ def main():
     if args.import_only:
         return
     scenes = sorted((project / "tests").glob("*.tscn"))
-    if len(scenes) != 59:
-        raise RuntimeError(f"Expected 59 tests (43 regressions + Alpha economy + sortie checkpoint + medical treatment + enemy perception + player visibility + tactical roles + campaign + weapon fittings + exact ammo packing + regional loot + exit choices + records alarm + control settings + relay operation + cargo exchange + Hideout idle presentation), got {len(scenes)}; review the test inventory")
+    if len(scenes) != 62:
+        raise RuntimeError(f"Expected 62 tests (43 regressions + Alpha economy + sortie checkpoint + medical treatment + enemy perception + player visibility + tactical roles + campaign + weapon fittings + exact ammo packing + regional loot + exit choices + records alarm + control settings + relay operation + cargo exchange + Hideout idle presentation + Q01 narrative slice + Q02 pharmacy delivery + Q04 fixed evidence and hard stop), got {len(scenes)}; review the test inventory")
     for scene in scenes:
         frame_budget = "12000" if scene.stem.startswith("streets_") else "1200"
         if not run(scene.stem, ["--headless", "--fixed-fps", "60", "res://tests/" + scene.name, "--quit-after", frame_budget]):

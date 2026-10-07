@@ -159,12 +159,28 @@ func save_checkpoint(deployment: ProfileState = null) -> Error:
 func resume_saved(path := SaveService.DEFAULT_SAVE_PATH) -> Error:
 	if _current_session: return ERR_BUSY
 	var saved: Dictionary = ProfileRuntime.get_profile().sortie_checkpoint
-	if saved.get("version") != SortieCheckpoint.VERSION or not SortieCheckpoint.integer(saved.get("seed"), 1, 2147483647): return ERR_INVALID_DATA
+	if not SortieCheckpoint.integer(saved.get("version"), 1, SortieCheckpoint.VERSION) or not SortieCheckpoint.integer(saved.get("seed"), 1, 2147483647): return ERR_INVALID_DATA
 	for key in ["session", "world", "outcome"]:
 		if typeof(saved.get(key)) != TYPE_DICTIONARY: return ERR_INVALID_DATA
+	if saved.version >= 2:
+		for key in ["slice_context", "exit_observations"]:
+			if not saved.session.has(key): return ERR_INVALID_DATA
+			if saved.get("phase") == "battle" and not saved.world.has(key): return ERR_INVALID_DATA
+			if saved.get("phase") == "result" and not saved.outcome.has(key): return ERR_INVALID_DATA
+	if saved.version >= 3:
+		for key in ["q02_active", "pharmacy_batch"]:
+			if not saved.session.has(key): return ERR_INVALID_DATA
+			if saved.get("phase") == "battle" and not saved.world.has(key): return ERR_INVALID_DATA
+			if saved.get("phase") == "result" and not saved.outcome.has(key): return ERR_INVALID_DATA
+	if saved.version >= 4:
+		for key in ["q04_active", "delivery_receipt"]:
+			if not saved.session.has(key): return ERR_INVALID_DATA
+			if saved.get("phase") == "battle" and not saved.world.has(key): return ERR_INVALID_DATA
+			if saved.get("phase") == "result" and not saved.outcome.has(key): return ERR_INVALID_DATA
 	var restored := SortieCheckpoint.restore_session(saved.session)
 	if not restored: return ERR_INVALID_DATA
 	if saved.get("phase") not in ["deployment", "battle", "result"]: return ERR_INVALID_DATA
+	if saved.phase == "battle" and not NarrativeSlice.world_matches(saved.world, restored): return ERR_INVALID_DATA
 	if restored.status == SortieSession.Status.ACTIVE:
 		if saved.phase == "result" or (saved.phase == "battle" and saved.world.is_empty()): return ERR_INVALID_DATA
 		if saved.phase == "deployment" and (not saved.world.is_empty() or restored.enemies_defeated != 0 or restored.damage_taken != 0 or restored.threat_level != SortieSession.ThreatLevel.NORMAL): return ERR_INVALID_DATA

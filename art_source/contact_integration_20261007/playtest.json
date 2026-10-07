@@ -1,0 +1,522 @@
+{
+	"captures": [
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/fresh_contacts_locked_quests.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/00_main_menu.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/00_settings.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/01_base_entry.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/02_q01_contract.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/02_loadout.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/contact_tang_kui_trade.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/contact_tang_kui_quests.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/contact_shen_yanshuang_trade.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/contact_shen_yanshuang_quests.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/contact_su_mi_trade.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/contact_su_mi_quests.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/03_q01_exit_1.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/03_q01_exit_2.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/04_q01_debrief.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/05_q02_request.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/06_q02_pharmacy.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/07_q02_resumed.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/08_q02_debrief.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/09_q02_ready.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/10_q04_available.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/11_q04_receipt.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/12_q04_pharmacy.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/13_q04_debrief.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/14_q04_ready.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/15_chain_a_stopped.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/16_free_sortie.png",
+		"/Users/xudawei/bunny_team/art_source/contact_integration_20261007/captures/17_free_debrief.png"
+	],
+	"checks": [
+		{
+			"check": "fresh profile saved before menu/base route",
+			"pass": true
+		},
+		{
+			"check": "new game reaches base without fabricated tutorial or quest progress",
+			"pass": true
+		},
+		{
+			"check": "fresh base exposes contacts",
+			"pass": true
+		},
+		{
+			"check": "fresh base opens Tang Kui resident supplies",
+			"pass": true
+		},
+		{
+			"check": "capture fresh_contacts_locked_quests",
+			"pass": true
+		},
+		{
+			"check": "fresh contact UI preserves narrative prerequisites",
+			"pass": true
+		},
+		{
+			"check": "debug tutorial skip saved in isolated profile",
+			"pass": true
+		},
+		{
+			"check": "capture 00_main_menu",
+			"pass": true
+		},
+		{
+			"check": "capture 00_settings",
+			"pass": true
+		},
+		{
+			"check": "capture 01_base_entry",
+			"pass": true
+		},
+		{
+			"check": "real base contact entry opens existing quest UI for shen_yanshuang",
+			"pass": true
+		},
+		{
+			"check": "contact portrait region survives sortie return",
+			"pass": true
+		},
+		{
+			"check": "capture 02_q01_contract",
+			"pass": true
+		},
+		{
+			"check": "capture 02_loadout",
+			"pass": true
+		},
+		{
+			"check": "capture contact_tang_kui_trade",
+			"pass": true
+		},
+		{
+			"check": "contact shop fits above base navigation tang_kui",
+			"pass": true
+		},
+		{
+			"check": "capture contact_tang_kui_quests",
+			"pass": true
+		},
+		{
+			"check": "contact quests fit above base navigation tang_kui",
+			"pass": true
+		},
+		{
+			"check": "capture contact_shen_yanshuang_trade",
+			"pass": true
+		},
+		{
+			"check": "contact shop fits above base navigation shen_yanshuang",
+			"pass": true
+		},
+		{
+			"check": "capture contact_shen_yanshuang_quests",
+			"pass": true
+		},
+		{
+			"check": "contact quests fit above base navigation shen_yanshuang",
+			"pass": true
+		},
+		{
+			"check": "capture contact_su_mi_trade",
+			"pass": true
+		},
+		{
+			"check": "contact shop fits above base navigation su_mi",
+			"pass": true
+		},
+		{
+			"check": "capture contact_su_mi_quests",
+			"pass": true
+		},
+		{
+			"check": "contact quests fit above base navigation su_mi",
+			"pass": true
+		},
+		{
+			"check": "production deployment button present",
+			"pass": true
+		},
+		{
+			"check": "Q01 two assigned exits",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: ExitPlaque",
+			"pass": true
+		},
+		{
+			"check": "capture 03_q01_exit_1",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: ExitPlaque",
+			"pass": true
+		},
+		{
+			"check": "capture 03_q01_exit_2",
+			"pass": true
+		},
+		{
+			"check": "Q01 actual plaque interactions recorded",
+			"pass": true
+		},
+		{
+			"check": "legal free exit available",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: Exit0",
+			"pass": true
+		},
+		{
+			"check": "capture 04_q01_debrief",
+			"pass": true
+		},
+		{
+			"check": "Q01 returned through result UI, reward +150",
+			"pass": true
+		},
+		{
+			"check": "real base contact entry opens existing quest UI for tang_kui",
+			"pass": true
+		},
+		{
+			"check": "contact portrait region survives sortie return",
+			"pass": true
+		},
+		{
+			"check": "capture 05_q02_request",
+			"pass": true
+		},
+		{
+			"check": "normal dressing purchase",
+			"pass": true
+		},
+		{
+			"check": "normal dressing purchase",
+			"pass": true
+		},
+		{
+			"check": "debug ordinary fabric grant",
+			"pass": true
+		},
+		{
+			"check": "debug materials persist through normal save",
+			"pass": true
+		},
+		{
+			"check": "materials alone cannot enable Q02 submission",
+			"pass": true
+		},
+		{
+			"check": "production deployment button present",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: PharmacyBatch",
+			"pass": true
+		},
+		{
+			"check": "capture 06_q02_pharmacy",
+			"pass": true
+		},
+		{
+			"check": "real suspend menu preserves checkpoint",
+			"pass": true
+		},
+		{
+			"check": "Q02 observation survives menu/resume scene route",
+			"pass": true
+		},
+		{
+			"check": "capture 07_q02_resumed",
+			"pass": true
+		},
+		{
+			"check": "legal free exit available",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: Exit3",
+			"pass": true
+		},
+		{
+			"check": "capture 08_q02_debrief",
+			"pass": true
+		},
+		{
+			"check": "real base contact entry opens existing quest UI for tang_kui",
+			"pass": true
+		},
+		{
+			"check": "contact portrait region survives sortie return",
+			"pass": true
+		},
+		{
+			"check": "base submission enabled after successful Q02 observation",
+			"pass": true
+		},
+		{
+			"check": "capture 09_q02_ready",
+			"pass": true
+		},
+		{
+			"check": "Q02 real base button consumes supplies and pays once",
+			"pass": true
+		},
+		{
+			"check": "capture 10_q04_available",
+			"pass": true
+		},
+		{
+			"check": "production deployment button present",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: DeliveryReceipt",
+			"pass": true
+		},
+		{
+			"check": "capture 11_q04_receipt",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: PharmacyBatch",
+			"pass": true
+		},
+		{
+			"check": "capture 12_q04_pharmacy",
+			"pass": true
+		},
+		{
+			"check": "legal free exit available",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: Exit2",
+			"pass": true
+		},
+		{
+			"check": "capture 13_q04_debrief",
+			"pass": true
+		},
+		{
+			"check": "real base contact entry opens existing quest UI for tang_kui",
+			"pass": true
+		},
+		{
+			"check": "contact portrait region survives sortie return",
+			"pass": true
+		},
+		{
+			"check": "Q04 both successful facts enable submission",
+			"pass": true
+		},
+		{
+			"check": "capture 14_q04_ready",
+			"pass": true
+		},
+		{
+			"check": "Q04 real base submit pays +200 and writes exact factual log",
+			"pass": true
+		},
+		{
+			"check": "terminal UI has no follow-up narrative action",
+			"pass": true
+		},
+		{
+			"check": "capture 15_chain_a_stopped",
+			"pass": true
+		},
+		{
+			"check": "all completed states survive disk reload",
+			"pass": true
+		},
+		{
+			"check": "procurement stays available after hard stop",
+			"pass": true
+		},
+		{
+			"check": "production deployment button present",
+			"pass": true
+		},
+		{
+			"check": "fresh free sortie generates no active narrative quest or marker",
+			"pass": true
+		},
+		{
+			"check": "capture 16_free_sortie",
+			"pass": true
+		},
+		{
+			"check": "legal free exit available",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: Exit2",
+			"pass": true
+		},
+		{
+			"check": "capture 17_free_debrief",
+			"pass": true
+		}
+	],
+	"method": "automated debug-assisted graphics playthrough; combat/tutorial bypassed; real field interactions, production scene route and UI submission",
+	"profile": {
+		"ammo_pack": {},
+		"ar_damage_upgraded": false,
+		"bunny_selected": false,
+		"campaign": {
+			"progress": 0,
+			"stage": 0,
+			"version": 1
+		},
+		"credits": 1820,
+		"failed_sorties": 0,
+		"first_mission_completed": true,
+		"inventory": {
+			"capacity": 1000.0,
+			"items": [
+				{
+					"definition_id": "ammo.556_standard",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "852b59535fcdd96f1835453be6473d70",
+					"quantity": 30
+				},
+				{
+					"definition_id": "ammo.9mm_standard",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "cf7db8bc1499adfe94cbd063df0bbb80",
+					"quantity": 12
+				},
+				{
+					"definition_id": "weapon.assault_rifle_01",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "cb12f537e415247b127fcfc722acac18",
+					"quantity": 1
+				},
+				{
+					"definition_id": "weapon.smg_01",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "d58e89e99639a2aaf6887f3f8ec953d7",
+					"quantity": 1
+				},
+				{
+					"definition_id": "armor.recon_shell_01",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "2e291dd21ba6a13bbd66edaa3b3dc365",
+					"quantity": 1
+				},
+				{
+					"definition_id": "equipment.field_pack_01",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "f9dabab7386b0c1e80a9ac35d7343f86",
+					"quantity": 1
+				},
+				{
+					"definition_id": "medical.field_dressing",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "9e550433b0370b26c5e63e1afc691f01",
+					"quantity": 1
+				},
+				{
+					"definition_id": "ammo.556_standard",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "c3434ae6fdc21ef9122f81dec0f5928a",
+					"quantity": 90
+				},
+				{
+					"definition_id": "ammo.9mm_standard",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "303467758e25432d4cac14920be3ff43",
+					"quantity": 108
+				}
+			]
+		},
+		"loadout": {
+			"armor": "2e291dd21ba6a13bbd66edaa3b3dc365",
+			"backpack": "f9dabab7386b0c1e80a9ac35d7343f86",
+			"weapon_primary": "cb12f537e415247b127fcfc722acac18",
+			"weapon_secondary": "d58e89e99639a2aaf6887f3f8ec953d7"
+		},
+		"medical_pack": {
+			"medical.field_dressing": 2,
+			"medical.medkit": 1
+		},
+		"narrative_slice": {
+			"q01_exits": [
+				"streets_exit_0",
+				"streets_exit_1"
+			],
+			"q02": {
+				"delivered": {
+					"material.fabric": 2,
+					"medical.field_dressing": 2
+				},
+				"message": "唐葵：够今晚了。奇怪，送货表上写着昨天就收齐了。配送记录还得再核对。",
+				"observed_batch": "MED-TK-071"
+			},
+			"q04": {
+				"log": "该批次配送记录显示已完成签收，但药房现场记录与签收数量存在差异。相关配送调度记录可进一步核对。",
+				"observed_batch": "MED-TK-071",
+				"receipt_id": "MED-TK-071-RECEIPT"
+			},
+			"settled": {
+				"Q01": true,
+				"Q02": true,
+				"Q03": false,
+				"Q04": true,
+				"Q05": false,
+				"Q06": false
+			},
+			"version": 3
+		},
+		"relief_claimed_after": 0,
+		"settled_outcomes": [
+			"292eb093393b7e2e36a14e80b481acae",
+			"80c783751847daecd10ab2704d15c09f",
+			"c0bdc97df233f0b1801fd5f559b012d4",
+			"def4c7bc42fd834ec9eae13f8c3968b9"
+		],
+		"sortie_checkpoint": {},
+		"stash_layout": {
+			"303467758e25432d4cac14920be3ff43": [
+				4,
+				0,
+				false
+			],
+			"852b59535fcdd96f1835453be6473d70": [
+				0,
+				0,
+				false
+			],
+			"9e550433b0370b26c5e63e1afc691f01": [
+				2,
+				0,
+				false
+			],
+			"c3434ae6fdc21ef9122f81dec0f5928a": [
+				3,
+				0,
+				false
+			],
+			"cf7db8bc1499adfe94cbd063df0bbb80": [
+				1,
+				0,
+				false
+			]
+		},
+		"successful_sorties": 4
+	}
+}

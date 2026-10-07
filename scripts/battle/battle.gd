@@ -73,6 +73,9 @@ func _ready() -> void:
 		var director := preload("res://scripts/first_mission/director.gd").new()
 		director.name = "FirstMissionDirector"
 		add_child(director)
+	_setup_exit_plaques()
+	_setup_pharmacy_batch()
+	_setup_delivery_receipt()
 	checkpoint_layout_signature = SortieCheckpoint.layout_signature(area_root)
 	if not SortieRuntime.attach_battle(self):
 		FlowMenu.show_checkpoint_error(SortieRuntime.last_error)
@@ -83,6 +86,13 @@ func _process(delta: float) -> void:
 		return
 	if hud:
 		hud.set_reload_remaining(player.get_reload_remaining())
+		if not session.slice_context.is_empty(): hud.slice_label.text = NarrativeSlice.status_text(ProfileRuntime.get_profile(), session)
+		elif session.q02_active: hud.slice_label.text = NarrativeSlice.q02_status(ProfileRuntime.get_profile(), session)
+		elif session.q04_active: hud.slice_label.text = NarrativeSlice.q04_status(ProfileRuntime.get_profile(), session)
+		if session.q02_active or session.q04_active:
+			hud.pharmacy_information.get_parent().get_parent().visible = player.global_position.distance_to(area_root.get_node("PharmacyBatch").global_position) <= player.interaction_component.interaction_radius
+		if session.q04_active:
+			hud.receipt_information.get_parent().get_parent().visible = player.global_position.distance_to(area_root.get_node("DeliveryReceipt").global_position) <= player.interaction_component.interaction_radius
 		if player.medical:
 			hud.set_medical(player.medical)
 			hud.set_inventory_capacity(session.inventory.get_used_capacity(), session.inventory.capacity)
@@ -417,3 +427,46 @@ func _transition_to_result() -> void:
 	var error := GameState.finish_mission()
 	if error != OK:
 		FlowMenu.show_error("Could not open debrief: %s. Use Return to base to recover this sortie." % error_string(error))
+
+
+func _setup_exit_plaques() -> void:
+	if session.slice_context.is_empty(): return
+	var assigned := {}
+	for exit in area_root.find_children("*", "ExtractionPoint", true, false):
+		if exit.available: assigned[String(exit.extraction_id)] = String(exit.required_objective_id)
+	if session.slice_context.exit_conditions.is_empty(): session.slice_context.exit_conditions = assigned
+	for exit in area_root.find_children("*", "ExtractionPoint", true, false):
+		if not exit.available: continue
+		var plaque := preload("res://scripts/world/exit_plaque.gd").new()
+		plaque.name = "ExitPlaque"
+		plaque.exit_point = exit
+		plaque.position = Vector3(2.4, 0, 0)
+		exit.add_child(plaque)
+	hud.slice_label.visible = true
+	hud.slice_label.text = NarrativeSlice.status_text(ProfileRuntime.get_profile(), session)
+
+
+func _setup_pharmacy_batch() -> void:
+	if not (session.q02_active or session.q04_active): return
+	var batch := preload("res://scripts/world/pharmacy_batch.gd").new()
+	batch.name = "PharmacyBatch"
+	batch.position = NarrativeSlice.PHARMACY_POSITION
+	area_root.add_child(batch)
+	var card := hud._card(hud.get_child(0), "PharmacyBatchInformation", Control.PRESET_CENTER_BOTTOM, Vector2(-310,-210), Vector2(620,110))
+	hud.pharmacy_information = hud._line(card, NarrativeSlice.BATCH_INFORMATION, 15, Color("c9fbff"))
+	hud.pharmacy_information.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	card.get_parent().hide()
+	hud.slice_label.visible = true
+	hud.slice_label.text = NarrativeSlice.q02_status(ProfileRuntime.get_profile(), session) if session.q02_active else NarrativeSlice.q04_status(ProfileRuntime.get_profile(), session)
+
+
+func _setup_delivery_receipt() -> void:
+	if not session.q04_active: return
+	var receipt := preload("res://scripts/world/delivery_receipt.gd").new()
+	receipt.name = "DeliveryReceipt"
+	receipt.position = NarrativeSlice.RECEIPT_POSITION
+	area_root.add_child(receipt)
+	var card := hud._card(hud.get_child(0), "DeliveryReceiptInformation", Control.PRESET_CENTER_BOTTOM, Vector2(-310,-210), Vector2(620,110))
+	hud.receipt_information = hud._line(card, NarrativeSlice.RECEIPT_INFORMATION, 15, Color("c9fbff"))
+	hud.receipt_information.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	card.get_parent().hide()

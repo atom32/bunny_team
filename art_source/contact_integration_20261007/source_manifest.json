@@ -1,0 +1,9 @@
+{
+  "scripts/data/contact_definition.gd": "7ff50c627a2111b17e38944d1b0318e64a32f42ac5c79bd770b488ca68fbda73",
+  "scripts/ui/contact_portrait.gd": "97acb194f192b37d1cfe2b653a6876e13f86b5e6ea11f0bffc34d9a26ed1906b",
+  "scripts/ui/contact_panel.gd": "30dbda62264fec295158c42637312d1feba0063014b3e23e029bd871e3dc2df0",
+  "scripts/ui/campaign_panel.gd": "869437f63244d610699c348faa9e36f54c72161abcc10453fa18e2e80f80cc66",
+  "scripts/ui/supply_panel.gd": "f16539a836aac729ca014736c822bce66cfb80fbae400619da134beb40fb9254",
+  "scripts/presentation/slice/hideout.gd": "813f320bbfc5c3bc4cce66a2d4a69dcff3987f76fc7bbe8e7fb7c2887711b6c2",
+  "tests/campaign_test.gd": "175615eb8a86b1e697edca94f2419554258e71d88c6c4b23f303added455c149"
+}

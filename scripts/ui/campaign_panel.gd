@@ -2,12 +2,13 @@ class_name CampaignPanel
 extends PanelContainer
 signal contract_claimed
 var save_path := SaveService.DEFAULT_SAVE_PATH
+var contact_id := ""
 var selected := -1
 var feedback := "Only the active contract advances. Claim it at base to begin the next."
 
 func _ready() -> void:
-	theme = UIFactory.theme()
-	add_theme_stylebox_override("panel", UIFactory.panel_style(Color("101d29f5"), Color("557895")))
+	theme = SliceUI.menu_theme()
+	add_theme_stylebox_override("panel", SliceUI.menu_style(Color("171914fa"), Color("555749")))
 	_refresh()
 
 func _refresh() -> void:
@@ -16,8 +17,57 @@ func _refresh() -> void:
 	if selected < 0: selected = mini(int(profile.campaign.stage), CampaignService.QUESTS.size() - 1)
 	var body := VBoxContainer.new()
 	body.add_theme_constant_override("separation", 10)
-	add_child(body)
-	_label(body, "BASTION CONTRACTS / PERSISTENT PROGRESS", 22)
+	var scroll := ScrollContainer.new()
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	add_child(scroll)
+	body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.add_child(body)
+	if contact_id.is_empty():
+		_label(body, "委托记录 / FIELD FILES", 22)
+		_heading(body, "叙事委托 / NARRATIVE")
+	else:
+		_label(body, ContactDefinition.get_contact(contact_id).display_name + " / 委托", 18)
+	if contact_id == "su_mi": _label(body, "暂无新的维修委托", 16)
+	if ContactDefinition.owns_quest(contact_id, "Q01"):
+		_publisher(body, "Q01")
+		_label(body, NarrativeSlice.status_text(profile) if profile.first_mission_completed else "Q01 / 完成首任务后可进行出口观察", 14)
+		if not profile.narrative_slice.settled.Q01: _label(body, "查看本局分配的两处出口铭牌，再从合法出口成功撤离。", 14)
+	if contact_id == "tang_kui" and not profile.narrative_slice.settled.Q01:
+		_publisher(body, "Q02")
+		_label(body, "Q02 今晚的药 / 尚未开放；需要先完成 Q01", 14)
+		_publisher(body, "Q04")
+		_label(body, "Q04 账上已经送到 / 尚未开放；需要先完成 Q02", 14)
+	if ContactDefinition.owns_quest(contact_id, "Q02") and profile.narrative_slice.settled.Q01:
+		_publisher(body, "Q02")
+		if not profile.narrative_slice.settled.Q02: _label(body, NarrativeSlice.Q02_REQUEST, 14)
+		_label(body, NarrativeSlice.q02_status(profile), 14)
+		if not profile.narrative_slice.settled.Q04 and (contact_id.is_empty() or not profile.narrative_slice.settled.Q02):
+			var submit := Button.new()
+			submit.name = "SubmitQ02"
+			submit.text = "交付仓库内尚需的材料 / 保存（支持部分交付）"
+			submit.disabled = NarrativeSlice.prepare_q02_delivery(profile).error != OK
+			body.add_child(submit)
+			submit.pressed.connect(_submit_q02)
+		if not profile.narrative_slice.settled.Q04 and not profile.narrative_slice.q02.message.is_empty(): _label(body, profile.narrative_slice.q02.message, 14)
+	if contact_id == "tang_kui" and profile.narrative_slice.settled.Q01 and not profile.narrative_slice.settled.Q02:
+		_publisher(body, "Q04")
+		_label(body, "Q04 账上已经送到 / 尚未开放；需要先完成 Q02", 14)
+	if ContactDefinition.owns_quest(contact_id, "Q04") and profile.narrative_slice.settled.Q02:
+		_publisher(body, "Q04")
+		_label(body, NarrativeSlice.q04_status(profile), 14)
+		if profile.narrative_slice.settled.Q04:
+			_label(body, profile.narrative_slice.q04.log, 14)
+		else:
+			var submit_q04 := Button.new()
+			submit_q04.name = "SubmitQ04"
+			submit_q04.text = "提交 MED-TK-071 两项记录 / 保存"
+			submit_q04.disabled = NarrativeSlice.prepare_q04_submission(profile).error != OK
+			body.add_child(submit_q04)
+			submit_q04.pressed.connect(_submit_q04)
+	if not contact_id.is_empty():
+		if not feedback.begins_with("Only the active"): _label(body, feedback, 14)
+		return # Anonymous base-development contracts stay on the existing board.
+	_heading(body, "基地发展 / BASE DEVELOPMENT")
 	_label(body, tr("%d / %d contracts claimed / %d credits") % [profile.campaign.stage, CampaignService.QUESTS.size(), profile.credits], 15)
 	var columns := HBoxContainer.new()
 	columns.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -36,7 +86,7 @@ func _refresh() -> void:
 		button.custom_minimum_size = Vector2(270, 48)
 		button.add_theme_font_size_override("font_size", 14)
 		button.tooltip_text = tr("CLAIMED" if index < profile.campaign.stage else ("ACTIVE" if index == profile.campaign.stage else "LOCKED"))
-		button.modulate = Color("79f1e7") if index < profile.campaign.stage else (Color.WHITE if index == profile.campaign.stage else Color("8d9ba8"))
+		button.modulate = SliceUI.CYAN if index < profile.campaign.stage else (Color.WHITE if index == profile.campaign.stage else SliceUI.MUTED)
 		list.add_child(button)
 		button.pressed.connect(func(): selected = index; _refresh.call_deferred())
 	var detail := VBoxContainer.new()
@@ -84,3 +134,38 @@ func _claim(id: String) -> void:
 		AudioDirector.play_sfx(&"ui_confirm")
 		contract_claimed.emit()
 	_refresh.call_deferred()
+
+
+func _submit_q02() -> void:
+	var result := NarrativeSlice.submit_q02(save_path)
+	feedback = result.message
+	if result.error == OK: contract_claimed.emit()
+	_refresh.call_deferred()
+
+
+func _submit_q04() -> void:
+	var result := NarrativeSlice.submit_q04(save_path)
+	feedback = result.message
+	if result.error == OK: contract_claimed.emit()
+	_refresh.call_deferred()
+
+
+func _heading(parent: Node, text: String) -> void:
+	parent.add_child(HSeparator.new())
+	var heading := _label(parent, text, 13)
+	heading.add_theme_color_override("font_color", SliceUI.CYAN)
+
+
+func _publisher(parent: Node, quest_id: String) -> void:
+	var id: String = ContactDefinition.QUEST_OWNERS[quest_id]
+	var row := HBoxContainer.new()
+	row.name = "Publisher_" + quest_id
+	row.add_theme_constant_override("separation", 8)
+	parent.add_child(row)
+	var avatar := ContactPortrait.new()
+	avatar.compact = true
+	avatar.contact_id = id
+	row.add_child(avatar)
+	var label := _label(row, ContactDefinition.get_contact(id).display_name + " / " + quest_id, 16)
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	label.add_theme_color_override("font_color", SliceUI.CYAN)

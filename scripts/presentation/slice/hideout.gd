@@ -135,14 +135,15 @@ func show_section(value: String) -> void:
 		_first_mission_panel()
 		var onboarding := screen.get_node_or_null("FirstMissionPanel") as Control
 		if onboarding: onboarding.visible = not FirstMissionPreparation.has_starter_kit(ProfileRuntime.get_profile())
-		SliceUI.label(screen, "SELECT A BAY BELOW  /  PREPARE • DEPLOY • RECOVER", Vector2(44,104),16,SliceUI.MUTED)
 		var contracts := CampaignPanel.new()
 		contracts.name = "CampaignPanel"
 		contracts.position = Vector2(42, 150)
 		contracts.size = Vector2(800, 474)
 		screen.add_child(contracts)
 		contracts.hide()
-		var contracts_toggle := SliceUI.button(screen, "OPERATIONS / CONTRACTS", Vector2(750,100), Vector2(320,40), func(): contracts.visible = not contracts.visible)
+		var contact_button := SliceUI.button(screen, "联系人 / 补给与委托", Vector2(42, 100), Vector2(320, 40), func(): show_section("Workshop"))
+		contact_button.name = "ContactsToggle"
+		var contracts_toggle := SliceUI.button(screen, "委托记录 / TASKS", Vector2(750,100), Vector2(320,40), func(): contracts.visible = not contracts.visible)
 		contracts_toggle.name = "ContractsToggle"
 		SliceUI.button(screen, "PREPARE SORTIE", Vector2(918,556), Vector2(320,52), func():
 			if not ProfileRuntime.get_profile().first_mission_completed:
@@ -154,15 +155,28 @@ func show_section(value: String) -> void:
 			hanger.hanger_ui.refresh_owned_items()
 		)
 	if value == "Workshop":
-		var supplies := SupplyPanel.new()
-		supplies.name = "SupplyPanel"
+		var supplies := ContactPanel.new()
+		supplies.name = "ContactPanel"
 		supplies.position = Vector2(42,148)
-		supplies.size = Vector2(800,474)
+		supplies.size = Vector2(1196,474)
 		screen.add_child(supplies)
+		# Contact content occupies the existing workshop area; keep tutorial upgrade reachable elsewhere.
+		for child in screen.get_children():
+			if child is Panel and child != supplies: child.hide()
 		supplies.supplies_changed.connect(func():
 			var profile := ProfileRuntime.get_profile()
 			hanger._build_preview_character(profile.inventory, profile.loadout)
 			hanger.hanger_ui.configure(profile.inventory, profile.loadout)
+			hanger.hanger_ui.refresh_owned_items()
+		)
+		var profile := ProfileRuntime.get_profile()
+		if profile.first_mission_completed and not profile.ar_damage_upgraded:
+			var upgrade := SliceUI.button(screen, "UPGRADE AR / 1 SALVAGE CORE", Vector2(882, 98), Vector2(360, 46), _upgrade_weapon)
+			upgrade.name = "WorkshopUpgrade"
+			upgrade.disabled = FirstMissionPreparation.salvage_count(profile) < 1
+			upgrade.tooltip_text = "AR 伤害 20 → 22；消耗仓库回收核心 ×1"
+		supplies.contract_claimed.connect(func():
+			hanger.hanger_ui.configure(ProfileRuntime.get_profile().inventory, ProfileRuntime.get_profile().loadout)
 			hanger.hanger_ui.refresh_owned_items()
 		)
 	if value == "Operations":

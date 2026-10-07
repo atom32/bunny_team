@@ -54,6 +54,7 @@ static func commit_outcome(profile: ProfileState, outcome: SortieOutcome) -> Err
 	else:
 		candidate.failed_sorties += 1
 	CampaignService.record_outcome(candidate, outcome)
+	NarrativeSlice.record_outcome(candidate, outcome)
 	candidate.settled_outcomes.append(outcome.outcome_id)
 	if not candidate.validate(): return ERR_INVALID_DATA
 	profile.replace_with(candidate)

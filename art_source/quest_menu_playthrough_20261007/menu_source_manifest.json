@@ -1,0 +1,9 @@
+{
+  "scripts/presentation/slice/slice_ui.gd": "694cac0783bdb52a36180a5d5d24b8c5fb9146686c128c16433ec41a9493edf6",
+  "scripts/presentation/slice/boot.gd": "fff0a01f1b28b91c568040e2c498763e1465738cc4d47366cdcc88811e91edf4",
+  "scripts/presentation/slice/hideout.gd": "74e1244c6d3ca5d731df48c4ba532a3e1373e3c3b2af7256566f95de280e7921",
+  "scripts/ui/campaign_panel.gd": "101deef57062053f4a58d5f4570db3e7cd2f1655b853af9419f094cb367c07f8",
+  "scripts/ui/result_ui.gd": "a5dfd4cbf48bc43406b904687001c1ca6431d412064c2c1401396b46874b72ba",
+  "scripts/ui/hanger_ui.gd": "e6ffeb79c20c89b1188558b6e393c86f8dd1e11f671a309bfbc017979e112172",
+  "scripts/ui/supply_panel.gd": "295ddaf118c1e28784830d61948f04c63848a3781f9eccca8d22d1a01f941dc9"
+}

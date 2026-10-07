@@ -1,0 +1,37 @@
+[
+  {
+    "name": "campaign_test",
+    "pass": true,
+    "exit": 0
+  },
+  {
+    "name": "alpha_economy_test",
+    "pass": true,
+    "exit": 0
+  },
+  {
+    "name": "q01_slice_test",
+    "pass": true,
+    "exit": 0
+  },
+  {
+    "name": "q02_slice_test",
+    "pass": true,
+    "exit": 0
+  },
+  {
+    "name": "q04_slice_test",
+    "pass": true,
+    "exit": 0
+  },
+  {
+    "name": "first_mission_test",
+    "pass": true,
+    "exit": 0
+  },
+  {
+    "name": "hanger_first_mission_test",
+    "pass": true,
+    "exit": 0
+  }
+]

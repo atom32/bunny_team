@@ -37,7 +37,7 @@ func _ready() -> void:
 		return
 	var root := Control.new()
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	root.theme = UIFactory.theme()
+	root.theme = SliceUI.menu_theme()
 	add_child(root)
 
 	var title := Label.new()
@@ -52,7 +52,7 @@ func _ready() -> void:
 	subtitle.size = Vector2(620, 40)
 	subtitle.text = "HANGER 07  /  COMBAT LOADOUT  /  ESC PAUSE"
 	subtitle.add_theme_font_size_override("font_size", 16)
-	subtitle.add_theme_color_override("font_color", Color("68dce5"))
+	subtitle.add_theme_color_override("font_color", SliceUI.CYAN)
 	root.add_child(subtitle)
 	_build_warehouse_summary(root)
 	warehouse_button = Button.new()
@@ -70,7 +70,7 @@ func _ready() -> void:
 	panel.set_anchors_preset(Control.PRESET_TOP_RIGHT)
 	panel.position = Vector2(-402, 86)
 	panel.size = Vector2(370, 548)
-	panel.add_theme_stylebox_override("panel", UIFactory.panel_style(Color("0f1824ed"), Color("557895")))
+	panel.add_theme_stylebox_override("panel", SliceUI.menu_style(Color("171914f2"), Color("555749")))
 	root.add_child(panel)
 	var content := VBoxContainer.new()
 	content.add_theme_constant_override("separation", 3)
@@ -89,7 +89,7 @@ func _ready() -> void:
 	armor_detail = Label.new()
 	armor_detail.name = "ArmorTradeoff"
 	armor_detail.add_theme_font_size_override("font_size", 13)
-	armor_detail.add_theme_color_override("font_color", Color("79e7e0"))
+	armor_detail.add_theme_color_override("font_color", SliceUI.CYAN)
 	content.add_child(armor_detail)
 	backpack_option = _add_inventory_option(content, "BACKPACK", &"backpack", LoadoutState.SLOT_BACKPACK)
 
@@ -174,7 +174,7 @@ func _build_warehouse_summary(root: Control) -> void:
 	panel.name = "WarehousePanel"
 	panel.position = Vector2(42, 148)
 	panel.size = Vector2(800, 460)
-	panel.add_theme_stylebox_override("panel", UIFactory.panel_style(Color("121c1bed"), Color("606c5c")))
+	panel.add_theme_stylebox_override("panel", SliceUI.menu_style(Color("171914f2"), Color("555749")))
 	root.add_child(panel)
 	var heading := Label.new()
 	heading.text = "WAREHOUSE"
@@ -293,7 +293,7 @@ func _add_inventory_option(parent: VBoxContainer, label_text: String, required_t
 	var label := Label.new()
 	label.text = label_text
 	label.add_theme_font_size_override("font_size", 14)
-	label.add_theme_color_override("font_color", Color("8faabe"))
+	label.add_theme_color_override("font_color", SliceUI.MUTED)
 	parent.add_child(label)
 	var option := StashSlot.new()
 	option.set_meta("slot_label", label)
@@ -310,7 +310,7 @@ func _add_inventory_option(parent: VBoxContainer, label_text: String, required_t
 	if required_tag == &"weapon":
 		var detail := Label.new()
 		detail.add_theme_font_size_override("font_size", 12)
-		detail.add_theme_color_override("font_color", Color("a9c4d4"))
+		detail.add_theme_color_override("font_color", SliceUI.MUTED)
 		parent.add_child(detail)
 		option.set_meta("weapon_detail", detail)
 	return option

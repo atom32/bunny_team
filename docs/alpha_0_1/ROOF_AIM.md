@@ -1,5 +1,7 @@
 # 淡出屋顶截获瞄准 — 实机问题修复
 
+> 历史批次报告：相关实现已纳入 `c1cebae`。文中的未提交状态、测试数字、临时路径及后续计划记录当时情况；当前进度与剩余事项以[最新交接](../../Handoff.md)为准。失败与修复记录保留，不代表当前仍失败。
+
 2026-10-03。第八局实际点射029/030/032/033的只读日志均记录瞄准高度约3.69m，正是维修店屋顶上表面。不是把所有未命中归咎于玩家或武器散布。
 
 ## 根因与修正
@@ -33,4 +35,4 @@
 
 改动：`scripts/world/streets/street_district.gd`、`scripts/battle/camera_occlusion.gd`、`scripts/player/player_controller.gd`、`tests/player_visibility_test.gd`以及本批说明。开始时备份这四个文件，按备份检查小范围增量，不覆盖已有WIP。
 
-第八局checkpoint保持原样，尚待在修正版继续实际P9战斗/材料搜刮/脱战治疗。前景高楼遮挡敌人、隔墙辨识与治疗机会仍需实际体验，不因这一处修复就宣布全部解决。未commit/push，Alpha保持IN PROGRESS。
+第八局已在修正版同档续玩，完成 P9 战斗、治疗与材料撤离，见 AGENT_PLAYTEST.md 的“第八局完成”记录。前景高楼遮挡敌人、隔墙辨识与治疗机会仍需实际体验，不因这一处修复就宣布全部解决。未commit/push，Alpha保持IN PROGRESS。

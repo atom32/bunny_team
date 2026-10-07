@@ -2,14 +2,15 @@ class_name SupplyPanel
 extends PanelContainer
 signal supplies_changed
 var save_path := SaveService.DEFAULT_SAVE_PATH
+var contact_id := ""
 var selected_tab := 0
 var feedback := "BUY / SELL / BARTER. Supplies stay at base until deployed."
 var _scrolls: Dictionary = {}
 var _scroll_positions: Dictionary = {}
 
 func _ready() -> void:
-	theme = UIFactory.theme()
-	add_theme_stylebox_override("panel", UIFactory.panel_style(Color("101d29f5"), Color("557895")))
+	theme = SliceUI.menu_theme()
+	add_theme_stylebox_override("panel", SliceUI.menu_style(Color("171914fa"), Color("555749")))
 	_refresh()
 
 func _refresh() -> void:
@@ -25,21 +26,21 @@ func _refresh() -> void:
 	body.add_theme_constant_override("separation", 8)
 	add_child(body)
 	var heading := Label.new()
-	heading.text = tr("QUARTERMASTER  /  %d CREDITS") % profile.credits
-	heading.add_theme_font_size_override("font_size", 23)
+	heading.text = tr("QUARTERMASTER  /  %d CREDITS") % profile.credits if contact_id.is_empty() else "%s / %d 信用点" % [ContactDefinition.get_contact(contact_id).display_name, profile.credits]
+	heading.add_theme_font_size_override("font_size", 23 if contact_id.is_empty() else 18)
 	body.add_child(heading)
 	var tabs := TabContainer.new()
-	tabs.custom_minimum_size = Vector2(748, 302)
+	tabs.custom_minimum_size = Vector2(748 if contact_id.is_empty() else 636, 200 if not contact_id.is_empty() else 302)
 	tabs.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	body.add_child(tabs)
 	var buy := _list(tabs, "BUY SUPPLIES")
 	for definition in SupplyService.stock(profile):
-		_item_row(buy, definition, null)
+		if ContactDefinition.owns_stock(contact_id, definition): _item_row(buy, definition, null)
 	var sell := _list(tabs, "SELL RECOVERED")
 	for item in profile.inventory.get_items():
 		_item_row(sell, ContentDB.get_item(item.definition_id), item)
 	var barter := _list(tabs, "WORKSHOP EXCHANGE")
-	var recipes := SupplyService.recipes(profile)
+	var recipes := SupplyService.recipes(profile) if contact_id.is_empty() or contact_id == "su_mi" else {}
 	for recipe_id in recipes:
 		var recipe: Dictionary = recipes[recipe_id]
 		var row := HBoxContainer.new()
@@ -56,16 +57,25 @@ func _refresh() -> void:
 		label.text = tr(recipe.name) + "\n" + " / ".join(inputs)
 		row.add_child(label)
 		var button := _button(row, "EXCHANGE", func(): _trade("barter",recipe_id,1))
+		button.name = "Exchange_" + recipe_id
 		button.disabled = not available
-	_fittings(_list(tabs, "WEAPON FITTINGS"), profile)
+	if contact_id.is_empty() or contact_id == "su_mi":
+		_fittings(_list(tabs, "WEAPON FITTINGS"), profile)
+	if contact_id == "su_mi":
+		tabs.set_tab_hidden(0, true)
+		if selected_tab == 0: selected_tab = 2
+	elif not contact_id.is_empty():
+		tabs.set_tab_hidden(2, true) # Engineering exchanges remain with Su Mi.
+		if selected_tab == 2: selected_tab = 0
 	tabs.current_tab = selected_tab
 	tabs.tab_changed.connect(func(index: int): selected_tab = index)
 	var info := Label.new()
 	info.text = tr(feedback)
-	info.custom_minimum_size = Vector2(0, 44)
+	info.custom_minimum_size = Vector2(0, 44 if contact_id.is_empty() else 32)
 	info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	info.add_theme_font_size_override("font_size", 13)
 	body.add_child(info)
+	if not contact_id.is_empty() and contact_id != "shen_yanshuang": return
 	var relief := _button(body, "EMERGENCY KIT / PISTOL + 45 ROUNDS", func(): _trade("relief","",1))
 	relief.disabled = not SupplyService.can_claim_relief(profile)
 	relief.tooltip_text = tr("Emergency kit: after a failed sortie, no weapon with ammunition, and fewer than 300 credits. One kit per failure.")
@@ -118,6 +128,7 @@ func _item_row(parent: VBoxContainer, definition: ItemDefinition, item: ItemInst
 	var action := "sell" if item else "buy"
 	var id := item.instance_id if item else String(definition.id)
 	var button := _button(row, "", func(): _trade(action,id,int(amount.value)))
+	button.name = "Supply_" + action + "_" + id.replace(".", "_")
 	var update := func(_value: float): button.text = tr("SELL / %d" if item else "BUY / %d") % (unit*int(amount.value))
 	amount.value_changed.connect(update)
 	update.call(amount.value)

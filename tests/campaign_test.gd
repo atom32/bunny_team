@@ -13,6 +13,7 @@ func _ready() -> void:
 		await _chain()
 		_atomic()
 		await _ui()
+		await _contacts()
 		if "--write" in args: _write_cross_process()
 	SortieRuntime.clear_session()
 	AudioDirector.shutdown_for_test()
@@ -201,3 +202,102 @@ func check(condition: bool, message: String) -> void:
 	checks += 1
 	print("CAMPAIGN %s: %s" % ["PASS" if condition else "FAIL", message])
 	if not condition: failures.append(message)
+
+
+func _contacts() -> void:
+	SortieRuntime.clear_session()
+	var profile := ProfileRuntime.new_profile()
+	var hub: Node3D = load("res://scenes/presentation/slice/hideout.tscn").instantiate()
+	add_child(hub)
+	hub.show_section("Overview")
+	var before := profile.to_dict()
+	check(hub.screen.has_node("ContactsToggle"), "new game has a visible contact entry")
+	hub.screen.get_node("ContactsToggle").pressed.emit()
+	var panel: ContactPanel = hub.screen.get_node("ContactPanel")
+	panel.save_path = PATH
+	panel.open_contact("tang_kui")
+	await get_tree().process_frame
+	check(panel.find_child("display_name",true,false).text == "唐葵" and panel.find_child("Portrait",true,false) != null, "Tang Kui has named portrait placeholder and resident identity")
+	check(profile.to_dict() == before, "opening contacts never mutates profile or injects save fields")
+	var stock_seen := {}
+	for id: String in ContactDefinition.CONTACTS:
+		panel.find_child("Contact_" + id,true,false).pressed.emit()
+		await get_tree().process_frame
+		check(panel.contact_id == id and panel.find_child("title",true,false).text == ContactDefinition.get_contact(id).title, "real contact selector opens " + id)
+		var shop: SupplyPanel = panel.find_child("SupplyPanel",true,false)
+		check(shop != null and shop.contact_id == id, "contact mounts existing SupplyPanel " + id)
+		for definition in SupplyService.stock(profile):
+			var visible := shop.find_child("Supply_buy_" + String(definition.id).replace(".", "_"),true,false) != null
+			check(visible == ContactDefinition.owns_stock(id,definition), "static stock ownership " + id + "/" + String(definition.id))
+			if visible: stock_seen[definition.id] = true
+		panel.find_child("ContactQuests",true,false).pressed.emit()
+		await get_tree().process_frame
+		var quests: CampaignPanel = panel.find_child("CampaignPanel",true,false)
+		check(quests != null and quests.contact_id == id, "contact mounts existing CampaignPanel " + id)
+		for quest in ["Q01","Q02","Q04"]:
+			check((quests.find_child("Publisher_" + quest,true,false) != null) == ContactDefinition.owns_quest(id,quest), "publisher avatar ownership " + id + "/" + quest)
+		if id == "su_mi":
+			check(quests.find_child("SubmitQ02",true,false) == null and quests.find_child("SubmitQ04",true,false) == null, "Su Mi has no fabricated narrative action")
+			var empty := false
+			for label in quests.find_children("*","Label",true,false): empty = empty or label.text == "暂无新的维修委托"
+			check(empty, "Su Mi quests display honest empty state")
+		panel.find_child("ContactTrade",true,false).pressed.emit()
+	check(stock_seen.size() == SupplyService.stock(profile).size(), "contact shops preserve access to every existing stock item")
+	panel.open_contact("tang_kui")
+	var shop: SupplyPanel = panel.find_child("SupplyPanel",true,false)
+	var credits := profile.credits
+	var price := SupplyService.buy_price(ContentDB.get_item(&"medical.field_dressing"), profile)
+	shop.find_child("Supply_buy_medical_field_dressing",true,false).pressed.emit()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	check(profile.credits == credits - price and SupplyService.count(profile,&"medical.field_dressing") == 1, "contact buy UI uses existing wallet and warehouse transaction")
+	var purchased: ItemInstance
+	for item in profile.inventory.get_items():
+		if item.definition_id == &"medical.field_dressing": purchased = item
+	var sale := SupplyService.sell_price(purchased)
+	shop.find_child("Supply_sell_" + purchased.instance_id,true,false).pressed.emit()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	check(profile.credits == credits - price + sale and SupplyService.count(profile,&"medical.field_dressing") == 0, "contact sell UI uses existing wallet and item ownership")
+	var durable := SaveService.load_profile(PATH,false)
+	check(durable != null and durable.to_dict() == profile.to_dict(), "contact transactions publish exactly their saved profile")
+	profile.inventory.add_item(ItemInstance.new(&"material.fabric",1))
+	panel.open_contact("su_mi")
+	shop = panel.find_child("SupplyPanel",true,false)
+	shop.find_child("Exchange_field_dressing",true,false).pressed.emit()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	check(SupplyService.count(profile,&"material.fabric") == 0 and SupplyService.count(profile,&"medical.field_dressing") == 2, "Su Mi exchange consumes existing warehouse materials, no second inventory")
+	# Migrated schema 4 contains no Contact fields and needs no new schema.
+	var legacy := profile.to_dict()
+	legacy.erase("narrative_slice")
+	var file := FileAccess.open(PATH,FileAccess.WRITE)
+	file.store_string(JSON.stringify({"schema_version":4,"profile":legacy})); file.close()
+	check(SaveService.load_profile(PATH,false) != null and SaveService.SCHEMA_VERSION == 7, "contact layer retains schema 4 migration and schema 7 envelope")
+	profile.first_mission_completed = true
+	profile.narrative_slice.settled.Q01 = true
+	profile.narrative_slice.q01_exits = ["streets_exit_0","streets_exit_1"]
+	profile.narrative_slice.q02.observed_batch = NarrativeSlice.PHARMACY_BATCH
+	profile.inventory.add_item(ItemInstance.new(&"material.fabric",2))
+	panel.open_contact("tang_kui","quests")
+	credits = profile.credits
+	panel.find_child("SubmitQ02",true,false).pressed.emit()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	check(profile.narrative_slice.settled.Q02 and profile.credits == credits + NarrativeSlice.Q02_REWARD, "contact Q02 submit reuses material consumption and exact reward")
+	profile.narrative_slice.q04.receipt_id = NarrativeSlice.DELIVERY_RECEIPT
+	profile.narrative_slice.q04.observed_batch = NarrativeSlice.PHARMACY_BATCH
+	panel.open_contact("tang_kui","quests")
+	credits = profile.credits
+	panel.find_child("SubmitQ04",true,false).pressed.emit()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	check(profile.narrative_slice.settled.Q04 and profile.credits == credits + NarrativeSlice.Q04_REWARD, "contact Q04 submit reuses exact reward and save transaction")
+	for id: String in ContactDefinition.CONTACTS:
+		panel.open_contact(id,"quests")
+		check(panel.find_child("SubmitQ04",true,false) == null and panel.find_child("SubmitQ02",true,false) == null, "Q04 terminal state creates no action at " + id)
+	check(not profile.narrative_slice.settled.Q03 and not profile.narrative_slice.settled.Q05 and not profile.narrative_slice.settled.Q06, "contacts never fabricate Su Mi task progress")
+	check(SaveService.load_profile(PATH,false).to_dict() == profile.to_dict(), "contact quest rewards survive disk reload without contact fields")
+	hub.show_section("Workshop")
+	check(hub.screen.has_node("WorkshopUpgrade"), "existing AR upgrade stays reachable alongside contacts")
+	hub.free()

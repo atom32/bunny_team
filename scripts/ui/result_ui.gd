@@ -34,17 +34,30 @@ func _build_ui() -> void:
 		return
 	var root := Control.new()
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	root.theme = UIFactory.theme()
+	root.theme = SliceUI.menu_theme()
 	add_child(root)
 
 	var panel := PanelContainer.new()
 	panel.set_anchors_preset(Control.PRESET_CENTER)
 	panel.position = Vector2(70, -310)
 	panel.size = Vector2(530, 620)
-	panel.add_theme_stylebox_override("panel", UIFactory.panel_style(Color("101925f2"), Color("587994")))
+	panel.add_theme_stylebox_override("panel", SliceUI.menu_style(Color("171914f2"), Color("555749")))
 	root.add_child(panel)
 	SliceUI.label(root, "FIELD RECORDER\nDEBRIEF", Vector2(48,48), 38, SliceUI.CYAN)
 	SliceUI.label(root, "BASTION 07 / RETURN CHANNEL", Vector2(50,155), 16, SliceUI.MUTED)
+	var facts := ""
+	if outcome.result_type == SortieOutcome.ResultType.COMPLETED:
+		if not outcome.exit_observations.is_empty():
+			facts = "Q01 / 出口铭牌观察 %d / 2\n返回基地后结算；两处齐全奖励 150。" % outcome.exit_observations.size()
+		elif outcome.q04_active:
+			facts = "Q04 / 配送回执：%s\n药房记录：%s\n返回基地保存；两项齐全后在基地提交。" % ["已取得" if not outcome.delivery_receipt.is_empty() else "未取得", "已观察" if not outcome.pharmacy_batch.is_empty() else "未观察"]
+		elif outcome.q02_active:
+			facts = "Q02 / 指定批次：%s\n返回基地保存观察；材料须在基地实际交付。" % ("已观察" if not outcome.pharmacy_batch.is_empty() else "未观察")
+	if not facts.is_empty():
+		SliceUI.label(root, "带回的现场事实 / FIELD NOTES", Vector2(50, 235), 16, SliceUI.CYAN)
+		var notes := SliceUI.label(root, facts, Vector2(50, 275), 16, SliceUI.MUTED)
+		notes.size = Vector2(360, 135)
+		notes.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	var profile := ProfileRuntime.get_profile()
 	if profile.first_mission_completed:
 		var preview := ProfileState.from_dict(profile.to_dict())
@@ -54,9 +67,9 @@ func _build_ui() -> void:
 		if not quest.is_empty():
 			var text := tr("ON RETURN / BASTION CONTRACT") + "\n\n" + tr(quest.title)
 			text += "\n\n" + (tr("PROJECTED ON RETURN / %d / %d") % [preview.campaign.progress, quest.target] if quest.target > 0 else tr("Turn in warehouse materials at Hideout Overview."))
-			var contract := SliceUI.label(root, text, Vector2(50, 235), 18, SliceUI.MUTED)
+			var contract := SliceUI.label(root, text, Vector2(50, 420), 16, SliceUI.MUTED)
 			contract.name = "CampaignPreview"
-			contract.size = Vector2(360, 260)
+			contract.size = Vector2(360, 170)
 			contract.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	var content := VBoxContainer.new()
 	content.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -77,7 +90,7 @@ func _build_ui() -> void:
 			status_label.text = "SORTIE ENDED"
 	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	status_label.add_theme_font_size_override("font_size", 28)
-	status_label.add_theme_color_override("font_color", Color("79f1e7") if extracted else Color("ff5b6f"))
+	status_label.add_theme_color_override("font_color", SliceUI.CYAN if extracted else Color("ff5b6f"))
 	content.add_child(status_label)
 	var mission := ContentDB.get_mission(outcome.mission_id, false)
 	mission_label = Label.new()
@@ -90,11 +103,11 @@ func _build_ui() -> void:
 	mission_completion_label.name = "MissionCompletion"
 	mission_completion_label.text = "MISSION COMPLETE" if outcome.mission_completed else "MISSION INCOMPLETE"
 	mission_completion_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	mission_completion_label.add_theme_color_override("font_color", Color("79f1e7") if outcome.mission_completed else Color("ffbd72"))
+	mission_completion_label.add_theme_color_override("font_color", SliceUI.CYAN if outcome.mission_completed else Color("ffbd72"))
 	content.add_child(mission_completion_label)
 	var objective_heading := Label.new()
 	objective_heading.text = "OBJECTIVES"
-	objective_heading.add_theme_color_override("font_color", Color("76deea"))
+	objective_heading.add_theme_color_override("font_color", SliceUI.CYAN)
 	content.add_child(objective_heading)
 	for summary in outcome.get_objective_summaries():
 		var definition := mission.get_objective(StringName(summary.get("objective_id", ""))) if mission else null
@@ -106,7 +119,7 @@ func _build_ui() -> void:
 			int(summary.get("progress", 0)),
 			int(summary.get("target", 0)),
 		]
-		objective_label.add_theme_color_override("font_color", Color("79f1e7") if completed else Color("c4d2dc"))
+		objective_label.add_theme_color_override("font_color", SliceUI.CYAN if completed else Color("c4d2dc"))
 		content.add_child(objective_label)
 		objective_labels.append(objective_label)
 	if outcome.result_type == SortieOutcome.ResultType.FAILED:
@@ -130,7 +143,7 @@ func _build_ui() -> void:
 	for quantity in SortieOutcomeService.recovered_quantities(outcome,ProfileRuntime.get_profile()).values(): recovered += int(quantity)
 	_add_stat(content, "NEW SUPPLIES", str(recovered))
 	var reward := SortieOutcomeService.credit_reward(outcome,ProfileRuntime.get_profile())
-	_add_stat(content, "CREDIT REWARD", "0 / NO NEW SUPPLIES" if extracted and reward == 0 else str(reward))
+	_add_stat(content, "LOOT / CREDIT REWARD", "0 / NO NEW SUPPLIES" if extracted and reward == 0 else str(reward))
 	if not extracted:
 		_add_stat(content, "DEPLOYED STACKS LOST", str(outcome.initial_carried_instance_ids.size()))
 	if outcome.mission_id == &"first_mission" and extracted:

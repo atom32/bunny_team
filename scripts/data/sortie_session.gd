@@ -27,6 +27,12 @@ var mission_completed := false
 var enemies_defeated := 0
 var damage_taken := 0
 var ar_damage_upgraded := false
+var slice_context: Dictionary = {}
+var exit_observations: Array[String] = []
+var q02_active := false
+var pharmacy_batch := ""
+var q04_active := false
+var delivery_receipt := ""
 var outcome_created := false
 var threat_level := ThreatLevel.NORMAL
 var _initial_carried_instance_ids: Array[String] = []
@@ -71,6 +77,10 @@ static func create_from_profile(request: SortieRequest, profile: ProfileState) -
 		"",
 		initial_carried_instance_ids
 	)
+	if profile.first_mission_completed and session.area_id == &"street_district" and not profile.narrative_slice.settled.Q01:
+		session.slice_context = {"quest_id": "Q01", "exit_conditions": {}}
+	session.q02_active = profile.first_mission_completed and session.area_id == &"street_district" and profile.narrative_slice.settled.Q01 and not profile.narrative_slice.settled.Q02
+	session.q04_active = profile.first_mission_completed and session.area_id == &"street_district" and profile.narrative_slice.settled.Q02 and not profile.narrative_slice.settled.Q04
 	session.ar_damage_upgraded = profile.ar_damage_upgraded
 	if not session._initialize_weapon_runtime_state():
 		return null
@@ -106,6 +116,27 @@ func get_objective_summary() -> Array[Dictionary]:
 
 func is_mission_completed() -> bool:
 	return mission_completed
+
+
+func record_delivery_receipt(receipt: String) -> bool:
+	if status != Status.ACTIVE or not q04_active or not delivery_receipt.is_empty() or receipt != NarrativeSlice.DELIVERY_RECEIPT: return false
+	delivery_receipt = receipt
+	return true
+
+
+func record_pharmacy_observation(batch: String) -> bool:
+	if status != Status.ACTIVE or not (q02_active or q04_active) or not pharmacy_batch.is_empty() or batch != NarrativeSlice.PHARMACY_BATCH: return false
+	pharmacy_batch = batch
+	return true
+
+
+func record_exit_observation(exit_id: String, condition: String) -> bool:
+	if status != Status.ACTIVE or slice_context.is_empty() or exit_id in exit_observations: return false
+	var assigned: Dictionary = slice_context.exit_conditions
+	if not assigned.has(exit_id) or assigned[exit_id] != condition: return false
+	exit_observations.append(exit_id)
+	exit_observations.sort()
+	return true
 
 
 func record_enemy_defeat() -> bool:
@@ -234,6 +265,10 @@ func validate() -> bool:
 		and loadout.validate(inventory)
 		and _initial_carried_ids_are_valid()
 		and _weapon_runtime_states_are_valid()
+		and NarrativeSlice.valid_facts(slice_context, exit_observations, area_id)
+		and NarrativeSlice.valid_q04(q04_active, delivery_receipt, area_id)
+		and not (q02_active and q04_active)
+		and NarrativeSlice.valid_pharmacy(q02_active or q04_active, pharmacy_batch, area_id)
 		and _objective_runtime_is_valid()
 		and threat_level in [ThreatLevel.NORMAL, ThreatLevel.ALERT]
 	)

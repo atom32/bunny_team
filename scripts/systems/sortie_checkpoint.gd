@@ -2,7 +2,7 @@ class_name SortieCheckpoint
 extends RefCounted
 ## Versioned JSON state, not a PackedScene or executable Variant. Only explicit
 ## gameplay fields are persisted; original geometry, materials and rigs are untouched.
-const VERSION := 1
+const VERSION := 4
 const PLAYER_FIELDS := ["position", "rotation", "velocity", "health", "aim_direction", "aim_world_point", "_shot_cooldown", "_dodge_time", "_dodge_cooldown_time", "_dodge_direction", "_move_direction"]
 const ENEMY_FIELDS := ["position", "rotation", "velocity", "health", "_shot_cooldown", "_path_refresh", "_knockback_velocity", "_strafe_direction", "_is_telegraphing", "_engaged", "_movement_direction", "_shot_aim_point", "visible", "collision_layer", "collision_mask"]
 const AWARENESS_FIELDS := ["initialized", "state", "home", "home_forward", "last_known", "suspicion", "memory_remaining", "search_elapsed", "patrol_index", "patrol_wait", "target_visible"]
@@ -24,7 +24,7 @@ static func session_data(session: SortieSession) -> Dictionary:
 	for id in session._weapon_runtime_states:
 		var weapon = session._weapon_runtime_states[id]
 		rounds[id] = {"ammo": String(weapon.ammo_definition_id), "capacity": weapon.magazine_capacity, "rounds": weapon.magazine_ammo}
-	return {"id": session.session_id, "status": session.status, "area": String(session.area_id), "mission": String(session.mission_id), "inventory": session.inventory.to_dict(), "loadout": session.loadout.to_dict(), "initial_ids": session.get_initial_carried_instance_ids(), "objectives": session.get_objective_summary(), "mission_completed": session.mission_completed, "kills": session.enemies_defeated, "damage": session.damage_taken, "upgrade": session.ar_damage_upgraded, "threat": session.threat_level, "weapons": rounds}
+	return {"q04_active": session.q04_active, "delivery_receipt": session.delivery_receipt, "q02_active": session.q02_active, "pharmacy_batch": session.pharmacy_batch, "slice_context": session.slice_context.duplicate(true), "exit_observations": session.exit_observations.duplicate(), "id": session.session_id, "status": session.status, "area": String(session.area_id), "mission": String(session.mission_id), "inventory": session.inventory.to_dict(), "loadout": session.loadout.to_dict(), "initial_ids": session.get_initial_carried_instance_ids(), "objectives": session.get_objective_summary(), "mission_completed": session.mission_completed, "kills": session.enemies_defeated, "damage": session.damage_taken, "upgrade": session.ar_damage_upgraded, "threat": session.threat_level, "weapons": rounds}
 
 static func restore_session(data: Dictionary) -> SortieSession:
 	for key in ["id", "area", "mission"]:
@@ -45,6 +45,18 @@ static func restore_session(data: Dictionary) -> SortieSession:
 	if not inventory or not loadout or not inventory.validate() or not loadout.validate(inventory): return null
 	if not ContentDB.get_area_definition(StringName(data.area), false): return null
 	var session := SortieSession.new(inventory, loadout, StringName(data.area), StringName(data.mission), data.id, ids)
+	if not NarrativeSlice.valid_q04(data.get("q04_active", false), data.get("delivery_receipt", ""), session.area_id): return null
+	session.q04_active = data.get("q04_active", false)
+	session.delivery_receipt = data.get("delivery_receipt", "")
+	if typeof(data.get("q02_active", false)) != TYPE_BOOL: return null
+	if not NarrativeSlice.valid_pharmacy(data.get("q02_active", false) or session.q04_active, data.get("pharmacy_batch", ""), session.area_id): return null
+	session.q02_active = data.get("q02_active", false)
+	session.pharmacy_batch = data.get("pharmacy_batch", "")
+	var context: Variant = data.get("slice_context", {})
+	var observations: Variant = data.get("exit_observations", [])
+	if not NarrativeSlice.valid_facts(context, observations, session.area_id): return null
+	session.slice_context = context.duplicate(true)
+	for id in observations: session.exit_observations.append(id)
 	session.status = int(data.status)
 	session.threat_level = int(data.threat)
 	session.mission_completed = data.mission_completed
@@ -244,9 +256,19 @@ static func capture_world(battle: Node) -> Dictionary:
 	var director: Node = battle.get_node_or_null("FirstMissionDirector")
 	var alarm: RecordsAlarm = battle.area_root.get_node_or_null("StreetTerminal/RecordsAlarm")
 	var records: RecordsTerminal = battle.area_root.get_node_or_null("StreetTerminal")
-	return {"records_work": records.snapshot() if records else {}, "records_alarm": alarm.snapshot() if alarm else {}, "layout": battle.checkpoint_layout_signature, "player": fields(battle.player, PLAYER_FIELDS), "footstep_distance": battle.player._footstep_distance, "medical": battle.player.medical.snapshot(), "weapon_slot": String(battle.player.active_weapon_slot), "reloads": battle.player._reload_remaining_by_weapon.duplicate(), "enemies": enemies, "nodes": nodes, "rockets": rockets, "director": fields(director, DIRECTOR_FIELDS) if director else {}}
+	return {"q04_active": battle.session.q04_active, "delivery_receipt": battle.session.delivery_receipt, "q02_active": battle.session.q02_active, "pharmacy_batch": battle.session.pharmacy_batch, "slice_context": battle.session.slice_context.duplicate(true), "exit_observations": battle.session.exit_observations.duplicate(), "records_work": records.snapshot() if records else {}, "records_alarm": alarm.snapshot() if alarm else {}, "layout": battle.checkpoint_layout_signature, "player": fields(battle.player, PLAYER_FIELDS), "footstep_distance": battle.player._footstep_distance, "medical": battle.player.medical.snapshot(), "weapon_slot": String(battle.player.active_weapon_slot), "reloads": battle.player._reload_remaining_by_weapon.duplicate(), "enemies": enemies, "nodes": nodes, "rockets": rockets, "director": fields(director, DIRECTOR_FIELDS) if director else {}}
 
 static func validate_world(data: Dictionary, battle: Node) -> bool:
+	if not NarrativeSlice.world_matches(data, battle.session): return false
+	if typeof(data.get("nodes")) != TYPE_DICTIONARY: return false
+	if not battle.session.slice_context.is_empty():
+		var assigned := {}
+		for exit in battle.area_root.find_children("*", "ExtractionPoint", true, false):
+			var path := String(battle.area_root.get_path_to(exit))
+			var saved: Variant = data.get("nodes", {}).get(path)
+			if typeof(saved) != TYPE_DICTIONARY: return false
+			if saved.get("available", false): assigned[String(exit.extraction_id)] = String(exit.required_objective_id)
+		if assigned != battle.session.slice_context.exit_conditions: return false
 	if not RecordsAlarm.valid_snapshot(data.get("records_alarm", {})): return false
 	var work: Variant = data.get("records_work", {})
 	if not RecordsTerminal.valid_snapshot(work): return false

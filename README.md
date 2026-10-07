@@ -2,6 +2,12 @@
 
 A Godot 4.7.2 single-player high-angle urban extraction shooter, currently moving from a vertical slice toward [Alpha 0.1](docs/ALPHA_0_1.md). The current loop is `Opening / Menu -> Hideout -> Hanger -> Battle -> Result -> Hideout`. The full Alpha is still in progress.
 
+## Current checkpoint — 2026-10-05
+
+Integration commit `c1cebae` includes the Alpha progression and compact military Hideout. Menu/base standing and Rest use sourced Quaternius idle/seated animation; equipment keeps its armed preview. The imported 6×4m room is a camera-driven hub. Character geometry and materials are unchanged. See [Hideout integration](scenes/presentation/compact_hideout/INTEGRATION.md).
+
+Latest retained Windows / Godot 4.7.2 verification: **59 scene tests, 79/79 verification checks PASS**, cross-process recovery and quit checks PASS; cold import 0 errors / 2 known FBX warnings. This macOS sync has not rerun those checks. Full Alpha acceptance still needs 10–15 human sorties / 2–4 hours of pacing, economy and audio feedback, plus minimum-hardware profiling. See [current handoff](Handoff.md) and [acceptance audit](docs/alpha_0_1/ALPHA_ACCEPTANCE.md).
+
 After the tutorial, Operations offers Records Run or [Restore the Relay](docs/alpha_0_1/RELAY_OPERATION.md). Repair two sites under local noise/interruptible 12-second work, then extract; records remain optional for another exit. Both operations can advance the final base contract.
 
 Keyboard/mouse bindings can be changed from Main Menu settings or pause, saved per device, and restored to defaults. Live prompts follow the chosen keys; existing controller bindings remain intact. See [controls](docs/alpha_0_1/CONTROLS.md).
@@ -72,7 +78,7 @@ Open `project.godot` in Godot 4.7.2 or run:
 /Applications/Godot.app/Contents/MacOS/Godot --path /Users/xudawei/bunny_team --editor
 ```
 
-Run all 48 regression scenes, five quit subprocess checks, cross-process/forced-termination sortie recovery, cross-process medical recovery and Main in an isolated copy and profile with:
+Run the current 59 regression scenes, five quit subprocess checks, cross-process/forced-termination sortie recovery, cross-process medical recovery and Main in an isolated copy and profile with:
 
 ```sh
 python3 tools/verify_migration.py --godot /Applications/Godot.app/Contents/MacOS/Godot --output /tmp/bunny-verification-new
@@ -88,10 +94,10 @@ Positions and orientation are part of the existing profile save. Older saves rec
 
 Validation: `godot --path . tools/stash_probe.tscn` drives mouse drags, R rotation, weapon swaps, armor equip, English/Chinese switching, save/reload and layout at 1280×720, 1920×1080 and 1440×900. Re-bake model thumbnails with `godot --path . tools/stash_icons.tscn`, then reimport assets.
 
-After restoring the campaign workbench, Workshop offers [instance-owned weapon fittings](docs/alpha_0_1/FITTINGS.md): faster reload versus weight, or reduced enemy gunshot hearing versus weight/slower reload. Fits cost materials, persist with the exact gun and are lost with it; they are not permanent account buffs. Current regression: 51/51. This does not complete the full Alpha.
+After restoring the campaign workbench, Workshop offers [instance-owned weapon fittings](docs/alpha_0_1/FITTINGS.md): faster reload versus weight, or reduced enemy gunshot hearing versus weight/slower reload. Fits cost materials, persist with the exact gun and are lost with it; they are not permanent account buffs. This does not complete the full Alpha.
 
-[Exact ammunition packing](docs/alpha_0_1/PACKING.md) is now part of normal deployment: partial stacks split atomically with the sortie checkpoint so loss never consumes the base remainder. Current full regression: 52/52; production UI-to-battle quantity and restart/loss checks pass. Full Alpha remains in progress.
+[Exact ammunition packing](docs/alpha_0_1/PACKING.md) is now part of normal deployment: partial stacks split atomically with the sortie checkpoint so loss never consumes the base remainder. Production UI-to-battle quantity and restart/loss checks pass. Full Alpha remains in progress.
 
-Streets now has [regional supply pools](docs/alpha_0_1/REGIONAL_LOOT.md): pharmacy medicines, apartment fabric, office electronics/data and repair-shop parts. The M map shows tendencies, not actual loot or hidden actors. Existing sites and layout remain unchanged. Current full regression: 53/53.
+Streets now has [regional supply pools](docs/alpha_0_1/REGIONAL_LOOT.md): pharmacy medicines, apartment fabric, office electronics/data and repair-shop parts. The M map shows tendencies, not actual loot or hidden actors. Existing sites and layout remain unchanged.
 
-[Streets exit choices](docs/alpha_0_1/EXIT_CHOICES.md) now connect a site objective to retreat planning: one assigned exit always permits early retreat, the other opens after recovering the current records. The map explains both conditions. Full regression: 54/54; human multi-sortie balance remains outstanding.
+[Streets exit choices](docs/alpha_0_1/EXIT_CHOICES.md) now connect a site objective to retreat planning: one assigned exit always permits early retreat, the other opens after recovering the current records. The map explains both conditions. Human multi-sortie balance remains outstanding.

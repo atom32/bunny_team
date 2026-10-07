@@ -32,6 +32,7 @@ var settled_outcomes: Array[String] = []
 var sortie_checkpoint: Dictionary = {}
 var ammo_pack: Dictionary = {} # Missing caliber means three magazines, not free ammunition.
 var medical_pack: Dictionary = {"medical.field_dressing": 2, "medical.medkit": 1}
+var narrative_slice: Dictionary = NarrativeSlice.initial_state()
 var campaign: Dictionary = {"version": 1, "stage": 0, "progress": 0}
 # Presentation positions only; equipped gear remains owned by inventory.
 var stash_layout: Dictionary = {}
@@ -63,7 +64,7 @@ static func create_new() -> ProfileState:
 
 
 func validate() -> bool:
-	return inventory != null and loadout != null and inventory.validate() and loadout.validate(inventory) and credits >= 0 and credits <= 1000000000 and successful_sorties >= 0 and failed_sorties >= 0 and relief_claimed_after >= 0 and relief_claimed_after <= failed_sorties and _valid_medical_pack() and DeploymentPlan.valid_ammo_pack(ammo_pack) and CampaignService.valid_state(campaign) and (first_mission_completed or (campaign.stage == 0 and campaign.progress == 0))
+	return inventory != null and loadout != null and inventory.validate() and loadout.validate(inventory) and credits >= 0 and credits <= 1000000000 and successful_sorties >= 0 and failed_sorties >= 0 and relief_claimed_after >= 0 and relief_claimed_after <= failed_sorties and _valid_medical_pack() and DeploymentPlan.valid_ammo_pack(ammo_pack) and NarrativeSlice.valid_state(narrative_slice) and (first_mission_completed or not narrative_slice.settled.Q01) and CampaignService.valid_state(campaign) and (first_mission_completed or (campaign.stage == 0 and campaign.progress == 0))
 
 
 func _valid_medical_pack() -> bool:
@@ -108,6 +109,7 @@ func to_dict() -> Dictionary:
 		"medical_pack": medical_pack.duplicate(),
 		"ammo_pack": ammo_pack.duplicate(),
 		"campaign": campaign.duplicate(),
+		"narrative_slice": narrative_slice.duplicate(true),
 	}
 
 
@@ -121,6 +123,9 @@ static func from_dict(data: Dictionary) -> ProfileState:
 	if typeof(loadout_data) == TYPE_DICTIONARY:
 		restored_loadout = LoadoutState.from_dict(loadout_data)
 	var profile := ProfileState.new(restored_inventory, restored_loadout)
+	var slice_data: Variant = data.get("narrative_slice", NarrativeSlice.initial_state())
+	profile.narrative_slice = NarrativeSlice.restore_state(slice_data)
+	if profile.narrative_slice.is_empty(): return null
 	var campaign_data: Variant = data.get("campaign", profile.campaign)
 	if not CampaignService.valid_state(campaign_data): return null
 	profile.campaign = {"version": int(campaign_data.version), "stage": int(campaign_data.stage), "progress": int(campaign_data.progress)}
@@ -180,6 +185,7 @@ func replace_with(candidate: ProfileState) -> void:
 	medical_pack = candidate.medical_pack.duplicate()
 	ammo_pack = candidate.ammo_pack.duplicate()
 	campaign = candidate.campaign.duplicate()
+	narrative_slice = candidate.narrative_slice.duplicate(true)
 
 
 func _equip_first_definition(slot_id: StringName, definition_id: StringName) -> void:

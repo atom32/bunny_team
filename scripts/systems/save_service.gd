@@ -1,7 +1,7 @@
 class_name SaveService
 extends RefCounted
 
-const SCHEMA_VERSION := 4
+const SCHEMA_VERSION := 7
 const DEFAULT_SAVE_PATH := "user://profile.json"
 const MAX_SAVE_BYTES := 8 * 1024 * 1024
 
@@ -47,7 +47,7 @@ static func load_profile(path: String = DEFAULT_SAVE_PATH, report_errors := true
 		return _load_failure("Profile save is not valid JSON data", report_errors)
 	var envelope := json.data as Dictionary
 	var version: Variant = envelope.get("schema_version")
-	if not is_number(version) or float(version) not in [1.0, 2.0, 3.0, 4.0]:
+	if not is_number(version) or float(version) not in [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]:
 		return _load_failure("Unsupported profile schema version", report_errors)
 	var profile_data: Variant = envelope.get("profile")
 	if typeof(profile_data) != TYPE_DICTIONARY:
@@ -59,6 +59,12 @@ static func load_profile(path: String = DEFAULT_SAVE_PATH, report_errors := true
 		return _load_failure("Profile save is missing sortie checkpoint data", report_errors)
 	if float(version) >= 4.0 and not profile_data.has("campaign"):
 		return _load_failure("Profile save is missing campaign data", report_errors)
+	if float(version) >= 5.0 and not profile_data.has("narrative_slice"):
+		return _load_failure("Profile save is missing narrative slice data", report_errors)
+	if float(version) >= 6.0 and (typeof(profile_data.get("narrative_slice")) != TYPE_DICTIONARY or (profile_data.narrative_slice.get("version") != 2 and profile_data.narrative_slice.get("version") != 3)):
+		return _load_failure("Profile save is missing Q02 state", report_errors)
+	if float(version) >= 7.0 and not NarrativeSlice.valid_state(profile_data.get("narrative_slice")):
+		return _load_failure("Profile save is missing Q04 state", report_errors)
 	var profile := ProfileState.from_dict(profile_data)
 	if not profile or not profile.validate():
 		return _load_failure("Profile save failed validation", report_errors)

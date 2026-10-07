@@ -1,0 +1,448 @@
+{
+	"captures": [
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/00_main_menu.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/00_settings.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/01_base_entry.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/02_q01_contract.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/02_loadout.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/02_supply_menu.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/03_q01_exit_1.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/03_q01_exit_2.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/04_q01_debrief.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/05_q02_request.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/06_q02_pharmacy.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/07_q02_resumed.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/08_q02_debrief.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/09_q02_ready.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/10_q04_available.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/11_q04_receipt.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/12_q04_pharmacy.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/13_q04_debrief.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/14_q04_ready.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/15_chain_a_stopped.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/16_free_sortie.png",
+		"/Users/xudawei/bunny_team/art_source/quest_menu_playthrough_20261007/captures/17_free_debrief.png"
+	],
+	"checks": [
+		{
+			"check": "debug tutorial skip saved in isolated profile",
+			"pass": true
+		},
+		{
+			"check": "capture 00_main_menu",
+			"pass": true
+		},
+		{
+			"check": "capture 00_settings",
+			"pass": true
+		},
+		{
+			"check": "capture 01_base_entry",
+			"pass": true
+		},
+		{
+			"check": "contracts are hidden until Overview toggle",
+			"pass": true
+		},
+		{
+			"check": "real contracts toggle opens task panel",
+			"pass": true
+		},
+		{
+			"check": "capture 02_q01_contract",
+			"pass": true
+		},
+		{
+			"check": "capture 02_loadout",
+			"pass": true
+		},
+		{
+			"check": "capture 02_supply_menu",
+			"pass": true
+		},
+		{
+			"check": "production deployment button present",
+			"pass": true
+		},
+		{
+			"check": "Q01 two assigned exits",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: ExitPlaque",
+			"pass": true
+		},
+		{
+			"check": "capture 03_q01_exit_1",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: ExitPlaque",
+			"pass": true
+		},
+		{
+			"check": "capture 03_q01_exit_2",
+			"pass": true
+		},
+		{
+			"check": "Q01 actual plaque interactions recorded",
+			"pass": true
+		},
+		{
+			"check": "legal free exit available",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: Exit0",
+			"pass": true
+		},
+		{
+			"check": "capture 04_q01_debrief",
+			"pass": true
+		},
+		{
+			"check": "Q01 returned through result UI, reward +150",
+			"pass": true
+		},
+		{
+			"check": "contracts are hidden until Overview toggle",
+			"pass": true
+		},
+		{
+			"check": "real contracts toggle opens task panel",
+			"pass": true
+		},
+		{
+			"check": "capture 05_q02_request",
+			"pass": true
+		},
+		{
+			"check": "normal dressing purchase",
+			"pass": true
+		},
+		{
+			"check": "normal dressing purchase",
+			"pass": true
+		},
+		{
+			"check": "debug ordinary fabric grant",
+			"pass": true
+		},
+		{
+			"check": "debug materials persist through normal save",
+			"pass": true
+		},
+		{
+			"check": "materials alone cannot enable Q02 submission",
+			"pass": true
+		},
+		{
+			"check": "production deployment button present",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: PharmacyBatch",
+			"pass": true
+		},
+		{
+			"check": "capture 06_q02_pharmacy",
+			"pass": true
+		},
+		{
+			"check": "real suspend menu preserves checkpoint",
+			"pass": true
+		},
+		{
+			"check": "Q02 observation survives menu/resume scene route",
+			"pass": true
+		},
+		{
+			"check": "capture 07_q02_resumed",
+			"pass": true
+		},
+		{
+			"check": "legal free exit available",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: Exit0",
+			"pass": true
+		},
+		{
+			"check": "capture 08_q02_debrief",
+			"pass": true
+		},
+		{
+			"check": "contracts are hidden until Overview toggle",
+			"pass": true
+		},
+		{
+			"check": "real contracts toggle opens task panel",
+			"pass": true
+		},
+		{
+			"check": "base submission enabled after successful Q02 observation",
+			"pass": true
+		},
+		{
+			"check": "capture 09_q02_ready",
+			"pass": true
+		},
+		{
+			"check": "Q02 real base button consumes supplies and pays once",
+			"pass": true
+		},
+		{
+			"check": "capture 10_q04_available",
+			"pass": true
+		},
+		{
+			"check": "production deployment button present",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: DeliveryReceipt",
+			"pass": true
+		},
+		{
+			"check": "capture 11_q04_receipt",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: PharmacyBatch",
+			"pass": true
+		},
+		{
+			"check": "capture 12_q04_pharmacy",
+			"pass": true
+		},
+		{
+			"check": "legal free exit available",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: Exit0",
+			"pass": true
+		},
+		{
+			"check": "capture 13_q04_debrief",
+			"pass": true
+		},
+		{
+			"check": "contracts are hidden until Overview toggle",
+			"pass": true
+		},
+		{
+			"check": "real contracts toggle opens task panel",
+			"pass": true
+		},
+		{
+			"check": "Q04 both successful facts enable submission",
+			"pass": true
+		},
+		{
+			"check": "capture 14_q04_ready",
+			"pass": true
+		},
+		{
+			"check": "Q04 real base submit pays +200 and writes exact factual log",
+			"pass": true
+		},
+		{
+			"check": "terminal UI has no follow-up narrative action",
+			"pass": true
+		},
+		{
+			"check": "capture 15_chain_a_stopped",
+			"pass": true
+		},
+		{
+			"check": "all completed states survive disk reload",
+			"pass": true
+		},
+		{
+			"check": "procurement stays available after hard stop",
+			"pass": true
+		},
+		{
+			"check": "production deployment button present",
+			"pass": true
+		},
+		{
+			"check": "fresh free sortie generates no active narrative quest or marker",
+			"pass": true
+		},
+		{
+			"check": "capture 16_free_sortie",
+			"pass": true
+		},
+		{
+			"check": "legal free exit available",
+			"pass": true
+		},
+		{
+			"check": "actual field interaction: Exit1",
+			"pass": true
+		},
+		{
+			"check": "capture 17_free_debrief",
+			"pass": true
+		}
+	],
+	"method": "automated debug-assisted graphics playthrough; combat/tutorial bypassed; real field interactions, production scene route and UI submission",
+	"profile": {
+		"ammo_pack": {},
+		"ar_damage_upgraded": false,
+		"bunny_selected": false,
+		"campaign": {
+			"progress": 0,
+			"stage": 0,
+			"version": 1
+		},
+		"credits": 1820,
+		"failed_sorties": 0,
+		"first_mission_completed": true,
+		"inventory": {
+			"capacity": 1000.0,
+			"items": [
+				{
+					"definition_id": "ammo.556_standard",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "a3f131a411a72721e53b82d3d924b62a",
+					"quantity": 30
+				},
+				{
+					"definition_id": "ammo.9mm_standard",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "a33301434f0518a7f6100913c9c0b75b",
+					"quantity": 12
+				},
+				{
+					"definition_id": "weapon.assault_rifle_01",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "2f650257465067f0d80f6829256b7455",
+					"quantity": 1
+				},
+				{
+					"definition_id": "weapon.smg_01",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "24144669d26559a29ee6c26fd714c8f0",
+					"quantity": 1
+				},
+				{
+					"definition_id": "armor.recon_shell_01",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "87990dc2abfed520cd00390dd4816726",
+					"quantity": 1
+				},
+				{
+					"definition_id": "equipment.field_pack_01",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "61200951827e5d1e666bdea38eb6fc94",
+					"quantity": 1
+				},
+				{
+					"definition_id": "medical.field_dressing",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "e5fb452594e9e937334072b609a03f8a",
+					"quantity": 1
+				},
+				{
+					"definition_id": "ammo.556_standard",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "55e0468e8dc963b64b7b166996aaa541",
+					"quantity": 90
+				},
+				{
+					"definition_id": "ammo.9mm_standard",
+					"durability": 100.0,
+					"fitting": "",
+					"instance_id": "76eb7db313a35ea48ebb028aa4941796",
+					"quantity": 108
+				}
+			]
+		},
+		"loadout": {
+			"armor": "87990dc2abfed520cd00390dd4816726",
+			"backpack": "61200951827e5d1e666bdea38eb6fc94",
+			"weapon_primary": "2f650257465067f0d80f6829256b7455",
+			"weapon_secondary": "24144669d26559a29ee6c26fd714c8f0"
+		},
+		"medical_pack": {
+			"medical.field_dressing": 2,
+			"medical.medkit": 1
+		},
+		"narrative_slice": {
+			"q01_exits": [
+				"streets_exit_0",
+				"streets_exit_2"
+			],
+			"q02": {
+				"delivered": {
+					"material.fabric": 2,
+					"medical.field_dressing": 2
+				},
+				"message": "唐葵：够今晚了。奇怪，送货表上写着昨天就收齐了。配送记录还得再核对。",
+				"observed_batch": "MED-TK-071"
+			},
+			"q04": {
+				"log": "该批次配送记录显示已完成签收，但药房现场记录与签收数量存在差异。相关配送调度记录可进一步核对。",
+				"observed_batch": "MED-TK-071",
+				"receipt_id": "MED-TK-071-RECEIPT"
+			},
+			"settled": {
+				"Q01": true,
+				"Q02": true,
+				"Q03": false,
+				"Q04": true,
+				"Q05": false,
+				"Q06": false
+			},
+			"version": 3
+		},
+		"relief_claimed_after": 0,
+		"settled_outcomes": [
+			"dda470b2acd752cabd04b07912fa1113",
+			"ca6031cdb1747e861081c521c840c64b",
+			"3af6d5e27f7d39d5375eb7ab736f665d",
+			"881ceb1ed62be65d6000accc64f292cb"
+		],
+		"sortie_checkpoint": {},
+		"stash_layout": {
+			"55e0468e8dc963b64b7b166996aaa541": [
+				3,
+				0,
+				false
+			],
+			"76eb7db313a35ea48ebb028aa4941796": [
+				4,
+				0,
+				false
+			],
+			"a33301434f0518a7f6100913c9c0b75b": [
+				1,
+				0,
+				false
+			],
+			"a3f131a411a72721e53b82d3d924b62a": [
+				0,
+				0,
+				false
+			],
+			"e5fb452594e9e937334072b609a03f8a": [
+				2,
+				0,
+				false
+			]
+		},
+		"successful_sorties": 4
+	}
+}

@@ -13,6 +13,12 @@ var result_type: int
 var area_id: StringName
 var mission_id: StringName
 var mission_completed: bool
+var slice_context: Dictionary = {}
+var exit_observations: Array[String] = []
+var q02_active := false
+var pharmacy_batch := ""
+var q04_active := false
+var delivery_receipt := ""
 var objective_summaries: Array[Dictionary] = []
 var inventory: InventoryState # Recovered carried inventory at sortie end.
 var loadout: LoadoutState
@@ -79,6 +85,12 @@ static func create_from_session(session: SortieSession) -> SortieOutcome:
 		session.status == SortieSession.Status.COMPLETED and session.is_mission_completed(),
 		session.get_objective_summary()
 	)
+	outcome.q04_active = session.q04_active
+	outcome.delivery_receipt = session.delivery_receipt
+	outcome.q02_active = session.q02_active
+	outcome.pharmacy_batch = session.pharmacy_batch
+	outcome.slice_context = session.slice_context.duplicate(true)
+	outcome.exit_observations = session.exit_observations.duplicate()
 	if not outcome.validate() or not session.mark_outcome_created():
 		return null
 	return outcome
@@ -91,6 +103,10 @@ func validate() -> bool:
 		and result_type in [ResultType.COMPLETED, ResultType.FAILED, ResultType.ABANDONED]
 		and not area_id.is_empty()
 		and not mission_id.is_empty()
+		and NarrativeSlice.valid_facts(slice_context, exit_observations, area_id)
+		and NarrativeSlice.valid_q04(q04_active, delivery_receipt, area_id)
+		and not (q02_active and q04_active)
+		and NarrativeSlice.valid_pharmacy(q02_active or q04_active, pharmacy_batch, area_id)
 		and _objective_summaries_are_valid()
 		and inventory != null
 		and loadout != null
@@ -111,6 +127,10 @@ func to_dict() -> Dictionary:
 		"mission_id": String(mission_id),
 		"mission_completed": mission_completed,
 		"objective_summaries": get_objective_summaries(),
+		"q04_active": q04_active, "delivery_receipt": delivery_receipt,
+		"q02_active": q02_active, "pharmacy_batch": pharmacy_batch,
+		"slice_context": slice_context.duplicate(true),
+		"exit_observations": exit_observations.duplicate(),
 		"inventory": inventory.to_dict(),
 		"loadout": loadout.to_dict(),
 		"enemies_defeated": enemies_defeated,
@@ -155,6 +175,18 @@ static func from_dict(data: Dictionary) -> SortieOutcome:
 		bool(data.get("mission_completed", false)),
 		restored_objective_summaries
 	)
+	if not NarrativeSlice.valid_q04(data.get("q04_active", false), data.get("delivery_receipt", ""), outcome.area_id): return null
+	outcome.q04_active = data.get("q04_active", false)
+	outcome.delivery_receipt = data.get("delivery_receipt", "")
+	if typeof(data.get("q02_active", false)) != TYPE_BOOL: return null
+	if not NarrativeSlice.valid_pharmacy(data.get("q02_active", false) or outcome.q04_active, data.get("pharmacy_batch", ""), outcome.area_id): return null
+	outcome.q02_active = data.get("q02_active", false)
+	outcome.pharmacy_batch = data.get("pharmacy_batch", "")
+	var context: Variant = data.get("slice_context", {})
+	var observations: Variant = data.get("exit_observations", [])
+	if not NarrativeSlice.valid_facts(context, observations, outcome.area_id): return null
+	outcome.slice_context = context.duplicate(true)
+	for id in observations: outcome.exit_observations.append(id)
 	return outcome if outcome.validate() else null
 
 

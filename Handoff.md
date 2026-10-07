@@ -1,16 +1,29 @@
 # Bunny Team — Current Project Handoff
 
-## Latest working tree — Compact mechanized Hideout integrated (2026-10-05)
+## 当前交接 — 2026-10-05 集成检查点
+
+- 已提交并推送至 `main`：`c1cebae`（基于 `602b722`），整合 10 月 2–5 日的 Alpha 成长、经济、恢复、战术 AI、任务、操作设置及紧凑军事 Hideout。本文后续清理只修改文档。
+- 当前功能入口与规则见 [README](README.md)；完整 Alpha 验收范围见 [验收审计](docs/alpha_0_1/ALPHA_ACCEPTANCE.md)。
+- 最新已有验证来自 Windows / Godot 4.7.2 的紧凑 Hideout 最终快照：**59 个场景测试、79/79 验证项通过**，跨进程恢复与退出检查通过，冷导入 0 ERROR / 2 个已知 FBX warning。本次 macOS 同步未重跑，不能视为本机验收。
+- 仍待验收：真人连续 10–15 局 / 2–4 小时的风险收益、内容节奏与听感；最低硬件目标及对应性能。可选表现改进：坐姿进入/退出混合、风扇/电台环境音。
+- 下方紧凑 Hideout 是最新集成报告；历史批次中的 HEAD、WIP、未提交/未推送、测试数字和“下一步”仅描述当时状态，不能覆盖本节。临时目录与 Windows 路径是证据来源，不是跨机器运行依赖。
+
+## 最新集成报告 — Compact mechanized Hideout integrated (2026-10-05)
 
 - Approved 6x4m imported environment now replaces the exhibition shell in Hideout/menu. Hanger retains inventory/loadout/save ownership; camera-only hub, not a new walkable level.
 - Floor-level character anchor; equipment preview restoration/rebuild preserved. Rest uses original Quaternius seated clip at a separate imported metal stool. Character GLB/materials/geometry unchanged (27 current Artoria source files SHA256 match).
-- Free CC0 concrete/Poly Haven/Kenney resources, field locker, pipe bend and authored electrical cable dressing; local cold/warm lights. No purchase, procedural environment modeling, unrelated WIP reset, commit or push.
+- Free CC0 concrete/Poly Haven/Kenney resources, field locker, pipe bend and authored electrical cable dressing; local cold/warm lights. No purchase, procedural environment modeling or unrelated WIP reset. This integration is included in `c1cebae`.
 - Exact-state 79/79 checks (59 scene tests) PASS; cold0errors/2knownFBX warnings, cross-process/quit probes PASS. C:/Users/admin/AppData/Local/Temp/bunny_compact_releasecheck_20261005. Final runtime/import asset hashes match snapshot. No renderer errors in actual Forward+ captures.
 - Docs: scenes/presentation/compact_hideout/INTEGRATION.md. Durable actual menu/equipment/Operations/Workshop/Rest captures, scoped backups/diff and audit: art_source/hideout_mechanized_trial_20261005/.
 - Optional next polish: ambient fan/radio audio, seated transition blend, lower-hardware profiling. Do not confuse this presentation integration with complete Alpha human endurance acceptance.
 
 
-## Latest working tree — Quaternius Hideout integration (2026-10-04)
+## 历史批次记录
+
+<details>
+<summary>展开历史实现、验证与交接记录（当时状态）</summary>
+
+## Historical batch — Quaternius Hideout integration (2026-10-04)
 
 - User authorized integration. Menu/base standing uses free CC0 Quaternius Idle; Rest uses Sitting_Idle at a new visual chair. Talking remains excluded.
 - 52 body/finger rotations plus authored seated pelvis-height transfer; character asset hashes unchanged (170/170). Hanger restores equipment position/rig/animation; preview replacement and profile invariants covered.
@@ -19,7 +32,7 @@
 - Details: docs/QUATERNIUS_HIDEOUT_INTEGRATION.md; durable captures and scoped diff: art_source/free_animation_probe/sitting_20261004/integration/.
 
 
-## Latest working tree — Hideout entrance, idle and free animation pipeline (2026-10-04)
+## Historical batch — Hideout entrance, idle and free animation pipeline (2026-10-04)
 
 - Current HEAD main `602b722b6326a7821d5648386d3932796f48df04`; extensive existing WIP remains uncommitted. Do not reset, clean, stage-all or commit unrelated changes. No commit/push in this session.
 - Current production character is **Artoria Bunny**, not the historical Unity-Chan player. Character mesh/proportions/textures/materials were not edited. Hidden existing combat animation driver remains unchanged.
@@ -31,7 +44,7 @@
 - Evidence/source/driver: `art_source/free_animation_probe/` (Godot-excluded via .gdignore), especially VALIDATION.md, SOURCE.json and evidence/preview.mp4. No Quaternius clip installed in production. Fingers remain target rest; seat/root-height/foot contacts unverified. Source motion is broad-stanced; talking hands are close. No crossed-arms clip confirmed.
 - Next safe step: continue free animation trial (e.g. Sitting_Idle), validate chair/foot contact and body/finger mapping, then minimally integrate a suitable presentation clip only after visual acceptance. Do not buy assets, install Unity, invent poses, or alter character geometry. Keep existing armed preview restoration and save semantics.
 
-## Latest working tree — Alpha selectable relay operation (2026-10-03)
+## Historical batch — Alpha selectable relay operation (2026-10-03)
 
 - Post-tutorial Operations now chooses Records Run or Restore the Relay. Repair municipal-office and repair-shop stations for 12s each, in either order, then extract. Leaving/damage cancels current attempt; local repair noise uses existing hearing. No material cost/new enemies.
 - Records are optional in repair missions and still open the alternate exit/trigger their alarm. Unconditional retreat remains available. Existing objective/result/reward persistence owns progress; the final base contract accepts either operation, preserving earlier progress.
@@ -40,7 +53,7 @@
 - Cold import 0 ERROR / 2 known FBX warnings; Main exit 0 / known ObjectDB warning. Existing route/save probes PASS. 2381 asset/source/scene/config files unchanged; content manifest intentionally registers one new mission. No removal/stage/commit/push, user WIP preserved.
 - Full Alpha **IN PROGRESS**: target-hardware performance, readability/audio, multi-sortie human risk/reward and pacing remain. [Operation rules/evidence](docs/alpha_0_1/RELAY_OPERATION.md).
 
-## Latest working tree — Alpha keyboard/mouse settings (2026-10-03)
+## Historical batch — Alpha keyboard/mouse settings (2026-10-03)
 
 - Main Menu settings and pause menu now expose 13 primary keyboard/mouse bindings. Draft/apply/default reset, duplicate/reserved-key validation, local device persistence and failure-safe runtime publication; controller events and gameplay values preserved.
 - Real interaction/loot/extraction/medical/switch/map/tutorial prompts show bound keys. Route map now consumes its input action rather than hard-coded M. Old test callback migrated to actual input events; its assertions retained.
@@ -48,7 +61,7 @@
 - 2437 asset/source/scene/resource/config files unchanged; no files removed, no stage/commit/push. User WIP preserved. [Controls scope/evidence](docs/alpha_0_1/CONTROLS.md).
 - Full Alpha **IN PROGRESS**: additional site-purpose variety, target-hardware performance/readability and 10–15 human sorties / 2–4h balance remain unproven. Keyboard settings do not constitute full Alpha acceptance.
 
-## Latest working tree — Alpha records alarm (2026-10-03)
+## Historical batch — Alpha records alarm (2026-10-03)
 
 - Recovering records starts a visible 25-second simulation countdown. A single local alarm makes audible existing guards investigate the terminal, not track the player. Walls attenuate sound; visual combat takes priority. No new enemies or exit closures.
 - Pause/save/restart preserve remaining time. Old completed records do not retroactively trigger an alarm. Existing route/map communicates the consequence before interaction. Audio currently reuses UI cues, not an authored siren.
@@ -56,35 +69,35 @@
 - Controlled Forward+ 1280×720 before/warning/spent English/Chinese screenshots inspected, not human playtesting. 2437 protected asset/source/scene/resource/config files unchanged; no removal/stage/commit/push. User WIP preserved.
 - Full Alpha **IN PROGRESS**: varied site objectives/events, settings/readability, performance and 10–15 human sorties remain. [Rules and evidence](docs/alpha_0_1/RECORDS_ALARM.md).
 
-## Latest working tree — Alpha exit/site-objective choice (2026-10-03)
+## Historical batch — Alpha exit/site-objective choice (2026-10-03)
 
 - Of Streets' existing two assigned exits, the farther remains unconditional retreat; the other requires this sortie's records objective. Survey/full mission completion is not required to extract. Existing unassigned exits remain closed; no layout/AI/player changes.
 - M map and proximity interaction state conditions explicitly; recorded objective progress opens the alternate route and survives session restore. Existing extraction/result/warehouse settlement remains the owner.
 - **54/54 full tests PASS**, 35-check exit fixture across all six spawns; final rendered locked/unlocked en/zh map checked. Full route/cross-process PASS, Main exit 0 with known ObjectDB warning; cold import 0 ERROR / 2 known FBX warnings. [Rules/evidence](docs/alpha_0_1/EXIT_CHOICES.md).
 - Full Alpha **IN PROGRESS**: predictable events/site variety, settings/performance and human multi-sortie validation remain. No commit/push; source/character assets and unrelated WIP preserved.
 
-## Latest working tree — Alpha regional resource geography (2026-10-03)
+## Historical batch — Alpha regional resource geography (2026-10-03)
 
 - Existing Streets rooms now have distinct normal-loot pools: office electronics/wiring/data, pharmacy medicines/fabric, apartments fabric/salvage, repair shop parts/wiring/propellant. Eight existing ordinary points reassigned; four high-value and six street points, enable odds and node counts unchanged. No new material IDs, map rebuild, spawn/collision/nav changes.
 - M route map explains resource tendencies in English/Chinese without disclosing live loot/enemies. Resources feed actual clinic/workbench/fittings/ammunition needs. Existing four exits/two assigned exits remain; richer exit conditions/site objectives are still outstanding.
 - **53/53 tests PASS**, new regional 37-check test with 2000 rolls per table, actual bindings and exact saved-loot restore; graphical map inspection PASS. Full route/cross-process checks PASS, Main exit 0 with known ObjectDB warning; fresh import 0 ERROR / 2 known FBX warnings. [Regional rules/evidence](docs/alpha_0_1/REGIONAL_LOOT.md).
 - Full Alpha **IN PROGRESS**. Next: meaningful extraction/site-objective tradeoffs and predictable events, then settings/performance/human multi-sortie validation. Unrelated WIP/player assets preserved; no commit/push.
 
-## Latest working tree — Alpha exact ammunition packing (2026-10-03)
+## Historical batch — Alpha exact ammunition packing (2026-10-03)
 
 - Normal Hideout Operations now chooses per-caliber total rounds (including magazines), with actual inventory/capacity preview. Default three magazines is exact, not an oversized whole stack. Shared-caliber weapons share one quantity. Medical choices remain available.
 - Production Hanger deployment splits only a candidate warehouse and atomically saves it with the initial checkpoint before publishing. Base remainder keeps its old ID; carried partial stack gets a new ID. Failed writes change neither inventory nor disk. Death/extraction/restart preserve exact quantities.
 - **52/52 full regression PASS**; newest packing checks 48/48; second-process restore/failure 6/6; rendered normal Operations → Deployment → Battle 6/6, HUD 30+7 for selected 37. Main exit 0; cold import 0 ERROR / 2 known original FBX warnings. See [Packing](docs/alpha_0_1/PACKING.md) for evidence scope and last UI/test additions.
 - Full Alpha **IN PROGRESS**. Next: inspect and connect regional resources, site objectives and extraction choices; settings and multi-sortie human validation remain. No commit/push; unrelated WIP and character assets preserved.
 
-## Latest working tree — Alpha instance-owned weapon fittings (2026-10-03)
+## Historical batch — Alpha instance-owned weapon fittings (2026-10-03)
 
 - Workshop now has one utility fitting per eligible owned firearm after the workbench unlock: quickloader (reload ×0.8, +0.8kg), suppressor (enemy gunshot hearing ×0.5, reload ×1.15, +0.35kg). Exact materials/credits, save-before-publish, no refunds on removal/replacement. Original weapon IDs/resources and character assets unchanged.
 - Fits persist with the weapon through deployment, checkpoint and extraction; death loses both. Instance weight flows through inventory, deployment, recovery and UI. Old missing field means standard; invalid/incompatible fit rejected. This is functional modification, not new mesh/sound production.
 - **51/51 tests PASS**, new 48-check fitting test; cross-process fitting read PASS (3 checks); en/zh rendered component checks PASS (50). Existing full Field Office route PASS; cold import 0 errors/2 known FBX warnings; Main exit 0 with known exit warning.
 - Full Alpha remains **IN PROGRESS**. Exact ammunition carrying, regional resource/exit decisions, settings and multi-sortie human balance still outstanding. No commit/push, user WIP preserved. See [Fittings](docs/alpha_0_1/FITTINGS.md).
 
-## Latest working tree — Alpha persistent contracts / functional base unlocks (2026-10-03)
+## Historical batch — Alpha persistent contracts / functional base unlocks (2026-10-03)
 
 - `main @ 602b722`, uncommitted Alpha work and preserved user WIP. Full [Alpha 0.1](docs/ALPHA_0_1.md) remains **IN PROGRESS**; no commit/push.
 - Production Hideout Overview now exposes a five-step chain after First Mission: two recon extractions, clinic material delivery, ammunition-bench delivery, eight survival-confirmed kills, then three further recon extractions. Claims grant one-time credits and actual facilities: medkit assembly, AP crafting, equipment buy discount. Free sorties remain playable after the explicit endpoint.
@@ -130,7 +143,7 @@
 - [Rules/evidence/limits](docs/alpha_0_1/PERCEPTION.md), [machine results](docs/alpha_0_1/perception_validation.json). Next: player visibility separate from camera fading, aim/cover feedback, then persistent quests/facilities/attachments/resource geography/extraction choices and human multi-sortie balancing. Do not call the full Alpha complete.
 
 
-## Current working tree — Alpha 0.1 economy, sortie recovery and medical use (2026-10-03)
+## Historical batch — Alpha 0.1 economy, sortie recovery and medical use (2026-10-03)
 
 - `main @ 602b722` plus uncommitted Alpha work and preserved unrelated user WIP. No commit/push in this Alpha task. Full goal: [ALPHA_0_1.md](docs/ALPHA_0_1.md), **IN PROGRESS**, not a completed Alpha.
 - New profiles have finite starting equipment/credits. Death/abandonment now lose actual carried equipment and ammunition, not base stock. Workshop supply offers purchase/sale/barter and restricted failure recovery; existing possessions retain their IDs. Loading no longer reissues the full arsenal.
@@ -330,7 +343,7 @@ Phase 4G  Performance / release audit
 
 # Bunny Team Engineering Handoff
 
-## Current handoff — Phase 3A Presentation Spike (2026-09-25)
+## Historical handoff — Phase 3A Presentation Spike (2026-09-25)
 
 **Decision: BLOCKED. Do not switch the default player.** Personal-demo derivative,
 not commercial-release clearance. No new character searches, AI or Terminal work.
@@ -503,7 +516,7 @@ Next separately authorized phase: exactly **one Terminal vertical slice**. This 
 >
 > Read this document first. Do not restart architecture, re-audit the whole project or repeat the asset search.
 
-## 1. Current Phase / Exact Stop Point
+## 1. Historical Phase / Exact Stop Point
 
 **Visual Slice 01 — Weapon & Field Office Art Upgrade** was the latest authorized task. It superseded the former environment-only spike and explicitly included three weapon models.
 
@@ -778,3 +791,5 @@ The next work must start from these selected assets and evidence, not from a fre
 - 当前2698 runtime/source文件与最后回归build一致；本轮只新增试玩启动工具与验收记录，不改Gameplay。
 - tools/start_alpha_playtest.py以独立持久profile启动正常BOOT，无教学跳过/自动操作/fixed-fps，不改用户原存档，不导入/删文件。14项参数/隔离/模拟子进程测试通过；未实际替用户启动。
 - 完整Alpha仍缺10–15局/2–4小时真人体验、听感/风险收益反馈，以及最低硬件目标与对应测量。已有异步问题尚待答复。未commit/push，WIP保留。
+
+</details>
