@@ -106,7 +106,7 @@ func _run() -> void:
 	if relay_run: targets = [area.get_node("RelayOffice"),area.get_node("RelayRepair")]
 	var loot_room: int = (area.task_index+1)%4
 	for loot in area.loot_points:
-		if loot.loot_table_id==&"prototype_high_value_loot" and loot.position.distance_to(area.ROOMS[loot_room])<9:
+		if loot.enabled and loot.position.distance_to(area.ROOMS[loot_room])<9:
 			targets.append(loot)
 			break
 	for exit in area.find_children("*","ExtractionPoint",true,false):
@@ -138,6 +138,14 @@ func _run() -> void:
 				if pickup is LootPickup:
 					var id: String = pickup.item_instance.instance_id
 					if pickup.interact(battle.player,session).success: recovered_ids.append(id)
+			# Starter-campus combat can end without exhausting a magazine. Exercise the
+			# real reload after this firefight, rather than relying on empty-mag auto reload.
+			if battle.player.reload_weapon():
+				reloads+=1
+				for tick in 300:
+					await get_tree().physics_frame
+					_controls(battle.player.global_position)
+					if battle.player.get_reload_remaining()<=0: break
 		if target is ExtractionPoint: target.extract(session)
 	for action in ACTIONS: Input.action_release(action)
 	var moved := 0

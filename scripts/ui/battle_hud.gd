@@ -23,10 +23,13 @@ var reticle: Label
 var cover_hint: Label
 var impact_dot: Label
 var sound_hint: Label
+var vision_overlay: VisionOverlay
 var interaction_prompt: Label
 var interaction_feedback: Label
 var pharmacy_information: Label
 var receipt_information: Label
+var field_information: Label
+var _information_remaining := 0.0
 var damage_flash: ColorRect
 var health_fill: StyleBoxFlat
 var _damage_flash_tween: Tween
@@ -41,6 +44,9 @@ func _ready() -> void:
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.theme = UIFactory.theme()
 	add_child(root)
+	vision_overlay = VisionOverlay.new()
+	vision_overlay.name = "VisionOverlay"
+	root.add_child(vision_overlay)
 	damage_flash = ColorRect.new()
 	damage_flash.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	damage_flash.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -146,6 +152,9 @@ func _ready() -> void:
 	interaction_prompt.add_theme_font_size_override("font_size", 15)
 	interaction_prompt.add_theme_color_override("font_color", Color("c9fbff"))
 	root.add_child(interaction_prompt)
+	var information_card := _card(root, "FieldInformation", Control.PRESET_TOP_RIGHT, Vector2(-378,174), Vector2(360,0))
+	field_information = _line(information_card, "", 14, Color("c9fbff"))
+	information_card.get_parent().hide()
 	interaction_feedback = Label.new()
 	interaction_feedback.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
 	interaction_feedback.position = Vector2(-260,-90)
@@ -193,6 +202,9 @@ func _process(_delta: float) -> void:
 	if _banner_remaining > 0.0:
 		_banner_remaining = maxf(0.0, _banner_remaining-_delta)
 		if _banner_remaining == 0.0: banner.hide()
+	if _information_remaining > 0.0:
+		_information_remaining = maxf(0.0, _information_remaining-_delta)
+		if _information_remaining == 0.0: field_information.get_parent().get_parent().hide()
 	if reticle:
 		reticle.position = get_viewport().get_mouse_position() - reticle.size * 0.5
 
@@ -213,6 +225,7 @@ func set_health(current: float, maximum: float) -> void:
 
 
 func set_perception(sensor: PlayerVisibility, camera: Camera3D) -> void:
+	vision_overlay.update_view(sensor, camera)
 	var trace := sensor.aim_trace()
 	cover_hint.visible = trace.blocked
 	cover_hint.position = (reticle.position + Vector2(24, 26)).clamp(Vector2(8, 8), get_viewport().get_visible_rect().size - cover_hint.size - Vector2(8, 8))
@@ -343,3 +356,9 @@ func show_banner(text: String, color: Color) -> void:
 
 func set_armor_stats(mobility: float, protection: float, weight: float) -> void:
 	armor_label.text = tr("%.1f m/s  ·  %.0f%% protection  ·  %.1f kg armor") % [mobility, protection * 100.0, weight]
+
+
+func show_field_information(text: String) -> void:
+	field_information.text = text
+	_information_remaining = 12.0
+	field_information.get_parent().get_parent().show()

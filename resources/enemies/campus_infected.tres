@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="EnemyDefinition" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/data/enemy_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/infected.tscn" id="2"]
+[resource]
+script = ExtResource("1")
+id = &"campus_infected"
+display_name = "校园感染者"
+scene = ExtResource("2")
+humanoid_presentation = true
+tactical_role = 3
+max_health = 45.0
+move_speed = 2.7
+approach_speed = 0.75
+attack_damage = 8.0
+attack_range = 1.65
+attack_cooldown_min = 1.8
+attack_cooldown_max = 1.8
+detection_range = 18.0
+view_angle = 140.0
+acquire_seconds = 0.2
+search_duration = 18.0
+patrol_radius = 2.0

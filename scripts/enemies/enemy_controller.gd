@@ -93,7 +93,7 @@ func _physics_process(delta: float) -> void:
 	# The target position is an observation ONLY when the visibility query passes.
 	awareness.update(seen, target.global_position if seen else Vector3.ZERO, global_position, delta, acquire_seconds, search_duration, patrol_radius)
 	_engaged = awareness.state == EnemyAwareness.State.COMBAT
-	var goal := tactics.destination(self, delta)
+	var goal := _movement_goal(delta)
 	var flat_offset := goal - global_position
 	flat_offset.y = 0.0
 	_path_refresh -= delta
@@ -130,6 +130,10 @@ func _physics_process(delta: float) -> void:
 	var contact_distance := Vector2(awareness.last_known.x - global_position.x, awareness.last_known.z - global_position.z).length()
 	if _engaged and seen and contact_distance <= attack_range and _shot_cooldown <= 0.0 and not _is_telegraphing:
 		_telegraph_shot()
+
+
+func _movement_goal(delta: float) -> Vector3:
+	return tactics.destination(self, delta)
 
 
 func ensure_awareness() -> void:
@@ -216,8 +220,12 @@ func _on_safe_velocity(safe_velocity: Vector3) -> void:
 	move_and_slide()
 
 
+func _create_presentation() -> Node3D:
+	return HumanoidEnemyPresentation.new() if humanoid_presentation else KiteEnemyPresentation.new()
+
+
 func _build_visual() -> void:
-	presentation = HumanoidEnemyPresentation.new() if humanoid_presentation else KiteEnemyPresentation.new()
+	presentation = _create_presentation()
 	presentation.name = "EnemyPresentation"
 	presentation.scale = BASE_VISUAL_SCALE
 	body_visual = presentation

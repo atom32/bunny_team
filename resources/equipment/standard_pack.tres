@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/data/equipment_definition.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/equipment/standard_pack.tscn" id="2"]
 
-[ext_resource type="Texture2D" path="res://assets/ui/stash/field_pack_01.png" id="stash_icon"]
+[ext_resource type="Texture2D" path="res://assets/ui/stash/field_pack_01_v2.png" id="stash_icon"]
 
 [resource]
 script = ExtResource("1")

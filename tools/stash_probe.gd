@@ -118,9 +118,7 @@ func _run() -> void:
 	hideout.show_section("Hanger")
 	await get_tree().process_frame
 	var ui: HangerUI = hideout.hanger.hanger_ui
-	_check(not ui.warehouse_panel.visible, "Hanger opens with an unobstructed character preview")
-	ui.warehouse_button.pressed.emit()
-	_check(ui.warehouse_panel.visible, "Warehouse opens through its visible button")
+	_check(ui.warehouse_panel.visible and ui.weapon_option.is_visible_in_tree(), "Equipment and stash open together")
 	var grid := ui.stash_grid
 	var pistol := _owned(profile, &"weapon.pistol_01")
 	var rifle := _owned(profile, &"weapon.assault_rifle_01")
@@ -154,6 +152,13 @@ func _run() -> void:
 		_check(grid.model.move_item(rifle, Vector2i(0, 6)), "Equipped weapon returns to stash")
 		_check(grid.model.equip_item(heavy, LoadoutState.SLOT_ARMOR), "Armor equips from stash")
 	ui.sync_loadout_selection()
+	var equipped_armor := profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_ARMOR)
+	(ui.armor_option as StashSlot).remove_button.pressed.emit()
+	_check(not profile.loadout.is_equipped(equipped_armor) and profile.stash_layout.has(equipped_armor), "Card unequip button returns the same item to warehouse")
+	ui.armor_option._drop_data(Vector2.ZERO, {"stash": grid, "instance_id": equipped_armor})
+	_check(profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_ARMOR) == equipped_armor, "Unequipped armor can be dragged back to its card")
+	_check(ui.weapon_option.get_popup().get_theme_color("font_color").a > 0.0, "Equipment popup choices remain readable")
+	_check(ui.packing.find_children("PackAmmo_*", "SpinBox", true, false).size() == DeploymentPlan.default_ammo_counts(profile).size(), "Ammo controls follow currently equipped calibers")
 	_check(profile.inventory.to_dict() == original and profile.validate(), "Transfers preserve every instance, quantity, durability and inventory capacity")
 	_check(SaveService.save_profile(profile, path) == OK, "Grid layout and loadout save through the normal atomic save service")
 	var restored := SaveService.load_profile(path)

@@ -9,7 +9,9 @@ var camera: Camera3D
 var ui: CanvasLayer
 var screen: Control
 var section := "Overview"
-var camera_tween: Tween
+var section_camera_position := Vector3(0.35,1.6,1.82)
+var camera_focus := Vector3(-0.85,1,-0.45)
+var section_focus := Vector3(-0.85,1,-0.45)
 var elapsed := 0.0
 var relaxed_preview: Node
 
@@ -22,9 +24,6 @@ func _ready() -> void:
 	for button in hanger.hanger_ui.find_children("*", "Button", true, false):
 		if button.text == "DEPLOY":
 			button.text = "MISSION TERMINAL"
-			# Keep the existing equipment panel clear of the hub navigation bar.
-			var equipment_panel := button.get_parent().get_parent() as Control
-			equipment_panel.position.y -= 32.0
 	camera = hanger.get_node("PreviewCamera")
 	_build_rooms()
 	relaxed_preview = preload("res://scripts/presentation/slice/hideout_idle.gd").new()
@@ -49,10 +48,47 @@ func _process(delta: float) -> void:
 	if relaxed_preview and is_instance_valid(hanger.preview_character):
 		if relaxed_preview.actor != hanger.preview_character:
 			hanger.preview_character.position = STANDING_ANCHOR
-		relaxed_preview.bind(hanger.preview_character)
-		relaxed_preview.set_relaxed(menu_backdrop or section != "Hanger")
-		relaxed_preview.set_seated(not menu_backdrop and section == "Rest", SEAT_ANCHOR)
-	if menu_backdrop: _menu_camera()
+			var playback := {}
+			if is_instance_valid(relaxed_preview.actor):
+				var previous: PlayerController = relaxed_preview.actor
+				for key in ["phase", "clip_name", "elapsed", "idle_elapsed", "route", "seated", "height_offset", "target_yaw", "speed", "destination_section", "enabled"]:
+					playback[key] = relaxed_preview.get(key)
+				playback["position"] = previous.position
+				playback["yaw"] = previous.body_visual.rotation.y
+				var poses: Array[Quaternion] = []
+				for index in previous.character_skeleton.get_bone_count(): poses.append(previous.character_skeleton.get_bone_pose_rotation(index))
+				playback["poses"] = poses
+			relaxed_preview.bind(hanger.preview_character)
+			relaxed_preview.transition_to("Overview" if menu_backdrop else section, true)
+			if not playback.is_empty():
+				relaxed_preview.set_relaxed(playback.enabled)
+				hanger.preview_character.position = playback.position
+				hanger.preview_character.body_visual.rotation.y = playback.yaw
+				for key in playback:
+					if key not in ["position", "yaw", "poses", "enabled"]: relaxed_preview.set(key, playback[key])
+				for index in playback.poses.size(): hanger.preview_character.character_skeleton.set_bone_pose_rotation(index, playback.poses[index])
+				relaxed_preview._change_clip(playback.clip_name)
+				relaxed_preview.elapsed = playback.elapsed
+				if not playback.enabled:
+					relaxed_preview.equipment_blend = true
+					relaxed_preview.equipment_start_yaw = playback.yaw
+			relaxed_preview.original_position = STANDING_ANCHOR
+		else:
+			relaxed_preview.transition_to("Overview" if menu_backdrop else section)
+	if menu_backdrop:
+		_menu_camera()
+	elif is_instance_valid(hanger.preview_character):
+		var focus := section_focus
+		if relaxed_preview.enabled and relaxed_preview.phase != "idle":
+			focus = hanger.preview_character.position + Vector3(0, 1.0, 0)
+		var moving: bool = relaxed_preview.enabled and relaxed_preview.phase != "idle"
+		# Cross the partition inside its doorway, alongside the actor, before framing the destination.
+		var destination := Vector3(hanger.preview_character.position.x, 2.25, 1.6) if moving else section_camera_position
+		camera.position = camera.position.lerp(destination, 1.0 - exp(-delta * 5.0))
+		var target_fov := 90.0 if moving else (75.0 if section == "Rest" else 65.0)
+		camera.fov = lerpf(camera.fov, target_fov, 1.0 - exp(-delta * 4.0))
+		camera_focus = camera_focus.lerp(focus, 1.0 - exp(-delta * 5.0))
+		camera.look_at(camera_focus)
 
 func _menu_camera() -> void:
 	# The imported compact room replaces the display stage; actor geometry is unchanged.
@@ -81,7 +117,7 @@ func show_section(value: String) -> void:
 		screen.remove_child(child)
 		child.queue_free()
 	hanger.hanger_ui.visible = value == "Hanger"
-	if value != "Hanger": hanger.hanger_ui.set_warehouse_open(false)
+	if value == "Hanger": hanger.hanger_ui.sync_loadout_selection()
 	var destination := Vector3(0.35,1.6,1.82)
 	var focus := Vector3(-0.85,1,-0.45)
 	if value == "Hanger":
@@ -94,13 +130,10 @@ func show_section(value: String) -> void:
 		destination = Vector3(-0.6,1.65,1.65)
 		focus = Vector3(-1.8,0.95,-1.37)
 	elif value == "Rest":
-		destination = Vector3(0.45,1.6,1.72)
+		destination = Vector3(1.3,1.65,1.82)
 		focus = Vector3(2.12,0.95,0.9)
-	if camera_tween and camera_tween.is_valid(): camera_tween.kill()
-	camera_tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE)
-	camera_tween.tween_property(camera, "position", destination, 0.65)
-	var target_basis := Transform3D(Basis.IDENTITY, destination).looking_at(focus).basis
-	camera_tween.tween_property(camera, "quaternion", target_basis.get_rotation_quaternion(), 0.65)
+	section_camera_position = destination
+	section_focus = focus
 	if value != "Hanger":
 		SliceUI.label(screen, "BASTION 07  /  HIDEOUT", Vector2(42,30), 30)
 		SliceUI.label(screen, "HOME SIGNAL STABLE    •    ESC / PAUSE", Vector2(44,72), 14, SliceUI.CYAN)
@@ -110,15 +143,18 @@ func show_section(value: String) -> void:
 		var description := "Your forward operating base.\n\nEquip in the Hanger.\nReview the operation at the Terminal.\nReturn here with what you recover."
 		if value == "Operations":
 			var first := not ProfileRuntime.get_profile().first_mission_completed
+			if first:
+				var notice := SliceUI.label(panel, tr("LEGACY TUTORIAL / ART NOT REFURBISHED"), Vector2(24, 64), 12, Color("ffbd72"))
+				notice.name = "LegacyTutorialNotice"
 			var mission := ContentDB.get_mission(&"first_mission" if first else DeploymentPlan.selected_street_mission)
 			description = tr(mission.display_name) + "\n\n"
 			for objective in mission.objective_definitions:
 				description += "• " + tr(objective.display_name) + "\n"
 			description += tr("\nRecover supplies. Reach the south\nextraction beacon to return alive.") if first else tr("\nTwo exits assigned on arrival.\n%s: objectives and extraction map.") % ControlBindings.label("route_map")
 			if mission.mission_id == &"streets_relay":
-				description = tr("REPAIR BOTH RELAYS, THEN EXTRACT\n\nMunicipal office + repair shop.\n12s nearby each; damage cancels.\nLocal noise; no materials needed.\n\nRecords: optional alternate exit.\n%s: objectives and extraction map.") % ControlBindings.label("route_map")
+				description = tr("REPAIR BOTH RELAYS, THEN EXTRACT\n\nReading hall + maintenance yard.\n12s nearby each; damage cancels.\nLocal noise; no materials needed.\n\nRecords: optional alternate exit.\n%s: objectives and extraction map.") % ControlBindings.label("route_map")
 		elif value == "Workshop": description = "MODERN ARMORY\n\nPistol / SMG / Assault Rifle\nShotgun / Sniper / Light Machine Gun\nRPG Field Launcher\n\nSelect two weapons in the Hanger.\nAmmo is carried for your loadout.\nHold Shift with the sniper to survey."
-		elif value == "Rest": description = "PERSONAL QUARTERS\n\nKohaku — field operator.\nThe city's security network is hostile.\nThis room is still yours.\n\nRecover. Re-equip. Come home."
+		elif value == "Rest": description = "PERSONAL QUARTERS\n\nField operator quarters.\nThe city's security network is hostile.\nThis room is still yours.\n\nRecover. Re-equip. Come home."
 		if value == "Workshop":
 			var profile := ProfileRuntime.get_profile()
 			description = tr("WAREHOUSE / SALVAGE CORE × %d\n\nAR / WEAPON UPGRADE\nCost: 1 Salvage Core\nDamage: 20 → 22 (+10%%)\n\n%s") % [FirstMissionPreparation.salvage_count(profile), tr("INSTALLED / READY FOR SORTIE 02" if profile.ar_damage_upgraded else ("Materials secured. Install your upgrade." if profile.first_mission_completed else "Bring materials home from First Mission."))]
@@ -141,9 +177,9 @@ func show_section(value: String) -> void:
 		contracts.size = Vector2(800, 474)
 		screen.add_child(contracts)
 		contracts.hide()
-		var contact_button := SliceUI.button(screen, "联系人 / 补给与委托", Vector2(42, 100), Vector2(320, 40), func(): show_section("Workshop"))
+		var contact_button := SliceUI.button(screen, "补给与委托", Vector2(42, 100), Vector2(320, 40), func(): show_section("Workshop"))
 		contact_button.name = "ContactsToggle"
-		var contracts_toggle := SliceUI.button(screen, "委托记录 / TASKS", Vector2(750,100), Vector2(320,40), func(): contracts.visible = not contracts.visible)
+		var contracts_toggle := SliceUI.button(screen, "委托记录", Vector2(750,100), Vector2(320,40), func(): contracts.visible = not contracts.visible)
 		contracts_toggle.name = "ContractsToggle"
 		SliceUI.button(screen, "PREPARE SORTIE", Vector2(918,556), Vector2(320,52), func():
 			if not ProfileRuntime.get_profile().first_mission_completed:
@@ -184,28 +220,58 @@ func show_section(value: String) -> void:
 			var choices := OptionButton.new()
 			choices.name = "MissionChoice"
 			choices.position = Vector2(42,144)
-			choices.size = Vector2(548,48)
+			choices.size = Vector2(348,48)
 			for id in DeploymentPlan.STREET_MISSIONS: choices.add_item(tr(ContentDB.get_mission(id).display_name))
 			choices.select(DeploymentPlan.STREET_MISSIONS.find(DeploymentPlan.selected_street_mission))
 			choices.item_selected.connect(func(index: int):
 				DeploymentPlan.selected_street_mission = DeploymentPlan.STREET_MISSIONS[index]
 				show_section.call_deferred("Operations"))
 			screen.add_child(choices)
-		var medical := MedicalPacking.new()
-		medical.name = "MedicalPacking"
-		medical.position = Vector2(42, 206)
-		medical.size = Vector2(548, 330)
-		screen.add_child(medical)
-		var warning := SliceUI.label(screen, "AT RISK: all deployed equipment and supplies.\nDeath or abandonment loses carried items. Base storage is safe.", Vector2(44,540), 16, Color("ffbd72"))
-		warning.size = Vector2(790,72)
+			var time_choice := OptionButton.new()
+			time_choice.name = "LightingChoice"
+			time_choice.position = Vector2(402,144)
+			time_choice.size = Vector2(188,48)
+			time_choice.add_item(tr("DAY / CAMPUS"))
+			time_choice.add_item(tr("NIGHT / CAMPUS"))
+			time_choice.select(1 if DeploymentPlan.selected_lighting_variant == "night" else 0)
+			time_choice.item_selected.connect(func(index: int): DeploymentPlan.selected_lighting_variant = "night" if index == 1 else "day")
+			screen.add_child(time_choice)
+		var preparation_panel := SliceUI.panel(screen, Vector2(42,208), Vector2(548,386))
+		preparation_panel.name = "DeploymentReview"
+		preparation_panel.add_theme_stylebox_override("panel", SliceUI.menu_style(Color("171914fa"), Color("555749")))
+		var review := Label.new()
+		review.name = "DeploymentQuantities"
+		review.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		review.text = DeploymentPlan.build(ProfileRuntime.get_profile()).message
+		review.position = Vector2(18,18)
+		review.add_theme_font_size_override("font_size",18)
+		review.add_theme_color_override("font_color",Color("d7d5c8"))
+		review.size = Vector2(512, 164)
+		preparation_panel.add_child(review)
+		SliceUI.button(preparation_panel, "CHARACTER / STASH", Vector2(18,190), Vector2(512,48), func(): show_section("Hanger"))
+		var warning := Label.new()
 		warning.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		warning.text = "AT RISK: all deployed equipment and supplies.\nDeath or abandonment loses carried items. Base storage is safe."
+		warning.position = Vector2(18,266)
+		warning.add_theme_font_size_override("font_size",16)
+		warning.add_theme_color_override("font_color",Color("ffbd72"))
+		warning.size = Vector2(512, 100)
 		warning.name = "PackingRisk"
-		medical.resized.connect(func(): warning.position.y = medical.position.y + medical.size.y + 8)
-		warning.position.y = medical.position.y + medical.size.y + 8
+		preparation_panel.add_child(warning)
 	for index in 5:
 		var names := ["Overview", "Hanger", "Operations", "Workshop", "Rest"]
 		var key: String = names[index]
-		SliceUI.button(screen, tr("%02d  %s") % [index+1,tr(key).to_upper()], Vector2(42+index*226,644), Vector2(212,48), func(): show_section(key))
+		var navigation := SliceUI.button(screen, tr("%02d  %s") % [index+1,tr(key).to_upper()], Vector2(42+index*226,644), Vector2(212,48), func(): show_section(key))
+		if value == "Hanger":
+			navigation.text = tr("CHARACTER / STASH") if key == "Hanger" else tr(key)
+			navigation.size.y = 40
+			navigation.add_theme_font_size_override("font_size", 14)
+			for state in ["normal", "hover", "pressed", "focus"]:
+				var style := SliceUI.menu_style(Color("1b2429") if key == value or state != "normal" else Color("0e1215"), Color("ad9d74") if key == value else Color("303b41"))
+				style.set_content_margin_all(6)
+				style.set_border_width_all(0)
+				style.border_width_bottom = 2 if key == value else 1
+				navigation.add_theme_stylebox_override(state, style)
 	if value != "Hanger": SliceUI.button(screen, "MENU", Vector2(1140,30), Vector2(100,36), func(): FlowMenu.request_leave("menu"))
 
 func _deploy() -> void:

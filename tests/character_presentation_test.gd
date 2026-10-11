@@ -34,6 +34,13 @@ func _ready() -> void:
 	player.equip_weapon(ContentDB.get_weapon(&"weapon.assault_rifle_01"))
 	player.set_process(false)
 	player.set_physics_process(false)
+	player.velocity = Vector3.FORWARD * player.base_speed * .5
+	for frame in 60: player._animate_stride(1.0 / 60.0)
+	check(absf(float(player.animation_tree.get("parameters/Run/Cadence/scale")) - .5) < .02, "half-speed movement slows the actual animation cadence")
+	player.velocity = Vector3.FORWARD * player.base_speed
+	for frame in 60: player._animate_stride(1.0 / 60.0)
+	check(absf(float(player.animation_tree.get("parameters/Run/Cadence/scale")) - 1.0) < .02, "full-speed movement restores the animation cadence")
+	player.velocity = Vector3.ZERO
 	# Read final modified palm positions, including the slide clip and dodge scale.
 	var grip_errors := {"right": INF, "left": INF}
 	var hands := player.character_skeleton.get_node("BunnyGunHands") as SkeletonModifier3D
@@ -43,6 +50,38 @@ func _ready() -> void:
 		grip_errors.right = sk.to_global(contact.palm(sk,"Right")).distance_to(player.combat_rig.primary_grip.global_position)
 		grip_errors.left = sk.to_global(contact.palm(sk,"Left")).distance_to(player.combat_rig.support_grip.global_position)
 	)
+	# Check the final skinned leg pose, not just the animation state name.
+	var stride := {"min_z": INF, "max_z": -INF, "min_angle": INF, "max_angle": -INF}
+	var elbow_clearance := {"minimum": INF}
+	var sample_stride := func():
+		var sk := player.character_skeleton
+		var foot := sk.get_bone_global_pose(sk.find_bone("Character1_LeftFoot")).origin
+		var knee := sk.get_bone_pose_rotation(sk.find_bone("Character1_LeftLeg")).get_angle()
+		stride.min_z = minf(stride.min_z, foot.z)
+		stride.max_z = maxf(stride.max_z, foot.z)
+		stride.min_angle = minf(stride.min_angle, knee)
+		stride.max_angle = maxf(stride.max_angle, knee)
+		for side in ["Right", "Left"]:
+			var shoulder := sk.to_global(sk.get_bone_global_pose(sk.find_bone("Character1_" + side + "Arm")).origin)
+			var elbow := sk.to_global(sk.get_bone_global_pose(sk.find_bone("Character1_" + side + "ForeArm")).origin)
+			elbow_clearance.minimum = minf(elbow_clearance.minimum, shoulder.y - elbow.y)
+	hands.modification_processed.connect(sample_stride)
+	for state in ["Walk", "Run"]:
+		player.locomotion_playback.travel(state)
+		for frame in 15:
+			player.animation_tree.advance(1.0 / 60.0)
+			player.animation_source_skeleton.advance(1.0 / 60.0)
+			player.combat_rig.apply_skeleton_ik(1.0 / 60.0)
+			await get_tree().process_frame
+		stride.min_z = INF; stride.max_z = -INF; stride.min_angle = INF; stride.max_angle = -INF
+		for frame in 90:
+			player.animation_tree.advance(1.0 / 60.0)
+			player.animation_source_skeleton.advance(1.0 / 60.0)
+			player.combat_rig.apply_skeleton_ik(1.0 / 60.0)
+			await get_tree().process_frame
+		check(stride.max_z - stride.min_z > .12 and stride.max_angle - stride.min_angle > .15, state + " visibly moves the retargeted foot and knee: " + str(stride))
+	check(elbow_clearance.minimum > .08, "walk/run keep both elbows lowered while retaining the authored limb lengths: " + str(elbow_clearance))
+	hands.modification_processed.disconnect(sample_stride)
 	player.locomotion_playback.travel("Dodge")
 	player.body_visual.scale = Vector3(.9, 1.06, .9)
 	for frame in 12:

@@ -2,7 +2,7 @@ class_name SortieCheckpoint
 extends RefCounted
 ## Versioned JSON state, not a PackedScene or executable Variant. Only explicit
 ## gameplay fields are persisted; original geometry, materials and rigs are untouched.
-const VERSION := 4
+const VERSION := 5
 const PLAYER_FIELDS := ["position", "rotation", "velocity", "health", "aim_direction", "aim_world_point", "_shot_cooldown", "_dodge_time", "_dodge_cooldown_time", "_dodge_direction", "_move_direction"]
 const ENEMY_FIELDS := ["position", "rotation", "velocity", "health", "_shot_cooldown", "_path_refresh", "_knockback_velocity", "_strafe_direction", "_is_telegraphing", "_engaged", "_movement_direction", "_shot_aim_point", "visible", "collision_layer", "collision_mask"]
 const AWARENESS_FIELDS := ["initialized", "state", "home", "home_forward", "last_known", "suspicion", "memory_remaining", "search_elapsed", "patrol_index", "patrol_wait", "target_visible"]
@@ -24,7 +24,7 @@ static func session_data(session: SortieSession) -> Dictionary:
 	for id in session._weapon_runtime_states:
 		var weapon = session._weapon_runtime_states[id]
 		rounds[id] = {"ammo": String(weapon.ammo_definition_id), "capacity": weapon.magazine_capacity, "rounds": weapon.magazine_ammo}
-	return {"q04_active": session.q04_active, "delivery_receipt": session.delivery_receipt, "q02_active": session.q02_active, "pharmacy_batch": session.pharmacy_batch, "slice_context": session.slice_context.duplicate(true), "exit_observations": session.exit_observations.duplicate(), "id": session.session_id, "status": session.status, "area": String(session.area_id), "mission": String(session.mission_id), "inventory": session.inventory.to_dict(), "loadout": session.loadout.to_dict(), "initial_ids": session.get_initial_carried_instance_ids(), "objectives": session.get_objective_summary(), "mission_completed": session.mission_completed, "kills": session.enemies_defeated, "damage": session.damage_taken, "upgrade": session.ar_damage_upgraded, "threat": session.threat_level, "weapons": rounds}
+	return {"lighting": session.lighting_variant, "q04_active": session.q04_active, "delivery_receipt": session.delivery_receipt, "q02_active": session.q02_active, "pharmacy_batch": session.pharmacy_batch, "slice_context": session.slice_context.duplicate(true), "exit_observations": session.exit_observations.duplicate(), "id": session.session_id, "status": session.status, "area": String(session.area_id), "mission": String(session.mission_id), "inventory": session.inventory.to_dict(), "loadout": session.loadout.to_dict(), "initial_ids": session.get_initial_carried_instance_ids(), "objectives": session.get_objective_summary(), "mission_completed": session.mission_completed, "kills": session.enemies_defeated, "damage": session.damage_taken, "upgrade": session.ar_damage_upgraded, "threat": session.threat_level, "weapons": rounds}
 
 static func restore_session(data: Dictionary) -> SortieSession:
 	for key in ["id", "area", "mission"]:
@@ -45,6 +45,8 @@ static func restore_session(data: Dictionary) -> SortieSession:
 	if not inventory or not loadout or not inventory.validate() or not loadout.validate(inventory): return null
 	if not ContentDB.get_area_definition(StringName(data.area), false): return null
 	var session := SortieSession.new(inventory, loadout, StringName(data.area), StringName(data.mission), data.id, ids)
+	if not SortieRequest.valid_lighting(data.get("lighting", "day"), session.area_id): return null
+	session.lighting_variant = data.get("lighting", "day")
 	if not NarrativeSlice.valid_q04(data.get("q04_active", false), data.get("delivery_receipt", ""), session.area_id): return null
 	session.q04_active = data.get("q04_active", false)
 	session.delivery_receipt = data.get("delivery_receipt", "")
@@ -178,13 +180,14 @@ static func _firing_pose(enemy: EnemyController) -> Dictionary:
 			bones[skeleton.get_bone_name(index)] = [p.x, p.y, p.z, q.x, q.y, q.z, q.w, s.x, s.y, s.z]
 	return {"human": human, "body": fields(visual, POSE_FIELDS), "pose": fields(visual.model if human else visual.weapon_pose_root, POSE_FIELDS), "state": fields(visual, HUMAN_FIRE_FIELDS if human else KITE_FIRE_FIELDS), "clip": String(visual.animation_player.current_animation) if human else "", "time": visual.animation_player.current_animation_position if human else 0.0, "bones": bones, "hit_elapsed": enemy._hit_tween.get_total_elapsed_time() if enemy._hit_tween and enemy._hit_tween.is_valid() and enemy._hit_tween.is_running() else -1.0, "hit_side": enemy._hit_reaction_side}
 
-static func _valid_firing_pose(raw: Variant, human: bool, battle: Node) -> bool:
+static func _valid_firing_pose(raw: Variant, human: bool, battle: Node, infected := false) -> bool:
 	if typeof(raw) != TYPE_DICTIONARY or typeof(raw.get("human")) != TYPE_BOOL or raw.human != human: return false
 	var visual: Node3D = HumanoidEnemyPresentation.new() if human else KiteEnemyPresentation.new()
 	var valid := valid_fields(raw.get("body"), visual, POSE_FIELDS) and valid_fields(raw.get("pose"), visual, POSE_FIELDS) and valid_fields(raw.get("state"), visual, HUMAN_FIRE_FIELDS if human else KITE_FIRE_FIELDS)
 	visual.free()
 	if not valid or typeof(raw.get("clip")) != TYPE_STRING or not SaveService.is_number(raw.get("time")) or raw.time < 0 or raw.time > 3600: return false
-	if human and raw.clip not in ["Idle_Gun_Pointing", "Run_Shoot", "Gun_Shoot"]: return false
+	var clips := ["Idle", "Walk", "Run", "Punch_Left"] if infected else ["Idle_Gun_Pointing", "Run_Shoot", "Gun_Shoot"]
+	if human and raw.clip not in clips: return false
 	if typeof(raw.get("bones")) != TYPE_DICTIONARY: return false
 	if human:
 		var skeletons: Array = battle.enemy_container.find_children("*", "Skeleton3D", true, false)
@@ -256,9 +259,12 @@ static func capture_world(battle: Node) -> Dictionary:
 	var director: Node = battle.get_node_or_null("FirstMissionDirector")
 	var alarm: RecordsAlarm = battle.area_root.get_node_or_null("StreetTerminal/RecordsAlarm")
 	var records: RecordsTerminal = battle.area_root.get_node_or_null("StreetTerminal")
-	return {"q04_active": battle.session.q04_active, "delivery_receipt": battle.session.delivery_receipt, "q02_active": battle.session.q02_active, "pharmacy_batch": battle.session.pharmacy_batch, "slice_context": battle.session.slice_context.duplicate(true), "exit_observations": battle.session.exit_observations.duplicate(), "records_work": records.snapshot() if records else {}, "records_alarm": alarm.snapshot() if alarm else {}, "layout": battle.checkpoint_layout_signature, "player": fields(battle.player, PLAYER_FIELDS), "footstep_distance": battle.player._footstep_distance, "medical": battle.player.medical.snapshot(), "weapon_slot": String(battle.player.active_weapon_slot), "reloads": battle.player._reload_remaining_by_weapon.duplicate(), "enemies": enemies, "nodes": nodes, "rockets": rockets, "director": fields(director, DIRECTOR_FIELDS) if director else {}}
+	return {"lighting": battle.area_root.get_meta("lighting", "day"), "map_revision": int(battle.area_root.get_meta("map_revision",0)), "q04_active": battle.session.q04_active, "delivery_receipt": battle.session.delivery_receipt, "q02_active": battle.session.q02_active, "pharmacy_batch": battle.session.pharmacy_batch, "slice_context": battle.session.slice_context.duplicate(true), "exit_observations": battle.session.exit_observations.duplicate(), "records_work": records.snapshot() if records else {}, "records_alarm": alarm.snapshot() if alarm else {}, "layout": battle.checkpoint_layout_signature, "player": fields(battle.player, PLAYER_FIELDS), "footstep_distance": battle.player._footstep_distance, "medical": battle.player.medical.snapshot(), "weapon_slot": String(battle.player.active_weapon_slot), "reloads": battle.player._reload_remaining_by_weapon.duplicate(), "enemies": enemies, "nodes": nodes, "rockets": rockets, "director": fields(director, DIRECTOR_FIELDS) if director else {}}
 
 static func validate_world(data: Dictionary, battle: Node) -> bool:
+	if not SortieRequest.valid_lighting(data.get("lighting", "day"), battle.session.area_id): return false
+	if data.get("lighting", "day") != battle.session.lighting_variant or data.get("lighting", "day") != battle.area_root.get_meta("lighting", "day"): return false
+	if not integer(data.get("map_revision",0),0,3) or int(data.get("map_revision",0)) != int(battle.area_root.get_meta("map_revision",0)): return false
 	if not NarrativeSlice.world_matches(data, battle.session): return false
 	if typeof(data.get("nodes")) != TYPE_DICTIONARY: return false
 	if not battle.session.slice_context.is_empty():
@@ -325,7 +331,7 @@ static func validate_world(data: Dictionary, battle: Node) -> bool:
 		entry.erase("shot_remaining")
 		var template := EnemyController.new()
 		var definition := ContentDB.get_enemy_definition(point.enemy_definition_id, false)
-		var firing_valid := _valid_firing_pose(entry.get("firing"), definition.humanoid_presentation, battle)
+		var firing_valid := _valid_firing_pose(entry.get("firing"), definition.humanoid_presentation, battle, definition.id == &"campus_infected")
 		entry.erase("firing")
 		var awareness_valid := valid_awareness(entry.get("awareness", {}))
 		entry.erase("awareness")

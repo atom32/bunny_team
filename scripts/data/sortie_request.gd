@@ -4,6 +4,11 @@ extends RefCounted
 const PROTOTYPE_AREA_ID := &"prototype_arena"
 const PROTOTYPE_MISSION_ID := &"prototype_combat"
 
+var lighting_variant := "day"
+
+static func valid_lighting(value: Variant, area: StringName) -> bool:
+	return typeof(value) == TYPE_STRING and value in ["day", "night"] and (value == "day" or area == &"street_district")
+
 var area_id: StringName
 var mission_id: StringName
 var loadout: LoadoutState
@@ -24,7 +29,8 @@ func _init(
 
 func validate(source_inventory: InventoryState) -> bool:
 	if (
-		area_id.is_empty()
+		not valid_lighting(lighting_variant, area_id)
+		or area_id.is_empty()
 		or mission_id.is_empty()
 		or ContentDB.get_area_definition(area_id, false) == null
 		or ContentDB.get_mission(mission_id, false) == null

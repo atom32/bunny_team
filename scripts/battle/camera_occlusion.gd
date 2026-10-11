@@ -17,7 +17,7 @@ func update_occlusion(camera: Camera3D, actor: Node3D, delta: float) -> void:
 			var inverse := mesh.global_transform.affine_inverse()
 			# A small margin covers thin trim between the sampled body heights.
 			if mesh.get_aabb().grow(.12).intersects_segment(inverse * origin, inverse * focus) != null:
-				blocking[mesh] = true
+				blocking[mesh] = 0.88
 				if not faded.has(mesh): faded[mesh] = mesh.transparency
 		var exclude: Array[RID] = []
 		if actor is CollisionObject3D: exclude.append(actor.get_rid())
@@ -36,14 +36,14 @@ func update_occlusion(camera: Camera3D, actor: Node3D, delta: float) -> void:
 			exclude.append(hit.rid)
 			for mesh in body.find_children("*", "GeometryInstance3D", true, false):
 				if not mesh.is_in_group("camera_keep_visible"):
-					blocking[mesh] = true
+					blocking[mesh] = 1.0 if body.is_in_group("aim_cutaway_roof") else 0.88
 					if not faded.has(mesh): faded[mesh] = mesh.transparency
 	for mesh in faded.keys():
 		if not is_instance_valid(mesh):
 			faded.erase(mesh)
 			continue
 		var original: float = faded[mesh]
-		var goal := maxf(original, 0.88) if blocking.has(mesh) else original
+		var goal := maxf(original, float(blocking[mesh])) if blocking.has(mesh) else original
 		mesh.transparency = move_toward(mesh.transparency, goal, delta * 4.5)
 		if not blocking.has(mesh) and is_equal_approx(mesh.transparency,original): faded.erase(mesh)
 

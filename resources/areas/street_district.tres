@@ -4,5 +4,5 @@
 [resource]
 script = ExtResource("1")
 id = &"street_district"
-display_name = "Old Town / Streets"
+display_name = "Old University / Weijin Campus"
 scene = ExtResource("2")

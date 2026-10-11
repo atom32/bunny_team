@@ -145,18 +145,40 @@ func _ui() -> void:
 	panel.free()
 	var hub = load("res://scenes/presentation/slice/hideout.tscn").instantiate()
 	add_child(hub)
+	hub.show_section("Hanger")
+	await get_tree().process_frame
+	var ui: HangerUI = hub.hanger.hanger_ui
+	check(ui.packing != null and ui.packing.is_visible_in_tree() and ui.stash_grid.is_visible_in_tree(), "packing, equipment and warehouse share the production page")
+	var integrated := ui.packing.find_child("PackAmmo_ammo_556_standard",true,false) as SpinBox
+	integrated.value = 37
+	await get_tree().process_frame
+	await get_tree().process_frame
+	check(p.ammo_pack[str(AMMO)] == 37 and SaveService.load_profile(PATH,false).ammo_pack[str(AMMO)] == 37, "integrated page saves and reloads exact packing request")
+	check(ui.deployment_summary.text == DeploymentPlan.build(p).message, "packing change refreshes actual deployment summary")
+	var before_failed := p.to_dict()
+	FlowMenu.save_path = "user://missing_equipment_directory/profile.json"
+	(ui.packing.find_child("PackAmmo_ammo_556_standard",true,false) as SpinBox).value = 80
+	await get_tree().process_frame
+	await get_tree().process_frame
+	check(p.to_dict() == before_failed and int((ui.packing.find_child("PackAmmo_ammo_556_standard",true,false) as SpinBox).value) == 37, "failed packing save restores visible request and preserves entire profile")
+	check((ui.packing.find_child("PackingInfo",true,false) as Label).text.contains(tr("Save failed. Request unchanged.")), "integrated save failure remains visible")
+	FlowMenu.save_path = PATH
 	for locale in ["en", "zh_CN"]:
 		GameLanguage.set_language(locale,false)
-		hub.show_section("Operations")
+		hub.show_section("Hanger")
 		await get_tree().process_frame
 		await get_tree().process_frame
-		var packing := hub.find_child("MedicalPacking",true,false) as Control
-		var risk := hub.find_child("PackingRisk",true,false) as Control
-		check(packing != null and risk != null and risk.position.y >= packing.position.y+packing.size.y+8, "production risk notice stays below actual packing panel: "+locale)
-		check(risk.position.y + risk.size.y < 644, "production packing notice clears navigation: "+locale)
+		check(ui.packing.get_global_rect().end.x <= 1240 and ui.packing.get_global_rect().end.y < 644, "packing clears viewport and navigation: "+locale)
+		check(not ui.packing.get_global_rect().intersects(ui.warehouse_panel.get_global_rect()), "packing does not cover stash: "+locale)
+		for input in ui.packing.find_children("*", "SpinBox", true, false):
+			check(ui.packing.get_global_rect().encloses(input.get_global_rect()), "all quantity controls fit inside unified packing: "+locale)
 		if "--capture" in OS.get_cmdline_user_args():
 			await RenderingServer.frame_post_draw
-			get_viewport().get_texture().get_image().save_png(OS.get_environment("BUNNY_EVIDENCE").path_join("operations_"+locale+".png"))
+			get_viewport().get_texture().get_image().save_png(OS.get_environment("BUNNY_EVIDENCE").path_join("equipment_"+locale+".png"))
+		hub.show_section("Operations")
+		await get_tree().process_frame
+		var risk := hub.find_child("PackingRisk",true,false) as Control
+		check(not ui.packing.is_visible_in_tree() and risk != null and risk.position.y + risk.size.y < 644, "terminal reviews load and risk without duplicate packing editor: "+locale)
 	hub.free()
 func _write() -> void:
 	var p:=fresh()

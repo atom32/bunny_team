@@ -23,15 +23,17 @@ func _refresh() -> void:
 	body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	scroll.add_child(body)
 	if contact_id.is_empty():
-		_label(body, "委托记录 / FIELD FILES", 22)
-		_heading(body, "叙事委托 / NARRATIVE")
+		_label(body, "委托记录", 22)
+		_heading(body, "居民委托")
 	else:
 		_label(body, ContactDefinition.get_contact(contact_id).display_name + " / 委托", 18)
 	if contact_id == "su_mi": _label(body, "暂无新的维修委托", 16)
 	if ContactDefinition.owns_quest(contact_id, "Q01"):
 		_publisher(body, "Q01")
 		_label(body, NarrativeSlice.status_text(profile) if profile.first_mission_completed else "Q01 / 完成首任务后可进行出口观察", 14)
-		if not profile.narrative_slice.settled.Q01: _label(body, "查看本局分配的两处出口铭牌，再从合法出口成功撤离。", 14)
+		if not profile.narrative_slice.settled.Q01:
+			_label(body, NarrativeSlice.Q01_REQUEST, 14)
+			_label(body, "要求：现场查看本局两处出口铭牌，并成功撤离。", 14)
 	if contact_id == "tang_kui" and not profile.narrative_slice.settled.Q01:
 		_publisher(body, "Q02")
 		_label(body, "Q02 今晚的药 / 尚未开放；需要先完成 Q01", 14)
@@ -39,12 +41,14 @@ func _refresh() -> void:
 		_label(body, "Q04 账上已经送到 / 尚未开放；需要先完成 Q02", 14)
 	if ContactDefinition.owns_quest(contact_id, "Q02") and profile.narrative_slice.settled.Q01:
 		_publisher(body, "Q02")
-		if not profile.narrative_slice.settled.Q02: _label(body, NarrativeSlice.Q02_REQUEST, 14)
+		if not profile.narrative_slice.settled.Q02:
+			_label(body, NarrativeSlice.Q02_REQUEST, 14)
+			_label(body, "要求：查看药房 MED-TK-071 批次后成功撤离；交付敷料×2、织物×2。", 14)
 		_label(body, NarrativeSlice.q02_status(profile), 14)
 		if not profile.narrative_slice.settled.Q04 and (contact_id.is_empty() or not profile.narrative_slice.settled.Q02):
 			var submit := Button.new()
 			submit.name = "SubmitQ02"
-			submit.text = "交付仓库内尚需的材料 / 保存（支持部分交付）"
+			submit.text = "交付材料（可分次）"
 			submit.disabled = NarrativeSlice.prepare_q02_delivery(profile).error != OK
 			body.add_child(submit)
 			submit.pressed.connect(_submit_q02)
@@ -58,16 +62,18 @@ func _refresh() -> void:
 		if profile.narrative_slice.settled.Q04:
 			_label(body, profile.narrative_slice.q04.log, 14)
 		else:
+			_label(body, NarrativeSlice.Q04_REQUEST, 14)
+			_label(body, "要求：取得 MED-TK-071 配送回执，并在药房查看同批次收货记录；成功撤离后回基地提交。", 14)
 			var submit_q04 := Button.new()
 			submit_q04.name = "SubmitQ04"
-			submit_q04.text = "提交 MED-TK-071 两项记录 / 保存"
+			submit_q04.text = "提交回执和收货记录"
 			submit_q04.disabled = NarrativeSlice.prepare_q04_submission(profile).error != OK
 			body.add_child(submit_q04)
 			submit_q04.pressed.connect(_submit_q04)
 	if not contact_id.is_empty():
 		if not feedback.begins_with("Only the active"): _label(body, feedback, 14)
 		return # Anonymous base-development contracts stay on the existing board.
-	_heading(body, "基地发展 / BASE DEVELOPMENT")
+	_heading(body, "基地建设")
 	_label(body, tr("%d / %d contracts claimed / %d credits") % [profile.campaign.stage, CampaignService.QUESTS.size(), profile.credits], 15)
 	var columns := HBoxContainer.new()
 	columns.size_flags_vertical = Control.SIZE_EXPAND_FILL

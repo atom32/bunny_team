@@ -13,6 +13,7 @@ func check(ok: bool, message: String) -> void:
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	DeploymentPlan.selected_lighting_variant = "night" if "--night" in OS.get_cmdline_user_args() else "day"
 	await get_tree().process_frame
 	_migration()
 	_base(false)
@@ -170,6 +171,7 @@ func _interact(name: String) -> void:
 	battle.player.global_position = node.global_position
 	battle.player.interaction_component._current_target = null
 	check(battle.player.interaction_component.interact_with_current().success, "actual nearest interaction: " + name)
+	check(battle.hud.field_information.get_parent().get_parent().visible and battle.hud.field_information.text == (NarrativeSlice.BATCH_INFORMATION if name == "PharmacyBatch" else NarrativeSlice.RECEIPT_INFORMATION), "fixed field record appears only on nonmodal HUD readout")
 
 func _reload() -> void:
 	battle.free()

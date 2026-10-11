@@ -610,6 +610,7 @@ func _build_character_animation_player(skeleton: Skeleton3D) -> AnimationPlayer:
 				var animation := imported_animation.duplicate(true) as Animation
 				_remove_import_bind_pose(animation)
 				_retarget_animation_tracks(animation, skeleton)
+				_fit_locomotion_clip(animation, animation_name, skeleton)
 				animation.loop_mode = Animation.LOOP_PINGPONG if animation_name == &"Idle_Gun" else Animation.LOOP_LINEAR
 				library.add_animation(animation_name, animation)
 		animation_root.free()
@@ -633,7 +634,12 @@ func _build_locomotion_tree() -> void:
 	for state_index in states.size():
 		var animation_node := AnimationNodeAnimation.new()
 		animation_node.animation = animations[states[state_index]]
-		state_machine.add_node(states[state_index], animation_node, Vector2(160.0 * state_index, 0.0))
+		var clip := AnimationNodeBlendTree.new()
+		clip.add_node(&"Clip", animation_node)
+		clip.add_node(&"Cadence", AnimationNodeTimeScale.new())
+		clip.connect_node(&"Cadence", 0, &"Clip")
+		clip.connect_node(&"output", 0, &"Cadence")
+		state_machine.add_node(states[state_index], clip, Vector2(160.0 * state_index, 0.0))
 	for from_state in states:
 		for to_state in states:
 			if from_state == to_state:
@@ -672,6 +678,26 @@ func _retarget_animation_tracks(animation: Animation, skeleton: Skeleton3D) -> v
 			animation.remove_track(track_index)
 			continue
 		animation.track_set_path(track_index, NodePath(".:%s" % bone_name))
+
+func _fit_locomotion_clip(animation: Animation, clip: StringName, skeleton: Skeleton3D) -> void:
+	if clip not in [&"Walk", &"Run", &"Run_Shoot"]: return
+	# Fit this model's proportions without touching the original FBX or dodge.
+	# Imported rotation tracks include their local rest orientation, so blend
+	# toward that orientation rather than identity (which would twist the legs).
+	var running := clip != &"Walk"
+	for track in animation.get_track_count():
+		if animation.track_get_type(track) != Animation.TYPE_ROTATION_3D: continue
+		var bone := animation.track_get_path(track).get_subname(0)
+		var weight := 1.0
+		if bone == &"Character1_Hips": weight = .72 if running else .85
+		elif String(bone).begins_with("Character1_Spine"): weight = .62 if running else .8
+		elif bone in [&"Character1_LeftUpLeg", &"Character1_RightUpLeg"] and running: weight = .78
+		elif bone in [&"Character1_LeftLeg", &"Character1_RightLeg"] and running: weight = .82
+		if weight == 1.0: continue
+		var rest := skeleton.get_bone_rest(skeleton.find_bone(bone)).basis.get_rotation_quaternion()
+		for key in animation.track_get_key_count(track):
+			var rotation: Quaternion = animation.track_get_key_value(track, key)
+			animation.track_set_key_value(track, key, rest.slerp(rotation, weight))
 
 
 func _attach_equipment(data: EquipmentDefinition) -> Node3D:
@@ -962,6 +988,13 @@ func _animate_stride(_delta: float) -> void:
 			next_state = &"Walk"
 		else:
 			next_state = &"Run"
+	# Smooth cadence follows actual horizontal speed, including acceleration,
+	# deceleration and equipment load, while gameplay speed stays unchanged.
+	for state in [&"Walk", &"Run"]:
+		var path := "parameters/%s/Cadence/scale" % state
+		var reference := base_speed * (.5 if state == &"Walk" else 1.0)
+		var target := clampf(speed / reference, .45, 1.15) if speed > .4 else .45
+		animation_tree.set(path, lerpf(float(animation_tree.get(path)), target, 1.0 - exp(-10.0 * _delta)))
 	if locomotion_playback.get_current_node() != next_state:
 		locomotion_playback.travel(next_state)
 

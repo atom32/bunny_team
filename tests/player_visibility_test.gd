@@ -60,6 +60,12 @@ func _prepare() -> void:
 
 func _vision() -> void:
 	sensor.refresh()
+	var boundary := sensor.view_boundary()
+	check(boundary.size() == 145 and boundary[0].is_equal_approx(boundary[-1]), "HUD boundary is a closed outline")
+	check(is_equal_approx(Vector2(boundary[72].x, boundary[72].z).length(), sensor.sight_range()), "forward HUD boundary uses the actual sight range")
+	check(is_equal_approx(Vector2(boundary[0].x, boundary[0].z).length(), PlayerVisibility.NEAR_RANGE), "rear HUD boundary uses the actual near range")
+	hud.set_perception(sensor, camera)
+	check(hud.vision_overlay.visible and hud.vision_overlay.mouse_filter == Control.MOUSE_FILTER_IGNORE, "vision overlay is visible and does not intercept movement or fire input")
 	check(enemy.presentation.is_visible_in_tree() and enemy.awareness_indicator.visible, "front unobstructed enemy and its indicator become visible")
 	enemy.position.z = 8
 	await _sync()
@@ -76,6 +82,7 @@ func _vision() -> void:
 	player.weapon_data = ContentDB.get_weapon(&"weapon.sniper_01")
 	Input.action_press("precision_walk")
 	check(sensor.sight_range() > 32 and sensor.can_see_enemy(enemy), "existing optic extension increases scoped sight range")
+	check(Vector2(sensor.view_boundary()[72].x, sensor.view_boundary()[72].z).length() > 32, "HUD boundary follows the existing optic extension")
 	Input.action_release("precision_walk")
 	player.weapon_data = original_weapon
 	enemy.position.z = -10
@@ -85,6 +92,7 @@ func _vision() -> void:
 	await _sync()
 	sensor.refresh()
 	check(not sensor.can_see_enemy(enemy) and not enemy.presentation.visible, "closed production door occludes actual head/chest rays")
+	check(Vector2(sensor.view_boundary()[72].x, sensor.view_boundary()[72].z).length() < 6, "closed production door also clips the displayed view boundary")
 	for mesh in door.find_children("*", "MeshInstance3D", true, false): mesh.transparency = .95
 	check(not sensor.can_see_enemy(enemy), "camera-faded door still obstructs player information")
 	check(sensor.hear(enemy.position, 12, &"movement") == 0, "wall attenuates distant footsteps")

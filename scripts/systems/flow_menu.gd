@@ -125,7 +125,7 @@ func show_pause() -> void:
 		return
 	var session := SortieRuntime.get_current_session()
 	var active := session != null and session.status == SortieSession.Status.ACTIVE
-	_panel("PAUSED", "Simulation stopped. Suspend saves this sortie, including ammunition, loot and enemies. Abandon loses carried equipment.", "pause")
+	_panel("PAUSED", "Simulation stopped. Suspend saves this sortie, including ammunition, loot and enemies. Abandon loses carried equipment." if active else "BASE PAUSED / Progress is saved when leaving.", "pause")
 	_button("RESUME", close, true)
 	_button("DISPLAY / FULLSCREEN & RESOLUTION", show_display_settings)
 	_button("LANGUAGE / 中文 & ENGLISH", show_language_settings)

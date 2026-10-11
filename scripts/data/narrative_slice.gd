@@ -9,13 +9,17 @@ const Q01_REWARD := 150
 const Q02_REWARD := 150
 const Q04_REWARD := 200
 const PHARMACY_BATCH := "MED-TK-071"
-const PHARMACY_POSITION := Vector3(17, 0, -23) # Inside the pharmacy, beyond exterior-wall interaction range.
-const BATCH_INFORMATION := "配送批次 MED-TK-071\n收货登记：D-1，敷料×2、织物×2，标记已收齐\n该批次现场收货格：敷料×0、织物×0；普通库存另计"
-const Q02_REQUEST := "唐葵：药房牌子还亮着。替我查看 MED-TK-071 收货批次，再带回敷料×2、织物×2。买来的也行，我要的是今晚能用。"
+const PHARMACY_POSITION := Vector3(-22, 0, -24) # Inside the pharmacy, beyond exterior-wall interaction range.
+const BATCH_INFORMATION := "药房收货登记\n批次：MED-TK-071　登记日期：D-1\n登记数量：敷料×2、织物×2　状态：已收齐\n本批次收货格：敷料×0、织物×0（不含其他库存）"
+const Q01_REQUEST := "沈砚霜：到了校园，先看看两处出口的牌子。有的门得拿到档案才能走，别跑到门口才发现出不去。看完就回来。"
+const Q02_REQUEST := "唐葵：我这边今晚还缺敷料和布，各两份。去药房的话，顺便帮我看看那批货的收货登记，批号在清单上。东西买来的也行，能用就好。"
+const Q04_REQUEST := "唐葵：送货表上写着昨天收齐了。你帮我找找那批货的配送回执，再回药房看看收货记录。两份放在一起，才好核对。"
+# Canonical stored message is retained for strict validation of existing saves.
+# The Chinese presentation translation supplies the revised NPC voice.
 const Q02_MESSAGE := "唐葵：够今晚了。奇怪，送货表上写着昨天就收齐了。配送记录还得再核对。"
 const DELIVERY_RECEIPT := "MED-TK-071-RECEIPT"
-const RECEIPT_POSITION := Vector3(-25, 0, 19)
-const RECEIPT_INFORMATION := "配送回执 MED-TK-071-RECEIPT\n批次：MED-TK-071；登记日：D-1\n配送记录：已完成签收；签收数量：敷料×2、织物×2"
+const RECEIPT_POSITION := Vector3(-35, .92, 19)
+const RECEIPT_INFORMATION := "配送回执：MED-TK-071-RECEIPT\n批次：MED-TK-071　登记日期：D-1\n状态：已签收\n签收数量：敷料×2、织物×2"
 const Q04_LOG := "该批次配送记录显示已完成签收，但药房现场记录与签收数量存在差异。相关配送调度记录可进一步核对。"
 const Q02_INPUTS := {&"medical.field_dressing": 2, &"material.fabric": 2}
 
@@ -137,7 +141,7 @@ static func prepare_q02_delivery(profile: ProfileState) -> Dictionary:
 		candidate.narrative_slice.q02.message = Q02_MESSAGE
 		candidate.credits += Q02_REWARD
 	if not candidate.validate(): return {"error": ERR_INVALID_DATA, "message": "Invalid delivery state."}
-	return {"error": OK, "candidate": candidate, "message": "Q02 实际交付已保存。"}
+	return {"error": OK, "candidate": candidate, "message": "材料已交付，进度已保存。"}
 
 static func submit_q02(path := SaveService.DEFAULT_SAVE_PATH) -> Dictionary:
 	var profile := ProfileRuntime.get_profile()
@@ -153,17 +157,17 @@ static func submit_q02(path := SaveService.DEFAULT_SAVE_PATH) -> Dictionary:
 static func q02_status(profile: ProfileState, session: SortieSession = null) -> String:
 	if not profile.narrative_slice.settled.Q01: return "Q02 今晚的药 / 完成 Q01 后可提交"
 	var state: Dictionary = profile.narrative_slice.q02
-	var observation := "现场观察后成功撤离" if state.observed_batch.is_empty() else "批次观察已带回"
-	if session and not session.pharmacy_batch.is_empty() and state.observed_batch.is_empty(): observation = "已观察批次，尚未成功带回"
+	var observation := "尚未查看收货记录" if state.observed_batch.is_empty() else "收货记录已带回"
+	if session and not session.pharmacy_batch.is_empty() and state.observed_batch.is_empty(): observation = "已查看收货记录，待撤离"
 	if profile.narrative_slice.settled.Q02: observation = "已结算"
 	return "Q02 今晚的药 / %s / 已交敷料 %d/2、织物 %d/2" % [observation, state.delivered["medical.field_dressing"], state.delivered["material.fabric"]]
 
 static func status_text(profile: ProfileState, session: SortieSession = null) -> String:
-	if profile.narrative_slice.settled.Q01: return "Q01 已结算 / Q01 SETTLED"
+	if profile.narrative_slice.settled.Q01: return "Q01 出口确认 / 已结算"
 	var count := session.exit_observations.size() if session else 0
-	if count == 2: return "Q01 已观察两个出口，尚未成功带回 / 2 EXITS OBSERVED, EXTRACT TO SETTLE"
-	if count == 1: return "Q01 已观察一个出口 / 1 OF 2 EXITS OBSERVED"
-	return "Q01 未完成：现场查看两个出口铭牌 / INSPECT BOTH ASSIGNED EXIT PLAQUES"
+	if count == 2: return "Q01 出口确认 / 已查看两个出口（2/2），待撤离"
+	if count == 1: return "Q01 出口确认 / 已查看一个出口（1/2）"
+	return "Q01 出口确认 / 未完成：查看两处出口铭牌"
 
 
 static func prepare_q04_submission(profile: ProfileState) -> Dictionary:
@@ -176,7 +180,7 @@ static func prepare_q04_submission(profile: ProfileState) -> Dictionary:
 	candidate.narrative_slice.q04.log = Q04_LOG
 	candidate.credits += Q04_REWARD
 	if not candidate.validate(): return {"error": ERR_INVALID_DATA, "message": "Invalid submission state."}
-	return {"error": OK, "candidate": candidate, "message": "Q04 已结算 / 调查日志已保存。"}
+	return {"error": OK, "candidate": candidate, "message": "委托已完成，调查结果已记入日志。"}
 
 static func submit_q04(path := SaveService.DEFAULT_SAVE_PATH) -> Dictionary:
 	var profile := ProfileRuntime.get_profile()
@@ -195,6 +199,6 @@ static func q04_status(profile: ProfileState, session: SortieSession = null) -> 
 	var facts: Dictionary = profile.narrative_slice.q04
 	var receipt := "已带回" if not facts.receipt_id.is_empty() else "未带回"
 	var pharmacy := "已带回" if not facts.observed_batch.is_empty() else "未带回"
-	if session and not session.delivery_receipt.is_empty() and facts.receipt_id.is_empty(): receipt = "已取得，尚未成功带回"
-	if session and not session.pharmacy_batch.is_empty() and facts.observed_batch.is_empty(): pharmacy = "已观察，尚未成功带回"
+	if session and not session.delivery_receipt.is_empty() and facts.receipt_id.is_empty(): receipt = "已取得，待撤离"
+	if session and not session.pharmacy_batch.is_empty() and facts.observed_batch.is_empty(): pharmacy = "已查看，待撤离"
 	return "Q04 账上已经送到 / MED-TK-071 配送回执：%s / 药房现场记录：%s" % [receipt, pharmacy]

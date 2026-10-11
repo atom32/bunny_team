@@ -1,6 +1,7 @@
 class_name DeploymentPlan
 extends RefCounted
 const STREET_MISSIONS := [&"streets_recon", &"streets_relay"]
+static var selected_lighting_variant := "day"
 static var selected_street_mission: StringName = &"streets_recon"
 
 # Preview exact rounds; materialize partial stacks only inside deployment transaction.
@@ -127,7 +128,9 @@ static func prepare(profile: ProfileState, area: StringName, mission: StringName
 			if not candidate.inventory.add_item_preserving_instance(packed): return {"error":ERR_INVALID_DATA,"message":"Could not split ammunition."}
 			ids.append(packed.instance_id)
 	var request := candidate.create_sortie_request(area,mission,ids)
-	if not request: return {"error":ERR_INVALID_DATA,"message":"Invalid deployment request."}
+	if request:
+		request.lighting_variant = selected_lighting_variant if area == &"street_district" else "day"
+	if not request or not request.validate(candidate.inventory): return {"error":ERR_INVALID_DATA,"message":"Invalid deployment request."}
 	return {"error":OK,"candidate":candidate,"request":request}
 
 static func deploy(profile: ProfileState, area: StringName, mission: StringName, path := SaveService.DEFAULT_SAVE_PATH, persist := true) -> Dictionary:

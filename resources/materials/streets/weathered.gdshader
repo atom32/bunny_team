@@ -3,6 +3,7 @@ render_mode diffuse_burley;
 uniform vec4 base_color : source_color = vec4(0.4,0.37,0.33,1.0);
 uniform bool brick = false;
 uniform int floor_finish = 0;
+uniform vec2 floor_origin = vec2(0.0);
 varying vec3 world;
 varying vec3 surface_normal;
 float hash(vec2 p) { vec3 p3=fract(vec3(p.xyx)*.1031);p3+=dot(p3,p3.yzx+33.33);return fract((p3.x+p3.y)*p3.z); }
@@ -24,7 +25,14 @@ void fragment(){
    tint=mix(tint*.48,tint,checker);
   }
   if(floor_finish<4) tint=mix(tint,vec3(.16,.16,.14),joint*.65);
-  if(floor_finish==4) tint*=mix(.38,1.0,smoothstep(.32,.56,noise(p*.65)));
+  if(floor_finish==4){
+   vec2 local_p=p-floor_origin;
+   float edge=noise(p*3.0)*.45;
+   float oil=1.0-smoothstep(.7,1.5,length(local_p-vec2(4.0,-1.9))+edge);
+   oil=max(oil,1.0-smoothstep(.35,.9,length(local_p-vec2(-5.0,-3.5))+edge));
+   oil=max(oil,1.0-smoothstep(.25,.7,length(local_p-vec2(-4.8,.7))+edge));
+   tint*=mix(1.0,.48,oil);
+  }
  }
  if(brick && abs(surface_normal.y)<.7){
   float row=floor(p.y/.18);

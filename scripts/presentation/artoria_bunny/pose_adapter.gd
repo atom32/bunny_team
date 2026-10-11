@@ -35,7 +35,7 @@ func update_pose(point: Vector3, direction: Vector3, dodge: float, delta: float,
 	_hands.reload_weight = _reload_hand_weight()
 	_raw_pose = weapon_pose_root.transform
 	_has_raw_pose = true
-	var offset: Vector3 = Vector3(.10, .16, -.07) + equipped_weapon.pose_offset
+	var offset: Vector3 = Vector3(.06, .12, -.04) + equipped_weapon.pose_offset
 	offset += equipped_weapon.reload_offset * _reload_hand_weight()
 	weapon_pose_root.global_position += weapon_pose_root.global_basis.orthonormalized() * offset
 	# This skin has shorter arms than the animation driver; keep the magazine
@@ -46,6 +46,13 @@ func update_pose(point: Vector3, direction: Vector3, dodge: float, delta: float,
 	# The imported slide clip raises an arm; retain weapon contact through dodge.
 	right_arm_ik.influence = 1.0
 	left_arm_ik.influence = 1.0
+	# Bring the elbows down and closer to this model's narrower shoulders.
+	# The final palm solve consumes this IK bend, preserving weapon contact.
+	var host := get_parent() as Node3D
+	var right := host.global_basis.orthonormalized().x
+	var forward := -weapon_pose_root.global_basis.orthonormalized().z
+	right_elbow_pole.global_position = host.global_position + Vector3.UP * .94 + right * .32 - forward * .04
+	left_elbow_pole.global_position = host.global_position + Vector3.UP * .94 - right * .32 + forward * .04
 	_sync_modifier_targets()
 
 func validate_visual_integrity() -> bool:

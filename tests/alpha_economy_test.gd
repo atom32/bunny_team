@@ -12,6 +12,7 @@ func _ready() -> void:
 	_test_risk_and_recovery()
 	_test_atomic_save()
 	_test_recovery_reward()
+	await _test_crafted_layout()
 	await _test_owned_ui()
 	await _test_supply_scroll()
 	SortieRuntime.clear_session()
@@ -162,21 +163,56 @@ func _test_atomic_save() -> void:
 	check(SortieRuntime.finalize_sortie(PATH) == OK and profile.credits == 1500 and profile.successful_sorties == 1, "empty early extraction preserves possessions without creating credits")
 	check(SortieRuntime.finalize_sortie(PATH) == OK and profile.credits == 1500, "reward cannot duplicate")
 
+func _test_crafted_layout() -> void:
+	for recipe_id in ["clinic_medkit", "bench_ap"]:
+		var profile := ProfileRuntime.new_profile()
+		profile.first_mission_completed = true
+		profile.campaign.stage = 3
+		var recipe: Dictionary = SupplyService.recipes(profile)[recipe_id]
+		for id in recipe.inputs:
+			if ContentDB.get_item(id).stackable:
+				check(profile.inventory.add_item(ItemInstance.new(id, recipe.inputs[id])), "craft fixture adds stackable input")
+			else:
+				for index in int(recipe.inputs[id]):
+					check(profile.inventory.add_item(ItemInstance.new(id)), "craft fixture adds individual input")
+		StashLayout.new(profile).reconcile()
+		var before := profile.to_dict()
+		check(SupplyService.transact("barter",recipe_id,1,"user://missing_alpha_economy_directory/profile.json").error != OK and profile.to_dict() == before, "failed crafting save preserves materials and warehouse slots: " + recipe_id)
+		check(SupplyService.transact("barter",recipe_id,1,PATH).error == OK, "facility crafting saves: " + recipe_id)
+		var settled := profile.to_dict()
+		var ui := HangerUI.new()
+		ui.configure(profile.inventory,profile.loadout)
+		add_child(ui)
+		ui.refresh_owned_items()
+		check(profile.to_dict() == settled, "rendering crafted item does not create unsaved warehouse slots: " + recipe_id)
+		check(SaveService.load_profile(PATH,false).to_dict() == settled, "crafted inventory and layout survive reload exactly: " + recipe_id)
+		ui.queue_free()
+		await get_tree().process_frame
+
 func _test_owned_ui() -> void:
 	var profile := ProfileRuntime.new_profile()
 	var ui := HangerUI.new()
 	ui.configure(profile.inventory,profile.loadout)
 	add_child(ui)
 	check(ui.weapon_option.item_count == 3, "loadout offers only owned starter weapons plus none")
+	check(ui.warehouse_panel.is_visible_in_tree() and ui.weapon_option.is_visible_in_tree(), "stash and equipment are visible together")
+	check(not ui.warehouse_panel.get_global_rect().intersects(ui.weapon_option.get_global_rect()), "stash grid does not cover equipment drop targets")
+	check(ui.deployment_summary.text == DeploymentPlan.build(profile).message, "visible carried summary comes from the actual deployment plan")
+	var equipped_weight := 0.0
+	for id in profile.loadout.get_equipped_instance_ids():
+		equipped_weight += profile.inventory.get_item(id).total_weight()
+	check(ui.stash_grid.count_label.text == tr("%d ITEMS  /  %.1f kg") % [profile.stash_layout.size(), profile.inventory.get_used_capacity()-equipped_weight], "warehouse header excludes equipped gear weight")
 	check(SupplyService.transact("buy","weapon.pistol_01",1,PATH).error == OK, "UI fixture purchases weapon")
 	ui.configure(profile.inventory,profile.loadout)
 	ui.refresh_owned_items()
 	check(ui.weapon_option.item_count == 4, "new purchase appears in loadout without scene restart")
+	check(SaveService.load_profile(PATH,false).to_dict() == profile.to_dict(), "purchase layout remains durable after actual UI refresh")
 	var pistol := _find(profile,&"weapon.pistol_01")
 	check(SupplyService.transact("sell",pistol.instance_id,1,PATH).error == OK, "UI fixture sells weapon")
 	ui.configure(profile.inventory,profile.loadout)
 	ui.refresh_owned_items()
 	check(ui.weapon_option.item_count == 3, "sold weapon disappears from selectable equipment")
+	check(SaveService.load_profile(PATH,false).to_dict() == profile.to_dict(), "sale layout remains durable after actual UI refresh")
 	ui.queue_free()
 	await get_tree().process_frame
 

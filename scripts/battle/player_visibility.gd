@@ -34,6 +34,25 @@ func can_see_point(point: Vector3) -> bool:
 	# A point on the visible wall surface is visible; a point BEHIND it is not.
 	return hit.is_empty() or hit.position.distance_to(point) <= .08
 
+func view_boundary() -> PackedVector3Array:
+	# Chest-height visibility projected onto the ground for the HUD. Use the
+	# same eye, world mask, angle and range as the actual observation queries.
+	var points := PackedVector3Array()
+	if not is_instance_valid(actor) or not actor.is_inside_tree(): return points
+	var eye := actor.global_position + Vector3.UP * 1.55
+	var forward := atan2(actor.aim_direction.x, actor.aim_direction.z)
+	var space := actor.get_world_3d().direct_space_state
+	for index in 145:
+		var angle := -PI + TAU * index / 144.0
+		var direction := Vector3(sin(forward + angle), 0, cos(forward + angle))
+		var distance := sight_range() if absf(angle) <= deg_to_rad(VIEW_ANGLE * .5) + .0001 else NEAR_RANGE
+		var point := actor.global_position + direction * distance + Vector3.UP * 1.1
+		var hit := space.intersect_ray(PhysicsRayQueryParameters3D.create(eye, point, 4))
+		if not hit.is_empty(): point = hit.position
+		point.y = actor.global_position.y + .05
+		points.append(point)
+	return points
+
 func can_see_enemy(enemy: Node3D) -> bool:
 	if not enemy.visible or not in_view(enemy.global_position): return false
 	for offset in [Vector3(0, 1.75, 0), Vector3(0, 1.1, 0), Vector3(.3, 1.1, 0), Vector3(-.3, 1.1, 0)]:

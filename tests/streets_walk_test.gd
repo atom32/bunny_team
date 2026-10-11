@@ -34,7 +34,9 @@ func _walk_to(target: Vector3) -> bool:
 func _run() -> void:
 	var profile := ProfileRuntime.new_profile()
 	var plan := DeploymentPlan.build(profile)
-	var session := SortieRuntime.start_sortie(profile.create_sortie_request(&"street_district",&"streets_recon",plan.ammo_ids),profile)
+	var request := profile.create_sortie_request(&"street_district",&"streets_recon",plan.ammo_ids)
+	request.lighting_variant = "night" if "--night" in OS.get_cmdline_user_args() else "day"
+	var session := SortieRuntime.start_sortie(request,profile)
 	battle=load("res://scenes/battle/battle.tscn").instantiate()
 	battle.loot_seed=907
 	add_child(battle)
@@ -49,6 +51,11 @@ func _run() -> void:
 		await get_tree().create_timer(.05).timeout
 		NavigationServer3D.map_force_update(map)
 		if not NavigationServer3D.map_get_path(map,battle.player.position,area.get_node("StreetTerminal").position,true).is_empty(): break
+	for approach in [Vector3(-27,0,32),Vector3(-15,0,32),Vector3(-50,0,27),Vector3(-50,0,37),NarrativeSlice.PHARMACY_POSITION,NarrativeSlice.RECEIPT_POSITION+Vector3(0,-.92,1.5)]:
+		if not await _walk_to(approach):
+			failures.append("Cannot physically reach narrative approach "+str(approach))
+			break
+		print("STREETS_WALK reached narrative approach at ",battle.player.global_position)
 	var targets: Array[Node3D] = [area.get_node("StreetTerminal"),area.get_node("StreetSurvey")]
 	for loot in area.loot_points:
 		if loot.loot_table_id==&"prototype_high_value_loot":

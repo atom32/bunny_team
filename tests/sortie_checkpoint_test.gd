@@ -63,6 +63,10 @@ func _prepare_world(first: bool) -> void:
 	add_child(battle)
 	await get_tree().process_frame
 	get_tree().paused = true
+	if not first:
+		for point in battle.area_root.enemy_points:
+			if point.enemy_definition_id == &"campus_infected" and not point.has_spawned:
+				battle._spawn_enemy_at_point(point)
 	var player: PlayerController = battle.player
 	player.position += Vector3(1.5, 0, 0.5)
 	player.health = 137.0
@@ -151,6 +155,13 @@ func _prepare_world(first: bool) -> void:
 	rocket.position = player.position + Vector3.UP * 1.3 + Vector3(3, 0, 0)
 	rocket.setup(player, Vector3.FORWARD, ContentDB.get_weapon(&"weapon.rocket_launcher_01"))
 	rocket.traveled = 4.75
+	if not first:
+		for actor in battle.enemy_container.get_children():
+			if actor is EnemyController and actor.definition_id == &"campus_infected":
+				actor.target = player
+				actor._telegraph_shot()
+				check(actor._shot_timer != null, "infected windup included in checkpoint")
+				break
 	check(SortieRuntime.save_checkpoint() == OK, "world/session checkpoint saved atomically")
 
 func _roundtrip(first: bool) -> void:
@@ -163,6 +174,16 @@ func _roundtrip(first: bool) -> void:
 			muzzles[enemy.get_meta("spawn_key")] = [enemy.presentation.get_muzzle_position(), enemy.presentation.get_muzzle_direction()]
 	check(SortieCheckpoint.restore_session(expected.session) != null, "session JSON contract valid")
 	check(SortieCheckpoint.validate_world(expected.world, battle), "entire world contract valid")
+	if not first:
+		var infected_count := 0
+		for key in expected.world.enemies:
+			if String(key).contains("CampusInfected"):
+				infected_count += 1
+		check(infected_count > 0, "infected included in strict world roundtrip")
+	if first:
+		var incompatible: Dictionary = expected.world.duplicate(true)
+		incompatible.map_revision = 2
+		check(not SortieCheckpoint.validate_world(incompatible, battle), "Campus checkpoints cannot restore positions into the original tutorial")
 	check(not SortieRuntime.start_sortie(ProfileRuntime.get_profile().create_sortie_request(), ProfileRuntime.get_profile()), "cannot redeploy over pending sortie")
 	check(SupplyService.transact("buy", "weapon.pistol_01", 1, PATH).error == ERR_BUSY, "base trade locked while pending")
 	var corrupt: Dictionary = expected.session.duplicate(true)

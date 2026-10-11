@@ -41,16 +41,19 @@ func refresh() -> void:
 	)
 	add_child(placement_overlay)
 	if count_label:
-		count_label.text = tr("%d ITEMS  /  %.1f kg") % [model.profile.stash_layout.size(), model.profile.inventory.get_used_capacity()]
+		var stored_weight := 0.0
+		for id in model.profile.stash_layout:
+			stored_weight += model.profile.inventory.get_item(id).total_weight()
+		count_label.text = tr("%d ITEMS  /  %.1f kg") % [model.profile.stash_layout.size(), stored_weight]
 	select_item(selected_id)
 	queue_redraw()
 
 func _draw() -> void:
-	draw_rect(Rect2(Vector2.ZERO, size), Color("111817f5"))
+	draw_rect(Rect2(Vector2.ZERO, size), Color("101619"))
 	for x in range(StashLayout.COLUMNS + 1):
-		draw_line(Vector2(x * CELL, 0), Vector2(x * CELL, size.y), Color("38413b"))
+		draw_line(Vector2(x * CELL, 0), Vector2(x * CELL, size.y), Color("283237"))
 	for y in range(model.row_count() + 1):
-		draw_line(Vector2(0, y * CELL), Vector2(size.x, y * CELL), Color("38413b"))
+		draw_line(Vector2(0, y * CELL), Vector2(size.x, y * CELL), Color("283237"))
 
 func _input(event: InputEvent) -> void:
 	if not is_visible_in_tree() or not event is InputEventKey or not event.pressed or event.echo or event.keycode != KEY_R: return

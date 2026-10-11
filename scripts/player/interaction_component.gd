@@ -3,6 +3,7 @@ extends Node
 
 signal prompt_changed(text: String)
 signal interaction_finished(message: String, success: bool)
+signal information_read(text: String)
 
 @export var interaction_radius := 2.6
 
@@ -46,6 +47,8 @@ func interact_with_current() -> Dictionary:
 	var response: Variant = _current_target.interact(actor, session)
 	if typeof(response) != TYPE_DICTIONARY:
 		response = {"success": false, "message": "Interaction failed"}
+	if not str(response.get("information", "")).is_empty():
+		information_read.emit(str(response.information))
 	interaction_finished.emit(str(response.get("message", "")), bool(response.get("success", false)))
 	return response
 

@@ -52,3 +52,6 @@ docs/phase2b/captures/
 # Local patch snapshots from verification/integration trials.
 art_source/**/*.diff
 art_source/**/*.patch
+
+# Local visual iteration concepts and runtime evidence.
+.grimdark-loop/

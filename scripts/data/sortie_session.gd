@@ -20,6 +20,7 @@ var status := Status.PREPARING
 var session_id: String
 var inventory: InventoryState # Carried inventory for this sortie only.
 var loadout: LoadoutState
+var lighting_variant := "day"
 var area_id: StringName
 var mission_id: StringName
 var objective_states: Array[ObjectiveState] = []
@@ -77,6 +78,7 @@ static func create_from_profile(request: SortieRequest, profile: ProfileState) -
 		"",
 		initial_carried_instance_ids
 	)
+	session.lighting_variant = request.lighting_variant
 	if profile.first_mission_completed and session.area_id == &"street_district" and not profile.narrative_slice.settled.Q01:
 		session.slice_context = {"quest_id": "Q01", "exit_conditions": {}}
 	session.q02_active = profile.first_mission_completed and session.area_id == &"street_district" and profile.narrative_slice.settled.Q01 and not profile.narrative_slice.settled.Q02
@@ -255,6 +257,7 @@ func mark_outcome_created() -> bool:
 
 
 func validate() -> bool:
+	if not SortieRequest.valid_lighting(lighting_variant, area_id): return false
 	return (
 		not session_id.is_empty()
 		and inventory != null

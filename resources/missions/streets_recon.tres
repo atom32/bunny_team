@@ -20,6 +20,6 @@ required = true
 [resource]
 script = ExtResource("1")
 mission_id = &"streets_recon"
-display_name = "Old Town / Records Run"
+display_name = "Old Campus / Records Run"
 description = "Search a district interior for records, survey the opposite courtyard, and carry salvage to an assigned exit across the district."
 objective_definitions = Array[ExtResource("2")]([SubResource("terminal"), SubResource("survey")])

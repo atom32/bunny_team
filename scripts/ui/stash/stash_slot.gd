@@ -3,16 +3,50 @@ extends OptionButton
 var grid: WarehouseGrid
 var slot_id: StringName
 var drag_handle: StashSlotHandle
+var remove_button: Button
 
 func _ready() -> void:
+	texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	drag_handle = StashSlotHandle.new()
 	drag_handle.slot = self
-	drag_handle.position = Vector2(12, 4)
-	drag_handle.size = Vector2(64, 36)
+	drag_handle.position = Vector2(6, 25)
+	drag_handle.size = size - Vector2(38, 42)
 	drag_handle.mouse_filter = Control.MOUSE_FILTER_STOP
 	drag_handle.mouse_default_cursor_shape = Control.CURSOR_DRAG
 	drag_handle.tooltip_text = "Drag equipped item back to the warehouse."
 	add_child(drag_handle)
+	remove_button = Button.new()
+	remove_button.name = "Unequip"
+	remove_button.text = "×"
+	remove_button.position = Vector2(size.x - 28, 4)
+	remove_button.size = Vector2(24, 24)
+	remove_button.add_theme_font_size_override("font_size", 14)
+	for state in ["normal", "hover", "pressed", "disabled", "focus"]:
+		var style := remove_button.get_theme_stylebox(state).duplicate() as StyleBoxFlat
+		style.set_content_margin_all(0)
+		remove_button.add_theme_stylebox_override(state, style)
+	remove_button.tooltip_text = "Return equipped item to warehouse."
+	add_child(remove_button)
+	remove_button.pressed.connect(func():
+		grid.model.profile.loadout.unequip(slot_id)
+		grid.refresh()
+		grid.equipment_changed.emit())
+
+func _draw() -> void:
+	if not grid or not grid.model: return
+	var item := grid.model.profile.loadout.get_item(slot_id, grid.model.profile.inventory)
+	if remove_button: remove_button.visible = item != null
+	if not item:
+		draw_string(UIFactory.FONT, Vector2(10, size.y * 0.6), tr("NONE"), HORIZONTAL_ALIGNMENT_LEFT, size.x - 30, 13, Color("889083"))
+		return
+	var definition := ContentDB.get_item(item.definition_id)
+	draw_string(UIFactory.FONT, Vector2(10, 21), GameLanguage.item_name(definition.display_name), HORIZONTAL_ALIGNMENT_LEFT, size.x - 42, 14, Color("e1e5e5"))
+	if definition.icon:
+		var area := size - Vector2(28, 36)
+		var extent := Vector2(definition.icon.get_size())
+		extent *= minf(area.x / extent.x, area.y / extent.y)
+		draw_texture_rect(definition.icon, Rect2(Vector2(8, 25) + (area - extent) * 0.5, extent), false)
+	draw_string(UIFactory.FONT, Vector2(10, size.y - 5), "%.1f kg" % item.total_weight(), HORIZONTAL_ALIGNMENT_LEFT, size.x - 20, 11, Color("8e9b9f"))
 
 
 func _get_drag_data(_at_position: Vector2) -> Variant:

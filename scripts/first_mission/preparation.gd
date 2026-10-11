@@ -30,10 +30,11 @@ static func upgrade_weapon(path: String = SaveService.DEFAULT_SAVE_PATH) -> Erro
 	for item in candidate.inventory.get_items():
 		if item.definition_id == &"loot.salvage_core_01":
 			candidate.inventory.consume_item(item.instance_id, 1)
+			if not candidate.inventory.contains(item.instance_id):
+				candidate.stash_layout.erase(item.instance_id)
 			break
 	candidate.ar_damage_upgraded = true
 	var error := SaveService.save_profile(candidate, path)
 	if error == OK:
-		profile.inventory = candidate.inventory
-		profile.ar_damage_upgraded = true
+		profile.replace_with(candidate)
 	return error

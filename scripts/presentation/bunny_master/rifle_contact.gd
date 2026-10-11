@@ -47,13 +47,13 @@ static func fit(sk: Skeleton3D, weapon: Node3D) -> void:
 	solve_chain(sk,thumb1,thumb2,thumb3,thumb_target,thumb.basis)
 	print("MCO_CONTACT primary_error=",sk.to_global(palm(sk,"Right")).distance_to(weapon.global_transform*PRIMARY)," support_error=",sk.to_global(palm(sk,"Left")).distance_to(weapon.global_transform*SUPPORT))
 
-static func solve_arm(sk: Skeleton3D, side: String, target: Vector3, hand_basis: Basis) -> void:
+static func solve_arm(sk: Skeleton3D, side: String, target: Vector3, hand_basis: Basis, preferred_bend := Vector3.ZERO) -> void:
 	var upper := sk.find_bone("Character1_"+side+"Arm")
 	var lower := sk.find_bone("Character1_"+side+"ForeArm")
 	var wrist := sk.find_bone("Character1_"+side+"Hand")
-	solve_chain(sk,upper,lower,wrist,target,hand_basis)
+	solve_chain(sk,upper,lower,wrist,target,hand_basis,preferred_bend)
 
-static func solve_chain(sk: Skeleton3D, upper: int, lower: int, wrist: int, target: Vector3, hand_basis: Basis) -> void:
+static func solve_chain(sk: Skeleton3D, upper: int, lower: int, wrist: int, target: Vector3, hand_basis: Basis, preferred_bend := Vector3.ZERO) -> void:
 	var arm := sk.get_bone_global_pose(upper)
 	var elbow := sk.get_bone_global_pose(lower)
 	var hand := sk.get_bone_global_pose(wrist)
@@ -62,6 +62,9 @@ static func solve_chain(sk: Skeleton3D, upper: int, lower: int, wrist: int, targ
 	var direction := arm.origin.direction_to(target)
 	var distance := clampf(arm.origin.distance_to(target),absf(upper_length-lower_length)+.0001,upper_length+lower_length-.0001)
 	var pole := elbow.origin-arm.origin
+	if preferred_bend.length_squared() > .001:
+		var projected := preferred_bend-direction*preferred_bend.dot(direction)
+		if projected.length_squared() > .001: pole = projected
 	pole=(pole-direction*pole.dot(direction)).normalized()
 	var along := (upper_length*upper_length-lower_length*lower_length+distance*distance)/(2*distance)
 	var height := sqrt(maxf(0,upper_length*upper_length-along*along))

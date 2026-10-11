@@ -13,6 +13,7 @@ func check(ok: bool, message: String) -> void:
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	DeploymentPlan.selected_lighting_variant = "night" if "--night" in OS.get_cmdline_user_args() else "day"
 	await get_tree().process_frame
 	_schema()
 	await _start()
@@ -25,6 +26,7 @@ func _ready() -> void:
 	battle.player.global_position = plaque.global_position + Vector3(10,0,0)
 	check(not plaque.interact(battle.player, session).success, "remote plaque interaction rejected")
 	_observe(exits[0])
+	_reading_controls()
 	check(session.exit_observations.size() == 1 and NarrativeSlice.status_text(ProfileRuntime.get_profile(), session).contains("一个"), "one-exit status")
 	check(session.get_objective_summary() == objectives, "observations never mutate mission objectives")
 	check(SortieRuntime.save_checkpoint() == OK, "A save suspended sortie")
@@ -61,7 +63,7 @@ func _ready() -> void:
 	exits = _assigned()
 	_observe(exits[0])
 	_observe(exits[1])
-	check(NarrativeSlice.status_text(ProfileRuntime.get_profile(),session).contains("尚未"), "two observations remain provisional before extraction")
+	check(NarrativeSlice.status_text(ProfileRuntime.get_profile(),session).contains("待撤离") and not ProfileRuntime.get_profile().narrative_slice.settled.Q01, "two observations remain provisional before extraction")
 	check(not exits[0].get_node("ExitPlaque").interact(battle.player,session).success, "repeat plaque cannot add observations")
 	var clone := SortieCheckpoint.restore_session(SortieCheckpoint.session_data(session))
 	check(clone != null and clone.exit_observations == session.exit_observations, "two-fact session roundtrip")
@@ -173,3 +175,33 @@ func _cleanup() -> void:
 	if is_instance_valid(battle): battle.free()
 	SortieRuntime.clear_session()
 	await get_tree().process_frame
+
+func _reading_controls() -> void:
+	var hud: BattleHUD = battle.hud
+	var panel: Control = hud.field_information.get_parent().get_parent()
+	check(panel.visible and hud.field_information.text.contains(String(_assigned()[0].extraction_id)), "plaque writes exit conditions to HUD")
+	for node in [panel, hud.field_information.get_parent(), hud.field_information]:
+		check(node.mouse_filter == Control.MOUSE_FILTER_IGNORE and node.focus_mode == Control.FOCUS_NONE, "readout never captures pointer or focus")
+	check(not battle.player.aim_input_captured and battle.player.interaction_component._enabled, "reading leaves aim and interactions enabled")
+	var paused := get_tree().paused
+	var before: Vector3 = battle.player.global_position
+	Input.action_press("move_forward")
+	battle.player._physics_process(1.0/60.0)
+	Input.action_release("move_forward")
+	check(battle.player.global_position.distance_to(before) > 0.001, "movement executes with readout visible")
+	var ammo_before: int = battle.player.get_magazine_ammo()
+	var fire := InputEventAction.new()
+	fire.action = "fire"
+	fire.pressed = true
+	battle.player._unhandled_input(fire)
+	battle.player._physics_process(1.0/60.0)
+	check(battle.player.get_magazine_ammo() == ammo_before-1, "fire input still shoots with readout visible")
+	check(get_tree().paused == paused, "readout never changes pause state")
+	var facts := session.exit_observations.duplicate()
+	var plaque: Node3D = _assigned()[0].get_node("ExitPlaque")
+	battle.player.global_position = plaque.global_position
+	battle.player.interaction_component._current_target = plaque
+	var response: Dictionary = battle.player.interaction_component.interact_with_current()
+	check(not response.success and panel.visible and session.exit_observations == facts, "re-reading shows conditions without duplicate observation")
+	hud._process(12.1)
+	check(not panel.visible, "readout expires without dismissal")

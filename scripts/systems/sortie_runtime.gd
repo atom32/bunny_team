@@ -177,10 +177,15 @@ func resume_saved(path := SaveService.DEFAULT_SAVE_PATH) -> Error:
 			if not saved.session.has(key): return ERR_INVALID_DATA
 			if saved.get("phase") == "battle" and not saved.world.has(key): return ERR_INVALID_DATA
 			if saved.get("phase") == "result" and not saved.outcome.has(key): return ERR_INVALID_DATA
+	if saved.version >= 5:
+		if not saved.session.has("lighting"): return ERR_INVALID_DATA
+		if saved.get("phase") == "battle" and not saved.world.has("lighting"): return ERR_INVALID_DATA
 	var restored := SortieCheckpoint.restore_session(saved.session)
 	if not restored: return ERR_INVALID_DATA
 	if saved.get("phase") not in ["deployment", "battle", "result"]: return ERR_INVALID_DATA
-	if saved.phase == "battle" and not NarrativeSlice.world_matches(saved.world, restored): return ERR_INVALID_DATA
+	if saved.phase == "battle":
+		if not NarrativeSlice.world_matches(saved.world, restored): return ERR_INVALID_DATA
+		if not SortieRequest.valid_lighting(saved.world.get("lighting", "day"), restored.area_id) or saved.world.get("lighting", "day") != restored.lighting_variant: return ERR_INVALID_DATA
 	if restored.status == SortieSession.Status.ACTIVE:
 		if saved.phase == "result" or (saved.phase == "battle" and saved.world.is_empty()): return ERR_INVALID_DATA
 		if saved.phase == "deployment" and (not saved.world.is_empty() or restored.enemies_defeated != 0 or restored.damage_taken != 0 or restored.threat_level != SortieSession.ThreatLevel.NORMAL): return ERR_INVALID_DATA

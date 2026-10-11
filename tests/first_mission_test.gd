@@ -43,6 +43,8 @@ func _run() -> void:
 		battle.player.set_physics_process(false)
 		await get_tree().process_frame
 		await get_tree().process_frame
+		check(battle.area_root.scene_file_path == "res://scenes/areas/first_mission.tscn" and battle.area_root.find_child("FieldOffice",true,false) != null, "Fresh training retains the original tutorial and field office")
+		check(battle.get_node("FirstMissionDirector").find_child("LegacyTutorialNotice",true,false).text == tr("LEGACY TUTORIAL / ART NOT REFURBISHED"), "In-sortie guidance explicitly labels the unrefurbished tutorial")
 		await _capture("training")
 		var director = battle.get_node("FirstMissionDirector")
 		var terminal = battle.area_root.find_child("PrototypeTerminal", true, false)
@@ -144,12 +146,18 @@ func _run() -> void:
 		var expected := 3 if bonus else 1
 		check(profile.first_mission_completed and FirstMissionPreparation.salvage_count(profile) == expected, "Chosen route transfers exact material count to warehouse")
 		check(SortieRuntime.finalize_sortie(save_path) == OK and FirstMissionPreparation.salvage_count(profile) == expected, "Retry does not duplicate recovered material")
+		StashLayout.new(profile).reconcile()
+		var before_upgrade := profile.to_dict()
 		check(FirstMissionPreparation.upgrade_weapon("user://missing_first_mission_dir/save.json") != OK and not profile.ar_damage_upgraded and FirstMissionPreparation.salvage_count(profile) == expected, "Failed upgrade save preserves materials")
+		check(profile.to_dict() == before_upgrade, "Failed upgrade preserves the complete Profile and stash layout")
 		check(FirstMissionPreparation.upgrade_weapon(save_path) == OK, "Workshop consumes one core and saves upgrade")
 		check(profile.ar_damage_upgraded and FirstMissionPreparation.salvage_count(profile) == expected-1, "Upgrade has exact cost")
 		check(FirstMissionPreparation.upgrade_weapon(save_path) == ERR_UNAVAILABLE, "Upgrade cannot charge twice")
 		var restored := SaveService.load_profile(save_path, false)
 		check(restored.ar_damage_upgraded and restored.first_mission_completed and restored.bunny_selected, "Progress survives profile reload")
+		check(restored.to_dict() == profile.to_dict(), "Upgrade publishes exactly the saved Profile, including stash layout")
+		for id in restored.stash_layout:
+			check(restored.inventory.contains(id), "Upgrade removes consumed core layout entries")
 		workshop.show_section("Workshop")
 		check(_button(workshop.screen, "SECOND SORTIE / LOADOUT") != null, "Workshop exposes second sortie after upgrade")
 		await _capture("workshop")

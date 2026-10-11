@@ -29,7 +29,10 @@ func _process_modification_with_delta(_delta: float) -> void:
 		var palm_local := rest.affine_inverse()*rest.origin.lerp(middle,.55)
 		var target := primary_target if side=="Right" else support_target
 		var wrist_target := sk.to_local(target.global_position)-hand_basis*palm_local
-		CONTACT.solve_arm(sk,side,wrist_target,hand_basis)
+		# Use a lowered elbow bend on this body, rather than preserving the wide
+		# imported running pose. Finger chains keep their original bend solver.
+		var bend := sk.global_basis.orthonormalized().inverse() * Vector3.DOWN
+		CONTACT.solve_arm(sk,side,wrist_target,hand_basis,bend)
 		var hand := sk.get_bone_global_pose(wrist)
 		for finger in ["Index","Middle","Ring","Pinky","Thumb"]:
 			var parent_pose := hand

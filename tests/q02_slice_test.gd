@@ -13,6 +13,7 @@ func check(ok: bool, message: String) -> void:
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	DeploymentPlan.selected_lighting_variant = "night" if "--night" in OS.get_cmdline_user_args() else "day"
 	await get_tree().process_frame
 	_migration()
 	var profile := _base()
@@ -56,7 +57,7 @@ func _ready() -> void:
 	session = SortieRuntime.get_current_session()
 	await _make_battle()
 	check(session.pharmacy_batch == NarrativeSlice.PHARMACY_BATCH, "A observation survives world restore")
-	check(NarrativeSlice.q02_status(ProfileRuntime.get_profile(),session).contains("尚未"), "provisional status before extraction")
+	check(NarrativeSlice.q02_status(ProfileRuntime.get_profile(),session).contains("待撤离") and ProfileRuntime.get_profile().narrative_slice.q02.observed_batch.is_empty(), "provisional status before extraction")
 	check(NarrativeSlice.submit_q02(PATH).error == ERR_BUSY, "cannot submit during sortie")
 	# Successful observation without any material: distinct permanent fact, no completion.
 	var outcome := await _extract()
@@ -156,6 +157,7 @@ func _observe() -> void:
 	battle.player.global_position = node.global_position
 	battle.player.interaction_component._current_target = null
 	check(battle.player.interaction_component.interact_with_current().success, "actual nearest pharmacy batch interaction")
+	check(battle.hud.field_information.get_parent().get_parent().visible and battle.hud.field_information.text == NarrativeSlice.BATCH_INFORMATION, "fixed field record appears only on nonmodal HUD readout")
 	check(session.pharmacy_batch == NarrativeSlice.PHARMACY_BATCH, "fixed batch observed")
 
 func _extract() -> SortieOutcome:

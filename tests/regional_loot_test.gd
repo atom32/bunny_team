@@ -46,17 +46,21 @@ func _ready() -> void:
 	await get_tree().physics_frame
 	var area=battle.area_root
 	var high:=0
-	var street:=0
 	var regional:={}
+	var outside:=0
 	for point in area.loot_points:
-		if point.loot_table_id==&"prototype_high_value_loot":high+=1
-		elif point.loot_table_id==&"street_supply_loot":street+=1
+		var index:=int(point.get_meta("campus_storage",-1))
+		check(index in [0,1,2,3],"campus supply point has an authored use")
+		if String(point.name).begins_with("StreetLoot"): outside+=1
+		if point.loot_table_id==&"prototype_high_value_loot":
+			high+=1
+			check(index==0,"only archive holds the valuable cache")
 		else:
-			var index:=int(String(point.name).substr(10,1))
-			check(point.loot_table_id==area.REGIONAL_LOOT[index],"actual room binds its intended resource table")
+			check(point.loot_table_id==area.REGIONAL_LOOT[index],"room and outdoor storage bind their intended ordinary table")
 			regional[point.loot_table_id]=int(regional.get(point.loot_table_id,0))+1
-	check(high==4 and street==6 and regional.size()==4,"existing valuable cache/street pools preserved; four regional pools in actual map")
-	for id in regional: check(regional[id]==2,"exactly two ordinary resource points per room; no extra loot sites")
+	check(high==1 and outside==6 and regional.size()==4,"starter campus keeps eighteen storage sites with one archive cache")
+	check(area.loot_points.size()==18,"campus redistribution does not add loot sites")
+	for id in regional: check(regional[id]>=3 or id==&"street_office_loot","all four campus uses provide ordinary supplies")
 	var world:=SortieCheckpoint.capture_world(battle)
 	check(SortieCheckpoint.validate_world(world,battle),"regional world snapshot validates")
 	check(SortieCheckpoint.restore_world(world,battle),"actual saved contents restore without rerolling regional tables")

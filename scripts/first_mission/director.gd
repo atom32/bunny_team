@@ -44,6 +44,10 @@ func _ready() -> void:
 	layer.layer = 26
 	add_child(layer)
 	var screen := SliceUI.root(layer)
+	var legacy_notice := SliceUI.label(screen, tr("LEGACY TUTORIAL / ART NOT REFURBISHED"), Vector2(18, 116), 12, Color("ffbd72"))
+	legacy_notice.name = "LegacyTutorialNotice"
+	legacy_notice.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	GameLanguage.language_changed.connect(func(): legacy_notice.text = tr("LEGACY TUTORIAL / ART NOT REFURBISHED"))
 	var panel := SliceUI.panel(screen, Vector2(18, 140), Vector2(350, 114))
 	panel.name = "TutorialCard"
 	panel.add_theme_stylebox_override("panel", UIFactory.panel_style(Color("111a2699"), Color("4f718b44")))

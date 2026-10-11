@@ -104,18 +104,31 @@ func _item_is_valid() -> bool:
 
 
 func _build_visual() -> void:
-	var base := VisualFactory.cylinder(self, 0.42, 0.18, Vector3(0.0, 0.1, 0.0), Color("263a45"), "LootBase")
-	base.material_override = VisualFactory.material(Color("263a45"), 0.7, 0.3, Color("3be2d0"), 1.5)
-	var core := VisualFactory.box(self, Vector3(0.46, 0.46, 0.46), Vector3(0.0, 0.43, 0.0), Color("65d8c7"), "LootCore")
-	core.rotation_degrees = Vector3(0.0, 45.0, 0.0)
-	core.material_override = VisualFactory.material(Color("2b6e70"), 0.55, 0.25, Color("65f2df"), 3.0)
+	var campus := get_parent().has_meta("campus_storage")
+	if campus:
+		var kind := int(get_parent().get_meta("campus_storage"))
+		var colors := [Color("9a8b70"),Color("d0cbb8"),Color("827a66"),Color("70806d")]
+		VisualFactory.box(self,Vector3(.65,.42,.5),Vector3(0,.32,0),colors[kind],"SupplyPackage")
+		VisualFactory.box(self,Vector3(.68,.055,.53),Vector3(0,.55,0),colors[kind].lightened(.1),"PackageLid")
+		if kind==1:
+			VisualFactory.box(self,Vector3(.11,.015,.34),Vector3(0,.587,0),Color("658570"),"MedicalMark")
+			VisualFactory.box(self,Vector3(.34,.015,.11),Vector3(0,.59,0),Color("658570"),"MedicalCross")
+		else:
+			VisualFactory.box(self,Vector3(.14,.014,.53),Vector3(0,.59,0),Color("b7af91"),"PackageTape")
+		VisualFactory.box(self,Vector3(.2,.016,.12),Vector3(.19,.60,.12),Color("d4cdb6"),"PackageLabel")
+	else:
+		var base := VisualFactory.cylinder(self, 0.42, 0.18, Vector3(0.0, 0.1, 0.0), Color("263a45"), "LootBase")
+		base.material_override = VisualFactory.material(Color("263a45"), 0.7, 0.3, Color("3be2d0"), 1.5)
+		var core := VisualFactory.box(self, Vector3(0.46, 0.46, 0.46), Vector3(0.0, 0.43, 0.0), Color("65d8c7"), "LootCore")
+		core.rotation_degrees = Vector3(0.0, 45.0, 0.0)
+		core.material_override = VisualFactory.material(Color("2b6e70"), 0.55, 0.25, Color("65f2df"), 3.0)
 	_name_label = Label3D.new()
 	_name_label.font = UIFactory.FONT
 	_name_label.position = Vector3(0.0, 1.05, 0.0)
-	_name_label.font_size = 48
-	_name_label.pixel_size = 0.012
+	_name_label.font_size = 28 if campus else 48
+	_name_label.pixel_size = 0.006 if campus else 0.012
 	_name_label.outline_size = 4
-	_name_label.modulate = Color("bffdf6")
+	_name_label.modulate = Color("e3dcc3") if campus else Color("bffdf6")
 	_name_label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	add_child(_name_label)
 

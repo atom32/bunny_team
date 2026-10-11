@@ -37,7 +37,7 @@ func build(seed_value: int) -> void:
    basis=basis.scaled(Vector3.ONE*rng.randf_range(.7,1.3))
    var instance:=limb*300+index
    multimesh.set_instance_transform(instance,Transform3D(basis,at))
-   multimesh.set_instance_color(instance,[Color("526047"),Color("64704f"),Color("79734c"),Color("536549")][rng.randi_range(0,3)].srgb_to_linear())
+   multimesh.set_instance_color(instance,[Color("526747"),Color("698253"),Color("8a9060"),Color("60794c")][rng.randi_range(0,3)].srgb_to_linear())
  var trunk:=StaticBody3D.new();trunk.name="TrunkCollision";trunk.collision_layer=4;trunk.collision_mask=0;add_child(trunk)
  var collision:=CollisionShape3D.new();var cylinder:=CylinderShape3D.new()
  cylinder.radius=.18;cylinder.height=2.6;collision.shape=cylinder;collision.position=Vector3(0,1.3,0);trunk.add_child(collision)

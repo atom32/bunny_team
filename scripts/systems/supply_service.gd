@@ -103,6 +103,9 @@ static func prepare(profile: ProfileState, action: String, id: String, quantity 
 					candidate.relief_claimed_after = candidate.failed_sorties
 		_: message = "Invalid supply transaction."
 	if not message.is_empty(): return {"error": ERR_UNAVAILABLE, "message": message}
+	# Resolve new/consumed warehouse slots inside the candidate transaction.
+	# Refreshing the grid after publishing must not create unsaved layout changes.
+	StashLayout.new(candidate).reconcile()
 	if not candidate.validate(): return {"error": ERR_INVALID_DATA, "message": "Invalid supply transaction."}
 	return {"error": OK, "message": "SUPPLIES UPDATED / SAVED", "candidate": candidate}
 

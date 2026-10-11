@@ -1,7 +1,7 @@
 extends Node3D
 const INTRO := [
 	["01 / HOME SIGNAL", "The city went silent. Bastion 07 stayed on the air."],
-	["02 / FIELD OPERATOR", "You are Kohaku. Your frame is ready. The security network is not on your side."],
+	["02 / FIELD OPERATOR", "Your frame is ready. The security network is not on your side."],
 	["03 / SIGNAL RECOVERY", "Access the Field Office. Recover supplies. Reach extraction. Come home."],
 ]
 var screen: Control
@@ -59,7 +59,9 @@ func _intro(index: int) -> void:
 	_clear()
 	var panel := SliceUI.panel(screen, Vector2(42,486), Vector2(1196,176))
 	SliceUI.label(panel, INTRO[index][0], Vector2(24,20), 20, SliceUI.CYAN)
-	SliceUI.label(panel, INTRO[index][1], Vector2(24,72), 21)
+	var description := SliceUI.label(panel, INTRO[index][1], Vector2(24,72), 21)
+	description.size = Vector2(1148, 80)
+	description.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	SliceUI.button(screen, "SKIP OPENING  /  ENTER", Vector2(922,34), Vector2(316,44), show_menu)
 	AudioDirector.play_sfx(&"ui_confirm", -6)
 

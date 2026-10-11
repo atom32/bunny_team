@@ -191,7 +191,10 @@ func _test_production_assignment() -> void:
 		var point: EnemySpawnPoint = battle.area_root.get_node(instance.get_meta("spawn_key"))
 		check(instance.tactics.role == point.tactical_role, "normal production Battle passes authored duty to controller")
 		roles[instance.tactics.role] = true
-	check(roles.has(R.PATROL) and roles.has(R.GUARD) and roles.has(R.FLANKER) and roles.has(R.PRESSURE), "normal Streets deployment contains every actual duty, not a lab-only feature")
+	check(battle.enemy_container.get_children().filter(func(actor): return actor is EnemyController and actor.definition_id == &"prototype_basic_enemy").size()==3, "starter campus retains three PMC actors")
+	var authored_roles := {}
+	for point in battle.area_root.enemy_points: authored_roles[point.tactical_role]=true
+	check(authored_roles.has(R.PATROL) and authored_roles.has(R.GUARD) and authored_roles.has(R.FLANKER) and authored_roles.has(R.PRESSURE), "campus authored spawn pool retains all four tactical duties")
 	battle.free()
 	SortieRuntime.clear_session()
 

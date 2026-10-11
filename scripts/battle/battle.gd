@@ -59,6 +59,7 @@ func _ready() -> void:
 		player.medical.feedback.connect(hud.show_interaction_feedback)
 	if player.interaction_component:
 		player.interaction_component.prompt_changed.connect(hud.set_interaction_prompt)
+		player.interaction_component.information_read.connect(hud.show_field_information)
 		player.interaction_component.interaction_finished.connect(_on_interaction_finished)
 	_spawn_world_interactions()
 	_configure_objective_world()
@@ -89,10 +90,6 @@ func _process(delta: float) -> void:
 		if not session.slice_context.is_empty(): hud.slice_label.text = NarrativeSlice.status_text(ProfileRuntime.get_profile(), session)
 		elif session.q02_active: hud.slice_label.text = NarrativeSlice.q02_status(ProfileRuntime.get_profile(), session)
 		elif session.q04_active: hud.slice_label.text = NarrativeSlice.q04_status(ProfileRuntime.get_profile(), session)
-		if session.q02_active or session.q04_active:
-			hud.pharmacy_information.get_parent().get_parent().visible = player.global_position.distance_to(area_root.get_node("PharmacyBatch").global_position) <= player.interaction_component.interaction_radius
-		if session.q04_active:
-			hud.receipt_information.get_parent().get_parent().visible = player.global_position.distance_to(area_root.get_node("DeliveryReceipt").global_position) <= player.interaction_component.interaction_radius
 		if player.medical:
 			hud.set_medical(player.medical)
 			hud.set_inventory_capacity(session.inventory.get_used_capacity(), session.inventory.capacity)
@@ -124,6 +121,7 @@ func _load_area() -> bool:
 	if not area_root:
 		push_error("Battle could not instantiate area ID: %s" % session.area_id)
 		return false
+	if session.area_id == &"street_district": area_root.lighting_variant = session.lighting_variant
 	var area_container := Node3D.new()
 	area_container.name = "AreaRoot"
 	add_child(area_container)

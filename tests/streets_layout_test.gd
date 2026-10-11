@@ -38,15 +38,48 @@ func _run() -> void:
 		NavigationServer3D.map_force_update(map)
 		if not NavigationServer3D.map_get_path(map,battle.player.global_position,area.get_node("StreetTerminal").position,true).is_empty(): break
 	var seen := {}
+	check(area.campus_lakes.size()==3 and area.campus_roads.size()==8,"Authored campus exposes lake basins and connecting avenues")
+	for point in area.enemy_points: check(not area.campus_layout.water_blocks(Vector2(point.position.x,point.position.z)),"Enemy spawn is on dry ground")
+	for anchor in [NarrativeSlice.PHARMACY_POSITION,NarrativeSlice.RECEIPT_POSITION]:
+		var path:=NavigationServer3D.map_get_path(map,battle.player.global_position,anchor,true)
+		check(not path.is_empty() and path[-1].distance_to(anchor)<1.5,"Narrative anchor remains physically reachable")
+	# Obstruction must extend a route without stranding any authored spawn or exit.
+	for spawn in area.SPAWNS:
+		for target in [NarrativeSlice.PHARMACY_POSITION,NarrativeSlice.RECEIPT_POSITION] + area.EXITS:
+			var path:=NavigationServer3D.map_get_path(map,spawn,target,true)
+			check(not path.is_empty() and path[-1].distance_to(target)<1.5,"All-spawn narrative/exit path remains connected")
+	for route in [["ShelterStoredBedding",Vector3(-27,0,32),Vector3(-15,0,32),1.2],["ShelterFallenTables",Vector3(-50,0,27),Vector3(-50,0,37),1.05]]:
+		var blocker: StaticBody3D=area.get_node(route[0])
+		var ray:=PhysicsRayQueryParameters3D.create(route[1]+Vector3.UP*.55,route[2]+Vector3.UP*.55,4)
+		var hit: Dictionary=battle.player.get_world_3d().direct_space_state.intersect_ray(ray)
+		check(not hit.is_empty() and hit.collider==blocker,"Clutter owns a real collision footprint")
+		var path:=NavigationServer3D.map_get_path(map,route[1],route[2],true)
+		var length:=0.0
+		for i in range(1,path.size()): length+=path[i-1].distance_to(path[i])
+		print("CAMPUS_DETOUR ",route[0]," length=",length)
+		check(not path.is_empty() and length>route[1].distance_to(route[2])*route[3],"Clutter produces a navigable detour")
+	# Shoreline stops a real character capsule but adds no invisible shoulder-height bullet wall.
+	battle.player.global_position=Vector3(15,0,-5)
+	for tick in 140:
+		await get_tree().physics_frame
+		battle.player.velocity=Vector3(0,0,-4)
+		battle.player.move_and_slide()
+	check(battle.player.global_position.z> -8,"Lake basin prevents player capsule entering water")
+	var lake_ray:=PhysicsRayQueryParameters3D.create(Vector3(15,1.2,-5),Vector3(15,1.2,-12),4)
+	check(battle.player.get_world_3d().direct_space_state.intersect_ray(lake_ray).is_empty(),"Lake bank does not block a shoulder-height shot")
+	var snapshot:=SortieCheckpoint.capture_world(battle)
+	check(snapshot.map_revision==3 and SortieCheckpoint.validate_world(snapshot,battle),"Campus world snapshot validates its authored revision")
+	var outdated:=snapshot.duplicate(true);outdated.map_revision=1
+	check(not SortieCheckpoint.validate_world(outdated,battle),"A different map revision cannot bypass strict restore validation")
 	# Cabin-height fire must hit the car, not pass through its visual roof.
-	var car_position := Vector3(42,0,-14)
+	var car_position: Vector3 = area.find_child("AbandonedSedan*",true,false).global_position
 	var cover_ray := PhysicsRayQueryParameters3D.create(car_position+Vector3(0,1.2,-4),car_position+Vector3(0,1.2,2),4)
 	var cover_hit: Dictionary = battle.player.get_world_3d().direct_space_state.intersect_ray(cover_ray)
 	check(not cover_hit.is_empty() and cover_hit.collider.is_in_group("streets_vehicle"),"Sedan cabin blocks a firing ray at shoulder height ("+str(cover_hit.get("collider"))+")")
 	var canopy: Area3D = area.find_child("CameraCanopy",true,false)
 	var tree: Node3D = canopy.get_parent()
 	var leaf_mesh := canopy.get_node("CanopyLeaves") as MultiMeshInstance3D
-	var foliage_ray := PhysicsRayQueryParameters3D.create(tree.global_position+Vector3(-3,3.15,0),tree.global_position+Vector3(3,3.15,0),4)
+	var foliage_ray := PhysicsRayQueryParameters3D.create(tree.to_global(Vector3(-3,3.15,0)),tree.to_global(Vector3(3,3.15,0)),4)
 	var space: PhysicsDirectSpaceState3D = battle.player.get_world_3d().direct_space_state
 	check(space.intersect_ray(foliage_ray).is_empty(),"Foliage does not become a solid bullet shield")
 	foliage_ray.from.y=1.3;foliage_ray.to.y=1.3
@@ -58,7 +91,19 @@ func _run() -> void:
 	for step in 20: battle._camera_occlusion.update_occlusion(battle.camera,actor,.05)
 	check(leaf_mesh.transparency>.8,"Instanced foliage fades when it hides the actor")
 	check(camera_basis.is_equal_approx(battle.camera.global_basis),"Foliage occlusion never changes camera angle")
-	actor.global_position+=Vector3.RIGHT*20
+	var pharmacy_art: Node3D = area.get_node("PharmacyFrontage")
+	check(pharmacy_art.find_children("*","CollisionObject3D",true,false).is_empty() and pharmacy_art.find_children("*","NavigationRegion3D",true,false).is_empty(),"Pharmacy presentation adds no collision or navigation")
+	var pharmacy_roof: StaticBody3D
+	for candidate in area.find_children("*","StaticBody3D",true,false):
+		if candidate.is_in_group("aim_cutaway_roof") and candidate.position.distance_to(area.ROOMS[1]+Vector3(0,3.6,0)) < .1: pharmacy_roof = candidate
+	check(pharmacy_roof != null and pharmacy_roof.has_node("PharmacyRoofDetails"),"Pharmacy roof art belongs to original cutaway body")
+	actor.global_position = area.ROOMS[1]
+	battle.camera.global_position = actor.global_position+Vector3(0,18.2,13.7)
+	for step in 20: battle._camera_occlusion.update_occlusion(battle.camera,actor,.05)
+	for mesh in pharmacy_roof.get_node("PharmacyRoofDetails").find_children("*","MeshInstance3D",true,false):
+		check(mesh.transparency>.8,"Pharmacy roof details fade with the original roof")
+	check(pharmacy_roof.is_in_group("active_aim_cutaway"),"Pharmacy roof preserves existing mouse-picking cutaway")
+	actor.global_position = tree.global_position+Vector3.RIGHT*20
 	for step in 20: battle._camera_occlusion.update_occlusion(battle.camera,actor,.05)
 	check(leaf_mesh.transparency<.01,"Instanced foliage restores after the actor clears it")
 	battle.camera.global_position=camera_position
@@ -85,13 +130,17 @@ func _run() -> void:
 			if loot.loot_table_id==&"prototype_high_value_loot": high_count+=1
 			var loot_path := NavigationServer3D.map_get_path(map,spawn.position,loot.position,true)
 			check(not loot_path.is_empty() and loot_path[-1].distance_to(loot.position)<1.5,"Loot %s accessible (end %s target %s)"%[loot.name,loot_path[-1] if not loot_path.is_empty() else Vector3.ZERO,loot.position])
-		check(high_count==4,"High-value loot remains inside four risk-bearing interiors")
+		check(high_count==1,"Starter campus has one high-value cache inside the archive")
+		var initial_count := 0
 		for point in area.enemy_points:
-			if point.initial_spawn: check(point.position.distance_to(spawn.position)>24,"PMC does not spawn beside player")
+			if point.initial_spawn:
+				initial_count+=1 if point.enemy_definition_id == &"prototype_basic_enemy" else 0
+				check(point.position.distance_to(spawn.position)>24,"PMC does not spawn beside player")
+		check(initial_count==3,"Starter campus retains three PMC actors alongside infected")
 	check(seen.size()==6,"Seeded deployment covers all six player spawn candidates")
 	var basis: Basis = battle.camera.global_basis
 	for step in 30:
-		battle.player.position=Vector3(-20,.1,-20)+Vector3.RIGHT*step*.1
+		battle.player.position=area.ROOMS[0]+Vector3.RIGHT*step*.1
 		battle.player.aim_direction=Vector3.LEFT if step%2 else Vector3.FORWARD
 		battle._process(1./60.)
 	check(basis.is_equal_approx(battle.camera.global_basis),"Follow/aim changes never alter camera angle")

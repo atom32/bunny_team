@@ -1,0 +1,14 @@
+[
+  {
+    "asset": "blood_dried_v1.png",
+    "generator": "builtin ImageGen",
+    "source": "/Users/xudawei/.codex/generated_images/01a125cd-1755-74c1-a5d9-3b9a6df5c941/exec-2272af51-6e91-47e7-9cf4-91068d0a2f7b.png",
+    "sha256": "446a34687b9c8874d06d339b117f29e0128508a53b84afd05477b43e74869f91"
+  },
+  {
+    "asset": "scorch_v1.png",
+    "generator": "builtin ImageGen",
+    "source": "/Users/xudawei/.codex/generated_images/01a125cd-1755-74c1-a5d9-3b9a6df5c941/exec-237648a0-6b28-42ae-affb-78e74be137bb.png",
+    "sha256": "57bb42b0598d4c10115470a0b3d4488e8737cbe73d7b3e07f06cb2962b81e686"
+  }
+]
