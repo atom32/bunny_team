@@ -11,9 +11,11 @@ const Q04_REWARD := 200
 const PHARMACY_BATCH := "MED-TK-071"
 const PHARMACY_POSITION := Vector3(-22, 0, -24) # Inside the pharmacy, beyond exterior-wall interaction range.
 const BATCH_INFORMATION := "药房收货登记\n批次：MED-TK-071　登记日期：D-1\n登记数量：敷料×2、织物×2　状态：已收齐\n本批次收货格：敷料×0、织物×0（不含其他库存）"
-const Q01_REQUEST := "沈砚霜：到了校园，先看看两处出口的牌子。有的门得拿到档案才能走，别跑到门口才发现出不去。看完就回来。"
-const Q02_REQUEST := "唐葵：我这边今晚还缺敷料和布，各两份。去药房的话，顺便帮我看看那批货的收货登记，批号在清单上。东西买来的也行，能用就好。"
-const Q04_REQUEST := "唐葵：送货表上写着昨天收齐了。你帮我找找那批货的配送回执，再回药房看看收货记录。两份放在一起，才好核对。"
+const Q01_REQUEST := "Shen Yanshuang: Armed patrols and escaped subjects both threaten the campus. Check both exit conditions before filling your pack. Find a way back alive."
+const Q02_REQUEST := "Tang Kui: Two people came back wounded after a failed evacuation. We need two dressings and two clean fabrics. Bring what you can; warehouse supplies count too."
+const Q04_REQUEST := "Su Mi: The campus maintenance line is still lit. I heard a call from inside. I am preparing a repair plan; do not enter the sealed zone yet."
+const Q02_RESPONSE := "Tang Kui: Received. We can dress the wounds now. Su Mi picked up a call from the campus; she is checking the maintenance line."
+const BATCH1_ENDPOINT := "Campus chapter / Field supply complete. Su Mi's maintenance operation is not available in this build. Trading and free sorties remain available."
 # Canonical stored message is retained for strict validation of existing saves.
 # The Chinese presentation translation supplies the revised NPC voice.
 const Q02_MESSAGE := "唐葵：够今晚了。奇怪，送货表上写着昨天就收齐了。配送记录还得再核对。"
@@ -26,10 +28,10 @@ const Q02_INPUTS := {&"medical.field_dressing": 2, &"material.fabric": 2}
 static func initial_state() -> Dictionary:
 	var settled := {}
 	for id in TASK_IDS: settled[id] = false
-	return {"version": 3, "settled": settled, "q01_exits": [], "q04": {"receipt_id": "", "observed_batch": "", "log": ""}, "q02": {"observed_batch": "", "delivered": {"medical.field_dressing": 0, "material.fabric": 0}, "message": ""}}
+	return {"version": 4, "settled": settled, "q01_exits": [], "q04": {"receipt_id": "", "observed_batch": "", "log": ""}, "q02": {"observed_batch": "", "delivered": {"medical.field_dressing": 0, "material.fabric": 0}, "message": ""}}
 
 static func valid_state(raw: Variant) -> bool:
-	if typeof(raw) != TYPE_DICTIONARY or raw.size() != 5 or raw.get("version") != 3: return false
+	if typeof(raw) != TYPE_DICTIONARY or raw.size() != 5 or (raw.get("version") != 3 and raw.get("version") != 4): return false
 	var settled: Variant = raw.get("settled")
 	if typeof(settled) != TYPE_DICTIONARY or settled.size() != TASK_IDS.size(): return false
 	for id in TASK_IDS:
@@ -42,10 +44,11 @@ static func valid_state(raw: Variant) -> bool:
 	if typeof(q02) != TYPE_DICTIONARY or q02.size() != 3: return false
 	if typeof(q02.get("observed_batch")) != TYPE_STRING or q02.observed_batch not in ["", PHARMACY_BATCH]: return false
 	if typeof(q02.get("delivered")) != TYPE_DICTIONARY or q02.delivered.size() != 2: return false
-	var complete: bool = q02.observed_batch == PHARMACY_BATCH
+	var complete: bool = raw.version == 4 or q02.observed_batch == PHARMACY_BATCH
 	for id in Q02_INPUTS:
 		if not SortieCheckpoint.integer(q02.delivered.get(String(id)), 0, 2): return false
-		if q02.delivered[String(id)] > 0 and q02.observed_batch.is_empty(): return false
+		if raw.version == 3 and q02.delivered[String(id)] > 0 and q02.observed_batch.is_empty(): return false
+		if q02.delivered[String(id)] > 0 and not settled.Q01: return false
 		complete = complete and q02.delivered[String(id)] == 2
 	if not settled.Q01 and (not q02.observed_batch.is_empty() or settled.Q02): return false
 	if typeof(q02.get("message")) != TYPE_STRING or settled.Q02 != complete or q02.message != (Q02_MESSAGE if complete else ""): return false
@@ -70,7 +73,7 @@ static func restore_state(raw: Variant) -> Dictionary:
 		state.version = 3
 		state.q04 = initial_state().q04
 	if not valid_state(state): return {}
-	state.version = 3
+	state.version = 4
 	for id in Q02_INPUTS: state.q02.delivered[String(id)] = int(state.q02.delivered[String(id)])
 	return state
 
@@ -120,8 +123,8 @@ static func record_outcome(profile: ProfileState, outcome: SortieOutcome) -> voi
 
 static func prepare_q02_delivery(profile: ProfileState) -> Dictionary:
 	if not profile or not profile.validate(): return {"error": ERR_INVALID_DATA, "message": "Invalid profile."}
-	if not profile.narrative_slice.settled.Q01 or profile.narrative_slice.settled.Q02 or profile.narrative_slice.q02.observed_batch.is_empty():
-		return {"error": ERR_UNAVAILABLE, "message": "先在药房观察指定批次并成功撤离；已完成的交付不能重复提交。"}
+	if not profile.narrative_slice.settled.Q01 or profile.narrative_slice.settled.Q02:
+		return {"error": ERR_UNAVAILABLE, "message": "先完成出口确认；已完成的交付不能重复提交。"}
 	var candidate := ProfileState.from_dict(profile.to_dict())
 	var delivered: Dictionary = candidate.narrative_slice.q02.delivered
 	var used_total := 0
@@ -154,33 +157,22 @@ static func submit_q02(path := SaveService.DEFAULT_SAVE_PATH) -> Dictionary:
 	profile.replace_with(result.candidate)
 	return result
 
-static func q02_status(profile: ProfileState, session: SortieSession = null) -> String:
-	if not profile.narrative_slice.settled.Q01: return "Q02 今晚的药 / 完成 Q01 后可提交"
+static func q02_status(profile: ProfileState, _session: SortieSession = null) -> String:
 	var state: Dictionary = profile.narrative_slice.q02
-	var observation := "尚未查看收货记录" if state.observed_batch.is_empty() else "收货记录已带回"
-	if session and not session.pharmacy_batch.is_empty() and state.observed_batch.is_empty(): observation = "已查看收货记录，待撤离"
-	if profile.narrative_slice.settled.Q02: observation = "已结算"
-	return "Q02 今晚的药 / %s / 已交敷料 %d/2、织物 %d/2" % [observation, state.delivered["medical.field_dressing"], state.delivered["material.fabric"]]
+	var status := "Locked / complete Q01" if not profile.narrative_slice.settled.Q01 else ("Settled" if profile.narrative_slice.settled.Q02 else "Deliver supplies at base")
+	return TranslationServer.translate("Q02 / Urgent medicine / %s / Dressings %d/2, fabric %d/2") % [TranslationServer.translate(status), state.delivered["medical.field_dressing"], state.delivered["material.fabric"]]
 
 static func status_text(profile: ProfileState, session: SortieSession = null) -> String:
-	if profile.narrative_slice.settled.Q01: return "Q01 出口确认 / 已结算"
+	if profile.narrative_slice.settled.Q01: return "Q01 找条活路 / 已结算"
 	var count := session.exit_observations.size() if session else 0
-	if count == 2: return "Q01 出口确认 / 已查看两个出口（2/2），待撤离"
-	if count == 1: return "Q01 出口确认 / 已查看一个出口（1/2）"
-	return "Q01 出口确认 / 未完成：查看两处出口铭牌"
+	if count == 2: return "Q01 找条活路 / 已查看两个出口（2/2），待撤离"
+	if count == 1: return "Q01 找条活路 / 已查看一个出口（1/2）"
+	return "Q01 找条活路 / 未完成：查看两处出口铭牌"
 
 
-static func prepare_q04_submission(profile: ProfileState) -> Dictionary:
-	if not profile or not profile.validate(): return {"error": ERR_INVALID_DATA, "message": "Invalid profile."}
-	var facts: Dictionary = profile.narrative_slice.q04
-	if not profile.narrative_slice.settled.Q02 or profile.narrative_slice.settled.Q04 or facts.receipt_id != DELIVERY_RECEIPT or facts.observed_batch != PHARMACY_BATCH:
-		return {"error": ERR_UNAVAILABLE, "message": "同批次配送回执与药房现场记录均须成功带回；已结算的记录不能重复提交。"}
-	var candidate := ProfileState.from_dict(profile.to_dict())
-	candidate.narrative_slice.settled.Q04 = true
-	candidate.narrative_slice.q04.log = Q04_LOG
-	candidate.credits += Q04_REWARD
-	if not candidate.validate(): return {"error": ERR_INVALID_DATA, "message": "Invalid submission state."}
-	return {"error": OK, "candidate": candidate, "message": "委托已完成，调查结果已记入日志。"}
+static func prepare_q04_submission(_profile: ProfileState) -> Dictionary:
+	# Legacy logistics facts remain loadable history, never progress for the new story.
+	return {"error": ERR_UNAVAILABLE, "message": TranslationServer.translate(BATCH1_ENDPOINT)}
 
 static func submit_q04(path := SaveService.DEFAULT_SAVE_PATH) -> Dictionary:
 	var profile := ProfileRuntime.get_profile()
@@ -194,11 +186,5 @@ static func submit_q04(path := SaveService.DEFAULT_SAVE_PATH) -> Dictionary:
 	# Q04 is chain A's endpoint. No successor, marker or narrative state is generated.
 	return result
 
-static func q04_status(profile: ProfileState, session: SortieSession = null) -> String:
-	if profile.narrative_slice.settled.Q04: return "Q04 账上已经送到 / 已结算"
-	var facts: Dictionary = profile.narrative_slice.q04
-	var receipt := "已带回" if not facts.receipt_id.is_empty() else "未带回"
-	var pharmacy := "已带回" if not facts.observed_batch.is_empty() else "未带回"
-	if session and not session.delivery_receipt.is_empty() and facts.receipt_id.is_empty(): receipt = "已取得，待撤离"
-	if session and not session.pharmacy_batch.is_empty() and facts.observed_batch.is_empty(): pharmacy = "已查看，待撤离"
-	return "Q04 账上已经送到 / MED-TK-071 配送回执：%s / 药房现场记录：%s" % [receipt, pharmacy]
+static func q04_status(profile: ProfileState, _session: SortieSession = null) -> String:
+	return TranslationServer.translate("Legacy Q04 reward retained / no new story progress granted") if profile.narrative_slice.settled.Q04 else TranslationServer.translate("Campus maintenance / awaiting Batch 2")

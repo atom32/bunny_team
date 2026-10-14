@@ -31,6 +31,15 @@ func _draw() -> void:
 	# Radial quads leave the observed region clear and keep the surroundings
 	# readable. The overlay sits below all HUD controls and never intercepts input.
 	for index in range(projected.size() - 1):
-		draw_colored_polygon(PackedVector2Array([projected[index], outer[index], outer[index + 1], projected[index + 1]]), Color(.025, .035, .045, .34))
+		var a := projected[index]
+		var b := outer[index]
+		var c := outer[index + 1]
+		var d := projected[index + 1]
+		# Adjacent rays can project onto the same line. Skip zero-area triangles
+		# instead of asking the renderer to triangulate a degenerate quad.
+		if absf((b - a).cross(c - a)) > 0.01:
+			draw_colored_polygon(PackedVector2Array([a, b, c]), Color(.025, .035, .045, .34))
+		if absf((c - a).cross(d - a)) > 0.01:
+			draw_colored_polygon(PackedVector2Array([a, c, d]), Color(.025, .035, .045, .34))
 	if projected.size() > 1:
 		draw_polyline(projected, Color(.78, .74, .55, .24), 1.0, true)

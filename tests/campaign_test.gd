@@ -277,7 +277,6 @@ func _contacts() -> void:
 	profile.first_mission_completed = true
 	profile.narrative_slice.settled.Q01 = true
 	profile.narrative_slice.q01_exits = ["streets_exit_0","streets_exit_1"]
-	profile.narrative_slice.q02.observed_batch = NarrativeSlice.PHARMACY_BATCH
 	profile.inventory.add_item(ItemInstance.new(&"material.fabric",2))
 	panel.open_contact("tang_kui","quests")
 	credits = profile.credits
@@ -285,17 +284,13 @@ func _contacts() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	check(profile.narrative_slice.settled.Q02 and profile.credits == credits + NarrativeSlice.Q02_REWARD, "contact Q02 submit reuses material consumption and exact reward")
-	profile.narrative_slice.q04.receipt_id = NarrativeSlice.DELIVERY_RECEIPT
-	profile.narrative_slice.q04.observed_batch = NarrativeSlice.PHARMACY_BATCH
-	panel.open_contact("tang_kui","quests")
 	credits = profile.credits
-	panel.find_child("SubmitQ04",true,false).pressed.emit()
-	await get_tree().process_frame
-	await get_tree().process_frame
-	check(profile.narrative_slice.settled.Q04 and profile.credits == credits + NarrativeSlice.Q04_REWARD, "contact Q04 submit reuses exact reward and save transaction")
+	panel.open_contact("tang_kui","quests")
+	check(panel.find_child("SubmitQ04",true,false) == null and NarrativeSlice.prepare_q04_submission(profile).error == ERR_UNAVAILABLE, "retired logistics cannot submit or reward")
+	check(not profile.narrative_slice.settled.Q04 and profile.credits == credits, "batch boundary never fabricates Q04 completion")
 	for id: String in ContactDefinition.CONTACTS:
 		panel.open_contact(id,"quests")
-		check(panel.find_child("SubmitQ04",true,false) == null and panel.find_child("SubmitQ02",true,false) == null, "Q04 terminal state creates no action at " + id)
+		check(panel.find_child("SubmitQ04",true,false) == null and panel.find_child("SubmitQ02",true,false) == null, "completed delivery has no repeat action at " + id)
 	check(not profile.narrative_slice.settled.Q03 and not profile.narrative_slice.settled.Q05 and not profile.narrative_slice.settled.Q06, "contacts never fabricate Su Mi task progress")
 	check(SaveService.load_profile(PATH,false).to_dict() == profile.to_dict(), "contact quest rewards survive disk reload without contact fields")
 	hub.show_section("Workshop")

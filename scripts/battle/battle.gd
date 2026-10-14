@@ -445,26 +445,10 @@ func _setup_exit_plaques() -> void:
 
 
 func _setup_pharmacy_batch() -> void:
-	if not (session.q02_active or session.q04_active): return
-	var batch := preload("res://scripts/world/pharmacy_batch.gd").new()
-	batch.name = "PharmacyBatch"
-	batch.position = NarrativeSlice.PHARMACY_POSITION
-	area_root.add_child(batch)
-	var card := hud._card(hud.get_child(0), "PharmacyBatchInformation", Control.PRESET_CENTER_BOTTOM, Vector2(-310,-210), Vector2(620,110))
-	hud.pharmacy_information = hud._line(card, NarrativeSlice.BATCH_INFORMATION, 15, Color("c9fbff"))
-	hud.pharmacy_information.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	card.get_parent().hide()
-	hud.slice_label.visible = true
-	hud.slice_label.text = NarrativeSlice.q02_status(ProfileRuntime.get_profile(), session) if session.q02_active else NarrativeSlice.q04_status(ProfileRuntime.get_profile(), session)
-
+	if session.q02_active:
+		hud.slice_label.visible = true
+		hud.slice_label.text = NarrativeSlice.q02_status(ProfileRuntime.get_profile(), session)
+	# No logistics interaction, including resumed legacy sorties.
 
 func _setup_delivery_receipt() -> void:
-	if not session.q04_active: return
-	var receipt := preload("res://scripts/world/delivery_receipt.gd").new()
-	receipt.name = "DeliveryReceipt"
-	receipt.position = NarrativeSlice.RECEIPT_POSITION
-	area_root.add_child(receipt)
-	var card := hud._card(hud.get_child(0), "DeliveryReceiptInformation", Control.PRESET_CENTER_BOTTOM, Vector2(-310,-210), Vector2(620,110))
-	hud.receipt_information = hud._line(card, NarrativeSlice.RECEIPT_INFORMATION, 15, Color("c9fbff"))
-	hud.receipt_information.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	card.get_parent().hide()
+	pass # Legacy receipt fields stay in checkpoint validation, not in the new world.

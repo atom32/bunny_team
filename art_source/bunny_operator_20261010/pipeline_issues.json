@@ -1,0 +1,13 @@
+[
+  {
+    "stage": "fixture validation",
+    "observed": "Mesh AABB gave 2.143957m height; it includes conservative skin bounds rather than final deformed vertices.",
+    "resolution": "Evaluate actual vertices with bone global pose * bind pose, then transform by skeleton global transform. Strict dimensions remain 2.05m and feet zero.",
+    "final_pass": true
+  },
+  {
+    "stage": "fixture export",
+    "observed": "Auxiliary Icosphere has no material; strict inspection rejected it.",
+    "resolution": "Explicitly exclude this reviewed old-character helper in the test export only. No automatic exclusions for a generated character."
+  }
+]

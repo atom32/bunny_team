@@ -1,0 +1,23 @@
+[
+  {
+    "test": "character_presentation_test",
+    "exit": 0,
+    "seconds": 2.8,
+    "pass": true,
+    "errors": []
+  },
+  {
+    "test": "rifle_contact_test",
+    "exit": 0,
+    "seconds": 1.17,
+    "pass": true,
+    "errors": []
+  },
+  {
+    "test": "ammo_packing_test",
+    "exit": 0,
+    "seconds": 1.67,
+    "pass": true,
+    "errors": []
+  }
+]

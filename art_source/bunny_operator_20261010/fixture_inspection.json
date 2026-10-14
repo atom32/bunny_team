@@ -1,0 +1,688 @@
+{
+  "input": "/Users/xudawei/bunny_team/assets/characters/artoria_bunny/bunny_player.glb",
+  "input_sha256": "a593bc5dd94c266ccc913698cd67c87d4bd60e99036a4ad7b731fe4b86067072",
+  "blender_version": "5.2.1 LTS",
+  "yaw_degrees": 0.0,
+  "height_target_m": 2.05,
+  "objects": [
+    {
+      "name": "ArtoriaLancer_Body_Runtime",
+      "vertices": 26153,
+      "triangles": 48132,
+      "uv_layers": 4,
+      "material_slots": 4,
+      "isolated_vertices": 0,
+      "boundary_edges": 3990,
+      "nonmanifold_interior_edges": 0,
+      "degenerate_faces": 0,
+      "invalid_vertices": 0,
+      "connected_components": 95,
+      "largest_components": [
+        5506,
+        5433,
+        1976,
+        1538,
+        1538,
+        1175,
+        1073,
+        960,
+        824,
+        746,
+        641,
+        441
+      ],
+      "weighted_vertices": 26153,
+      "armature_modifiers": 1
+    },
+    {
+      "name": "ArtoriaLancer_Eyes_Runtime",
+      "vertices": 2456,
+      "triangles": 4704,
+      "uv_layers": 4,
+      "material_slots": 2,
+      "isolated_vertices": 0,
+      "boundary_edges": 192,
+      "nonmanifold_interior_edges": 0,
+      "degenerate_faces": 0,
+      "invalid_vertices": 0,
+      "connected_components": 8,
+      "largest_components": [
+        409,
+        409,
+        409,
+        409,
+        217,
+        217,
+        193,
+        193
+      ],
+      "weighted_vertices": 2456,
+      "armature_modifiers": 1
+    },
+    {
+      "name": "ArtoriaLancer_Hair_Default_Runtime",
+      "vertices": 55764,
+      "triangles": 68467,
+      "uv_layers": 1,
+      "material_slots": 1,
+      "isolated_vertices": 0,
+      "boundary_edges": 39859,
+      "nonmanifold_interior_edges": 0,
+      "degenerate_faces": 0,
+      "invalid_vertices": 0,
+      "connected_components": 1604,
+      "largest_components": [
+        348,
+        344,
+        340,
+        333,
+        331,
+        328,
+        325,
+        317,
+        313,
+        302,
+        295,
+        289
+      ],
+      "weighted_vertices": 55764,
+      "armature_modifiers": 1
+    },
+    {
+      "name": "Bunny_Collar_Runtime",
+      "vertices": 2306,
+      "triangles": 4064,
+      "uv_layers": 1,
+      "material_slots": 1,
+      "isolated_vertices": 0,
+      "boundary_edges": 536,
+      "nonmanifold_interior_edges": 0,
+      "degenerate_faces": 0,
+      "invalid_vertices": 0,
+      "connected_components": 10,
+      "largest_components": [
+        838,
+        744,
+        170,
+        153,
+        111,
+        87,
+        77,
+        68,
+        37,
+        21
+      ],
+      "weighted_vertices": 2306,
+      "armature_modifiers": 1
+    },
+    {
+      "name": "Bunny_Headress_Runtime",
+      "vertices": 1572,
+      "triangles": 2520,
+      "uv_layers": 1,
+      "material_slots": 1,
+      "isolated_vertices": 0,
+      "boundary_edges": 584,
+      "nonmanifold_interior_edges": 0,
+      "degenerate_faces": 0,
+      "invalid_vertices": 0,
+      "connected_components": 20,
+      "largest_components": [
+        281,
+        186,
+        124,
+        102,
+        102,
+        102,
+        102,
+        73,
+        72,
+        72,
+        48,
+        48
+      ],
+      "weighted_vertices": 1572,
+      "armature_modifiers": 1
+    },
+    {
+      "name": "Bunny_Heels_Runtime",
+      "vertices": 1994,
+      "triangles": 3260,
+      "uv_layers": 1,
+      "material_slots": 1,
+      "isolated_vertices": 0,
+      "boundary_edges": 700,
+      "nonmanifold_interior_edges": 0,
+      "degenerate_faces": 0,
+      "invalid_vertices": 0,
+      "connected_components": 14,
+      "largest_components": [
+        551,
+        551,
+        168,
+        168,
+        110,
+        110,
+        54,
+        54,
+        51,
+        51,
+        38,
+        38
+      ],
+      "weighted_vertices": 1994,
+      "armature_modifiers": 1
+    },
+    {
+      "name": "Bunny_Stockings_Runtime",
+      "vertices": 4532,
+      "triangles": 8388,
+      "uv_layers": 4,
+      "material_slots": 1,
+      "isolated_vertices": 0,
+      "boundary_edges": 656,
+      "nonmanifold_interior_edges": 0,
+      "degenerate_faces": 0,
+      "invalid_vertices": 0,
+      "connected_components": 10,
+      "largest_components": [
+        2132,
+        2132,
+        56,
+        56,
+        54,
+        54,
+        12,
+        12,
+        12,
+        12
+      ],
+      "weighted_vertices": 4532,
+      "armature_modifiers": 1
+    },
+    {
+      "name": "Bunny_Suit_Runtime",
+      "vertices": 5823,
+      "triangles": 10130,
+      "uv_layers": 1,
+      "material_slots": 1,
+      "isolated_vertices": 0,
+      "boundary_edges": 1482,
+      "nonmanifold_interior_edges": 0,
+      "degenerate_faces": 0,
+      "invalid_vertices": 0,
+      "connected_components": 17,
+      "largest_components": [
+        1285,
+        993,
+        510,
+        434,
+        351,
+        351,
+        349,
+        294,
+        294,
+        234,
+        234,
+        117
+      ],
+      "weighted_vertices": 5823,
+      "armature_modifiers": 1
+    },
+    {
+      "name": "Bunny_Tail_Runtime",
+      "vertices": 393,
+      "triangles": 768,
+      "uv_layers": 1,
+      "material_slots": 1,
+      "isolated_vertices": 0,
+      "boundary_edges": 16,
+      "nonmanifold_interior_edges": 0,
+      "degenerate_faces": 0,
+      "invalid_vertices": 0,
+      "connected_components": 1,
+      "largest_components": [
+        393
+      ],
+      "weighted_vertices": 393,
+      "armature_modifiers": 1
+    },
+    {
+      "name": "Bunny_Thigh_Strap_Runtime",
+      "vertices": 2337,
+      "triangles": 3940,
+      "uv_layers": 1,
+      "material_slots": 1,
+      "isolated_vertices": 0,
+      "boundary_edges": 698,
+      "nonmanifold_interior_edges": 0,
+      "degenerate_faces": 0,
+      "invalid_vertices": 0,
+      "connected_components": 18,
+      "largest_components": [
+        346,
+        340,
+        340,
+        235,
+        206,
+        170,
+        167,
+        81,
+        81,
+        66,
+        65,
+        65
+      ],
+      "weighted_vertices": 2337,
+      "armature_modifiers": 1
+    },
+    {
+      "name": "Bunny_Wrist_Runtime",
+      "vertices": 1830,
+      "triangles": 2920,
+      "uv_layers": 1,
+      "material_slots": 1,
+      "isolated_vertices": 0,
+      "boundary_edges": 716,
+      "nonmanifold_interior_edges": 0,
+      "degenerate_faces": 0,
+      "invalid_vertices": 0,
+      "connected_components": 12,
+      "largest_components": [
+        297,
+        297,
+        280,
+        280,
+        198,
+        198,
+        70,
+        70,
+        56,
+        56,
+        14,
+        14
+      ],
+      "weighted_vertices": 1830,
+      "armature_modifiers": 1
+    }
+  ],
+  "materials": [
+    {
+      "name": "ArtoriaLancer_Eyes_Game",
+      "images": [
+        {
+          "name": "ArtoriaLancer_Eyes_base",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaLancer_Eyes_roughness",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaLancer_Eyes_normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        }
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Suit_Game",
+      "images": [
+        {
+          "name": "ArtoriaBunny_Suit_base",
+          "size": [
+            2048,
+            2048
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaBunny_Suit_metallic-ArtoriaBunny_Suit_roughness",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaBunny_Suit_normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        }
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Stockings_Game",
+      "images": [
+        {
+          "name": "ArtoriaBunny_Stockings_base",
+          "size": [
+            2048,
+            2048
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaBunny_Stockings_metallic-ArtoriaBunny_Stockings_roughness",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaBunny_Stockings_normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        }
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Body_Game",
+      "images": [
+        {
+          "name": "ArtoriaLancer_Body_base",
+          "size": [
+            2048,
+            2048
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaLancer_Body_roughness",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaLancer_Body_normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        }
+      ]
+    },
+    {
+      "name": "Eyes_Cornea_Game",
+      "images": []
+    },
+    {
+      "name": "ArtoriaBunny_Fur_Game",
+      "images": [
+        {
+          "name": "ArtoriaBunny_Fur_base",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaBunny_Fur_roughness",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaBunny_Fur_normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        }
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Hair_Game",
+      "images": [
+        {
+          "name": "ArtoriaLancer_Hair_base",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaLancer_Hair_normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        }
+      ]
+    },
+    {
+      "name": "ArtoriaLancer_Head_Game",
+      "images": [
+        {
+          "name": "ArtoriaLancer_Head_base",
+          "size": [
+            2048,
+            2048
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaLancer_Head_roughness",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaLancer_Head_normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        }
+      ]
+    },
+    {
+      "name": "Eyeshadow_Game",
+      "images": [
+        {
+          "name": "Eyeshadow_base",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        }
+      ]
+    },
+    {
+      "name": "ArtoriaBunny_Headress_Game",
+      "images": [
+        {
+          "name": "ArtoriaBunny_Headress_base",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaBunny_Headress_metallic-ArtoriaBunny_Headress_roughness",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        },
+        {
+          "name": "ArtoriaBunny_Headress_normal",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        }
+      ]
+    },
+    {
+      "name": "Eyelashes_Game",
+      "images": [
+        {
+          "name": "Eyelashes_base",
+          "size": [
+            1024,
+            1024
+          ],
+          "valid": true
+        }
+      ]
+    }
+  ],
+  "rigs": [
+    {
+      "name": "BunnyGameRig",
+      "bones": [
+        "Character1_Hips",
+        "Character1_LeftUpLeg",
+        "Character1_LeftLeg",
+        "Character1_LeftFoot",
+        "Character1_LeftToeBase",
+        "Character1_RightUpLeg",
+        "Character1_RightLeg",
+        "Character1_RightFoot",
+        "Character1_RightToeBase",
+        "Character1_Spine",
+        "Character1_Spine1",
+        "Character1_Spine2",
+        "Character1_LeftShoulder",
+        "Character1_LeftArm",
+        "Character1_LeftForeArm",
+        "Character1_LeftHand",
+        "Character1_LeftHandIndex1",
+        "Character1_LeftHandIndex2",
+        "Character1_LeftHandIndex3",
+        "Character1_LeftHandMiddle1",
+        "Character1_LeftHandMiddle2",
+        "Character1_LeftHandMiddle3",
+        "Character1_LeftHandPinky1",
+        "Character1_LeftHandPinky2",
+        "Character1_LeftHandPinky3",
+        "Character1_LeftHandRing1",
+        "Character1_LeftHandRing2",
+        "Character1_LeftHandRing3",
+        "Character1_LeftHandThumb1",
+        "Character1_LeftHandThumb2",
+        "Character1_LeftHandThumb3",
+        "Character1_Neck",
+        "Character1_Head",
+        "Character1_RightShoulder",
+        "Character1_RightArm",
+        "Character1_RightForeArm",
+        "Character1_RightHand",
+        "Character1_RightHandIndex1",
+        "Character1_RightHandIndex2",
+        "Character1_RightHandIndex3",
+        "Character1_RightHandMiddle1",
+        "Character1_RightHandMiddle2",
+        "Character1_RightHandMiddle3",
+        "Character1_RightHandPinky1",
+        "Character1_RightHandPinky2",
+        "Character1_RightHandPinky3",
+        "Character1_RightHandRing1",
+        "Character1_RightHandRing2",
+        "Character1_RightHandRing3",
+        "Character1_RightHandThumb1",
+        "Character1_RightHandThumb2",
+        "Character1_RightHandThumb3"
+      ],
+      "animation_data": false
+    }
+  ],
+  "explicitly_excluded": [
+    {
+      "name": "Icosphere",
+      "vertices": 42,
+      "polygons": 80
+    }
+  ],
+  "warnings": [
+    "Topology requires visual review: ArtoriaLancer_Body_Runtime",
+    "Topology requires visual review: ArtoriaLancer_Eyes_Runtime",
+    "Topology requires visual review: ArtoriaLancer_Hair_Default_Runtime",
+    "Topology requires visual review: Bunny_Collar_Runtime",
+    "Topology requires visual review: Bunny_Headress_Runtime",
+    "Topology requires visual review: Bunny_Heels_Runtime",
+    "Topology requires visual review: Bunny_Stockings_Runtime",
+    "Topology requires visual review: Bunny_Suit_Runtime",
+    "Topology requires visual review: Bunny_Tail_Runtime",
+    "Topology requires visual review: Bunny_Thigh_Strap_Runtime",
+    "Topology requires visual review: Bunny_Wrist_Runtime"
+  ],
+  "fatal_errors": [],
+  "semantic_review_required": [
+    "face/fingers",
+    "ears and ponytail separation",
+    "ruffles/holster/belt",
+    "joint deformation"
+  ],
+  "operations": [
+    "root transform only; no decimation, mesh joining, welding or UV rewriting"
+  ],
+  "input_bounds_blender": {
+    "min": [
+      -0.7196716666221619,
+      -0.12943135201931,
+      -0.000979674281552434
+    ],
+    "max": [
+      0.7196717262268066,
+      0.21945708990097046,
+      1.959181308746338
+    ]
+  },
+  "animation_actions": [],
+  "output_bounds_blender": {
+    "min": [
+      -0.752656102180481,
+      -0.18243944644927979,
+      0.0
+    ],
+    "max": [
+      0.7526560425758362,
+      0.18243944644927979,
+      2.049999952316284
+    ]
+  },
+  "root_scale": 1.045832468735978,
+  "output_sha256": "643d74559dc211bb30308a5a91919471a0274313b272e26c506d0e9daa5196c6",
+  "output": "/private/tmp/bunny-operator-pipeline-fixture/fixture.glb",
+  "blend_source": "/private/tmp/bunny-operator-pipeline-fixture/fixture.blend",
+  "output_bytes": 42929000,
+  "engineering_export_pass": true,
+  "visual_approved": false,
+  "production_replacement_allowed": false
+}

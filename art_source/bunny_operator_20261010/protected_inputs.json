@@ -1,0 +1,5 @@
+{
+  "assets/characters/artoria_bunny/bunny_player.glb": "a593bc5dd94c266ccc913698cd67c87d4bd60e99036a4ad7b731fe4b86067072",
+  "scripts/player/player_controller.gd": "ce4eec662bf087f48da7e68cd1451d3e5ee65aa6d2965f8573d431e0aec83f70",
+  "scripts/player/character_combat_rig.gd": "eec512637af3beb0d12ee5be388bdc40055ceca059b2458f726ecbfdd287a685"
+}

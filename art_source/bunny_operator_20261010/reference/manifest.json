@@ -1,0 +1,50 @@
+{
+  "source_sha256": "dd2e631310626bb481b324fd48f65d0163934cfe7b8c6735cff466ede130f317",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "operation": "crop + horizontal padding only",
+  "missing_view": "left; deliberately omitted, not mirrored",
+  "views": {
+    "front": {
+      "crop_box": [
+        35,
+        0,
+        400,
+        1024
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "a3853ef5f70222d1c36a7187dc8e1e11ae69460200c8d57041872fdd862799e0"
+    },
+    "right": {
+      "crop_box": [
+        510,
+        0,
+        800,
+        1024
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "4c49052f313ce387acacc34cc3084980544ba8d5fac10bf2e651aa1ba8001033"
+    },
+    "back": {
+      "crop_box": [
+        835,
+        0,
+        1205,
+        1024
+      ],
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "33da7de1ccf5245af2c98cb8c7611b529ee42da4e720e844ac780166fd10f6f7"
+    }
+  }
+}

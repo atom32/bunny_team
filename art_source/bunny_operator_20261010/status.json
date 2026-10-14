@@ -1,0 +1,35 @@
+{
+  "status": "blocked_before_generation",
+  "source_available": true,
+  "reference_prepared": true,
+  "api_key_exists_in_console": false,
+  "api_wallet": {
+    "available": 0,
+    "frozen": 0
+  },
+  "studio_observed_balance": 145,
+  "studio_multiview_and_export": "subscription gated",
+  "generation_submissions": 0,
+  "actual_api_credits_spent": 0,
+  "unified_model_generated": false,
+  "normalized_new_model": false,
+  "new_model_godot_imported": false,
+  "binding": "not started; no new mesh to bind",
+  "animation": "not verified for the new character",
+  "production_character_replaced": false,
+  "collision": "existing capsule dimensions recorded; no gameplay changes",
+  "weapon_sockets": "existing names/IK recorded; no new character mount validated",
+  "local_comfyui": "installed; no Tripo/Hunyuan/Trellis 3D weights found in installed model directories",
+  "required_human_action": [
+    "Create API key in official console and store with configure_keychain.py",
+    "Configure API credits yourself and specify the allowed spending limit"
+  ],
+  "budget_recommendation_credits": 150,
+  "estimated_first_model_credits": 60,
+  "estimated_rig_credits": 25,
+  "offline_client_tests": 6,
+  "existing_regression_suites_passed": 3,
+  "fixture_godot_checks_passed": 42,
+  "fixture_godot_pass": true,
+  "fixture_export_byte_identical": true
+}

@@ -82,7 +82,7 @@ static func create_from_profile(request: SortieRequest, profile: ProfileState) -
 	if profile.first_mission_completed and session.area_id == &"street_district" and not profile.narrative_slice.settled.Q01:
 		session.slice_context = {"quest_id": "Q01", "exit_conditions": {}}
 	session.q02_active = profile.first_mission_completed and session.area_id == &"street_district" and profile.narrative_slice.settled.Q01 and not profile.narrative_slice.settled.Q02
-	session.q04_active = profile.first_mission_completed and session.area_id == &"street_district" and profile.narrative_slice.settled.Q02 and not profile.narrative_slice.settled.Q04
+	session.q04_active = false # Logistics Q04 retired; new repair/recorder progress comes in Batch 2.
 	session.ar_damage_upgraded = profile.ar_damage_upgraded
 	if not session._initialize_weapon_runtime_state():
 		return null

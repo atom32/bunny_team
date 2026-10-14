@@ -61,7 +61,7 @@ static func load_profile(path: String = DEFAULT_SAVE_PATH, report_errors := true
 		return _load_failure("Profile save is missing campaign data", report_errors)
 	if float(version) >= 5.0 and not profile_data.has("narrative_slice"):
 		return _load_failure("Profile save is missing narrative slice data", report_errors)
-	if float(version) >= 6.0 and (typeof(profile_data.get("narrative_slice")) != TYPE_DICTIONARY or (profile_data.narrative_slice.get("version") != 2 and profile_data.narrative_slice.get("version") != 3)):
+	if float(version) >= 6.0 and (typeof(profile_data.get("narrative_slice")) != TYPE_DICTIONARY or (profile_data.narrative_slice.get("version") != 2 and profile_data.narrative_slice.get("version") != 3 and profile_data.narrative_slice.get("version") != 4)):
 		return _load_failure("Profile save is missing Q02 state", report_errors)
 	if float(version) >= 7.0 and not NarrativeSlice.valid_state(profile_data.get("narrative_slice")):
 		return _load_failure("Profile save is missing Q04 state", report_errors)

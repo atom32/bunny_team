@@ -1,0 +1,5 @@
+# The approved design and exact crops are production inputs, not screenshots.
+!reference/*.png
+# Keep bulky public-doc snapshots and old-character validation images locally.
+docs/*.html
+fixture_evidence/

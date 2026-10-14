@@ -1,0 +1,13 @@
+{
+  "retrieved": "2026-10-10",
+  "pages": {
+    "multiview": "generation-multiview-to-model/standard",
+    "files": "files",
+    "rig": "animations-rig",
+    "rig_check": "animations-rig-check",
+    "query": "task-query",
+    "billing": "billing",
+    "retarget": "animations-retarget"
+  },
+  "base": "https://developers.tripo3d.ai/en/docs/"
+}

@@ -146,11 +146,11 @@ func _receiving_counter() -> void:
 	_box(Vector3(2.45,.92,.04),Vector3.ZERO,_sage,record)
 	_box(Vector3(2.28,.72,.025),Vector3(0,-.02,.035),_paper,record)
 	_box(Vector3(.35,.055,.025),Vector3(0,.43,.045),_iron,record)
-	_text(record,NarrativeSlice.PHARMACY_BATCH,Vector3(0,.22,.055),.007,36).modulate = Color("434e43")
-	_text(record,"批次收货格 / 普通库存另计",Vector3(0,-.12,.055),.0045,30).modulate = Color("434e43")
+	_text(record,"隔离处置 / 安置伤员",Vector3(0,.22,.055),.007,36).modulate = Color("434e43")
+	_text(record,"医务室 / 应急用品",Vector3(0,-.12,.055),.0045,30).modulate = Color("434e43")
 	for x in [-4.45,-2.15]: _box(Vector3(.05,.35,.05),Vector3(x,1.11,-3.51),_iron)
 	# A second fixed sheet displays the exact existing fact, without an allegation.
-	var ledger := _text(_detail_parent,NarrativeSlice.BATCH_INFORMATION,Vector3(-3,.938,-3),.0022,28)
+	var ledger := _text(_detail_parent,"特殊观察区\n受试者用品单独存放\n安置伤员请使用外侧窗口",Vector3(-3,.938,-3),.0022,28)
 	ledger.rotation.x = -PI/2
 	ledger.modulate = Color("424c40")
 	for x in [3.6,4.3]:

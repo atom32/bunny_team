@@ -50,11 +50,11 @@ func _build_ui() -> void:
 		if not outcome.exit_observations.is_empty():
 			facts = "Q01 / 已查看出口 %d / 2\n回基地后计入进度。两处都已查看，奖励 150 信用点。" % outcome.exit_observations.size()
 		elif outcome.q04_active:
-			facts = "Q04 / 配送回执：%s\n药房记录：%s\n回基地后保存记录，两项齐全即可提交。" % ["已取得" if not outcome.delivery_receipt.is_empty() else "未取得", "已查看" if not outcome.pharmacy_batch.is_empty() else "未查看"]
+			facts = tr("Legacy logistics sortie / carried possessions and rewards settle normally. No new campus story progress is granted.")
 		elif outcome.q02_active:
-			facts = "Q02 / 批次收货记录：%s\n回基地后保存记录，敷料和织物需另行交付。" % ("已查看" if not outcome.pharmacy_batch.is_empty() else "未查看")
+			facts = tr("Q02 / Supplies recovered. Deliver dressings and fabric to Tang Kui at base; no delivery records required.")
 	if not facts.is_empty():
-		SliceUI.label(root, "带回的调查记录", Vector2(50, 235), 16, SliceUI.CYAN)
+		SliceUI.label(root, "出击与委托", Vector2(50, 235), 16, SliceUI.CYAN)
 		var notes := SliceUI.label(root, facts, Vector2(50, 275), 16, SliceUI.MUTED)
 		notes.size = Vector2(360, 135)
 		notes.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
