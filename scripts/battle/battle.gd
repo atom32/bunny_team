@@ -77,6 +77,9 @@ func _ready() -> void:
 	_setup_exit_plaques()
 	_setup_pharmacy_batch()
 	_setup_delivery_receipt()
+	if not session.campus.is_empty():
+		hud.slice_label.visible=true
+		hud.slice_label.text=CampusChapter.status_text(ProfileRuntime.get_profile(),session)
 	checkpoint_layout_signature = SortieCheckpoint.layout_signature(area_root)
 	if not SortieRuntime.attach_battle(self):
 		FlowMenu.show_checkpoint_error(SortieRuntime.last_error)
@@ -87,7 +90,8 @@ func _process(delta: float) -> void:
 		return
 	if hud:
 		hud.set_reload_remaining(player.get_reload_remaining())
-		if not session.slice_context.is_empty(): hud.slice_label.text = NarrativeSlice.status_text(ProfileRuntime.get_profile(), session)
+		if not session.campus.is_empty():hud.slice_label.text=CampusChapter.status_text(ProfileRuntime.get_profile(),session)
+		elif not session.slice_context.is_empty(): hud.slice_label.text = NarrativeSlice.status_text(ProfileRuntime.get_profile(), session)
 		elif session.q02_active: hud.slice_label.text = NarrativeSlice.q02_status(ProfileRuntime.get_profile(), session)
 		elif session.q04_active: hud.slice_label.text = NarrativeSlice.q04_status(ProfileRuntime.get_profile(), session)
 		if player.medical:
@@ -98,7 +102,7 @@ func _process(delta: float) -> void:
 	var shake_strength := _camera_trauma * _camera_trauma
 	var shake := Vector3(sin(_camera_time * 43.0), 0.0, cos(_camera_time * 37.0)) * shake_strength
 	var focus := player.global_position + player.aim_direction * 1.45 + Vector3.UP * 0.85
-	var aim_extension := player.weapon_data.aim_camera_extension if player.weapon_data and Input.is_action_pressed("precision_walk") else 0.0
+	var aim_extension := player.get_aim_camera_extension() if player.weapon_data and Input.is_action_pressed("precision_walk") else 0.0
 	# Preserve the long-range survey view while improving ordinary combat framing.
 	var camera_size := PRECISION_CAMERA_BASE_SIZE + aim_extension if aim_extension > 0.0 else COMBAT_CAMERA_SIZE
 	camera.size = lerpf(camera.size, camera_size, 1.0 - exp(-6.0 * delta))

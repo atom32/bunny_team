@@ -7,6 +7,7 @@ var selected_tab := 0
 var feedback := "BUY / SELL / BARTER. Supplies stay at base until deployed."
 var _scrolls: Dictionary = {}
 var _scroll_positions: Dictionary = {}
+var _tab_initialized := false
 
 func _ready() -> void:
 	theme = SliceUI.menu_theme()
@@ -62,12 +63,12 @@ func _refresh() -> void:
 	if contact_id.is_empty() or contact_id == "su_mi":
 		_fittings(_list(tabs, "WEAPON FITTINGS"), profile)
 	if contact_id == "su_mi":
-		tabs.set_tab_hidden(0, true)
-		if selected_tab == 0: selected_tab = 2
+		if not _tab_initialized and selected_tab == 0: selected_tab = 2
 	elif not contact_id.is_empty():
 		tabs.set_tab_hidden(2, true) # Engineering exchanges remain with Su Mi.
 		if selected_tab == 2: selected_tab = 0
 	tabs.current_tab = selected_tab
+	_tab_initialized = true
 	tabs.tab_changed.connect(func(index: int): selected_tab = index)
 	var info := Label.new()
 	info.text = tr(feedback)
@@ -158,8 +159,20 @@ func _fittings(parent: VBoxContainer, profile: ProfileState) -> void:
 	note.text = tr("One utility slot per weapon. Replacement consumes materials; removal gives no refund.")
 	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	parent.add_child(note)
+	_kit_fittings(parent,profile)
 	if not CampaignService.unlocked(profile, "workbench"):
-		note.text = tr("Restore the workbench first.")
+		note.text = tr("Recovered kits can be installed after First Mission; material assembly requires the workbench.")
+		for item in profile.inventory.get_items():
+			if not WeaponFitting.eligible(item) or item.fitting.is_empty(): continue
+			var row := HBoxContainer.new(); parent.add_child(row)
+			var label := Label.new(); label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			label.text="%s / %s" % [GameLanguage.item_name(ContentDB.get_item(item.definition_id).display_name),tr(WeaponFitting.caption(item.fitting))]; row.add_child(label)
+			var button := _button(row,"REMOVE FITTING / NO REFUND",func():
+				var result := WeaponFitting.install(item.instance_id,"",save_path)
+				feedback=result.message
+				if result.error==OK: supplies_changed.emit()
+				_refresh.call_deferred())
+			button.name="RemoveKitFit_"+item.instance_id
 		return
 	for item in profile.inventory.get_items():
 		if not WeaponFitting.eligible(item): continue
@@ -191,6 +204,7 @@ func _fittings(parent: VBoxContainer, profile: ProfileState) -> void:
 			var id: String = ids[index]
 			var spec: Dictionary = WeaponFitting.OPTIONS[id]
 			var text := tr("%.2f kg added / reload x%.2f / hearing x%.2f") % [spec.weight,spec.reload,spec.noise]
+			if spec.has("aim"): text += " / " + tr("precision view +%.1fm") % spec.aim
 			text += "\n" + tr("%d CREDITS") % spec.credits
 			for material: StringName in spec.inputs:
 				text += " / %s %d/%d" % [GameLanguage.item_name(ContentDB.get_item(material).display_name),SupplyService.count(profile,material),spec.inputs[material]]
@@ -198,3 +212,29 @@ func _fittings(parent: VBoxContainer, profile: ProfileState) -> void:
 			button.disabled = WeaponFitting.prepare(profile,item.instance_id,id).error != OK
 		choice.item_selected.connect(update)
 		update.call(choice.selected)
+
+func _kit_fittings(parent: VBoxContainer, profile: ProfileState) -> void:
+	var kits := profile.inventory.get_items().filter(func(item: ItemInstance):return WeaponFitting.KITS.has(item.definition_id))
+	if kits.is_empty(): return
+	var heading := Label.new(); heading.text=tr("RECOVERED KITS / No assembly fee; one kit consumed."); heading.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; parent.add_child(heading)
+	for weapon in profile.inventory.get_items():
+		if not WeaponFitting.eligible(weapon): continue
+		var title := Label.new(); title.text="%s [%s] / %s" % [GameLanguage.item_name(ContentDB.get_item(weapon.definition_id).display_name),weapon.instance_id.left(6),tr(WeaponFitting.caption(weapon.fitting))]; parent.add_child(title)
+		var row := HBoxContainer.new(); parent.add_child(row)
+		var choice := OptionButton.new(); choice.size_flags_horizontal=Control.SIZE_EXPAND_FILL; row.add_child(choice)
+		for kit in kits: choice.add_item(tr("%s / owned %d") % [GameLanguage.item_name(ContentDB.get_item(kit.definition_id).display_name),kit.quantity])
+		var button := _button(row,"INSTALL KIT",func():
+			var result := WeaponFitting.install_kit(weapon.instance_id,kits[choice.selected].instance_id,save_path)
+			feedback=result.message
+			if result.error==OK:
+				AudioDirector.play_sfx(&"ui_confirm"); supplies_changed.emit()
+			_refresh.call_deferred())
+		button.name="FitKit_"+weapon.instance_id
+		var details := Label.new(); details.add_theme_font_size_override("font_size",13); details.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; parent.add_child(details)
+		var update := func(index:int):
+			button.disabled=WeaponFitting.prepare_kit(profile,weapon.instance_id,kits[index].instance_id).error!=OK
+			var spec: Dictionary = WeaponFitting.OPTIONS[WeaponFitting.KITS[kits[index].definition_id]]
+			details.text=tr("%.2f kg added / reload x%.2f / hearing x%.2f") % [spec.weight,spec.reload,spec.noise]
+			if spec.has("aim"): details.text+=" / "+tr("precision view +%.1fm") % spec.aim
+			choice.tooltip_text=tr(ContentDB.get_item(kits[index].definition_id).description)
+		choice.item_selected.connect(update); update.call(0)

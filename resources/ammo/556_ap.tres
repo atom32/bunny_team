@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AmmoDefinition" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="AmmoDefinition" load_steps=3 format=3 uid="uid://cfyorprglu004"]
 
 [ext_resource type="Script" path="res://scripts/data/ammo_definition.gd" id="1"]
 

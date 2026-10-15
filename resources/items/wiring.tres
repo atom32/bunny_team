@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3 uid="uid://spfs5spnqga5"]
 [ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/ui/supply/wiring.svg" id="2"]
 [resource]

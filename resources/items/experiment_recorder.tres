@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3 uid="uid://luuj2kwau7sr"]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/supply/data_drive.svg" id="2"]
+[resource]
+script = ExtResource("1")
+id = &"story.experiment_recorder"
+display_name = "Research Center Experiment Recorder"
+description = "Fixed archive recorder. Read the military project and L-02 equipment log immediately; bring it home. Archived in the contact record, not a trade item."
+icon = ExtResource("2")
+stash_size = Vector2i(2,1)
+weight = 0.6
+base_value = 0
+item_tags = PackedStringArray("story")
+stackable = false
+max_stack = 1
+metadata/authoring_source = "res://docs/narrative/DEVELOPMENT_STATUS_AND_TASK_STORY.md"
+metadata/license_ref = "res://THIRD_PARTY_ASSETS.md"

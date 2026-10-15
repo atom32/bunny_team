@@ -1,12 +1,26 @@
 # Neon Bastion
 
-A Godot 4.7.2 single-player high-angle urban extraction shooter, currently moving from a vertical slice toward [Alpha 0.1](docs/ALPHA_0_1.md). The current loop is `Opening / Menu -> Hideout -> Hanger -> Battle -> Result -> Hideout`. The full Alpha is still in progress.
+A Godot 4.7.2 single-player high-angle urban extraction shooter. The playable loop is `Opening / Menu -> Hideout -> Hanger -> Battle -> Result -> Hideout`. Full Alpha acceptance remains in progress.
 
-## Current checkpoint — 2026-10-05
+## Current checkpoint — 2026-10-15
+
+`main @ 68076ae` plus local WIP now includes all six campus commissions: exit scouting, medical delivery, two L-02 relay repairs, one physical experiment recorder, explicit L-02B shutdown with L-02A retained, and spare armor/60 standard-round delivery followed by extraction. Legacy Q04 logistics facts/rewards remain history, never fabricated new progress. See [campus rules and migration](docs/CAMPUS_BATCH2_IMPLEMENTATION.md).
+
+**Neon Tools** opens the editable native campus, production-character weapon/target workbench, CC0 service-room sample, read-only content/reference audit, review-before-publish item wizard, and isolated model/animation review. **YARD v1.3.1** uses stable-ID catalogs (7 weapons / 31 items / 3 enemies), keeping ContentDB ownership. See [tool workflow](docs/CONTENT_TOOLS_IMPLEMENTATION.md) and [authoring workflow](docs/CONTENT_AUTHORING_PROGRESS.md).
+
+Adult male/female reference profiles each include seven playable clips; new infected sorties use the independent subject rig while old suspended poses keep their legacy rig. The existing heroine uses the requested young-adult female **natural, light, combat-practical** style with original weapon-contact constraints. These are universal authored references and project-authored heroine adaptation, not verified sex/age-specific mocap. See [model and motion authoring](docs/MODEL_ANIMATION_AUTHORING.md).
+
+Three physical fitting kits can be found/bought, installed on an owned gun, removed, lost with carried equipment and saved: quickloader, suppressor and observation optic. See [actual item rules](docs/FITTING_KITS_IMPLEMENTATION.md). The fixed story recorder is the fourth new item, not an extra loot/trade system.
+
+Current profile schema **8**, checkpoint **6**; old profiles and suspended contracts retain their old facts/assets. **79/79 scenes, 102/102 result rows PASS**, zero errors, two existing cold-import FBX warnings; cross-process/crash recovery, Main and Forward+ route regression pass. See [exact verification](docs/campus_batch2_2026-10-15_validation.json). This checkpoint is delivered through Git; validation records retain their original pre-commit WIP status. Human pacing/audio/minimum-hardware and character release clearance are not implied.
+
+The [tool research](docs/CONTENT_PIPELINE_ROADMAP.md) and [earlier project audit](docs/PROJECT_STATUS_2026-10-14.md) preserve historical selection and counts; they do not override this checkpoint.
+
+### Historical integration baseline — 2026-10-05
 
 Integration commit `c1cebae` includes the Alpha progression and compact military Hideout. Menu/base standing and Rest use sourced Quaternius idle/seated animation; equipment keeps its armed preview. The imported 6×4m room is a camera-driven hub. Character geometry and materials are unchanged. See [Hideout integration](scenes/presentation/compact_hideout/INTEGRATION.md).
 
-Latest retained Windows / Godot 4.7.2 verification: **59 scene tests, 79/79 verification checks PASS**, cross-process recovery and quit checks PASS; cold import 0 errors / 2 known FBX warnings. This macOS sync has not rerun those checks. Full Alpha acceptance still needs 10–15 human sorties / 2–4 hours of pacing, economy and audio feedback, plus minimum-hardware profiling. See [current handoff](Handoff.md) and [acceptance audit](docs/alpha_0_1/ALPHA_ACCEPTANCE.md).
+Historical Windows / Godot 4.7.2 verification for that integration: **59 scene tests, 79/79 checks PASS**, cross-process recovery and quit checks PASS; cold import 0 errors / 2 known FBX warnings. This does not certify the newer campus checkpoint. Full Alpha acceptance still needs human pacing, economy and audio feedback plus minimum-hardware profiling. See [current handoff](Handoff.md) and [acceptance audit](docs/alpha_0_1/ALPHA_ACCEPTANCE.md).
 
 After the tutorial, Operations offers Records Run or [Restore the Relay](docs/alpha_0_1/RELAY_OPERATION.md). Repair two sites under local noise/interruptible 12-second work, then extract; records remain optional for another exit. Both operations can advance the final base contract.
 
@@ -24,7 +38,7 @@ The playable prototype now uses the imported Artoria Bunny Suit with its scarf h
 
 The [original narrative production package](docs/narrative/README.md) contains twelve chapters, eight bosses, eight important adult women, eighteen key scenes, five relationship scenes, five endings and a complete first-chapter script. This is a design deliverable; those campaign chapters are not implemented in the current demo.
 
-Recovery includes safe save replacement with backups, corrupt-save recovery and a shared pause/abandon/return/quit flow. Magazines consume carried ammunition and count toward weight. **Suspend** saves the current sortie; **Resume Sortie** restores its ammo, loot, enemies and mission state after restarting. Automatic checkpoints occur every two simulation seconds; schema 1/2/3 profiles migrate to schema 4 without losing possessions. See [recovery behavior, validation and limitations](docs/alpha_0_1/SUSPEND.md).
+Recovery includes safe save replacement with backups, corrupt-save recovery and a shared pause/abandon/return/quit flow. Magazines consume carried ammunition and count toward weight. **Suspend** saves the current sortie; **Resume Sortie** restores its ammo, loot, enemies and mission state after restarting. Automatic checkpoints occur every two simulation seconds; the current profile envelope is schema **8**, with legacy migration and narrative compatibility data. See [recovery behavior and historical validation](docs/alpha_0_1/SUSPEND.md) and [current status](docs/PROJECT_STATUS_2026-10-14.md).
 
 Medical supplies are actual carried items: buy dressings/medkits in Workshop or find them in Streets containers, then choose how many to pack in Operations. `H` uses a dressing (up to 40 HP / 2.5s); `J` uses a medkit (up to 100 HP / 5s). Remain still: movement, combat, damage or interaction interrupts treatment without consuming the dose. Completion spends one item and releases its carry weight. Pending treatment survives suspend/resume. See [medical rules and evidence](docs/alpha_0_1/MEDICAL.md).
 
@@ -78,7 +92,7 @@ Open `project.godot` in Godot 4.7.2 or run:
 /Applications/Godot.app/Contents/MacOS/Godot --path /Users/xudawei/bunny_team --editor
 ```
 
-Run the current 59 regression scenes, five quit subprocess checks, cross-process/forced-termination sortie recovery, cross-process medical recovery and Main in an isolated copy and profile with:
+The standard runner snapshots the project and isolates its profile for cold import, scene regressions, quit and cross-process recovery checks. **Its 62-scene inventory guard needs correction to the reviewed 66-scene inventory before a full run can complete.** The unmodified command currently stops at that guard:
 
 ```sh
 python3 tools/verify_migration.py --godot /Applications/Godot.app/Contents/MacOS/Godot --output /tmp/bunny-verification-new

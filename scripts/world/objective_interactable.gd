@@ -9,7 +9,7 @@ signal objective_interacted(objective_id: StringName)
 
 func _ready() -> void:
 	add_to_group("interactable")
-	_build_visual()
+	if not has_node("TerminalPedestal"): _build_visual()
 
 
 func interact(_actor: Node3D, session: SortieSession) -> Dictionary:

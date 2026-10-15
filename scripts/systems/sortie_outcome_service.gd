@@ -33,6 +33,7 @@ static func commit_outcome(profile: ProfileState, outcome: SortieOutcome) -> Err
 	if not profile or not profile.validate() or not outcome or not outcome.validate():
 		return ERR_INVALID_DATA
 	if outcome.outcome_id in profile.settled_outcomes: return OK
+	if not CampusChapter.matches_profile(outcome.campus,profile,outcome.area_id):return ERR_INVALID_DATA
 	var candidate := ProfileState.from_dict(profile.to_dict())
 	# All deployed instances are at risk. Warehouse-only instances never leave home.
 	for carried_id in outcome.initial_carried_instance_ids:
@@ -55,6 +56,7 @@ static func commit_outcome(profile: ProfileState, outcome: SortieOutcome) -> Err
 		candidate.failed_sorties += 1
 	CampaignService.record_outcome(candidate, outcome)
 	NarrativeSlice.record_outcome(candidate, outcome)
+	CampusChapter.record_outcome(candidate,outcome)
 	candidate.settled_outcomes.append(outcome.outcome_id)
 	if not candidate.validate(): return ERR_INVALID_DATA
 	profile.replace_with(candidate)

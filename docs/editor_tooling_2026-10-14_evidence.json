@@ -1,0 +1,219 @@
+{
+  "date": "2026-10-14",
+  "project_commit": "68076aefac31df3e784fdf62cee64cd2667b29a4",
+  "scope": "Research, static-source review and isolated before/after-ready scene hierarchy probe; no plugin installation/execution or visual acceptance",
+  "api_status": "Unauthenticated GitHub API requests rate-limited/transport errors; not successful metadata evidence. Git clones and tag fetch supplied commit evidence.",
+  "research_directory": "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_tool_research_20261014_7hbge00t",
+  "repositories": [
+    {
+      "repo": "elliotfontaine/yard-godot",
+      "checked_ref": "v1.3.1",
+      "commit": "a496be3dfa1279bfdd999950e0936eaac0d84fc3",
+      "committer_time": "2026-10-08T20:17:40+02:00",
+      "commit_subject": "chore: bump version to 1.3.1",
+      "commit_url": "https://github.com/elliotfontaine/yard-godot/commit/a496be3dfa1279bfdd999950e0936eaac0d84fc3",
+      "plugin_configs": [
+        {
+          "path": "addons/yard/plugin.cfg",
+          "content": "[plugin]\n\nname=\"YARD - Yet Another Resource Database\"\ndescription=\"YARD is an editor plugin for Godot to manage resources and query them at runtime, with a table view in the editor as the cherry on top.\"\nauthor=\"Elliot Fontaine\"\nversion=\"1.3.1\"\nscript=\"plugin.gd\"\nrepository=\"https://github.com/elliotfontaine/yard-godot\""
+        }
+      ],
+      "installed_in_project": false,
+      "executed_plugin": false
+    },
+    {
+      "repo": "yulrun/godot-data-tables-addon",
+      "checked_ref": "HEAD",
+      "commit": "1f9240d407d84c3274736665d8680423762ac1fe",
+      "committer_time": "2026-07-14T09:36:49-04:00",
+      "commit_subject": "Update README.md",
+      "commit_url": "https://github.com/yulrun/godot-data-tables-addon/commit/1f9240d407d84c3274736665d8680423762ac1fe",
+      "plugin_configs": [
+        {
+          "path": "addons/GodotDataTables/plugin.cfg",
+          "content": "[plugin]\n\nname=\"Godot DataTables\"\ndescription=\"A native, strongly-typed, code-generated alternative to JSON/CSV data tables.\"\nauthor=\"Matthew Janes (YulRun Dev)\"\nversion=\"1.0.0\"\nscript=\"plugin.gd\"\n"
+        }
+      ],
+      "installed_in_project": false,
+      "executed_plugin": false
+    },
+    {
+      "repo": "marcel-b-roodt/GoSheets",
+      "checked_ref": "HEAD",
+      "commit": "3c966cba187b4bc92109198b0f0d75020294567d",
+      "committer_time": "2026-09-09T11:54:19+09:00",
+      "commit_subject": "fix(grid): guard script.new() behind default-arg check — engine crashes (signal 11) when _init has required args",
+      "commit_url": "https://github.com/marcel-b-roodt/GoSheets/commit/3c966cba187b4bc92109198b0f0d75020294567d",
+      "plugin_configs": [
+        {
+          "path": "addons/go_sheets/plugin.cfg",
+          "content": "[plugin]\n\nname=\"GoSheets\"\ndescription=\"Spreadsheet-style resource editor for Godot 4. View, create, edit, and manage all your resources in one place.\"\nauthor=\"Marcel Roodt\"\nversion=\"0.1.2\"\nscript=\"plugin.gd\"\n"
+        }
+      ],
+      "installed_in_project": false,
+      "executed_plugin": false
+    },
+    {
+      "repo": "levinzonr/godot-asset-placer",
+      "checked_ref": "HEAD",
+      "commit": "1dbf9fd782566780d6a6c52bd4197f448622f0aa",
+      "committer_time": "2026-08-25T18:38:15+02:00",
+      "commit_subject": "docs: update CHANGELOG and README for the 1.6.0",
+      "commit_url": "https://github.com/levinzonr/godot-asset-placer/commit/1dbf9fd782566780d6a6c52bd4197f448622f0aa",
+      "plugin_configs": [
+        {
+          "path": "addons/asset_placer/plugin.cfg",
+          "content": "[plugin]\n\nname=\"Godot Asset Placer\"\ndescription=\"Addon to facilitate 3D asset placement and management\"\nauthor=\"Roman Levinzon\"\nversion=\"1.6.0\"\nscript=\"asset_placer_plugin.gd\"\n"
+        }
+      ],
+      "installed_in_project": false,
+      "executed_plugin": false
+    },
+    {
+      "repo": "sci-comp/scene-builder",
+      "checked_ref": "HEAD",
+      "commit": "6d1cff9ded165b40bbe925e4260dc5b76be28c92",
+      "committer_time": "2026-07-26T04:15:50-04:00",
+      "commit_subject": "Update contributors section in README.md",
+      "commit_url": "https://github.com/sci-comp/scene-builder/commit/6d1cff9ded165b40bbe925e4260dc5b76be28c92",
+      "plugin_configs": [
+        {
+          "path": "addons/scene_builder/plugin.cfg",
+          "content": "[plugin]\n\nname=\"Scene Builder\"\ndescription=\"General purpose level design tool for Godot\"\nauthor=\"Paul\"\nversion=\"0.0\"\nscript=\"scene_builder_plugin.gd\"\n"
+        }
+      ],
+      "installed_in_project": false,
+      "executed_plugin": false
+    },
+    {
+      "repo": "Jeh3no/Godot-simple-FPS-weapon-system",
+      "checked_ref": "HEAD",
+      "commit": "a7bd56c978c1abe1894e6b3822f8826f0a119cfb",
+      "committer_time": "2026-06-22T19:00:26+02:00",
+      "commit_subject": "Add donations section to README",
+      "commit_url": "https://github.com/Jeh3no/Godot-simple-FPS-weapon-system/commit/a7bd56c978c1abe1894e6b3822f8826f0a119cfb",
+      "plugin_configs": [],
+      "installed_in_project": false,
+      "executed_plugin": false
+    }
+  ],
+  "visibility_probe": {
+    "engine": "4.7.2.stable.official.ed1daf0bf",
+    "isolated_project": "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_audit_runner_20261014_5_g6tai3\\verification\\project",
+    "profile_directory": "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_tool_research_20261014_7hbge00t\\visibility_userdata",
+    "exit_code": 0,
+    "errors": [],
+    "warnings": [],
+    "script_sha256": "3b72e9a3062fedfea8f3c977dca027a8df0bd88d48e45b7f51d04b5bd5113c36",
+    "source": "extends SceneTree\n\nfunc measure(node: Node) -> Dictionary:\n\tvar result := {\"nodes\": 1, \"meshes\": int(node is MeshInstance3D), \"markers\": int(node is Marker3D), \"colliders\": int(node is CollisionShape3D)}\n\tfor child in node.get_children():\n\t\tvar sub := measure(child)\n\t\tfor key in result: result[key] += sub[key]\n\treturn result\n\nfunc _initialize() -> void:\n\t_run.call_deferred()\n\nfunc _run() -> void:\n\tvar reports: Array = []\n\tfor path in [\"res://scenes/areas/street_district.tscn\", \"res://scenes/battle/urban_arena.tscn\", \"res://scenes/areas/first_mission.tscn\", \"res://scenes/weapons/assault_rifle.tscn\", \"res://scenes/presentation/compact_hideout/environment.tscn\"]:\n\t\tvar scene: PackedScene = load(path)\n\t\tvar instance: Node = scene.instantiate()\n\t\tvar saved := measure(instance)\n\t\troot.add_child(instance)\n\t\tfor frame in 3: await process_frame\n\t\tvar runtime := measure(instance)\n\t\tvar row := {\"path\": path, \"before_ready\": saved, \"after_ready\": runtime}\n\t\treports.append(row)\n\t\tprint(JSON.stringify(row))\n\t\tinstance.queue_free()\n\t\tawait process_frame\n\tvar file := FileAccess.open(\"C:/Users/admin/AppData/Local/Temp/bunny_tool_research_20261014_7hbge00t/editor_visibility_counts.json\", FileAccess.WRITE)\n\tfile.store_string(JSON.stringify(reports, \"\\t\"))\n\tfile.close()\n\troot.get_node(\"AudioDirector\").shutdown_for_test()\n\tquit()\n",
+    "counts": [
+      {
+        "after_ready": {
+          "colliders": 161,
+          "markers": 18,
+          "meshes": 2042,
+          "nodes": 2901
+        },
+        "before_ready": {
+          "colliders": 0,
+          "markers": 0,
+          "meshes": 0,
+          "nodes": 1
+        },
+        "path": "res://scenes/areas/street_district.tscn"
+      },
+      {
+        "after_ready": {
+          "colliders": 56,
+          "markers": 0,
+          "meshes": 754,
+          "nodes": 905
+        },
+        "before_ready": {
+          "colliders": 0,
+          "markers": 0,
+          "meshes": 0,
+          "nodes": 2
+        },
+        "path": "res://scenes/battle/urban_arena.tscn"
+      },
+      {
+        "after_ready": {
+          "colliders": 69,
+          "markers": 5,
+          "meshes": 1032,
+          "nodes": 1335
+        },
+        "before_ready": {
+          "colliders": 13,
+          "markers": 5,
+          "meshes": 237,
+          "nodes": 386
+        },
+        "path": "res://scenes/areas/first_mission.tscn"
+      },
+      {
+        "after_ready": {
+          "colliders": 0,
+          "markers": 4,
+          "meshes": 2,
+          "nodes": 18
+        },
+        "before_ready": {
+          "colliders": 0,
+          "markers": 4,
+          "meshes": 1,
+          "nodes": 17
+        },
+        "path": "res://scenes/weapons/assault_rifle.tscn"
+      },
+      {
+        "after_ready": {
+          "colliders": 0,
+          "markers": 0,
+          "meshes": 150,
+          "nodes": 232
+        },
+        "before_ready": {
+          "colliders": 0,
+          "markers": 0,
+          "meshes": 150,
+          "nodes": 232
+        },
+        "path": "res://scenes/presentation/compact_hideout/environment.tscn"
+      }
+    ]
+  },
+  "project_source_integrity": {
+    "baseline_manifest": "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_audit_runner_20261014_5_g6tai3\\verification\\source_manifest.json",
+    "files_checked": 1395,
+    "mismatches": []
+  },
+  "store_and_release_observations": [
+    {
+      "source": "https://github.com/elliotfontaine/yard-godot/releases/tag/v1.3.1",
+      "version": "v1.3.1",
+      "release_date": "2026-10-08"
+    },
+    {
+      "source": "https://store.godotengine.org/asset/elliotfontaine/yard-yet-another-resource-database/",
+      "unstable_flag": true
+    },
+    {
+      "source": "https://store.godotengine.org/asset/levinzonr/godot-asset-placer/",
+      "unstable_flag": true,
+      "updated": "2026-08-25"
+    },
+    {
+      "source": "https://store.godotengine.org/asset/emace-art/analog-memory-80s-retro-rooms/",
+      "updated": "2026-10-07",
+      "pack_not_downloaded": true,
+      "license_note": "Custom license permits game use but forbids standalone asset redistribution; not CC0"
+    },
+    {
+      "source": "https://store.godotengine.org/asset/quaternius/modular-sci-fi-megakit/",
+      "standard_has_godot_project": false,
+      "pack_not_downloaded": true
+    }
+  ]
+}

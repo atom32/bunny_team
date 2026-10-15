@@ -1,5 +1,32 @@
 # Development checkout / 环境同步
 
+> 2026-10-15 当前更新：31定义、79测试场景，profile schema8 / checkpoint6；校园第二批已接入。见 [最新实现与验证](CAMPUS_BATCH2_IMPLEMENTATION.md)。下方75等批次数量是历史。
+
+> 2026-10-15：成年男女动作适配、独立受试者外观、主角自然轻盈战斗样式与编辑器审查入口见 [本批制作说明](MODEL_ANIMATION_AUTHORING.md)。剧情仍只开放当前第一批，库存75；下文旧日期与测试数保留阶段历史。
+
+## 当前环境 — 2026-10-14
+
+同步基线 `main @ 68076ae`，Godot **4.7.2**，入口 `scenes/presentation/slice/boot.tscn`，桌面Forward+；`--rendering-method gl_compatibility`为回退。当前profile schema **8**，支持局内挂起恢复，不按下方历史schema 1描述操作当前存档。
+
+Windows已核实Godot与Python路径如下；其他机器替换为自己的实际路径，不依赖作者macOS路径或临时目录。
+
+```powershell
+& 'E:\Godot\Godot_v4.7.2-stable_win64_console.exe' --headless --path . --editor --import
+& 'E:\Godot\Godot_v4.7.2-stable_win64_console.exe' --path .
+# 全新仓库外目录，隔离用户档案：
+& 'C:\Python314\python.exe' tools/verify_migration.py --godot 'E:\Godot\Godot_v4.7.2-stable_win64_console.exe' --output '<全新仓库外目录>'
+```
+
+当前 runner 已审核对齐 **79 个场景**，为两个 Hideout 长时间测试补足帧预算，断言与错误门禁不变。加 `--route` 可检查 Forward+ 自动路线（Dummy 音频，不作听感验收）。内容检查与物品向导见 [接续制作进度](CONTENT_AUTHORING_PROGRESS.md)。校园真源、YARD和 F6 工作台操作见 [内容工具说明](CONTENT_TOOLS_IMPLEMENTATION.md)；原66/62漂移留在实施前审计中。
+
+`tools/play_campus_batch1.command`是macOS本地入口，依赖ignored `.grimdark-loop/campus_batch1_20261012/project`，干净checkout没有该副本，Windows也不能直接执行。生产入口使用本仓库 `project.godot`。
+
+不复制另一机器的`.godot`或个人存档，不在主工作区用不同引擎版本试错；保留`.gdignore`、license/SOURCE/hash。模型接口见 [asset interface](asset_interface.md)，扩充建议见 [路线图](CONTENT_PIPELINE_ROADMAP.md)。
+
+## 历史环境同步记录（2026-09-27 至 2026-10-01）
+
+以下checkpoint、WIP、schema、渲染器和测试数字仅描述当时，不覆盖上方当前环境。
+
 2026-10-01 checkpoint: First Mission and the single AR upgrade, real armor protection, Streets district, bilingual UI, display settings and spatial warehouse are now included alongside the modern arsenal and Bunny trial. See the current [handoff](../Handoff.md) and [README](../README.md). Validation tooling checks **43** test scenes in an isolated copy. The WIP notices below describe earlier checkpoints.
 
 2026-09-30 current WIP: seven modern weapons, the scarf-free Artoria playable prototype, imported human patrols plus drones, and 37 regression scenes. See [the model trial](ARTORIA_BUNNY_TRIAL.md) and [modern arsenal](MODERN_ARSENAL.md). `tools/verify_migration.py` snapshots current Git-visible WIP and isolates `user://` on macOS/Linux as well as Windows. The checkpoint results below remain historical. These working-tree changes are not yet committed; pulling the current remote alone will not obtain them.

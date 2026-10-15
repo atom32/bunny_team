@@ -119,6 +119,11 @@ func _draw() -> void:
 			draw_arc(_point(relay.position),8,0,TAU,24,color,2,true)
 			_text(_point(relay.position)+Vector2(-24,-13),"RELAY ONLINE" if state.status == ObjectiveState.Status.COMPLETED else "RELAY / 12s",color,11)
 	else: draw_arc(_point(survey.position),7,0,TAU,24,Color("f0c276"),2,true)
+	for name in ["CampusRelayOffice","CampusRelayRepair","ExperimentRecorder","L02BranchControl"]:
+		var point: Node3D = district.get_node_or_null(name)
+		if not point:continue
+		draw_circle(_point(point.position),6,Color("85d5cf"))
+		_text(_point(point.position)+Vector2(-35,-16),{"CampusRelayOffice":"L-02A RELAY","CampusRelayRepair":"L-02B RELAY","ExperimentRecorder":"EXPERIMENT RECORDER","L02BranchControl":"L-02 CONTROL"}[name],Color("85d5cf"),11)
 	draw_circle(_point(actor.global_position),5,Color("a6e3ef"))
 	var aim: Vector3 = actor.aim_direction
 	draw_line(_point(actor.global_position),_point(actor.global_position+aim*4),Color("a6e3ef"),2,true)

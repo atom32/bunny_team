@@ -33,6 +33,7 @@ var sortie_checkpoint: Dictionary = {}
 var ammo_pack: Dictionary = {} # Missing caliber means three magazines, not free ammunition.
 var medical_pack: Dictionary = {"medical.field_dressing": 2, "medical.medkit": 1}
 var narrative_slice: Dictionary = NarrativeSlice.initial_state()
+var campus_chapter: Dictionary = CampusChapter.initial_state()
 var campaign: Dictionary = {"version": 1, "stage": 0, "progress": 0}
 # Presentation positions only; equipped gear remains owned by inventory.
 var stash_layout: Dictionary = {}
@@ -64,6 +65,8 @@ static func create_new() -> ProfileState:
 
 
 func validate() -> bool:
+	if not NarrativeSlice.valid_state(narrative_slice):return false
+	if not CampusChapter.valid_state(campus_chapter) or (CampusChapter.started(campus_chapter) and not narrative_slice.settled.Q02): return false
 	return inventory != null and loadout != null and inventory.validate() and loadout.validate(inventory) and credits >= 0 and credits <= 1000000000 and successful_sorties >= 0 and failed_sorties >= 0 and relief_claimed_after >= 0 and relief_claimed_after <= failed_sorties and _valid_medical_pack() and DeploymentPlan.valid_ammo_pack(ammo_pack) and NarrativeSlice.valid_state(narrative_slice) and (first_mission_completed or not narrative_slice.settled.Q01) and CampaignService.valid_state(campaign) and (first_mission_completed or (campaign.stage == 0 and campaign.progress == 0))
 
 
@@ -110,6 +113,7 @@ func to_dict() -> Dictionary:
 		"ammo_pack": ammo_pack.duplicate(),
 		"campaign": campaign.duplicate(),
 		"narrative_slice": narrative_slice.duplicate(true),
+		"campus_chapter":campus_chapter.duplicate(true),
 	}
 
 
@@ -126,6 +130,11 @@ static func from_dict(data: Dictionary) -> ProfileState:
 	var slice_data: Variant = data.get("narrative_slice", NarrativeSlice.initial_state())
 	profile.narrative_slice = NarrativeSlice.restore_state(slice_data)
 	if profile.narrative_slice.is_empty(): return null
+	var campus_data: Variant = data.get("campus_chapter",CampusChapter.initial_state())
+	if not CampusChapter.valid_state(campus_data): return null
+	profile.campus_chapter=campus_data.duplicate(true)
+	profile.campus_chapter.version=int(profile.campus_chapter.version)
+	profile.campus_chapter.delivered_ammo=int(profile.campus_chapter.delivered_ammo)
 	var campaign_data: Variant = data.get("campaign", profile.campaign)
 	if not CampaignService.valid_state(campaign_data): return null
 	profile.campaign = {"version": int(campaign_data.version), "stage": int(campaign_data.stage), "progress": int(campaign_data.progress)}
@@ -186,6 +195,7 @@ func replace_with(candidate: ProfileState) -> void:
 	ammo_pack = candidate.ammo_pack.duplicate()
 	campaign = candidate.campaign.duplicate()
 	narrative_slice = candidate.narrative_slice.duplicate(true)
+	campus_chapter=candidate.campus_chapter.duplicate(true)
 
 
 func _equip_first_definition(slot_id: StringName, definition_id: StringName) -> void:

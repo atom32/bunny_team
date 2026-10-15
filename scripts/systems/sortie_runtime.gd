@@ -180,11 +180,15 @@ func resume_saved(path := SaveService.DEFAULT_SAVE_PATH) -> Error:
 	if saved.version >= 5:
 		if not saved.session.has("lighting"): return ERR_INVALID_DATA
 		if saved.get("phase") == "battle" and not saved.world.has("lighting"): return ERR_INVALID_DATA
+	if saved.version>=6:
+		if not saved.session.has("campus"):return ERR_INVALID_DATA
+		if saved.get("phase")=="battle" and not saved.world.has("campus"):return ERR_INVALID_DATA
+		if saved.get("phase")=="result" and not saved.outcome.has("campus"):return ERR_INVALID_DATA
 	var restored := SortieCheckpoint.restore_session(saved.session)
-	if not restored: return ERR_INVALID_DATA
+	if not restored or not CampusChapter.matches_profile(restored.campus, ProfileRuntime.get_profile(), restored.area_id): return ERR_INVALID_DATA
 	if saved.get("phase") not in ["deployment", "battle", "result"]: return ERR_INVALID_DATA
 	if saved.phase == "battle":
-		if not NarrativeSlice.world_matches(saved.world, restored): return ERR_INVALID_DATA
+		if not NarrativeSlice.world_matches(saved.world, restored) or saved.world.get("campus",{})!=restored.campus: return ERR_INVALID_DATA
 		if not SortieRequest.valid_lighting(saved.world.get("lighting", "day"), restored.area_id) or saved.world.get("lighting", "day") != restored.lighting_variant: return ERR_INVALID_DATA
 	if restored.status == SortieSession.Status.ACTIVE:
 		if saved.phase == "result" or (saved.phase == "battle" and saved.world.is_empty()): return ERR_INVALID_DATA

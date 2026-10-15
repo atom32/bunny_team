@@ -239,7 +239,7 @@ func _contacts() -> void:
 		if id == "su_mi":
 			check(quests.find_child("SubmitQ02",true,false) == null and quests.find_child("SubmitQ04",true,false) == null, "Su Mi has no fabricated narrative action")
 			var empty := false
-			for label in quests.find_children("*","Label",true,false): empty = empty or label.text == "暂无新的维修委托"
+			for label in quests.find_children("*","Label",true,false): empty = empty or label.text == "Complete medical supply before the L-02 operation."
 			check(empty, "Su Mi quests display honest empty state")
 		panel.find_child("ContactTrade",true,false).pressed.emit()
 	check(stock_seen.size() == SupplyService.stock(profile).size(), "contact shops preserve access to every existing stock item")
@@ -273,7 +273,7 @@ func _contacts() -> void:
 	legacy.erase("narrative_slice")
 	var file := FileAccess.open(PATH,FileAccess.WRITE)
 	file.store_string(JSON.stringify({"schema_version":4,"profile":legacy})); file.close()
-	check(SaveService.load_profile(PATH,false) != null and SaveService.SCHEMA_VERSION == 7, "contact layer retains schema 4 migration and schema 7 envelope")
+	check(SaveService.load_profile(PATH,false) != null and SaveService.SCHEMA_VERSION == 8, "contact layer retains schema 4 migration and versioned schema 8 campus envelope")
 	profile.first_mission_completed = true
 	profile.narrative_slice.settled.Q01 = true
 	profile.narrative_slice.q01_exits = ["streets_exit_0","streets_exit_1"]

@@ -4,6 +4,7 @@ extends Resource
 @export var id: StringName
 @export var display_name: String
 @export var scene: PackedScene
+@export var presentation_profile: PresentationProfile
 @export var humanoid_presentation := false
 @export_enum("Patrol", "Guard", "Flanker", "Pressure") var tactical_role: int = EnemyTactics.Role.PATROL
 @export_range(1.0, 100000.0, 1.0, "or_greater") var max_health := 60.0
@@ -22,6 +23,7 @@ extends Resource
 @export_range(0.0, 20.0) var patrol_radius := 3.0
 
 func validate_definition() -> bool:
+	if presentation_profile and not presentation_profile.validate_profile(): return false
 	return (
 		not id.is_empty()
 		and not display_name.is_empty()

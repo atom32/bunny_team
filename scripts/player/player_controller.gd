@@ -12,6 +12,7 @@ const CORPSE_SCRIPT := preload("res://scripts/presentation/skinned_corpse.gd")
 const CHARACTER_SCENE_PATH := "res://assets/characters/artoria_bunny/bunny_player.glb"
 const CHARACTER_ANIMATION_SOURCE_SCENE := preload("res://assets/characters/unitychan_battle/animations/idle.fbx")
 const BODY_VISUAL_SCALE := Vector3.ONE
+const HEROINE_MOTION_STYLE: HeroineMotionStyle = preload("res://resources/presentation/heroine_natural_combat.tres")
 const CHARACTER_ANIMATION_SCENES := {
 	&"Idle_Gun": preload("res://assets/characters/unitychan_battle/animations/idle.fbx"),
 	&"Walk": preload("res://assets/characters/unitychan_battle/animations/walk.fbx"),
@@ -611,6 +612,7 @@ func _build_character_animation_player(skeleton: Skeleton3D) -> AnimationPlayer:
 				_remove_import_bind_pose(animation)
 				_retarget_animation_tracks(animation, skeleton)
 				_fit_locomotion_clip(animation, animation_name, skeleton)
+				HEROINE_MOTION_STYLE.apply(animation, skeleton, animation_name)
 				animation.loop_mode = Animation.LOOP_PINGPONG if animation_name == &"Idle_Gun" else Animation.LOOP_LINEAR
 				library.add_animation(animation_name, animation)
 		animation_root.free()
@@ -882,6 +884,9 @@ func _try_fire() -> bool:
 
 func get_reload_remaining() -> float:
 	return float(_reload_remaining_by_weapon.get(weapon_instance.instance_id, 0.0)) if weapon_instance else 0.0
+
+func get_aim_camera_extension() -> float:
+	return weapon_data.aim_camera_extension + WeaponFitting.aim_extension(weapon_instance) if weapon_data else 0.0
 
 
 func _get_weapon_runtime_state():

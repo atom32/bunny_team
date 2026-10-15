@@ -1,6 +1,54 @@
 # Bunny Team — Current Project Handoff
 
-## 当前交接 — 2026-10-05 集成检查点
+> 2026-10-15最新：校园第二批维修、唯一记录器、L-02B断开/保留L-02A、备用护甲与60普通弹收尾已接入；当前定义31、测试库存79、schema8/checkpoint6。用法与限制见 [校园第二批](docs/CAMPUS_BATCH2_IMPLEMENTATION.md)。下方70/72/75/77等数量及“仍待第二批”是历史阶段记录，不能作为当前状态。
+
+> 2026-10-15真实内容批：快装/消声/观察镜3种可回收与购买的实物套件已接入单武器安装、携行损失和保存链；定义30、测试库存77。用法见 [套件交付](docs/FITTING_KITS_IMPLEMENTATION.md)。后续校园任务仍未完成，下方旧数量保留阶段历史。
+
+## 当前接续 — 校园第二批
+
+- 最新接口：profile8、checkpoint6；定义31（3实物改装套件+1固定记录器），测试场景79。旧schema/任务/男女原骨架兼容不回退。
+- **79/79场景、102/102结果项通过，0 ERROR；2个既有FBX警告仅冷导入。** [验证记录](docs/campus_batch2_2026-10-15_validation.json)。
+- 本轮冻结范围是内容制作工具、男女/主角动作、小批实际道具及校园六委托，不含整个十二章Alpha。参看 [第二批实施](docs/CAMPUS_BATCH2_IMPLEMENTATION.md) 和验证JSON。
+- 剩余发布门槛：真人连续游玩/路线与手柄、真实音频、最低配置；Artoria/UCL商业许可仍需独立审查。验证时为本地WIP；本次提交交付上述内容，最终推送状态以Git为准。
+- 以下“目标仍在进行/第二批未交付”等段落仅为10-14及前序批次接续历史。
+
+## 历史接续 — 2026-10-15 模型与动作批
+
+- 新增独立编辑器模型/动画审查Window/SubViewport、成年男/女65骨骼各7clip配置；男性受试者接入新出击，女性暂为可复用预览/动作参考，不随机替换出生点。
+- 主角按用户确认的「年轻成年女性，自然轻盈、战斗实用」作实际关键帧样式适配；原Artoria/UnityChan资产、枪械手掌约束不改。来源不伪称年龄核实的女性mocap。
+- 混合骨架checkpoint与旧感染者原rig/pose兼容；schema7、checkpoint5和布局签名保留。库存75；本批用法与完整证据见 [模型动作制作](docs/MODEL_ANIMATION_AUTHORING.md)。
+- 整个目标仍在进行：3–5件真实内容与校园第二批未交付。原先“审查台/独立外观未交付”段落是10-14阶段记录；无commit/push。
+
+## 接续开发 — 2026-10-14 内容制作仍进行中
+
+- 已补只读内容/引用检查、模板物品向导与隔离CLI。新资源须预览并明确确认后才注册；原始资产、现有定义数值和schema7保留。
+- 新增2个测试，库存72；菜单确认、不同UID、编辑器退出后读回已在隔离工程验证。当前状态与完整回归证据见 [接续进度](docs/CONTENT_AUTHORING_PROGRESS.md)。
+- 尚未交付3–5件真实用途新物品、通用模型/动画审查、感染者独立外观或校园第二批。不能将基础工具通过当作整个后续目标完成。无commit/push。
+
+## 当前工具交付 — 2026-10-14 本地 WIP
+
+- `main @ 68076ae` 上已实现校园真源 `static_world.tscn`、YARD 1.3.1 三个 stable-ID 目录、生产武器/动作/靶场工作台和原生 CC0 维修室模板。入口为编辑器顶部 Neon Tools；用法见 [工具说明](docs/CONTENT_TOOLS_IMPLEMENTATION.md)。
+- 原有碰撞/导航布局签名保持一致；固定几何不再在 `_ready()` 重建。原生导航烘焙另在隔离副本验证，不自动重烘焙生产地图。
+- runner 对齐70个场景并补长时间测试预算；完整测试/跨进程恢复/图形路线及编辑器操作结果见 [验证记录](docs/content_tools_2026-10-14_validation.json)。YARD 启动强制图标重导入有最小兼容补丁，失败日志保留。
+- 游戏数据、存档schema7、Artoria/Unity-Chan原始资产、新故事第一批范围均保留。维修室样例未注册成新剧情内容；不宣称任意模型/动画自动导入已完成。
+- 未 commit/push；完整 Alpha、真人/听感与最低硬件验收仍未完成。下方为同日**实施前**记录。
+
+## 实施前交接 — 2026-10-14 同步与内容工具审计
+
+- 干净 `main @ c1cebae` 已快进同步至 `68076ae`，再次pull确认已最新。用户提供VPN端口7897，仅命令级代理，无全局Git配置改动。
+- 校园/联系人/近战感染者及新版校园第一批已入库。Q01侦察出口、Q02医疗交付开放；旧药房观察前置取消，旧Q04保留历史。新版维修、记录器、L-02支路控制及战备交付未实现。profile schema **7**，NarrativeSlice version **4**。
+- 生产主角仍是Artoria临时模型；原创主角流程已准备但未交付模型。基地Quaternius过渡与走动代码已存在；10-05“无过渡”是历史限制。许可/来源限制保留。
+- 实际66测试场景，原runner固定62；本轮原样runner冷导入通过后数量门禁退出。仓库外派生runner只对齐库存并保留全部断言，结果见 [现状审计](docs/PROJECT_STATUS_2026-10-14.md)。旧59/79不覆盖新HEAD。
+- 建议保留Resource/ContentDB、实例所有权与原子保存，分批做内容检查/物品向导、模型动画审查台、敌人presentation模板及任务/遭遇制作；现成工具与来源见 [路线图](docs/CONTENT_PIPELINE_ROADMAP.md)。本轮只改文档，无插件安装、新内容、源码/测试修改或commit/push。
+- 完整Alpha仍 **IN PROGRESS**；无本轮真人10–15局/2–4小时、图形或最低硬件验收。下方报告是历史，当前制作以 [校园六任务稿](docs/narrative/DEVELOPMENT_STATUS_AND_TASK_STORY.md)为准。
+
+### 2026-10-14后续选型补充
+
+- 已隔离实测：校园scene保存结构1节点/0网格，入树生成2901节点/2042网格；不是编辑器缺功能。武器模型/握点已有保存节点，主要缺生产姿态预览。无需直接给整个Battle/Player加@tool。
+- 补入2026维护/发布证据：YARD1.3.1（10-08）、DataTables1.0.0（Godot4.7+）、GoSheets0.1.2（开发中/GPLv3）、Asset Placer1.6.0（08-25）、Scene Builder及FPS武器射击场参考。近期不等于稳定，未在主项目启用插件。
+- 现成scene包与裸模型包、免费Standard与带Godot项目Source版本已区分；自定义许可包不能自动提交公开仓库。最新建议先做静态地图可见/可编辑层，再数据编辑与武器台。详见 [补充报告](docs/EDITOR_WORKFLOW_AND_CURRENT_TOOLS.md)和 [证据](docs/editor_tooling_2026-10-14_evidence.json)。本轮未改运行源码/资产/测试，无commit/push。
+
+## 历史交接 — 2026-10-05 集成检查点
 
 - 已提交并推送至 `main`：`c1cebae`（基于 `602b722`），整合 10 月 2–5 日的 Alpha 成长、经济、恢复、战术 AI、任务、操作设置及紧凑军事 Hideout。本文后续清理只修改文档。
 - 当前功能入口与规则见 [README](README.md)；完整 Alpha 验收范围见 [验收审计](docs/alpha_0_1/ALPHA_ACCEPTANCE.md)。

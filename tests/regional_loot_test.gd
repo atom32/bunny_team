@@ -7,10 +7,10 @@ func check(ok: bool,message: String) -> void:
 func _ready() -> void:
 	await get_tree().process_frame
 	var expected := {
-		&"street_office_loot": [&"material.electronics",&"material.wiring",&"material.data_drive",&"material.scrap"],
+		&"street_office_loot": [&"material.electronics",&"material.wiring",&"material.data_drive",&"material.scrap",&"material.observation_optic_kit"],
 		&"street_pharmacy_loot": [&"medical.field_dressing",&"medical.medkit",&"material.fabric",&"material.parts"],
 		&"street_apartment_loot": [&"material.fabric",&"material.wiring",&"material.scrap",&"medical.field_dressing"],
-		&"street_repair_loot": [&"material.parts",&"material.wiring",&"material.propellant",&"material.scrap"]}
+		&"street_repair_loot": [&"material.parts",&"material.wiring",&"material.propellant",&"material.scrap",&"material.quickloader_kit",&"material.suppressor_kit"]}
 	for id in expected:
 		var table := ContentDB.get_loot_table(id)
 		check(table!=null and table.validate_definition(),"registered valid regional table")

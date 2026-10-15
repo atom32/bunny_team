@@ -91,10 +91,10 @@ def main():
     if args.import_only:
         return
     scenes = sorted((project / "tests").glob("*.tscn"))
-    if len(scenes) != 62:
-        raise RuntimeError(f"Expected 62 tests (43 regressions + Alpha economy + sortie checkpoint + medical treatment + enemy perception + player visibility + tactical roles + campaign + weapon fittings + exact ammo packing + regional loot + exit choices + records alarm + control settings + relay operation + cargo exchange + Hideout idle presentation + Q01 narrative slice + Q02 pharmacy delivery + Q04 fixed evidence and hard stop), got {len(scenes)}; review the test inventory")
+    if len(scenes) != 79:
+        raise RuntimeError(f"Expected reviewed inventory of 79 test scenes, got {len(scenes)}; review additions/removals")
     for scene in scenes:
-        frame_budget = "12000" if scene.stem.startswith("streets_") else "1200"
+        frame_budget = "60000" if scene.stem in {"hideout_camera_test", "hideout_idle_test"} else ("12000" if scene.stem.startswith("streets_") else "1200")
         if not run(scene.stem, ["--headless", "--fixed-fps", "60", "res://tests/" + scene.name, "--quit-after", frame_budget]):
             raise SystemExit(1)
     if not run("records_alarm_read", ["--headless", "res://tests/records_alarm_test.tscn", "--", "--read"]):
@@ -139,11 +139,16 @@ def main():
         raise SystemExit(1)
     if not run("fitting_read", ["--headless", "--fixed-fps", "60", "res://tests/weapon_fitting_test.tscn", "--", "--read"]):
         raise SystemExit(1)
+    if not run("campus_read", ["--headless", "res://tests/campus_chapter_test.tscn", "--", "--read"]):
+        raise SystemExit(1)
+    if not run("kit_read", ["--headless", "res://tests/fitting_kit_test.tscn", "--", "--read"]):
+        raise SystemExit(1)
     if not run("packing_read", ["--headless", "--fixed-fps", "60", "res://tests/ammo_packing_test.tscn", "--", "--read"]):
         raise SystemExit(1)
     if not run("main", ["--headless", "--quit-after", "180"]):
         raise SystemExit(1)
-    if args.route and not run("route", ["--rendering-method", args.renderer, "--resolution", "1280x720",
+    # Graphics-only route evidence: the CI/remote host may have no audio device.
+    if args.route and not run("route", ["--rendering-method", args.renderer, "--audio-driver", "Dummy", "--resolution", "1280x720",
                                         "--script", "res://tools/phase2b_route_probe.gd"], route=True):
         raise SystemExit(1)
     print(f"ALL TESTS {len(scenes)}/{len(scenes)} PASS; manual input NOT claimed; release permission NOT implied")

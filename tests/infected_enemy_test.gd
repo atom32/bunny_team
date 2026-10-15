@@ -26,7 +26,7 @@ func _ready() -> void:
 	enemy.set_physics_process(false)
 	await sync()
 	enemy.target = player
-	check(not enemy.presentation.pistol.visible and enemy.presentation.animation_player.current_animation == "Idle", "unarmed idle presentation")
+	check(enemy.presentation.pistol == null and not enemy.presentation.legacy_mode and enemy.presentation.animation_player.current_animation == "Idle", "independent unarmed subject idle presentation")
 	enemy.awareness.state = EnemyAwareness.State.COMBAT
 	enemy.awareness.last_known = Vector3(0,0,-8)
 	check(enemy._movement_goal(.1) == Vector3(0,0,-8), "chases contact rather than holding ranged distance")

@@ -1,4 +1,8 @@
-[gd_scene load_steps=2 format=3]
-[ext_resource type="Script" path="res://scripts/world/streets/street_district.gd" id="1"]
-[node name="StreetDistrict" type="Node3D"]
-script = ExtResource("1")
+[gd_scene load_steps=4 format=3]
+[ext_resource type="PackedScene" path="res://scenes/areas/campus/static_world.tscn" id="1_world"]
+[ext_resource type="Script" path="res://scripts/world/streets/street_district.gd" id="2_runtime"]
+[ext_resource type="PackedScene" path="res://scenes/areas/campus/night_lighting.tscn" id="3_night"]
+[node name="StreetDistrict" instance=ExtResource("1_world")]
+script = ExtResource("2_runtime")
+[node name="NightLighting" parent="." instance=ExtResource("3_night")]
+visible = false

@@ -16,7 +16,7 @@ func _ready() -> void:
 	collision_layer = 0
 	collision_mask = 1
 	body_entered.connect(_on_body_entered)
-	_build_visual()
+	if not has_node("ReachZoneMarker"): _build_visual()
 
 
 func try_reach(body: Node) -> bool:

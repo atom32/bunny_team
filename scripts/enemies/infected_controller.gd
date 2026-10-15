@@ -4,7 +4,14 @@ func _movement_goal(_delta: float) -> Vector3:
 	return awareness.destination(patrol_radius) if awareness.state != EnemyAwareness.State.COMBAT else awareness.last_known
 
 func _create_presentation() -> Node3D:
-	return preload("res://scripts/presentation/infected_presentation.gd").new()
+	var visual := preload("res://scripts/presentation/infected_presentation.gd").new()
+	visual.profile = presentation_profile
+	return visual
+
+func receive_damage(packet: DamagePacket) -> float:
+	var applied := super.receive_damage(packet)
+	if applied > 0 and not is_dead: presentation.play_hit()
+	return applied
 
 func _build_visual() -> void:
 	super._build_visual()

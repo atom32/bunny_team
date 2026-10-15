@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://dd16b74wlqb5"]
+
+[ext_resource type="Texture2D" path="res://assets/ui/supply/suppressor_kit.svg" id="1_2p4xt"]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="2_kpspd"]
+
+[resource]
+script = ExtResource("2_kpspd")
+id = &"material.suppressor_kit"
+display_name = "Suppressor Kit"
+description = "Install at base: gunfire hearing radius x0.5, reload x1.15, +0.35kg. Not silent; kit consumed."
+icon = ExtResource("1_2p4xt")
+stash_size = Vector2i(2, 1)
+weight = 0.35
+base_value = 420
+item_tags = PackedStringArray("loot", "fitting_kit")
+stackable = true
+max_stack = 4
+metadata/authoring_source = "res://assets/ui/supply/FITTING_KITS.md"
+metadata/license_ref = "res://assets/ui/supply/FITTING_KITS.md"

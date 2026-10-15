@@ -1,0 +1,37 @@
+{
+  "author": "Quaternius",
+  "source": "https://quaternius.itch.io/universal-base-characters",
+  "official_page": "https://quaternius.com/packs/universalbasecharacters.html",
+  "edition": "Standard / free",
+  "license": "CC0-1.0",
+  "cost": 0,
+  "access_date": "2026-10-15",
+  "archive_sha256": "fdbf1804c90dfc1ea03e992bff7da2dfd1a79318e13270a660180f9308455f40",
+  "selected_source": "Universal Base Characters[Standard]/Base Characters/Godot - UE/Superhero_Female_FullBody.gltf",
+  "source_gltf_sha256": "adedf28000a0716f689b009a70314506fc62f827498f77ba852acb5610f3f3f4",
+  "target": "adult female",
+  "triangle_partitions": [
+    6100,
+    5184,
+    1528
+  ],
+  "changes": [
+    "Fix missing normal texture URI",
+    "Body index partitions only; positions, weights, bind skeleton and original texture pixels unchanged",
+    "Material coverall is not loose cloth geometry",
+    "No teen or paid Source assets"
+  ],
+  "derivative_sha256": {
+    "subject_base.gltf": "fdb0433c3b4e7ab49677e0a8c14232a81ed0e8094d7f515ccfcfaa629f3bc6f8",
+    "subject_clothed.bin": "84e95b752ffbd8eac6fc2cd22c3411324782539c47c3133562a2090bd7b209c2",
+    "subject_clothed.gltf": "545221564576b14a590e6cd71cb4341e2a98ee93345dd1275f81e58ea7e477ec",
+    "Superhero_Female_FullBody.bin": "3a8220a485b33d05d879115a50697728b45a151781106033afb8b8c243fca208",
+    "T_Eye_Brown.png": "d08e3356a83211bc6ca21fe3a8e39f4b5c1a3b8f85457fc2c0fb57be09935025",
+    "T_Eye_Normal.png": "9ed61f7726a54fe346a78b9e5a18905d8e2b88f86235d97f53cd207a26f3f8c7",
+    "T_Hair_2_BaseColor.png": "f9f4f2fb3eeeefb0b6f0fdef38b0770fd6607640c1c680b8139dd76697e9f9b3",
+    "T_Hair_2_Normal.png": "172f230aae0d4366c3cfc0402b2e6d1811b11f8487344bff28605eeacac1558d",
+    "T_Superhero_Female_Dark_BaseColor.png": "d366843ee7d9e9f37ec87a0e1c98c7f2e45573c08eeb80a51a6d9344e68cf288",
+    "T_Superhero_Female_Normal.png": "cf922460b43ccd31e983e34db05514c9d451dd2f9cdd01a843978e797719f859",
+    "T_Superhero_Female_Roughness.png": "d2beabf2bd0313e32c68dcdbb80dca371a6e994fabf96efa97128bf9f14fa57b"
+  }
+}

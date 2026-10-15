@@ -1,0 +1,2029 @@
+{
+  "date": "2026-10-15",
+  "base_commit": "68076ae",
+  "state": "local WIP; no commit/push",
+  "goal_complete": false,
+  "delivery": {
+    "new_items": 3,
+    "registered_definitions": 30,
+    "kits": [
+      {
+        "id": "material.quickloader_kit",
+        "path": "res://resources/items/material_quickloader_kit.tres",
+        "value": 300,
+        "weight": 0.8
+      },
+      {
+        "id": "material.suppressor_kit",
+        "path": "res://resources/items/material_suppressor_kit.tres",
+        "value": 420,
+        "weight": 0.35
+      },
+      {
+        "id": "material.observation_optic_kit",
+        "path": "res://resources/items/material_observation_optic_kit.tres",
+        "value": 360,
+        "weight": 0.55
+      }
+    ],
+    "source": "actual item_authoring plan/publish factory -> native SVG/icons/tags/channel/translation review -> stable YARD catalogs",
+    "existing_ids_uids_preserved": 27
+  },
+  "mechanics": {
+    "quickloader": {
+      "reload_factor": 0.8,
+      "mass": 0.8
+    },
+    "suppressor": {
+      "hearing_factor": 0.5,
+      "reload_factor": 1.15,
+      "mass": 0.35
+    },
+    "observation_optic": {
+      "precision_view_extension_m": 3,
+      "reload_factor": 1.1,
+      "mass": 0.55,
+      "damage_or_range_bonus": false,
+      "wall_bypass": false
+    },
+    "single_weapon_instance_owned": true,
+    "no_new_profile_grants": true,
+    "ready_install_after_first_mission": true,
+    "material_assembly_requires_workbench": true,
+    "unmount_no_refund": true
+  },
+  "verification": {
+    "exact_snapshot": "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified",
+    "scene_tests": 77,
+    "result_rows": 99,
+    "pass": 99,
+    "errors": 0,
+    "warnings": [
+      [
+        "cold_import",
+        [
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+        ]
+      ]
+    ],
+    "method": "fresh Git-visible source snapshot and isolated user dirs, cold import, full reviewed tests, cross-process kit reader, all original probes, confirmed durable checkpoint writer kill/recovery and real Forward+ input/API route",
+    "result_sha256": "596510aab1e8ae9c0c56dcf4579313873cc7d995f43680ba4445395638523e47",
+    "source_manifest_sha256": "219e5d53421f74c3b5aa605797f10a38188ab8cbab1fbfd403ea3db53085d84f",
+    "rows": [
+      {
+        "name": "cold_import",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--editor",
+          "--import"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+        ],
+        "sha256": "644751d76b0b756bbdf2604864ef7c6843197959112e66b98efbf8b743e50ac6"
+      },
+      {
+        "name": "acceptance_smoke",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/acceptance_smoke.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "cf3047efc21b325e1ae79c3d27e26e2d6108bd4381b208ac13808d59918184c6"
+      },
+      {
+        "name": "alpha_economy_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/alpha_economy_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "061c537f51fc7df8558a5fb0c1d4b9973f710ace02f5e4238c4a2e2106f23ea5"
+      },
+      {
+        "name": "ammo_carried_foundation_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/ammo_carried_foundation_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "e0c468147849e2f7ef13af6dd50a58c4c766b99059cf6c8b6c7db488f3d90ef9"
+      },
+      {
+        "name": "ammo_packing_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/ammo_packing_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "1627a66ce0cef82a07f0485dc8f10efb859c5aeacb6ccb9fda23db9e1d1d93b5"
+      },
+      {
+        "name": "ammo_runtime_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/ammo_runtime_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "74dae0be1ebd9517457ba821fffdafe661e253c18047c6474b2ed7f539493df2"
+      },
+      {
+        "name": "area_definition_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/area_definition_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "4f00c94e60d99bcd72cbc9a4376274ee86cb1749878568f225f47cc96052dee1"
+      },
+      {
+        "name": "asset_review_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/asset_review_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "32a0797f9aab7f3d407a9bca50ac7c0dc8d4abdbe1cfaa0360eb5163681c555b"
+      },
+      {
+        "name": "campaign_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campaign_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "3ab3b19df4d015ca1754a451f0f58afe4ec15b0e91f8832bde630c402c3bbb86"
+      },
+      {
+        "name": "campus_editor_scene_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campus_editor_scene_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "fdada53a2ae1169ef087ae317b7bd48b4887a6ad681491f0a704c521a0be31e8"
+      },
+      {
+        "name": "campus_night_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campus_night_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a7c5718566bb53003b5dcda16ab0c0580157a2843080c8c75234a17398d7a4cb"
+      },
+      {
+        "name": "cargo_exchange_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/cargo_exchange_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "0deb79976b1193cc0ecae13ce5ea429b30e59c85a31f0a23ade010eb461c4986"
+      },
+      {
+        "name": "carried_inventory_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/carried_inventory_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "0f74e789f004d5ed185a8fd7515dceb1b48a01ecf2fd8e5c8c3b9137c3b7b1d0"
+      },
+      {
+        "name": "character_presentation_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/character_presentation_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "91d15163769849b43b1ee373c09b76bd71b5e3b3d8a636385fe75d843fb47369"
+      },
+      {
+        "name": "combat_tuning_baseline_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/combat_tuning_baseline_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "14caa82f02c031ec0b11b26dff55eaec0fd4ed9b5d459b6a5affce7a8b318d16"
+      },
+      {
+        "name": "content_audit_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/content_audit_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "4a51a484ad1adf19fd639de97481c3260197b9239878c7e7c2d9705538e98e2e"
+      },
+      {
+        "name": "content_catalog_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/content_catalog_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "2055c5cd0cd737c7309035ce874b93b07e54428d56ebaefc29e6c1cc74590a8f"
+      },
+      {
+        "name": "content_inventory_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/content_inventory_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "929ebe56f5e5e5e51a2f9f62365d09d4c4dc987ff04084a40b0bf661b7edd7ce"
+      },
+      {
+        "name": "control_settings_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/control_settings_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "9d58210b51748f31f2e4b5a8b546b9e71f9d79697ddb2705213f56338d4e7ea3"
+      },
+      {
+        "name": "damage_packet_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/damage_packet_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "9a91e5472a0003b00ec933d3e37f2326cfbcd7f74886d2aa75176c99868d031e"
+      },
+      {
+        "name": "destructible_world_object_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/destructible_world_object_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a92098b524931bb4f7c94af98d7aef1d84a434ba1c28ce2448e315b8c07ca92f"
+      },
+      {
+        "name": "enemy_definition_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/enemy_definition_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "fad7f3e0d94ffe98dbfb6eb25a57f8a14a3305fb3a767f7fc0031324a84e1e5b"
+      },
+      {
+        "name": "enemy_perception_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/enemy_perception_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a9f676a51f12af04c34209acbdf83f6d4848e3012b23ff5c32c434b44d9d594c"
+      },
+      {
+        "name": "enemy_spawn_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/enemy_spawn_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "182181d5c6838192b7fe54537355585808ec531c18c92b12991269030ffbaf60"
+      },
+      {
+        "name": "enemy_tactics_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/enemy_tactics_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "4e5cf5e3cc91ae404e8d10101f7b43e5cce1ab49076208cc199d6a7bf5253b2d"
+      },
+      {
+        "name": "exit_choice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/exit_choice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "2e01db69e4d3e86915d1e84a3b32ac0ced430fec2ed4ba41bbbdeafdef2510a8"
+      },
+      {
+        "name": "extraction_vertical_slice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/extraction_vertical_slice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "b42ad1ec4d83142c8034577171bd36eb8f9ebeb29ee794637062e64adcf6dca6"
+      },
+      {
+        "name": "first_mission_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/first_mission_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "587d81f5fbb9e03671933aa3dc8583b748f82620b1202af97b8bf6ebbc3eb381"
+      },
+      {
+        "name": "fitting_kit_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/fitting_kit_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "aaaf183cb18de6d3ce41a1628b89379d932accd9305a5d8ef6e532963c500c77"
+      },
+      {
+        "name": "fresh_entry_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/fresh_entry_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "6818d56fa6dbebf7889506d19d82aaaa82f8c1a0f6e5c4f436e43639ba4d8997"
+      },
+      {
+        "name": "hanger_first_mission_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/hanger_first_mission_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "09374c0351733430a368deeec0e40c293a5062d0a31512b078cbde916bcd3dfe"
+      },
+      {
+        "name": "heroine_motion_style_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/heroine_motion_style_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "44f80fd931c7335dbc41cc0b2825109a36be4dd73edd6e300d08a53eb2849d57"
+      },
+      {
+        "name": "hideout_camera_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/hideout_camera_test.tscn",
+          "--quit-after",
+          "60000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "0e8b3d661120c89c6918e1db31556afa469f232428ea2993f18ff372b691d0e8"
+      },
+      {
+        "name": "hideout_idle_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/hideout_idle_test.tscn",
+          "--quit-after",
+          "60000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "c55bf1e26f5f3c0c03edfa8f12b0d24f0ddb3a9fc3cf166acae33798caf773e8"
+      },
+      {
+        "name": "infected_enemy_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/infected_enemy_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "dee0dc62c887dfbe4317afc4003950370de147a6675c19a5cf0e085f6de742cc"
+      },
+      {
+        "name": "item_authoring_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/item_authoring_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "affbf2b0d26c31199f24c3eaec6b6f516675a8fb0cae7a8cdc2607d05bf211ba"
+      },
+      {
+        "name": "loadout_decision_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/loadout_decision_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f79a1f1671ce9317fb36be5f4677deb4b167293a92e3c75b9695010d9976bca3"
+      },
+      {
+        "name": "loadout_state_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/loadout_state_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a01c3d9801d46522fa8ab49b0b9c01f39b91923f1346b7269d6275284c7cbac7"
+      },
+      {
+        "name": "loot_table_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/loot_table_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "cb8b95eee494560b0090fd3e2101570ddb9cc0bbd939359cf3c461dfc410a3dd"
+      },
+      {
+        "name": "medical_treatment_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/medical_treatment_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f851a6e42c8c4ad7594bd9e9f62e576f054b8ee174640688f27bd55ffd65d20a"
+      },
+      {
+        "name": "mission_flow_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/mission_flow_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d8810c81df93dcc0cd8b2323616056fa1aa2cbf0618ee65c10b62a0051ceb984"
+      },
+      {
+        "name": "mission_objective_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/mission_objective_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "996830f87e4162bf5d1676d79e8c4ba58cab010d0f25d9f4b813f95220aaee55"
+      },
+      {
+        "name": "modern_arsenal_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/modern_arsenal_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "c62aa0a75d97cb163a3e2a0d0a93c1a989526230f988cb5e01be80d32b46b07e"
+      },
+      {
+        "name": "module_scene_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/module_scene_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f8d28d60f69538492fb42bfcbf0e8477051fd19c2183ae11f36c2746b26e58ab"
+      },
+      {
+        "name": "objective_world_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/objective_world_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f669bc89fc2a304be3f572f901dbbedbd6446f40107ce4a5b01149b14e9704c7"
+      },
+      {
+        "name": "observation_optic_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/observation_optic_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ac4c465b37f2479545642d6f9fc757296e9845014520dd4232f53b62874244cb"
+      },
+      {
+        "name": "p0_flow_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/p0_flow_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f75da8c80c42597f50934412261d7299d383550f295ed7e602d7c3c4eba98320"
+      },
+      {
+        "name": "p0_recovery_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/p0_recovery_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+      },
+      {
+        "name": "player_visibility_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/player_visibility_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ef5c79b6d8a174fe076936eb981eff3c1c4dc28f184e2768e945df57750ad82d"
+      },
+      {
+        "name": "presentation_checkpoint_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/presentation_checkpoint_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ba17b02f34dfee374c67e3dc43f09aa123dedc47170605d4021295d11aab549a"
+      },
+      {
+        "name": "presentation_gameplay_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/presentation_gameplay_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ae73643e9a4fe8ad17c70a8bb142d225944cd59d9506bfa7ab836e039c8d2cd6"
+      },
+      {
+        "name": "profile_state_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/profile_state_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "33f0ea9d822ed2036eedec3dc08c57a3cff32a01abca14e7162e4928d404eb19"
+      },
+      {
+        "name": "q01_slice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/q01_slice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "e38bec0e5b7acdbc46e27a9b3fe871a5679a79386c5d7e06ce33f046bc8acad7"
+      },
+      {
+        "name": "q02_slice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/q02_slice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "7e0098cb64edc330bbc6b79911d1e240fac9500957455e5222abd5dd12721153"
+      },
+      {
+        "name": "q04_slice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/q04_slice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "b80ec5fb48e0dae52a8c4a0b44baaaa8859fbec4f3d6bd1a536c6580f7ff1c96"
+      },
+      {
+        "name": "records_alarm_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/records_alarm_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "c23f838c082e3a6ac989275abe6d8247727b8ac39ad260a760d0ad2e25072896"
+      },
+      {
+        "name": "regional_loot_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/regional_loot_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "7dc08d1cda9cf05fdad860b635bde2b48901428c7c9fafe157744d09cd173523"
+      },
+      {
+        "name": "relay_operation_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/relay_operation_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "96b0f1bae92dd1112b849a0e50bb95bdd2a4635c1548cb279d7a4e1059926a66"
+      },
+      {
+        "name": "result_return_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/result_return_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "9985118cd4cbd5cb1f239a038576b027c3c7391fc26cbf4267e4a133d12f8e66"
+      },
+      {
+        "name": "rifle_contact_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/rifle_contact_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "bf11d1eddd67413d04e22a1e14f2d3f1172e3ad1c8f984f65b9996c60d6697db"
+      },
+      {
+        "name": "save_service_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/save_service_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "24d5b9bac3fac687a7cc964cc5e285070adfa0744e18230f1ebe2c89377be51d"
+      },
+      {
+        "name": "sortie_checkpoint_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_checkpoint_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "80620568c499ae32c3327337ae6a999cf6365962b51d8ddd7e7723acb64884f0"
+      },
+      {
+        "name": "sortie_failure_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_failure_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "c1817d555972e58a67c66a37fefebfcf3db4b22f511a1c6e256f6bac42523614"
+      },
+      {
+        "name": "sortie_outcome_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_outcome_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f2ccb0bcac153ce02a91b1a095631f37f546a5b1747a8b85429ead2795ec4ccf"
+      },
+      {
+        "name": "sortie_session_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_session_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "df5a421250cbe693d64d5e60e2b1a871774b450656eb57e876103e110d2c64b4"
+      },
+      {
+        "name": "streets_combat_run",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/streets_combat_run.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "62fcabdae8670f52be6c88aa32faebb8051faef47b2f637805db620e43c3e2b4"
+      },
+      {
+        "name": "streets_layout_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/streets_layout_test.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d6fdd633ed1078c4fc45b7a32f55141b653d3e2a2ad03ef620ca19f2f9df4428"
+      },
+      {
+        "name": "streets_walk_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/streets_walk_test.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "889515aa71ce7dd7e10804a01f932b735ed307ff9c711f1c083bc5d0371d262c"
+      },
+      {
+        "name": "threat_escalation_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/threat_escalation_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "57f31d59f83f742bbb6fdba28e3c974e0755c6d22b20160be8d5adacc3673e2d"
+      },
+      {
+        "name": "visual_combat_acceptance",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/visual_combat_acceptance.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "9f6b93e11ebbf4e8c6e9d832f41652299ac2e97550593ad6e1a8ef0cd6ce2704"
+      },
+      {
+        "name": "visual_enemy_acceptance",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/visual_enemy_acceptance.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "5682059b30245191e06771f4a151fa636776744662b84be926f57a2b184e7c5b"
+      },
+      {
+        "name": "visual_slice_assets_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/visual_slice_assets_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "3b1df4d1c790620a6b0d8b41cf1afdeb7869005edc0344c1b76e597d881760a8"
+      },
+      {
+        "name": "weapon_behavior_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/weapon_behavior_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "264f3cfaaf3d2b6b4d5eebf057246896cda1fb1e8b171c739b191441f58308dc"
+      },
+      {
+        "name": "weapon_fitting_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/weapon_fitting_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d56503e0bc915f8fd17db5e8898b64c93b284883bce1dcd92a3a163281c6fb30"
+      },
+      {
+        "name": "weapon_switching_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/weapon_switching_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d361035a78a2eef17eb8ea503a07e0dd2f18e8269360a367aa10df65977b8d60"
+      },
+      {
+        "name": "weapon_workbench_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/weapon_workbench_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "66f1b7bbec290f7581a2dc5dc322391db2769b5f4cc727daec6b0de4fef9a141"
+      },
+      {
+        "name": "world_interaction_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/world_interaction_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "91c770f650f8c253f1a0e0b8233b5524d582f7395ffe0f00a0f420cfebe9c8f7"
+      },
+      {
+        "name": "world_traversal_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/world_traversal_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8264c29f377b92f3150d3a714b06fb9db370a7d7ce63951334525146ec9ee739"
+      },
+      {
+        "name": "records_alarm_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "res://tests/records_alarm_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "7550b3c56e29f008fb0b7e182dfc4674788100c21e7d9e40f7343ed2c8d8b53c"
+      },
+      {
+        "name": "controls_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "res://tests/control_settings_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "387ec7f0e294240f2ebe877ecb761c23a8015f06b8ace45278860d55c62e1661"
+      },
+      {
+        "name": "relay_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "res://tests/relay_operation_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "e8a8a086188bd1b4187e3b2a115d6554917530586ca59f29af543b825b549362"
+      },
+      {
+        "name": "relay_combat",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/streets_combat_run.tscn",
+          "--",
+          "--relay"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ef6e339177a2f92485db932d16db460900ca8bb2731d978e8ae1010a4071da34"
+      },
+      {
+        "name": "quit_base",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--script",
+          "res://tools/p0_exit_probe.gd",
+          "--",
+          "base"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+      },
+      {
+        "name": "quit_battle",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--script",
+          "res://tools/p0_exit_probe.gd",
+          "--",
+          "battle"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+      },
+      {
+        "name": "quit_failure",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--script",
+          "res://tools/p0_exit_probe.gd",
+          "--",
+          "failure"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+      },
+      {
+        "name": "quit_transition",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--script",
+          "res://tools/p0_exit_probe.gd",
+          "--",
+          "transition"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+      },
+      {
+        "name": "quit_recovery",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--script",
+          "res://tools/p0_exit_probe.gd",
+          "--",
+          "recovery"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+      },
+      {
+        "name": "checkpoint_write",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_checkpoint_test.tscn",
+          "--",
+          "--write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "2fdd05b940fccdfdcb9a56ccd0d4769f1121bec19c60697a1af581585365bfdc"
+      },
+      {
+        "name": "checkpoint_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_checkpoint_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "49087418854cd95743b297b3fb0a456a96e1110a61151b3a8f149b6658af4987"
+      },
+      {
+        "name": "checkpoint_crash_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_checkpoint_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "49087418854cd95743b297b3fb0a456a96e1110a61151b3a8f149b6658af4987"
+      },
+      {
+        "name": "medical_write",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/medical_treatment_test.tscn",
+          "--",
+          "--write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "7338a601ebf27b47970a7314307d0efac575c1030aadef6fd76dea7687f8a37d"
+      },
+      {
+        "name": "medical_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/medical_treatment_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "2dabb9b99e771b793e953a80e76630a219467c17b2c1f9a6bfecdf9f745762d8"
+      },
+      {
+        "name": "campaign_write",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campaign_test.tscn",
+          "--",
+          "--write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "eb2ee87de07e05c9b88c980d5efb127bc15b24b7109af58f1ca9d609f1d3a40b"
+      },
+      {
+        "name": "campaign_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campaign_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "0418b4e0bb8ab6133faae5b73bcbc3c3383d9f4bcd63433a37d242b9ad1715a0"
+      },
+      {
+        "name": "fitting_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/weapon_fitting_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "87cee6bedffe7450f71562f63eaf97be45632dd82557f6d52f30f6c00751abb4"
+      },
+      {
+        "name": "kit_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "res://tests/fitting_kit_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f062bcf9b56237c2066d7a6630f2cb11d28dd68c84791ce96f9cc04a759a7b0a"
+      },
+      {
+        "name": "packing_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/ammo_packing_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "95e0b04a50a847d00df823883f834a4472d002c9011f003de95ce8c6a56fb321"
+      },
+      {
+        "name": "main",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--headless",
+          "--quit-after",
+          "180"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "83cf0b082206af2aa236c83064fbcfa76be1e00a4aa3558574b2f65965d9481c"
+      },
+      {
+        "name": "route",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_real_items_20261015_0de83d16\\exact_verified\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--script",
+          "res://tools/phase2b_route_probe.gd"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "cf139e5ad03acdc9c5ded824dfcc43517c983257361eef20892821b8b9b998a2"
+      }
+    ]
+  },
+  "graphics": {
+    "method": "real ContactPanel/SupplyPanel stock and install UI, English/Chinese, scripted signals/API, not mouse/manual acceptance; Dummy audio",
+    "errors": 0,
+    "log_sha256": "641ded049872b3b42d4073016ccf4c6a5800d2435dd535c3d564f87b81dbafe0",
+    "captures": {
+      "install_en.png": "9b181fe6601e6e737b82a17ad0aa3bf0a50658ac84249e5bf054b937f493151b",
+      "install_zh_CN.png": "a7f289cb473e53f39dc2b1a67452e18c02972fec2304a7c0f72bf24e2f0cf5ab",
+      "shop_en.png": "e9fbb854796540c06ad64504e3d7ec7fe00dbf5f75c2d3caf1883fb43f2f64bf",
+      "shop_zh_CN.png": "2b7c19cb65513bcdf13c874d3906c223cd00f68cea6c0c486d2ec068cafd3141"
+    }
+  },
+  "prior_assets_definition_protection": {
+    "protected_files": 755,
+    "changed": []
+  },
+  "source_hashes": {
+    "scripts/systems/weapon_fitting.gd": "1d577774592d5f061e956b320fd4de8bc6a29d892a99e43d9bb8fedc9490eef8",
+    "scripts/systems/supply_service.gd": "d2e20d040b0bd3e42e835ae55cfc6ec7e021156c1aa0837eafc9f5ccb6978f31",
+    "scripts/player/player_controller.gd": "6b8e10ea12fce0be400c94971a4bb8d0d4fcaae5c610c0f286a356f38bc7b58f",
+    "scripts/battle/player_visibility.gd": "961eeec8520563b0f0abe547537315553e0668b12e51c6a155fef78036d272de",
+    "scripts/battle/battle.gd": "5424050cc33539de8109d30227aa5f2c640205bd48182d51cfb4257e4e696893",
+    "scripts/data/contact_definition.gd": "c8cbd905a4616f6755a4de30a3588722e8f290c9f6c7c29ef1a6a50d4f479d2e",
+    "scripts/ui/supply_panel.gd": "11dccae0efdedb2ad524b3b5bb8d3d30d3154639adcbda8ae54d2c94c1ddfd29",
+    "addons/neon_content/content_audit.gd": "910281c3f4fd702d9c1fd9b203a32211c5b7618efebfb51efe87de5e5c794b50",
+    "resources/content/content_manifest.tres": "5bff0cc25d5ad76bba2b520684d90fc3359db876b7212949c7008a422c732e6a",
+    "resources/editor_catalogs/items.tres": "dacb35ea427949d377312f2aa5506cc266f3ff402da7e742e9dcbb4e70f9ec8b",
+    "resources/loot/street_repair_loot.tres": "5fd390c612259fddc955ae79d2920947666850972e91d49310716b410456cf20",
+    "resources/loot/street_office_loot.tres": "fedc13858f8ab20cceed063a9cea294faee37771b5aaded8c4f10c27532d58ea",
+    "localization/zh_CN.tres": "5d15c16ddd998178fc559bd635587fc731ba437b9bf0fe6f66d22ce2f21b9cd0",
+    "tests/fitting_kit_test.gd": "9299e71c981a9ca4f9c3ae6f03ef1bacfbd394d5d21071f46d24ea2e6b7d2346",
+    "tests/observation_optic_test.gd": "a1a4597613dcec1aa29c66e9eed8dddb627e45ed9a5a29bac24581774c5449c9",
+    "tests/acceptance_smoke.gd": "299eeb40dffd05536fe62d476b0bb2df534039a3bb40fcc5493cd08f59896339",
+    "tests/content_catalog_test.gd": "397842f76297b3d2e20abd0b3887a128df5ea93bf6c81e6a7fe47f9a397f6716",
+    "tests/regional_loot_test.gd": "2ff3a3ec3b9494c0406fa20104bd880e441af3803114d76345e25b2b1c99d78f",
+    "tools/verify_migration.py": "9e8a7573e816811c6979a088057ad064db3d65a1ee7d4ca87815d392b063ebd1",
+    "resources/items/material_quickloader_kit.tres": "75d86ecf9c08f479ba88e00e566bb36f586333660f98a2fcc154b890308e64e7",
+    "assets/ui/supply/quickloader_kit.svg": "c7765f7d2f6e39fc901bb27386801562a3fc3bd0805bfad61bc0b48255bb1bbd",
+    "assets/ui/supply/quickloader_kit.svg.import": "e984ecde6481f2e48900d21f85de3db985ef460b0a8ae27a4c8a28d6a65870dc",
+    "resources/items/material_suppressor_kit.tres": "62b54703a0d33cbab727e54be5a7ee8dc7edea3ddecfed110c787fa4fb4ba5a8",
+    "assets/ui/supply/suppressor_kit.svg": "dea5824ceb4d1cf9c6e29b3f20f8db7b519f03b04b1bf7a8af1deb94b34b27ac",
+    "assets/ui/supply/suppressor_kit.svg.import": "ef3c2fb58f2f1de4340bedb8991e86cc682ed0c5d524180fee78bf756c1d7fe7",
+    "resources/items/material_observation_optic_kit.tres": "367ef6b571c5082a394d9cc9f2344c266e6cc231184291d9345076342cb33a18",
+    "assets/ui/supply/observation_optic_kit.svg": "b69d1f74cbf932963f442a45b26174e8f7c2948342bf754ea2623508c67e8239",
+    "assets/ui/supply/observation_optic_kit.svg.import": "b28736535af4f57e5790efad89bd739c111486d53090a2e5814797ff4709c0bb"
+  },
+  "prior_failures": [
+    {
+      "name": "first_cold_import_missing_svg_import_config",
+      "errors": [
+        "ERROR: Failed loading resource: res://assets/ui/supply/quickloader_kit.svg.",
+        "ERROR: Failed loading resource: res://assets/ui/supply/suppressor_kit.svg.",
+        "ERROR: Failed loading resource: res://assets/ui/supply/observation_optic_kit.svg."
+      ],
+      "sha256": "f538a9fbaba22b95129a94bc2e5a0cd60f3003cfc021d2110e68a1a868dedfb3",
+      "repair": "Include native generated *.svg.import files, following existing tracked supply-icon convention; exact_verified fresh import passes. No error allowance."
+    },
+    {
+      "name": "mutable_author_editor_import_transition",
+      "errors": [
+        "ERROR: Condition \"f.is_null()\" is true. Continuing.",
+        "ERROR: Condition \"f.is_null()\" is true. Continuing.",
+        "ERROR: Condition \"f.is_null()\" is true. Continuing.",
+        "ERROR: Condition \"f.is_null()\" is true. Continuing.",
+        "ERROR: Condition \"f.is_null()\" is true. Continuing.",
+        "ERROR: Condition \"f.is_null()\" is true. Continuing.",
+        "ERROR: Condition \"f.is_null()\" is true. Continuing.",
+        "ERROR: Condition \"f.is_null()\" is true. Continuing."
+      ],
+      "sha256": "894673415199a14b43bdb3c14f8cc0c42b14638c7cd089da44b3bb6cc2320d11",
+      "scope": "Bootstrap catalog counts passed but import-transition log not claimed clean; final cold import/runtime and catalog tests separately verified."
+    }
+  ],
+  "invariants": {
+    "profile_schema": 7,
+    "checkpoint_version": 5,
+    "campus_collision_nav_layout_changed": false,
+    "prior_character_weapon_animation_asset_changes": 0,
+    "new_rendered_weapon_attachment_meshes": 0,
+    "new_story_evidence_items_this_batch": 0
+  },
+  "remaining": [
+    "campus story next batch: L-02 relays, unique experiment recorder, branch power control, spare armor/ammo delivery and extraction",
+    "human economy/pacing/motion aesthetics/audio and low-spec Alpha acceptance; not implied by automation"
+  ],
+  "evidence_root": "D:\\bunny_team\\art_source\\fitting_kits_20261015\\evidence",
+  "privacy": "All authoring/gameplay/capture runs isolated; no purchases or normal player-save changes."
+}

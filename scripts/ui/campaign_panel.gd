@@ -27,7 +27,7 @@ func _refresh() -> void:
 		_heading(body, "居民委托")
 	else:
 		_label(body, ContactDefinition.get_contact(contact_id).display_name + " / 委托", 18)
-	if contact_id == "su_mi": _label(body, "暂无新的维修委托", 16)
+	if contact_id == "su_mi" and not profile.narrative_slice.settled.Q02: _label(body, "Complete medical supply before the L-02 operation.", 16)
 	if ContactDefinition.owns_quest(contact_id, "Q01"):
 		_publisher(body, "Q01")
 		_label(body, NarrativeSlice.status_text(profile) if profile.first_mission_completed else "Q01 / 完成首任务后可进行出口观察", 14)
@@ -52,10 +52,10 @@ func _refresh() -> void:
 			submit.pressed.connect(_submit_q02)
 		if profile.narrative_slice.settled.Q02: _label(body, NarrativeSlice.Q02_RESPONSE, 14)
 	if ContactDefinition.owns_quest(contact_id, "Q02") and profile.narrative_slice.settled.Q02:
-		_label(body, NarrativeSlice.Q04_REQUEST, 14)
-		_label(body, NarrativeSlice.BATCH1_ENDPOINT, 14)
+		_label(body, "Su Mi: The L-02 repair plan is ready. Check the engineering contact for the next operation.", 14)
 		if profile.narrative_slice.settled.Q04:
 			_label(body, "Legacy Q04 reward retained / no new story progress granted", 14)
+	_campus_quests(body,profile)
 	if not contact_id.is_empty():
 		if not feedback.begins_with("Only the active"): _label(body, feedback, 14)
 		return # Anonymous base-development contracts stay on the existing board.
@@ -161,3 +161,26 @@ func _publisher(parent: Node, quest_id: String) -> void:
 	var label := _label(row, ContactDefinition.get_contact(id).display_name + " / " + quest_id, 16)
 	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	label.add_theme_color_override("font_color", SliceUI.CYAN)
+
+func _campus_quests(body: Node,profile: ProfileState) -> void:
+	if not profile.narrative_slice.settled.Q02:return
+	var state:=profile.campus_chapter
+	var ready:={"campus_relay":true,"campus_recorder":state.relays_returned,"campus_power":state.recorder_returned,"campus_supply":state.power_returned}
+	var completed:={"campus_relay":state.relays_returned,"campus_recorder":state.recorder_returned,"campus_power":state.power_returned,"campus_supply":state.finished}
+	for id: String in CampusChapter.QUESTS:
+		if not ContactDefinition.owns_quest(contact_id,id):continue
+		_publisher(body,id)
+		_label(body,CampusChapter.QUESTS[id][0],16)
+		_label(body,"Settled" if completed[id] else ("Locked / complete preceding campus operation" if not ready[id] else CampusChapter.QUESTS[id][1]),14)
+		if id=="campus_supply" and ready[id] and not completed[id]:
+			_label(body,CampusChapter.status_text(profile),14)
+			var submit:=Button.new();submit.name="SubmitCampusEquipment";submit.text=tr("DELIVER SPARE ARMOR / STANDARD 5.56")
+			submit.disabled=CampusChapter.prepare_delivery(profile).error!=OK;body.add_child(submit)
+			submit.pressed.connect(func():
+				var result:=CampusChapter.submit_delivery(save_path);feedback=result.message
+				if result.error==OK:contract_claimed.emit()
+				_refresh.call_deferred())
+		if id=="campus_recorder" and state.recorder_revealed:_label(body,CampusChapter.RECORD,14)
+		if id=="campus_power" and state.recorder_returned:_label(body,"Su Mi: L-02 has separable branches. Keep L-02A shelter power while disconnecting L-02B. This does not stop the escaped subjects.",14)
+		if id=="campus_power" and state.branch_disconnected:_label(body,CampusChapter.POWER_REPLY,14)
+	if state.finished:_label(body,"Campus chapter complete / free sorties remain available",16)

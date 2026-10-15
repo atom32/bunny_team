@@ -10,7 +10,7 @@ signal extracted(session: SortieSession, extraction_id: StringName)
 
 func _ready() -> void:
 	add_to_group("interactable")
-	_build_visual()
+	if not has_node("ExtractionPad"): _build_visual()
 
 
 func can_extract(session: SortieSession) -> bool:

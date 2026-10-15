@@ -1,5 +1,11 @@
 # RTX 5090 Game Art / Asset Production Pipeline
 
+> 2026-10-15最新动作/模型制作入口：[独立审查台、成年男女适配与主角自然战斗样式](MODEL_ANIMATION_AUTHORING.md)。本页旧库存与未实现事项保留为阶段历史，不覆盖新批次状态。
+
+> 2026-10-14工具交付：可编辑校园、YARD stable-ID目录、现有武器/动作工作台与CC0维修室模板已实现，见 [使用说明](CONTENT_TOOLS_IMPLEMENTATION.md)。原始美术/动画未改，任意骨架自动导入与任务批量制作仍是后续计划。
+
+> **当前入口（2026-10-14）：** [项目现状](PROJECT_STATUS_2026-10-14.md)、[当前模型接口](asset_interface.md)、[内容工具路线图](CONTENT_PIPELINE_ROADMAP.md)。当前玩家是Artoria临时模型；校园已有PMC/KITE/近战感染者，测试库存66，schema 7。下方美术审计与冷导入失败属于历史，不覆盖本轮结果；原始来源与失败证据保留。
+
 > **Current checkpoint (2026-09-27):** Phase 5 `bc4984b`, Godot 4.7.2.
 > Player = production Unity-Chan (Phase 3D + Phase 4B fidelity); Enemy = native
 > KITE-07, no legacy humanoid dependency (Phase 4E). Phase 5 validation: 33/33,

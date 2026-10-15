@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="PresentationProfile" format=3]
+
+[ext_resource type="AnimationLibrary" path="res://resources/presentation/subjects_female/campus_subject_animations.tres" id="1_k8bae"]
+[ext_resource type="BoneMap" path="res://resources/presentation/subjects_female/campus_subject_bone_map.tres" id="2_0p0af"]
+[ext_resource type="Script" path="res://scripts/data/presentation_profile.gd" id="3_3fonc"]
+
+[resource]
+script = ExtResource("3_3fonc")
+id = &"presentation.adult_female_reference_01"
+model_path = "res://assets/characters/quaternius_subject_female/subject_clothed.gltf"
+animation_library = ExtResource("1_k8bae")
+skeleton_path = NodePath("Armature/Skeleton3D")
+bone_map = ExtResource("2_0p0af")
+semantic_clips = Dictionary[StringName, StringName]({
+&"attack": &"Punch_Left",
+&"death": &"Death",
+&"hit": &"Hit_Chest",
+&"idle": &"Idle",
+&"interact": &"Interact",
+&"run": &"Run",
+&"walk": &"Walk"
+})
+source_url = "https://quaternius.itch.io/universal-base-characters + https://quaternius.itch.io/universal-animation-library"
+license_ref = "res://assets/characters/quaternius_subject_female/LICENSE.txt; res://assets/animations/quaternius_hideout/LICENSE.txt"
+target_demographic = "adult female"
+motion_origin = "UAL1 universal/unisex authored clips; global-rest rotation retarget, target leg-height pelvis scaling"
+motion_style = "natural neutral / in-place adult reference"

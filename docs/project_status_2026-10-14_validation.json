@@ -1,0 +1,750 @@
+{
+  "date": "2026-10-14",
+  "timezone": "Asia/Shanghai",
+  "commit": "68076aefac31df3e784fdf62cee64cd2667b29a4",
+  "scope": "Headless diagnostic audit of one isolated snapshot; resumed after explicit runner-only fixes. Not unmodified-runner PASS, graphical or human acceptance.",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "original_runner_status": "cold import PASS; rejected 66 scenes because guard expected 62; exit 1",
+  "deviations": [
+    "external runner fixes root to original checkout",
+    "inventory guard 62 -> reviewed 66",
+    "hideout_camera_test and hideout_idle_test quit-after 1200 -> 60000, process timeout unchanged 180s",
+    "continuation skips already passed rows in same isolated project and profile"
+  ],
+  "assertions_runtime_warning_rules_modified": false,
+  "audit_directory": "C:\\Users\\admin\\AppData\\Local\\Temp\\bunny_audit_runner_20261014_5_g6tai3",
+  "scene_tests": 66,
+  "verification_rows": 86,
+  "all_diagnostic_rows_pass": true,
+  "non_document_baseline_files_checked": 3663,
+  "unexpected_source_changes": [],
+  "source_manifest_sha256": "def7edf63135e214c16de0bd3d8dd70046e97d2bebe04eb1656bee9ebc3d0647",
+  "runners": {
+    "verify_reviewed_66.py": "f3898a3f055c52925c14098fddd2fbeea65a27be41e0d2d659fb5d35b915fb4d",
+    "verify_continue_camera_budget.py": "38ff4a41a5cdfdc67c43c7f8a103a10c3f916cd4f64f409efd8752e943dfe073",
+    "verify_continue_hideout_budgets.py": "47c4ef0df0d5326e855a3d9e3b52ea2dd3f9a022b0cf8d3126c9ce7b874a3ab9"
+  },
+  "retained_initial_failures": [
+    {
+      "name": "hideout_camera_test.log",
+      "sha256": "17c0bff86041e3c12c61edb96dcd6891e129d5327f0024c7bbd9b3deda2c461c",
+      "pass_marker_present": false,
+      "exit": 0,
+      "errors": [
+        "1 resources still in use at exit"
+      ],
+      "warnings": [
+        "4 ObjectDB instances were leaked at exit"
+      ],
+      "classification": "did not reach completion before quit-after frame budget; not PASS"
+    },
+    {
+      "name": "hideout_idle_test.log",
+      "sha256": "17c0bff86041e3c12c61edb96dcd6891e129d5327f0024c7bbd9b3deda2c461c",
+      "pass_marker_present": false,
+      "exit": 0,
+      "errors": [
+        "1 resources still in use at exit"
+      ],
+      "warnings": [
+        "4 ObjectDB instances were leaked at exit"
+      ],
+      "classification": "did not reach completion before quit-after frame budget; not PASS"
+    }
+  ],
+  "results": [
+    {
+      "name": "cold_import",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+      ],
+      "sha256": "7cf3de49b178a35763eaa0f3e92782a5b1c834a1c4a05c4cf0035267f7b2c52a"
+    },
+    {
+      "name": "acceptance_smoke",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "cf3047efc21b325e1ae79c3d27e26e2d6108bd4381b208ac13808d59918184c6"
+    },
+    {
+      "name": "alpha_economy_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "061c537f51fc7df8558a5fb0c1d4b9973f710ace02f5e4238c4a2e2106f23ea5"
+    },
+    {
+      "name": "ammo_carried_foundation_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "e0c468147849e2f7ef13af6dd50a58c4c766b99059cf6c8b6c7db488f3d90ef9"
+    },
+    {
+      "name": "ammo_packing_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "1627a66ce0cef82a07f0485dc8f10efb859c5aeacb6ccb9fda23db9e1d1d93b5"
+    },
+    {
+      "name": "ammo_runtime_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "74dae0be1ebd9517457ba821fffdafe661e253c18047c6474b2ed7f539493df2"
+    },
+    {
+      "name": "area_definition_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "4f00c94e60d99bcd72cbc9a4376274ee86cb1749878568f225f47cc96052dee1"
+    },
+    {
+      "name": "campaign_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "eea021b5516b96c36615870863793e4f73399ea66c4c4bc53049f69fb2d23f06"
+    },
+    {
+      "name": "campus_night_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "a7c5718566bb53003b5dcda16ab0c0580157a2843080c8c75234a17398d7a4cb"
+    },
+    {
+      "name": "cargo_exchange_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "0deb79976b1193cc0ecae13ce5ea429b30e59c85a31f0a23ade010eb461c4986"
+    },
+    {
+      "name": "carried_inventory_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "0f74e789f004d5ed185a8fd7515dceb1b48a01ecf2fd8e5c8c3b9137c3b7b1d0"
+    },
+    {
+      "name": "character_presentation_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "91d15163769849b43b1ee373c09b76bd71b5e3b3d8a636385fe75d843fb47369"
+    },
+    {
+      "name": "combat_tuning_baseline_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "14caa82f02c031ec0b11b26dff55eaec0fd4ed9b5d459b6a5affce7a8b318d16"
+    },
+    {
+      "name": "content_inventory_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "929ebe56f5e5e5e51a2f9f62365d09d4c4dc987ff04084a40b0bf661b7edd7ce"
+    },
+    {
+      "name": "control_settings_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "9d58210b51748f31f2e4b5a8b546b9e71f9d79697ddb2705213f56338d4e7ea3"
+    },
+    {
+      "name": "damage_packet_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "9a91e5472a0003b00ec933d3e37f2326cfbcd7f74886d2aa75176c99868d031e"
+    },
+    {
+      "name": "destructible_world_object_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "a92098b524931bb4f7c94af98d7aef1d84a434ba1c28ce2448e315b8c07ca92f"
+    },
+    {
+      "name": "enemy_definition_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "fad7f3e0d94ffe98dbfb6eb25a57f8a14a3305fb3a767f7fc0031324a84e1e5b"
+    },
+    {
+      "name": "enemy_perception_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "a9f676a51f12af04c34209acbdf83f6d4848e3012b23ff5c32c434b44d9d594c"
+    },
+    {
+      "name": "enemy_spawn_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "182181d5c6838192b7fe54537355585808ec531c18c92b12991269030ffbaf60"
+    },
+    {
+      "name": "enemy_tactics_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "4e5cf5e3cc91ae404e8d10101f7b43e5cce1ab49076208cc199d6a7bf5253b2d"
+    },
+    {
+      "name": "exit_choice_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "2e01db69e4d3e86915d1e84a3b32ac0ced430fec2ed4ba41bbbdeafdef2510a8"
+    },
+    {
+      "name": "extraction_vertical_slice_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "b42ad1ec4d83142c8034577171bd36eb8f9ebeb29ee794637062e64adcf6dca6"
+    },
+    {
+      "name": "first_mission_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "587d81f5fbb9e03671933aa3dc8583b748f82620b1202af97b8bf6ebbc3eb381"
+    },
+    {
+      "name": "fresh_entry_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "6818d56fa6dbebf7889506d19d82aaaa82f8c1a0f6e5c4f436e43639ba4d8997"
+    },
+    {
+      "name": "hanger_first_mission_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "09374c0351733430a368deeec0e40c293a5062d0a31512b078cbde916bcd3dfe"
+    },
+    {
+      "name": "hideout_camera_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "0e8b3d661120c89c6918e1db31556afa469f232428ea2993f18ff372b691d0e8"
+    },
+    {
+      "name": "hideout_idle_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "c55bf1e26f5f3c0c03edfa8f12b0d24f0ddb3a9fc3cf166acae33798caf773e8"
+    },
+    {
+      "name": "infected_enemy_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "dee0dc62c887dfbe4317afc4003950370de147a6675c19a5cf0e085f6de742cc"
+    },
+    {
+      "name": "loadout_decision_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "f79a1f1671ce9317fb36be5f4677deb4b167293a92e3c75b9695010d9976bca3"
+    },
+    {
+      "name": "loadout_state_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "a01c3d9801d46522fa8ab49b0b9c01f39b91923f1346b7269d6275284c7cbac7"
+    },
+    {
+      "name": "loot_table_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "cb8b95eee494560b0090fd3e2101570ddb9cc0bbd939359cf3c461dfc410a3dd"
+    },
+    {
+      "name": "medical_treatment_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "f851a6e42c8c4ad7594bd9e9f62e576f054b8ee174640688f27bd55ffd65d20a"
+    },
+    {
+      "name": "mission_flow_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "d8810c81df93dcc0cd8b2323616056fa1aa2cbf0618ee65c10b62a0051ceb984"
+    },
+    {
+      "name": "mission_objective_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "996830f87e4162bf5d1676d79e8c4ba58cab010d0f25d9f4b813f95220aaee55"
+    },
+    {
+      "name": "modern_arsenal_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "c62aa0a75d97cb163a3e2a0d0a93c1a989526230f988cb5e01be80d32b46b07e"
+    },
+    {
+      "name": "objective_world_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "f669bc89fc2a304be3f572f901dbbedbd6446f40107ce4a5b01149b14e9704c7"
+    },
+    {
+      "name": "p0_flow_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "f75da8c80c42597f50934412261d7299d383550f295ed7e602d7c3c4eba98320"
+    },
+    {
+      "name": "p0_recovery_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+    },
+    {
+      "name": "player_visibility_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "ef5c79b6d8a174fe076936eb981eff3c1c4dc28f184e2768e945df57750ad82d"
+    },
+    {
+      "name": "presentation_gameplay_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "ae73643e9a4fe8ad17c70a8bb142d225944cd59d9506bfa7ab836e039c8d2cd6"
+    },
+    {
+      "name": "profile_state_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "33f0ea9d822ed2036eedec3dc08c57a3cff32a01abca14e7162e4928d404eb19"
+    },
+    {
+      "name": "q01_slice_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "e38bec0e5b7acdbc46e27a9b3fe871a5679a79386c5d7e06ce33f046bc8acad7"
+    },
+    {
+      "name": "q02_slice_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "7e0098cb64edc330bbc6b79911d1e240fac9500957455e5222abd5dd12721153"
+    },
+    {
+      "name": "q04_slice_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "b80ec5fb48e0dae52a8c4a0b44baaaa8859fbec4f3d6bd1a536c6580f7ff1c96"
+    },
+    {
+      "name": "records_alarm_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "c23f838c082e3a6ac989275abe6d8247727b8ac39ad260a760d0ad2e25072896"
+    },
+    {
+      "name": "regional_loot_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "7dc08d1cda9cf05fdad860b635bde2b48901428c7c9fafe157744d09cd173523"
+    },
+    {
+      "name": "relay_operation_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "96b0f1bae92dd1112b849a0e50bb95bdd2a4635c1548cb279d7a4e1059926a66"
+    },
+    {
+      "name": "result_return_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "9985118cd4cbd5cb1f239a038576b027c3c7391fc26cbf4267e4a133d12f8e66"
+    },
+    {
+      "name": "rifle_contact_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "bf11d1eddd67413d04e22a1e14f2d3f1172e3ad1c8f984f65b9996c60d6697db"
+    },
+    {
+      "name": "save_service_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "24d5b9bac3fac687a7cc964cc5e285070adfa0744e18230f1ebe2c89377be51d"
+    },
+    {
+      "name": "sortie_checkpoint_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "80620568c499ae32c3327337ae6a999cf6365962b51d8ddd7e7723acb64884f0"
+    },
+    {
+      "name": "sortie_failure_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "c1817d555972e58a67c66a37fefebfcf3db4b22f511a1c6e256f6bac42523614"
+    },
+    {
+      "name": "sortie_outcome_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "f2ccb0bcac153ce02a91b1a095631f37f546a5b1747a8b85429ead2795ec4ccf"
+    },
+    {
+      "name": "sortie_session_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "df5a421250cbe693d64d5e60e2b1a871774b450656eb57e876103e110d2c64b4"
+    },
+    {
+      "name": "streets_combat_run",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "62fcabdae8670f52be6c88aa32faebb8051faef47b2f637805db620e43c3e2b4"
+    },
+    {
+      "name": "streets_layout_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "db6c54b07151cd1ca48719ef962ace29fb8a4361e6190c28e7227f29158bbefc"
+    },
+    {
+      "name": "streets_walk_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "9735bee6c97ae4707e9e51c171e909ffad68c4fb11f09285f3eb2595a897f0c0"
+    },
+    {
+      "name": "threat_escalation_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "57f31d59f83f742bbb6fdba28e3c974e0755c6d22b20160be8d5adacc3673e2d"
+    },
+    {
+      "name": "visual_combat_acceptance",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "9f6b93e11ebbf4e8c6e9d832f41652299ac2e97550593ad6e1a8ef0cd6ce2704"
+    },
+    {
+      "name": "visual_enemy_acceptance",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "5682059b30245191e06771f4a151fa636776744662b84be926f57a2b184e7c5b"
+    },
+    {
+      "name": "visual_slice_assets_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "3b1df4d1c790620a6b0d8b41cf1afdeb7869005edc0344c1b76e597d881760a8"
+    },
+    {
+      "name": "weapon_behavior_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "264f3cfaaf3d2b6b4d5eebf057246896cda1fb1e8b171c739b191441f58308dc"
+    },
+    {
+      "name": "weapon_fitting_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "d56503e0bc915f8fd17db5e8898b64c93b284883bce1dcd92a3a163281c6fb30"
+    },
+    {
+      "name": "weapon_switching_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "d361035a78a2eef17eb8ea503a07e0dd2f18e8269360a367aa10df65977b8d60"
+    },
+    {
+      "name": "world_interaction_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "91c770f650f8c253f1a0e0b8233b5524d582f7395ffe0f00a0f420cfebe9c8f7"
+    },
+    {
+      "name": "world_traversal_test",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "8264c29f377b92f3150d3a714b06fb9db370a7d7ce63951334525146ec9ee739"
+    },
+    {
+      "name": "records_alarm_read",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "7550b3c56e29f008fb0b7e182dfc4674788100c21e7d9e40f7343ed2c8d8b53c"
+    },
+    {
+      "name": "controls_read",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "387ec7f0e294240f2ebe877ecb761c23a8015f06b8ace45278860d55c62e1661"
+    },
+    {
+      "name": "relay_read",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "e8a8a086188bd1b4187e3b2a115d6554917530586ca59f29af543b825b549362"
+    },
+    {
+      "name": "relay_combat",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "ef6e339177a2f92485db932d16db460900ca8bb2731d978e8ae1010a4071da34"
+    },
+    {
+      "name": "quit_base",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+    },
+    {
+      "name": "quit_battle",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+    },
+    {
+      "name": "quit_failure",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+    },
+    {
+      "name": "quit_transition",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+    },
+    {
+      "name": "quit_recovery",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+    },
+    {
+      "name": "checkpoint_write",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "2fdd05b940fccdfdcb9a56ccd0d4769f1121bec19c60697a1af581585365bfdc"
+    },
+    {
+      "name": "checkpoint_read",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "49087418854cd95743b297b3fb0a456a96e1110a61151b3a8f149b6658af4987"
+    },
+    {
+      "name": "checkpoint_crash_read",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "49087418854cd95743b297b3fb0a456a96e1110a61151b3a8f149b6658af4987"
+    },
+    {
+      "name": "medical_write",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "7338a601ebf27b47970a7314307d0efac575c1030aadef6fd76dea7687f8a37d"
+    },
+    {
+      "name": "medical_read",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "2dabb9b99e771b793e953a80e76630a219467c17b2c1f9a6bfecdf9f745762d8"
+    },
+    {
+      "name": "campaign_write",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "0998aff94e3ccb2f47a44f3ec20d5207c83ac6a0cad4529997ef56de98f29cd3"
+    },
+    {
+      "name": "campaign_read",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "0418b4e0bb8ab6133faae5b73bcbc3c3383d9f4bcd63433a37d242b9ad1715a0"
+    },
+    {
+      "name": "fitting_read",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "87cee6bedffe7450f71562f63eaf97be45632dd82557f6d52f30f6c00751abb4"
+    },
+    {
+      "name": "packing_read",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "sha256": "95e0b04a50a847d00df823883f834a4472d002c9011f003de95ce8c6a56fb321"
+    },
+    {
+      "name": "main",
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+      ],
+      "sha256": "31402bba8d15a0f12f00af9e09d59443f98ce7d178bdbc81e6d9ecb5f1a965da"
+    }
+  ]
+}

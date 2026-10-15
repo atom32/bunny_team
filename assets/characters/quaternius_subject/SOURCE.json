@@ -1,0 +1,22 @@
+{
+  "source": "https://quaternius.itch.io/universal-base-characters",
+  "official_page": "https://quaternius.com/packs/universalbasecharacters.html",
+  "author": "Quaternius",
+  "edition": "Standard / free",
+  "cost": 0,
+  "license": "CC0-1.0",
+  "access_date": "2026-10-15",
+  "archive_sha256": "fdbf1804c90dfc1ea03e992bff7da2dfd1a79318e13270a660180f9308455f40",
+  "selected_source": "Universal Base Characters[Standard]/Base Characters/Godot - UE/Superhero_Male_FullBody.gltf",
+  "source_gltf_sha256": "e7fcea214ecf8855afbf910b50de6f9c7d1decfb71ca28bad8a4481452dafeb4",
+  "changes": [
+    "Missing upstream *_Normal_png.png URI changed to actual *_Normal.png filenames in derivative.",
+    "Only adult Superhero_Male base, necessary textures/buffer and licence selected; no teen models or paid Source assets.",
+    "subject_clothed derivative partitions original body indices into skin / clinical coverall / soft-shoe materials by dominant bind bone and foot height; positions, skin weights and bind skeleton unchanged. No original texture image edited."
+  ],
+  "derivative_sha256": {
+    "subject_base.gltf": "4ab3fbfdc658931be47eca339313558d60896308e27402864617ee48d9cf1838",
+    "subject_clothed.gltf": "e60c51b653b21f9a06094b4f133d1e8c4499655dcc645db8ab1bb24eada683e7",
+    "subject_clothed.bin": "768e46d77bc328463d182bfa2d8c02de33c99ab776e69de41bf2c12b2a5d03b5"
+  }
+}

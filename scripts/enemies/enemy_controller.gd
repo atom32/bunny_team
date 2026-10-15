@@ -30,6 +30,7 @@ var navigation_agent: NavigationAgent3D
 var body_visual: Node3D
 var presentation
 var humanoid_presentation := false
+var presentation_profile: PresentationProfile
 var is_dead := false
 var _shot_cooldown := 0.7
 var _path_refresh := 0.0
@@ -58,6 +59,7 @@ func configure_from_definition(definition: EnemyDefinition) -> bool:
 	attack_cooldown_min = definition.attack_cooldown_min
 	attack_cooldown_max = definition.attack_cooldown_max
 	humanoid_presentation = definition.humanoid_presentation
+	presentation_profile = definition.presentation_profile
 	detection_range = definition.detection_range
 	view_angle = definition.view_angle
 	acquire_seconds = definition.acquire_seconds

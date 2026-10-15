@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://dtmrexhay31yr"]
+
+[ext_resource type="Texture2D" path="res://assets/ui/supply/observation_optic_kit.svg" id="1_gefeb"]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="2_tcseq"]
+
+[resource]
+script = ExtResource("2_tcseq")
+id = &"material.observation_optic_kit"
+display_name = "Observation Optic Kit"
+description = "Install at base: precision-walk observation and camera view +3m, reload x1.1, +0.55kg. No damage/range bonus or wall vision."
+icon = ExtResource("1_gefeb")
+stash_size = Vector2i(2, 1)
+weight = 0.55
+base_value = 360
+item_tags = PackedStringArray("loot", "fitting_kit")
+stackable = true
+max_stack = 4
+metadata/authoring_source = "res://assets/ui/supply/FITTING_KITS.md"
+metadata/license_ref = "res://assets/ui/supply/FITTING_KITS.md"

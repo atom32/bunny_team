@@ -27,7 +27,8 @@ static func buy_price(definition: ItemDefinition, profile: ProfileState) -> int:
 static func stock(profile: ProfileState) -> Array[ItemDefinition]:
 	var result: Array[ItemDefinition] = []
 	for definition in ContentDB.get_items():
-		if not (definition.has_tag(&"weapon") or definition.has_tag(&"armor") or definition.has_tag(&"backpack") or definition.has_tag(&"ammo") or definition is MedicalDefinition): continue
+		if not (definition.has_tag(&"weapon") or definition.has_tag(&"armor") or definition.has_tag(&"backpack") or definition.has_tag(&"ammo") or definition.has_tag(&"fitting_kit") or definition is MedicalDefinition): continue
+		if definition.has_tag(&"fitting_kit") and not profile.first_mission_completed: continue
 		if not profile.first_mission_completed and definition.id in [&"weapon.sniper_01", &"weapon.lmg_01", &"weapon.rocket_launcher_01", &"ammo.556_ap", &"ammo.rocket_standard", &"equipment.thruster_pack_01"]: continue
 		result.append(definition)
 	return result
@@ -66,6 +67,7 @@ static func prepare(profile: ProfileState, action: String, id: String, quantity 
 			var item := candidate.inventory.get_item(id)
 			if not item or quantity > item.quantity: message = "This item is no longer in the warehouse."
 			elif candidate.loadout.is_equipped(id): message = "Unequip this item before selling it."
+			elif ContentDB.get_item(item.definition_id).has_tag(&"story"):message="Story equipment is archived on return, not sold."
 			else:
 				candidate.credits += sell_price(item) * quantity
 				candidate.inventory.consume_item(id, quantity)

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AmmoDefinition" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="AmmoDefinition" load_steps=3 format=3 uid="uid://ssttr1ucbnfx"]
 [ext_resource type="Script" path="res://scripts/data/ammo_definition.gd" id="1"]
 [ext_resource type="Texture2D" path="res://assets/ui/stash/ammo.svg" id="stash_icon"]
 

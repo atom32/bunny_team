@@ -2,7 +2,7 @@ class_name SortieCheckpoint
 extends RefCounted
 ## Versioned JSON state, not a PackedScene or executable Variant. Only explicit
 ## gameplay fields are persisted; original geometry, materials and rigs are untouched.
-const VERSION := 5
+const VERSION := 6
 const PLAYER_FIELDS := ["position", "rotation", "velocity", "health", "aim_direction", "aim_world_point", "_shot_cooldown", "_dodge_time", "_dodge_cooldown_time", "_dodge_direction", "_move_direction"]
 const ENEMY_FIELDS := ["position", "rotation", "velocity", "health", "_shot_cooldown", "_path_refresh", "_knockback_velocity", "_strafe_direction", "_is_telegraphing", "_engaged", "_movement_direction", "_shot_aim_point", "visible", "collision_layer", "collision_mask"]
 const AWARENESS_FIELDS := ["initialized", "state", "home", "home_forward", "last_known", "suspicion", "memory_remaining", "search_elapsed", "patrol_index", "patrol_wait", "target_visible"]
@@ -15,6 +15,19 @@ const EXTRACTION_SCRIPT := preload("res://scripts/first_mission/extraction.gd")
 const POSE_FIELDS := ["transform"]
 const HUMAN_FIRE_FIELDS := ["_aim_point", "_shot_remaining", "_move_speed"]
 const KITE_FIRE_FIELDS := ["elapsed", "_recoil", "_pose_initialized", "_move_speed"]
+static var _model_bone_names: Dictionary = {}
+
+static func model_bone_names(model: PackedScene) -> PackedStringArray:
+	if _model_bone_names.has(model.resource_path): return _model_bone_names[model.resource_path]
+	var instance := model.instantiate()
+	var skeleton: Skeleton3D = instance.find_child("Skeleton3D", true, false)
+	var names := PackedStringArray()
+	if skeleton:
+		for index in skeleton.get_bone_count(): names.append(String(skeleton.get_bone_name(index)))
+	instance.free()
+	names.sort()
+	_model_bone_names[model.resource_path] = names
+	return names
 
 static func integer(value: Variant, low := 0, high := 1000000000) -> bool:
 	return SaveService.is_number(value) and value >= low and value <= high and floor(value) == value
@@ -24,7 +37,7 @@ static func session_data(session: SortieSession) -> Dictionary:
 	for id in session._weapon_runtime_states:
 		var weapon = session._weapon_runtime_states[id]
 		rounds[id] = {"ammo": String(weapon.ammo_definition_id), "capacity": weapon.magazine_capacity, "rounds": weapon.magazine_ammo}
-	return {"lighting": session.lighting_variant, "q04_active": session.q04_active, "delivery_receipt": session.delivery_receipt, "q02_active": session.q02_active, "pharmacy_batch": session.pharmacy_batch, "slice_context": session.slice_context.duplicate(true), "exit_observations": session.exit_observations.duplicate(), "id": session.session_id, "status": session.status, "area": String(session.area_id), "mission": String(session.mission_id), "inventory": session.inventory.to_dict(), "loadout": session.loadout.to_dict(), "initial_ids": session.get_initial_carried_instance_ids(), "objectives": session.get_objective_summary(), "mission_completed": session.mission_completed, "kills": session.enemies_defeated, "damage": session.damage_taken, "upgrade": session.ar_damage_upgraded, "threat": session.threat_level, "weapons": rounds}
+	return {"campus":session.campus.duplicate(true),"lighting": session.lighting_variant, "q04_active": session.q04_active, "delivery_receipt": session.delivery_receipt, "q02_active": session.q02_active, "pharmacy_batch": session.pharmacy_batch, "slice_context": session.slice_context.duplicate(true), "exit_observations": session.exit_observations.duplicate(), "id": session.session_id, "status": session.status, "area": String(session.area_id), "mission": String(session.mission_id), "inventory": session.inventory.to_dict(), "loadout": session.loadout.to_dict(), "initial_ids": session.get_initial_carried_instance_ids(), "objectives": session.get_objective_summary(), "mission_completed": session.mission_completed, "kills": session.enemies_defeated, "damage": session.damage_taken, "upgrade": session.ar_damage_upgraded, "threat": session.threat_level, "weapons": rounds}
 
 static func restore_session(data: Dictionary) -> SortieSession:
 	for key in ["id", "area", "mission"]:
@@ -50,6 +63,9 @@ static func restore_session(data: Dictionary) -> SortieSession:
 	if not NarrativeSlice.valid_q04(data.get("q04_active", false), data.get("delivery_receipt", ""), session.area_id): return null
 	session.q04_active = data.get("q04_active", false)
 	session.delivery_receipt = data.get("delivery_receipt", "")
+	var campus_data: Variant=data.get("campus",{})
+	if not CampusChapter.valid_facts(campus_data,session.area_id):return null
+	session.campus=campus_data.duplicate(true)
 	if typeof(data.get("q02_active", false)) != TYPE_BOOL: return null
 	if not NarrativeSlice.valid_pharmacy(data.get("q02_active", false) or session.q04_active, data.get("pharmacy_batch", ""), session.area_id): return null
 	session.q02_active = data.get("q02_active", false)
@@ -132,11 +148,12 @@ static func _transform(value: Array) -> Transform3D:
 static func _world_nodes(battle: Node) -> Dictionary:
 	var nodes := {}
 	for node in battle.area_root.find_children("*", "", true, false):
-		if node is Door or node is DestructibleWorldObject or node is ThreatEvent or node is LootSpawnPoint or node is EnemySpawnPoint or node is ExtractionPoint or node is RelayStation or node.get_script() == TERMINAL_SCRIPT:
+		if node is Door or node is DestructibleWorldObject or node is ThreatEvent or node is LootSpawnPoint or node is EnemySpawnPoint or node is ExtractionPoint or node is RelayStation or node is CampusAction or node.get_script() == TERMINAL_SCRIPT:
 			nodes[String(battle.area_root.get_path_to(node))] = node
 	return nodes
 
 static func _node_fields(node: Node) -> Array:
+	if node is CampusAction:return ["remaining"]
 	if node is RelayStation: return ["remaining", "start_damage"]
 	if node is Door: return ["state"]
 	if node is DestructibleWorldObject: return ["current_structure_health", "destroyed"]
@@ -180,21 +197,32 @@ static func _firing_pose(enemy: EnemyController) -> Dictionary:
 			bones[skeleton.get_bone_name(index)] = [p.x, p.y, p.z, q.x, q.y, q.z, q.w, s.x, s.y, s.z]
 	return {"human": human, "body": fields(visual, POSE_FIELDS), "pose": fields(visual.model if human else visual.weapon_pose_root, POSE_FIELDS), "state": fields(visual, HUMAN_FIRE_FIELDS if human else KITE_FIRE_FIELDS), "clip": String(visual.animation_player.current_animation) if human else "", "time": visual.animation_player.current_animation_position if human else 0.0, "bones": bones, "hit_elapsed": enemy._hit_tween.get_total_elapsed_time() if enemy._hit_tween and enemy._hit_tween.is_valid() and enemy._hit_tween.is_running() else -1.0, "hit_side": enemy._hit_reaction_side}
 
-static func _valid_firing_pose(raw: Variant, human: bool, battle: Node, infected := false) -> bool:
+static func _valid_firing_pose(raw: Variant, human: bool, definition: EnemyDefinition, infected := false) -> bool:
 	if typeof(raw) != TYPE_DICTIONARY or typeof(raw.get("human")) != TYPE_BOOL or raw.human != human: return false
 	var visual: Node3D = HumanoidEnemyPresentation.new() if human else KiteEnemyPresentation.new()
 	var valid := valid_fields(raw.get("body"), visual, POSE_FIELDS) and valid_fields(raw.get("pose"), visual, POSE_FIELDS) and valid_fields(raw.get("state"), visual, HUMAN_FIRE_FIELDS if human else KITE_FIRE_FIELDS)
 	visual.free()
 	if not valid or typeof(raw.get("clip")) != TYPE_STRING or not SaveService.is_number(raw.get("time")) or raw.time < 0 or raw.time > 3600: return false
-	var clips := ["Idle", "Walk", "Run", "Punch_Left"] if infected else ["Idle_Gun_Pointing", "Run_Shoot", "Gun_Shoot"]
-	if human and raw.clip not in clips: return false
 	if typeof(raw.get("bones")) != TYPE_DICTIONARY: return false
 	if human:
-		var skeletons: Array = battle.enemy_container.find_children("*", "Skeleton3D", true, false)
-		if skeletons.is_empty() or raw.bones.size() != skeletons[0].get_bone_count(): return false
+		var model: PackedScene = definition.presentation_profile.model if infected and definition.presentation_profile else load(HumanoidEnemyPresentation.MODEL_PATH)
+		var names := model_bone_names(model)
+		var saved_names := PackedStringArray(raw.bones.keys()); saved_names.sort()
+		var legacy := false
+		# Old infected snapshots have the exact legacy PMC bone schema. Keep that
+		# presentation for the resumed sortie; do not reinterpret sampled poses.
+		if saved_names != names:
+			if not infected or saved_names != model_bone_names(load(HumanoidEnemyPresentation.MODEL_PATH)): return false
+			legacy = true
+		var clips := ["Idle", "Walk", "Run", "Punch_Left"] if infected else ["Idle_Gun_Pointing", "Run_Shoot", "Gun_Shoot"]
+		if infected and definition.presentation_profile and not legacy:
+			clips.clear()
+			for semantic in [&"idle",&"walk",&"run",&"attack",&"hit"]:
+				clips.append(String(definition.presentation_profile.semantic_clips[semantic]))
+		if raw.clip not in clips: return false
 		for bone in raw.bones:
 			var value: Variant = raw.bones[bone]
-			if typeof(bone) != TYPE_STRING or skeletons[0].find_bone(bone) < 0 or typeof(value) != TYPE_ARRAY or value.size() != 10: return false
+			if typeof(bone) != TYPE_STRING or typeof(value) != TYPE_ARRAY or value.size() != 10: return false
 			for number in value:
 				if not SaveService.is_number(number) or abs(number) > 10000: return false
 			if not is_equal_approx(Quaternion(value[3], value[4], value[5], value[6]).length(), 1.0): return false
@@ -204,6 +232,9 @@ static func _valid_firing_pose(raw: Variant, human: bool, battle: Node, infected
 
 static func _restore_firing_pose(saved: Dictionary, enemy: EnemyController) -> void:
 	var visual = enemy.presentation
+	if enemy.definition_id == &"campus_infected" and not visual.legacy_mode:
+		var saved_names := PackedStringArray(saved.bones.keys()); saved_names.sort()
+		if saved_names == model_bone_names(load(HumanoidEnemyPresentation.MODEL_PATH)): visual.use_legacy_model()
 	if saved.hit_elapsed >= 0:
 		enemy._flash_hit(Vector3(-0.01 if saved.hit_side == 0 else saved.hit_side, 0, 0))
 		enemy._hit_tween.custom_step(saved.hit_elapsed)
@@ -259,13 +290,13 @@ static func capture_world(battle: Node) -> Dictionary:
 	var director: Node = battle.get_node_or_null("FirstMissionDirector")
 	var alarm: RecordsAlarm = battle.area_root.get_node_or_null("StreetTerminal/RecordsAlarm")
 	var records: RecordsTerminal = battle.area_root.get_node_or_null("StreetTerminal")
-	return {"lighting": battle.area_root.get_meta("lighting", "day"), "map_revision": int(battle.area_root.get_meta("map_revision",0)), "q04_active": battle.session.q04_active, "delivery_receipt": battle.session.delivery_receipt, "q02_active": battle.session.q02_active, "pharmacy_batch": battle.session.pharmacy_batch, "slice_context": battle.session.slice_context.duplicate(true), "exit_observations": battle.session.exit_observations.duplicate(), "records_work": records.snapshot() if records else {}, "records_alarm": alarm.snapshot() if alarm else {}, "layout": battle.checkpoint_layout_signature, "player": fields(battle.player, PLAYER_FIELDS), "footstep_distance": battle.player._footstep_distance, "medical": battle.player.medical.snapshot(), "weapon_slot": String(battle.player.active_weapon_slot), "reloads": battle.player._reload_remaining_by_weapon.duplicate(), "enemies": enemies, "nodes": nodes, "rockets": rockets, "director": fields(director, DIRECTOR_FIELDS) if director else {}}
+	return {"campus":battle.session.campus.duplicate(true),"lighting": battle.area_root.get_meta("lighting", "day"), "map_revision": int(battle.area_root.get_meta("map_revision",0)), "q04_active": battle.session.q04_active, "delivery_receipt": battle.session.delivery_receipt, "q02_active": battle.session.q02_active, "pharmacy_batch": battle.session.pharmacy_batch, "slice_context": battle.session.slice_context.duplicate(true), "exit_observations": battle.session.exit_observations.duplicate(), "records_work": records.snapshot() if records else {}, "records_alarm": alarm.snapshot() if alarm else {}, "layout": battle.checkpoint_layout_signature, "player": fields(battle.player, PLAYER_FIELDS), "footstep_distance": battle.player._footstep_distance, "medical": battle.player.medical.snapshot(), "weapon_slot": String(battle.player.active_weapon_slot), "reloads": battle.player._reload_remaining_by_weapon.duplicate(), "enemies": enemies, "nodes": nodes, "rockets": rockets, "director": fields(director, DIRECTOR_FIELDS) if director else {}}
 
 static func validate_world(data: Dictionary, battle: Node) -> bool:
 	if not SortieRequest.valid_lighting(data.get("lighting", "day"), battle.session.area_id): return false
 	if data.get("lighting", "day") != battle.session.lighting_variant or data.get("lighting", "day") != battle.area_root.get_meta("lighting", "day"): return false
 	if not integer(data.get("map_revision",0),0,3) or int(data.get("map_revision",0)) != int(battle.area_root.get_meta("map_revision",0)): return false
-	if not NarrativeSlice.world_matches(data, battle.session): return false
+	if not NarrativeSlice.world_matches(data, battle.session) or data.get("campus",{})!=battle.session.campus: return false
 	if typeof(data.get("nodes")) != TYPE_DICTIONARY: return false
 	if not battle.session.slice_context.is_empty():
 		var assigned := {}
@@ -312,6 +343,8 @@ static func validate_world(data: Dictionary, battle: Node) -> bool:
 				item_ids[item.instance_id] = true
 			entry.erase("items")
 		if not valid_fields(entry, node, _node_fields(node)): return false
+		if node is CampusAction:
+			if entry.remaining<0 or entry.remaining>node.work_seconds or (entry.remaining>0 and (node.kind==&"recorder" or not node._available(battle.session))):return false
 		if node is RelayStation:
 			if entry.remaining < 0 or entry.remaining > RelayStation.DURATION or entry.start_damage < 0 or entry.start_damage > battle.session.damage_taken: return false
 			var state: ObjectiveState = battle.session.get_objective_state(node.objective_id)
@@ -331,7 +364,7 @@ static func validate_world(data: Dictionary, battle: Node) -> bool:
 		entry.erase("shot_remaining")
 		var template := EnemyController.new()
 		var definition := ContentDB.get_enemy_definition(point.enemy_definition_id, false)
-		var firing_valid := _valid_firing_pose(entry.get("firing"), definition.humanoid_presentation, battle, definition.id == &"campus_infected")
+		var firing_valid := _valid_firing_pose(entry.get("firing"), definition.humanoid_presentation, definition, definition.id == &"campus_infected")
 		entry.erase("firing")
 		var awareness_valid := valid_awareness(entry.get("awareness", {}))
 		entry.erase("awareness")
@@ -375,6 +408,7 @@ static func restore_world(data: Dictionary, battle: Node) -> bool:
 		var node: Node = objects[path]
 		var entry: Dictionary = data.nodes[path]
 		apply_fields(entry, node, _node_fields(node))
+		if node is CampusAction:node.bind_actor(battle.player,battle.session)
 		if node is RelayStation:
 			node.bind_actor(battle.player,battle.session)
 		if node is Door: node._apply_state()
@@ -426,6 +460,7 @@ static func restore_world(data: Dictionary, battle: Node) -> bool:
 		enemy._update_awareness_indicator()
 		_restore_firing_pose(entry.firing, enemy)
 		if entry.shot_remaining > 0: enemy._finish_telegraphed_shot(entry.shot_remaining)
+	if battle.area_root.has_method("refresh_campus_power"):battle.area_root.refresh_campus_power()
 	battle.enemies_remaining = data.enemies.size()
 	for saved in data.rockets:
 		var rocket := PlayerController.ROCKET_SCENE.instantiate()

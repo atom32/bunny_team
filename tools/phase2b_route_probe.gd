@@ -20,6 +20,9 @@ func _resume_isolated_focus_pause() -> void:
 	var flow := root.get_node_or_null("FlowMenu")
 	if paused and flow and flow.mode == "pause":
 		print("ROUTE: resume isolated test after focus pause")
+		# Godot releases input on focus loss; clear the driver's cached held keys
+		# too, so the next physics tick reissues real input instead of stalling.
+		_release()
 		flow.close()
 
 func _run() -> void:

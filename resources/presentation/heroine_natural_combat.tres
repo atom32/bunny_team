@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HeroineMotionStyle" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/data/heroine_motion_style.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = &"motion.heroine.natural_combat"
+target_demographic = "young adult female"
+source_note = "UnityChan female-character clips, Artoria retarget plus project-authored style; not age-verified female mocap"
+style = "natural, light, combat practical"
+hip_lateral_sway = 0.8
+torso_lateral_sway = 0.85
+leg_lateral_sway = 0.9

@@ -16,7 +16,7 @@ func _ready() -> void:
 	process_physics_priority = 20 # Observe after player aim/movement, never drive it.
 
 func sight_range() -> float:
-	var extension: float = actor.weapon_data.aim_camera_extension if actor.weapon_data and Input.is_action_pressed("precision_walk") else 0.0
+	var extension: float = actor.get_aim_camera_extension() if actor.weapon_data and Input.is_action_pressed("precision_walk") else 0.0
 	return VIEW_RANGE + extension
 
 func in_view(point: Vector3) -> bool:

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Registry" format=3 uid="uid://bad7hgdanmp0t"]
+
+[ext_resource type="Script" uid="uid://dqtv77mng5dyh" path="res://addons/yard/registry.gd" id="1_jf6gn"]
+
+[resource]
+script = ExtResource("1_jf6gn")
+_version = 2
+_scan_auto = false
+_uids_to_string_ids = Dictionary[StringName, StringName]({
+&"uid://5rl3dreg63es": &"campus_infected",
+&"uid://cl06c8swjyrf8": &"prototype_basic_enemy",
+&"uid://d1dfgrbq3q5h7": &"prototype_heavy_enemy"
+})
+_string_ids_to_uids = Dictionary[StringName, StringName]({
+&"campus_infected": &"uid://5rl3dreg63es",
+&"prototype_basic_enemy": &"uid://cl06c8swjyrf8",
+&"prototype_heavy_enemy": &"uid://d1dfgrbq3q5h7"
+})

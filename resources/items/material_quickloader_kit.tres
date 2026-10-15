@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://b2tw8048jl4t2"]
+
+[ext_resource type="Texture2D" path="res://assets/ui/supply/quickloader_kit.svg" id="1_08ate"]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="2_t0xdl"]
+
+[resource]
+script = ExtResource("2_t0xdl")
+id = &"material.quickloader_kit"
+display_name = "Quickloader Kit"
+description = "Install at base on one compatible firearm: reload x0.8, +0.8kg. Kit consumed; fitting lost with weapon."
+icon = ExtResource("1_08ate")
+stash_size = Vector2i(2, 1)
+weight = 0.8
+base_value = 300
+item_tags = PackedStringArray("loot", "fitting_kit")
+stackable = true
+max_stack = 4
+metadata/authoring_source = "res://assets/ui/supply/FITTING_KITS.md"
+metadata/license_ref = "res://assets/ui/supply/FITTING_KITS.md"

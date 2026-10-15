@@ -1,5 +1,11 @@
 # Phase report index — Phase 4D consolidation
 
+> 2026-10-15：成年男女动作适配、独立受试者外观、主角自然轻盈战斗样式与编辑器审查入口见 [本批制作说明](MODEL_ANIMATION_AUTHORING.md)。剧情仍只开放当前第一批，库存75；下文旧日期与测试数保留阶段历史。
+
+> 2026-10-14工具交付：可编辑校园、YARD stable-ID目录、现有武器/动作工作台与CC0维修室模板已实现，见 [使用说明](CONTENT_TOOLS_IMPLEMENTATION.md)。原始美术/动画未改，任意骨架自动导入与任务批量制作仍是后续计划。
+
+> 当前入口（2026-10-14）：仓库已同步 `main @ 68076ae`，包括Alpha、校园、联系人、感染者原型与新版故事第一批。先读 [现状审计](PROJECT_STATUS_2026-10-14.md)、[Handoff](../Handoff.md)与 [内容路线图](CONTENT_PIPELINE_ROADMAP.md)。以下保留2026-09-27的Phase 4D历史记录；旧checkpoint、“未push”、33项测试和下一步不是当前状态。
+
 更新：2026-09-27。当前入口：[根 Handoff](../Handoff.md)。
 运行内容 checkpoint：`main @ a40b7658f9fe282697ce6887a76d59ea2d64b94b`；Godot 4.7.2；内部 Demo，未 push。
 Phase 4D 为后续文档提交，不改变运行内容。用 `git log` 查最新文档 HEAD。

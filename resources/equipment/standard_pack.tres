@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EquipmentDefinition" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="EquipmentDefinition" load_steps=4 format=3 uid="uid://c40neyjowe5u0"]
 
 [ext_resource type="Script" path="res://scripts/data/equipment_definition.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/equipment/standard_pack.tscn" id="2"]

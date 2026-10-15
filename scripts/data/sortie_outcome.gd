@@ -19,6 +19,7 @@ var q02_active := false
 var pharmacy_batch := ""
 var q04_active := false
 var delivery_receipt := ""
+var campus: Dictionary = {}
 var objective_summaries: Array[Dictionary] = []
 var inventory: InventoryState # Recovered carried inventory at sortie end.
 var loadout: LoadoutState
@@ -87,6 +88,7 @@ static func create_from_session(session: SortieSession) -> SortieOutcome:
 	)
 	outcome.q04_active = session.q04_active
 	outcome.delivery_receipt = session.delivery_receipt
+	outcome.campus=session.campus.duplicate(true)
 	outcome.q02_active = session.q02_active
 	outcome.pharmacy_batch = session.pharmacy_batch
 	outcome.slice_context = session.slice_context.duplicate(true)
@@ -97,6 +99,7 @@ static func create_from_session(session: SortieSession) -> SortieOutcome:
 
 
 func validate() -> bool:
+	if not CampusChapter.valid_facts(campus,area_id) or not CampusChapter.valid_inventory(campus,inventory,result_type==ResultType.COMPLETED): return false
 	return (
 		not outcome_id.is_empty()
 		and not session_id.is_empty()
@@ -128,6 +131,7 @@ func to_dict() -> Dictionary:
 		"mission_completed": mission_completed,
 		"objective_summaries": get_objective_summaries(),
 		"q04_active": q04_active, "delivery_receipt": delivery_receipt,
+		"campus":campus.duplicate(true),
 		"q02_active": q02_active, "pharmacy_batch": pharmacy_batch,
 		"slice_context": slice_context.duplicate(true),
 		"exit_observations": exit_observations.duplicate(),
@@ -178,6 +182,9 @@ static func from_dict(data: Dictionary) -> SortieOutcome:
 	if not NarrativeSlice.valid_q04(data.get("q04_active", false), data.get("delivery_receipt", ""), outcome.area_id): return null
 	outcome.q04_active = data.get("q04_active", false)
 	outcome.delivery_receipt = data.get("delivery_receipt", "")
+	var campus_data: Variant=data.get("campus",{})
+	if not CampusChapter.valid_facts(campus_data,outcome.area_id):return null
+	outcome.campus=campus_data.duplicate(true)
 	if typeof(data.get("q02_active", false)) != TYPE_BOOL: return null
 	if not NarrativeSlice.valid_pharmacy(data.get("q02_active", false) or outcome.q04_active, data.get("pharmacy_batch", ""), outcome.area_id): return null
 	outcome.q02_active = data.get("q02_active", false)

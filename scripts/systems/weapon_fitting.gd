@@ -6,6 +6,12 @@ const OPTIONS := {
 	"": {"name":"STANDARD", "weight":0.0, "reload":1.0, "noise":1.0, "credits":0, "inputs":{}},
 	"quickloader": {"name":"QUICK RELOAD KIT", "weight":0.8, "reload":0.8, "noise":1.0, "credits":120, "inputs":{&"material.parts":2, &"material.wiring":1}},
 	"suppressor": {"name":"SUPPRESSOR", "weight":0.35, "reload":1.15, "noise":0.5, "credits":180, "inputs":{&"material.parts":2, &"material.fabric":2}},
+	"observation_optic": {"name":"OBSERVATION OPTIC", "weight":0.55, "reload":1.1, "noise":1.0, "aim":3.0, "credits":220, "inputs":{&"material.electronics":2, &"material.parts":1}},
+}
+const KITS := {
+	&"material.quickloader_kit":"quickloader",
+	&"material.suppressor_kit":"suppressor",
+	&"material.observation_optic_kit":"observation_optic",
 }
 
 static func eligible(item: ItemInstance) -> bool:
@@ -19,15 +25,42 @@ static func caption(id: String) -> String:
 	return OPTIONS.get(id, OPTIONS[""]).name
 
 static func _value(item: ItemInstance, key: String) -> float:
-	return float(OPTIONS.get(item.fitting if item else "", OPTIONS[""])[key])
+	return float(OPTIONS.get(item.fitting if item else "", OPTIONS[""]).get(key,0.0))
 
 static func extra_weight(item: ItemInstance) -> float: return _value(item, "weight")
 static func reload_factor(item: ItemInstance) -> float: return _value(item, "reload")
 static func noise_factor(item: ItemInstance) -> float: return _value(item, "noise")
+static func aim_extension(item: ItemInstance) -> float: return _value(item, "aim")
+
+static func prepare_kit(profile: ProfileState, weapon_id: String, kit_id: String) -> Dictionary:
+	if not profile or not profile.validate(): return {"error":ERR_INVALID_DATA,"message":"Invalid fitting state."}
+	if not profile.first_mission_completed: return {"error":ERR_UNAVAILABLE,"message":"Complete First Mission before installing recovered kits."}
+	var weapon := profile.inventory.get_item(weapon_id)
+	var kit := profile.inventory.get_item(kit_id)
+	if not eligible(weapon) or not kit or not KITS.has(kit.definition_id): return {"error":ERR_UNAVAILABLE,"message":"Choose an owned compatible firearm and fitting kit."}
+	var fitting: String = KITS[kit.definition_id]
+	if weapon.fitting == fitting: return {"error":ERR_ALREADY_EXISTS,"message":"This fitting is already installed."}
+	var candidate := ProfileState.from_dict(profile.to_dict())
+	candidate.inventory.get_item(weapon_id).fitting = fitting
+	if not candidate.inventory.consume_item(kit_id,1): return {"error":ERR_INVALID_DATA,"message":"Kit is no longer available."}
+	if not candidate.inventory.contains(kit_id): candidate.stash_layout.erase(kit_id)
+	StashLayout.new(candidate).reconcile()
+	if not candidate.validate(): return {"error":ERR_INVALID_DATA,"message":"Invalid fitting transaction."}
+	return {"error":OK,"candidate":candidate,"message":"KIT INSTALLED / One kit consumed; old fitting is not refunded."}
+
+static func install_kit(weapon_id: String, kit_id: String, path := SaveService.DEFAULT_SAVE_PATH) -> Dictionary:
+	var profile := ProfileRuntime.get_profile()
+	if SortieRuntime.get_current_session() or ProfileRuntime.recovery_required or not profile.sortie_checkpoint.is_empty(): return {"error":ERR_BUSY,"message":"Fittings are only available at base."}
+	var result := prepare_kit(profile,weapon_id,kit_id)
+	if result.error != OK: return result
+	var error := SaveService.save_profile(result.candidate,path)
+	if error != OK: return {"error":error,"message":"Could not save. Credits and items are unchanged."}
+	profile.replace_with(result.candidate)
+	return result
 
 static func prepare(profile: ProfileState, instance_id: String, id: String) -> Dictionary:
 	if not profile or not profile.validate() or not OPTIONS.has(id): return {"error":ERR_INVALID_PARAMETER,"message":"Invalid fitting."}
-	if not CampaignService.unlocked(profile, "workbench"): return {"error":ERR_UNAVAILABLE,"message":"Restore the workbench first."}
+	if not id.is_empty() and not CampaignService.unlocked(profile, "workbench"): return {"error":ERR_UNAVAILABLE,"message":"Restore the workbench first."}
 	var item := profile.inventory.get_item(instance_id)
 	if not eligible(item): return {"error":ERR_UNAVAILABLE,"message":"Fittings require a single-projectile hitscan firearm."}
 	if item.fitting == id: return {"error":ERR_ALREADY_EXISTS,"message":"This fitting is already installed."}

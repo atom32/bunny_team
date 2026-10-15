@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyDefinition" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="EnemyDefinition" load_steps=4 format=3 uid="uid://5rl3dreg63es"]
 [ext_resource type="Script" path="res://scripts/data/enemy_definition.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/enemies/infected.tscn" id="2"]
+[ext_resource type="Resource" path="res://resources/presentation/subjects/campus_subject_profile.tres" id="subject"]
 [resource]
 script = ExtResource("1")
 id = &"campus_infected"
 display_name = "校园感染者"
 scene = ExtResource("2")
+presentation_profile = ExtResource("subject")
 humanoid_presentation = true
 tactical_role = 3
 max_health = 45.0

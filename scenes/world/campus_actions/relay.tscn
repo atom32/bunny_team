@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/world/streets/campus_action.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/environment/kenney_space_station_kit/computer-system.glb" id="2"]
+[node name="CampusAction" type="Node3D"]
+script=ExtResource("1")
+kind=&"relay"
+action_id=&"relay_office"
+work_seconds=12.0
+[node name="Art" parent="." instance=ExtResource("2")]
+scale=Vector3(2.5,2.5,2.5)
+[node name="WorldLabel" type="Label3D" parent="."]
+position=Vector3(0,1.5,0)
+text="L-02"
+font_size=32
+pixel_size=0.012
+billboard=1
