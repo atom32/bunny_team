@@ -16,9 +16,9 @@ func _draw() -> void:
 	var item := grid.model.profile.inventory.get_item(instance_id)
 	if not item: return
 	var definition := ContentDB.get_item(item.definition_id)
-	var color := Color("273138") if definition.has_tag(&"weapon") else (Color("302e26") if definition.has_tag(&"ammo") else Color("242d33"))
+	var color := Color("d9e1e4") if definition.has_tag(&"weapon") else (Color("e5dcc7") if definition.has_tag(&"ammo") else Color("e4e2d9"))
 	draw_rect(Rect2(Vector2.ONE, size - Vector2(2, 2)), color)
-	draw_rect(Rect2(Vector2.ONE, size - Vector2(2, 2)), Color("b6ae8b") if grid.selected_id == instance_id else Color("39444b"), false, 1)
+	draw_rect(Rect2(Vector2.ONE, size - Vector2(2, 2)), FieldManualStyle.ACCENT if grid.selected_id == instance_id else FieldManualStyle.LINE, false, 1)
 	if definition.icon:
 		var icon_size := Vector2(definition.icon.get_size())
 		if rotated: icon_size = Vector2(icon_size.y, icon_size.x)
@@ -34,9 +34,9 @@ func _draw() -> void:
 	var name_text := GameLanguage.item_name(definition.display_name)
 	if definition.has_tag(&"ammo"):
 		name_text = tr("RPG") if definition.id == &"ammo.rocket_standard" else definition.display_name.get_slice(" ", 0)
-	draw_string(UIFactory.FONT, Vector2(6, 15), name_text, HORIZONTAL_ALIGNMENT_LEFT, size.x - 12, 11, Color("cbd2d4"))
+	draw_string(UIFactory.FONT, Vector2(6, 15), name_text, HORIZONTAL_ALIGNMENT_LEFT, size.x - 12, 11, FieldManualStyle.INK)
 	var count := str(item.quantity) if definition.stackable else ("%.0f%%" % item.durability if definition.has_tag(&"equipment") and item.durability < 100.0 else "")
-	draw_string(UIFactory.FONT, Vector2(5, size.y - 5), count, HORIZONTAL_ALIGNMENT_RIGHT, size.x - 10, 11, Color("e1e5df"))
+	draw_string(UIFactory.FONT, Vector2(5, size.y - 5), count, HORIZONTAL_ALIGNMENT_RIGHT, size.x - 10, 11, FieldManualStyle.INK)
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:

@@ -1,5 +1,7 @@
 # 校园第二批：维修、记录器、支路与收尾
 
+> 后续修正：新出击的记录器已从旧宿舍回执位置移到阅览桌；v1挂起出击保留原位，新校园出击事实版本2。详见 [试玩收口](CAMPUS_PLAYTEST_POLISH.md)。下文坐标/79场景数描述本批初始交付。
+
 2026-10-15，`main @ 68076ae` 上的本批实现；验证时尚未 commit/push，之后状态以 Git 为准。制作依据为 [六项委托故事线](narrative/DEVELOPMENT_STATUS_AND_TASK_STORY.md)。完整回归结果见 [验证记录](campus_batch2_2026-10-15_validation.json)。
 
 ## 正常游玩

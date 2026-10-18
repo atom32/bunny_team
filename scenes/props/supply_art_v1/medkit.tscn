@@ -1,0 +1,28 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_kh0fr"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/medkit.res" id="2_x335h"]
+
+[node name="FieldMedkit" type="Node3D" unique_id=1009987792]
+metadata/presentation_definition_id = "medical.medkit"
+
+[node name="Print9" type="Label3D" parent="." unique_id=893586289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099, 0.073)
+pixel_size = 0.00018
+modulate = Color(0.16078432, 0.24705882, 0.22352941, 1)
+text = "B07 / MED"
+font = ExtResource("1_kh0fr")
+font_size = 48
+outline_size = 0
+
+[node name="Print10" type="Label3D" parent="." unique_id=1273165807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.079, 0.073)
+pixel_size = 0.00011
+modulate = Color(0.16078432, 0.24705882, 0.22352941, 1)
+text = "FIELD KIT"
+font = ExtResource("1_kh0fr")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=1738851227]
+mesh = ExtResource("2_x335h")

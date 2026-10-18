@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_kb7jh"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/canned_beans.res" id="2_q1nr8"]
+
+[node name="CannedBeans" type="Node3D" unique_id=1541050504]
+metadata/presentation_definition_id = "supply.canned_beans"
+
+[node name="Print6" type="Label3D" parent="." unique_id=124868393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04982, 0.0455)
+pixel_size = 0.00019
+modulate = Color(0.93333334, 0.89411765, 0.78431374, 1)
+text = "FIELD
+BEANS"
+font = ExtResource("1_kb7jh")
+font_size = 48
+outline_size = 0
+
+[node name="Print7" type="Label3D" parent="." unique_id=1089478615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02068, 0.0455)
+pixel_size = 8e-05
+modulate = Color(0.87058824, 0.85882354, 0.8039216, 1)
+text = "B07 / FOOD"
+font = ExtResource("1_kb7jh")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=1411246680]
+mesh = ExtResource("2_q1nr8")

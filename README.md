@@ -1,8 +1,14 @@
 # Neon Bastion
 
+> **2026-10-17 自动化测试收口：86/86 场景、117/117 runner结果项通过，0 ERROR；Compatibility补充4项图形检查通过。** 已修复测试库存漂移，并将888条现行中文译文同步回JSON源，补入可重复构建回归。仅冷导入保留2个既有FBX警告；英文委托页仍有中英混排、真人长期体验/听感/最低硬件/发行许可仍未验收。本轮未提交推送。见 [本轮报告](docs/TEST_CLOSEOUT_2026-10-17.md) 和 [验证数据](docs/test_closeout_2026-10-17_validation.json)。
+
+下方2026-10-15及更早数字为历史批次，不覆盖上述当前工作区验证。
+
+> 2026-10-15试玩收口进行中：修复记录器与委托地点不符，补地图阶段/中断提示/确认焦点及真实输入路线回归；80/80场景、103/103结果项通过，0 ERROR；本轮未提交推送。详见 [试玩收口](docs/CAMPUS_PLAYTEST_POLISH.md)。下方79/102是此前已推送批次的验证记录。
+
 A Godot 4.7.2 single-player high-angle urban extraction shooter. The playable loop is `Opening / Menu -> Hideout -> Hanger -> Battle -> Result -> Hideout`. Full Alpha acceptance remains in progress.
 
-## Current checkpoint — 2026-10-15
+## Historical implementation checkpoint — 2026-10-15
 
 `main @ 68076ae` plus local WIP now includes all six campus commissions: exit scouting, medical delivery, two L-02 relay repairs, one physical experiment recorder, explicit L-02B shutdown with L-02A retained, and spare armor/60 standard-round delivery followed by extraction. Legacy Q04 logistics facts/rewards remain history, never fabricated new progress. See [campus rules and migration](docs/CAMPUS_BATCH2_IMPLEMENTATION.md).
 
@@ -88,14 +94,14 @@ map rather than in a permanent large assignment panel.
 
 Open `project.godot` in Godot 4.7.2 or run:
 
-```sh
-/Applications/Godot.app/Contents/MacOS/Godot --path /Users/xudawei/bunny_team --editor
+```powershell
+& 'E:\Godot\Godot_v4.7.2-stable_win64_console.exe' --path 'D:\bunny_team' --editor
 ```
 
-The standard runner snapshots the project and isolates its profile for cold import, scene regressions, quit and cross-process recovery checks. **Its 62-scene inventory guard needs correction to the reviewed 66-scene inventory before a full run can complete.** The unmodified command currently stops at that guard:
+The standard runner snapshots the project and isolates its profile for translation-build checks, cold import, all **86 reviewed test scenes**, quit and cross-process recovery checks. Use `--route` to include rendered base/backpack/stash input checks and the normal-AI prototype route. The current runner passed 117 result rows with Forward+ on 2026-10-17; these are not 117 scene tests or human playtesting. Windows example:
 
-```sh
-python3 tools/verify_migration.py --godot /Applications/Godot.app/Contents/MacOS/Godot --output /tmp/bunny-verification-new
+```powershell
+& 'C:\Python314\python.exe' -X utf8 tools/verify_migration.py --godot 'E:\Godot\Godot_v4.7.2-stable_win64_console.exe' --output '<new-directory-outside-repository>' --route
 ```
 
 The output directory must not already exist. Weapon source and licensing records are linked from `THIRD_PARTY_ASSETS.md`.

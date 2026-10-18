@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3 uid="uid://hyreitxmemoo"]
 [ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="1"]
-[ext_resource type="Texture2D" path="res://assets/ui/supply/fabric.svg" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/stash/supply_art_v1/fabric.png" id="2"]
 [resource]
 script = ExtResource("1")
 icon = ExtResource("2")

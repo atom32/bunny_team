@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LootTableDefinition" load_steps=7 format=3]
+[gd_resource type="Resource" script_class="LootTableDefinition" load_steps=12 format=3]
 [ext_resource type="Script" path="res://scripts/data/loot_table_definition.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/data/loot_table_entry.gd" id="2"]
 
@@ -30,7 +30,42 @@ weight = 10.0
 min_quantity = 1
 max_quantity = 1
 
+[sub_resource type="Resource" id="Supply_field_ration"]
+script = ExtResource("2")
+definition_id = &"supply.field_ration"
+weight = 2.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="Supply_energy_bar"]
+script = ExtResource("2")
+definition_id = &"supply.energy_bar"
+weight = 2.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="Supply_canned_beans"]
+script = ExtResource("2")
+definition_id = &"supply.canned_beans"
+weight = 2.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="Supply_bottled_water"]
+script = ExtResource("2")
+definition_id = &"supply.bottled_water"
+weight = 2.0
+min_quantity = 1
+max_quantity = 1
+
+[sub_resource type="Resource" id="Supply_citrus_drink"]
+script = ExtResource("2")
+definition_id = &"supply.citrus_drink"
+weight = 2.0
+min_quantity = 1
+max_quantity = 1
+
 [resource]
 script = ExtResource("1")
 table_id = &"street_apartment_loot"
-entries = Array[ExtResource("2")]([SubResource("Entry0"), SubResource("Entry1"), SubResource("Entry2"), SubResource("Entry3")])
+entries = Array[ExtResource("2")]([SubResource("Entry0"), SubResource("Entry1"), SubResource("Entry2"), SubResource("Entry3"), SubResource("Supply_field_ration"), SubResource("Supply_energy_bar"), SubResource("Supply_canned_beans"), SubResource("Supply_bottled_water"), SubResource("Supply_citrus_drink")])

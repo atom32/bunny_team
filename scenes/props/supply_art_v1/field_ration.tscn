@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_ng71a"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/field_ration.res" id="2_qm5sg"]
+
+[node name="FieldRation" type="Node3D" unique_id=1369796376]
+metadata/presentation_definition_id = "supply.field_ration"
+
+[node name="Print54" type="Label3D" parent="." unique_id=1836227026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1121, 0.014)
+pixel_size = 0.000168
+modulate = Color(0.14117648, 0.2, 0.18431373, 1)
+text = "FIELD
+RATION"
+font = ExtResource("1_ng71a")
+font_size = 48
+outline_size = 0
+
+[node name="Print55" type="Label3D" parent="." unique_id=545565302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0608, 0.014)
+pixel_size = 7e-05
+modulate = Color(0.25490198, 0.34117648, 0.31764707, 1)
+text = "B07 / SEALED MEAL"
+font = ExtResource("1_ng71a")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=313874616]
+mesh = ExtResource("2_qm5sg")

@@ -1,0 +1,36 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/coated_alloy.tres" id="1_wopt8"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/SuppressorShell.res" id="2_fvncy"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/HeatBand0.res" id="3_5m08t"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/HeatBand1.res" id="4_0n523"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/HeatBand2.res" id="5_e8lrv"]
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/steel.tres" id="6_mmwbn"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/MountCollar.res" id="7_7tqre"]
+
+[node name="ReflexSuppressor" type="Node3D" unique_id=1883773163]
+
+[node name="SuppressorShell" type="MeshInstance3D" parent="." unique_id=2052880871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.468)
+material_override = ExtResource("1_wopt8")
+mesh = ExtResource("2_fvncy")
+
+[node name="HeatBand0" type="MeshInstance3D" parent="." unique_id=1955218614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.468)
+material_override = ExtResource("1_wopt8")
+mesh = ExtResource("3_5m08t")
+
+[node name="HeatBand1" type="MeshInstance3D" parent="." unique_id=775084758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.468)
+material_override = ExtResource("1_wopt8")
+mesh = ExtResource("4_0n523")
+
+[node name="HeatBand2" type="MeshInstance3D" parent="." unique_id=57025543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.468)
+material_override = ExtResource("1_wopt8")
+mesh = ExtResource("5_e8lrv")
+
+[node name="MountCollar" type="MeshInstance3D" parent="." unique_id=1683806824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.468)
+material_override = ExtResource("6_mmwbn")
+mesh = ExtResource("7_7tqre")

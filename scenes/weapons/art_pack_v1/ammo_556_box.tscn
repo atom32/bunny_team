@@ -1,0 +1,50 @@
+[gd_scene format=4]
+
+[ext_resource type="Font" path="res://resources/fonts/game_ui.tres" id="7_existing_ui_font"]
+
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/paper.tres" id="1_inrk6"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/AmmunitionCarton.res" id="2_iltgq"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/CartonLid.res" id="3_6vd0r"]
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/label.tres" id="4_4uhrt"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/PaperLabel.res" id="5_0r50l"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/FrontPaperLabel.res" id="6_e2bap"]
+
+[node name="Standard556Box" type="Node3D" unique_id=922055314]
+metadata/presentation_definition_id = "ammo.556_standard"
+
+[node name="AmmunitionCarton" type="MeshInstance3D" parent="." unique_id=1992198497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
+material_override = ExtResource("1_inrk6")
+mesh = ExtResource("2_iltgq")
+
+[node name="CartonLid" type="MeshInstance3D" parent="." unique_id=223283771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.051, 0)
+material_override = ExtResource("1_inrk6")
+mesh = ExtResource("3_6vd0r")
+
+[node name="PaperLabel" type="MeshInstance3D" parent="." unique_id=1941940351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.053, 0)
+material_override = ExtResource("4_4uhrt")
+mesh = ExtResource("5_0r50l")
+
+[node name="ExistingCaliberLabel" type="Label3D" parent="." unique_id=1221944796]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.0535, 0)
+pixel_size = 0.00014
+modulate = Color(0.15686275, 0.2, 0.16862746, 1)
+text = "5.56 STANDARD"
+font = ExtResource("7_existing_ui_font")
+outline_size = 0
+
+[node name="FrontPaperLabel" type="MeshInstance3D" parent="." unique_id=360103816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026, 0.0366)
+material_override = ExtResource("4_4uhrt")
+mesh = ExtResource("6_e2bap")
+
+[node name="ExistingAmmunitionLabel" type="Label3D" parent="." unique_id=853752638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.026, 0.037)
+pixel_size = 0.00013
+modulate = Color(0.15686275, 0.2, 0.16862746, 1)
+text = "5.56 STANDARD
+RIFLE AMMUNITION"
+font = ExtResource("7_existing_ui_font")
+outline_size = 0

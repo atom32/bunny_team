@@ -1,0 +1,343 @@
+{
+  "date": "2026-10-15",
+  "source": "art_source/supply_art_v1/build_assets.gd",
+  "rights": "assets/props/supply_art_v1/SOURCE.md",
+  "files": [
+    {
+      "file": "assets/props/supply_art_v1/bottled_water.res",
+      "sha256": "cd5bd19cce93953de9860624e5166c20b0c060a5853ea704e04258d995511bcb"
+    },
+    {
+      "file": "assets/props/supply_art_v1/cable_blue.tres",
+      "sha256": "63d2ee9f3ad9abbb746c2d5888060f1bdc70b97ccff4772b4830d2d3d2ad14c8"
+    },
+    {
+      "file": "assets/props/supply_art_v1/canned_beans.res",
+      "sha256": "08dc72fcaf09d8e15c33cbd266f0bf5dd3e0522f3843c9d90eed4e34c5d063f2"
+    },
+    {
+      "file": "assets/props/supply_art_v1/citrus_drink.res",
+      "sha256": "b57e607cec05976267277f6a68a050bc733d16647bfdd94d6909e0f3336b6c1e"
+    },
+    {
+      "file": "assets/props/supply_art_v1/coating.tres",
+      "sha256": "a6dfaaad2bec7ed338315c7e88db5698acbe25b13c48db8f535da093c864c603"
+    },
+    {
+      "file": "assets/props/supply_art_v1/copper.tres",
+      "sha256": "934a7586c66470cd185d52ff02f938cad0b8d15935aff94c7703087987be1c48"
+    },
+    {
+      "file": "assets/props/supply_art_v1/cream.tres",
+      "sha256": "f2c17e0eebea64c3f8d03402aecbe84e1e404a61d17320a18061584ca7e15347"
+    },
+    {
+      "file": "assets/props/supply_art_v1/data_drive.res",
+      "sha256": "531e68b7b52554d03aa59a9f2e00441c59c7ccd36d536cdd8f8589cd703327e7"
+    },
+    {
+      "file": "assets/props/supply_art_v1/electronics.res",
+      "sha256": "887553e2e6d7609c2c1b022e79fd2f3e64fd523e68fc99c2d1457b797d9c0998"
+    },
+    {
+      "file": "assets/props/supply_art_v1/energy_bar.res",
+      "sha256": "9e1797b9d71cd958fca8ce7f2233b5049c91b8d2477fa91bb86fc62879b3ffb3"
+    },
+    {
+      "file": "assets/props/supply_art_v1/experiment_recorder.res",
+      "sha256": "1f9e6f2c2b63655a11f87fcd86027c5b29b408f8396e01608e5c01cc05461497"
+    },
+    {
+      "file": "assets/props/supply_art_v1/fabric.res",
+      "sha256": "de54b7264224ad14d77339ca3cf385021f0464927c27a2aa7f8f25e16a5f3194"
+    },
+    {
+      "file": "assets/props/supply_art_v1/fabric.tres",
+      "sha256": "1f32a0d29b5abc6f3d5c311f9ca3cd68eebd505a813c5b1c5840e106b0a234f7"
+    },
+    {
+      "file": "assets/props/supply_art_v1/field_dressing.res",
+      "sha256": "58d9c4aea740bc6280f1025b2d47c541278a88752158ee61f45a8df21f8b86b8"
+    },
+    {
+      "file": "assets/props/supply_art_v1/field_ration.res",
+      "sha256": "9cba4c37063a738a138955acc1b5ea49d78baaa1543bf0025057086a5445408b"
+    },
+    {
+      "file": "assets/props/supply_art_v1/food_green.tres",
+      "sha256": "0492526c38b0a66a7fb08cf3c1d30a4862a21311a446faac95d85c6a07eea2b0"
+    },
+    {
+      "file": "assets/props/supply_art_v1/gold.tres",
+      "sha256": "03c7dcb3945b066f1ba45435ad0494118a20ce0c720d0636741b7600ae6597af"
+    },
+    {
+      "file": "assets/props/supply_art_v1/medkit.res",
+      "sha256": "32334ccb6e33504adb6077fbd7bc233a3310cbb55ec6489d1cc910b521a599c1"
+    },
+    {
+      "file": "assets/props/supply_art_v1/nylon.tres",
+      "sha256": "2569eda4e31a9bd36495336f18bea4f77bd0f984de4b8690ce0c6f20e7a560dc"
+    },
+    {
+      "file": "assets/props/supply_art_v1/nylon_light.tres",
+      "sha256": "8c5b6752094ca4a0cfc399e1c95316077e1180a7a04d3fef57e9caefafd2b56e"
+    },
+    {
+      "file": "assets/props/supply_art_v1/orange.tres",
+      "sha256": "6bad877f2bf92e50e346ccb6ef39af360cff560dd2f36b0f5eea04b7de2eb5b7"
+    },
+    {
+      "file": "assets/props/supply_art_v1/parts.res",
+      "sha256": "6de632563fd150a4222c31943ce1fe3089f2044160800e1f15952ef8242b9769"
+    },
+    {
+      "file": "assets/props/supply_art_v1/pcb.tres",
+      "sha256": "4b1ad496a8420d183ac04719b2abd8f049a4aaf1c82a01add81b07f78d9e4c90"
+    },
+    {
+      "file": "assets/props/supply_art_v1/pet.tres",
+      "sha256": "28c500e9a7f50995eb1cebf43faf0e1ac263af43c49c9118f165dca908e1c981"
+    },
+    {
+      "file": "assets/props/supply_art_v1/propellant.res",
+      "sha256": "1473895adfe80ec09eb4868030fff4d59888782782021f475d7588fc52a2ba3d"
+    },
+    {
+      "file": "assets/props/supply_art_v1/rubber.tres",
+      "sha256": "201fb80d67e524387dc0b9dbcfa1a7263b61407ba453c434e71c5a906b6e5a99"
+    },
+    {
+      "file": "assets/props/supply_art_v1/salvage_core.res",
+      "sha256": "39dd8e9e83e03298ea37e7a2a7342a593f8a4fa5dcfc9bde964586c2464f4852"
+    },
+    {
+      "file": "assets/props/supply_art_v1/scrap.res",
+      "sha256": "7a8f4c528b10090328f328200488103afacbf7bf86cb7549d476027acc261c49"
+    },
+    {
+      "file": "assets/props/supply_art_v1/scrap.tres",
+      "sha256": "9461fee95aa69f6e1b865b6dfd3935171681e37a446c6fa166734fbbe384ef8f"
+    },
+    {
+      "file": "assets/props/supply_art_v1/screen.tres",
+      "sha256": "46b1b8432c2edc2beff3f9f6abbb2ea547c3ce52b38456c7c6ea0844a8a9f464"
+    },
+    {
+      "file": "assets/props/supply_art_v1/seal.tres",
+      "sha256": "50dca1dcac1f76fe6615ef36e98009f0239e7beaae1a2f33c1b79f2e74767e40"
+    },
+    {
+      "file": "assets/props/supply_art_v1/SOURCE.md",
+      "sha256": "7fdbf8e7643cdd6b94d6527be83f3ce9f7dac0ab8579a84802f70a43b9d6b390"
+    },
+    {
+      "file": "assets/props/supply_art_v1/steel.tres",
+      "sha256": "73f262ba815e2bd143ac0ccd219475e84d3b9d08ea2b5f662270e0b37f8212c3"
+    },
+    {
+      "file": "assets/props/supply_art_v1/thread.tres",
+      "sha256": "be10d74623b666889a6e7692e7d76dbb9b2a0f0d2926a3df0f25569cad857fa6"
+    },
+    {
+      "file": "assets/props/supply_art_v1/webbing.tres",
+      "sha256": "5a1bbe5a36034879c882ced695c34008a51189d080a906f0e9a3479f48002ebc"
+    },
+    {
+      "file": "assets/props/supply_art_v1/wiring.res",
+      "sha256": "2ac9d26460859011e66b4f669eddc2a1c6f1c9adb95f37ef9309270707f400c9"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/bottled_water.png",
+      "sha256": "ff1e46619d409cf71ac7b7ee71a9d3a349e0653f8f37f365329c426b3461167c"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/bottled_water.png.import",
+      "sha256": "c377b6e518e733b608497f39857b2b8885d5253949348f21ec9095c5baa3ebbb"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/canned_beans.png",
+      "sha256": "a3061b5ae52eccee38687e720aef507c5f24dfe88f7066e6329bcf1c8d1752c8"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/canned_beans.png.import",
+      "sha256": "4a0ef284a7efe17d3b36da1d34d77bff96962230c36a7e31dcfcb1ed6bc72062"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/citrus_drink.png",
+      "sha256": "8c1786058557da7000a9fef59902246ad23c7e8f7d99b446b9dc884171007fd9"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/citrus_drink.png.import",
+      "sha256": "215cc0386ef78aea5a365736a9081be2302b9d681a3df799f2d9fb43ca6d8fc7"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/data_drive.png",
+      "sha256": "1f23005aa53de36f59190986d85cc63c80d431b117e42dd9596fd92192022305"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/data_drive.png.import",
+      "sha256": "8287c0fc9048da45e494a2d9529208ea45410edc5c14a8b5a38aee5913185d5a"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/electronics.png",
+      "sha256": "0b13851fb74ed24f72769e2d181ba0aab296f6a8c648c1564ffdce3c3e69a70f"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/electronics.png.import",
+      "sha256": "2e1ac13547840ea456d85b089614411f4f02b8fc5f6148af59d2f979cde9b50e"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/energy_bar.png",
+      "sha256": "cd8472983120a924008b0a77707b5e72f9f4126f980284ceb6489bff64c5fb47"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/energy_bar.png.import",
+      "sha256": "42302be09d76a81936cb863091b3eb89b5b47a56fe2abb624005905db2bb881e"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/experiment_recorder.png",
+      "sha256": "842e215126749aaa4978029a46fc36712a9bdac8cba0c4f6fd3d42bc1ae8f939"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/experiment_recorder.png.import",
+      "sha256": "faa060fbbf71393b7eb52aeae6a24c814df5ad47c13cf864c0b49fb563556bf8"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/fabric.png",
+      "sha256": "7f6a8f0c3e010c154e5975481aa56d0fd6760dff41adc6215b7f93c303e14f67"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/fabric.png.import",
+      "sha256": "f4c4adf07dadb55526181d9dd6cc79e89d01df96652c074354fe3daa8af913dc"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/field_dressing.png",
+      "sha256": "39f729863a81b4646dc2ba40b0b8b5a8f218a7e6e39d6e79dbdec40539a15dab"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/field_dressing.png.import",
+      "sha256": "b07765e0a12b1fedbcf77baa14d540a1c2641ae356ec38e19e70e78fcc9c7958"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/field_ration.png",
+      "sha256": "c1f343766f048e4021f86fc5c8c379eb6fabaaa67f0797a7b448a3c3e49682bd"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/field_ration.png.import",
+      "sha256": "342dff6b8191bf484d6ee3c53b062da38697c04c1f57459afba2c1b98ec90089"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/medkit.png",
+      "sha256": "845885b5391f682c45cb6b7bcb504f8a8c1629822515df372c5e5644c380438a"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/medkit.png.import",
+      "sha256": "dd6c2d19800b062256fb42086332290e86e2334de265f47e94519f52e66051b6"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/parts.png",
+      "sha256": "d593d47c9f3666afc08e34b7ace771eef840670b3b76b61bea4e155e92f0095c"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/parts.png.import",
+      "sha256": "9f29dd7c0fbb4c8335574e534718f6d0eea879238b6c53e025fbfe8fd72e74bf"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/propellant.png",
+      "sha256": "ed8b82f53070412a54d7c4435fd026fbe12716666a48ccd8433b900d948bfe5f"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/propellant.png.import",
+      "sha256": "e0359e895c0fe71bf4bbcded6b8fb9eec4ed8f262c87f435ac9c2c077d5c57f2"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/salvage_core.png",
+      "sha256": "3a3ae9e146b07fe98815fc44e869a7342e4fe10d2483c3739d5a82c56f75de90"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/salvage_core.png.import",
+      "sha256": "d8599f8bd94eb704218eccf8e4d970634754f76252dbad86bafa981fdf24af19"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/scrap.png",
+      "sha256": "4ac5575f4234cd01e6289d2a0ef46870ef52d0fecc2e6b204b6d2f285bdd828e"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/scrap.png.import",
+      "sha256": "157cd60a554fb58d7912d59049800047b188e97d79bb815bf63878cdb84b24db"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/wiring.png",
+      "sha256": "f117bf7b7afc1b5267a29e0b20372387285316168eb3c4f02a292053f1f90c5c"
+    },
+    {
+      "file": "assets/ui/stash/supply_art_v1/wiring.png.import",
+      "sha256": "245b3d9f5317581ce1c4fa5b3efe61921533b0525bd2abc05c6d754048a65e2e"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/bottled_water.tscn",
+      "sha256": "d997626b023facd87c4f4e9017b88edb196b33d5ebf90016be1e4c2d18c70f66"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/canned_beans.tscn",
+      "sha256": "9ad2a039bc7adae9405c439c9c5fbb3346e9acc93821cb955376130b070153db"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/citrus_drink.tscn",
+      "sha256": "b1c088ffd72544020e626ce05708048db41774d349e612733111df5d7c848759"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/data_drive.tscn",
+      "sha256": "0dab9a78b5d57945b7f6e1a8bb4a9d63e023d28c839723b614426c7af6d17646"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/electronics.tscn",
+      "sha256": "93072a7e5fa5e937b7ae6e5faf57e901c52f0f6ff4d6aff2328806a92708264f"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/energy_bar.tscn",
+      "sha256": "e3baa940e4e83a702c80df34352f6fa9a35982a2f7aadd637963bf858855233a"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/experiment_recorder.tscn",
+      "sha256": "96f7e0679bf78b2fab3d907533dc5fbb167672ba8c39964627e818801623d72f"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/fabric.tscn",
+      "sha256": "438a04134668ee597b9906bc1ad648f6216965386fd9d4ac5a5702b3ab3158a4"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/field_dressing.tscn",
+      "sha256": "978e3e00b2638a34a546e3387d9a902ba3e318d4ec4f7f6885db68c1708ba4ac"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/field_ration.tscn",
+      "sha256": "1e82ab85dd30c8d72dbccfc403fc86fdb6eff0a3b449d9affa493b8b706e8719"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/medkit.tscn",
+      "sha256": "dd0a25a4da436008479229b0be34e4e468b1f52cdb60b20af8ebf7c29ba44eae"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/parts.tscn",
+      "sha256": "a406a5a6c5b3359ec597a3da7c7318da4fe09344de6527d6333d800cf857c839"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/propellant.tscn",
+      "sha256": "f5ad450cfc7b9fcddfc7591f728fab09f1d9a72c3e06c71b8a33e1d69c3a3a71"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/salvage_core.tscn",
+      "sha256": "62206c8a917729552fd779e6e2c6198ab20141d32b961fc3fb3ebaa31222b58f"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/scrap.tscn",
+      "sha256": "efcb8ad5b7fe47c59f4bfe9a5a3b54d74f4554ef292f0991734c30fa6d50a7f5"
+    },
+    {
+      "file": "scenes/props/supply_art_v1/wiring.tscn",
+      "sha256": "b8bde81edec42651b0493dc00a3f6f8347e4f871a6c505e33c528a152bc53e1e"
+    }
+  ]
+}

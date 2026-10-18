@@ -49,11 +49,11 @@ func refresh() -> void:
 	queue_redraw()
 
 func _draw() -> void:
-	draw_rect(Rect2(Vector2.ZERO, size), Color("101619"))
+	draw_rect(Rect2(Vector2.ZERO, size), FieldManualStyle.PAPER)
 	for x in range(StashLayout.COLUMNS + 1):
-		draw_line(Vector2(x * CELL, 0), Vector2(x * CELL, size.y), Color("283237"))
+		draw_line(Vector2(x * CELL, 0), Vector2(x * CELL, size.y), FieldManualStyle.LINE)
 	for y in range(model.row_count() + 1):
-		draw_line(Vector2(0, y * CELL), Vector2(size.x, y * CELL), Color("283237"))
+		draw_line(Vector2(0, y * CELL), Vector2(size.x, y * CELL), FieldManualStyle.LINE)
 
 func _input(event: InputEvent) -> void:
 	if not is_visible_in_tree() or not event is InputEventKey or not event.pressed or event.echo or event.keycode != KEY_R: return
@@ -101,10 +101,16 @@ func select_item(instance_id: String) -> void:
 	var item := model.profile.inventory.get_item(instance_id)
 	if not item:
 		detail.text = tr("SELECT AN ITEM\n\nDrag to organize.\nDrop gear on an equipment slot.\n\nR / Rotate\nDouble-click / Equip")
+		detail.tooltip_text = detail.text
 		return
 	var definition := ContentDB.get_item(item.definition_id)
 	var footprint_size := model.footprint(instance_id, model.profile.stash_layout.get(instance_id, [0, 0, false])[2])
 	detail.text = GameLanguage.item_name(definition.display_name) + "\n\n" + tr("%d × %d CELLS\n%.2f kg\nQuantity / %d\nCondition / %.0f%%") % [footprint_size.x, footprint_size.y, item.total_weight(), item.quantity, item.durability] + "\n\n" + tr(definition.description)
+	if not item.fitting.is_empty(): detail.text += "\n" + tr(WeaponFitting.caption(item.fitting))
+	# The compact footer shows the name and facts; full description remains accessible.
+	detail.tooltip_text = detail.text
+	detail.text = GameLanguage.item_name(definition.display_name) + "\n" + (tr("%d × %d CELLS\n%.2f kg\nQuantity / %d\nCondition / %.0f%%") % [footprint_size.x, footprint_size.y, item.total_weight(), item.quantity, item.durability]).replace("\n", " / ")
+	detail.text += "\n" + tr(definition.description)
 	if not item.fitting.is_empty(): detail.text += "\n" + tr(WeaponFitting.caption(item.fitting))
 
 func rotate_selected() -> void:

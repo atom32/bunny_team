@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_lp8y4"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/experiment_recorder.res" id="2_52ckx"]
+
+[node name="ExperimentRecorder" type="Node3D" unique_id=1958734659]
+metadata/presentation_definition_id = "story.experiment_recorder"
+
+[node name="Print5" type="Label3D" parent="." unique_id=1959823425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023, 0.074, 0.025)
+pixel_size = 0.00011
+modulate = Color(0.72156864, 0.8509804, 0.8117647, 1)
+text = "L-02 / LOG
+ARCHIVE"
+font = ExtResource("1_lp8y4")
+font_size = 48
+outline_size = 0
+
+[node name="Print9" type="Label3D" parent="." unique_id=2405503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0.024)
+pixel_size = 9.5e-05
+modulate = Color(0.87058824, 0.85882354, 0.8039216, 1)
+text = "EXPERIMENT RECORDER"
+font = ExtResource("1_lp8y4")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=2117116044]
+mesh = ExtResource("2_52ckx")

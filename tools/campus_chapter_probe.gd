@@ -20,6 +20,9 @@ func run() -> void:
 	profile.narrative_slice.settled.Q01=true;profile.narrative_slice.q01_exits=["streets_exit_0","streets_exit_1"]
 	profile.narrative_slice.settled.Q02=true;profile.narrative_slice.q02.delivered={"medical.field_dressing":2,"material.fabric":2};profile.narrative_slice.q02.message=NarrativeSlice.Q02_MESSAGE
 	await start_world()
+	battle.area_root.route_map.expanded=true
+	await capture("chapter_map_relay_locked_recorder")
+	battle.area_root.route_map.expanded=false
 	for name in ["CampusRelayOffice","CampusRelayRepair"]:
 		var relay:=battle.area_root.get_node(name) as CampusAction
 		battle.player.global_position=relay.global_position+Vector3.RIGHT
@@ -30,6 +33,9 @@ func run() -> void:
 	var result:=recorder.interact(battle.player,battle.session)
 	battle.hud.show_field_information(result.information)
 	await capture("recorder_read_immediately")
+	battle.area_root.route_map.expanded=true
+	await capture("chapter_map_recorder_removed")
+	battle.area_root.route_map.expanded=false
 	battle.session.complete_extraction();assert(SortieRuntime.finalize_sortie("user://campus_probe.json")==OK)
 	battle.free();await get_tree().process_frame
 	await start_world()

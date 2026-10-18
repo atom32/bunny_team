@@ -36,13 +36,21 @@ var _damage_flash_tween: Tween
 var _feedback_tween: Tween
 var _active_weapon_text := "ACTIVE  PRIMARY"
 var _inactive_weapon_text := "SWITCH WEAPON"
+var _root: Control
+var objective_toggle: Button
+var objective_details: Label
+var _objectives_expanded := false
+var capacity_bar: ProgressBar
+var _objectives_panel: Control
 
 
 func _ready() -> void:
 	var root := Control.new()
+	_root = root
+	root.name = "FieldManualHUD"
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	root.theme = UIFactory.theme()
+	root.theme = FieldManualStyle.theme()
 	add_child(root)
 	vision_overlay = VisionOverlay.new()
 	vision_overlay.name = "VisionOverlay"
@@ -61,18 +69,39 @@ func _ready() -> void:
 	pause_button.pressed.connect(FlowMenu.show_pause)
 	root.add_child(pause_button)
 
-	var objectives := _card(root, "Objectives", Control.PRESET_TOP_LEFT, Vector2(18,18), Vector2(310,0))
-	objective_label = _line(objectives, "OBJECTIVE", 14, Color("c3d6d9"))
-	slice_label = _line(objectives, "", 12, Color("b9d4ff"))
+	var objectives := _card(root, "Objectives", Control.PRESET_TOP_LEFT, Vector2(24,24), Vector2(330,0))
+	_objectives_panel = objectives.get_parent()
+	var objective_style := FieldManualStyle.panel()
+	objective_style.border_width_left = 4
+	objective_style.border_color = FieldManualStyle.ACCENT
+	objectives.get_parent().add_theme_stylebox_override("panel",objective_style)
+	objective_label = _line(objectives, "OBJECTIVE", 16, FieldManualStyle.ACCENT)
+	objective_label.custom_minimum_size.x = 294
+	objective_toggle = Button.new()
+	objective_toggle.name = "OtherObjectives"
+	objective_toggle.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	objective_toggle.focus_mode = Control.FOCUS_NONE
+	objective_toggle.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
+	objective_toggle.add_theme_font_size_override("font_size",12)
+	objective_toggle.hide()
+	objectives.add_child(objective_toggle)
+	objective_details = _line(objectives,"",12,FieldManualStyle.MUTED)
+	objective_details.hide()
+	objective_toggle.pressed.connect(func():
+		Input.action_release("fire")
+		_objectives_expanded = not _objectives_expanded
+		objective_details.visible = _objectives_expanded
+	)
+	slice_label = _line(objectives, "", 12, FieldManualStyle.MUTED)
 	slice_label.name = "Q01Status"
 	slice_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	slice_label.hide()
-	threat_label = _line(objectives, "", 12, Color("ff6b7f"))
+	threat_label = _line(objectives, "", 12, FieldManualStyle.ACCENT)
 	threat_label.hide()
 	enemy_label = _line(objectives, "", 12)
 	enemy_label.hide()
 
-	var status := _card(root, "Vitals", Control.PRESET_BOTTOM_LEFT, Vector2(18,-120), Vector2(280,102))
+	var status := _card(root, "Vitals", Control.PRESET_BOTTOM_LEFT, Vector2(24,-154), Vector2(302,130))
 	health_label = _line(status, "HP  260 / 260", 13)
 	health_bar = ProgressBar.new()
 	health_bar.max_value = 260.0
@@ -80,16 +109,23 @@ func _ready() -> void:
 	health_bar.show_percentage = false
 	health_bar.custom_minimum_size = Vector2(250, 5)
 	var background := StyleBoxFlat.new()
-	background.bg_color = Color("202a35")
+	background.bg_color = FieldManualStyle.LINE
 	health_fill = StyleBoxFlat.new()
-	health_fill.bg_color = Color("67e6e2")
+	health_fill.bg_color = FieldManualStyle.BLUE
 	health_bar.add_theme_stylebox_override("background", background)
 	health_bar.add_theme_stylebox_override("fill", health_fill)
 	status.add_child(health_bar)
-	armor_label = _line(status, "", 11, Color("9badb7"))
+	armor_label = _line(status, "", 11, FieldManualStyle.MUTED)
 	armor_label.name = "ArmorTradeoff"
-	capacity_label = _line(status, "", 11, Color("9badb7"))
-	medical_label = _line(status, "", 12, Color("92ead7"))
+	capacity_label = _line(status, "", 13, FieldManualStyle.INK)
+	capacity_bar = ProgressBar.new()
+	capacity_bar.step = 0.0
+	capacity_bar.show_percentage = false
+	capacity_bar.custom_minimum_size = Vector2(250,4)
+	capacity_bar.add_theme_stylebox_override("background",FieldManualStyle.bar(FieldManualStyle.LINE))
+	capacity_bar.add_theme_stylebox_override("fill",FieldManualStyle.bar(FieldManualStyle.ACCENT))
+	status.add_child(capacity_bar)
+	medical_label = _line(status, "", 11, FieldManualStyle.MUTED)
 	medical_label.name = "MedicalSupplies"
 	medical_progress = ProgressBar.new()
 	medical_progress.name = "TreatmentProgress"
@@ -98,15 +134,15 @@ func _ready() -> void:
 	medical_progress.hide()
 	status.add_child(medical_progress)
 
-	var weapons := _card(root, "Weapons", Control.PRESET_BOTTOM_RIGHT, Vector2(-318,-130), Vector2(300,112))
-	active_weapon_label = _line(weapons, "PRIMARY", 11, Color("9badb7"))
-	weapon_label = _line(weapons, "ASSAULT RIFLE", 14, Color("c3d6d9"))
-	ammo_label = _line(weapons, "30 / 90", 20, Color("f1d98a"))
-	secondary_weapon_label = _line(weapons, "SMG", 14, Color("c3d6d9"))
-	secondary_ammo_label = _line(weapons, "", 20, Color("f1d98a"))
+	var weapons := _card(root, "Weapons", Control.PRESET_BOTTOM_RIGHT, Vector2(-326,-154), Vector2(302,130))
+	active_weapon_label = _line(weapons, "PRIMARY", 11, FieldManualStyle.MUTED)
+	weapon_label = _line(weapons, "ASSAULT RIFLE", 15, FieldManualStyle.INK)
+	ammo_label = _line(weapons, "30 / 90", 22, FieldManualStyle.INK)
+	secondary_weapon_label = _line(weapons, "SMG", 15, FieldManualStyle.INK)
+	secondary_ammo_label = _line(weapons, "", 22, FieldManualStyle.INK)
 	secondary_weapon_label.hide()
 	secondary_ammo_label.hide()
-	inactive_weapon_label = _line(weapons, "Q / SWITCH WEAPON", 11, Color("9badb7"))
+	inactive_weapon_label = _line(weapons, "Q / SWITCH WEAPON", 11, FieldManualStyle.MUTED)
 
 	banner = Label.new()
 	banner.set_anchors_preset(Control.PRESET_CENTER_TOP)
@@ -146,21 +182,27 @@ func _ready() -> void:
 	sound_hint.hide()
 	interaction_prompt = Label.new()
 	interaction_prompt.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
-	interaction_prompt.position = Vector2(-260,-58)
-	interaction_prompt.size = Vector2(520,28)
+	interaction_prompt.position = Vector2(-220,-76)
+	interaction_prompt.size = Vector2(440,44)
 	interaction_prompt.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	interaction_prompt.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	interaction_prompt.add_theme_font_size_override("font_size", 15)
-	interaction_prompt.add_theme_color_override("font_color", Color("c9fbff"))
+	interaction_prompt.add_theme_color_override("font_color", FieldManualStyle.INK)
+	interaction_prompt.add_theme_stylebox_override("normal",FieldManualStyle.panel())
+	interaction_prompt.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(interaction_prompt)
 	var information_card := _card(root, "FieldInformation", Control.PRESET_TOP_RIGHT, Vector2(-378,174), Vector2(360,0))
-	field_information = _line(information_card, "", 14, Color("c9fbff"))
+	field_information = _line(information_card, "", 14, FieldManualStyle.INK)
 	information_card.get_parent().hide()
 	interaction_feedback = Label.new()
 	interaction_feedback.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
-	interaction_feedback.position = Vector2(-260,-90)
-	interaction_feedback.size = Vector2(520,28)
+	interaction_feedback.position = Vector2(-230,-148)
+	interaction_feedback.size = Vector2(460,64)
 	interaction_feedback.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	interaction_feedback.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	interaction_feedback.add_theme_font_size_override("font_size", 15)
+	interaction_feedback.add_theme_stylebox_override("normal",FieldManualStyle.panel())
+	interaction_feedback.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	interaction_feedback.hide()
 	root.add_child(interaction_feedback)
 
@@ -177,8 +219,8 @@ func _card(root: Control, title: String, anchor: int, at: Vector2, minimum: Vect
 	if anchor in [Control.PRESET_BOTTOM_LEFT, Control.PRESET_BOTTOM_RIGHT]:
 		panel.grow_vertical = Control.GROW_DIRECTION_BEGIN
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var style := UIFactory.panel_style(Color("111a2699"), Color("4f718b44"))
-	for edge in ["left", "right", "top", "bottom"]: style.set("content_margin_"+edge, 10.0)
+	var style := FieldManualStyle.panel()
+	for edge in ["left", "right", "top", "bottom"]: style.set("content_margin_"+edge, 12.0)
 	panel.add_theme_stylebox_override("panel", style)
 	var box := VBoxContainer.new()
 	box.add_theme_constant_override("separation", 3)
@@ -186,7 +228,7 @@ func _card(root: Control, title: String, anchor: int, at: Vector2, minimum: Vect
 	panel.add_child(box)
 	return box
 
-func _line(parent: Control, text: String, font_size: int, color := Color("c3d6d9")) -> Label:
+func _line(parent: Control, text: String, font_size: int, color := FieldManualStyle.INK) -> Label:
 	var label := Label.new()
 	label.text = text
 	label.add_theme_font_size_override("font_size", font_size)
@@ -198,6 +240,8 @@ func _line(parent: Control, text: String, font_size: int, color := Color("c3d6d9
 
 
 func _process(_delta: float) -> void:
+	# The authored tutorial already has one live objective card; don't duplicate it.
+	_objectives_panel.visible = get_parent().get_node_or_null("FirstMissionDirector") == null
 	inactive_weapon_label.text = ControlBindings.label("switch_weapon") + " / " + _inactive_weapon_text
 	if _banner_remaining > 0.0:
 		_banner_remaining = maxf(0.0, _banner_remaining-_delta)
@@ -215,7 +259,7 @@ func set_health(current: float, maximum: float) -> void:
 	health_bar.value = current
 	health_label.text = tr("HP  %d / %d") % [roundi(current), roundi(maximum)]
 	var ratio := current / maximum
-	health_fill.bg_color = Color("ff586d") if ratio < 0.3 else Color("67e6e2")
+	health_fill.bg_color = FieldManualStyle.ACCENT if ratio < 0.3 else FieldManualStyle.BLUE
 	if took_damage:
 		if _damage_flash_tween and _damage_flash_tween.is_valid():
 			_damage_flash_tween.kill()
@@ -249,7 +293,7 @@ func set_threat_level(level: int) -> void:
 	var is_alert := level == SortieSession.ThreatLevel.ALERT
 	threat_label.visible = is_alert
 	threat_label.text = tr("THREAT  %s") % tr("ALERT" if is_alert else "NORMAL")
-	threat_label.add_theme_color_override("font_color", Color("ff6b7f") if is_alert else Color("79f1e7"))
+	threat_label.add_theme_color_override("font_color", FieldManualStyle.ACCENT if is_alert else FieldManualStyle.SUCCESS)
 
 
 func set_objective_progress(display_name: String, progress: int, target: int, completed: bool) -> void:
@@ -270,7 +314,11 @@ func set_objectives(objectives: Array[Dictionary]) -> void:
 		]
 		if bool(objective.get("completed", false)): continue
 		lines.append(tr("%s  %s") % [tr(str(objective.get("display_name", "Unknown"))).to_upper(), tr(state_text)])
-	objective_label.text = "\n".join(lines) if not lines.is_empty() else "OBJECTIVE COMPLETE / REACH EXTRACTION"
+	objective_label.text = lines[0] if not lines.is_empty() else tr("OBJECTIVE COMPLETE / REACH EXTRACTION")
+	objective_toggle.visible = lines.size() > 1
+	objective_toggle.text = tr("OTHER OBJECTIVES %d") % maxi(0,lines.size()-1)
+	objective_details.text = "\n".join(lines.slice(1))
+	objective_details.visible = _objectives_expanded and lines.size() > 1
 
 
 func set_weapon(display_name: String) -> void:
@@ -303,10 +351,8 @@ func set_weapon_slots(primary: Dictionary, secondary: Dictionary, active_slot: S
 	inactive_weapon_label.text = ControlBindings.label("switch_weapon") + " / " + _inactive_weapon_text
 	_active_weapon_text = tr("ACTIVE  %s") % tr("PRIMARY" if primary_active else "SECONDARY")
 	active_weapon_label.text = _active_weapon_text
-	weapon_label.add_theme_color_override("font_color", Color("70edf2") if primary_active else Color("8da8bb"))
-	ammo_label.add_theme_color_override("font_color", Color("f1d98a") if primary_active else Color("a9c4d4"))
-	secondary_weapon_label.add_theme_color_override("font_color", Color("8da8bb") if primary_active else Color("70edf2"))
-	secondary_ammo_label.add_theme_color_override("font_color", Color("a9c4d4") if primary_active else Color("f1d98a"))
+	for label in [weapon_label,ammo_label,secondary_weapon_label,secondary_ammo_label]:
+		label.add_theme_color_override("font_color",FieldManualStyle.INK)
 
 
 func set_reload_remaining(seconds: float) -> void:
@@ -314,7 +360,9 @@ func set_reload_remaining(seconds: float) -> void:
 
 
 func set_inventory_capacity(used: float, maximum: float) -> void:
-	capacity_label.text = tr("CARGO  %.1f / %.1f") % [used, maximum]
+	capacity_label.text = tr("CARGO  %.1f / %.1f") % [used, maximum] + " kg"
+	capacity_bar.max_value = maxf(maximum,.001)
+	capacity_bar.value = used
 
 
 func set_medical(treatment: MedicalTreatment) -> void:
@@ -330,6 +378,7 @@ func set_medical(treatment: MedicalTreatment) -> void:
 
 func set_interaction_prompt(text: String) -> void:
 	interaction_prompt.text = text
+	interaction_prompt.visible = not text.is_empty()
 
 
 func show_interaction_feedback(text: String, success: bool) -> void:
@@ -339,7 +388,7 @@ func show_interaction_feedback(text: String, success: bool) -> void:
 		_feedback_tween.kill()
 	interaction_feedback.text = text
 	interaction_feedback.modulate = Color.WHITE
-	interaction_feedback.add_theme_color_override("font_color", Color("79f1e7") if success else Color("ffbd72"))
+	interaction_feedback.add_theme_color_override("font_color", FieldManualStyle.SUCCESS if success else FieldManualStyle.ACCENT)
 	interaction_feedback.visible = true
 	_feedback_tween = create_tween()
 	_feedback_tween.tween_interval(1.5)
@@ -362,3 +411,7 @@ func show_field_information(text: String) -> void:
 	field_information.text = text
 	_information_remaining = 12.0
 	field_information.get_parent().get_parent().show()
+
+func set_inspection_open(value: bool) -> void:
+	# Cosmetic only: world, damage, timers and HUD data updates keep running.
+	_root.visible = not value

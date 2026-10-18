@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a8yp6"]
+seed = 71
+frequency = 0.16
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_86b4r"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_a8yp6")
+seamless = true
+as_normal_map = true
+bump_strength = 0.35
+
+[resource]
+resource_name = "nylon"
+albedo_color = Color(0.27450982, 0.35686275, 0.3137255, 1)
+roughness = 0.91
+normal_enabled = true
+normal_scale = 0.16
+normal_texture = SubResource("NoiseTexture2D_86b4r")
+uv1_scale = Vector3(3, 3, 1)

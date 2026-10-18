@@ -1,0 +1,19 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_xetnn"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/wiring.res" id="2_bdj0t"]
+
+[node name="InsulatedCable" type="Node3D" unique_id=321044174]
+metadata/presentation_definition_id = "material.wiring"
+
+[node name="Print10" type="Label3D" parent="." unique_id=1112643267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.044, 0.024)
+pixel_size = 0.0001
+modulate = Color(0.87058824, 0.85882354, 0.8039216, 1)
+text = "INSULATED / 03"
+font = ExtResource("1_xetnn")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=1128410369]
+mesh = ExtResource("2_bdj0t")

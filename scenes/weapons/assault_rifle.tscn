@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scripts/weapons/weapon_visual.gd" id="1"]
 [ext_resource type="PackedScene" path="res://assets/weapons/mocap_m4/M4_Rifle_01.fbx" id="2"]
 
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/m4_finish.tres" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/art_pack_v1/quickloader_adapter.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/art_pack_v1/suppressor.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/art_pack_v1/observation_optic.tscn" id="6"]
+
 [node name="AssaultRifle" type="Node3D"]
 script = ExtResource("1")
 hand_pose = &"Rifle"
+fitting_visual_root = NodePath("FittingVisuals")
+factory_optic_mesh = NodePath("Art/Model/M4")
 authored_grips = true
 mount_scale = 0.9
 pose_offset = Vector3(0, 0.015, -0.10)
@@ -29,3 +36,19 @@ position = Vector3(-0.024, 0.055, -0.24)
 
 [node name="ReloadGrip" type="Marker3D" parent="."]
 position = Vector3(0, -0.075, -0.10)
+
+[node name="M4" parent="Art/Model" index="0"]
+surface_material_override/0 = ExtResource("3")
+
+[node name="FittingVisuals" type="Node3D" parent="."]
+
+[node name="Quickloader" parent="FittingVisuals" instance=ExtResource("4")]
+visible = false
+
+[node name="Suppressor" parent="FittingVisuals" instance=ExtResource("5")]
+visible = false
+
+[node name="ObservationOptic" parent="FittingVisuals" instance=ExtResource("6")]
+visible = false
+
+[editable path="Art/Model"]

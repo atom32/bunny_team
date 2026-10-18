@@ -26,6 +26,8 @@ shader_cache/
 art_source/**/*.log
 art_source/**/*.png
 art_source/**/*.jpg
+art_source/**/*.png.import
+art_source/**/*.jpg.import
 art_source/**/*.mp4
 art_source/**/*.avi
 art_source/**/evidence/

@@ -30,6 +30,7 @@ func _ready() -> void:
 	layer.layer = 30
 	add_child(layer)
 	screen = SliceUI.root(layer)
+	screen.theme = FieldManualStyle.theme()
 	if preferences.get_value("opening", "seen", false): show_menu()
 	else: _intro(0)
 	if ProfileRuntime.recovery_required:
@@ -57,9 +58,9 @@ func _clear() -> void:
 func _intro(index: int) -> void:
 	intro_card = index
 	_clear()
-	var panel := SliceUI.panel(screen, Vector2(42,486), Vector2(1196,176))
-	SliceUI.label(panel, INTRO[index][0], Vector2(24,20), 20, SliceUI.CYAN)
-	var description := SliceUI.label(panel, INTRO[index][1], Vector2(24,72), 21)
+	var panel := _panel(screen, Vector2(42,486), Vector2(1196,176))
+	_label(panel, INTRO[index][0], Vector2(24,20), 20, FieldManualStyle.ACCENT)
+	var description := _label(panel, INTRO[index][1], Vector2(24,72), 21)
 	description.size = Vector2(1148, 80)
 	description.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	SliceUI.button(screen, "SKIP OPENING  /  ENTER", Vector2(922,34), Vector2(316,44), show_menu)
@@ -71,21 +72,20 @@ func show_menu() -> void:
 	preferences.set_value("opening", "seen", true)
 	preferences.save("user://presentation.cfg")
 	_clear()
-	SliceUI.panel(screen, Vector2(24,24), Vector2(412,672))
-	SliceUI.divider(screen, Vector2(46,316), 342)
-	SliceUI.divider(screen, Vector2(46,634), 342)
-	SliceUI.label(screen, "BASTION 07  /  FIELD OPERATIONS", Vector2(46,66), 15, SliceUI.CYAN)
-	SliceUI.label(screen, "NEON\nBASTION", Vector2(42,116), 58)
-	SliceUI.label(screen, "GO OUT. RECOVER. COME HOME.", Vector2(46,280), 15, SliceUI.MUTED)
+	_panel(screen, Vector2(24,24), Vector2(412,672))
+	SliceUI.divider(screen, Vector2(46,316), 342).color = FieldManualStyle.LINE
+	SliceUI.divider(screen, Vector2(46,634), 342).color = FieldManualStyle.LINE
+	_label(screen, "BASTION 07  /  FIELD OPERATIONS", Vector2(46,66), 15, FieldManualStyle.ACCENT)
+	_label(screen, "NEON\nBASTION", Vector2(42,116), 58)
+	_label(screen, "GO OUT. RECOVER. COME HOME.", Vector2(46,280), 15, FieldManualStyle.MUTED)
 	var resume_pending := not ProfileRuntime.get_profile().sortie_checkpoint.is_empty()
 	var primary := SliceUI.button(screen, "RESUME SORTIE" if resume_pending else ("CONTINUE / BASE" if SaveService.save_exists() and not ProfileRuntime.recovery_required else "START"), Vector2(46,352), Vector2(342,60), _enter)
-	primary.add_theme_stylebox_override("normal", SliceUI.menu_style(Color("b5aa81"), SliceUI.CYAN))
-	primary.add_theme_color_override("font_color", Color("171914"))
-	SliceUI.button(screen, "LOADOUT", Vector2(46,426), Vector2(342,50), func(): GameState.hideout_section = "Hanger"; _enter())
-	SliceUI.button(screen, "SETTINGS", Vector2(46,490), Vector2(342,50), _settings)
-	SliceUI.button(screen, "QUIT", Vector2(46,554), Vector2(342,50), func(): FlowMenu.request_leave("quit"))
-	SliceUI.label(screen, "ALPHA  /  BASTION 07", Vector2(46,658), 13, SliceUI.MUTED)
-	SliceUI.label(screen, "FIELD OPERATOR\nREADY / HOME SIGNAL ONLINE", Vector2(910,642), 17, SliceUI.CYAN)
+	FieldManualStyle.primary(primary)
+	SliceUI.button(screen, "SETTINGS", Vector2(46,426), Vector2(342,50), _settings)
+	SliceUI.button(screen, "QUIT", Vector2(46,490), Vector2(342,50), func(): FlowMenu.request_leave("quit"))
+	_label(screen, "ALPHA  /  BASTION 07", Vector2(46,658), 13, FieldManualStyle.MUTED)
+	var status := _panel(screen, Vector2(886,626), Vector2(352,70))
+	_label(status, "FIELD OPERATOR\nREADY / HOME SIGNAL ONLINE", Vector2(18,12), 15, FieldManualStyle.MUTED)
 
 func _enter() -> void:
 	if ProfileRuntime.recovery_required:
@@ -101,11 +101,11 @@ func _refresh_language() -> void:
 func _settings() -> void:
 	settings_open = true
 	_clear()
-	var panel := SliceUI.panel(screen, Vector2(50,80), Vector2(470,550))
-	SliceUI.label(panel, "SIGNAL / SETTINGS", Vector2(28,26), 28, SliceUI.CYAN)
+	var panel := _panel(screen, Vector2(50,80), Vector2(470,550))
+	_label(panel, "SIGNAL / SETTINGS", Vector2(28,26), 28, FieldManualStyle.ACCENT)
 	var index := 0
 	for bus in ["Music", "SFX"]:
-		SliceUI.label(panel, bus.to_upper(), Vector2(28,108+index*100), 17)
+		_label(panel, bus.to_upper(), Vector2(28,108+index*100), 17)
 		var slider := HSlider.new()
 		slider.position = Vector2(28,146+index*100)
 		slider.size = Vector2(405,28)
@@ -124,3 +124,13 @@ func _settings() -> void:
 	SliceUI.button(panel, "LANGUAGE / 中文 & ENGLISH", Vector2(28,370), Vector2(405,40), func(): FlowMenu.show_language_settings(false))
 	SliceUI.button(panel, "CONTROLS / KEY BINDINGS", Vector2(28,414), Vector2(405,40), func(): FlowMenu.show_control_settings(false))
 	SliceUI.button(panel, "BACK", Vector2(28,466), Vector2(405,46), show_menu)
+
+
+# Presentation-only adapters; callbacks and data ownership remain unchanged.
+func _panel(parent: Node, at: Vector2, extent: Vector2) -> Panel:
+	var result := SliceUI.panel(parent, at, extent)
+	result.add_theme_stylebox_override("panel", FieldManualStyle.panel())
+	return result
+
+func _label(parent: Node, text: String, at: Vector2, font_size: int = 18, color: Color = FieldManualStyle.INK) -> Label:
+	return SliceUI.label(parent, text, at, font_size, color)

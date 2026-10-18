@@ -1,6 +1,7 @@
 extends Node3D
 const PATH:="user://campus_chapter_test.json"
 var failures: Array[String]=[]
+var feedback: Array[String]=[]
 var battle: Node3D
 func check(ok: bool,message: String) -> void:
 	if not ok:failures.append(message);push_error(message)
@@ -15,6 +16,7 @@ func start_world() -> void:
 	check(DeploymentPlan.deploy(profile,&"street_district",&"streets_recon",PATH).error==OK,"Actual finite chapter sortie deployed")
 	battle=load("res://scenes/battle/battle.tscn").instantiate();battle.result_transition_enabled=false;add_child(battle)
 	battle.player.set_physics_process(false)
+	battle.player.interaction_component.interaction_finished.connect(func(message: String,_success: bool):feedback.append(message))
 	for enemy in battle.enemy_container.get_children():enemy.set_physics_process(false)
 	await get_tree().process_frame
 func finish_world(success: bool) -> void:
@@ -46,6 +48,12 @@ func _ready() -> void:
 	profile=profile_at_batch2();await start_world()
 	check(battle.hud.slice_label.visible,"Actual chapter objective is visible in battle HUD")
 	check(battle.session.campus.stage=="relay","New narrative starts at relays, not retired Q04")
+	check(battle.area_root.route_map._mission_brief()[0]=="CAMPUS / L-02 RELAYS","Map prioritizes the active campus commission over optional records/survey")
+	var before_pickup_points: Array=battle.area_root.route_map._campus_map_points()
+	check(before_pickup_points.any(func(entry):return entry.label=="RECORDER / REPAIR BOTH RELAYS FIRST"),"Map distinguishes recorder locked behind real relay work")
+	var recorder_site:=battle.area_root.get_node("ExperimentRecorder") as CampusAction
+	var archive_site:=battle.area_root.get_node("RoomAnchors/Archive") as Node3D
+	check(Vector2(recorder_site.position.x-archive_site.position.x,recorder_site.position.z-archive_site.position.z).length()<7,"Recorder is physically in the archive promised by the commission, not the retired dormitory receipt site")
 	for name in ["CampusRelayOffice","CampusRelayRepair"]:
 		var point:=battle.area_root.get_node(name) as CampusAction
 		battle.player.global_position=point.global_position+Vector3.RIGHT
@@ -53,9 +61,11 @@ func _ready() -> void:
 		point._process(1.0)
 		point._health_changed(point.observed_health-.1,100)
 		check(point.remaining==0,"Even fractional damage cancels relay work")
+		check(feedback.back().contains("damage") and feedback.back().contains(ControlBindings.label("interact")),"Damage interruption reports its cause and actual restart binding")
 		point.interact(battle.player,battle.session)
 		battle.player.global_position+=Vector3(10,0,0);point._process(1.0)
 		check(point.remaining==0,"Leaving the interaction radius cancels relay work")
+		check(feedback.back().contains("left the equipment"),"Distance interruption explains how to resume")
 		battle.player.global_position=point.global_position+Vector3.RIGHT
 		point.interact(battle.player,battle.session);point._process(4.0)
 		var saved:=SortieCheckpoint.capture_world(battle)
@@ -68,6 +78,8 @@ func _ready() -> void:
 	var read:=recorder.interact(battle.player,battle.session)
 	check(read.success and read.information.contains("Military") and read.information.contains("L-02A"),"Recorder immediately reveals project and branch log without decryption")
 	check(not recorder.interact(battle.player,battle.session).success,"Unique recorder cannot be acquired twice")
+	check(battle.area_root.route_map._mission_brief()[1]=="Experiment recorder / bring it home","Map advances from repair/locate to actual carried-device extraction")
+	check(not battle.area_root.route_map._campus_map_points().any(func(entry):return entry.point.kind==&"recorder"),"Picked-up device is removed from map, not a stale live pickup marker")
 	var item_id: String=battle.session.campus.recorder_instance
 	check(battle.session.inventory.contains(item_id),"Real story device occupies carried inventory")
 	var world:=SortieCheckpoint.capture_world(battle)
@@ -117,6 +129,17 @@ func _ready() -> void:
 	await start_world();await finish_world(true)
 	check(profile.campus_chapter.finished and SaveService.load_profile(PATH,false).campus_chapter.finished,"Final campus extraction closes chapter in real save")
 	check(DeploymentPlan.STREET_MISSIONS.has(&"streets_recon"),"Free sorties remain available")
-	SortieRuntime.clear_session();AudioDirector.shutdown_for_test();await get_tree().create_timer(.3).timeout
+	SortieRuntime.clear_session()
+	# The old v1 field contract retains the original device site and labels.
+	var legacy_profile:=profile_at_batch2()
+	var legacy_session:=SortieRuntime.start_sortie(legacy_profile.create_sortie_request(&"street_district",&"streets_recon"),legacy_profile)
+	legacy_session.campus.version=1
+	check(CampusChapter.valid_facts(legacy_session.campus,&"street_district"),"Pre-polish field contract remains valid")
+	var legacy_area: Node3D=load("res://scenes/areas/street_district.tscn").instantiate();add_child(legacy_area)
+	check(legacy_area.get_node("ExperimentRecorder").position==NarrativeSlice.RECEIPT_POSITION,"Existing v1 suspended device never silently moves to another building")
+	var legacy_map:=preload("res://scripts/world/streets/route_map.gd").new();legacy_map.district=legacy_area
+	check(legacy_map._mission_brief()[1].contains("dormitory"),"Legacy route explains its retained dormitory site rather than the new archive briefing")
+	legacy_map.free();legacy_area.free();SortieRuntime.clear_session()
+	AudioDirector.shutdown_for_test();await get_tree().create_timer(.3).timeout
 	print("CAMPUS_CHAPTER_TEST: ","PASS" if failures.is_empty() else "FAIL")
 	get_tree().quit(0 if failures.is_empty() else 1)

@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_4dcal"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/bottled_water.res" id="2_es0jj"]
+
+[node name="BottledWater" type="Node3D" unique_id=1601853528]
+metadata/presentation_definition_id = "supply.bottled_water"
+
+[node name="Print35" type="Label3D" parent="." unique_id=1515382449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, 0.032)
+pixel_size = 0.00017
+modulate = Color(0.15686275, 0.3254902, 0.38039216, 1)
+text = "B07
+WATER"
+font = ExtResource("1_4dcal")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=4244803]
+mesh = ExtResource("2_es0jj")

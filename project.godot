@@ -34,6 +34,10 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/yard/plugin.cfg", "res://addons/neon_content/plugin.cfg")
+
 [input]
 
 move_left={
@@ -126,7 +130,3 @@ interact={
 renderer/rendering_method.mobile="gl_compatibility"
 anti_aliasing/quality/msaa_3d=2
 environment/defaults/default_clear_color=Color(0.018, 0.024, 0.04, 1)
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/yard/plugin.cfg", "res://addons/neon_content/plugin.cfg")

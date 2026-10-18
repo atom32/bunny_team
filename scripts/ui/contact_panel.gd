@@ -8,8 +8,8 @@ var save_path := SaveService.DEFAULT_SAVE_PATH
 var content: Control
 
 func _ready() -> void:
-	theme = SliceUI.menu_theme()
-	add_theme_stylebox_override("panel", SliceUI.menu_style(Color("171914fa"), Color("555749")))
+	theme = FieldManualStyle.theme()
+	add_theme_stylebox_override("panel", FieldManualStyle.panel(FieldManualStyle.SURFACE))
 	var body := VBoxContainer.new()
 	body.add_theme_constant_override("separation", 12)
 	add_child(body)

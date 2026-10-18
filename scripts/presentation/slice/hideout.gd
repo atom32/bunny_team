@@ -32,6 +32,7 @@ func _ready() -> void:
 	ui.layer = 20
 	add_child(ui)
 	screen = SliceUI.root(ui)
+	screen.theme = FieldManualStyle.theme()
 	if menu_backdrop:
 		camera.fov = 65.0
 		_menu_camera()
@@ -135,16 +136,17 @@ func show_section(value: String) -> void:
 	section_camera_position = destination
 	section_focus = focus
 	if value != "Hanger":
-		SliceUI.label(screen, "BASTION 07  /  HIDEOUT", Vector2(42,30), 30)
-		SliceUI.label(screen, "HOME SIGNAL STABLE    •    ESC / PAUSE", Vector2(44,72), 14, SliceUI.CYAN)
+		_panel(screen, Vector2(24,16), Vector2(1232,96))
+		_label(screen, "BASTION 07  /  HIDEOUT", Vector2(42,30), 30)
+		_label(screen, "HOME SIGNAL STABLE    •    ESC / PAUSE", Vector2(44,72), 14, FieldManualStyle.ACCENT)
 	if value in ["Operations", "Workshop", "Rest"]:
-		var panel := SliceUI.panel(screen, Vector2(882,150), Vector2(360,430))
-		SliceUI.label(panel, tr(value).to_upper(), Vector2(24,24), 28, SliceUI.CYAN)
+		var panel := _panel(screen, Vector2(882,150), Vector2(360,430))
+		_label(panel, tr(value).to_upper(), Vector2(24,24), 28, FieldManualStyle.ACCENT)
 		var description := "Your forward operating base.\n\nEquip in the Hanger.\nReview the operation at the Terminal.\nReturn here with what you recover."
 		if value == "Operations":
 			var first := not ProfileRuntime.get_profile().first_mission_completed
 			if first:
-				var notice := SliceUI.label(panel, tr("LEGACY TUTORIAL / ART NOT REFURBISHED"), Vector2(24, 64), 12, Color("ffbd72"))
+				var notice := _label(panel, tr("LEGACY TUTORIAL / ART NOT REFURBISHED"), Vector2(24, 64), 12, FieldManualStyle.ACCENT)
 				notice.name = "LegacyTutorialNotice"
 			var mission := ContentDB.get_mission(&"first_mission" if first else DeploymentPlan.selected_street_mission)
 			description = tr(mission.display_name) + "\n\n"
@@ -161,12 +163,20 @@ func show_section(value: String) -> void:
 			if profile.first_mission_completed and not profile.ar_damage_upgraded:
 				var upgrade := SliceUI.button(panel, "UPGRADE AR / 1 SALVAGE CORE", Vector2(24,276), Vector2(312,48), _upgrade_weapon)
 				upgrade.disabled = FirstMissionPreparation.salvage_count(profile) < 1
-		var detail := SliceUI.label(panel, description, Vector2(24,88), 16, SliceUI.MUTED)
+		var detail := _label(panel, description, Vector2(24,88), 16, FieldManualStyle.MUTED)
 		if value == "Operations": detail.name = "MissionBriefing"
 		detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		detail.size = Vector2(312, 236)
-		SliceUI.button(panel, "CONFIRM DEPLOYMENT" if value == "Operations" else ("SECOND SORTIE / LOADOUT" if value == "Workshop" and ProfileRuntime.get_profile().ar_damage_upgraded else "MISSION TERMINAL"), Vector2(24,338), Vector2(312,58), _deploy if value == "Operations" else func(): show_section("Hanger" if value == "Workshop" and ProfileRuntime.get_profile().ar_damage_upgraded else "Operations"))
+		var action := SliceUI.button(panel, "CONFIRM DEPLOYMENT" if value == "Operations" else ("SECOND SORTIE / LOADOUT" if value == "Workshop" and ProfileRuntime.get_profile().ar_damage_upgraded else "MISSION TERMINAL"), Vector2(24,338), Vector2(312,58), _deploy if value == "Operations" else func(): show_section("Hanger" if value == "Workshop" and ProfileRuntime.get_profile().ar_damage_upgraded else "Operations"))
+		FieldManualStyle.primary(action)
 	if value == "Overview":
+		var brief := _panel(screen, Vector2(42,152), Vector2(350,344))
+		brief.name = "BaseBriefing"
+		_label(brief, tr("Overview").to_upper(), Vector2(22,20), 26)
+		_label(brief, tr("QUARTERMASTER  /  %d CREDITS") % ProfileRuntime.get_profile().credits, Vector2(22,68), 16, FieldManualStyle.ACCENT)
+		var briefing := _label(brief, "Your forward operating base.\n\nEquip in the Hanger.\nReview the operation at the Terminal.\nReturn here with what you recover.", Vector2(22,112), 18)
+		briefing.size = Vector2(306,210)
+		briefing.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		# Keep onboarding present and visible when gear selection is actually needed.
 		_first_mission_panel()
 		var onboarding := screen.get_node_or_null("FirstMissionPanel") as Control
@@ -177,15 +187,18 @@ func show_section(value: String) -> void:
 		contracts.size = Vector2(800, 474)
 		screen.add_child(contracts)
 		contracts.hide()
-		var contact_button := SliceUI.button(screen, "补给与委托", Vector2(42, 100), Vector2(320, 40), func(): show_section("Workshop"))
+		var contact_button := SliceUI.button(screen, "补给与委托", Vector2(42, 516), Vector2(320, 40), func(): show_section("Workshop"))
 		contact_button.name = "ContactsToggle"
-		var contracts_toggle := SliceUI.button(screen, "委托记录", Vector2(750,100), Vector2(320,40), func(): contracts.visible = not contracts.visible)
+		var contracts_toggle := SliceUI.button(screen, "委托记录", Vector2(908,44), Vector2(208,40), func():
+			contracts.visible = not contracts.visible
+			brief.visible = not contracts.visible
+			contact_button.visible = not contracts.visible)
 		contracts_toggle.name = "ContractsToggle"
-		SliceUI.button(screen, "PREPARE SORTIE", Vector2(918,556), Vector2(320,52), func():
+		FieldManualStyle.primary(SliceUI.button(screen, "PREPARE SORTIE", Vector2(918,556), Vector2(320,52), func():
 			if not ProfileRuntime.get_profile().first_mission_completed:
 				if screen.has_node("FirstMissionPanel"):
 					screen.get_node("FirstMissionPanel").visible = not screen.get_node("FirstMissionPanel").visible
-			else: show_section("Operations"))
+			else: show_section("Operations")))
 		contracts.contract_claimed.connect(func():
 			hanger.hanger_ui.configure(ProfileRuntime.get_profile().inventory, ProfileRuntime.get_profile().loadout)
 			hanger.hanger_ui.refresh_owned_items()
@@ -198,7 +211,7 @@ func show_section(value: String) -> void:
 		screen.add_child(supplies)
 		# Contact content occupies the existing workshop area; keep tutorial upgrade reachable elsewhere.
 		for child in screen.get_children():
-			if child is Panel and child != supplies: child.hide()
+			if child is Panel and child != supplies and child.position.y > 112: child.hide()
 		supplies.supplies_changed.connect(func():
 			var profile := ProfileRuntime.get_profile()
 			hanger._build_preview_character(profile.inventory, profile.loadout)
@@ -236,16 +249,16 @@ func show_section(value: String) -> void:
 			time_choice.select(1 if DeploymentPlan.selected_lighting_variant == "night" else 0)
 			time_choice.item_selected.connect(func(index: int): DeploymentPlan.selected_lighting_variant = "night" if index == 1 else "day")
 			screen.add_child(time_choice)
-		var preparation_panel := SliceUI.panel(screen, Vector2(42,208), Vector2(548,386))
+		var preparation_panel := _panel(screen, Vector2(42,208), Vector2(548,386))
 		preparation_panel.name = "DeploymentReview"
-		preparation_panel.add_theme_stylebox_override("panel", SliceUI.menu_style(Color("171914fa"), Color("555749")))
+		preparation_panel.add_theme_stylebox_override("panel", FieldManualStyle.panel())
 		var review := Label.new()
 		review.name = "DeploymentQuantities"
 		review.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		review.text = DeploymentPlan.build(ProfileRuntime.get_profile()).message
 		review.position = Vector2(18,18)
 		review.add_theme_font_size_override("font_size",18)
-		review.add_theme_color_override("font_color",Color("d7d5c8"))
+		review.add_theme_color_override("font_color",FieldManualStyle.INK)
 		review.size = Vector2(512, 164)
 		preparation_panel.add_child(review)
 		SliceUI.button(preparation_panel, "CHARACTER / STASH", Vector2(18,190), Vector2(512,48), func(): show_section("Hanger"))
@@ -254,25 +267,19 @@ func show_section(value: String) -> void:
 		warning.text = "AT RISK: all deployed equipment and supplies.\nDeath or abandonment loses carried items. Base storage is safe."
 		warning.position = Vector2(18,266)
 		warning.add_theme_font_size_override("font_size",16)
-		warning.add_theme_color_override("font_color",Color("ffbd72"))
+		warning.add_theme_color_override("font_color",FieldManualStyle.ACCENT)
 		warning.size = Vector2(512, 100)
 		warning.name = "PackingRisk"
 		preparation_panel.add_child(warning)
+	_panel(screen, Vector2(24,632), Vector2(1232,72))
 	for index in 5:
 		var names := ["Overview", "Hanger", "Operations", "Workshop", "Rest"]
 		var key: String = names[index]
-		var navigation := SliceUI.button(screen, tr("%02d  %s") % [index+1,tr(key).to_upper()], Vector2(42+index*226,644), Vector2(212,48), func(): show_section(key))
-		if value == "Hanger":
-			navigation.text = tr("CHARACTER / STASH") if key == "Hanger" else tr(key)
-			navigation.size.y = 40
-			navigation.add_theme_font_size_override("font_size", 14)
-			for state in ["normal", "hover", "pressed", "focus"]:
-				var style := SliceUI.menu_style(Color("1b2429") if key == value or state != "normal" else Color("0e1215"), Color("ad9d74") if key == value else Color("303b41"))
-				style.set_content_margin_all(6)
-				style.set_border_width_all(0)
-				style.border_width_bottom = 2 if key == value else 1
-				navigation.add_theme_stylebox_override(state, style)
-	if value != "Hanger": SliceUI.button(screen, "MENU", Vector2(1140,30), Vector2(100,36), func(): FlowMenu.request_leave("menu"))
+		var navigation := SliceUI.button(screen, tr("%02d  %s") % [index+1,tr(key).to_upper()], Vector2(42+index*242,644), Vector2(228,48), func(): show_section(key))
+		navigation.name = "Nav" + key
+		navigation.add_theme_font_size_override("font_size", 15)
+		if key == value: FieldManualStyle.primary(navigation)
+	SliceUI.button(screen, "MENU", Vector2(1140,30), Vector2(100,36), func(): FlowMenu.request_leave("menu"))
 
 func _deploy() -> void:
 	hanger._on_deploy_requested()
@@ -280,19 +287,19 @@ func _deploy() -> void:
 func _first_mission_panel() -> void:
 	var profile := ProfileRuntime.get_profile()
 	if profile.ar_damage_upgraded: return
-	var panel := SliceUI.panel(screen, Vector2(882,150), Vector2(360,430))
+	var panel := _panel(screen, Vector2(882,150), Vector2(360,430))
 	panel.name = "FirstMissionPanel"
-	SliceUI.label(panel, "FIRST MISSION / 10 MIN", Vector2(24,24), 23, SliceUI.CYAN)
+	_label(panel, "FIRST MISSION / 10 MIN", Vector2(24,24), 23, FieldManualStyle.ACCENT)
 	if profile.first_mission_completed:
-		SliceUI.label(panel, "HOME SIGNAL RECOVERED\n\nSalvage is now in your warehouse.\nVisit Workshop for your first upgrade.", Vector2(24,92), 17)
+		_label(panel, "HOME SIGNAL RECOVERED\n\nSalvage is now in your warehouse.\nVisit Workshop for your first upgrade.", Vector2(24,92), 17)
 		SliceUI.button(panel, "WORKSHOP / FIRST UPGRADE", Vector2(24,338), Vector2(312,58), func(): show_section("Workshop"))
 		return
 	if profile.failed_sorties > 0 or not FirstMissionPreparation.owns_starter_weapons(profile):
-		SliceUI.label(panel, "REBUILD / TRY AGAIN\n\nLost equipment stays lost.\nBuy supplies or claim emergency aid\nat the Workshop, then equip a weapon.\nAny equipped weapon can retry.", Vector2(24,92), 17)
+		_label(panel, "REBUILD / TRY AGAIN\n\nLost equipment stays lost.\nBuy supplies or claim emergency aid\nat the Workshop, then equip a weapon.\nAny equipped weapon can retry.", Vector2(24,92), 17)
 		SliceUI.button(panel, "WORKSHOP / RESUPPLY", Vector2(24,272), Vector2(312,48), func(): show_section("Workshop"))
 		SliceUI.button(panel, "MISSION TERMINAL", Vector2(24,338), Vector2(312,58), func(): show_section("Operations"))
 		return
-	SliceUI.label(panel, "BUNNY / FIELD OPERATOR\n\nAR + SMG / starter kit\n\nLearn. Investigate. Choose your risk.\nExtract. Upgrade. Deploy again.", Vector2(24,92), 17)
+	_label(panel, "BUNNY / FIELD OPERATOR\n\nAR + SMG / starter kit\n\nLearn. Investigate. Choose your risk.\nExtract. Upgrade. Deploy again.", Vector2(24,92), 17)
 	if not profile.bunny_selected and not FirstMissionPreparation.has_starter_kit(profile):
 		SliceUI.button(panel, "SELECT BUNNY", Vector2(24,338), Vector2(312,58), func(): profile.bunny_selected = true; show_section("Overview"))
 	elif not FirstMissionPreparation.has_starter_kit(profile):
@@ -309,3 +316,13 @@ func _upgrade_weapon() -> void:
 	hanger.hanger_ui.sync_loadout_selection()
 	AudioDirector.play_sfx(&"ui_confirm")
 	show_section("Workshop")
+
+
+# Presentation-only adapters; callbacks and data ownership remain unchanged.
+func _panel(parent: Node, at: Vector2, extent: Vector2) -> Panel:
+	var result := SliceUI.panel(parent, at, extent)
+	result.add_theme_stylebox_override("panel", FieldManualStyle.panel())
+	return result
+
+func _label(parent: Node, text: String, at: Vector2, font_size: int = 18, color: Color = FieldManualStyle.INK) -> Label:
+	return SliceUI.label(parent, text, at, font_size, color)

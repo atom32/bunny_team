@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_7432y"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/field_dressing.res" id="2_6883h"]
+
+[node name="FieldDressing" type="Node3D" unique_id=637821088]
+metadata/presentation_definition_id = "medical.field_dressing"
+
+[node name="Print54" type="Label3D" parent="." unique_id=1612219522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0826, 0.014)
+pixel_size = 0.000126
+modulate = Color(0.14117648, 0.2, 0.18431373, 1)
+text = "FIELD
+DRESSING"
+font = ExtResource("1_7432y")
+font_size = 48
+outline_size = 0
+
+[node name="Print55" type="Label3D" parent="." unique_id=1269951506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0448, 0.014)
+pixel_size = 5.25e-05
+modulate = Color(0.25490198, 0.34117648, 0.31764707, 1)
+text = "B07 / STERILE PACK"
+font = ExtResource("1_7432y")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=2094025184]
+mesh = ExtResource("2_6883h")

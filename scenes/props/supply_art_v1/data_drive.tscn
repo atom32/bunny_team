@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_8nmoi"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/data_drive.res" id="2_yyh6d"]
+
+[node name="DataDrive" type="Node3D" unique_id=316527683]
+metadata/presentation_definition_id = "material.data_drive"
+
+[node name="Print5" type="Label3D" parent="." unique_id=2121941129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03484, 0.025)
+pixel_size = 0.00014
+modulate = Color(0.14901961, 0.22745098, 0.23529412, 1)
+text = "SEALED
+DATA"
+font = ExtResource("1_8nmoi")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=851460479]
+mesh = ExtResource("2_yyh6d")

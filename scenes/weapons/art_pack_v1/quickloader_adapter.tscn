@@ -1,0 +1,35 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/rubber.tres" id="1_xwroh"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/MagazineBoot.res" id="2_foyj0"]
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/polymer.tres" id="3_oh2nt"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/BootInset.res" id="4_aqvpm"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/RubberPullLoop.res" id="5_3mjmy"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/BootGrip-1.res" id="6_d4xdq"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/BootGrip1.res" id="7_pv7s8"]
+
+[node name="QuickloaderAdapter" type="Node3D" unique_id=1452263691]
+transform = Transform3D(1, -3.1292564e-07, 6.827332e-08, 3.1292564e-07, 0.90912306, -0.41652766, 6.827332e-08, 0.41652766, 0.90912306, -5.3344884e-11, -0.09837694, -0.16454676)
+
+[node name="MagazineBoot" type="MeshInstance3D" parent="." unique_id=100784880]
+material_override = ExtResource("1_xwroh")
+mesh = ExtResource("2_foyj0")
+
+[node name="BootInset" type="MeshInstance3D" parent="." unique_id=1510789313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.008, 0)
+material_override = ExtResource("3_oh2nt")
+mesh = ExtResource("4_aqvpm")
+
+[node name="RubberPullLoop" type="MeshInstance3D" parent="." unique_id=324371877]
+material_override = ExtResource("1_xwroh")
+mesh = ExtResource("5_3mjmy")
+
+[node name="BootGrip-1" type="MeshInstance3D" parent="." unique_id=291175563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0, 0)
+material_override = ExtResource("3_oh2nt")
+mesh = ExtResource("6_d4xdq")
+
+[node name="BootGrip1" type="MeshInstance3D" parent="." unique_id=540038555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0, 0)
+material_override = ExtResource("3_oh2nt")
+mesh = ExtResource("7_pv7s8")

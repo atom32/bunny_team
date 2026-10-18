@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "paper"
+albedo_color = Color(0.44313726, 0.45490196, 0.36078432, 1)
+roughness = 0.86

@@ -5,7 +5,7 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 source = root / "localization/zh_CN.json"
-messages = json.loads(source.read_text())
+messages = json.loads(source.read_text(encoding="utf-8"))
 placeholders = re.compile(r"%(?:[-+0-9.]*[sdf])")
 for english, chinese in messages.items():
     # Literal percentages in descriptive prose are not interpolation templates.
@@ -15,6 +15,6 @@ quote = lambda value: "&" + json.dumps(value, ensure_ascii=False)
 lines = [f"{quote(key)}: {quote(value)}" for key, value in messages.items()]
 (root / "localization/zh_CN.tres").write_text(
     '[gd_resource type="Translation" format=3]\n\n[resource]\n'
-    'locale = "zh_CN"\nmessages = {\n' + ",\n".join(lines) + "\n}\n"
+    'locale = "zh_CN"\nmessages = {\n' + ",\n".join(lines) + "\n}\n", encoding="utf-8"
 )
 print(f"Built {len(messages)} Chinese translation entries")

@@ -181,20 +181,56 @@ func fire_weapon(weapon_instance_id: String) -> bool:
 
 func can_reload_weapon(weapon_instance_id: String) -> bool:
 	var weapon_state: Variant = get_weapon_runtime_state(weapon_instance_id)
-	return status == Status.ACTIVE and weapon_state != null and weapon_state.can_reload(inventory)
+	return status == Status.ACTIVE and weapon_state != null and weapon_state.magazine_ammo < weapon_state.magazine_capacity and not _reload_ammo_id(weapon_state).is_empty()
+
+
+func _reload_ammo_id(weapon_state) -> StringName:
+	var definition := ContentDB.get_weapon(weapon_state.weapon_definition_id, false)
+	if not definition or not weapon_state.validate() or String(weapon_state.ammo_definition_id) not in definition.compatible_ammo_ids: return &""
+	# A nonempty magazine may only top up its existing type. Empty magazines
+	# follow authored compatibility order (standard first), using actual stock.
+	var ids := definition.compatible_ammo_ids if weapon_state.magazine_ammo == 0 else PackedStringArray([String(weapon_state.ammo_definition_id)])
+	for id in ids:
+		for item in inventory.get_items():
+			if item.definition_id == StringName(id) and item.quantity > 0: return StringName(id)
+	return &""
 
 
 func reload_weapon(weapon_instance_id: String) -> int:
-	if status != Status.ACTIVE:
+	if not can_reload_weapon(weapon_instance_id) or not inventory.validate():
 		return 0
 	var weapon_state: Variant = get_weapon_runtime_state(weapon_instance_id)
-	var loaded: int = weapon_state.reload(inventory) if weapon_state else 0
+	var ammo_id := _reload_ammo_id(weapon_state)
+	# Stage consumption with the existing runtime-state logic. Failed reloads
+	# publish neither a new ammo type nor a partial inventory debit.
+	var candidate := InventoryState.from_dict(inventory.to_dict())
+	if not candidate: return 0
+	candidate.reserved_weight = inventory.reserved_weight
+	var magazine = WEAPON_RUNTIME_STATE_SCRIPT.new(weapon_state.weapon_instance_id, ammo_id, weapon_state.magazine_capacity, weapon_state.magazine_ammo, weapon_state.weapon_definition_id)
+	var loaded: int = magazine.reload(candidate)
+	var ammo := ContentDB.get_ammo(ammo_id, false)
+	if loaded <= 0 or not ammo: return 0
+	candidate.reserved_weight += loaded * ammo.weight
+	if not candidate.validate(): return 0
+	# Keep surviving item objects/IDs (including equipped gear) stable.
+	for item in inventory.get_items():
+		var remaining := candidate.get_item(item.instance_id)
+		if remaining: item.quantity = remaining.quantity
+		else: inventory.remove_item(item.instance_id)
+	weapon_state.ammo_definition_id = ammo_id
+	weapon_state.magazine_ammo = magazine.magazine_ammo
 	_sync_loaded_weight()
 	return loaded
 
 
 func get_reserve_ammo(weapon_instance_id: String) -> int:
 	var weapon_state: Variant = get_weapon_runtime_state(weapon_instance_id)
+	if weapon_state and weapon_state.magazine_ammo == 0:
+		var ammo_id := _reload_ammo_id(weapon_state)
+		var total := 0
+		for item in inventory.get_items():
+			if item.definition_id == ammo_id: total += item.quantity
+		return total
 	return weapon_state.get_reserve_ammo(inventory) if weapon_state else 0
 
 
@@ -230,7 +266,7 @@ func activate() -> bool:
 		return false
 	status = Status.ACTIVE
 	for weapon_state in _weapon_runtime_states.values():
-		weapon_state.reload(inventory)
+		reload_weapon(weapon_state.weapon_instance_id)
 	_sync_loaded_weight()
 	return true
 
@@ -388,7 +424,7 @@ func _weapon_runtime_states_are_valid() -> bool:
 			or not weapon_state.validate()
 			or not weapon_definition
 			or weapon_state.weapon_definition_id != weapon_definition.id
-			or weapon_state.ammo_definition_id != weapon_definition.get_runtime_ammo_definition_id()
+			or String(weapon_state.ammo_definition_id) not in weapon_definition.compatible_ammo_ids
 			or weapon_state.magazine_capacity != weapon_definition.magazine_capacity
 		):
 			return false
@@ -426,5 +462,12 @@ static func _generate_session_id() -> String:
 	return Crypto.new().generate_random_bytes(16).hex_encode()
 
 
-func get_weapon_damage(definition: WeaponDefinition) -> float:
-	return definition.damage * (1.1 if ar_damage_upgraded and definition.id == &"weapon.assault_rifle_01" else 1.0)
+func get_weapon_damage(definition: WeaponDefinition, weapon_instance_id := "") -> float:
+	var damage := definition.damage
+	var state: Variant = get_weapon_runtime_state(weapon_instance_id)
+	# Local compatibility rule: standard 5.56 retains the existing weapon
+	# balance; only loaded rifle AP replaces the base (never adds to it).
+	if definition.id == &"weapon.assault_rifle_01" and state and state.weapon_definition_id == definition.id and state.ammo_definition_id == &"ammo.556_ap":
+		var ammo := ContentDB.get_ammo(state.ammo_definition_id, false)
+		if ammo: damage = ammo.damage
+	return damage * (1.1 if ar_damage_upgraded and definition.id == &"weapon.assault_rifle_01" else 1.0)

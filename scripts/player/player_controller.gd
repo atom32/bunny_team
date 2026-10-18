@@ -320,6 +320,8 @@ func _equip_weapon_definition(weapon: WeaponDefinition) -> void:
 	weapon_data = weapon
 	_clear_weapon_sockets()
 	equipped_weapon_visual = _attach_equipment(weapon)
+	if equipped_weapon_visual and equipped_weapon_visual.has_method("apply_fitting_presentation"):
+		equipped_weapon_visual.apply_fitting_presentation(weapon_instance.fitting if weapon_instance else "")
 	if combat_rig and get_reload_remaining() > 0.0:
 		combat_rig.reload_duration = get_reload_remaining()
 		combat_rig.start_reload()
@@ -951,9 +953,15 @@ func _fire_hitscan(from: Vector3, shot_direction: Vector3) -> void:
 		var target := result.collider as Node
 		if target and target.has_method("receive_damage"):
 			var armor_damage_modifier := armor_data.damage_modifier if armor_data else 0.0
+			var penetration := weapon_data.armor_penetration
+			# Standard ammunition and all other weapons keep their existing path.
+			var state: Variant = _get_weapon_runtime_state()
+			if _initial_session and weapon_data.id == &"weapon.assault_rifle_01" and state and state.ammo_definition_id == &"ammo.556_ap":
+				var ammo := ContentDB.get_ammo(state.ammo_definition_id, false)
+				if ammo: penetration = ammo.armor_penetration
 			var packet := DamagePacket.new(
-				(_initial_session.get_weapon_damage(weapon_data) if _initial_session else weapon_data.damage) + armor_damage_modifier,
-				weapon_data.armor_penetration,
+				(_initial_session.get_weapon_damage(weapon_data, weapon_instance.instance_id if weapon_instance else "") if _initial_session else weapon_data.damage) + armor_damage_modifier,
+				penetration,
 				weapon_data.structure_damage,
 				self,
 				weapon_data.id,

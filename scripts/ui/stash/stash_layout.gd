@@ -88,7 +88,18 @@ func rotate_item(instance_id: String) -> bool:
 	var entry: Array = profile.stash_layout[instance_id]
 	return move_item(instance_id, Vector2i(entry[0], entry[1]), not entry[2])
 
+# Adapted from Ragtail _first_fit(), Copyright 2026 Ragtail contributors,
+# Apache-2.0; see licenses/ragtail/UPSTREAM.md, LICENSE and NOTICE.
+# Modified 2026-10-16: existing instance IDs/array layout; explicit SORT only.
+func _find_sort_placement(instance_id: String) -> Array:
+	for y in range(row_count() + COLUMNS):
+		for x in COLUMNS:
+			for rotated in [false, true]:
+				if can_place(instance_id, Vector2i(x, y), rotated): return [x, y, rotated]
+	return [-1, -1, false]
+
 func sort_items() -> void:
+	var previous_layout := profile.stash_layout.duplicate(true)
 	profile.stash_layout.clear()
 	var items := profile.inventory.get_items()
 	items.sort_custom(func(a: ItemInstance, b: ItemInstance) -> bool:
@@ -98,8 +109,11 @@ func sort_items() -> void:
 	)
 	for item in items:
 		if profile.loadout.is_equipped(item.instance_id): continue
-		var cell := find_space(item.instance_id)
-		profile.stash_layout[item.instance_id] = [cell.x, cell.y, false]
+		var placement := _find_sort_placement(item.instance_id)
+		if not _valid_entry(placement):
+			profile.stash_layout = previous_layout
+			return
+		profile.stash_layout[item.instance_id] = placement
 
 func row_count() -> int:
 	var rows := 8

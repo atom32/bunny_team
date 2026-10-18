@@ -1,0 +1,31 @@
+Ragtail
+Copyright 2026 Ragtail contributors
+
+This product includes software developed for the Ragtail project.
+
+Public snapshot modifications dated 2026-07-30:
+- Replaced the development README with verified public documentation whose every
+  number is re-checked against this tree by the publication claim gate.
+- Added a Korean README translation, two offscreen QA captures, an asset-credit
+  ledger (CREDITS.md) with a SHA-256 row for every shipped media file, and
+  Apache-2.0 licensing documents.
+- Retracted an inaccurate originality claim: the development README stated that
+  every name, character, and piece of art was original while the repository
+  shipped 5 CC0 Kenney tiles and 2 OFL-licensed Gothic A1 font files. Names,
+  characters, and the critter sprites are project-created; the tiles, the
+  interface and impact sounds, and the UI font are third-party and are listed in
+  CREDITS.md.
+- Absolute home paths, machine hostnames, and email-shaped strings were rewritten
+  to placeholders during publication; self-hosted CI runner labels were replaced
+  with hosted-runner labels.
+
+Third-party components retain their own notices:
+- GUT (Godot Unit Test), Copyright (c) 2018 Tom "Butch" Wesley, MIT licence, in
+  addons/gut/ with its LICENSE.md.
+- Gothic A1 by Hanyang University, SIL Open Font License 1.1, in assets/fonts/
+  with OFL_GothicA1.txt. The OFL notice must travel with the font files.
+- Kenney (kenney.nl) CC0 tiles and sound effects, with the pack licence texts in
+  assets/kenney/ and assets/audio/.
+
+Apache-2.0 applies to source code only. Media asset licenses and provenance are
+recorded in CREDITS.md and take precedence for those files.

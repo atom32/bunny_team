@@ -132,7 +132,11 @@ func _setup_campus_actions(session: SortieSession) -> void:
 			point.name=entry[1];point.action_id=entry[2];point.position=get_node("RelaySites/"+entry[0]).position;add_child(point)
 	if session.campus.stage in ["relay","recorder"]:
 		var point:=preload("res://scenes/world/campus_actions/recorder.tscn").instantiate() as CampusAction
-		point.name="ExperimentRecorder";point.position=Vector3(-35,.92,19);add_child(point)
+		point.name="ExperimentRecorder"
+		# Old suspended contracts retain their original site; new contracts match
+		# the archive briefing and use an editable marker on its existing desk.
+		point.position=NarrativeSlice.RECEIPT_POSITION if session.campus.version==1 else get_node("CampusStorySites/ExperimentRecorder").position
+		add_child(point)
 	if session.campus.stage in ["power","supply","complete"]:
 		var point:=preload("res://scenes/world/campus_actions/power.tscn").instantiate() as CampusAction
 		point.name="L02BranchControl";point.position=get_node("RelaySites/Repair").position+Vector3(-4,0,0);add_child(point)

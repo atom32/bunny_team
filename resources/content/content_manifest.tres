@@ -56,9 +56,15 @@
 
 [ext_resource type="Resource" path="res://resources/items/experiment_recorder.tres" id="campus_recorder"]
 
+[ext_resource type="Resource" path="res://resources/items/field_ration.tres" id="supply_field_ration"]
+[ext_resource type="Resource" path="res://resources/items/energy_bar.tres" id="supply_energy_bar"]
+[ext_resource type="Resource" path="res://resources/items/canned_beans.tres" id="supply_canned_beans"]
+[ext_resource type="Resource" path="res://resources/items/bottled_water.tres" id="supply_bottled_water"]
+[ext_resource type="Resource" path="res://resources/items/citrus_drink.tres" id="supply_citrus_drink"]
+
 [resource]
 script = ExtResource("51_uhvv5")
-definitions = Array[ExtResource("5_lo6rt")]([ExtResource("6_rkil1"), ExtResource("7_qa1uy"), ExtResource("8_an1qi"), ExtResource("9_e5yob"), ExtResource("10_rn5xg"), ExtResource("11_6m652"), ExtResource("12_wryso"), ExtResource("13_h2er0"), ExtResource("14_ii2le"), ExtResource("15_queyl"), ExtResource("16_grol2"), ExtResource("17_4wuox"), ExtResource("18_v8lg4"), ExtResource("19_2dmyr"), ExtResource("20_ncc0l"), ExtResource("21_xlnsj"), ExtResource("22_vqmab"), ExtResource("23_b85ny"), ExtResource("24_7gywt"), ExtResource("25_2ug52"), ExtResource("26_fcsxb"), ExtResource("27_crutq"), ExtResource("28_dmo3s"), ExtResource("29_efx41"), ExtResource("30_x1qwi"), ExtResource("31_3rgv5"), ExtResource("32_upe4o"), ExtResource("33_2s6ce"), ExtResource("34_i8w7s"), ExtResource("35_nwk86"), ExtResource("campus_recorder")])
+definitions = Array[ExtResource("5_lo6rt")]([ExtResource("6_rkil1"), ExtResource("7_qa1uy"), ExtResource("8_an1qi"), ExtResource("9_e5yob"), ExtResource("10_rn5xg"), ExtResource("11_6m652"), ExtResource("12_wryso"), ExtResource("13_h2er0"), ExtResource("14_ii2le"), ExtResource("15_queyl"), ExtResource("16_grol2"), ExtResource("17_4wuox"), ExtResource("18_v8lg4"), ExtResource("19_2dmyr"), ExtResource("20_ncc0l"), ExtResource("21_xlnsj"), ExtResource("22_vqmab"), ExtResource("23_b85ny"), ExtResource("24_7gywt"), ExtResource("25_2ug52"), ExtResource("26_fcsxb"), ExtResource("27_crutq"), ExtResource("28_dmo3s"), ExtResource("29_efx41"), ExtResource("30_x1qwi"), ExtResource("31_3rgv5"), ExtResource("32_upe4o"), ExtResource("33_2s6ce"), ExtResource("34_i8w7s"), ExtResource("35_nwk86"), ExtResource("campus_recorder"), ExtResource("supply_field_ration"), ExtResource("supply_energy_bar"), ExtResource("supply_canned_beans"), ExtResource("supply_bottled_water"), ExtResource("supply_citrus_drink")])
 missions = Array[ExtResource("46_oij5f")]([ExtResource("47_08g8x"), ExtResource("48_fbgqx"), ExtResource("49_qceik"), ExtResource("50_2abyj")])
 loot_tables = Array[ExtResource("38_xey7e")]([ExtResource("39_a7u8e"), ExtResource("40_kqwfl"), ExtResource("41_tqqrc"), ExtResource("42_fog3q"), ExtResource("43_m8gso"), ExtResource("44_g7a24"), ExtResource("45_a1jd7")])
 areas = Array[ExtResource("1_h64jc")]([ExtResource("2_i8w7s"), ExtResource("3_nwk86"), ExtResource("4_hmyqg")])

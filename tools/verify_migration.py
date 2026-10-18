@@ -12,6 +12,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import sys
 import time
 
 
@@ -56,12 +57,14 @@ def main():
     def run(name, extra, route=False):
         log = out / (name + ".log")
         command = [str(args.godot.resolve()), "--path", str(project)] + extra
+        if name == "localization_build":
+            command = [sys.executable, "-X", "utf8", "-B", str(project / "tests/test_localization_build.py"), "-v"]
         child_env = dict(env)
         if route:
-            capture = out / "captures"
+            capture = out / ("captures" if name == "route" else name + "_captures")
             capture.mkdir()
-            child_env.update(BUNNY_EVIDENCE=str(capture), APPDATA=str(out / "route_userdata"),
-                             LOCALAPPDATA=str(out / "route_localdata"))
+            child_env.update(BUNNY_EVIDENCE=str(capture), APPDATA=str(out / (name + "_userdata")),
+                             LOCALAPPDATA=str(out / (name + "_localdata")))
         with log.open("wb") as f:
             result = subprocess.run(command, env=child_env, stdout=f, stderr=subprocess.STDOUT,
                                     timeout=30 if name.startswith("quit_") else 180, creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
@@ -70,8 +73,21 @@ def main():
         errors = re.findall(r"^(?:SCRIPT )?ERROR:.*$", text, re.M)
         warnings = re.findall(r"^WARNING:.*$", text, re.M)
         passed = result.returncode == 0 and not errors and not re.search(r"(?:ROUTE_FAIL|: FAIL)", text)
-        if name not in {"cold_import", "main", "route"}:
+        if name == "localization_build":
+            passed = passed and "\nOK\n" in text
+        elif name not in {"cold_import", "main", "route"}:
             passed = passed and "PASS" in text
+        # The newly reviewed tests print intermediate PASS checks too. Require
+        # their final marker so a frame-budget exit cannot masquerade as completion.
+        completion_markers = {
+            "ap_ammo_test": "AP_AMMO_TEST: PASS", "ap_ammo_read": "AP_AMMO_TEST: PASS",
+            "stash_rotation_test": "STASH_ROTATION_TEST: PASS", "stash_rotation_read": "STASH_ROTATION_TEST: PASS",
+            "stash_rotation_gui": "STASH_ROTATION_TEST: PASS",
+            "base_manual_ui_test": "BASE_MANUAL_UI_TEST: PASS", "base_manual_ui_gui": "BASE_MANUAL_UI_TEST: PASS",
+            "carried_backpack_ui_test": "CARRIED_BACKPACK_UI_TEST: PASS", "carried_backpack_ui_gui": "CARRIED_BACKPACK_UI_TEST: PASS",
+        }
+        if name in completion_markers:
+            passed = passed and completion_markers[name] in text
         if name == "cold_import":
             # Original Motus FBXs have harmless non-UTF8 metadata; preserve source bytes.
             # Missing textures and every other import warning still fail verification.
@@ -86,15 +102,17 @@ def main():
               "ERROR", len(errors), "WARNING", len(warnings), flush=True)
         return passed
 
+    if not run("localization_build", []):
+        raise SystemExit(1)
     if not run("cold_import", ["--headless", "--editor", "--import"]):
         raise SystemExit(1)
     if args.import_only:
         return
     scenes = sorted((project / "tests").glob("*.tscn"))
-    if len(scenes) != 79:
-        raise RuntimeError(f"Expected reviewed inventory of 79 test scenes, got {len(scenes)}; review additions/removals")
+    if len(scenes) != 86:
+        raise RuntimeError(f"Expected reviewed inventory of 86 test scenes, got {len(scenes)}; review additions/removals")
     for scene in scenes:
-        frame_budget = "60000" if scene.stem in {"hideout_camera_test", "hideout_idle_test"} else ("12000" if scene.stem.startswith("streets_") else "1200")
+        frame_budget = "60000" if scene.stem in {"hideout_camera_test", "hideout_idle_test"} else ("12000" if (scene.stem.startswith("streets_") or scene.stem=="campus_route_input_test") else "1200")
         if not run(scene.stem, ["--headless", "--fixed-fps", "60", "res://tests/" + scene.name, "--quit-after", frame_budget]):
             raise SystemExit(1)
     if not run("records_alarm_read", ["--headless", "res://tests/records_alarm_test.tscn", "--", "--read"]):
@@ -139,6 +157,14 @@ def main():
         raise SystemExit(1)
     if not run("fitting_read", ["--headless", "--fixed-fps", "60", "res://tests/weapon_fitting_test.tscn", "--", "--read"]):
         raise SystemExit(1)
+    if not run("ap_ammo_read", ["--headless", "res://tests/ap_ammo_test.tscn", "--", "--read"]):
+        raise SystemExit(1)
+    if not run("stash_rotation_read", ["--headless", "res://tests/stash_rotation_test.tscn", "--", "--read"]):
+        raise SystemExit(1)
+    if not run("supply_art_read", ["--headless", "res://tests/supply_art_v1_test.tscn", "--", "--read"]):
+        raise SystemExit(1)
+    if not run("weapon_art_read", ["--headless", "res://tests/weapon_art_v1_test.tscn", "--", "--read"]):
+        raise SystemExit(1)
     if not run("campus_read", ["--headless", "res://tests/campus_chapter_test.tscn", "--", "--read"]):
         raise SystemExit(1)
     if not run("kit_read", ["--headless", "res://tests/fitting_kit_test.tscn", "--", "--read"]):
@@ -147,6 +173,15 @@ def main():
         raise SystemExit(1)
     if not run("main", ["--headless", "--quit-after", "180"]):
         raise SystemExit(1)
+    if args.route:
+        for name, scene, extra in [
+            ("base_manual_ui_gui", "base_manual_ui_test", ["--capture"]),
+            ("carried_backpack_ui_gui", "carried_backpack_ui_test", ["--capture"]),
+            ("stash_rotation_gui", "stash_rotation_test", ["--gui"]),
+        ]:
+            if not run(name, ["--rendering-method", args.renderer, "--audio-driver", "Dummy",
+                              "--resolution", "1280x720", "res://tests/" + scene + ".tscn", "--"] + extra, route=True):
+                raise SystemExit(1)
     # Graphics-only route evidence: the CI/remote host may have no audio device.
     if args.route and not run("route", ["--rendering-method", args.renderer, "--audio-driver", "Dummy", "--resolution", "1280x720",
                                         "--script", "res://tools/phase2b_route_probe.gd"], route=True):

@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_mkvgk"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/energy_bar.res" id="2_mjhay"]
+
+[node name="EnergyBar" type="Node3D" unique_id=509776466]
+metadata/presentation_definition_id = "supply.energy_bar"
+
+[node name="Print54" type="Label3D" parent="." unique_id=224242495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03363, 0.014)
+pixel_size = 0.000156
+modulate = Color(0.14117648, 0.2, 0.18431373, 1)
+text = "OAT
+BAR"
+font = ExtResource("1_mkvgk")
+font_size = 48
+outline_size = 0
+
+[node name="Print55" type="Label3D" parent="." unique_id=1037598137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01824, 0.014)
+pixel_size = 6.5e-05
+modulate = Color(0.25490198, 0.34117648, 0.31764707, 1)
+text = "B07 / FOOD"
+font = ExtResource("1_mkvgk")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=14185248]
+mesh = ExtResource("2_mjhay")

@@ -27,7 +27,7 @@ static func buy_price(definition: ItemDefinition, profile: ProfileState) -> int:
 static func stock(profile: ProfileState) -> Array[ItemDefinition]:
 	var result: Array[ItemDefinition] = []
 	for definition in ContentDB.get_items():
-		if not (definition.has_tag(&"weapon") or definition.has_tag(&"armor") or definition.has_tag(&"backpack") or definition.has_tag(&"ammo") or definition.has_tag(&"fitting_kit") or definition is MedicalDefinition): continue
+		if not (definition.has_tag(&"weapon") or definition.has_tag(&"armor") or definition.has_tag(&"backpack") or definition.has_tag(&"ammo") or definition.has_tag(&"fitting_kit") or definition.has_tag(&"food") or definition.has_tag(&"drink") or definition is MedicalDefinition): continue
 		if definition.has_tag(&"fitting_kit") and not profile.first_mission_completed: continue
 		if not profile.first_mission_completed and definition.id in [&"weapon.sniper_01", &"weapon.lmg_01", &"weapon.rocket_launcher_01", &"ammo.556_ap", &"ammo.rocket_standard", &"equipment.thruster_pack_01"]: continue
 		result.append(definition)
@@ -47,7 +47,9 @@ static func can_claim_relief(profile: ProfileState) -> bool:
 	if profile.failed_sorties <= profile.relief_claimed_after or profile.credits >= 300: return false
 	for item in profile.inventory.get_items():
 		var weapon := ContentDB.get_item(item.definition_id) as WeaponDefinition
-		if weapon and count(profile, weapon.get_runtime_ammo_definition_id()) > 0: return false
+		if weapon:
+			for ammo_id in weapon.compatible_ammo_ids:
+				if count(profile, StringName(ammo_id)) > 0: return false
 	return true
 
 static func prepare(profile: ProfileState, action: String, id: String, quantity := 1) -> Dictionary:

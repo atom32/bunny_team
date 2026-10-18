@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/data/weapon_definition.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/weapons/assault_rifle.tscn" id="2"]
 
-[ext_resource type="Texture2D" path="res://assets/ui/stash/assault_rifle_01.png" id="stash_icon"]
+[ext_resource type="Texture2D" path="res://assets/ui/stash/weapon_art_v1/ar556.png" id="stash_icon"]
 
 [resource]
 script = ExtResource("1")
@@ -19,7 +19,7 @@ socket_name = &"HandR"
 scene = ExtResource("2")
 movement_modifier = -0.1
 weapon_type = &"rifle"
-compatible_ammo_ids = PackedStringArray("ammo.556_standard")
+compatible_ammo_ids = PackedStringArray("ammo.556_standard", "ammo.556_ap")
 magazine_capacity = 30
 fire_mode = &"automatic"
 action_type = &"hitscan"

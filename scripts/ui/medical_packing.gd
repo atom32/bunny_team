@@ -7,7 +7,12 @@ var message := "Total rounds include magazines. The preview below shows actual p
 
 func _ready() -> void:
 	theme = null if compact else UIFactory.theme()
-	add_theme_stylebox_override("panel", SliceUI.menu_style(Color("151b1f"), Color("151b1f")) if compact else UIFactory.panel_style(Color("101d29ee"), Color("557895")))
+	add_theme_stylebox_override("panel", FieldManualStyle.panel(FieldManualStyle.SURFACE) if compact else UIFactory.panel_style(Color("101d29ee"), Color("557895")))
+	if compact:
+		var style := get_theme_stylebox("panel").duplicate() as StyleBoxFlat
+		style.content_margin_left = 14
+		style.content_margin_right = 14
+		add_theme_stylebox_override("panel", style)
 	_refresh()
 
 func _refresh() -> void:
@@ -17,7 +22,14 @@ func _refresh() -> void:
 	var profile := ProfileRuntime.get_profile()
 	var body := VBoxContainer.new()
 	body.add_theme_constant_override("separation", 8 if compact else 6)
-	add_child(body)
+	if compact:
+		var scroll := ScrollContainer.new()
+		scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+		add_child(scroll)
+		body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		scroll.add_child(body)
+	else:
+		add_child(body)
 	var heading := Label.new()
 	heading.text = tr("SORTIE SUPPLIES") if compact else tr("AMMO + MEDICAL / PACK FOR THIS SORTIE")
 	heading.add_theme_font_size_override("font_size", 18)
@@ -25,7 +37,7 @@ func _refresh() -> void:
 		var hint := Label.new()
 		hint.text = tr("INCLUDES LOADED MAGAZINES")
 		hint.add_theme_font_size_override("font_size", 10)
-		hint.add_theme_color_override("font_color", SliceUI.MUTED)
+		hint.add_theme_color_override("font_color", FieldManualStyle.MUTED)
 		body.add_child(heading)
 		body.add_child(hint)
 		var rule := HSeparator.new()
@@ -148,12 +160,12 @@ func _add_status(parent: Control, id: String, requested: int, packed: int, owned
 	if compact: status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	status.text = tr("PACKED %d / SHORT %d") % [packed, maxi(0, requested-packed)]
 	if packed < requested:
-		status.add_theme_color_override("font_color", Color("ffcc80"))
+		status.add_theme_color_override("font_color", FieldManualStyle.ACCENT if compact else Color("ffcc80"))
 		status.tooltip_text = tr("Short of requested load: check owned stock and carry capacity. Only PACKED supplies will deploy.")
 	elif requested == 0:
 		status.text = tr("NOT REQUESTED / PACKED 0")
 	else:
-		status.add_theme_color_override("font_color", Color("aab6ba") if compact else Color("80dfde"))
+		status.add_theme_color_override("font_color", FieldManualStyle.MUTED if compact else Color("80dfde"))
 	if compact:
 		status.text = tr("PACKED %d / OWNED %d") % [packed, owned] if requested > 0 else tr("NOT PACKED / OWNED %d") % owned
 		if packed < requested: status.text += "\n" + tr("SHORT %d") % (requested - packed)

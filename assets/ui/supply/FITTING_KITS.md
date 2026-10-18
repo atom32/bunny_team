@@ -5,3 +5,7 @@
 实际用途：quickloader_kit安装后换弹x0.8、增加0.8kg；suppressor_kit听声半径x0.5、换弹x1.15、增加0.35kg；observation_optic_kit按精确移动时观察/镜头范围+3m、换弹x1.1、增加0.55kg。全部安装到单件合格单弹丸hitscan枪械的一格utility fitting，不叠加、不退还旧改装。
 
 三件库存定义通过现有item_authoring预览/发布工厂创建，再配置图标、标签、掉落、商店与中英文本。获取不等于免费永久加成：套件消耗，效果随武器实例保存/损失；默认新存档不赠送。
+
+## Weapon Art Pack v1
+
+The original project-authored SVGs are retained. The three kit Resources now use transparent Godot renders in `assets/ui/stash/weapon_art_v1/`, derived from the actual cosmetic attachment scenes. Quickloader icon uses a subset of the supplied M4 magazine and inherits that source's restrictions; the other two meshes are project-authored. See `assets/weapons/art_pack_v1/SOURCE.md`. This changes icons only, not IDs, values, weights or fitting behavior.

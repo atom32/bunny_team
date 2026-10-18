@@ -117,7 +117,8 @@ func _test_extracted_ammo_save_round_trip() -> void:
 		return
 	var pickup_ammo := ItemInstance.new(&"ammo.556_ap", 20, 100.0, "pickup_ammo")
 	check(session.inventory.add_item(pickup_ammo), "picked-up ammunition enters carried inventory")
-	check(session.inventory.get_item(carried_ammo.instance_id).quantity == 80, "picked-up ammunition merges with carried ammunition")
+	var magazine = session.get_weapon_runtime_state(profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY))
+	check(session.inventory.get_item(carried_ammo.instance_id).quantity == 50 and magazine.ammo_definition_id == &"ammo.556_ap" and magazine.magazine_ammo == 30, "pickup merges into loose AP stock; loaded plus loose ammunition remains eighty")
 	check(profile.inventory.get_item(carried_ammo.instance_id).quantity == 60, "ammunition pickup leaves warehouse state unchanged")
 	check(session.complete_extraction(), "extraction completes the active sortie")
 	var outcome := SortieOutcomeService.create_outcome(session)

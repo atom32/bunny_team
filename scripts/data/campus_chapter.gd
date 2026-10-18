@@ -1,6 +1,7 @@
 class_name CampusChapter
 extends RefCounted
 ## Campus Batch 2. Separate from immutable legacy logistics facts/rewards.
+const FACTS_VERSION := 2 # v1 suspended sorties keep the original dormitory device site.
 const RECORDER_ID := &"story.experiment_recorder"
 const RELAYS := ["relay_office", "relay_repair"]
 const ARMOR_IDS := [&"armor.recon_shell_01", &"armor.bulwark_plate_01"]
@@ -48,12 +49,12 @@ static func stage(state: Dictionary) -> String:
 static func initial_facts(profile: ProfileState, area: StringName) -> Dictionary:
 	if area!=&"street_district" or not profile.first_mission_completed or not profile.narrative_slice.settled.Q02: return {}
 	var state := profile.campus_chapter
-	return {"version":1,"stage":stage(state),"relay_ready":state.relays_returned,"recorder_ready":state.recorder_returned,"gear_ready":state.delivered_armor and state.delivered_ammo==60,"relays":[],"recorder_revealed":false,"recorder_instance":"","power_cut":state.branch_disconnected,"power_confirmed":state.branch_disconnected}
+	return {"version":FACTS_VERSION,"stage":stage(state),"relay_ready":state.relays_returned,"recorder_ready":state.recorder_returned,"gear_ready":state.delivered_armor and state.delivered_ammo==60,"relays":[],"recorder_revealed":false,"recorder_instance":"","power_cut":state.branch_disconnected,"power_confirmed":state.branch_disconnected}
 
 static func valid_facts(raw: Variant, area: StringName) -> bool:
 	if typeof(raw)!=TYPE_DICTIONARY: return false
 	if raw.is_empty(): return true # Old suspended sorties never gain new-story facts.
-	if area!=&"street_district" or raw.size()!=10 or raw.get("version")!=1 or raw.get("stage") not in STAGES: return false
+	if area!=&"street_district" or raw.size()!=10 or not SortieCheckpoint.integer(raw.get("version"),1,FACTS_VERSION) or raw.get("stage") not in STAGES: return false
 	for key in ["relay_ready","recorder_ready","gear_ready","recorder_revealed","power_cut","power_confirmed"]:
 		if typeof(raw.get(key))!=TYPE_BOOL: return false
 	if typeof(raw.get("relays"))!=TYPE_ARRAY or raw.relays.size()>2: return false
@@ -159,6 +160,7 @@ static func status_text(profile: ProfileState, session: SortieSession=null) -> S
 		var facts:=session.campus
 		if facts.stage=="relay" and not facts.recorder_instance.is_empty():return TranslationServer.translate("Experiment recorder / bring it home")
 		if facts.stage=="relay": return TranslationServer.translate("L-02 / relays %d/2 / Extract; recorder available after both repairs") % facts.relays.size()
+		if facts.stage=="recorder" and facts.version==1 and facts.recorder_instance.is_empty():return TranslationServer.translate("Legacy sortie / recorder at dormitory registration desk")
 		if facts.stage=="recorder":return TranslationServer.translate("Experiment recorder / bring it home") if not facts.recorder_instance.is_empty() else TranslationServer.translate("Experiment recorder / archive reading hall")
 		if facts.stage=="power":return TranslationServer.translate("L-02B OFF / L-02A ON / Extract") if facts.power_cut else TranslationServer.translate("L-02 control / disconnect experiment branch, preserve shelter power")
 		if facts.stage=="supply":return TranslationServer.translate("Campus supplies delivered / Extract") if facts.gear_ready else TranslationServer.translate("Deliver spare armor and 60 standard 5.56 rounds at base")

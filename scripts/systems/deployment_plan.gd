@@ -20,14 +20,10 @@ static func build(profile: ProfileState) -> DeploymentPlan:
 		return plan
 	var carried_capacity := profile.get_carried_capacity()
 	plan.capacity = carried_capacity
-	var targets: Dictionary = {}
+	var targets := default_ammo_counts(profile)
 	for id in profile.loadout.get_equipped_instance_ids():
 		var item := profile.inventory.get_item(id)
-		var definition := ContentDB.get_item(item.definition_id)
 		plan.weight += item.total_weight()
-		if definition is WeaponDefinition:
-			var ammo_id: StringName = definition.get_runtime_ammo_definition_id()
-			targets[ammo_id] = int(targets.get(ammo_id, 0)) + definition.magazine_capacity * 3
 	for ammo_id in targets:
 		targets[ammo_id] = profile.ammo_pack.get(String(ammo_id), targets[ammo_id])
 	if targets.is_empty():
@@ -108,6 +104,8 @@ static func default_ammo_counts(profile: ProfileState) -> Dictionary:
 		if weapon:
 			var ammo := String(weapon.get_runtime_ammo_definition_id())
 			counts[ammo] = int(counts.get(ammo,0)) + weapon.magazine_capacity*3
+			for compatible in weapon.compatible_ammo_ids:
+				if not counts.has(compatible): counts[compatible] = 0
 	return counts
 
 static func prepare(profile: ProfileState, area: StringName, mission: StringName) -> Dictionary:

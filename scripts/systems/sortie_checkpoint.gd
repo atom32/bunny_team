@@ -95,7 +95,10 @@ static func restore_session(data: Dictionary) -> SortieSession:
 		var weapon = session._weapon_runtime_states[id]
 		var saved: Variant = data.weapons.get(id)
 		if typeof(saved) != TYPE_DICTIONARY: return null
-		if saved.get("ammo") != String(weapon.ammo_definition_id) or saved.get("capacity") != weapon.magazine_capacity or not integer(saved.get("rounds"), 0, weapon.magazine_capacity): return null
+		var definition := ContentDB.get_weapon(weapon.weapon_definition_id, false)
+		if typeof(saved.get("ammo")) != TYPE_STRING or not definition or saved.ammo not in definition.compatible_ammo_ids or not ContentDB.get_ammo(StringName(saved.ammo), false): return null
+		if not integer(saved.get("capacity"), 1) or saved.capacity != weapon.magazine_capacity or not integer(saved.get("rounds"), 0, weapon.magazine_capacity): return null
+		weapon.ammo_definition_id = StringName(saved.ammo)
 		weapon.magazine_ammo = int(saved.rounds)
 	session._sync_loaded_weight()
 	return session if session.validate() else null

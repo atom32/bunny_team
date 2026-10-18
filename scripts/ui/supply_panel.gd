@@ -10,8 +10,8 @@ var _scroll_positions: Dictionary = {}
 var _tab_initialized := false
 
 func _ready() -> void:
-	theme = SliceUI.menu_theme()
-	add_theme_stylebox_override("panel", SliceUI.menu_style(Color("171914fa"), Color("555749")))
+	theme = FieldManualStyle.theme()
+	add_theme_stylebox_override("panel", FieldManualStyle.panel(FieldManualStyle.SURFACE))
 	_refresh()
 
 func _refresh() -> void:

@@ -27,6 +27,14 @@ func _ready() -> void:
 
 func set_open(value: bool) -> void:
 	opened = value
+	# Show the actual first remaining item on the open case, not a second entity.
+	var displayed:=false
+	for pickup in contents():
+		var art:=pickup.get_node_or_null("ItemArt") as Node3D
+		if not art:continue
+		art.visible=value and not displayed
+		ItemPresentation.fit_pickup(art)
+		if art.visible:art.position.y+=.65;displayed=true
 	if motion and motion.is_valid(): motion.kill()
 	motion = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	motion.tween_property(lid,"rotation:x",deg_to_rad(-105.0) if value else 0.0,0.32)

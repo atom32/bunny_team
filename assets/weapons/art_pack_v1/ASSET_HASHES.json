@@ -1,0 +1,251 @@
+{
+  "date": "2026-10-15",
+  "offline_authoring": "art_source/weapon_art_v1/build_assets.gd",
+  "source_and_rights": "assets/weapons/art_pack_v1/SOURCE.md",
+  "files": [
+    {
+      "file": "assets/ui/stash/weapon_art_v1/ar556.png",
+      "sha256": "598f9b300a1d9f0a7e01566d01b597b633b0cf70295a716eef6f07b1928597ac"
+    },
+    {
+      "file": "assets/ui/stash/weapon_art_v1/ar556.png.import",
+      "sha256": "28d438993818b0d42b52c3edfad68bc41c455cc2e1d5cbdebd13feb875aa7937"
+    },
+    {
+      "file": "assets/ui/stash/weapon_art_v1/observation_optic.png",
+      "sha256": "6628a17200db8b4e02755c80a568ceb726389802acf865388d29f433e7a5a758"
+    },
+    {
+      "file": "assets/ui/stash/weapon_art_v1/observation_optic.png.import",
+      "sha256": "41304873c4e6e7f591a52061c4cb46552e6f1b82580a69ce953c015d7472e0c1"
+    },
+    {
+      "file": "assets/ui/stash/weapon_art_v1/quickloader.png",
+      "sha256": "b37d82d5bb671d1815c642ef01305582e194def391297828d57c5000b8ddca37"
+    },
+    {
+      "file": "assets/ui/stash/weapon_art_v1/quickloader.png.import",
+      "sha256": "0719b1d99c8636c3528ef9ed281c83e096d1b1fb72cc85588c895581cf98f962"
+    },
+    {
+      "file": "assets/ui/stash/weapon_art_v1/suppressor.png",
+      "sha256": "02eeda311963e5352139ff717d79e2e877406ece6d26de57f9251cd647a3d26f"
+    },
+    {
+      "file": "assets/ui/stash/weapon_art_v1/suppressor.png.import",
+      "sha256": "b585df6b60c448c9d364cd8cbe0914db687d377fb614d622437bc73fae2cfda4"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/AmmunitionCarton.res",
+      "sha256": "72893f5f3afdc9a760da6c984943d0c1ccd175ff5214ff565b5b94072e46587b"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/BootGrip-1.res",
+      "sha256": "85cc9a26e9076471d24add3bf8a231c3973d4af568ab366c662a4b02fa47bb19"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/BootGrip1.res",
+      "sha256": "569b0c4b81765334003973bf4f22d7db164c49976299e7b9b302e71bcd9202d8"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/BootInset.res",
+      "sha256": "f4bcb24df73606a8582c9e40c9c2551ad679ed863ae31ea891ef9bf27b0e2243"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/brass.tres",
+      "sha256": "28ff34b0d2e08ca2785dbfb5a546fbd38b5be2fae20f212aba4308709a159df9"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/CartonLid.res",
+      "sha256": "bc14bf5d3193637d294d6455b400ad66250e75c029b5f26e42e4983ae54c2ee4"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/CartridgeCase.res",
+      "sha256": "837ed59729f80af438fb5200aa7e69c23e770c5b0e78a980e93972a4fceecaab"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/ClampScrew-1.res",
+      "sha256": "c0e4bc4ee62a9f6038baf467b7f7af5a0a7bcad12caef6729cebadba081ca0cc"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/ClampScrew1.res",
+      "sha256": "297d453cf9856a6ac3a58e3c5ccf73e729c622817e18b007ff477d1b9472ad07"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/coated_alloy.tres",
+      "sha256": "28198a49a124c41886e7264542331910d43363b10aa6571a79b6562c0d225506"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/copper.tres",
+      "sha256": "de282943e76148aaafb0d66d59d6bea9a3564e41d072a1ec106ddebd3d5baba0"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/CoverFastener-10.res",
+      "sha256": "ed3197e10684fc8c7ccf1f58a1285581058a14149bbd108ce1d06f75632337a5"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/CoverFastener-11.res",
+      "sha256": "98524226f92f1df5cc01fad9d7436c59d23b93f27b2eb7e77e0769abea73b96a"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/CoverFastener10.res",
+      "sha256": "5fae8b3c0d0c69c65d96b785228867f832db9f4d83a625f437491eef45e1f575"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/CoverFastener11.res",
+      "sha256": "f4b2d120f8f0cd9cca52ae147495791374f8db008b23d461ec63fa79b5e134f7"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/ElevationDial.res",
+      "sha256": "c04d3a44693f8a4e9c08b67f8d926d1db988d56709627c4983ac248b37135281"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/existing_magazine_reference.res",
+      "sha256": "7471095b63a397c5da63752d8feed83c02b7e7e1ba8ce673cb0487763a23771b"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/FrontPaperLabel.res",
+      "sha256": "4618c12955da59e05a30c75bbe4f2fbd66c359f78c77b8f95cd6918e8c59ac7e"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/HeatBand0.res",
+      "sha256": "cdf0d274ca79a4708bd99edbcbd5235cb28804a9673f9176799a0eef1a9a11f4"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/HeatBand1.res",
+      "sha256": "c45c42ae01225166890e099211d823e4a19c9e4ef3181d66899ba6d6227a2540"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/HeatBand2.res",
+      "sha256": "53ec687cf088df4cff0b87ac7a400035cda2142f2c47df1e8fc95152ac92a17f"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/label.tres",
+      "sha256": "cabb4eb7c691bad1ce1cb4ad02fe9a829221f3a3a81f3377207c1795cb6e4a23"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/m4_finish.gdshader",
+      "sha256": "0f2037a026ca94cf7f749bcd4ae8925193e86062546149b4a904c3670190a81b"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/m4_finish.gdshader.uid",
+      "sha256": "e22a142932140917f9c966af86ff1d3451d097472a3f40144e77ceb543e63ff2"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/m4_finish.tres",
+      "sha256": "0ddbb5c1e0085fe4b7d38edc4831d8e6e2f399960f9544815dff40d2e550f2ce"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/MagazineBoot.res",
+      "sha256": "49fcfa3e05f08912682145792bd3fff8ae3f26e8edc417e82da48be2e5ac3be1"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/MountCollar.res",
+      "sha256": "8c202fccfaf7aa98f2295a93aceee6c7d25e80c69b0d582221c9a7a95c1fbaf2"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/MountLeg-1.res",
+      "sha256": "80c96def9088d574999a4e24c8706e16a800faa2ae67d101293a56ef69cb5efe"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/MountLeg1.res",
+      "sha256": "d3867b62cd2e8f34cfea7e2034e19e390b573aa04589223370a21c7c31f5d1a7"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/ObjectiveHood.res",
+      "sha256": "0813b68cd99de17f106d71e90447a3754ec4998e991b987d260017e1dd2461f8"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/OcularRing.res",
+      "sha256": "1cf584b50e2ef1c97c752f0418f54697218ecd757e0edd1644034d683f40d720"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/optical_glass.tres",
+      "sha256": "09eb34e8c165c993d237354aeff6bc8414895409292077de0d406cc0f0713837"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/OpticalLens-1.res",
+      "sha256": "a4970037ecfa64fb1d312e939e6ff0ff3a486f594ecf5727679334c4e8a72744"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/OpticalLens1.res",
+      "sha256": "3d3cddc08e8721737259f3c01bde0ef544979e1d11ac0e7dad80fe0b3db65be5"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/OpticRailAdapter.res",
+      "sha256": "9a6ad62c8620b8f2e32b19060c952cc166b7b5d24dfd472b42d1e85ccf9e4359"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/paper.tres",
+      "sha256": "e364b5d716351f1ea691ebc9a1f204f162cd35e87d0e035d2f7e9f035052dc18"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/PaperLabel.res",
+      "sha256": "4dcb7f1cf6f2f629d1894735b2cb507ebd265e31fcde9cca4359a6958a56141f"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/polymer.tres",
+      "sha256": "78209804d6ab2124733c634bbc14fa34adfadc5f17399e0df842ffc41f3d512c"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/PrismHousing.res",
+      "sha256": "fab1dfba286f49f81546df32d9044d78ded4fab9bbfe71eb95bfa4828552c7f2"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/ProjectileReference.res",
+      "sha256": "fb58562039b6a452060cf4c13cb85f6fc3152a6141af01570785c7c26418b0c4"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/rubber.tres",
+      "sha256": "6a1d4a210181d10d9f99ea0bf2796ba9ed761a05282655f13f0a0218e5746607"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/RubberPullLoop.res",
+      "sha256": "e95750435669cf0f8f183025cf6f87b244bef5c77e81cd9259f32d31189b1be0"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/ServiceCover-1.res",
+      "sha256": "6444c6e21ceda6f778dc2616402f0f1de7acc89d8f477f8f144cf5a7b19a28f2"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/ServiceCover1.res",
+      "sha256": "15348b2f9c22eb852a29eb6d60b0de0b21126434a407c178d509be32272f627b"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/SOURCE.md",
+      "sha256": "8d3fa18d9e8be307496c972bd7c1dbbe6b7e1c804740bef5ffd877754473806f"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/steel.tres",
+      "sha256": "468068f52952c0a0ff3f649300adb1b246ad294d0d9790e801b2cfff8bec1037"
+    },
+    {
+      "file": "assets/weapons/art_pack_v1/SuppressorShell.res",
+      "sha256": "087898e0e43dc02bc5c607554effdcffe1f6f60e9087d8cc149daee12f290dad"
+    },
+    {
+      "file": "scenes/weapons/art_pack_v1/ammo_556_box.tscn",
+      "sha256": "1e750dfb3be4e2ffa497311f7669dbeebed9a50d884295f395db4c72adb3ccce"
+    },
+    {
+      "file": "scenes/weapons/art_pack_v1/ammo_556_round.tscn",
+      "sha256": "0a61b75b9b98458516d2098f17ec54eb7983d58385d738824e90e1893456ac50"
+    },
+    {
+      "file": "scenes/weapons/art_pack_v1/observation_optic.tscn",
+      "sha256": "b6788dc6b119396835c998ce7482a49b9feaf3a5a38c78bd3a839b37165dd69d"
+    },
+    {
+      "file": "scenes/weapons/art_pack_v1/quickloader_adapter.tscn",
+      "sha256": "605e8ad46f5787fd3c09a29b4b232fa1bff18b7722fa12745412682af4fdef77"
+    },
+    {
+      "file": "scenes/weapons/art_pack_v1/quickloader_magazine.tscn",
+      "sha256": "b74cae1aaba8bd83e843ea608b781a381a473e5ccd293abbf29101eb565faefe"
+    },
+    {
+      "file": "scenes/weapons/art_pack_v1/suppressor.tscn",
+      "sha256": "d287bb8462af03f7725108ddf02af5ac478dba043895e7e5cadc27db45b97d7d"
+    }
+  ]
+}

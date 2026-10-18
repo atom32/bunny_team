@@ -7,8 +7,8 @@ var selected := -1
 var feedback := "Only the active contract advances. Claim it at base to begin the next."
 
 func _ready() -> void:
-	theme = SliceUI.menu_theme()
-	add_theme_stylebox_override("panel", SliceUI.menu_style(Color("171914fa"), Color("555749")))
+	theme = FieldManualStyle.theme()
+	add_theme_stylebox_override("panel", FieldManualStyle.panel(FieldManualStyle.SURFACE))
 	_refresh()
 
 func _refresh() -> void:
@@ -78,7 +78,7 @@ func _refresh() -> void:
 		button.custom_minimum_size = Vector2(270, 48)
 		button.add_theme_font_size_override("font_size", 14)
 		button.tooltip_text = tr("CLAIMED" if index < profile.campaign.stage else ("ACTIVE" if index == profile.campaign.stage else "LOCKED"))
-		button.modulate = SliceUI.CYAN if index < profile.campaign.stage else (Color.WHITE if index == profile.campaign.stage else SliceUI.MUTED)
+		button.add_theme_color_override("font_color", FieldManualStyle.SUCCESS if index < profile.campaign.stage else (FieldManualStyle.INK if index == profile.campaign.stage else FieldManualStyle.MUTED))
 		list.add_child(button)
 		button.pressed.connect(func(): selected = index; _refresh.call_deferred())
 	var detail := VBoxContainer.new()
@@ -145,7 +145,7 @@ func _submit_q04() -> void:
 func _heading(parent: Node, text: String) -> void:
 	parent.add_child(HSeparator.new())
 	var heading := _label(parent, text, 13)
-	heading.add_theme_color_override("font_color", SliceUI.CYAN)
+	heading.add_theme_color_override("font_color", FieldManualStyle.ACCENT)
 
 
 func _publisher(parent: Node, quest_id: String) -> void:
@@ -160,7 +160,7 @@ func _publisher(parent: Node, quest_id: String) -> void:
 	row.add_child(avatar)
 	var label := _label(row, ContactDefinition.get_contact(id).display_name + " / " + quest_id, 16)
 	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	label.add_theme_color_override("font_color", SliceUI.CYAN)
+	label.add_theme_color_override("font_color", FieldManualStyle.ACCENT)
 
 func _campus_quests(body: Node,profile: ProfileState) -> void:
 	if not profile.narrative_slice.settled.Q02:return

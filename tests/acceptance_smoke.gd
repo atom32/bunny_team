@@ -54,7 +54,7 @@ func _ready() -> void:
 func _test_resources() -> void:
 	var profile := ProfileRuntime.get_profile()
 	check(profile != null and profile.validate(), "ProfileRuntime owns a valid current profile")
-	check(ContentDB.get_items().size() == 31, "content manifest registers the 30 prior definitions plus the unique experiment recorder")
+	check(ContentDB.get_items().size() == 36, "content manifest preserves 31 prior definitions and adds five food/drink trade goods")
 	for medical_id in [&"medical.field_dressing", &"medical.medkit"]:
 		var medical := ContentDB.get_item(medical_id, false) as MedicalDefinition
 		check(medical != null and medical.healing > 0 and medical.use_seconds > 0 and medical.weight > 0, "medical consumable resolves with real healing, use time and carried weight")

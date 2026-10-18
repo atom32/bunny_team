@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_0854e"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/propellant.res" id="2_y1a08"]
+
+[node name="SealedIndustrialCanister" type="Node3D" unique_id=1597380851]
+metadata/presentation_definition_id = "material.propellant"
+
+[node name="Print5" type="Label3D" parent="." unique_id=946889751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.078, 0.049)
+pixel_size = 0.00012
+modulate = Color(0.15294118, 0.20392157, 0.22745098, 1)
+text = "SEALED
+INDUSTRIAL"
+font = ExtResource("1_0854e")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=2078227764]
+mesh = ExtResource("2_y1a08")

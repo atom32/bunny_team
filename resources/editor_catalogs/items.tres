@@ -37,7 +37,12 @@ _uids_to_string_ids = Dictionary[StringName, StringName]({
 &"uid://n8vfdfv10vij": &"weapon.pistol_01",
 &"uid://p57h46hx6aek": &"material.electronics",
 &"uid://spfs5spnqga5": &"material.wiring",
-&"uid://ssttr1ucbnfx": &"ammo.9mm_standard"
+&"uid://ssttr1ucbnfx": &"ammo.9mm_standard",
+&"uid://c8supplyrat10": &"supply.field_ration",
+&"uid://c8supplybar10": &"supply.energy_bar",
+&"uid://c8supplycan10": &"supply.canned_beans",
+&"uid://c8supplywat10": &"supply.bottled_water",
+&"uid://c8supplydri10": &"supply.citrus_drink"
 })
 _string_ids_to_uids = Dictionary[StringName, StringName]({
 &"ammo.12g_buckshot": &"uid://dcyiwphuwesry",
@@ -70,5 +75,10 @@ _string_ids_to_uids = Dictionary[StringName, StringName]({
 &"weapon.rocket_launcher_01": &"uid://br2kgipcnmtan",
 &"weapon.shotgun_01": &"uid://c5yew7u2vydme",
 &"weapon.smg_01": &"uid://ggup1lwxe2vm",
-&"weapon.sniper_01": &"uid://brfpj5k6d8g46"
+&"weapon.sniper_01": &"uid://brfpj5k6d8g46",
+&"supply.field_ration": &"uid://c8supplyrat10",
+&"supply.energy_bar": &"uid://c8supplybar10",
+&"supply.canned_beans": &"uid://c8supplycan10",
+&"supply.bottled_water": &"uid://c8supplywat10",
+&"supply.citrus_drink": &"uid://c8supplydri10"
 })

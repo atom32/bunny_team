@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="1"]
 
-[ext_resource type="Texture2D" path="res://assets/ui/stash/salvage_core.svg" id="stash_icon"]
+[ext_resource type="Texture2D" path="res://assets/ui/stash/supply_art_v1/salvage_core.png" id="stash_icon"]
 
 [resource]
 script = ExtResource("1")

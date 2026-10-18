@@ -13,6 +13,7 @@ enum PickupResult {
 var item_instance: ItemInstance
 var consumed := false
 var _name_label: Label3D
+var _visual_id: StringName
 
 
 func setup(item: ItemInstance) -> void:
@@ -33,7 +34,7 @@ func try_pickup(session: SortieSession) -> PickupResult:
 		return PickupResult.INVALID_SESSION
 	if not _item_is_valid() or session.inventory.contains(item_instance.instance_id):
 		return PickupResult.INVALID_ITEM
-	if not session.inventory.can_add_item(item_instance):
+	if session.inventory.current_weight + item_instance.total_weight() > session.inventory.capacity + 0.0001:
 		return PickupResult.CAPACITY_FULL
 	if not session.inventory.add_item(item_instance):
 		return PickupResult.INVALID_ITEM
@@ -51,7 +52,7 @@ func interact(_actor: Node3D, session: SortieSession) -> Dictionary:
 		PickupResult.SUCCESS:
 			return {"success": true, "result": result, "message": tr("Picked up: %s") % GameLanguage.item_name(definition.display_name)}
 		PickupResult.CAPACITY_FULL:
-			return {"success": false, "result": result, "message": "Inventory Full"}
+			return {"success": false, "result": result, "message": tr("Overweight: stack %.2f kg / free %.2f kg.\nWhole stacks only. Exchange carried loot to free weight.") % [item_instance.total_weight(), session.inventory.get_remaining_capacity()]}
 		PickupResult.INVALID_SESSION:
 			return {"success": false, "result": result, "message": "No active sortie"}
 	return {"success": false, "result": result, "message": "Invalid item"}
@@ -94,18 +95,21 @@ func get_interaction_prompt(_actor: Node3D, session: SortieSession) -> String:
 
 
 func _item_is_valid() -> bool:
-	return (
-		item_instance != null
-		and not item_instance.instance_id.is_empty()
-		and not item_instance.definition_id.is_empty()
-		and item_instance.quantity > 0
-		and ContentDB.has_item(item_instance.definition_id)
-	)
+	if not item_instance or item_instance.instance_id.is_empty() or item_instance.quantity <= 0:
+		return false
+	var definition := ContentDB.get_item(item_instance.definition_id, false)
+	return definition != null and WeaponFitting.valid(item_instance) and (definition.stackable or item_instance.quantity == 1) and is_finite(item_instance.durability) and item_instance.durability >= 0.0 and item_instance.durability <= 100.0
 
 
 func _build_visual() -> void:
 	var campus := get_parent().has_meta("campus_storage")
-	if campus:
+	_visual_id=item_instance.definition_id if item_instance else &""
+	var art:=ItemPresentation.create(_visual_id)
+	if art:
+		add_child(art);ItemPresentation.fit_pickup(art)
+		var base:=VisualFactory.cylinder(self,.42,.04,Vector3(0,.1,0),Color("344448"),"LootBase")
+		base.material_override=VisualFactory.material(Color("344448"),.15,.8)
+	elif campus:
 		var kind := int(get_parent().get_meta("campus_storage"))
 		var colors := [Color("9a8b70"),Color("d0cbb8"),Color("827a66"),Color("70806d")]
 		VisualFactory.box(self,Vector3(.65,.42,.5),Vector3(0,.32,0),colors[kind],"SupplyPackage")
@@ -134,6 +138,13 @@ func _build_visual() -> void:
 
 
 func _update_label() -> void:
+	if not is_inside_tree():return
+	# setup/exchange/checkpoint restore can replace the item in this world slot.
+	if item_instance and item_instance.definition_id!=_visual_id:
+		for child in get_children():
+			if child is Node3D:child.free()
+		_name_label=null
+		_build_visual()
 	if not _name_label:
 		return
 	var definition := ContentDB.get_item(item_instance.definition_id, false) if item_instance else null

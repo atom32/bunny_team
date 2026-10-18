@@ -1,0 +1,19 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_dlmo5"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/salvage_core.res" id="2_byxox"]
+
+[node name="RecoveredCore" type="Node3D" unique_id=790517706]
+metadata/presentation_definition_id = "loot.salvage_core_01"
+
+[node name="Print23" type="Label3D" parent="." unique_id=1994522853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135, 0.086)
+pixel_size = 0.00015
+modulate = Color(0.87058824, 0.85882354, 0.8039216, 1)
+text = "RECOVERED / B07"
+font = ExtResource("1_dlmo5")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=199767359]
+mesh = ExtResource("2_byxox")

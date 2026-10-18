@@ -44,22 +44,24 @@ func _ready() -> void:
 	layer.layer = 26
 	add_child(layer)
 	var screen := SliceUI.root(layer)
-	var legacy_notice := SliceUI.label(screen, tr("LEGACY TUTORIAL / ART NOT REFURBISHED"), Vector2(18, 116), 12, Color("ffbd72"))
+	screen.theme = FieldManualStyle.theme()
+	var legacy_notice := SliceUI.label(screen, tr("LEGACY TUTORIAL / ART NOT REFURBISHED"), Vector2(24, 116), 11, FieldManualStyle.MUTED)
 	legacy_notice.name = "LegacyTutorialNotice"
+	legacy_notice.hide()
 	legacy_notice.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	GameLanguage.language_changed.connect(func(): legacy_notice.text = tr("LEGACY TUTORIAL / ART NOT REFURBISHED"))
-	var panel := SliceUI.panel(screen, Vector2(18, 140), Vector2(350, 114))
+	var panel := SliceUI.panel(screen, Vector2(24, 24), Vector2(350, 114))
 	panel.name = "TutorialCard"
-	panel.add_theme_stylebox_override("panel", UIFactory.panel_style(Color("111a2699"), Color("4f718b44")))
+	panel.add_theme_stylebox_override("panel", FieldManualStyle.panel())
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	guide = SliceUI.label(panel, "", Vector2(12, 10), 15, SliceUI.CYAN)
+	guide = SliceUI.label(panel, "", Vector2(12, 10), 15, FieldManualStyle.INK)
 	guide.size = Vector2(326, 64)
 	guide.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	destination = SliceUI.label(panel, "", Vector2(12, 86), 11, SliceUI.MUTED)
+	destination = SliceUI.label(panel, "", Vector2(12, 86), 11, FieldManualStyle.MUTED)
 	destination.size = Vector2(326, 26)
 	destination.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	choice_buttons = VBoxContainer.new()
-	choice_buttons.position = Vector2(18, 262)
+	choice_buttons.position = Vector2(24, 150)
 	choice_buttons.add_theme_constant_override("separation", 6)
 	screen.add_child(choice_buttons)
 	SliceUI.button(choice_buttons, "CONTINUE / SALVAGE", Vector2.ZERO, Vector2(350, 40), func(): choose_route(true))
@@ -67,11 +69,7 @@ func _ready() -> void:
 	for button in choice_buttons.get_children():
 		button.custom_minimum_size = Vector2(350, 40)
 		button.add_theme_font_size_override("font_size", 14)
-		for state in ["normal", "hover", "pressed", "focus"]:
-			var style := UIFactory.panel_style(Color("26364b"), Color("4d7194"))
-			style.content_margin_top = 6
-			style.content_margin_bottom = 6
-			button.add_theme_stylebox_override(state, style)
+		FieldManualStyle.primary(button)
 	choice_buttons.hide()
 	marker = Label3D.new()
 	marker.billboard = BaseMaterial3D.BILLBOARD_ENABLED

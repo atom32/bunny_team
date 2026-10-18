@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_bx2nt"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/citrus_drink.res" id="2_ubouy"]
+
+[node name="CitrusDrink" type="Node3D" unique_id=1346234626]
+metadata/presentation_definition_id = "supply.citrus_drink"
+
+[node name="Print6" type="Label3D" parent="." unique_id=1445613029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07155, 0.0335)
+pixel_size = 0.00019
+modulate = Color(0.93333334, 0.89411765, 0.78431374, 1)
+text = "CITRUS
+SPARK"
+font = ExtResource("1_bx2nt")
+font_size = 48
+outline_size = 0
+
+[node name="Print7" type="Label3D" parent="." unique_id=1742445325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0297, 0.0335)
+pixel_size = 8e-05
+modulate = Color(0.87058824, 0.85882354, 0.8039216, 1)
+text = "B07 / 330"
+font = ExtResource("1_bx2nt")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=1079106536]
+mesh = ExtResource("2_ubouy")

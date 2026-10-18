@@ -38,16 +38,9 @@ func _ready() -> void:
 		return
 	var root := Control.new()
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	root.theme = SliceUI.menu_theme()
-	for kind in ["Button", "OptionButton"]:
-		for state in ["normal", "hover", "pressed", "disabled", "focus"]:
-			var style := root.theme.get_stylebox(state, kind).duplicate() as StyleBoxFlat
-			style.bg_color = Color("1d2327") if state == "normal" else Color("2b3338")
-			style.border_color = Color("343d42") if state == "normal" else Color("aa9b72")
-			style.set_content_margin_all(6)
-			root.theme.set_stylebox(state, kind, style)
+	root.theme = FieldManualStyle.theme()
 	var backdrop := ColorRect.new()
-	backdrop.color = Color("0e1215")
+	backdrop.color = Color("e1ded4")
 	backdrop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	backdrop.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(backdrop)
@@ -58,14 +51,14 @@ func _ready() -> void:
 	title.size = Vector2(680, 50)
 	title.text = "CHARACTER / STASH"
 	title.add_theme_font_size_override("font_size", 26)
-	title.add_theme_color_override("font_color", Color("eceee9"))
+	title.add_theme_color_override("font_color", Color("28323b"))
 	root.add_child(title)
 	var subtitle := Label.new()
 	subtitle.position = Vector2(44, 70)
 	subtitle.size = Vector2(620, 40)
 	subtitle.text = "EQUIP / ORGANIZE / PREPARE FOR SORTIE"
 	subtitle.add_theme_font_size_override("font_size", 13)
-	subtitle.add_theme_color_override("font_color", Color("8e999f"))
+	subtitle.add_theme_color_override("font_color", Color("626b70"))
 	root.add_child(subtitle)
 	_build_warehouse_summary(root)
 
@@ -73,7 +66,7 @@ func _ready() -> void:
 	panel.name = "EquipmentPanel"
 	panel.position = Vector2(42, 110)
 	panel.size = Vector2(300, 504)
-	panel.add_theme_stylebox_override("panel", SliceUI.menu_style(Color("151b1f"), Color("151b1f")))
+	panel.add_theme_stylebox_override("panel", FieldManualStyle.panel(FieldManualStyle.SURFACE))
 	root.add_child(panel)
 	var heading := Label.new()
 	heading.text = "EQUIPMENT"
@@ -89,7 +82,7 @@ func _ready() -> void:
 	armor_detail.position = Vector2(12, 446)
 	armor_detail.size = Vector2(276, 52)
 	armor_detail.add_theme_font_size_override("font_size", 12)
-	armor_detail.add_theme_color_override("font_color", Color("a7afb0"))
+	armor_detail.add_theme_color_override("font_color", Color("626b70"))
 	panel.add_child(armor_detail)
 	var deploy := Button.new()
 	deploy.text = "DEPLOY"
@@ -97,9 +90,7 @@ func _ready() -> void:
 	deploy.size = Vector2(260, 48)
 	deploy.add_theme_font_size_override("font_size", 16)
 	_compact_button(deploy)
-	for state in ["normal", "hover", "pressed"]:
-		deploy.add_theme_stylebox_override(state, SliceUI.menu_style(Color("b5a47b") if state == "normal" else Color("cec09a"), Color("b5a47b")))
-		deploy.add_theme_color_override("font_color" if state == "normal" else "font_" + state + "_color", Color("13191c"))
+	FieldManualStyle.primary(deploy)
 	root.add_child(deploy)
 	deploy.pressed.connect(func() -> void:
 		AudioDirector.play_sfx(&"ui_confirm")
@@ -187,7 +178,7 @@ func _build_warehouse_summary(root: Control) -> void:
 	panel.name = "WarehousePanel"
 	panel.position = Vector2(354, 110)
 	panel.size = Vector2(612, 504)
-	panel.add_theme_stylebox_override("panel", SliceUI.menu_style(Color("151b1f"), Color("151b1f")))
+	panel.add_theme_stylebox_override("panel", FieldManualStyle.panel(FieldManualStyle.SURFACE))
 	root.add_child(panel)
 	var heading := Label.new()
 	heading.text = "WAREHOUSE"
@@ -222,7 +213,7 @@ func _build_warehouse_summary(root: Control) -> void:
 	detail.position = Vector2(12, 446)
 	detail.size = Vector2(432, 40)
 	detail.add_theme_font_size_override("font_size", 12)
-	detail.add_theme_color_override("font_color", Color("b7c0c2"))
+	detail.add_theme_color_override("font_color", Color("626b70"))
 	detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	detail.max_lines_visible = 2
 	detail.clip_text = true
@@ -230,7 +221,7 @@ func _build_warehouse_summary(root: Control) -> void:
 	stash_grid.detail = detail
 	deployment_summary = Label.new()
 	deployment_summary.name = "CarriedSummary"
-	deployment_summary.position = Vector2(978, 42)
+	deployment_summary.position = Vector2(978, 70)
 	deployment_summary.size = Vector2(260, 36)
 	deployment_summary.add_theme_font_size_override("font_size", 14)
 	deployment_summary.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -308,7 +299,7 @@ func _refresh_warehouse_summary() -> void:
 	if deployment_summary:
 		deployment_summary.text = plan.message if plan.error.is_empty() else tr(plan.error)
 		deployment_summary.tooltip_text = deployment_summary.text
-		deployment_summary.add_theme_color_override("font_color", SliceUI.MUTED if plan.error.is_empty() else Color("e59c84"))
+		deployment_summary.add_theme_color_override("font_color", FieldManualStyle.MUTED if plan.error.is_empty() else Color("a94821"))
 
 
 func _add_inventory_option(parent: Control, label_text: String, required_tag: StringName, slot_id: StringName, at: Vector2, extent: Vector2) -> OptionButton:
@@ -316,7 +307,7 @@ func _add_inventory_option(parent: Control, label_text: String, required_tag: St
 	label.text = label_text
 	label.position = at
 	label.add_theme_font_size_override("font_size", 12)
-	label.add_theme_color_override("font_color", Color("9aa6ac"))
+	label.add_theme_color_override("font_color", Color("626b70"))
 	parent.add_child(label)
 	var option := StashSlot.new()
 	option.set_meta("slot_label", label)
@@ -338,7 +329,7 @@ func _add_inventory_option(parent: Control, label_text: String, required_tag: St
 		detail.position = option.position + Vector2(0, extent.y + 4)
 		detail.size = Vector2(extent.x, 28)
 		detail.add_theme_font_size_override("font_size", 12)
-		detail.add_theme_color_override("font_color", SliceUI.MUTED)
+		detail.add_theme_color_override("font_color", FieldManualStyle.MUTED)
 		parent.add_child(detail)
 		option.set_meta("weapon_detail", detail)
 	return option
@@ -346,7 +337,7 @@ func _add_inventory_option(parent: Control, label_text: String, required_tag: St
 
 func _compact_button(button: Button) -> void:
 	for state in ["normal", "hover", "pressed", "disabled", "focus"]:
-		var style := SliceUI.menu_style(Color("1c2429") if state == "normal" else Color("29353b"), Color("34434a") if state == "normal" else Color("b5a47b"))
+		var style := FieldManualStyle.theme().get_stylebox(state, "Button").duplicate() as StyleBoxFlat
 		style.set_content_margin_all(6)
 		button.add_theme_stylebox_override(state, style)
 

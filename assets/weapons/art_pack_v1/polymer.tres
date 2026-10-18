@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "polymer"
+albedo_color = Color(0.23137255, 0.25882354, 0.21568628, 1)
+metallic = 0.02
+roughness = 0.73

@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/m4_finish.tres" id="1_g5nx1"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/existing_magazine_reference.res" id="2_ds6t6"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/art_pack_v1/quickloader_adapter.tscn" id="3_omr1v"]
+
+[node name="QuickloaderMagazine" type="Node3D" unique_id=2057259160]
+
+[node name="ExistingMagazine" type="MeshInstance3D" parent="." unique_id=821862190]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+material_override = ExtResource("1_g5nx1")
+mesh = ExtResource("2_ds6t6")
+
+[node name="QuickloaderAdapter" type="Node3D" parent="." unique_id=1452263691 instance=ExtResource("3_omr1v")]
+transform = Transform3D(1, -3.1292564e-07, 6.827332e-08, 3.1292564e-07, 0.90912306, -0.41652766, 6.827332e-08, 0.41652766, 0.90912306, -5.3344884e-11, -0.09837694, -0.16454676)

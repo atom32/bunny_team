@@ -116,3 +116,10 @@ The SciFi model and its original skin/animations now provide the PMC patrol enem
 ## Campus Batch 2 props — 2026-10-15
 
 The three native campus-action scenes reuse the already-vendored Kenney Space Station Kit `computer-system.glb`, `computer-screen.glb`, and `display-wall.glb` under its existing CC0 provenance. Native screen/indicator geometry and chapter text are project-authored. The experiment recorder icon reuses the existing project data-drive icon; no new provenance or commercial clearance for unrelated character assets is implied. See [implementation and limits](docs/CAMPUS_BATCH2_IMPLEMENTATION.md).
+
+## Weapon Art Pack v1 — 2026-10-15
+
+The existing MoCap Online M4 geometry/maps remain unchanged and keep their existing non-CC0 restrictions. New material interpretation, native accessory surfaces and ammunition display references are documented in [asset source record](assets/weapons/art_pack_v1/SOURCE.md). The standalone magazine subset and rendered M4/quickloader icons inherit the supplied source's rights; no general-purpose redistribution license is added. Other new components use project-authored meshes/materials, not downloaded or AI-generated models/textures. No additional commercial release clearance is implied.
+## Field supplies art v1 (2026-10-15)
+
+Sixteen new project-authored supply/food/drink props and their actual-rendered PNG icons: `assets/props/supply_art_v1/SOURCE.md`. No new third-party asset download or generative service; labels reuse the existing Noto Sans SC font and retained SIL OFL. Original project rights are not reassigned to CC0. The reused prior magazine/fitting presentation remains subject to its existing MoCap Online source restrictions.

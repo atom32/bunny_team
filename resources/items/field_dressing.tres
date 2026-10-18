@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MedicalDefinition" load_steps=3 format=3 uid="uid://d4l60yoypyebc"]
 [ext_resource type="Script" path="res://scripts/data/medical_definition.gd" id="1"]
-[ext_resource type="Texture2D" path="res://assets/ui/supply/field_dressing.svg" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/stash/supply_art_v1/field_dressing.png" id="2"]
 [resource]
 script = ExtResource("1")
 icon = ExtResource("2")

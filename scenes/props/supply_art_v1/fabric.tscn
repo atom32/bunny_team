@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="FontVariation" path="res://resources/fonts/game_ui.tres" id="1_0vlas"]
+[ext_resource type="ArrayMesh" path="res://assets/props/supply_art_v1/fabric.res" id="2_2klvy"]
+
+[node name="BallisticFabric" type="Node3D" unique_id=455056676]
+metadata/presentation_definition_id = "material.fabric"
+
+[node name="Print7" type="Label3D" parent="." unique_id=861957749]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.026, 0.066, 0)
+pixel_size = 0.0001
+modulate = Color(0.14901961, 0.22745098, 0.23529412, 1)
+text = "B07
+FIBER"
+font = ExtResource("1_0vlas")
+font_size = 48
+outline_size = 0
+
+[node name="Surface" type="MeshInstance3D" parent="." unique_id=1441001281]
+mesh = ExtResource("2_2klvy")

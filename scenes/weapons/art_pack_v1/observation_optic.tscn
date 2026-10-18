@@ -1,0 +1,113 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/steel.tres" id="1_4cvu5"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/OpticRailAdapter.res" id="2_oh4kr"]
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/coated_alloy.tres" id="3_jbwdc"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/MountLeg-1.res" id="4_dyk16"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/MountLeg1.res" id="5_2p23j"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/PrismHousing.res" id="6_jfxmw"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/ObjectiveHood.res" id="7_dc2kt"]
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/rubber.tres" id="8_qfbrt"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/OcularRing.res" id="9_4xgmy"]
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/optical_glass.tres" id="10_31flm"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/OpticalLens-1.res" id="11_rbtkl"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/OpticalLens1.res" id="12_afvnn"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/ElevationDial.res" id="13_id6xt"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/ClampScrew-1.res" id="14_rmce8"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/ClampScrew1.res" id="15_qves2"]
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/polymer.tres" id="16_16wij"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/ServiceCover-1.res" id="17_6tkyi"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/CoverFastener-10.res" id="18_5wqkj"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/CoverFastener-11.res" id="19_io8n7"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/ServiceCover1.res" id="20_ia6bq"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/CoverFastener10.res" id="21_dnxi3"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/CoverFastener11.res" id="22_4u6pn"]
+
+[node name="ObservationOptic" type="Node3D" unique_id=433598646]
+
+[node name="OpticRailAdapter" type="MeshInstance3D" parent="." unique_id=1773488296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115, -0.13)
+material_override = ExtResource("1_4cvu5")
+mesh = ExtResource("2_oh4kr")
+
+[node name="MountLeg-1" type="MeshInstance3D" parent="." unique_id=127040296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022, 0.13200001, -0.13)
+material_override = ExtResource("3_jbwdc")
+mesh = ExtResource("4_dyk16")
+
+[node name="MountLeg1" type="MeshInstance3D" parent="." unique_id=1446958619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022, 0.13200001, -0.13)
+material_override = ExtResource("3_jbwdc")
+mesh = ExtResource("5_2p23j")
+
+[node name="PrismHousing" type="MeshInstance3D" parent="." unique_id=1276558540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16700001, -0.13)
+material_override = ExtResource("3_jbwdc")
+mesh = ExtResource("6_jfxmw")
+
+[node name="ObjectiveHood" type="MeshInstance3D" parent="." unique_id=716797967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16800001, -0.19)
+material_override = ExtResource("3_jbwdc")
+mesh = ExtResource("7_dc2kt")
+
+[node name="OcularRing" type="MeshInstance3D" parent="." unique_id=847251608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16800001, -0.071)
+material_override = ExtResource("8_qfbrt")
+mesh = ExtResource("9_4xgmy")
+
+[node name="OpticalLens-1" type="MeshInstance3D" parent="." unique_id=1029290500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16800001, -0.218)
+material_override = ExtResource("10_31flm")
+cast_shadow = 0
+mesh = ExtResource("11_rbtkl")
+
+[node name="OpticalLens1" type="MeshInstance3D" parent="." unique_id=1785056525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16800001, -0.052)
+material_override = ExtResource("10_31flm")
+cast_shadow = 0
+mesh = ExtResource("12_afvnn")
+
+[node name="ElevationDial" type="MeshInstance3D" parent="." unique_id=1161053830]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.19100001, -0.13)
+material_override = ExtResource("3_jbwdc")
+mesh = ExtResource("13_id6xt")
+
+[node name="ClampScrew-1" type="MeshInstance3D" parent="." unique_id=295499437]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.029, 0.126, -0.13)
+material_override = ExtResource("1_4cvu5")
+mesh = ExtResource("14_rmce8")
+
+[node name="ClampScrew1" type="MeshInstance3D" parent="." unique_id=1032967180]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.029, 0.126, -0.13)
+material_override = ExtResource("1_4cvu5")
+mesh = ExtResource("15_qves2")
+
+[node name="ServiceCover-1" type="MeshInstance3D" parent="." unique_id=1298265162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.033, 0.16800001, -0.13)
+material_override = ExtResource("16_16wij")
+mesh = ExtResource("17_6tkyi")
+
+[node name="CoverFastener-10" type="MeshInstance3D" parent="." unique_id=1439145127]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.035, 0.16800001, -0.157)
+material_override = ExtResource("1_4cvu5")
+mesh = ExtResource("18_5wqkj")
+
+[node name="CoverFastener-11" type="MeshInstance3D" parent="." unique_id=1546033343]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.035, 0.16800001, -0.103)
+material_override = ExtResource("1_4cvu5")
+mesh = ExtResource("19_io8n7")
+
+[node name="ServiceCover1" type="MeshInstance3D" parent="." unique_id=1040967438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.033, 0.16800001, -0.13)
+material_override = ExtResource("16_16wij")
+mesh = ExtResource("20_ia6bq")
+
+[node name="CoverFastener10" type="MeshInstance3D" parent="." unique_id=327727237]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.035, 0.16800001, -0.157)
+material_override = ExtResource("1_4cvu5")
+mesh = ExtResource("21_dnxi3")
+
+[node name="CoverFastener11" type="MeshInstance3D" parent="." unique_id=963727327]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.035, 0.16800001, -0.103)
+material_override = ExtResource("1_4cvu5")
+mesh = ExtResource("22_4u6pn")

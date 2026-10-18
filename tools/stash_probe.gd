@@ -71,12 +71,13 @@ func _drag(source: Control, target: Vector2, instance_id: String, grid: Warehous
 		await get_tree().process_frame
 		_check(get_viewport().gui_is_dragging(), "Mouse press and movement start an actual item drag")
 		if rotated:
+			var was_rotated: bool = get_viewport().gui_get_drag_data().rotated
 			var key := InputEventKey.new()
 			key.keycode = KEY_R
 			key.pressed = true
 			_inject(key)
 			await get_tree().process_frame
-			_check(get_viewport().gui_get_drag_data().rotated, "R rotates the item while dragging")
+			_check(get_viewport().gui_get_drag_data().rotated == not was_rotated, "R toggles the item's current orientation while dragging")
 	else:
 		source.force_drag(data, ghost)
 	await get_tree().process_frame
@@ -136,8 +137,9 @@ func _run() -> void:
 	await _capture("warehouse_zh")
 	if DisplayServer.get_name() != "headless":
 		var source: Control = grid.get_children().filter(func(tile): return tile is StashTile and tile.instance_id == pistol)[0]
+		var expected_rotation: bool = not profile.stash_layout[pistol][2]
 		await _drag(source, grid.global_position + Vector2(10 * 48 + 4, 6 * 48 + 4), pistol, grid, true)
-		_check(profile.stash_layout[pistol] == [10, 6, true], "Native GUI drag moves a rotated pistol to the requested cells")
+		_check(profile.stash_layout[pistol] == [10, 6, expected_rotation], "Native GUI drag moves the pistol to the requested cells with its toggled orientation")
 		await _drag(ui.weapon_option, ui.secondary_weapon_option.global_position + Vector2(25, 20), rifle, grid)
 		_check(profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY) == smg and profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_SECONDARY) == rifle, "Native GUI drag swaps occupied weapon slots atomically")
 		await _drag(ui.secondary_weapon_option, grid.global_position + Vector2(0 * 48 + 4, 6 * 48 + 4), rifle, grid)

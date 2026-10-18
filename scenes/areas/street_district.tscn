@@ -6,3 +6,8 @@
 script = ExtResource("2_runtime")
 [node name="NightLighting" parent="." instance=ExtResource("3_night")]
 visible = false
+
+[node name="CampusStorySites" type="Node3D" parent="."]
+
+[node name="ExperimentRecorder" type="Marker3D" parent="CampusStorySites"]
+position = Vector3(20.35, 0.8, 18)

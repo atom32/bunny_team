@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3]
+[ext_resource type="Shader" path="res://assets/weapons/art_pack_v1/m4_finish.gdshader" id="1"]
+[ext_resource type="Texture2D" path="res://assets/weapons/mocap_m4/M4_Rifle_01.fbm/M4DF2048.jpg" id="2"]
+[ext_resource type="Texture2D" path="res://assets/weapons/mocap_m4/M4_Rifle_01.fbm/M4NM2048.jpg" id="3"]
+[ext_resource type="Texture2D" path="res://assets/weapons/mocap_m4/M4_Rifle_01.fbm/M4AO2048.jpg" id="4"]
+[ext_resource type="Texture2D" path="res://assets/weapons/mocap_m4/M4_Rifle_01.fbm/M4SP2048.jpg" id="5"]
+[resource]
+shader = ExtResource("1")
+shader_parameter/source_albedo = ExtResource("2")
+shader_parameter/source_normal = ExtResource("3")
+shader_parameter/source_ao = ExtResource("4")
+shader_parameter/source_specular = ExtResource("5")
+shader_parameter/replace_factory_optic = false

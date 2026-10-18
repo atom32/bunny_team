@@ -17,7 +17,7 @@ static func owns_quest(contact_id: String, quest_id: String) -> bool:
 static func owns_stock(contact_id: String, definition: ItemDefinition) -> bool:
 	if contact_id.is_empty(): return true
 	if definition.has_tag(&"fitting_kit"): return contact_id == "su_mi"
-	var resident := definition is MedicalDefinition or (definition.has_tag(&"backpack") and definition.id != &"equipment.thruster_pack_01")
+	var resident := definition is MedicalDefinition or definition.has_tag(&"food") or definition.has_tag(&"drink") or (definition.has_tag(&"backpack") and definition.id != &"equipment.thruster_pack_01")
 	if contact_id == "tang_kui": return resident
 	if contact_id == "shen_yanshuang": return not resident
 	return false # Engineering uses existing barter/fittings, not a new material shop.

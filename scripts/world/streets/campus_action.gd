@@ -24,8 +24,17 @@ func bind_actor(player: PlayerController,current: SortieSession) -> void:
 
 func _health_changed(health: float,_maximum: float) -> void:
 	if health<observed_health:
-		remaining=0.0;_close_choice();SortieRuntime.request_checkpoint()
+		_cancel_work(tr("L-02 work interrupted by damage. Press %s to restart.") % ControlBindings.label("interact"))
+		if is_instance_valid(choice_layer):
+			_close_choice();SortieRuntime.request_checkpoint()
 	observed_health=health
+
+func _cancel_work(message: String) -> void:
+	if remaining<=0:return
+	remaining=0.0
+	if is_instance_valid(actor) and session and session.status==SortieSession.Status.ACTIVE and not actor.is_dead:
+		actor.interaction_component.interaction_finished.emit(message,false)
+	SortieRuntime.request_checkpoint()
 
 func _near() -> bool:
 	return is_instance_valid(actor) and actor.is_inside_tree() and not actor.is_dead and session and session.status==SortieSession.Status.ACTIVE and actor.global_position.distance_to(global_position)<=actor.interaction_component.interaction_radius
@@ -77,6 +86,7 @@ func _open_choice() -> void:
 	var confirm:=Button.new();confirm.name="ConfirmBranch";confirm.text=tr("DISCONNECT L-02B / KEEP L-02A")
 	confirm.pressed.connect(confirm_power);body.add_child(confirm)
 	var cancel:=Button.new();cancel.name="CancelBranch";cancel.text=tr("NOT NOW / NO CHANGE");cancel.pressed.connect(_close_choice);body.add_child(cancel)
+	confirm.grab_focus()
 
 func _close_choice() -> void:
 	if not is_instance_valid(choice_layer):return
@@ -87,7 +97,11 @@ func _close_choice() -> void:
 func _process(delta: float) -> void:
 	if is_instance_valid(choice_layer) and not _near():_close_choice()
 	if remaining<=0 or get_tree().paused:return
-	if not _near() or actor.health<observed_health or not _available(session):
+	if not _near():
+		_cancel_work(tr("L-02 work interrupted: left the equipment. Return and press %s to restart.") % ControlBindings.label("interact"));return
+	if actor.health<observed_health:
+		_cancel_work(tr("L-02 work interrupted by damage. Press %s to restart.") % ControlBindings.label("interact"));return
+	if not _available(session):
 		remaining=0.0;SortieRuntime.request_checkpoint();return
 	remaining=maxf(0,remaining-delta)
 	if remaining>0:return
@@ -113,7 +127,9 @@ func _refresh_visual() -> void:
 	var current:=SortieRuntime.get_current_session()
 	if _available(current):add_to_group("interactable")
 	else:remove_from_group("interactable")
-	if kind==&"relay":label.text=("L-02A" if action_id==&"relay_office" else "L-02B")+" / "+tr("RELAY / 12s")
+	if kind==&"relay":
+		var online: bool=current!=null and not current.campus.is_empty() and String(action_id) in current.campus.relays
+		label.text=("L-02A" if action_id==&"relay_office" else "L-02B")+" / "+tr("RELAY ONLINE" if online else "RELAY / 12s")
 	elif kind==&"recorder":
 		label.text=tr("EXPERIMENT RECORDER")
 		get_node("Art").visible=not current or current.campus.is_empty() or current.campus.recorder_instance.is_empty()

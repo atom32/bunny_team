@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/brass.tres" id="1_ugt10"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/CartridgeCase.res" id="2_lw3oa"]
+[ext_resource type="Material" path="res://assets/weapons/art_pack_v1/copper.tres" id="3_40bf2"]
+[ext_resource type="ArrayMesh" path="res://assets/weapons/art_pack_v1/ProjectileReference.res" id="4_ytnea"]
+
+[node name="Standard556Reference" type="Node3D" unique_id=1751396521]
+metadata/presentation_definition_id = "ammo.556_standard"
+
+[node name="CartridgeCase" type="MeshInstance3D" parent="." unique_id=1614530938]
+material_override = ExtResource("1_ugt10")
+mesh = ExtResource("2_lw3oa")
+
+[node name="ProjectileReference" type="MeshInstance3D" parent="." unique_id=946122252]
+material_override = ExtResource("3_40bf2")
+mesh = ExtResource("4_ytnea")
