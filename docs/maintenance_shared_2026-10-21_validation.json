@@ -1,0 +1,377 @@
+{
+  "status": "current_contact_label_targeted_native_pass_ZIP40of87_no_new_delivery",
+  "source_integration": "D:\\tmp\\bunny_maintenance_two_person_20261021_dev01\\source_integration01.json",
+  "post_integration_dialogue_qa_delta": "D:\\tmp\\bunny_maintenance_two_person_20261021_dev01\\post_integration_dialogue_qa02.json",
+  "integrated_source_headless_preflight": [
+    {
+      "name": "source_component",
+      "pass": true,
+      "exit": 0,
+      "errors": [],
+      "evidence_folder": "D:\\tmp\\bunny_maintenance_two_person_20261021_dev01\\source_component",
+      "log_sha256": "e124bd39a751f6e42f5091af9d05a1ff1505c7a11713ec5aba490a6430cba56d"
+    },
+    {
+      "name": "source_component_read",
+      "pass": true,
+      "exit": 0,
+      "errors": [],
+      "evidence_folder": "D:\\tmp\\bunny_maintenance_two_person_20261021_dev01\\source_component_read",
+      "log_sha256": "bde2844beb95e33e37dbe1e4ea3ba5f77653419e00156396cd2585eac3a0eeab"
+    },
+    {
+      "name": "source_pending_read",
+      "pass": true,
+      "exit": 0,
+      "errors": [],
+      "evidence_folder": "D:\\tmp\\bunny_maintenance_two_person_20261021_dev01\\source_pending_read",
+      "log_sha256": "4b30fe3fe660f14c010e494e310ca224fd71264407ff1fe7b144718c7ae43407"
+    }
+  ],
+  "ordinary_routes": [
+    {
+      "name": "earned_headless05",
+      "sha256": "bc98694d2b6d9ff7417f604c4d9efd26947bf4e63f902781936445206ddf6f70",
+      "item": {
+        "definition_id": "material.observation_optic_kit",
+        "durability": 100.0,
+        "fitting": "",
+        "instance_id": "2d89295afd7206d2ce810d1a94e1b682",
+        "quantity": 1
+      },
+      "checks": 34,
+      "shots": 21,
+      "kills": 6,
+      "helper": {
+        "cache": "(18.5, 0.0, -9.0)",
+        "clip": "Interact",
+        "helper": "(17.32383, 0.000839, -8.471775)",
+        "helper_goal": "(17.45, 0.0, -8.6)",
+        "player": "(19.14713, -0.004162, -8.330021)"
+      }
+    },
+    {
+      "name": "earned_headless_en05",
+      "sha256": "85e6f34e02a81c114123364bb3402e35468f8fdd470c82b097320239691e4b9d",
+      "item": {
+        "definition_id": "material.suppressor_kit",
+        "durability": 100.0,
+        "fitting": "",
+        "instance_id": "09119a1361e2c65422b59deb5798e22d",
+        "quantity": 1
+      },
+      "checks": 38,
+      "shots": 22,
+      "kills": 6,
+      "helper": {
+        "cache": "(18.5, 0.0, -9.0)",
+        "clip": "Interact",
+        "helper": "(17.32383, 0.000839, -8.471775)",
+        "helper_goal": "(17.45, 0.0, -8.6)",
+        "player": "(19.14834, -0.004163, -8.331142)"
+      }
+    }
+  ],
+  "ordinary_route_readbacks_pass": true,
+  "earlier_failures_preserved": [
+    "earned_results01.json",
+    "earned_results02.json",
+    "failed_earned01_original_profile.json",
+    "failed_earned02_original_profile.json"
+  ],
+  "legacy_source_checkpoint_and_regression_results": "D:\\tmp\\bunny_maintenance_two_person_20261021_dev01\\legacy_results01.json",
+  "legacy_scope": "v1/v2 pre-prototype signed source checkpoint copies plus preserved v1/v2 rescue/steam and collision/nav art checks. Not all historical exported binaries.",
+  "planned_full_scene_count": 126,
+  "planned_full_categories": 242,
+  "full_source_started": true,
+  "native_started": false,
+  "native_question_pending": true,
+  "public_release_approved": false,
+  "new_windows_packet": false,
+  "previous_windows_packet_unmodified": true,
+  "measured_playtime_added_minutes": 0,
+  "current_translation_count": 1789,
+  "all_previous_translations_preserved": 1776,
+  "scope_limits": [
+    "Old native hand-contact review failed; current contact math and ordinary headless routes pass but native visual recheck is still pending.",
+    "First actual export had 65 passes and six-dry archive-search failure at gate66; not accepted. Its three shared component gates do not prove all new shared routes or later archive support in a binary.",
+    "Current full source is complete126/242.",
+    "No new game ZIP, launcher matrix, delivery, human playtime/fun, listening, minimum-spec or public-release acceptance."
+  ],
+  "external_camera_diagnostic_headless_preflight": "D:/tmp/bunny_maintenance_two_person_20261021_dev01/diagnostic_preflight01.json",
+  "integrated_source_snapshot_match": "D:/tmp/bunny_maintenance_two_person_20261021_dev01/integrated_snapshot_match01.json",
+  "native_visual_release_pass": false,
+  "full_source_completed": true,
+  "full_source_output": "D:/tmp/bunny_archive_support_20261021_final01",
+  "full_source_before_contact_fix": {
+    "pass": true,
+    "scene_count": 126,
+    "categories": 242,
+    "results_sha256": "0994c6d911426fd143957bb3b3cfb1bbe2ee13339d26cef9ba869299d828c86a",
+    "current_root_non_document_inputs_match": 4078,
+    "protected_files_unchanged": true,
+    "not_new_windows_packet": true
+  },
+  "current_native_verified": false,
+  "previous_native_results": "D:\\tmp\\bunny_maintenance_two_person_20261021_dev01\\native_results_complete01.json",
+  "current_native_preflight": "D:\\tmp\\bunny_maintenance_contact_20261021_dev01\\native_results02.json",
+  "current_source_integration": "D:\\tmp\\bunny_maintenance_contact_20261021_dev01\\source_integration01.json",
+  "contact_delta_results": "D:\\tmp\\bunny_maintenance_contact_20261021_dev01\\contact_results_complete02.json",
+  "contact_probe": {
+    "samples": 60,
+    "max_palm_error_m": 2.69739825853321e-06,
+    "max_segment_length_change_m": 1.34110450744629e-07,
+    "unreachable_rejected": true
+  },
+  "current_headless_ordinary_routes": [
+    {
+      "name": "earned_zh02",
+      "grips": [
+        {
+          "actual": "(18.02, 1.0, -8.654999)",
+          "error_m": 9.5367431640625e-07,
+          "goal": "(18.02, 1.0, -8.655)"
+        },
+        {
+          "actual": "(18.02, 1.0, -8.544999)",
+          "error_m": 9.61096020546393e-07,
+          "goal": "(18.02, 1.0, -8.545)"
+        }
+      ],
+      "recovered": {
+        "definition_id": "material.quickloader_kit",
+        "durability": 100.0,
+        "fitting": "",
+        "instance_id": "ed5f940d89d16dbda733c6a79f36813a",
+        "quantity": 1
+      },
+      "checks": 37,
+      "evidence_sha256": "526756f404a2a016f2241602f7250c1be29fb4a7d020164eadd67fb475ee0846"
+    },
+    {
+      "name": "earned_en02",
+      "grips": [
+        {
+          "actual": "(18.02, 1.0, -8.654999)",
+          "error_m": 9.5367431640625e-07,
+          "goal": "(18.02, 1.0, -8.655)"
+        },
+        {
+          "actual": "(18.02, 1.0, -8.544999)",
+          "error_m": 9.61096020546393e-07,
+          "goal": "(18.02, 1.0, -8.545)"
+        }
+      ],
+      "recovered": {
+        "definition_id": "material.observation_optic_kit",
+        "durability": 100.0,
+        "fitting": "",
+        "instance_id": "f7d8b0e89384a49c6c957495feafdf78",
+        "quantity": 1
+      },
+      "checks": 41,
+      "evidence_sha256": "a8d96db40adc84b31aeb8a9c46599487a79701546e88bbfef3ac4702f15fe0da"
+    }
+  ],
+  "current_protected_check": "D:\\tmp\\bunny_maintenance_contact_20261021_dev01\\protected_after_integration01.json",
+  "new_full_source_started": false,
+  "new_full_source_output": "D:/tmp/bunny_maintenance_contact_20261021_final01",
+  "current_native_hold": "D:\\tmp\\bunny_maintenance_contact_20261021_dev01\\native_hold.flag",
+  "development_failures": "D:\\tmp\\bunny_maintenance_contact_20261021_dev01\\development_failures01.json",
+  "native_before_contact_fix": {
+    "native_results": "D:\\tmp\\bunny_maintenance_two_person_20261021_dev01\\native_results_complete01.json",
+    "native_gameplay_gates": 11,
+    "native_ordinary_routes": [
+      {
+        "name": "earned_native_forward01",
+        "item": {
+          "definition_id": "material.quickloader_kit",
+          "durability": 100.0,
+          "fitting": "",
+          "instance_id": "bec0d75e938f7c1876cafff13ba27bca",
+          "quantity": 1
+        },
+        "helper": {
+          "cache": "(18.5, 0.0, -9.0)",
+          "clip": "Interact",
+          "helper": "(17.32383, 0.000839, -8.471775)",
+          "helper_goal": "(17.45, 0.0, -8.6)",
+          "player": "(19.14713, -0.004161, -8.330025)"
+        },
+        "evidence_sha256": "d767f2c632de2bc21aa557760ba6ad825f02a31081dd0aec6d92bdb3c09f5a07"
+      },
+      {
+        "name": "earned_native_compat_en01",
+        "item": {
+          "definition_id": "material.suppressor_kit",
+          "durability": 100.0,
+          "fitting": "",
+          "instance_id": "589e9089895d55fb818c9481251e4ad4",
+          "quantity": 1
+        },
+        "helper": {
+          "cache": "(18.5, 0.0, -9.0)",
+          "clip": "Interact",
+          "helper": "(17.32383, 0.000839, -8.471775)",
+          "helper_goal": "(17.45, 0.0, -8.6)",
+          "player": "(19.14833, -0.004161, -8.331143)"
+        },
+        "evidence_sha256": "488f28deae90f596278458cb50fe71932515f9e2b35fb8ae3549aeaa88f1dbed"
+      }
+    ],
+    "native_visual_review": "D:\\tmp\\bunny_maintenance_two_person_20261021_dev01\\native_visual_review01.json",
+    "native_batch_finished": true
+  },
+  "full_source_before_contact_fix_path": "D:/tmp/bunny_maintenance_shared_20261021_final01",
+  "full_source_before_contact_fix_completion_record": "D:\\tmp\\bunny_maintenance_two_person_20261021_dev01\\full_source01_complete.json",
+  "current_native_preflight_categories": 3,
+  "current_native_window_started": false,
+  "current_full_source_result": {
+    "pass": true,
+    "scene_count": 126,
+    "categories": 242,
+    "results_sha256": "c7b33413fd6dc6863df5742cfd375a707725379ddaf1f2955a6cc616f2ca89f3",
+    "current_root_non_document_inputs_match": 4078,
+    "protected_files_unchanged": true,
+    "not_new_windows_packet": true
+  },
+  "builder_mapping_delta": "D:/tmp/bunny_maintenance_package_20261021_dev01/builder_mapping_delta01.json",
+  "failed_candidate_record": "D:/tmp/bunny_maintenance_package_20261021_dev01/candidate01_rejected.json",
+  "exported_shared_component_gates_before_archive_support": 3,
+  "exported_candidate_accepted": false,
+  "archive_support_integration": "D:\\tmp\\bunny_archive_support_20261021_dev01\\source_integration01.json",
+  "current_exported_candidate02": {
+    "status": "exported_runtime140_and_failed_profile_recovery_pass_native_and_game_zip_pending",
+    "build": "D:/tmp/bunny_maintenance_shared_20261021_build02",
+    "complete": {
+      "pass": true,
+      "actual_exported_runtime_gates": 140,
+      "old_133_gates_retained": true,
+      "new_7_shared_gates": [
+        "packaged_shared_component",
+        "packaged_shared_en_read",
+        "packaged_shared_en_route",
+        "packaged_shared_pending_read",
+        "packaged_shared_read",
+        "packaged_shared_zh_read",
+        "packaged_shared_zh_route"
+      ],
+      "root_non_document_inputs_match": 4078,
+      "protected6_unchanged": true,
+      "official_release_template_exact": true,
+      "native_visuals_verified": false,
+      "new_game_zip_or_delivery": false,
+      "build": "D:\\tmp\\bunny_maintenance_shared_20261021_build02",
+      "manifest_sha256": "47630779a9b92bfae21d4fc60cfb42bf376eee4afd0d1725b1d9ad8791c31f7f"
+    },
+    "original_six_dry_profile_in_current_binary": {
+      "pass": true,
+      "cases": [
+        {
+          "name": "route",
+          "pass": true,
+          "exit": 0,
+          "errors_or_warnings": [],
+          "log_sha256": "44cab71af033a3f50f02796df599c6bdafa38631219af198021688c1c4fdef2d"
+        },
+        {
+          "name": "read",
+          "pass": true,
+          "exit": 0,
+          "errors_or_warnings": [],
+          "log_sha256": "b972007450d129d1c2efe2bbb61830e63310e266dcbe96945f9d829504ad8aae"
+        }
+      ],
+      "actual_current_release_binary": true,
+      "original_failed_profile": {
+        "path": "D:\\tmp\\bunny_maintenance_shared_20261021_build01\\recovered_earned_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+        "sha256": "01145606b243d4c3faaca6a5493ab78021c336d3897e2d4b921e3b076a560b07",
+        "mtime_ns": 1792562482943684500
+      },
+      "original_unchanged": true,
+      "input_gameplay_fields_unchanged": true,
+      "before_returns": 9,
+      "after_returns": 11,
+      "search_outings": 1,
+      "find": {
+        "definition_id": "weapon.smg_01",
+        "durability": 100.0,
+        "fitting": "quickloader",
+        "instance_id": "f369038266640a36ff20db0b974ba457",
+        "quantity": 1
+      },
+      "trial": {
+        "find": {
+          "definition_id": "weapon.smg_01",
+          "durability": 100.0,
+          "fitting": "quickloader",
+          "instance_id": "f369038266640a36ff20db0b974ba457",
+          "quantity": 1
+        },
+        "health": 260.0,
+        "kills": 1,
+        "reload": {
+          "expected": 1.08,
+          "observed": 1.08,
+          "remaining": 1.08
+        },
+        "shots": 7
+      },
+      "independent_read_same_find": true,
+      "entire_gameplay_profile_roundtrip_unchanged": true,
+      "only_stash_display_layout_excluded": true,
+      "no_grants_seed_or_reset": true,
+      "native_visuals_or_human_playtime": false,
+      "initial_footer_failure_preserved": "D:\\tmp\\bunny_maintenance_package_20261021_dev01\\failed_profile_binary02_footer_rejected.json",
+      "continuation_scope": "Same successful engine logs and same actual route/read evidence; repaired only outer footer assumption. No process rerun or profile reset."
+    },
+    "root_runtime_source_full": "D:/tmp/bunny_archive_support_20261021_final01",
+    "source_full_scene_count": 126,
+    "source_full_gates": 242,
+    "native_visual_recheck_pending": true,
+    "native_question_pending": true,
+    "new_game_zip_or_delivery": false,
+    "public_release_approved": false,
+    "measured_playtime_added_minutes": 0
+  },
+  "current_native_source_sync": "D:\\tmp\\bunny_maintenance_contact_20261021_dev01\\native_support_sync01.json",
+  "current_native_runner": "D:\\tmp\\bunny_maintenance_contact_20261021_dev01\\verify_native02.py",
+  "current_exported_runtime_checks_passed": true,
+  "current_candidate_visual_accepted": false,
+  "current_candidate_delivery_accepted": false,
+  "previous_export_placeholder_before_candidate02": false,
+  "current_internal_packet_headless": {
+    "scope": "INTERNAL headless packet phase only; NOT a native/full release or user delivery.",
+    "compiled_gates": 140,
+    "zip_headless_accepted": 32,
+    "zip_planned_full_cases": 87,
+    "zip_remaining_native_or_dependent_cases": 47,
+    "cmd_positive_invocations": 28,
+    "cmd_isolated_groups": 15,
+    "cmd_expected_negative_exit": 1,
+    "static_files": 41,
+    "actual_compiled_preview_sources": 14,
+    "archive": {
+      "archive": "D:\\tmp\\bunny_maintenance_shared_20261021_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "bytes": 246351125,
+      "sha256": "6b3ebd03491dd0700c5444580a7bf68fcc93e9bd1b1ebb022fda6cd98ad6db19",
+      "extracted_to": "D:\\tmp\\小兔试玩 互助与收获 20261021 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+      "all_files_match": true,
+      "matches_official_release_template": true,
+      "public_release_approved": false
+    },
+    "native_visual_accepted": false,
+    "full_zip_accepted": false,
+    "fresh_user_delivery_created": false,
+    "public_release_approved": false,
+    "measured_playtime_added_minutes": 0,
+    "pck_entries": 1657,
+    "evidence_record": "D:\\tmp\\bunny_maintenance_shared_20261021_build02\\current_packet_headless_complete.json",
+    "zip_total_accepted_after_native_subset": 40,
+    "targeted_contact_label_fix_accepted": true
+  },
+  "current_targeted_native_review": "D:/tmp/bunny_maintenance_contact_20261021_dev01/native_visual_review02.json",
+  "current_targeted_contact_label_visual_accepted": true,
+  "current_native_question_pending": false,
+  "fresh_reply_required_for_more_native": true
+}

@@ -1,5 +1,6 @@
 extends Node
 const REVIEW := preload("res://addons/neon_content/asset_review.gd")
+const RUNTIME_SAFETY := preload("res://scripts/data/scene_safety.gd")
 var failures: Array[String] = []
 func check(ok: bool, message: String) -> void:
 	if not ok: failures.append(message); push_error(message)
@@ -13,6 +14,12 @@ func _ready() -> void:
 	var script_root := StaticBody3D.new(); script_root.set_script(load("res://scripts/debug/workbench_target.gd"))
 	var unsafe := PackedScene.new(); unsafe.pack(script_root); script_root.free()
 	check(not REVIEW.inspect(unsafe).pass, "Arbitrary scene scripts are refused before instantiation")
+	check(not RUNTIME_SAFETY.has_scripts(packed) and RUNTIME_SAFETY.has_scripts(unsafe), "Runtime and editor use the same script-free scene contract")
+	var nested_root := Node3D.new()
+	var nested_script := StaticBody3D.new(); nested_script.set_script(load("res://scripts/debug/workbench_target.gd"))
+	nested_root.add_child(nested_script); nested_script.owner = nested_root
+	var nested_scene := PackedScene.new(); nested_scene.pack(nested_root); nested_root.free()
+	check(RUNTIME_SAFETY.has_scripts(nested_scene) and REVIEW.has_scripts(nested_scene), "Both guards reject scripted children without instantiating the candidate")
 	var original := Animation.new(); var track := original.add_track(Animation.TYPE_METHOD)
 	original.track_set_path(track, NodePath(".")); original.track_insert_key(track,0,{"method":&"queue_free","args":[]})
 	var safe: Animation = REVIEW.safe_copy(original)

@@ -129,10 +129,11 @@ func aim_trace() -> Dictionary:
 	var blocked := origin.distance_to(muzzle) > .005
 	if not hit.is_empty():
 		# A hidden collider must not turn the crosshair red or give a precise dot.
-		if hit.collider is EnemyController and not can_see_enemy(hit.collider):
+		var emplacement: bool = hit.collider.is_in_group("hostile_emplacements")
+		if (hit.collider is EnemyController and not can_see_enemy(hit.collider)) or (emplacement and not hit.collider.observed()):
 			return {"blocked": blocked, "point": point}
 		point = hit.position
-		blocked = blocked or (not hit.collider is EnemyController and origin.distance_to(point) < desired_distance - .25)
+		blocked = blocked or (not hit.collider is EnemyController and not emplacement and origin.distance_to(point) < desired_distance - .25)
 	return {"blocked": blocked, "point": point}
 
 static func observer(context: Node) -> PlayerVisibility:

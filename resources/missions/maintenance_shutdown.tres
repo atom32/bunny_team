@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="MissionDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/data/mission_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/objective_definition.gd" id="2"]
+[sub_resource type="Resource" id="O0"]
+script = ExtResource("2")
+objective_id = &"core_shelter_bridge"
+display_name = "Keep L-02A shelter power"
+objective_type = 1
+target_id = &"core_shelter_bridge"
+required = false
+[sub_resource type="Resource" id="O1"]
+script = ExtResource("2")
+objective_id = &"core_left_feed"
+display_name = "Isolate left battery feed"
+objective_type = 1
+target_id = &"core_left_feed"
+required = false
+[sub_resource type="Resource" id="O2"]
+script = ExtResource("2")
+objective_id = &"core_right_feed"
+display_name = "Isolate right battery feed"
+objective_type = 1
+target_id = &"core_right_feed"
+required = false
+[sub_resource type="Resource" id="O3"]
+script = ExtResource("2")
+objective_id = &"core_shutdown"
+display_name = "Stop the backup core"
+objective_type = 1
+target_id = &"core_shutdown"
+required = true
+[resource]
+script = ExtResource("1")
+mission_id = &"maintenance_shutdown"
+display_name = "Backup Power / The Last Click"
+description = "Keep the shelter bridge on. Move out of amber lanes; the white bar is a live discharge. Use blue cooling windows to isolate both side feeds, then the north master stop. South retreat stays open."
+objective_definitions = Array[ExtResource("2")]([SubResource("O0"),SubResource("O1"),SubResource("O2"),SubResource("O3")])

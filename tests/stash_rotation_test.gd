@@ -129,7 +129,7 @@ func _test_saved_layout() -> void:
 	check(profile.to_dict() == ProfileState.from_dict(expected).to_dict(), "persistence preserves all item, layout and profile fields")
 	check(profile.stash_layout["test.stash.wide"] == [11, 0, true], "automatically chosen rotation survives persistence")
 	var envelope: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(PATH))
-	check(SaveService.SCHEMA_VERSION == 8 and envelope.schema_version == 8, "existing schema 8 is unchanged")
+	check(SaveService.SCHEMA_VERSION == 11 and envelope.schema_version == 11, "current schema 11 envelope")
 	var layout := profile.stash_layout.duplicate(true)
 	StashLayout.new(profile).reconcile()
 	check(profile.stash_layout == layout, "load/refresh does not rearrange the saved layout")

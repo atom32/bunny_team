@@ -106,7 +106,7 @@ func select_item(instance_id: String) -> void:
 	var definition := ContentDB.get_item(item.definition_id)
 	var footprint_size := model.footprint(instance_id, model.profile.stash_layout.get(instance_id, [0, 0, false])[2])
 	detail.text = GameLanguage.item_name(definition.display_name) + "\n\n" + tr("%d × %d CELLS\n%.2f kg\nQuantity / %d\nCondition / %.0f%%") % [footprint_size.x, footprint_size.y, item.total_weight(), item.quantity, item.durability] + "\n\n" + tr(definition.description)
-	if not item.fitting.is_empty(): detail.text += "\n" + tr(WeaponFitting.caption(item.fitting))
+	if not item.fitting.is_empty(): detail.text += "\n" + WeaponFitting.discovery_text(item)
 	# The compact footer shows the name and facts; full description remains accessible.
 	detail.tooltip_text = detail.text
 	detail.text = GameLanguage.item_name(definition.display_name) + "\n" + (tr("%d × %d CELLS\n%.2f kg\nQuantity / %d\nCondition / %.0f%%") % [footprint_size.x, footprint_size.y, item.total_weight(), item.quantity, item.durability]).replace("\n", " / ")

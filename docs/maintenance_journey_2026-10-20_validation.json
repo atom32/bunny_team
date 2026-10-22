@@ -1,0 +1,162 @@
+{
+  "date": "2026-10-20",
+  "scope": "Maintenance v2 timed steam crossing, permanent far-side isolation and physical escort safety stop; not five-hour/human/release acceptance.",
+  "goal_status": "active",
+  "source": {
+    "snapshot": "D:\\tmp\\bunny_maintenance_v2_20261020_final01",
+    "test_scenes": 113,
+    "categories": 194,
+    "all_pass": true,
+    "results_sha256": "fac25c30d909a557f1b539fab8a7f6fc2ca900bbed194374564b936996ac821f",
+    "original_fbx_import_warnings": 2
+  },
+  "build": {
+    "folder": "D:\\tmp\\bunny_maintenance_v2_20261020_build01",
+    "categories": 86,
+    "all_pass": true
+  },
+  "independent_zip": {
+    "categories": 10,
+    "launcher_cases": 12,
+    "compiled_campus_seed_prefix_cases": 4,
+    "all_pass": true,
+    "native_serial": true,
+    "system_only_PATH": true
+  },
+  "archive": {
+    "archive": "D:\\tmp\\bunny_maintenance_v2_20261020_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 245407574,
+    "sha256": "6b923675b3396883453675a8ed9eb90113172979ffc53a838d15fe9b8a633be2",
+    "extracted_to": "D:\\tmp\\小兔试玩 蒸汽救援 20261020 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false,
+    "fresh_delivery_extracted_to": "D:\\tmp\\小兔试玩 蒸汽救援 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "fresh_static_files_match": true,
+    "fresh_preview_userdata_not_preplayed": true
+  },
+  "pack_audit": {
+    "entries": 1490,
+    "all_byte_ranges_and_md5": true,
+    "forbidden_original": [],
+    "forbidden_cache": [],
+    "arcana": [],
+    "combatgirls": [],
+    "legacy_and_v2_maps": true,
+    "bucket_scene_and_script_present": true
+  },
+  "all_non_document_root_frozen_build_sources_match": true,
+  "actual_earned_routes": {
+    "earned_forward": {
+      "evidence": "D:\\tmp\\bunny_maintenance_v2_20261020_build01\\portable_earned_forward\\maintenance_run.json",
+      "sha256": "5161980a7fb3fe10bd36728a45c107e091ff95542b3bf35d7623e58c86f36df2",
+      "checks": 22,
+      "route": "preclear",
+      "shots": 19,
+      "kills": 6,
+      "health": 260.0,
+      "damage": 0,
+      "steam_facts": {
+        "steam_off": true,
+        "version": 2
+      },
+      "warned": false,
+      "followed": false,
+      "before_returns": 6,
+      "after_returns": 7
+    },
+    "earned_compat_en": {
+      "evidence": "D:\\tmp\\bunny_maintenance_v2_20261020_build01\\portable_earned_compat_en\\maintenance_run.json",
+      "sha256": "8523747d89ceef3ecf02a3bf1d2542603cb5b04a5a5c73d988f416bd086acd44",
+      "checks": 26,
+      "route": "rescue_first",
+      "shots": 22,
+      "kills": 7,
+      "health": 254.6,
+      "damage": 5,
+      "steam_facts": {
+        "steam_off": true,
+        "version": 2
+      },
+      "warned": true,
+      "followed": true,
+      "before_returns": 6,
+      "after_returns": 7
+    }
+  },
+  "legacy_v1_producer": {
+    "producer_project": "D:\\tmp\\bunny_blockade_v2_20261020_final01\\project",
+    "source_manifest": "D:\\tmp\\bunny_blockade_v2_20261020_final01\\source_manifest.json",
+    "source_manifest_sha256": "5307d2fc1deda4c781766012d395b59c051f9b3dcffb30ed7145db955c93ccf8",
+    "input": "D:\\tmp\\bunny_maintenance_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\preview_save\\profile.json",
+    "input_sha256": "b5f37e57f2883499b9fb138ce5e3fa841957cc1b8747424f5bfa04408d8a0c93",
+    "produced": "D:\\tmp\\bunny_maintenance_v2_20261020_dev01\\old_producer_userdata\\Godot\\app_userdata\\Bunny Verification bunny_blockade_v2_20261020_final01\\maintenance_journey_test.json",
+    "sha256": "4e8e8e4e252325bf82c7189dc48c0fff8a7dbd4ac4750240eb813ce0d34b1973",
+    "reader_input": "D:\\tmp\\bunny_maintenance_v2_20261020_dev01\\legacy_userdata\\Godot\\app_userdata\\Bunny Verification bunny_maintenance_v2_20261020_dev01\\maintenance_journey_test.json"
+  },
+  "preserved": {
+    "assets/": {
+      "old_count": 881,
+      "all_unchanged": true
+    },
+    "scenes/": {
+      "old_count": 102,
+      "all_unchanged": true
+    },
+    "translations": {
+      "old": 1594,
+      "current": 1628,
+      "old_unchanged": true
+    }
+  },
+  "originals_preserved": {
+    "assets/": {
+      "old_count": 881,
+      "all_original_bytes_preserved": true
+    },
+    "scenes/": {
+      "old_count": 97,
+      "all_original_bytes_preserved": true
+    },
+    "personal_saves": {
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455246252200
+      },
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455253759300
+      }
+    },
+    "paid_archive": {
+      "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+      "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec"
+    },
+    "arcana": {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd"
+    },
+    "translations": {
+      "old_preserved": 1495,
+      "current": 1525
+    }
+  },
+  "maintenance_facts_version": 2,
+  "maintenance_facts_fields": [
+    "version",
+    "steam_off"
+  ],
+  "profile_schema": 11,
+  "checkpoint_schema": 6,
+  "paid_motion_data_in_default_package": false,
+  "public_release_approved": false,
+  "not_claimed": [
+    "human time, difficulty, enjoyment or 80 percent reviews",
+    "minimum hardware or clean VM",
+    "audio listening acceptance",
+    "final environment art or future melee pack",
+    "three new modeled or voiced contacts"
+  ]
+}

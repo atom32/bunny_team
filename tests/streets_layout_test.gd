@@ -68,7 +68,7 @@ func _run() -> void:
 	var lake_ray:=PhysicsRayQueryParameters3D.create(Vector3(15,1.2,-5),Vector3(15,1.2,-12),4)
 	check(battle.player.get_world_3d().direct_space_state.intersect_ray(lake_ray).is_empty(),"Lake bank does not block a shoulder-height shot")
 	var snapshot:=SortieCheckpoint.capture_world(battle)
-	check(snapshot.map_revision==3 and SortieCheckpoint.validate_world(snapshot,battle),"Campus world snapshot validates its authored revision")
+	check(snapshot.map_revision==5 and SortieCheckpoint.validate_world(snapshot,battle),"Campus world snapshot validates its new cabinet-navigation revision")
 	var outdated:=snapshot.duplicate(true);outdated.map_revision=1
 	check(not SortieCheckpoint.validate_world(outdated,battle),"A different map revision cannot bypass strict restore validation")
 	# Cabin-height fire must hit the car, not pass through its visual roof.

@@ -6,6 +6,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	_test_malformed_saves()
 	_test_atomic_save_and_recovery()
+	_test_backup_only_recovery()
 	_test_load_and_ammo()
 	_test_finalize_retry()
 	SortieRuntime.clear_session()
@@ -70,6 +71,44 @@ func _test_atomic_save_and_recovery() -> void:
 	var original := FileAccess.get_file_as_string(path)
 	profile.inventory.capacity = -1
 	check(SaveService.save_profile(profile, path) != OK and FileAccess.get_file_as_string(path) == original, "Rejected save leaves primary untouched")
+
+func _test_backup_only_recovery() -> void:
+	var orphan := "user://p0_orphan_%s.json" % Time.get_ticks_usec()
+	var profile := ProfileState.create_new()
+	profile.credits = 2417
+	check(SaveService.save_profile(profile, orphan + ".bak") == OK, "Only-backup fixture is valid")
+	var original := FileAccess.get_file_as_bytes(orphan + ".bak")
+	ProfileRuntime.initialize(orphan)
+	check(ProfileRuntime.recovery_required and not FileAccess.file_exists(orphan), "Missing primary with backup requires an explicit choice")
+	if not ProfileRuntime.recovery_required: return
+	check(ProfileRuntime.save_profile(orphan) == ERR_FILE_CORRUPT and not FileAccess.file_exists(orphan), "Fallback cannot silently replace an orphan backup with a new game")
+	check(FileAccess.get_file_as_bytes(orphan + ".bak") == original, "Blocked save preserves entire backup bytes")
+	check(ProfileRuntime.recover_profile(true) == OK, "Valid orphan backup can be explicitly restored")
+	check(not ProfileRuntime.recovery_required and SaveService.load_profile(orphan, false).to_dict() == profile.to_dict(), "Restored orphan retains all gameplay fields")
+	check(FileAccess.get_file_as_bytes(orphan + ".bak") == original, "Restore does not rotate fallback into the only backup")
+	check(_archived_bytes(orphan + ".bak", original), "Orphan backup is archived byte-for-byte before recovery")
+	var broken := orphan + ".broken"
+	var file := FileAccess.open(broken + ".bak", FileAccess.WRITE)
+	file.store_string("{unfinished backup"); file.close()
+	var damaged := FileAccess.get_file_as_bytes(broken + ".bak")
+	ProfileRuntime.initialize(broken)
+	check(ProfileRuntime.recovery_required, "Unreadable lone backup also cannot silently start fresh")
+	check(ProfileRuntime.recover_profile(true) == ERR_FILE_CORRUPT and not FileAccess.file_exists(broken), "Invalid backup cannot be reported as restored")
+	check(FileAccess.get_file_as_bytes(broken + ".bak") == damaged, "Failed restore preserves unreadable backup bytes")
+	check(ProfileRuntime.recover_profile(false) == OK, "Explicit start fresh remains available")
+	check(_archived_bytes(broken + ".bak", damaged), "Explicit fresh start archives lone damaged backup, not a missing primary")
+	check(SaveService.load_profile(broken, false) != null and not ProfileRuntime.recovery_required, "Confirmed fresh profile is valid")
+	var empty := orphan + ".empty"
+	ProfileRuntime.initialize(empty)
+	check(not ProfileRuntime.recovery_required and not FileAccess.file_exists(empty), "Neither primary nor backup remains an ordinary fresh player")
+
+
+func _archived_bytes(original_path: String, bytes: PackedByteArray) -> bool:
+	for file in DirAccess.open("user://").get_files():
+		if file.begins_with(original_path.get_file() + ".recovery-") and FileAccess.get_file_as_bytes("user://" + file) == bytes:
+			return true
+	return false
+
 
 func _test_load_and_ammo() -> void:
 	var profile := ProfileState.create_new()

@@ -1,6 +1,7 @@
 extends Node3D
 ## Route/input regression, NOT human or combat acceptance. Q02-complete fixture;
 ## normal player/controller/collision and actual interaction UI, enemies disabled.
+## Charger removal below is an explicit damage fixture, not combat/playthrough proof.
 const PATH := "user://campus_route_input_test.json"
 const MOVEMENT := ["move_left","move_right","move_forward","move_back"]
 var battle: Node3D
@@ -95,8 +96,16 @@ func run() -> void:
 	if not check(is_instance_valid(control.choice_layer),"Actual interaction input opens branch choice"):await finish();return
 	check(get_viewport().gui_get_focus_owner().name=="ConfirmBranch","Branch confirmation is keyboard/controller focusable without clicking")
 	await tap("ui_accept")
+	var encounter:=control._encounter()
+	check(encounter.phase==CampusPowerEncounter.Phase.ACTIVE,"Keyboard/controller confirmation starts the real v3 encounter")
+	for enemy in battle.enemy_container.get_children():enemy.set_physics_process(false);enemy.collision_layer=0
 	for frame in 390:await get_tree().physics_frame
-	check(battle.session.campus.power_cut,"UI accept confirms and actual timed work cuts the correct branch")
+	check(not battle.session.campus.power_cut,"Six seconds of waiting cannot bypass the new field encounter")
+	encounter.rammer().take_damage(1000) # Controlled input fixture. Live combat is campus_chapter_run.
+	for frame in 4:await get_tree().physics_frame
+	check(encounter.phase==CampusPowerEncounter.Phase.CLEARED,"Charger removal exposes the physical control, not a free cut")
+	await tap("interact")
+	check(battle.session.campus.power_cut,"Actual post-encounter E cuts the correct branch")
 	if not await extract():await finish();return
 	check(profile.campus_chapter.power_returned,"Real power route returns and persists")
 	await finish()

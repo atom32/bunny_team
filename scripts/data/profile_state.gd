@@ -34,6 +34,11 @@ var ammo_pack: Dictionary = {} # Missing caliber means three magazines, not free
 var medical_pack: Dictionary = {"medical.field_dressing": 2, "medical.medkit": 1}
 var narrative_slice: Dictionary = NarrativeSlice.initial_state()
 var campus_chapter: Dictionary = CampusChapter.initial_state()
+# Last waterworks delivery actually brought home. Unknown in legacy profiles.
+var waterworks_memory := ""
+var maintenance_rescued := false
+var blockade_cleared := false
+var maintenance_closed := false
 var campaign: Dictionary = {"version": 1, "stage": 0, "progress": 0}
 # Presentation positions only; equipped gear remains owned by inventory.
 var stash_layout: Dictionary = {}
@@ -65,6 +70,9 @@ static func create_new() -> ProfileState:
 
 
 func validate() -> bool:
+	if maintenance_closed and not FinaleStory.available(self):return false
+	if maintenance_rescued and not campus_chapter.get("finished",false): return false
+	if waterworks_memory not in ["", "water_public", "water_tanker"]: return false
 	if not NarrativeSlice.valid_state(narrative_slice):return false
 	if not CampusChapter.valid_state(campus_chapter) or (CampusChapter.started(campus_chapter) and not narrative_slice.settled.Q02): return false
 	return inventory != null and loadout != null and inventory.validate() and loadout.validate(inventory) and credits >= 0 and credits <= 1000000000 and successful_sorties >= 0 and failed_sorties >= 0 and relief_claimed_after >= 0 and relief_claimed_after <= failed_sorties and _valid_medical_pack() and DeploymentPlan.valid_ammo_pack(ammo_pack) and NarrativeSlice.valid_state(narrative_slice) and (first_mission_completed or not narrative_slice.settled.Q01) and CampaignService.valid_state(campaign) and (first_mission_completed or (campaign.stage == 0 and campaign.progress == 0))
@@ -114,6 +122,10 @@ func to_dict() -> Dictionary:
 		"campaign": campaign.duplicate(),
 		"narrative_slice": narrative_slice.duplicate(true),
 		"campus_chapter":campus_chapter.duplicate(true),
+		"waterworks_memory": waterworks_memory,
+		"maintenance_rescued": maintenance_rescued,
+		"blockade_cleared": blockade_cleared,
+		"maintenance_closed": maintenance_closed,
 	}
 
 
@@ -127,6 +139,15 @@ static func from_dict(data: Dictionary) -> ProfileState:
 	if typeof(loadout_data) == TYPE_DICTIONARY:
 		restored_loadout = LoadoutState.from_dict(loadout_data)
 	var profile := ProfileState.new(restored_inventory, restored_loadout)
+	var rescue: Variant=data.get("maintenance_rescued",false)
+	if typeof(rescue)!=TYPE_BOOL:return null
+	profile.maintenance_rescued=rescue
+	for key in ["blockade_cleared","maintenance_closed"]:
+		if typeof(data.get(key,false))!=TYPE_BOOL:return null
+		profile.set(key,data.get(key,false))
+	var memory: Variant = data.get("waterworks_memory", "")
+	if typeof(memory) != TYPE_STRING or memory not in ["", "water_public", "water_tanker"]: return null
+	profile.waterworks_memory = memory
 	var slice_data: Variant = data.get("narrative_slice", NarrativeSlice.initial_state())
 	profile.narrative_slice = NarrativeSlice.restore_state(slice_data)
 	if profile.narrative_slice.is_empty(): return null
@@ -196,6 +217,10 @@ func replace_with(candidate: ProfileState) -> void:
 	campaign = candidate.campaign.duplicate()
 	narrative_slice = candidate.narrative_slice.duplicate(true)
 	campus_chapter=candidate.campus_chapter.duplicate(true)
+	waterworks_memory = candidate.waterworks_memory
+	maintenance_rescued = candidate.maintenance_rescued
+	blockade_cleared = candidate.blockade_cleared
+	maintenance_closed = candidate.maintenance_closed
 
 
 func _equip_first_definition(slot_id: StringName, definition_id: StringName) -> void:

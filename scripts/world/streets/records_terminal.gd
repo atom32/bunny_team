@@ -51,6 +51,8 @@ func interact(player: Node3D, current: SortieSession) -> Dictionary:
 		urgent = false
 	AudioDirector.play_sfx(&"ui_click")
 	SortieRuntime.request_checkpoint()
+	if get_node("RecordsAlarm").phase == RecordsAlarm.Phase.ISOLATED:
+		return {"success":true,"message":"UPLINK / 3s; bell isolated." if urgent else "COPY STARTED / Bell isolated. Interact again for a 3s uplink."}
 	return {"success":true,"message":"URGENT UPLINK / Local alarm sent now." if urgent else "COPY STARTED / Stay close. Interact again for a noisy fast uplink."}
 
 func _process(delta: float) -> void: tick(delta)
@@ -74,7 +76,8 @@ func get_interaction_prompt(_player: Node3D, current: SortieSession) -> String:
 	var state := current.get_objective_state(objective_id) if current else null
 	if not state or current.status != SortieSession.Status.ACTIVE or state.status == ObjectiveState.Status.COMPLETED: return ""
 	if urgent: return tr("UPLINK %.1fs / Stay close; damage cancels") % remaining
-	if remaining > 0: return tr("COPY %.1fs / %s: FAST UPLINK, ALARM NOW") % [remaining,ControlBindings.label("interact")]
+	if remaining > 0:
+		return tr("COPY %.1fs / %s: FAST UPLINK, BELL ISOLATED") % [remaining,ControlBindings.label("interact")] if get_node("RecordsAlarm").phase == RecordsAlarm.Phase.ISOLATED else tr("COPY %.1fs / %s: FAST UPLINK, ALARM NOW") % [remaining,ControlBindings.label("interact")]
 	return tr("%s  COPY RECORDS / 8s / Stay close; damage cancels") % ControlBindings.label("interact")
 
 func snapshot() -> Dictionary:

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="LootTableDefinition" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/loot_table_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/loot_table_entry.gd" id="2"]
+
+[sub_resource type="Resource" id="QuietCarbine"]
+script = ExtResource("2")
+definition_id = &"weapon.assault_rifle_01"
+fitting = "suppressor"
+
+[sub_resource type="Resource" id="FastSMG"]
+script = ExtResource("2")
+definition_id = &"weapon.smg_01"
+fitting = "quickloader"
+
+[sub_resource type="Resource" id="ObserverRifle"]
+script = ExtResource("2")
+definition_id = &"weapon.sniper_01"
+fitting = "observation_optic"
+
+[resource]
+script = ExtResource("1")
+table_id = &"campus_recovered_arms"
+entries = Array[ExtResource("2")]([SubResource("QuietCarbine"), SubResource("FastSMG"), SubResource("ObserverRifle")])

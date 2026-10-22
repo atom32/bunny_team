@@ -1,6 +1,6 @@
 extends Node3D
 
-@export_enum("light_armor", "heavy_armor", "standard_pack", "thruster_pack") var equipment_id := "light_armor"
+@export_enum("light_armor", "heavy_armor", "standard_pack", "thruster_pack", "courier_sling", "freight_frame") var equipment_id := "light_armor"
 
 
 func _ready() -> void:
@@ -14,6 +14,15 @@ func _ready() -> void:
 			_build_standard_pack()
 		"thruster_pack":
 			_build_thruster_pack()
+		"courier_sling":
+			VisualFactory.box(self, Vector3(.48,.4,.2), Vector3(0,-.02,.13), Color("807546"), "Sling")
+			VisualFactory.box(self, Vector3(.08,.6,.05), Vector3(0,.02,.01), Color("d6b95d"), "Strap")
+		"freight_frame":
+			for x in [-.28,.28]:
+				VisualFactory.box(self, Vector3(.06,.86,.06), Vector3(x,-.02,.1), Color("647581"), "FrameRail")
+			for y in [-.4,.02,.4]:
+				VisualFactory.box(self, Vector3(.6,.06,.06), Vector3(0,y,.1), Color("647581"), "FrameBar")
+			VisualFactory.box(self, Vector3(.54,.44,.26), Vector3(0,-.12,.26), Color("a2633c"), "FreightBag")
 
 
 func _build_light_armor() -> void:

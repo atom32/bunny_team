@@ -1,6 +1,7 @@
 class_name SupplyPanel
 extends PanelContainer
 signal supplies_changed
+signal campus_delivery_requested
 var save_path := SaveService.DEFAULT_SAVE_PATH
 var contact_id := ""
 var selected_tab := 0
@@ -8,10 +9,16 @@ var feedback := "BUY / SELL / BARTER. Supplies stay at base until deployed."
 var _scrolls: Dictionary = {}
 var _scroll_positions: Dictionary = {}
 var _tab_initialized := false
+var campus_delivery_mode := false
 
 func _ready() -> void:
 	theme = FieldManualStyle.theme()
 	add_theme_stylebox_override("panel", FieldManualStyle.panel(FieldManualStyle.SURFACE))
+	_refresh()
+
+func open_campus_delivery() -> void:
+	campus_delivery_mode=true;selected_tab=0
+	_scroll_positions["BUY SUPPLIES"]=0
 	_refresh()
 
 func _refresh() -> void:
@@ -30,18 +37,37 @@ func _refresh() -> void:
 	heading.text = tr("QUARTERMASTER  /  %d CREDITS") % profile.credits if contact_id.is_empty() else "%s / %d 信用点" % [ContactDefinition.get_contact(contact_id).display_name, profile.credits]
 	heading.add_theme_font_size_override("font_size", 23 if contact_id.is_empty() else 18)
 	body.add_child(heading)
+	if campus_delivery_mode:
+		var missing:=CampusChapter.delivery_shortage(profile)
+		var note:=Label.new();note.name="CampusShopShortage";note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+		note.text=tr("MISSING FROM WAREHOUSE / spare armor %d / standard 5.56 %d rounds") % [missing.armor,missing.ammo]
+		note.add_theme_font_size_override("font_size",14);body.add_child(note)
 	var tabs := TabContainer.new()
-	tabs.custom_minimum_size = Vector2(748 if contact_id.is_empty() else 636, 200 if not contact_id.is_empty() else 302)
+	tabs.custom_minimum_size = Vector2(748 if contact_id.is_empty() else 636, (160 if campus_delivery_mode else 200) if not contact_id.is_empty() else 302)
 	tabs.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	body.add_child(tabs)
 	var buy := _list(tabs, "BUY SUPPLIES")
-	for definition in SupplyService.stock(profile):
+	var stock:=SupplyService.stock(profile)
+	if campus_delivery_mode:
+		var missing:=CampusChapter.delivery_shortage(profile)
+		# Reorder existing offers, never add stock or buy/submit on navigation.
+		for id in [&"armor.recon_shell_01",&"ammo.556_standard"]:
+			if (id==&"ammo.556_standard" and missing.ammo==0) or (id==&"armor.recon_shell_01" and missing.armor==0):continue
+			var definition:=ContentDB.get_item(id)
+			stock.erase(definition);stock.push_front(definition)
+	for definition in stock:
 		if ContactDefinition.owns_stock(contact_id, definition): _item_row(buy, definition, null)
 	var sell := _list(tabs, "SELL RECOVERED")
 	for item in profile.inventory.get_items():
 		_item_row(sell, ContentDB.get_item(item.definition_id), item)
 	var barter := _list(tabs, "WORKSHOP EXCHANGE")
 	var recipes := SupplyService.recipes(profile) if contact_id.is_empty() or contact_id == "su_mi" else {}
+	var carrier_reply: Label
+	if recipes.has("carrier_courier"):
+		carrier_reply = Label.new(); carrier_reply.name = "RecoveredCarrierReply"
+		carrier_reply.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		carrier_reply.add_theme_font_size_override("font_size", 14)
+		carrier_reply.text = tr(RecoveredCarrier.CONVERSATION)
 	for recipe_id in recipes:
 		var recipe: Dictionary = recipes[recipe_id]
 		var row := HBoxContainer.new()
@@ -56,10 +82,14 @@ func _refresh() -> void:
 			inputs.append("%s %d/%d" % [GameLanguage.item_name(ContentDB.get_item(id).display_name),owned,recipe.inputs[id]])
 			available = available and owned >= recipe.inputs[id]
 		label.text = tr(recipe.name) + "\n" + " / ".join(inputs)
+		if recipe.has("detail"):
+			label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			label.text += "\n" + tr(recipe.detail)
 		row.add_child(label)
 		var button := _button(row, "EXCHANGE", func(): _trade("barter",recipe_id,1))
 		button.name = "Exchange_" + recipe_id
 		button.disabled = not available
+		if recipe_id == "carrier_freight": barter.add_child(carrier_reply)
 	if contact_id.is_empty() or contact_id == "su_mi":
 		_fittings(_list(tabs, "WEAPON FITTINGS"), profile)
 	if contact_id == "su_mi":
@@ -76,6 +106,9 @@ func _refresh() -> void:
 	info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	info.add_theme_font_size_override("font_size", 13)
 	body.add_child(info)
+	if campus_delivery_mode:
+		var back:=_button(body,"BACK TO EQUIPMENT PACKING",func():campus_delivery_requested.emit());back.name="BackToCampusPacking"
+		return
 	if not contact_id.is_empty() and contact_id != "shen_yanshuang": return
 	var relief := _button(body, "EMERGENCY KIT / PISTOL + 45 ROUNDS", func(): _trade("relief","",1))
 	relief.disabled = not SupplyService.can_claim_relief(profile)
@@ -123,6 +156,9 @@ func _item_row(parent: VBoxContainer, definition: ItemDefinition, item: ItemInst
 	amount.min_value = 1
 	amount.max_value = item.quantity if item else (120 if definition.has_tag(&"ammo") else 1)
 	amount.value = item.quantity if item else (30 if definition.has_tag(&"ammo") and definition.id != &"ammo.rocket_standard" else 1)
+	if campus_delivery_mode and not item and definition.id==&"ammo.556_standard":
+		var missing:=CampusChapter.delivery_shortage(ProfileRuntime.get_profile())
+		if missing.ammo>0:amount.value=missing.ammo
 	amount.custom_minimum_size.x = 70
 	row.add_child(amount)
 	var unit := SupplyService.sell_price(item) if item else SupplyService.buy_price(definition, ProfileRuntime.get_profile())

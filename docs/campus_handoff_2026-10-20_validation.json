@@ -1,0 +1,495 @@
+{
+  "recorded_at": "2026-10-20T13:00:21.500701+08:00",
+  "prior_source_only_validation": {
+    "path": "D:\\tmp\\bunny_campus_handoff_20261020_build02\\prior_source_validation.json",
+    "sha256": "576c70a6de172fee2bc6523dfff8a40de01ad71638597299fb455c465af8d737"
+  },
+  "status": "local_windows_packet_and_independent_zip_verified_not_public_release",
+  "goal_achieved": false,
+  "source": {
+    "directory": "D:\\tmp\\bunny_campus_handoff_20261020_final03",
+    "test_scenes": 118,
+    "categories": 213,
+    "all_pass": true,
+    "results_sha256": "7c4c9acf6a7638d5faf9e420018caeab15efeaa0d6230258cb52fcc12681d608"
+  },
+  "build": {
+    "directory": "D:\\tmp\\bunny_campus_handoff_20261020_build02",
+    "categories": 105,
+    "all_pass": true,
+    "results_sha256": "83b539092bc5fe72ed6d81bf1aecb8c5ccf089b1174b78269e942ba5235b950d"
+  },
+  "independent_zip": {
+    "categories": 19,
+    "launcher_cases": 16,
+    "all_pass": true,
+    "all_fresh_current_binary": true,
+    "native_serial": true,
+    "system_only_PATH": true
+  },
+  "archive": {
+    "archive": "D:\\tmp\\bunny_campus_handoff_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 246139908,
+    "sha256": "27e75f2964dbd765a68058509a45b8bccbaed40f6191567fd486d563de2183cf",
+    "extracted_to": "D:\\tmp\\小兔试玩 宿舍南窗 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false,
+    "fresh_delivery_extracted_to": "D:\\tmp\\小兔试玩 宿舍南窗 20261020 04\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "fresh_static_files_match": true,
+    "fresh_preview_userdata_not_preplayed": true
+  },
+  "pack_audit": {
+    "entries": 1557,
+    "all_byte_ranges_and_md5": true,
+    "forbidden_original": [],
+    "forbidden_cache": [],
+    "arcana": [],
+    "combatgirls": [],
+    "legacy_and_v2_maps": true,
+    "bucket_scene_and_script_present": true,
+    "water_v1_v2_v3_maps": true,
+    "market_scripts_present": true,
+    "rescue_scene_and_script_present": true,
+    "handoff_scene_and_script_present": true,
+    "fresh_campus_navigation_variants_present": [
+      "resources/navigation/campus_cabinet_0.tres.remap",
+      "resources/navigation/campus_cabinet_1.tres.remap",
+      "resources/navigation/campus_cabinet_2.tres.remap",
+      "resources/navigation/campus_cabinet_3.tres.remap",
+      "resources/navigation/campus_handoff_closed_0.tres.remap",
+      "resources/navigation/campus_handoff_closed_1.tres.remap",
+      "resources/navigation/campus_handoff_closed_2.tres.remap",
+      "resources/navigation/campus_handoff_closed_3.tres.remap"
+    ]
+  },
+  "actual_earned_native_routes": {
+    "handoff_earned_forward": {
+      "evidence": "D:\\tmp\\bunny_campus_handoff_20261020_build02\\portable_handoff_earned_forward\\campus_entry.json",
+      "sha256": "61d14122dbdafc21fd735c920e532c64c13438ae15352cf1937ceda903ba8776",
+      "checks": 12,
+      "shots": 11,
+      "kills": 3,
+      "health": 260.0,
+      "from_returns": 5,
+      "to_returns": 6,
+      "not_human_playtime": true
+    },
+    "handoff_earned_compat_en": {
+      "evidence": "D:\\tmp\\bunny_campus_handoff_20261020_build02\\portable_handoff_earned_compat_en\\campus_entry.json",
+      "sha256": "03b6dd768f6d4886bcab6e92ccb56b985ee446040a4b3e4733d755e6cf61716f",
+      "checks": 12,
+      "shots": 17,
+      "kills": 5,
+      "health": 260.0,
+      "from_returns": 5,
+      "to_returns": 6,
+      "not_human_playtime": true
+    }
+  },
+  "old_exported_v3": {
+    "producer_exit": 0,
+    "command": [
+      "D:\\tmp\\bunny_water_market_20261020_build03\\LOCAL_ONLY_DO_NOT_UPLOAD_R2\\NeonBastion.exe",
+      "--rendering-method",
+      "gl_compatibility",
+      "--audio-driver",
+      "Dummy",
+      "--resolution",
+      "1280x720",
+      "--",
+      "--local-qa",
+      "campus_chapter"
+    ],
+    "producer_log_sha256": "6919935287de53dff0d2d35ffb2a61477d189e50646398a3cb95c24fa3960144",
+    "old_exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "old_pck_sha256": "3321fc6d3553e476f5ce14dd2b48a0909b5d11066a39561cf9e0f604a06f670e",
+    "seed_path": "D:\\tmp\\bunny_campus_handoff_20261020_dev01\\seed5_userdata\\Godot\\app_userdata\\Bunny Verification campus_handoff_dev01\\profile.json",
+    "seed_sha256": "de0c21558063c44b1c2e5ed63c426884fec1c63ae05fc123e3c2cb5bceac6869",
+    "method": "Read-only byte capture of an actual active v3 supply checkpoint produced by the previously delivered EXE during normal shop/deployment/AI movement. No JSON edits, external script injection, force-focus, unpause, process interruption or progress assignment.",
+    "checkpoint": "D:\\tmp\\bunny_campus_handoff_20261020_dev01\\old_exported_v3_producer\\actual_old_exported_v3_checkpoint.json",
+    "checkpoint_sha256": "ec49d12ccfde6d64f733c6caced24d56de2d1051515e764c8ec183135f452ade",
+    "old_layout_signature": "e7923bb05e8ad7fa0bc78feb364ced68df5a2a7d2eb365a57f3af0c430d874d7",
+    "facts": {
+      "gear_ready": true,
+      "power_confirmed": true,
+      "power_cut": true,
+      "recorder_instance": "",
+      "recorder_ready": true,
+      "recorder_revealed": false,
+      "relay_ready": true,
+      "relays": [],
+      "stage": "supply",
+      "version": 3
+    },
+    "pass": true
+  },
+  "old_exported_v3_current_read": {
+    "name": "actual_old_v3_read",
+    "pass": true,
+    "exit": 0,
+    "command": [
+      "D:\\tmp\\小兔试玩 宿舍南窗 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--",
+      "--local-qa",
+      "campus_handoff",
+      "--legacy-read"
+    ],
+    "evidence_folder": "D:\\tmp\\bunny_campus_handoff_20261020_build02\\portable_actual_old_v3_read",
+    "data_folder": "D:\\tmp\\bunny_campus_handoff_20261020_build02\\portable_actual_old_v3_read",
+    "log_sha256": "d86698b594bda8a57afe1c87de30c1398024f9160cd3b9637b1b59066fae2ecd"
+  },
+  "old_exported_v4_current_read": {
+    "name": "actual_old_v4_read",
+    "pass": true,
+    "exit": 0,
+    "command": [
+      "D:\\tmp\\小兔试玩 宿舍南窗 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--",
+      "--local-qa",
+      "campus_handoff",
+      "--legacy-v4-read"
+    ],
+    "evidence_folder": "D:\\tmp\\bunny_campus_handoff_20261020_build02\\portable_actual_old_v4_read",
+    "data_folder": "D:\\tmp\\bunny_campus_handoff_20261020_build02\\portable_actual_old_v4_read",
+    "log_sha256": "ac431e7f55befcd99fe6efc73d19345bdb81abdecd3e0d7331fc62fcdef831aa"
+  },
+  "cmd_protocol": [
+    {
+      "case": "negative_exit",
+      "pass": true,
+      "observed_exit": 1,
+      "expected_exit": 1,
+      "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔 启动脚本 验证 20261020\\预览验证.cmd\" --headless --fixed-fps 60 -- --local-qa invalid_mode\""
+    },
+    {
+      "case": "normal_boot",
+      "pass": true,
+      "observed_exit": 0,
+      "expected_exit": 0,
+      "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔 启动脚本 验证 20261020\\预览验证.cmd\" --headless --fixed-fps 60 -- --local-qa boot\""
+    }
+  ],
+  "current_binary_expected_negative": {
+    "pass": true,
+    "expected_exit": 1,
+    "observed_exit": 1,
+    "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 宿舍南窗 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\运行本地试玩.cmd\" --headless --fixed-fps 60 -- --local-qa invalid_mode\""
+  },
+  "navigation_authoring": {
+    "source": "scenes/areas/campus/static_world.tscn",
+    "source_unchanged": true,
+    "variants": [
+      {
+        "path": "D:\\bunny_team\\resources\\navigation\\campus_cabinet_0.tres",
+        "cabinet_site": 0,
+        "shutter_closed": false,
+        "removed_cells": 2,
+        "vertices": 8353,
+        "polygons": 3261
+      },
+      {
+        "path": "D:\\bunny_team\\resources\\navigation\\campus_handoff_closed_0.tres",
+        "cabinet_site": 0,
+        "shutter_closed": true,
+        "removed_cells": 7,
+        "vertices": 8346,
+        "polygons": 3256
+      },
+      {
+        "path": "D:\\bunny_team\\resources\\navigation\\campus_cabinet_1.tres",
+        "cabinet_site": 1,
+        "shutter_closed": false,
+        "removed_cells": 4,
+        "vertices": 8349,
+        "polygons": 3259
+      },
+      {
+        "path": "D:\\bunny_team\\resources\\navigation\\campus_handoff_closed_1.tres",
+        "cabinet_site": 1,
+        "shutter_closed": true,
+        "removed_cells": 9,
+        "vertices": 8342,
+        "polygons": 3254
+      },
+      {
+        "path": "D:\\bunny_team\\resources\\navigation\\campus_cabinet_2.tres",
+        "cabinet_site": 2,
+        "shutter_closed": false,
+        "removed_cells": 2,
+        "vertices": 8353,
+        "polygons": 3261
+      },
+      {
+        "path": "D:\\bunny_team\\resources\\navigation\\campus_handoff_closed_2.tres",
+        "cabinet_site": 2,
+        "shutter_closed": true,
+        "removed_cells": 7,
+        "vertices": 8346,
+        "polygons": 3256
+      },
+      {
+        "path": "D:\\bunny_team\\resources\\navigation\\campus_cabinet_3.tres",
+        "cabinet_site": 3,
+        "shutter_closed": false,
+        "removed_cells": 4,
+        "vertices": 8349,
+        "polygons": 3259
+      },
+      {
+        "path": "D:\\bunny_team\\resources\\navigation\\campus_handoff_closed_3.tres",
+        "cabinet_site": 3,
+        "shutter_closed": true,
+        "removed_cells": 9,
+        "vertices": 8342,
+        "polygons": 3254
+      }
+    ],
+    "method": "Only fresh map_revision5: exclude the actual selected solid bell cabinet plus capsule clearance; supply facts5 also excludes closed shutter cells, with a link enabled only after physical clearance. Old saved map_revision3/4 keep original navigation."
+  },
+  "preview_preparation": [
+    {
+      "name": "campus",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_handoff_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "6c412ec4f68079e1b98390c4aad84eef30d68666bd1980f2e5174145faed908c",
+      "prepared_sha256": "4618b3264be42ff468e8f3bb544014269425d25f366fdbe1bead24717a3ef610",
+      "only_stash_display_layout_may_change": true,
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "handoff",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_handoff_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "676944b82729c0b7d8b8035bab6dd659ed382777ca859f387e3fdc35d182f08e",
+      "prepared_sha256": "676944b82729c0b7d8b8035bab6dd659ed382777ca859f387e3fdc35d182f08e",
+      "only_stash_display_layout_may_change": true,
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "maintenance",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_handoff_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "836b0d1333882cca8885bb55bed6735d24c59c716468f13183eeb2e4b32f4823",
+      "prepared_sha256": "836b0d1333882cca8885bb55bed6735d24c59c716468f13183eeb2e4b32f4823",
+      "only_stash_display_layout_may_change": true,
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "rescue",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_handoff_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "3394f9a29fc3f1ed257013d29afd713c38c22653f6a72715a3ac369ddf2fb080",
+      "prepared_sha256": "d1aaa9e898a184736163ad221fcef3b0f717b1cba2f544a0b4d07041cd5e4f4b",
+      "only_stash_display_layout_may_change": true,
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "act2",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_handoff_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "3394f9a29fc3f1ed257013d29afd713c38c22653f6a72715a3ac369ddf2fb080",
+      "prepared_sha256": "d1aaa9e898a184736163ad221fcef3b0f717b1cba2f544a0b4d07041cd5e4f4b",
+      "only_stash_display_layout_may_change": true,
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "ending",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_handoff_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "170c4c93d98f98587f411424727383fca8655f0956c3e1c72ac65c800980a233",
+      "prepared_sha256": "9b0da094d7e54ff5122123a6be6ab39c29f653dcc558d75353a83583b0681879",
+      "only_stash_display_layout_may_change": true,
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "bucket",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_handoff_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "42d71693b18796c9dd39b4c6157ad4ec70822554e7cc216bb369dc43d5389af5",
+      "prepared_sha256": "63589200c29927f044250531ec77d8a97f7b0ffa84215a97a5e32c9588fd3259",
+      "only_stash_display_layout_may_change": true,
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "blockade",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_handoff_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "42d71693b18796c9dd39b4c6157ad4ec70822554e7cc216bb369dc43d5389af5",
+      "prepared_sha256": "63589200c29927f044250531ec77d8a97f7b0ffa84215a97a5e32c9588fd3259",
+      "only_stash_display_layout_may_change": true,
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    }
+  ],
+  "compiled_visual_review": {
+    "reviewed": true,
+    "reviewed_at": "2026-10-20T12:56:22.117794+08:00",
+    "images": {
+      "portable_handoff_forward/handoff_unpacked.png": "67727279cf830f067861446b52776086af38860ae664c4e1c44b51a0cee656fe",
+      "portable_handoff_compat_en/handoff_unpacked.png": "70689469b045c8ceedf78e88b881274bad06e0ad1fa09781d2e052daa902b7fa",
+      "portable_handoff_forward/handoff_moving.png": "92e673e1f1ae20074354ff5b337ce598f3c27ca8d7ae8ebf3db2078f28f7759a",
+      "portable_handoff_forward/handoff_received.png": "57d88a847fe9d36e3b46a60effbdf95182315d6cade3e44c4f94c3dd1df7ba73",
+      "portable_handoff_earned_forward/04b_dormitory_received.png": "c9a0568341b9f071531de0d2eca8fc3fd3e48cf7b5c9ff6635ed246f86a65f14",
+      "portable_handoff_earned_compat_en/04b_dormitory_received.png": "121d20b3f3499045ca05b65eb9cc4f4bc69c748dabaea17d440c12373e910d03",
+      "portable_handoff_forward/handoff_closed_detour.png": "dfd229767bc8fb2deb71c3d5bcfeb7b5e4c28fe433683cdf8aaf56a146a5d84b",
+      "portable_handoff_forward/handoff_open_crossing.png": "46b39807e2ef0e438b69364913f1d3433c3e5e7c5b1ea811a113191b97014e24"
+    },
+    "scope": "Model visually inspected these eight current build02 compiled native captures, not reused build01 pictures. Unpacked state has no phantom cargo; physical shutter/cargo change, actual earned live-AI received state, closed-door detour and opened crossing visible. Chinese and English task/dialogue readable. Graybox building/window/resident and small heroine at high camera remain, no final hand-contact animation, art, full-frame animation QA or audio/listening acceptance. Component geometry captures freeze actors; actual earned captures are separate live-AI routes. No human pacing/five-hour or enjoyment evidence."
+  },
+  "full_compiled_normal_chain": {
+    "profile": "D:\\tmp\\bunny_campus_handoff_20261020_build02\\first_sortie_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+    "sha256": "170c4c93d98f98587f411424727383fca8655f0956c3e1c72ac65c800980a233",
+    "successful_sorties": 10,
+    "campus_finished": true,
+    "finale_closed": true,
+    "no_pending_sortie": true,
+    "not_human_first_playthrough": true
+  },
+  "versions": {
+    "profile": 11,
+    "checkpoint": 6,
+    "campus_facts": 5,
+    "old_1_to_4_preserved": true
+  },
+  "all_non_document_root_frozen_build_inputs_match": true,
+  "preserved": {
+    "assets/": {
+      "count": 881,
+      "unchanged": true
+    },
+    "scenes/": {
+      "count": 105,
+      "unchanged": true
+    },
+    "translations": {
+      "old": 1686,
+      "current": 1705,
+      "old_unchanged": true
+    }
+  },
+  "originals": [
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+      "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+      "mtime_ns": 1792216455246252200
+    },
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+      "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+      "mtime_ns": 1792216455253759300
+    },
+    {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+      "mtime_ns": 1792376341839829300
+    },
+    {
+      "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+      "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec",
+      "mtime_ns": 1790951818552782600
+    }
+  ],
+  "earlier_failed_or_superseded_attempts": [
+    {
+      "case": "component01",
+      "reason": "Two inherited-battle fixture variables failed inference. Stopped exact owned parse-failed PID45732, retained log; explicit Dictionary types fixed the test."
+    },
+    {
+      "case": "earned_f01",
+      "reason": "Logic passed but native pixels showed a table/player overlap. Revised interaction origin/table and receiver; current f02/c01 and actual-Hitbox boundary check supersede it."
+    },
+    {
+      "case": "build01_launcher_handoff",
+      "reason": "ZIP18 passed but first actual CMD failed: Chinese echo was split as a command, CMD exit masked engine failure; controller physically hit Shutter while nav led through closed doorway. Candidate retained, not delivered. ASCII-only commands and explicit exit propagation verified. Fresh map5/facts5 carve actual closed shutter and selected cabinet; opening link follows physical clearance. Old maps retained."
+    },
+    {
+      "case": "nav_earned01",
+      "reason": "After fixing shutter topology, actual route reached/received supplies but hit solid RecordsIsolator. Added selected-cabinet navigation variants for all fresh campus layouts; current nav_earned02 completes normally. No collision, AI, health, pause or movement-rule weakening."
+    }
+  ],
+  "limits": [
+    "LOCAL_ONLY; publication permissions unresolved.",
+    "Graybox booth/resident, not final scene or hand-contact animation.",
+    "Dummy audio, no real listening/minimum-spec/clean-machine acceptance.",
+    "No human duration/five-hour proof, satisfaction data or 80-percent reviews.",
+    "No commit/push/upload/model replacement/author contact/subagents."
+  ]
+}

@@ -17,7 +17,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	_schema()
 	await _start()
-	check(battle.hud.slice_label.text.contains("未完成"), "initial Q01 status")
+	check(battle.hud.slice_label.text == tr("Q01 / Read both exit signs"), "initial Q01 status follows current language")
 	var exits := _assigned()
 	var objectives := session.get_objective_summary()
 	battle.area_root.route_map.expanded = true
@@ -27,7 +27,7 @@ func _ready() -> void:
 	check(not plaque.interact(battle.player, session).success, "remote plaque interaction rejected")
 	_observe(exits[0])
 	_reading_controls()
-	check(session.exit_observations.size() == 1 and NarrativeSlice.status_text(ProfileRuntime.get_profile(), session).contains("一个"), "one-exit status")
+	check(session.exit_observations.size() == 1 and NarrativeSlice.status_text(ProfileRuntime.get_profile(), session) == tr("Q01 / One exit checked (1/2)"), "one-exit status follows current language")
 	check(session.get_objective_summary() == objectives, "observations never mutate mission objectives")
 	check(SortieRuntime.save_checkpoint() == OK, "A save suspended sortie")
 	var durable := ProfileRuntime.get_profile().sortie_checkpoint.duplicate(true)
@@ -63,7 +63,8 @@ func _ready() -> void:
 	exits = _assigned()
 	_observe(exits[0])
 	_observe(exits[1])
-	check(NarrativeSlice.status_text(ProfileRuntime.get_profile(),session).contains("待撤离") and not ProfileRuntime.get_profile().narrative_slice.settled.Q01, "two observations remain provisional before extraction")
+	check(battle.hud.field_information.text.contains(tr(load("res://scripts/world/exit_plaque.gd").SECOND_REPLY)), "second actual observation carries Tang and Shen's reply")
+	check(NarrativeSlice.status_text(ProfileRuntime.get_profile(),session) == tr("Q01 / Both exits checked (2/2) / Extract") and not ProfileRuntime.get_profile().narrative_slice.settled.Q01, "two observations remain provisional before extraction")
 	check(not exits[0].get_node("ExitPlaque").interact(battle.player,session).success, "repeat plaque cannot add observations")
 	var clone := SortieCheckpoint.restore_session(SortieCheckpoint.session_data(session))
 	check(clone != null and clone.exit_observations == session.exit_observations, "two-fact session roundtrip")
@@ -89,7 +90,7 @@ func _ready() -> void:
 	var profile := ProfileRuntime.get_profile()
 	check(profile.narrative_slice.settled.Q01 and profile.narrative_slice.q01_exits.size() == 2, "C successful sortie persists Q01")
 	check(profile.credits == credits + NarrativeSlice.Q01_REWARD, "C Q01 pays exactly once independently of incomplete mission")
-	check(NarrativeSlice.status_text(profile).contains("已结算"), "settled status")
+	check(NarrativeSlice.status_text(profile) == tr("Q01 / Find a way home / Settled"), "settled status follows current language")
 	for id in NarrativeSlice.TASK_IDS:
 		if id != "Q01": check(not profile.narrative_slice.settled[id], "other task remains unimplemented: " + id)
 	var expected := JSON.stringify(profile.to_dict())
@@ -150,6 +151,12 @@ func _retreat(exits: Array) -> ExtractionPoint:
 	return null
 
 func _observe(exit: ExtractionPoint) -> void:
+	# This is an explicitly placed unit fixture, not the separate earned route.
+	# Use the actual outside interaction before inspecting the new physical gate.
+	var gate := exit.physical_gate()
+	if gate and not gate.is_open():
+		battle.player.global_position = gate.to_global(Vector3(0,0,2.4))
+		check(gate.get_node("OutsideLatch").interact(battle.player, session).success, "unit fixture releases actual outside bolt before north plaque")
 	var plaque: Node3D = exit.get_node("ExitPlaque")
 	battle.player.global_position = plaque.global_position
 	battle.player.interaction_component._current_target = null
@@ -179,7 +186,14 @@ func _cleanup() -> void:
 func _reading_controls() -> void:
 	var hud: BattleHUD = battle.hud
 	var panel: Control = hud.field_information.get_parent().get_parent()
-	check(panel.visible and hud.field_information.text.contains(String(_assigned()[0].extraction_id)), "plaque writes exit conditions to HUD")
+	var point := _assigned()[0] as ExtractionPoint
+	var names := {"streets_exit_0":"EAST CAMPUS GATE","streets_exit_1":"SOUTH CAMPUS GATE","streets_exit_2":"NORTH CAMPUS GATE","streets_exit_3":"WEST SERVICE GATE"}
+	check(panel.visible and hud.field_information.text.begins_with(tr(names[String(point.extraction_id)])+"\n") and not hud.field_information.text.contains("streets_exit_"), "actual plaque HUD uses named campus gate, not internal ID")
+	var plaque_script = load("res://scripts/world/exit_plaque.gd")
+	check(hud.field_information.text.contains(tr(plaque_script.FIRST_REPLY)), "first actual observation carries Shen's short reply")
+	for exit in _assigned():
+		var expected := "OPEN NOW / NO RECORDS REQUIRED" if exit.required_objective_id.is_empty() else "LOCKED / RECOVER THIS SORTIE'S RECORDS"
+		check(exit.get_node("ExitPlaque").conditions_text(session).ends_with(tr(expected)), "gate caption preserves actual open/records requirement")
 	for node in [panel, hud.field_information.get_parent(), hud.field_information]:
 		check(node.mouse_filter == Control.MOUSE_FILTER_IGNORE and node.focus_mode == Control.FOCUS_NONE, "readout never captures pointer or focus")
 	check(not battle.player.aim_input_captured and battle.player.interaction_component._enabled, "reading leaves aim and interactions enabled")
@@ -203,5 +217,6 @@ func _reading_controls() -> void:
 	battle.player.interaction_component._current_target = plaque
 	var response: Dictionary = battle.player.interaction_component.interact_with_current()
 	check(not response.success and panel.visible and session.exit_observations == facts, "re-reading shows conditions without duplicate observation")
+	check(not response.information.contains(tr(plaque_script.FIRST_REPLY)) and not response.information.contains(tr(plaque_script.SECOND_REPLY)), "re-reading does not replay fresh-observation banter")
 	hud._process(12.1)
 	check(not panel.visible, "readout expires without dismissal")

@@ -1,0 +1,81 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/world/streets/supply_handoff.gd" id="1"]
+[sub_resource type="StandardMaterial3D" id="steel"]
+albedo_color=Color(0.22,0.32,0.35,1)
+roughness=0.65
+[sub_resource type="StandardMaterial3D" id="wood"]
+albedo_color=Color(0.55,0.39,0.20,1)
+[sub_resource type="StandardMaterial3D" id="canvas"]
+albedo_color=Color(0.35,0.42,0.28,1)
+[sub_resource type="StandardMaterial3D" id="yellow"]
+albedo_color=Color(0.88,0.64,0.16,1)
+[sub_resource type="BoxMesh" id="upright"]
+size=Vector3(0.15,3.9,0.28)
+[sub_resource type="BoxMesh" id="crossbar"]
+size=Vector3(2.3,0.24,0.28)
+[sub_resource type="BoxMesh" id="shutter"]
+size=Vector3(2.1,2.2,0.12)
+[sub_resource type="BoxShape3D" id="shutter_collision"]
+size=Vector3(2.1,2.2,0.12)
+[sub_resource type="BoxMesh" id="table"]
+size=Vector3(1.8,0.12,4.6)
+[sub_resource type="BoxMesh" id="crate"]
+size=Vector3(0.86,0.48,0.68)
+[sub_resource type="BoxMesh" id="armor"]
+size=Vector3(0.6,0.16,0.45)
+[sub_resource type="BoxMesh" id="ammo"]
+size=Vector3(0.28,0.22,0.2)
+[sub_resource type="BoxMesh" id="handle"]
+size=Vector3(0.08,0.5,0.08)
+[node name="CampusSupplyHandoff" type="Node3D"]
+script=ExtResource("1")
+position=Vector3(-31,0,32.4)
+[node name="LeftPost" type="MeshInstance3D" parent="."]
+position=Vector3(-1.15,1.95,-2.7)
+mesh=SubResource("upright")
+material_override=SubResource("steel")
+[node name="RightPost" type="MeshInstance3D" parent="."]
+position=Vector3(1.15,1.95,-2.7)
+mesh=SubResource("upright")
+material_override=SubResource("steel")
+[node name="TopBar" type="MeshInstance3D" parent="."]
+position=Vector3(0,3.8,-2.7)
+mesh=SubResource("crossbar")
+material_override=SubResource("steel")
+[node name="Shutter" type="StaticBody3D" parent="."]
+position=Vector3(0,1.35,-2.7)
+collision_layer=4
+collision_mask=0
+[node name="Mesh" type="MeshInstance3D" parent="Shutter"]
+mesh=SubResource("shutter")
+material_override=SubResource("steel")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shutter"]
+shape=SubResource("shutter_collision")
+[node name="RollerTable" type="MeshInstance3D" parent="."]
+position=Vector3(0,0.68,-2.0)
+mesh=SubResource("table")
+material_override=SubResource("steel")
+[node name="Cargo" type="Node3D" parent="."]
+position=Vector3(0,0.98,-0.6)
+[node name="Crate" type="MeshInstance3D" parent="Cargo"]
+mesh=SubResource("crate")
+material_override=SubResource("wood")
+[node name="FoldedVest" type="MeshInstance3D" parent="Cargo"]
+position=Vector3(-0.14,0.34,0)
+mesh=SubResource("armor")
+material_override=SubResource("canvas")
+[node name="AmmoBox" type="MeshInstance3D" parent="Cargo"]
+position=Vector3(0.26,0.32,0)
+mesh=SubResource("ammo")
+material_override=SubResource("yellow")
+[node name="Handle" type="MeshInstance3D" parent="."]
+position=Vector3(0.98,1.1,0)
+mesh=SubResource("handle")
+material_override=SubResource("yellow")
+[node name="WorldLabel" type="Label3D" parent="."]
+position=Vector3(0,2.7,0)
+billboard=1
+font_size=30
+pixel_size=0.012
+modulate=Color(1,0.9,0.55,1)
+outline_size=8

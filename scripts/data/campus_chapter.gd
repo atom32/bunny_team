@@ -1,7 +1,7 @@
 class_name CampusChapter
 extends RefCounted
 ## Campus Batch 2. Separate from immutable legacy logistics facts/rewards.
-const FACTS_VERSION := 2 # v1 suspended sorties keep the original dormitory device site.
+const FACTS_VERSION := 5 # v1-v4 retain their original field geometry/navigation contract.
 const RECORDER_ID := &"story.experiment_recorder"
 const RELAYS := ["relay_office", "relay_repair"]
 const ARMOR_IDS := [&"armor.recon_shell_01", &"armor.bulwark_plate_01"]
@@ -9,15 +9,21 @@ const RELAY_REWARD := 100
 const RECORDER_REWARD := 150
 const POWER_REWARD := 100
 const FINAL_REWARD := 200
-const WARNING := "L-02 / Radio: This is not a reception point. Do not enter the sealed zone. The people inside have lost control, and the line still connects to them."
-const RECORD := "Research center experiment recorder\nMilitary neural-control and endurance project: containment failure; subjects lost control. Outer guards continue the blockade. Experimental assets must not leave. Test equipment remains powered.\nL-02A: shelter communications and lighting. L-02B: experimental equipment. Separate branches share the upstream line."
-const POWER_REPLY := "Tang Kui / Radio: The lights stayed on. Another building just answered."
+const WARNING := "L-02 / Radio\nUnknown woman: Do not open the sealed building! They are still in their patient gowns. They are not--\nSu Mi: Which building? Hello?\n[The line cuts out.]"
+const RECORD := "Experiment recorder / last recording\nResearcher: Military neural-control and endurance trial. Containment failed. The subjects are out. Open the outer gate!\nGuard: Experimental assets must not leave.\nResearcher: She is calling for her mother!\n[Impact. Recording ends.]\nEquipment log: L-02A / shelter communications and lighting. L-02B / test equipment still powered. Branches can be isolated."
+const POWER_REPLY := "Tang Kui / Radio: Still on! The shelter lights are still on!\nDistant voice: Tell her thank you!\nTang Kui: Move, you are leaning on the--\n[Three people start talking at once.]"
 const STAGES := ["relay", "recorder", "power", "supply", "complete"]
+const REQUIREMENTS := {
+	"campus_relay": "TASK / Repair both L-02 relays: reading hall and maintenance yard. Stay nearby for 12s each; damage or leaving interrupts. No materials consumed. Extract to settle.",
+	"campus_recorder": "TASK / Take the experiment recorder in the archive reading hall and extract with it. The recording can be read immediately and revisited here.",
+	"campus_power": "TASK / Start isolation at the maintenance-yard console. Sidestep the shielded charger, bait a wall impact or flank it. Defeat it, return to cut L-02B only, then extract. Shelter L-02A stays on.",
+	"campus_supply": "TASK / Pack one unequipped Recon Shell or Bulwark Plate (durability 50+) and 60 standard 5.56 rounds at base. Clear the two gunmen covering the dormitory south window, send the packed equipment inside, then extract. Partial packing is saved; no second charge in the field.",
+}
 const QUESTS := {
-	"campus_relay": ["03 / Restore communications", "Su Mi: Restore the reading-hall and maintenance-yard relays on L-02, then extract. Each requires 12 seconds nearby; damage interrupts work. No materials required."],
-	"campus_recorder": ["04 / Recover the experiment recorder", "Shen Yanshuang: The recorder is fixed in the archive reading hall. Take it and bring it home. Read its project and equipment log immediately; no decryption or second evidence item."],
-	"campus_power": ["05 / Disconnect the experimental branch", "Su Mi: At the maintenance console, disconnect L-02B experimental equipment and keep L-02A shelter communications and lighting. Confirm the branch choice, finish the work, then extract."],
-	"campus_supply": ["06 / Arm the people who stayed", "Shen Yanshuang: Deliver one unequipped spare armor (Recon Shell or Bulwark Plate, at least 50 durability) and 60 standard 5.56 rounds from the warehouse, then complete a campus extraction."],
+	"campus_relay": ["03 / Restore communications", "Su Mi: Someone answered me through that broken radio. Fix both relays. I want to hear her again."],
+	"campus_recorder": ["04 / Recover the experiment recorder", "Shen Yanshuang: The recorder is in the archive reading hall. Bring it home. Su Mi has not taken her headphones off."],
+	"campus_power": ["05 / Disconnect the experimental branch", "Su Mi: I marked both branches. L-02B off. L-02A stays. Tang Kui wrote the shelter names on the label. There are a lot."],
+	"campus_supply": ["06 / Arm the people who stayed", "Shen Yanshuang: They are staying. They need armor and ammunition. Spare armor. Keep the one you are wearing."],
 }
 
 static func initial_state() -> Dictionary:
@@ -49,12 +55,16 @@ static func stage(state: Dictionary) -> String:
 static func initial_facts(profile: ProfileState, area: StringName) -> Dictionary:
 	if area!=&"street_district" or not profile.first_mission_completed or not profile.narrative_slice.settled.Q02: return {}
 	var state := profile.campus_chapter
-	return {"version":FACTS_VERSION,"stage":stage(state),"relay_ready":state.relays_returned,"recorder_ready":state.recorder_returned,"gear_ready":state.delivered_armor and state.delivered_ammo==60,"relays":[],"recorder_revealed":false,"recorder_instance":"","power_cut":state.branch_disconnected,"power_confirmed":state.branch_disconnected}
+	return {"version":FACTS_VERSION,"stage":stage(state),"relay_ready":state.relays_returned,"recorder_ready":state.recorder_returned,"gear_ready":state.delivered_armor and state.delivered_ammo==60,"relays":[],"recorder_revealed":false,"recorder_instance":"","power_cut":state.branch_disconnected,"power_confirmed":state.branch_disconnected,"supply_received":false}
 
 static func valid_facts(raw: Variant, area: StringName) -> bool:
 	if typeof(raw)!=TYPE_DICTIONARY: return false
 	if raw.is_empty(): return true # Old suspended sorties never gain new-story facts.
-	if area!=&"street_district" or raw.size()!=10 or not SortieCheckpoint.integer(raw.get("version"),1,FACTS_VERSION) or raw.get("stage") not in STAGES: return false
+	if area!=&"street_district" or not SortieCheckpoint.integer(raw.get("version"),1,FACTS_VERSION) or raw.get("stage") not in STAGES: return false
+	if raw.size()!=(11 if raw.version>=4 else 10):return false
+	if raw.version>=4:
+		if typeof(raw.get("supply_received"))!=TYPE_BOOL:return false
+		if raw.supply_received and (raw.stage!="supply" or not raw.get("gear_ready",false)):return false
 	for key in ["relay_ready","recorder_ready","gear_ready","recorder_revealed","power_cut","power_confirmed"]:
 		if typeof(raw.get(key))!=TYPE_BOOL: return false
 	if typeof(raw.get("relays"))!=TYPE_ARRAY or raw.relays.size()>2: return false
@@ -122,7 +132,7 @@ static func record_outcome(profile: ProfileState, outcome: SortieOutcome) -> voi
 			profile.inventory.remove_item(item.instance_id);profile.stash_layout.erase(item.instance_id)
 	if state.recorder_returned and not state.power_returned and facts.stage=="power" and facts.power_confirmed:
 		state.branch_disconnected=true;state.power_returned=true;profile.credits+=POWER_REWARD
-	if state.power_returned and not state.finished and facts.stage=="supply" and facts.gear_ready:
+	if state.power_returned and not state.finished and facts.stage=="supply" and facts.gear_ready and (facts.version<4 or facts.supply_received):
 		state.finished=true;profile.credits+=FINAL_REWARD
 
 static func prepare_delivery(profile: ProfileState) -> Dictionary:
@@ -143,7 +153,15 @@ static func prepare_delivery(profile: ProfileState) -> Dictionary:
 	if not used:return {"error":ERR_UNAVAILABLE,"message":"No required spare armor or standard 5.56 ammunition in the warehouse."}
 	StashLayout.new(candidate).reconcile()
 	if not candidate.validate():return {"error":ERR_INVALID_DATA,"message":"Invalid campus delivery."}
-	return {"error":OK,"candidate":candidate,"message":"Equipment delivery saved. Once armor and 60 rounds are delivered, complete a campus extraction."}
+	return {"error":OK,"candidate":candidate,"message":"Equipment packed. Once armor and 60 rounds are ready, use the dormitory south handoff window and extract. No second equipment charge."}
+
+static func delivery_shortage(profile: ProfileState) -> Dictionary:
+	# Warehouse stock, not the requested deployment quantity. Read-only UI data.
+	var usable_armor := false
+	for item in profile.inventory.get_items():
+		if item.definition_id in ARMOR_IDS and item.durability>=50 and not profile.loadout.is_equipped(item.instance_id):
+			usable_armor=true;break
+	return {"armor":int(not profile.campus_chapter.delivered_armor and not usable_armor),"ammo":maxi(0,60-int(profile.campus_chapter.delivered_ammo)-SupplyService.count(profile,&"ammo.556_standard"))}
 
 static func submit_delivery(path:=SaveService.DEFAULT_SAVE_PATH) -> Dictionary:
 	var profile:=ProfileRuntime.get_profile()
@@ -163,10 +181,15 @@ static func status_text(profile: ProfileState, session: SortieSession=null) -> S
 		if facts.stage=="recorder" and facts.version==1 and facts.recorder_instance.is_empty():return TranslationServer.translate("Legacy sortie / recorder at dormitory registration desk")
 		if facts.stage=="recorder":return TranslationServer.translate("Experiment recorder / bring it home") if not facts.recorder_instance.is_empty() else TranslationServer.translate("Experiment recorder / archive reading hall")
 		if facts.stage=="power":return TranslationServer.translate("L-02B OFF / L-02A ON / Extract") if facts.power_cut else TranslationServer.translate("L-02 control / disconnect experiment branch, preserve shelter power")
-		if facts.stage=="supply":return TranslationServer.translate("Campus supplies delivered / Extract") if facts.gear_ready else TranslationServer.translate("Deliver spare armor and 60 standard 5.56 rounds at base")
+		if facts.stage=="supply":return supply_status(facts)
 	match stage(state):
 		"relay":return TranslationServer.translate("L-02 / restore two relays and extract")
 		"recorder":return TranslationServer.translate("Experiment recorder / archive reading hall")
 		"power":return TranslationServer.translate("L-02 control / disconnect experiment branch, preserve shelter power")
-		"supply":return TranslationServer.translate("Spare armor %d/1 / standard 5.56 %d/60 / then extract") % [int(state.delivered_armor),state.delivered_ammo]
+		"supply":return TranslationServer.translate("Spare armor %d/1 / standard 5.56 %d/60 / then hand off at dormitory") % [int(state.delivered_armor),state.delivered_ammo]
 	return TranslationServer.translate("Campus chapter complete / free sorties remain available")
+
+static func supply_status(facts: Dictionary) -> String:
+	if not facts.gear_ready:return TranslationServer.translate("Deliver spare armor and 60 standard 5.56 rounds at base")
+	if facts.version<4:return TranslationServer.translate("Campus supplies delivered / Extract")
+	return TranslationServer.translate("Supplies received / extract safely" if facts.supply_received else "Dormitory south window / clear two gunmen, send packed equipment inside")

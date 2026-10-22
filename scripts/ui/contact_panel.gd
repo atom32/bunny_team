@@ -35,6 +35,12 @@ func _ready() -> void:
 	content.name = "ContactContent"
 	content.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	columns.add_child(content)
+	GameLanguage.language_changed.connect(_refresh_language)
+	open_contact(contact_id, selected_tab)
+
+func _refresh_language() -> void:
+	for id: String in ContactDefinition.CONTACTS:
+		find_child("Contact_" + id, true, false).text = ContactDefinition.get_contact(id).display_name
 	open_contact(contact_id, selected_tab)
 
 func open_contact(id: String, tab: String = "trade") -> void:
@@ -61,7 +67,7 @@ func open_contact(id: String, tab: String = "trade") -> void:
 	for key in ["trade", "quests"]:
 		var button := Button.new()
 		button.name = "ContactTrade" if key == "trade" else "ContactQuests"
-		button.text = "交易" if key == "trade" else "委托"
+		button.text = tr("TRADE" if key == "trade" else "REQUESTS")
 		button.add_theme_font_size_override("font_size", 16)
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		button.disabled = key == tab
@@ -75,6 +81,7 @@ func open_contact(id: String, tab: String = "trade") -> void:
 		shop.size_flags_vertical = Control.SIZE_EXPAND_FILL
 		content.add_child(shop)
 		shop.supplies_changed.connect(func(): supplies_changed.emit())
+		shop.campus_delivery_requested.connect(func():open_contact("shen_yanshuang","quests"))
 	else:
 		var quests := CampaignPanel.new()
 		quests.name = "CampaignPanel"
@@ -83,3 +90,9 @@ func open_contact(id: String, tab: String = "trade") -> void:
 		quests.size_flags_vertical = Control.SIZE_EXPAND_FILL
 		content.add_child(quests)
 		quests.contract_claimed.connect(func(): contract_claimed.emit())
+		quests.campus_supplies_requested.connect(open_campus_supplies)
+
+func open_campus_supplies() -> void:
+	open_contact("shen_yanshuang","trade")
+	var shop:=content.find_child("SupplyPanel",true,false) as SupplyPanel
+	shop.open_campus_delivery()

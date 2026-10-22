@@ -1,0 +1,4168 @@
+{
+  "recorded_at_utc": "2026-10-19T11:09:36.294122+00:00",
+  "goal_complete": false,
+  "public_release_approved": false,
+  "scope": "Renderer-aware indoor camera cutaways and truthful spent-bell map marker. No new chapter, model, physical layout, AI rules or save schema.",
+  "changes": {
+    "forward_plus": "Original transparency fade retained",
+    "other_render_methods": "Occluding render instances cut away via RenderingServer only; Node visibility, original shared materials and physics preserved. Mobile follows branch but was not a device acceptance test.",
+    "restore": "Exit/solver teardown restore render visibility from current scene visibility; external hide is respected",
+    "map": "Available / isolated / already-rang label and color shared with actual cabinet",
+    "navigation_test_fixture": "Waits for authored navigation data before same closed-gate topology assertion; no retry-until-path-passes and no production navigation edits"
+  },
+  "source_suite": {
+    "directory": "D:\\tmp\\bunny_cutaway_20261019_final02",
+    "scenes": 98,
+    "categories": 147,
+    "rows": [
+      {
+        "name": "localization_build",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project\\tests\\test_localization_build.py",
+          "-v"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a0c92a5ce33ac3fb54387444c7b55fa22f9ffb8b1f27aa703ba2cb91f1da224b"
+      },
+      {
+        "name": "cold_import",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--editor",
+          "--import"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+        ],
+        "sha256": "c47324969cce6bf48fd7c1a61d953f6d4adc7b678d387656ef1c3fe492bfa5de"
+      },
+      {
+        "name": "acceptance_smoke",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/acceptance_smoke.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "cf3047efc21b325e1ae79c3d27e26e2d6108bd4381b208ac13808d59918184c6"
+      },
+      {
+        "name": "alpha_economy_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/alpha_economy_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "061c537f51fc7df8558a5fb0c1d4b9973f710ace02f5e4238c4a2e2106f23ea5"
+      },
+      {
+        "name": "ammo_carried_foundation_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/ammo_carried_foundation_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "e0c468147849e2f7ef13af6dd50a58c4c766b99059cf6c8b6c7db488f3d90ef9"
+      },
+      {
+        "name": "ammo_packing_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/ammo_packing_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "038d2a5189be3a9a1fc66dd6276b3cfe1cde77d67dc65cbfe9fb4313e46e9cfc"
+      },
+      {
+        "name": "ammo_runtime_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/ammo_runtime_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "74dae0be1ebd9517457ba821fffdafe661e253c18047c6474b2ed7f539493df2"
+      },
+      {
+        "name": "ap_ammo_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/ap_ammo_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8676a6b95a7b13dddf1a4a73c63a6cd4805ca5770a77fb88fc84593f38fe0649"
+      },
+      {
+        "name": "area_definition_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/area_definition_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "4f00c94e60d99bcd72cbc9a4376274ee86cb1749878568f225f47cc96052dee1"
+      },
+      {
+        "name": "asset_review_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/asset_review_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "32a0797f9aab7f3d407a9bca50ac7c0dc8d4abdbe1cfaa0360eb5163681c555b"
+      },
+      {
+        "name": "base_manual_ui_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/base_manual_ui_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "5bc6890610d72c5536f5679a787c50c4eecf3e366f9f03bc4f1df50175844355"
+      },
+      {
+        "name": "blockade_readability_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/blockade_readability_test.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "608d2ccbdca1edce724bae1be16a7dd0769c4afa4e3551c22330675145d5c591"
+      },
+      {
+        "name": "blockade_run",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/blockade_run.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "4a5fdfe6c49caf8c668669cf3926f61790e2a6ae5d04cb843e88cfdc8428776a"
+      },
+      {
+        "name": "blockade_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/blockade_test.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "981f8d17e5d652950c2f84218196de418401464a0cee2acb81ea4df5b2ffe445"
+      },
+      {
+        "name": "camera_cutaway_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/camera_cutaway_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "92e6064a7440fdd6c4d0f7bbf4a9e19652463d43219507c9e5d9dbe1084235e6"
+      },
+      {
+        "name": "campaign_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campaign_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "85a4e635bac6000f294225544abe5502f0a30ec0e0997e2822bbd6a857cc9412"
+      },
+      {
+        "name": "campus_chapter_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campus_chapter_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "e7342f86b0ca5eae8ef729f89e38a2aed2a0543806478e3b1041dec43dabccd4"
+      },
+      {
+        "name": "campus_editor_scene_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campus_editor_scene_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "fdada53a2ae1169ef087ae317b7bd48b4887a6ad681491f0a704c521a0be31e8"
+      },
+      {
+        "name": "campus_migration_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campus_migration_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "88342e2830e00732e6fb433505fe974d8679b16cf0d2a3c38b7f3ca16a28b946"
+      },
+      {
+        "name": "campus_night_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campus_night_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a7c5718566bb53003b5dcda16ab0c0580157a2843080c8c75234a17398d7a4cb"
+      },
+      {
+        "name": "campus_route_input_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campus_route_input_test.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "1887b57084cd2afa32fcb454b8b5d3cc2be6e1518b9b8cde29280dba9dfe36c9"
+      },
+      {
+        "name": "campus_voice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campus_voice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "88e4c7eee28603960e6c0e914853b2b5a186a23a772e31308809e10692787597"
+      },
+      {
+        "name": "cargo_exchange_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/cargo_exchange_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "0deb79976b1193cc0ecae13ce5ea429b30e59c85a31f0a23ade010eb461c4986"
+      },
+      {
+        "name": "carried_backpack_ui_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/carried_backpack_ui_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ba2ddffa3ccea9610eb7b22ddaf8e83d6d15ee8a35946fe4f17e4a6ae4761d93"
+      },
+      {
+        "name": "carried_inventory_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/carried_inventory_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "0f74e789f004d5ed185a8fd7515dceb1b48a01ecf2fd8e5c8c3b9137c3b7b1d0"
+      },
+      {
+        "name": "character_presentation_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/character_presentation_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "91d15163769849b43b1ee373c09b76bd71b5e3b3d8a636385fe75d843fb47369"
+      },
+      {
+        "name": "combat_feedback_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/combat_feedback_test.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "204591e77a5e91e710347045a960c62da5f3572a050c1213d34db441750d7276"
+      },
+      {
+        "name": "combat_tuning_baseline_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/combat_tuning_baseline_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "14caa82f02c031ec0b11b26dff55eaec0fd4ed9b5d459b6a5affce7a8b318d16"
+      },
+      {
+        "name": "content_audit_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/content_audit_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "4a51a484ad1adf19fd639de97481c3260197b9239878c7e7c2d9705538e98e2e"
+      },
+      {
+        "name": "content_catalog_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/content_catalog_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "2055c5cd0cd737c7309035ce874b93b07e54428d56ebaefc29e6c1cc74590a8f"
+      },
+      {
+        "name": "content_inventory_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/content_inventory_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "929ebe56f5e5e5e51a2f9f62365d09d4c4dc987ff04084a40b0bf661b7edd7ce"
+      },
+      {
+        "name": "control_settings_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/control_settings_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ed09ebd361cac62fc824f23b73ef7b2d4247346bcc2db0d80568c7b9e49dce1e"
+      },
+      {
+        "name": "damage_packet_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/damage_packet_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "9a91e5472a0003b00ec933d3e37f2326cfbcd7f74886d2aa75176c99868d031e"
+      },
+      {
+        "name": "destructible_world_object_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/destructible_world_object_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a92098b524931bb4f7c94af98d7aef1d84a434ba1c28ce2448e315b8c07ca92f"
+      },
+      {
+        "name": "enemy_definition_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/enemy_definition_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "fad7f3e0d94ffe98dbfb6eb25a57f8a14a3305fb3a767f7fc0031324a84e1e5b"
+      },
+      {
+        "name": "enemy_perception_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/enemy_perception_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a9f676a51f12af04c34209acbdf83f6d4848e3012b23ff5c32c434b44d9d594c"
+      },
+      {
+        "name": "enemy_spawn_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/enemy_spawn_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "182181d5c6838192b7fe54537355585808ec531c18c92b12991269030ffbaf60"
+      },
+      {
+        "name": "enemy_tactics_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/enemy_tactics_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "4e5cf5e3cc91ae404e8d10101f7b43e5cce1ab49076208cc199d6a7bf5253b2d"
+      },
+      {
+        "name": "exit_choice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/exit_choice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "2e01db69e4d3e86915d1e84a3b32ac0ced430fec2ed4ba41bbbdeafdef2510a8"
+      },
+      {
+        "name": "extraction_vertical_slice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/extraction_vertical_slice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "b42ad1ec4d83142c8034577171bd36eb8f9ebeb29ee794637062e64adcf6dca6"
+      },
+      {
+        "name": "first_mission_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/first_mission_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "587d81f5fbb9e03671933aa3dc8583b748f82620b1202af97b8bf6ebbc3eb381"
+      },
+      {
+        "name": "fitting_kit_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/fitting_kit_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "aaaf183cb18de6d3ce41a1628b89379d932accd9305a5d8ef6e532963c500c77"
+      },
+      {
+        "name": "fresh_entry_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/fresh_entry_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "6818d56fa6dbebf7889506d19d82aaaa82f8c1a0f6e5c4f436e43639ba4d8997"
+      },
+      {
+        "name": "hanger_first_mission_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/hanger_first_mission_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "09374c0351733430a368deeec0e40c293a5062d0a31512b078cbde916bcd3dfe"
+      },
+      {
+        "name": "heroine_motion_style_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/heroine_motion_style_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "44f80fd931c7335dbc41cc0b2825109a36be4dd73edd6e300d08a53eb2849d57"
+      },
+      {
+        "name": "hideout_camera_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/hideout_camera_test.tscn",
+          "--quit-after",
+          "60000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "0e8b3d661120c89c6918e1db31556afa469f232428ea2993f18ff372b691d0e8"
+      },
+      {
+        "name": "hideout_idle_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/hideout_idle_test.tscn",
+          "--quit-after",
+          "60000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "c55bf1e26f5f3c0c03edfa8f12b0d24f0ddb3a9fc3cf166acae33798caf773e8"
+      },
+      {
+        "name": "infected_enemy_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/infected_enemy_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d7a7dd2c305df6ea3058813fbaa928204286c896667f3b29136c0e9dabc4c7b4"
+      },
+      {
+        "name": "item_authoring_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/item_authoring_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "affbf2b0d26c31199f24c3eaec6b6f516675a8fb0cae7a8cdc2607d05bf211ba"
+      },
+      {
+        "name": "loadout_decision_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/loadout_decision_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f79a1f1671ce9317fb36be5f4677deb4b167293a92e3c75b9695010d9976bca3"
+      },
+      {
+        "name": "loadout_state_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/loadout_state_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a01c3d9801d46522fa8ab49b0b9c01f39b91923f1346b7269d6275284c7cbac7"
+      },
+      {
+        "name": "loot_table_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/loot_table_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "cb8b95eee494560b0090fd3e2101570ddb9cc0bbd939359cf3c461dfc410a3dd"
+      },
+      {
+        "name": "medical_treatment_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/medical_treatment_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f851a6e42c8c4ad7594bd9e9f62e576f054b8ee174640688f27bd55ffd65d20a"
+      },
+      {
+        "name": "mission_flow_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/mission_flow_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d8810c81df93dcc0cd8b2323616056fa1aa2cbf0618ee65c10b62a0051ceb984"
+      },
+      {
+        "name": "mission_objective_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/mission_objective_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "996830f87e4162bf5d1676d79e8c4ba58cab010d0f25d9f4b813f95220aaee55"
+      },
+      {
+        "name": "modern_arsenal_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/modern_arsenal_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "c62aa0a75d97cb163a3e2a0d0a93c1a989526230f988cb5e01be80d32b46b07e"
+      },
+      {
+        "name": "module_scene_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/module_scene_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f8d28d60f69538492fb42bfcbf0e8477051fd19c2183ae11f36c2746b26e58ab"
+      },
+      {
+        "name": "objective_world_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/objective_world_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f669bc89fc2a304be3f572f901dbbedbd6446f40107ce4a5b01149b14e9704c7"
+      },
+      {
+        "name": "observation_optic_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/observation_optic_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ac4c465b37f2479545642d6f9fc757296e9845014520dd4232f53b62874244cb"
+      },
+      {
+        "name": "p0_flow_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/p0_flow_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f75da8c80c42597f50934412261d7299d383550f295ed7e602d7c3c4eba98320"
+      },
+      {
+        "name": "p0_recovery_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/p0_recovery_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+      },
+      {
+        "name": "player_visibility_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/player_visibility_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ef5c79b6d8a174fe076936eb981eff3c1c4dc28f184e2768e945df57750ad82d"
+      },
+      {
+        "name": "presentation_checkpoint_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/presentation_checkpoint_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ba17b02f34dfee374c67e3dc43f09aa123dedc47170605d4021295d11aab549a"
+      },
+      {
+        "name": "presentation_gameplay_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/presentation_gameplay_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ae73643e9a4fe8ad17c70a8bb142d225944cd59d9506bfa7ab836e039c8d2cd6"
+      },
+      {
+        "name": "profile_state_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/profile_state_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "33f0ea9d822ed2036eedec3dc08c57a3cff32a01abca14e7162e4928d404eb19"
+      },
+      {
+        "name": "q01_slice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/q01_slice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "e38bec0e5b7acdbc46e27a9b3fe871a5679a79386c5d7e06ce33f046bc8acad7"
+      },
+      {
+        "name": "q02_slice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/q02_slice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "7e0098cb64edc330bbc6b79911d1e240fac9500957455e5222abd5dd12721153"
+      },
+      {
+        "name": "q04_slice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/q04_slice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "b80ec5fb48e0dae52a8c4a0b44baaaa8859fbec4f3d6bd1a536c6580f7ff1c96"
+      },
+      {
+        "name": "records_alarm_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/records_alarm_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "c23f838c082e3a6ac989275abe6d8247727b8ac39ad260a760d0ad2e25072896"
+      },
+      {
+        "name": "records_isolation_run",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/records_isolation_run.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "05367b4f66d238661019a42d5a5d7421140e11263585e4330b19b4ecab1f06f5"
+      },
+      {
+        "name": "records_isolation_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/records_isolation_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d28fcb5df7fd9d8aeb42c0656785daf27522757226b02d915034f4a4fe87ae2a"
+      },
+      {
+        "name": "regional_loot_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/regional_loot_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "7dc08d1cda9cf05fdad860b635bde2b48901428c7c9fafe157744d09cd173523"
+      },
+      {
+        "name": "relay_operation_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/relay_operation_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "96b0f1bae92dd1112b849a0e50bb95bdd2a4635c1548cb279d7a4e1059926a66"
+      },
+      {
+        "name": "result_return_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/result_return_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "9985118cd4cbd5cb1f239a038576b027c3c7391fc26cbf4267e4a133d12f8e66"
+      },
+      {
+        "name": "rifle_contact_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/rifle_contact_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "bf11d1eddd67413d04e22a1e14f2d3f1172e3ad1c8f984f65b9996c60d6697db"
+      },
+      {
+        "name": "save_service_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/save_service_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "24d5b9bac3fac687a7cc964cc5e285070adfa0744e18230f1ebe2c89377be51d"
+      },
+      {
+        "name": "sortie_checkpoint_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_checkpoint_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "80620568c499ae32c3327337ae6a999cf6365962b51d8ddd7e7723acb64884f0"
+      },
+      {
+        "name": "sortie_failure_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_failure_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "c1817d555972e58a67c66a37fefebfcf3db4b22f511a1c6e256f6bac42523614"
+      },
+      {
+        "name": "sortie_guidance_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_guidance_test.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "4d24cbe98848451f0ddc96366c467847271c5650cf40bf8ebdecc4f554319e66"
+      },
+      {
+        "name": "sortie_outcome_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_outcome_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f2ccb0bcac153ce02a91b1a095631f37f546a5b1747a8b85429ead2795ec4ccf"
+      },
+      {
+        "name": "sortie_session_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_session_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "df5a421250cbe693d64d5e60e2b1a871774b450656eb57e876103e110d2c64b4"
+      },
+      {
+        "name": "stash_rotation_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/stash_rotation_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "90820d56069a6f7ae45b7410a1102f17f3b93ab33c5f8534591192e606685040"
+      },
+      {
+        "name": "streets_combat_run",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/streets_combat_run.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "62fcabdae8670f52be6c88aa32faebb8051faef47b2f637805db620e43c3e2b4"
+      },
+      {
+        "name": "streets_layout_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/streets_layout_test.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "894d900898b97c77ef0dc55513af4cb5178df7664a83aa23fbef767d735abf65"
+      },
+      {
+        "name": "streets_walk_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/streets_walk_test.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "39435549bee9ae949cf209605dea77a76b4392a74dd59909291f68c91f5286c5"
+      },
+      {
+        "name": "supply_art_v1_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/supply_art_v1_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "131cd9d419f406d5e5599f9eefc7000d5fbd38aa79ed0a815d710b35ba267dcd"
+      },
+      {
+        "name": "threat_escalation_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/threat_escalation_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "57f31d59f83f742bbb6fdba28e3c974e0755c6d22b20160be8d5adacc3673e2d"
+      },
+      {
+        "name": "training_room_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/training_room_test.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "1f3b5de8b07a8abfe9df6d04895bd404afc273196600b407594614d8c0aaab6a"
+      },
+      {
+        "name": "visual_combat_acceptance",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/visual_combat_acceptance.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "9f6b93e11ebbf4e8c6e9d832f41652299ac2e97550593ad6e1a8ef0cd6ce2704"
+      },
+      {
+        "name": "visual_enemy_acceptance",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/visual_enemy_acceptance.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "5682059b30245191e06771f4a151fa636776744662b84be926f57a2b184e7c5b"
+      },
+      {
+        "name": "visual_slice_assets_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/visual_slice_assets_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "3b1df4d1c790620a6b0d8b41cf1afdeb7869005edc0344c1b76e597d881760a8"
+      },
+      {
+        "name": "waterworks_run",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/waterworks_run.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "73755c50dcb26732f0f619dd82aa31cc39692f162c7198f4175bba78b4b27197"
+      },
+      {
+        "name": "waterworks_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/waterworks_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "2f4ef38e9fbb82ce54270cadb388608ad645ac73fc221a53f4e9e48b05c31a50"
+      },
+      {
+        "name": "weapon_art_v1_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/weapon_art_v1_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "10633e2329621919c699945b625e0a1ed1a84bec149cc20c5a6e245a8daef2f4"
+      },
+      {
+        "name": "weapon_behavior_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/weapon_behavior_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "264f3cfaaf3d2b6b4d5eebf057246896cda1fb1e8b171c739b191441f58308dc"
+      },
+      {
+        "name": "weapon_fitting_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/weapon_fitting_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d56503e0bc915f8fd17db5e8898b64c93b284883bce1dcd92a3a163281c6fb30"
+      },
+      {
+        "name": "weapon_switching_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/weapon_switching_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d361035a78a2eef17eb8ea503a07e0dd2f18e8269360a367aa10df65977b8d60"
+      },
+      {
+        "name": "weapon_workbench_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/weapon_workbench_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "66f1b7bbec290f7581a2dc5dc322391db2769b5f4cc727daec6b0de4fef9a141"
+      },
+      {
+        "name": "world_interaction_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/world_interaction_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "91c770f650f8c253f1a0e0b8233b5524d582f7395ffe0f00a0f420cfebe9c8f7"
+      },
+      {
+        "name": "world_traversal_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/world_traversal_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8264c29f377b92f3150d3a714b06fb9db370a7d7ce63951334525146ec9ee739"
+      },
+      {
+        "name": "blockade_checkpoint_write",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/blockade_test.tscn",
+          "--",
+          "--write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d403b366f0bd94ce4121ce5b7df17b1b090ee83093b802fa50744c14cbff2442"
+      },
+      {
+        "name": "blockade_checkpoint_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/blockade_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "72dd1da03f6f1361046c50c8b9363a91b938f863cf9fe003931a6c33279feb20"
+      },
+      {
+        "name": "records_alarm_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "res://tests/records_alarm_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "7550b3c56e29f008fb0b7e182dfc4674788100c21e7d9e40f7343ed2c8d8b53c"
+      },
+      {
+        "name": "records_isolation_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "res://tests/records_isolation_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "2570bb727832afab19dce420372d433f936ec06575c3543f8040b8d04bf9ddee"
+      },
+      {
+        "name": "controls_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "res://tests/control_settings_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "387ec7f0e294240f2ebe877ecb761c23a8015f06b8ace45278860d55c62e1661"
+      },
+      {
+        "name": "relay_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "res://tests/relay_operation_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "e8a8a086188bd1b4187e3b2a115d6554917530586ca59f29af543b825b549362"
+      },
+      {
+        "name": "relay_combat",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/streets_combat_run.tscn",
+          "--",
+          "--relay"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ef6e339177a2f92485db932d16db460900ca8bb2731d978e8ae1010a4071da34"
+      },
+      {
+        "name": "waterworks_tanker",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/waterworks_run.tscn",
+          "--",
+          "--tanker"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "c16d430ec9ef3ba39566b8b4630ff9a4f1e375ffe09aeae5e4b151a5f1d48625"
+      },
+      {
+        "name": "quit_base",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--script",
+          "res://tools/p0_exit_probe.gd",
+          "--",
+          "base"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+      },
+      {
+        "name": "quit_battle",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--script",
+          "res://tools/p0_exit_probe.gd",
+          "--",
+          "battle"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+      },
+      {
+        "name": "quit_failure",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--script",
+          "res://tools/p0_exit_probe.gd",
+          "--",
+          "failure"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+      },
+      {
+        "name": "quit_transition",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--script",
+          "res://tools/p0_exit_probe.gd",
+          "--",
+          "transition"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+      },
+      {
+        "name": "quit_recovery",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--script",
+          "res://tools/p0_exit_probe.gd",
+          "--",
+          "recovery"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8f3b038c150958e69f8928af6976a1d2278551fe2d142f0effff54269e76ce71"
+      },
+      {
+        "name": "audio_exit_music",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--verbose",
+          "--script",
+          "res://tools/audio_exit_probe.gd",
+          "--",
+          "music"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "ab1e9787e1de1db221d9520a98540176b9476b6297a77de8be238f95df84a334"
+      },
+      {
+        "name": "audio_exit_effects",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--verbose",
+          "--script",
+          "res://tools/audio_exit_probe.gd",
+          "--",
+          "effects"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d1522402bb3e3c7505c87f78071f53fa89466fb24fb8cb34290e3311f80adecb"
+      },
+      {
+        "name": "audio_exit_paused",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--verbose",
+          "--script",
+          "res://tools/audio_exit_probe.gd",
+          "--",
+          "paused"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a202d3e19e0cf1a0c1b22e409c87aab9a124185142af122c287cf9956a2adf12"
+      },
+      {
+        "name": "checkpoint_write",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_checkpoint_test.tscn",
+          "--",
+          "--write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "2fdd05b940fccdfdcb9a56ccd0d4769f1121bec19c60697a1af581585365bfdc"
+      },
+      {
+        "name": "checkpoint_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_checkpoint_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "49087418854cd95743b297b3fb0a456a96e1110a61151b3a8f149b6658af4987"
+      },
+      {
+        "name": "checkpoint_crash_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_checkpoint_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "49087418854cd95743b297b3fb0a456a96e1110a61151b3a8f149b6658af4987"
+      },
+      {
+        "name": "medical_write",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/medical_treatment_test.tscn",
+          "--",
+          "--write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "7338a601ebf27b47970a7314307d0efac575c1030aadef6fd76dea7687f8a37d"
+      },
+      {
+        "name": "medical_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/medical_treatment_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "2dabb9b99e771b793e953a80e76630a219467c17b2c1f9a6bfecdf9f745762d8"
+      },
+      {
+        "name": "campaign_write",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campaign_test.tscn",
+          "--",
+          "--write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "1bfab46811ff1e54cdef8f30b3545fa6ed14048960974cf85e9ad49714debc5b"
+      },
+      {
+        "name": "campaign_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/campaign_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "0418b4e0bb8ab6133faae5b73bcbc3c3383d9f4bcd63433a37d242b9ad1715a0"
+      },
+      {
+        "name": "fitting_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/weapon_fitting_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "87cee6bedffe7450f71562f63eaf97be45632dd82557f6d52f30f6c00751abb4"
+      },
+      {
+        "name": "ap_ammo_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "res://tests/ap_ammo_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "48650ecc4b53bf65758b68755f210099bba1b023d7d462d689cd881610451f53"
+      },
+      {
+        "name": "stash_rotation_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "res://tests/stash_rotation_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "cde0760355b613579d79873679eb43dec437a4c16515b2b6ee88e9bc698a63ef"
+      },
+      {
+        "name": "supply_art_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "res://tests/supply_art_v1_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a81a637b0d1aac34d7774af632c1e8906331bacb4b4d72c019dbd904d0476386"
+      },
+      {
+        "name": "weapon_art_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "res://tests/weapon_art_v1_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "d74a1b3defe1f610810d3a46f2c5e669099f75df3d190d68938bb716ca921135"
+      },
+      {
+        "name": "campus_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "res://tests/campus_chapter_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "425bb586fd897dda12965bab219dc9852f59497a407afceb96990eb9bcf87f81"
+      },
+      {
+        "name": "kit_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "res://tests/fitting_kit_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "f062bcf9b56237c2066d7a6630f2cb11d28dd68c84791ce96f9cc04a759a7b0a"
+      },
+      {
+        "name": "packing_read",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/ammo_packing_test.tscn",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "95e0b04a50a847d00df823883f834a4472d002c9011f003de95ce8c6a56fb321"
+      },
+      {
+        "name": "main",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--headless",
+          "--quit-after",
+          "180"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "83cf0b082206af2aa236c83064fbcfa76be1e00a4aa3558574b2f65965d9481c"
+      },
+      {
+        "name": "base_manual_ui_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/base_manual_ui_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "6db54a7d3bb5d6558dbaaccb95abbd4ae74cda1a29d386350f7027382dfc7218"
+      },
+      {
+        "name": "carried_backpack_ui_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/carried_backpack_ui_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "6a4b7253e4af006fcdeac5a9c46dedad7ff7187d787b5cc4f5a89432c32f225c"
+      },
+      {
+        "name": "combat_feedback_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/combat_feedback_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "89199c8b5753b1eea873682e152cffff56639eb67e6f4c74daedebcc27d9e54e"
+      },
+      {
+        "name": "infected_melee_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/infected_enemy_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "7dc0868a34e17d58ff981b82ce04e275827a3fbbd2dfc4052081f87fd7419b01"
+      },
+      {
+        "name": "waterworks_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/waterworks_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "00b560acb70f7dc6315c6257395043fefa09047ca122f4dfee3a528d3f9d0090"
+      },
+      {
+        "name": "training_room_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/training_room_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8a49471a94e86d5548d32e5af17753752fb008613aec0c1f0251b0c50ed27e6a"
+      },
+      {
+        "name": "blockade_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/blockade_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "e4e03d022aeeb66f43c23e98e86345966a32cd7f549fa066124387ecd9dab33c"
+      },
+      {
+        "name": "blockade_readability_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/blockade_readability_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "2229fb93bdffef663211bbbfc34683475b488474e0a5b4fe01d05c373557edca"
+      },
+      {
+        "name": "records_isolation_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/records_isolation_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "9cd98d3b127186524771c9d219ca7669395c8de5154758ffd5a868f6f733c342"
+      },
+      {
+        "name": "stash_rotation_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/stash_rotation_test.tscn",
+          "--",
+          "--gui"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "af9fee789f695d084de106cbc2cf7b2158e1efddd05d702113c1ef55d1a3d71e"
+      },
+      {
+        "name": "campus_voice_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/campus_voice_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "a216faa3bd48f3d3909106be89c270cb76f771dd1a319bf40f502bac0c5e763b"
+      },
+      {
+        "name": "sortie_guidance_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/sortie_guidance_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "792d52b6417737cda83e6fa000bc214092ba6be6993b81724cc4049fa134922f"
+      },
+      {
+        "name": "camera_cutaway_forward_plus",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/camera_cutaway_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "fa1426c97b570214d7641244e87a728dc7927a46b0e430e5d124de9a7822a14b"
+      },
+      {
+        "name": "camera_cutaway_gl_compatibility",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/camera_cutaway_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "30541dbfcc24912f2d61a326cc4565c78420106dddcff933cc9898e1a6f67e04"
+      },
+      {
+        "name": "route",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_final02\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--script",
+          "res://tools/phase2b_route_probe.gd"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "8b59af47222ee7be173d31f558fbc6044f68b3cfc0d639e4f95dad1e19dd19fe"
+      }
+    ]
+  },
+  "build_suite": {
+    "directory": "D:\\tmp\\bunny_cutaway_20261019_build02",
+    "categories": 23,
+    "rows": [
+      {
+        "name": "cold_import",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--headless",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\project",
+          "--editor",
+          "--import"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+        ],
+        "log_sha256": "af5e47b982d107bf0f22a5afbc4048d5b9cd9f579d3417d41fb0201a1e6f0ff9"
+      },
+      {
+        "name": "runtime_export_unit",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\project\\tests\\test_runtime_export.py",
+          "-v"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "49b6e21ac05a0d2c8851388925f70db98acb06fa2ea84ccfc95dc5425e774ff2"
+      },
+      {
+        "name": "runtime_dependency_catalog",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--headless",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\project",
+          "--script",
+          "res://tools/runtime_dependency_catalog.gd"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "4bf682ec0665e4932d288dbc7a7ddbc75cb2c7a7e0a0278bb18416be4eda1d79"
+      },
+      {
+        "name": "runtime_export_inventory",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\project\\tools\\runtime_export.py",
+          "--project",
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\project",
+          "--catalog",
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\runtime_dependency_catalog.json",
+          "--output",
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\runtime_export_inventory.json",
+          "--preset",
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\project\\export_presets.cfg"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "5ef62e392689bcafb8c2595bad6e395033871f8cc302a4f6a8d62ba88cf46218"
+      },
+      {
+        "name": "export_release",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--headless",
+          "--path",
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\project",
+          "--export-release",
+          "Windows Local Prototype",
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "63a68248c0fea5695b7a67e469290d9abbf3420e68ee8da72e2d7db6c4efe266"
+      },
+      {
+        "name": "packaged_inventory",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--",
+          "--local-qa",
+          "inventory"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "86cba8ac80a3393708c8ab86a517038977a121792e2ceb06ce2eebce2170df24"
+      },
+      {
+        "name": "packaged_boot",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--",
+          "--local-qa",
+          "boot"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "22378127208f7be02ad18aa46f54257ab03bfd4ff4b76e0a9ef2f55dd8332598"
+      },
+      {
+        "name": "packaged_write",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--",
+          "--local-qa",
+          "write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "a846a0bd4c5233a23a42d78ae609376649f5292f90729a06582461068150a9ca"
+      },
+      {
+        "name": "packaged_read",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--",
+          "--local-qa",
+          "read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "90cc7c04f3ff5d1c9ae46ce53ad2dc59a6e62af7b57ac7e5aa85693193cd65c4"
+      },
+      {
+        "name": "packaged_legacy",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--",
+          "--local-qa",
+          "legacy"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "f5ebcbd7d581d729c6535a4cbd8db99a6c7a07244c28bf3a70e5037cfad5bd61"
+      },
+      {
+        "name": "packaged_campus_route",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "campus"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "62fcabdae8670f52be6c88aa32faebb8051faef47b2f637805db620e43c3e2b4"
+      },
+      {
+        "name": "packaged_melee",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "melee"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "d7a7dd2c305df6ea3058813fbaa928204286c896667f3b29136c0e9dabc4c7b4"
+      },
+      {
+        "name": "packaged_isolation",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "d28fcb5df7fd9d8aeb42c0656785daf27522757226b02d915034f4a4fe87ae2a"
+      },
+      {
+        "name": "packaged_isolation_route",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation_route"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "05367b4f66d238661019a42d5a5d7421140e11263585e4330b19b4ecab1f06f5"
+      },
+      {
+        "name": "packaged_isolation_read",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "2570bb727832afab19dce420372d433f936ec06575c3543f8040b8d04bf9ddee"
+      },
+      {
+        "name": "packaged_cutaway",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "cutaway"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "92e6064a7440fdd6c4d0f7bbf4a9e19652463d43219507c9e5d9dbe1084235e6"
+      },
+      {
+        "name": "packaged_waterworks",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "waterworks"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "2f4ef38e9fbb82ce54270cadb388608ad645ac73fc221a53f4e9e48b05c31a50"
+      },
+      {
+        "name": "packaged_water_public",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "water_public"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "73755c50dcb26732f0f619dd82aa31cc39692f162c7198f4175bba78b4b27197"
+      },
+      {
+        "name": "packaged_water_tanker",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "water_tanker",
+          "--tanker"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "c16d430ec9ef3ba39566b8b4630ff9a4f1e375ffe09aeae5e4b151a5f1d48625"
+      },
+      {
+        "name": "packaged_training",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "training"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "1f3b5de8b07a8abfe9df6d04895bd404afc273196600b407594614d8c0aaab6a"
+      },
+      {
+        "name": "packaged_blockade",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "981f8d17e5d652950c2f84218196de418401464a0cee2acb81ea4df5b2ffe445"
+      },
+      {
+        "name": "packaged_blockade_route",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_route"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "4a5fdfe6c49caf8c668669cf3926f61790e2a6ae5d04cb843e88cfdc8428776a"
+      },
+      {
+        "name": "packaged_blockade_readability",
+        "command": [
+          "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_readability"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "608d2ccbdca1edce724bae1be16a7dd0769c4afa4e3551c22330675145d5c591"
+      }
+    ]
+  },
+  "portable": {
+    "archive": "D:\\tmp\\bunny_cutaway_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 239296430,
+    "sha256": "b83c30f8e0943fc66926f14737e5264d7990a2e82ec2ef22b8aacb163c4a6d21",
+    "extracted_to": "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "files_match": true,
+    "release_template_hash_matches": true,
+    "PATH": "C:\\Windows/System32;C:\\Windows",
+    "public_release_approved": false,
+    "rows": [
+      {
+        "name": "inventory",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "inventory"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "55b97fee5a25835a732f28e8e672673b219bb36df1958e55e767dfcea682cfa9"
+      },
+      {
+        "name": "default_start",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--quit-after",
+          "180"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "83cf0b082206af2aa236c83064fbcfa76be1e00a4aa3558574b2f65965d9481c"
+      },
+      {
+        "name": "zip_write",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "a5ce19d2f5ba99a3e3ef5dd30c97e401df46066e11ec8bec6befbdd3aa6384eb"
+      },
+      {
+        "name": "zip_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "cd2dd6cd3dc3053d8cbc6c15eeeb99a0b2ce1afd66447d295690cf7392714924"
+      },
+      {
+        "name": "native_boot",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "boot"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "0a4d4336baa947ef24f6cf7f54a490d6be9abeafbb2fe8a66eeb40475cfb35f9"
+      },
+      {
+        "name": "native_readability",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_readability",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "2229fb93bdffef663211bbbfc34683475b488474e0a5b4fe01d05c373557edca"
+      },
+      {
+        "name": "compat_readability",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_readability",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "0f6698343bdb929375439827987bf039fc0e01584241129d802a2c12ac9e6d38"
+      },
+      {
+        "name": "native_blockade",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "e4e03d022aeeb66f43c23e98e86345966a32cd7f549fa066124387ecd9dab33c"
+      },
+      {
+        "name": "compat_blockade",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "33881b0ba6f35028e02082f233c5fb5ad098e89a66b39a673d13d12f09a2f326"
+      },
+      {
+        "name": "native_blockade_route",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_route",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "ed2c3e2dd65f8eda1a80ca5d9e10f19f8bbd2cfca8d8acbd7f0206ad01720ed4"
+      },
+      {
+        "name": "compat_blockade_route",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_route",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "bfac48b12607dd1bac2a377db8a11837c8a9d022d9f92defe8beec604aad7987"
+      },
+      {
+        "name": "native_training",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "training",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "8a49471a94e86d5548d32e5af17753752fb008613aec0c1f0251b0c50ed27e6a"
+      },
+      {
+        "name": "compat_training",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "training",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "ed9c081ceef7a6f9c8e23582aae3416aacadedfef060ab93e50389d2bfaa2c9a"
+      },
+      {
+        "name": "checkpoint_write",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "d403b366f0bd94ce4121ce5b7df17b1b090ee83093b802fa50744c14cbff2442"
+      },
+      {
+        "name": "checkpoint_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "72dd1da03f6f1361046c50c8b9363a91b938f863cf9fe003931a6c33279feb20"
+      },
+      {
+        "name": "prior_export_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "72dd1da03f6f1361046c50c8b9363a91b938f863cf9fe003931a6c33279feb20"
+      },
+      {
+        "name": "isolation_write",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "d28fcb5df7fd9d8aeb42c0656785daf27522757226b02d915034f4a4fe87ae2a"
+      },
+      {
+        "name": "isolation_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "2570bb727832afab19dce420372d433f936ec06575c3543f8040b8d04bf9ddee"
+      },
+      {
+        "name": "native_isolation",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "9cd98d3b127186524771c9d219ca7669395c8de5154758ffd5a868f6f733c342"
+      },
+      {
+        "name": "compat_isolation",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "ee153538f3bd1d2379e1aa6ecf0c1ff2aa2ddf269b8058cc45bcf6be75200c78"
+      },
+      {
+        "name": "native_isolation_route",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation_route",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "99fd7332e9072ef6691eff3e5c22131e9e62a0c4660329552b986d71cd53eca3"
+      },
+      {
+        "name": "compat_isolation_route",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation_route",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "9ccd1b0ab62d64da243f9b2aca351fe8ebbba78381be202a0f8e8b2aa8ad4e6b"
+      },
+      {
+        "name": "prior_campus_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "read",
+          "--expect-legacy-campus"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "cd2dd6cd3dc3053d8cbc6c15eeeb99a0b2ce1afd66447d295690cf7392714924"
+      },
+      {
+        "name": "prior_campus_resaved",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "read",
+          "--expect-legacy-campus"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "cd2dd6cd3dc3053d8cbc6c15eeeb99a0b2ce1afd66447d295690cf7392714924"
+      },
+      {
+        "name": "native_cutaway",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "cutaway",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "fa1426c97b570214d7641244e87a728dc7927a46b0e430e5d124de9a7822a14b"
+      },
+      {
+        "name": "compat_cutaway",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "cutaway",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "30541dbfcc24912f2d61a326cc4565c78420106dddcff933cc9898e1a6f67e04"
+      },
+      {
+        "name": "previous_isolation_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 室内视野修复 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "2570bb727832afab19dce420372d433f936ec06575c3543f8040b8d04bf9ddee"
+      }
+    ],
+    "prior_export": {
+      "original": "D:\\tmp\\bunny_blockade_20261019_build01\\checkpoint_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\blockade_test.json",
+      "sha256": "54a9c7c40a1fb4be49e8745de66d9f54cb8e48312870a0d8970a31889edd69e0",
+      "mtime_ns": 1792396261961861100,
+      "original_unchanged": true,
+      "fixture": "actual previous exported local build, mid-warning phase; not all historical saves"
+    },
+    "prior_campus": {
+      "original": "D:\\tmp\\bunny_export_20261019_build03\\portable_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\local_build_checkpoint.json",
+      "sha256": "658a1cfe920e754365563fa883e1974076412ba7556d9a30b6f7f5513b1dac09",
+      "mtime_ns": 1792401792352419500,
+      "original_unchanged": true,
+      "fixture": "actual previous selected-export build campus checkpoint, health137, idle alarm; re-saved and read in a second process, not all historical saves"
+    },
+    "previous_isolation": {
+      "originals": [
+        {
+          "path": "D:\\tmp\\bunny_records_20261019_build03\\isolation_portable_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\records_isolation.json",
+          "sha256": "2fc4eddc673b41fd6cb5eaa0a8704b332758dc1d2437a5e749d34c59d4939ad6",
+          "mtime_ns": 1792404804817869300
+        },
+        {
+          "path": "D:\\tmp\\bunny_records_20261019_build03\\isolation_portable_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\records_isolation_uplink.json",
+          "sha256": "4947a261502af8bc526b69b354e1cbcd3212b7679075217446741d45509fd3d5",
+          "mtime_ns": 1792404805146022800
+        }
+      ],
+      "originals_unchanged": true,
+      "fixture": "Two actual previous exported-build checkpoints: partial isolation and isolated urgent uplink; not all historical saves"
+    }
+  },
+  "pixel_assertion_logs": {
+    "native_cutaway": [
+      "CUTAWAY_PIXELS standard_before green=0/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS standard_cut green=169/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS standard_restored green=0/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS standard_external_hidden green=0/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS standard_teardown green=0/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS shader_before green=0/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS shader_cut green=169/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS shader_restored green=0/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS shader_external_hidden green=0/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS shader_teardown green=0/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_before green=0/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_cut green=169/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_stable_0 green=169/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_stable_1 green=169/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_stable_2 green=169/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_stable_3 green=169/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_stable_4 green=169/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_stable_5 green=169/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_stable_6 green=169/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_stable_7 green=169/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_restored green=0/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_external_hidden green=0/169 renderer=forward_plus",
+      "CUTAWAY_PIXELS canopy_teardown green=0/169 renderer=forward_plus"
+    ],
+    "compat_cutaway": [
+      "CUTAWAY_PIXELS standard_before green=0/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS standard_cut green=169/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS standard_restored green=0/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS standard_external_hidden green=0/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS standard_teardown green=0/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS shader_before green=0/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS shader_cut green=169/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS shader_restored green=0/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS shader_external_hidden green=0/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS shader_teardown green=0/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_before green=0/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_cut green=169/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_stable_0 green=169/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_stable_1 green=169/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_stable_2 green=169/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_stable_3 green=169/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_stable_4 green=169/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_stable_5 green=169/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_stable_6 green=169/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_stable_7 green=169/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_restored green=0/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_external_hidden green=0/169 renderer=gl_compatibility",
+      "CUTAWAY_PIXELS canopy_teardown green=0/169 renderer=gl_compatibility"
+    ]
+  },
+  "source_preservation": {
+    "public_release_approved": false,
+    "non_document_source_count": 3707,
+    "all_non_document_source_matches_workspace": true,
+    "full_suite_non_document_source_differences": [],
+    "runtime_count_matching_full_suite": 1421,
+    "old_asset_files_unchanged": 881,
+    "old_scene_files_unchanged": 92,
+    "old_translation_entries_preserved": 1233,
+    "current_translation_entries": 1233,
+    "selected_resource_count": 660,
+    "plain_file_count": 22,
+    "companion_license_count": 29,
+    "all_companion_hashes_match": true,
+    "every_import_cache_has_selected_source": true,
+    "unused_review_models_and_caches_absent": true,
+    "source_changes_from_previous_package": [
+      "Handoff.md",
+      "README.md",
+      "docs/PUBLIC_PLAYTEST_TARGET.md",
+      "docs/RECORDS_ISOLATION_2026-10-19.md",
+      "docs/records_isolation_2026-10-19_validation.json",
+      "scripts/battle/camera_occlusion.gd",
+      "scripts/world/streets/records_isolator.gd",
+      "scripts/world/streets/route_map.gd",
+      "tests/blockade_readability_test.gd",
+      "tests/camera_cutaway_test.gd",
+      "tests/camera_cutaway_test.gd.uid",
+      "tests/camera_cutaway_test.tscn",
+      "tests/records_isolation_test.gd",
+      "tools/build_local_windows.py",
+      "tools/local_build_probe.gd",
+      "tools/verify_migration.py"
+    ],
+    "personal_saves": {
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455246252200
+      },
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455253759300
+      }
+    },
+    "arcana_original_sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd"
+  },
+  "actual_copy_audit": {
+    "all_frozen_non_document_files_verified_in_both_executed_and_built_projects": true,
+    "only_expected_application_name_and_build_qa_autoload_config_changes": true,
+    "unexpected_differences": {}
+  },
+  "pck_audit": {
+    "exported_file_entries": 1282,
+    "all_entry_checksums_verified": true,
+    "forbidden_original_entries": [],
+    "forbidden_imported_cache_entries": [],
+    "arcana_name_entries": [],
+    "combatgirls_name_entries": [],
+    "local_qa_entries": [
+      "local_qa/blockade.gd.remap",
+      "local_qa/blockade.gdc",
+      "local_qa/blockade.tscn.remap",
+      "local_qa/blockade_readability.gd.remap",
+      "local_qa/blockade_readability.gdc",
+      "local_qa/blockade_readability.tscn.remap",
+      "local_qa/blockade_route.gd.remap",
+      "local_qa/blockade_route.gdc",
+      "local_qa/blockade_route.tscn.remap",
+      "local_qa/campus_route.gd.remap",
+      "local_qa/campus_route.gdc",
+      "local_qa/campus_route.tscn.remap",
+      "local_qa/cutaway.gd.remap",
+      "local_qa/cutaway.gdc",
+      "local_qa/cutaway.tscn.remap",
+      "local_qa/expected.json",
+      "local_qa/isolation.gd.remap",
+      "local_qa/isolation.gdc",
+      "local_qa/isolation.tscn.remap",
+      "local_qa/isolation_route.gd.remap",
+      "local_qa/isolation_route.gdc",
+      "local_qa/isolation_route.tscn.remap",
+      "local_qa/melee.gd.remap",
+      "local_qa/melee.gdc",
+      "local_qa/melee.tscn.remap",
+      "local_qa/probe.gd.remap",
+      "local_qa/probe.gdc",
+      "local_qa/training.gd.remap",
+      "local_qa/training.gdc",
+      "local_qa/training.tscn.remap",
+      "local_qa/water_route.gd.remap",
+      "local_qa/water_route.gdc",
+      "local_qa/water_route.tscn.remap",
+      "local_qa/waterworks.gd.remap",
+      "local_qa/waterworks.gdc",
+      "local_qa/waterworks.tscn.remap"
+    ],
+    "authoring_copies_of_canonical_runtime_import_metadata": [
+      {
+        "metadata": "art_source/unitychan_battle_derivative/battle_presentation.glb.import",
+        "declared_source": "assets/characters/unitychan_battle/battle_presentation.glb",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_legacy/unitychan_battle.fbx.import",
+        "declared_source": "assets/characters/unitychan_battle/unitychan_battle.fbx",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/jpg/Dark_Silhouette.jpg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Dark_Silhouette.jpg",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/jpg/Light_Silhouette.jpg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Light_Silhouette.jpg",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Dark_Silhouette.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Dark_Silhouette.png",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Light_Frame.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Frame.png",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Light_Silhouette.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Silhouette.png",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Dark_Silhouette.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Dark_Silhouette.svg",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Light_Frame.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Frame.svg",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Light_Silhouette.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Silhouette.svg",
+        "packaged_caches": []
+      }
+    ]
+  },
+  "screenshots": [
+    {
+      "path": "D:\\tmp\\bunny_cutaway_20261019_build02\\compat_isolation_route_captures\\isolation_run_records.png",
+      "sha256": "9ba3f76c0c0c7b9ba144cfea832d55a28e619c8ef1c713a58c0907c1a4b3efad",
+      "visually_inspected": true,
+      "scope": "actual generated controller/AI route, compatibility"
+    },
+    {
+      "path": "D:\\tmp\\bunny_cutaway_20261019_build02\\compat_isolation_captures\\bell_too_late.png",
+      "sha256": "f5a19c43a857624d04c2dc06bdd3527e1c28d17b0b950e675942621a1f735886",
+      "visually_inspected": true,
+      "scope": "controlled spent-bell map fixture"
+    },
+    {
+      "path": "D:\\tmp\\bunny_cutaway_20261019_dev01\\fixed04_gl_compatibility_captures\\shader_cut.png",
+      "sha256": "97d462656897943073e8ab4333053ba0ceffd860ed96a25716af2a7f2d5d5ca8",
+      "visually_inspected": true,
+      "scope": "green proxy rendered-pixel fixture"
+    },
+    {
+      "path": "D:\\tmp\\bunny_cutaway_20261019_dev01\\fixed_forward_plus_captures\\canopy_cut.png",
+      "sha256": "865bb89a8c6cc4b2ff902576787b1032130d384e35782350a95096491831ba59",
+      "visually_inspected": true,
+      "scope": "diagnostic: intentional translucent tint, not missing actor"
+    }
+  ],
+  "failed_attempts": [
+    {
+      "path": "D:\\tmp\\bunny_cutaway_20261019_dev01\\baseline.log",
+      "sha256": "e5a193c40d79f34e485d2c10f240c173a9b388121ca4815eb083cfc953ef5bdd",
+      "result": "4 actual rendered-visibility assertions fail in old Compatibility implementation; property getters alone had not detected this."
+    },
+    {
+      "path": "D:\\tmp\\bunny_cutaway_20261019_dev01\\fixed_forward_plus.log",
+      "result": "Initial proxy RGB threshold rejected intended 12-percent canopy tint; inspected RGB (96,241,0). Green-dominance assertion retains before/after opacity checks."
+    },
+    {
+      "path": "D:\\tmp\\bunny_cutaway_20261019_dev01\\fixed02_gl_compatibility.log",
+      "result": "Incorrect get_rid API on visual instance; corrected to documented get_instance before accepted runs."
+    },
+    {
+      "path": "D:/tmp/bunny_cutaway_20261019_final01",
+      "result": "All 98 scenes passed, later native blockade readability query failed once before navigation data synchronization. Diagnostic repeats: iterations 2 return detour; iteration 1 returns empty. Added independent readiness condition; original geometry predicate retained. final02 is authoritative."
+    },
+    {
+      "path": "D:/tmp/bunny_cutaway_20261019_build01",
+      "result": "Pre-navigation-fixture candidate, not the delivered ZIP."
+    }
+  ],
+  "navigation_diagnostic": [
+    {
+      "name": "nav_diagnostic_0",
+      "exit": 0,
+      "diagnostic": "CLOSED_NAV_DIAGNOSTIC iteration=2 path=[(0.0, 0.0, -18.0), (-1.0, 0.0, -17.8), (-3.0, 0.0, -17.4), (-5.0, 0.0, -17.0), (-5.0, 0.0, -19.0), (-5.0, 0.0, -21.0), (-5.0, 0.0, -23.0), (-3.0, 0.0, -23.4), (-1.0, 0.0, -23.8), (0.0, 0.0, -24.0)]"
+    },
+    {
+      "name": "nav_diagnostic_1",
+      "exit": 0,
+      "diagnostic": "CLOSED_NAV_DIAGNOSTIC iteration=2 path=[(0.0, 0.0, -18.0), (-1.0, 0.0, -17.8), (-3.0, 0.0, -17.4), (-5.0, 0.0, -17.0), (-5.0, 0.0, -19.0), (-5.0, 0.0, -21.0), (-5.0, 0.0, -23.0), (-3.0, 0.0, -23.4), (-1.0, 0.0, -23.8), (0.0, 0.0, -24.0)]"
+    },
+    {
+      "name": "nav_diagnostic_2",
+      "exit": 1,
+      "diagnostic": "CLOSED_NAV_DIAGNOSTIC iteration=1 path=[]"
+    }
+  ],
+  "reference_docs": [
+    "https://docs.godotengine.org/en/stable/classes/class_geometryinstance3d.html#class-geometryinstance3d-property-transparency",
+    "https://docs.godotengine.org/en/stable/classes/class_renderingserver.html#class-renderingserver-method-instance-set-visible",
+    "https://docs.godotengine.org/en/stable/classes/class_visualinstance3d.html#class-visualinstance3d-method-get-instance"
+  ],
+  "limitations": [
+    "Rendered color assertions use a green proxy with StandardMaterial, ShaderMaterial and non-physical canopy; actual character independently inspected in real route capture",
+    "Actual route is fixed-seed generated controller input, not a human blind playtest or full normal-BOOT six-commission run",
+    "Tested Forward+ and Compatibility on this machine, not minimum hardware, every GPU, all roofs or a Mobile device",
+    "No real audio/listening or clean-VM acceptance",
+    "Existing rights/publication/human-feedback gates remain incomplete; Arcana and CombatGirls excluded; no commit/push/upload"
+  ],
+  "evidence_files": {
+    "D:\\tmp\\bunny_cutaway_20261019_final02\\source_manifest.json": {
+      "sha256": "593b63743de0f5eb7b361b5444e953d6bc49bff6d7e1e83941ab48cce1b21170",
+      "bytes": 563119
+    },
+    "D:\\tmp\\bunny_cutaway_20261019_final02\\results.json": {
+      "sha256": "83a837659d7cf6cf1f3216ed4d00ecaf223da47b3cdadbfb954f88bb75f4078b",
+      "bytes": 74427
+    },
+    "D:\\tmp\\bunny_cutaway_20261019_build02\\source_manifest.json": {
+      "sha256": "593b63743de0f5eb7b361b5444e953d6bc49bff6d7e1e83941ab48cce1b21170",
+      "bytes": 563119
+    },
+    "D:\\tmp\\bunny_cutaway_20261019_build02\\build_results.json": {
+      "sha256": "6ac3344386d069abc909c8c714d6d19491ee9209742430159ded5ab648b7fde2",
+      "bytes": 11188
+    },
+    "D:\\tmp\\bunny_cutaway_20261019_build02\\portable_validation.json": {
+      "sha256": "478c54c9f2701f0cb0afd99847251b50d10e0e5d9e19fca727bfb55dd8c5ed72",
+      "bytes": 17273
+    },
+    "D:\\tmp\\bunny_cutaway_20261019_build02\\local_build_manifest.json": {
+      "sha256": "ec7295155b0ea31adece7d49e701ce2d4b5faa56915483da571c6e58d2437394",
+      "bytes": 13125
+    },
+    "D:\\tmp\\bunny_cutaway_20261019_build02\\source_preservation_audit.json": {
+      "sha256": "54ef8ff019602b3dc659deda81deacededf192dc2a4b3da0ff3b30dea0b84c6a",
+      "bytes": 1923
+    },
+    "D:\\tmp\\bunny_cutaway_20261019_build02\\actual_copy_audit.json": {
+      "sha256": "86e1fbee853742f095bc6d74baaa1442ca6daece517a8245e5340b80fd2eabea",
+      "bytes": 203
+    },
+    "D:\\tmp\\bunny_cutaway_20261019_build02\\packaged_file_audit.json": {
+      "sha256": "7075f8409c36ad4273aab0b6af2cdef97b54baf0af1506a024e57264a01e6c04",
+      "bytes": 4293
+    },
+    "D:\\tmp\\bunny_cutaway_20261019_build02\\runtime_export_inventory.json": {
+      "sha256": "606153015344e6ad164783a57831ca9a0faff847ad18cc76e82dad10e6481faa",
+      "bytes": 265967
+    },
+    "D:\\tmp\\bunny_cutaway_20261019_build02\\verify_portable.py": {
+      "sha256": "82cc39b2d7182c688f3e7357954d8d338c3d3574676eca9711cd06d45e69291e",
+      "bytes": 11502
+    },
+    "D:\\tmp\\bunny_cutaway_20261019_dev01\\nav_diagnostic_results.json": {
+      "sha256": "8a262287671b47ae20482a574876c7aa386d7807c858212f0c1ec73cebfb5e6b",
+      "bytes": 764
+    }
+  }
+}

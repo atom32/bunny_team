@@ -1,0 +1,518 @@
+{
+  "recorded_at": "2026-10-20T23:49:12.067139+08:00",
+  "status": "local_windows_packet_independent_zip_and_launchers_verified_not_public_release",
+  "goal_achieved": false,
+  "source": {
+    "directory": "D:\\tmp\\bunny_packing_guidance_20261020_final01",
+    "scenes": 122,
+    "categories": 228,
+    "all_pass": true,
+    "results_sha256": "6a303b8540402e68e3804ea0116f320c78dd09c10fa73383958cdf44992e3be1",
+    "current_production_runtime_identical": true,
+    "private_qa_harness_delta_explicitly_audited": {
+      "source_full": "D:\\tmp\\bunny_packing_guidance_20261020_final01",
+      "scenes": 122,
+      "categories": 228,
+      "production_runtime_unchanged": true,
+      "only_delta_is_private_qa_and_build_harness": {
+        "tools/build_local_windows.py": {
+          "full_source_sha256": "445cef3ad938c5b842589868bdfba310631c9ca75a8177390f6771ab19b0e6b7",
+          "current_sha256": "43fc22177b00313f236533ddc8c7cdfb9420b98c7e95a074aafbc68e45a37250"
+        },
+        "tools/local_build_probe.gd": {
+          "full_source_sha256": "d9e3538ca252d1dd6bba67b3d828f40a4d0161bb1dc720b01562807e48790ca2",
+          "current_sha256": "393f448bea01b5968d9674ec85cf9aee47427d16424378f00f0410bcd614a9ef"
+        },
+        "tools/relay_diversion_run.gd": {
+          "full_source_sha256": "d7f5c770923bcea59abb73ee31833c4778d4569335a9cf0bde7ef8613530341e",
+          "current_sha256": "e719bcac096013323db91a7ef7240315be310660b8fb6148432bbaf1db40b26c"
+        }
+      },
+      "non_document_inputs": 4037,
+      "actual_failed_world_recovery": {
+        "path": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\pa_original_checkpoint_resume02_captures\\campus_entry.json",
+        "sha256": "0f56bca6981bae3c79e3b4ca6b03d1fbe1a0b6a2749a9ec9ea8f3c08713daf24",
+        "checks": 16,
+        "shots": 7,
+        "kills": 3,
+        "health": 156.32,
+        "actual_blocker_before": {
+          "enemy_position": "(-15.11362, 0.080095, -8.33666)",
+          "health": 45.0,
+          "key": "CampusInfected10",
+          "player_position": "(-14.26045, -0.024909, -8.448016)"
+        },
+        "actual_died_signal_observed": true,
+        "independent_boot_read_passed": true
+      }
+    },
+    "current_non_document_inputs_match_build": 4037
+  },
+  "compiled": {
+    "directory": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02",
+    "categories": 120,
+    "all_pass": true,
+    "results_sha256": "70c6e4ba95319dd18d9bdc6a262a65f35f93f5e6becc534b7921b42337dc61d1"
+  },
+  "independent_zip": {
+    "categories": 50,
+    "all_pass": true,
+    "results_sha256": "a1c069ee33fc9aba81a3b39d8e09276ae26bda642c9f4243de9c9362feb83abc",
+    "semantic_acceptance": {
+      "pass": true,
+      "cases": 50,
+      "all_process_logs_and_route_postconditions_pass": true,
+      "private_packing_input_external_only_not_shipped": "D:\\tmp\\bunny_campus_help_20261020_01\\profile_original.json"
+    }
+  },
+  "launchers": {
+    "success_cases": 20,
+    "isolated_groups": 11,
+    "all_pass": true,
+    "expected_failure": {
+      "pass": true,
+      "expected_exit": 1,
+      "observed_exit": 1,
+      "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 广播与装箱 20261020 CMD02\\LOCAL_ONLY_DO_NOT_UPLOAD\\运行本地试玩.cmd\" --headless --fixed-fps 60 -- --local-qa invalid_mode\""
+    }
+  },
+  "archive": {
+    "archive": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 246229484,
+    "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+    "extracted_to": "D:\\tmp\\小兔试玩 广播与装箱 20261020 验收02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false
+  },
+  "fresh_delivery": {
+    "path": "D:\\tmp\\小兔试玩 广播与装箱 20261020 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_static_files_match": true,
+    "not_preplayed": true
+  },
+  "pack_audit": {
+    "entries": 1597,
+    "all_byte_ranges_and_md5": true,
+    "forbidden_original": [],
+    "forbidden_cache": [],
+    "arcana": [],
+    "combatgirls": [],
+    "legacy_and_v2_maps": true,
+    "bucket_scene_and_script_present": true,
+    "water_v1_v2_v3_maps": true,
+    "market_scripts_present": true,
+    "rescue_scene_and_script_present": true,
+    "handoff_scene_and_script_present": true,
+    "medical_scene_and_private_qa_present": true,
+    "fresh_campus_navigation_variants_present": [
+      "resources/navigation/campus_cabinet_0.tres.remap",
+      "resources/navigation/campus_cabinet_1.tres.remap",
+      "resources/navigation/campus_cabinet_2.tres.remap",
+      "resources/navigation/campus_cabinet_3.tres.remap",
+      "resources/navigation/campus_handoff_closed_0.tres.remap",
+      "resources/navigation/campus_handoff_closed_1.tres.remap",
+      "resources/navigation/campus_handoff_closed_2.tres.remap",
+      "resources/navigation/campus_handoff_closed_3.tres.remap"
+    ],
+    "relay_pa_scene_audio_and_private_qa_present": true,
+    "packing_and_timeout_private_qa_present": true
+  },
+  "preview_preparation": [
+    {
+      "name": "medical",
+      "pass": true,
+      "command": null,
+      "source_sha256": "9c7174fbf1a3e6a411e9d95b52e59555334f589f4102a7eb0ad3588f7ae2e6b4",
+      "prepared_sha256": "9c7174fbf1a3e6a411e9d95b52e59555334f589f4102a7eb0ad3588f7ae2e6b4",
+      "only_stash_display_layout_may_change": true,
+      "method": "exact compiled Q01-return byte copy; actual BOOT/Continue/medical route already verified in compiled earned case",
+      "exact_source_bytes": true,
+      "compiled_boot_route_evidence": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\medical_intercept_earned_captures\\campus_entry.json",
+      "compiled_boot_route_evidence_sha256": "8d74a6f29f26e86af75ebc2658ab484185b64806745bf65a540c395f25b9bee4"
+    },
+    {
+      "name": "relay",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "ae1b6b4e419f9e8884fda74ef34c37bec0b4827f819ff52d6c17b715b4f281e6",
+      "prepared_sha256": "ae1b6b4e419f9e8884fda74ef34c37bec0b4827f819ff52d6c17b715b4f281e6",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "campus",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "f0d860387e04020baa9f7fce69d588906ead0c30957d784d1c9514f5f8cbb97c",
+      "prepared_sha256": "065f32595f93c3d4895bcaba150d3f68e1778b492edc714c468c944cc6811766",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "handoff",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "8356af6df4ee24949a09bf560f99e36ac2a96f34d82bc478a342f4541fcdb14e",
+      "prepared_sha256": "8356af6df4ee24949a09bf560f99e36ac2a96f34d82bc478a342f4541fcdb14e",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "maintenance",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "b2614ac5d534e1d31250192a686dbfa3bf74ec1e6b95453aced7b88b095af1eb",
+      "prepared_sha256": "b2614ac5d534e1d31250192a686dbfa3bf74ec1e6b95453aced7b88b095af1eb",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "rescue",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "5950a8c077ae09abc7d869209007a63101795abbb2150a8422178b6cdef769b6",
+      "prepared_sha256": "b05e635e292fe2fdd239136bb854e635cb9ca1b07f48a65ceaebcf04a9484f83",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "act2",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "5950a8c077ae09abc7d869209007a63101795abbb2150a8422178b6cdef769b6",
+      "prepared_sha256": "b05e635e292fe2fdd239136bb854e635cb9ca1b07f48a65ceaebcf04a9484f83",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "ending",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "e216fc011f9f45af00e2bb276142b10e0f56b64a95ee166cad6a453485378392",
+      "prepared_sha256": "52fac77fe8d3a1884fec2b382160900db5d8758715ebae19c5aa74f8bbd480e5",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "bucket",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "dd87cd51ec06aa38b298f8804fccf5a3771fe86675c1fb826d95733154e28f4f",
+      "prepared_sha256": "4bc0bd36b546545f068fcb888db8070bf93c645b7033dedc40d7d4145b271b64",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "blockade",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "dd87cd51ec06aa38b298f8804fccf5a3771fe86675c1fb826d95733154e28f4f",
+      "prepared_sha256": "4bc0bd36b546545f068fcb888db8070bf93c645b7033dedc40d7d4145b271b64",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    }
+  ],
+  "native_routes": {
+    "relay_earned_forward": {
+      "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\portable_relay_earned_forward\\campus_entry.json",
+      "sha256": "4579931aa88f9b696d5b2e845a547ce97ad9472a46a7419ada3f010826fa8571",
+      "checks": 18,
+      "language": "zh_CN",
+      "shots": 9,
+      "kills": 3,
+      "health": 260.0,
+      "before_returns": 3,
+      "after_returns": 4
+    },
+    "relay_earned_compat_en": {
+      "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\portable_relay_earned_compat_en\\campus_entry.json",
+      "sha256": "33b490b8503a6b5411ac2471a4c9af8214370b5702e13799985a41281194ec29",
+      "checks": 19,
+      "language": "en",
+      "shots": 6,
+      "kills": 2,
+      "health": 260.0,
+      "before_returns": 3,
+      "after_returns": 4
+    },
+    "relay_earned_original_failed_seed": {
+      "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\portable_relay_earned_original_failed_seed\\campus_entry.json",
+      "sha256": "925e80bf2b0a871972e35ca5448a295802e437768ffb3d7f55bec71e76835959",
+      "checks": 18,
+      "language": "zh_CN",
+      "shots": 9,
+      "kills": 3,
+      "health": 260.0,
+      "before_returns": 3,
+      "after_returns": 4
+    },
+    "relay_earned_failed_checkpoint_resume": {
+      "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\portable_relay_earned_failed_checkpoint_resume\\campus_entry.json",
+      "sha256": "64124bcf903261e186b06314d36bea208c8be57d1ed98355b2fc706e0e7fbdf1",
+      "checks": 16,
+      "language": "zh_CN",
+      "shots": 6,
+      "kills": 3,
+      "health": 156.32,
+      "before_returns": 3,
+      "after_returns": 4
+    },
+    "packing_earned_forward": {
+      "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\portable_packing_earned_forward\\normal_start.json",
+      "sha256": "0ee698f25379281c0c6a8cbd72964cf9f9d6f8092330469700788db43e9f8262",
+      "checks": 23,
+      "language": "zh_CN",
+      "shots": null,
+      "kills": null,
+      "health": null,
+      "before_returns": 8,
+      "after_returns": 8
+    },
+    "packing_earned_compat_en": {
+      "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\portable_packing_earned_compat_en\\normal_start.json",
+      "sha256": "f4dbeb8461b9e7a57cdb17660c655bde7eb81b31075bd16d1c7468f53d337f98",
+      "checks": 25,
+      "language": "en",
+      "shots": null,
+      "kills": null,
+      "health": null,
+      "before_returns": 8,
+      "after_returns": 8
+    }
+  },
+  "visual_review": {
+    "reviewed": true,
+    "scope": "Personally viewed 18 actual current build02 independent-ZIP native PNGs; not reused build01/source captures. 8 packing, 5 PA, 1 actual failed PA recovery, 2 medical, 1 handoff, 1 actual failed market recovery.",
+    "images": {
+      "portable_medical_earned_forward/02_medical_interception.png": "4d182d75cdb257c67af1090d6e568e8f9a026d3a90e0a227e16ff166a608eafc",
+      "portable_medical_earned_forward/03_medical_cargo.png": "1c6adb9a9c3d1f6de61345b6b2d283a428abc0d6e01599e9a354f8c11aac5aa3",
+      "portable_handoff_earned_compat_en/04b_dormitory_received.png": "ccc11f8e891ae80714c70966a81f742cdae03b11e8199164eb3f4c73139431a2",
+      "portable_relay_earned_forward/03_west_pa_active.png": "d83aaeefa3e5822cda68b1d04f8571630b13a8bf9209d8643c3cda40d31fa5a9",
+      "portable_relay_earned_forward/05_relay_debrief.png": "e9c2e7f2d065ee6249a8106a87c95aa4cf496831c96ca0fa77a9e6bde4dbf67a",
+      "portable_relay_earned_forward/06_relay_returned.png": "1e19f0786fc2c6f527fe9c7c37cf95974325d1b110d8de7925c49b53a343ece8",
+      "portable_relay_earned_compat_en/03_west_pa_active.png": "5a960a7ef51d382c75c4638cead9d42a31ae72b424d2b9fdc5c851de11c9f527",
+      "portable_relay_earned_compat_en/06_relay_returned.png": "54640fc32a20d5ca566381d8652555d791638b0a008cadc4f3b070c7e1c6eda7",
+      "portable_relay_earned_failed_checkpoint_resume/03_west_pa_active.png": "edb2804a181dd938359bf5752784a3eec03e0cdb9d56eef1f8a9c255db4761be",
+      "portable_packing_earned_forward/01_partial_delivery.png": "1425c2562690aa8b5f027b5d8340d461eea3794a6121ad411498419677cfbb99",
+      "portable_packing_earned_forward/02_missing_stock_pinned.png": "6ceca2712d8a4d7e93df7aa59713ddc554192041ed936751c009e58fad462560",
+      "portable_packing_earned_forward/03_packed_next_dormitory.png": "97d9accb6c35d957a04a4e13314e25550782372995cb27f2e4d3116a094cb4ba",
+      "portable_packing_earned_forward/04_next_field_action.png": "9384070bce4d24e3403537dcbcf8963602f55a183228942d1e135c61e588189e",
+      "portable_packing_earned_compat_en/01_partial_delivery.png": "59aa8aa6e888431711abacafc7d59e835f4fbc0d6f0eae0ed5f3ad1cd1be04ba",
+      "portable_packing_earned_compat_en/02_missing_stock_pinned.png": "19adceb7d796de6b4d5554200ed53d123a77225c56496d91f5b5e9045c3dc243",
+      "portable_packing_earned_compat_en/03_packed_next_dormitory.png": "573161d83fab8c0cb0a0c4ef9c2fb54d38d5e87367e3b68b4924f53cfa474aa2",
+      "portable_packing_earned_compat_en/04_next_field_action.png": "52aaa486ad0ce07f64509ae2d1649599dd6a8c1ad36adaa3c06cea2f91fb73cc",
+      "portable_actual_failed_delivery_resume/market_resumed_bypass.png": "2223294b4f8643316386d0b794605fbea322052dc1d7cd797466789bfa8607fe"
+    },
+    "notes": [
+      "Packing cards, missing 25, price75, manual submission and next dormitory step are visible in both languages without clipped action buttons.",
+      "PA active subtitles and returned power operation visible in Forward+ Chinese and Compatibility English; actual failed-world recovery shows health156, not restored free health.",
+      "Generic optional-mission failure debrief remains misleading despite campus progress; recorded for next production fix.",
+      "English shop credit suffix is still Chinese; minor existing localization gap.",
+      "Overall scenes and corpse presentation remain graybox quality; not release-art approval."
+    ]
+  },
+  "prior_candidate_rejected": {
+    "status": "rejected_candidate_not_deliverable",
+    "verified_compiled_cases": 120,
+    "independent_original_attempt_cases": 39,
+    "original_results_sha256": "1187345ec0231625f438ab592c3e81ad8a13ae619e3e2994c8abecf84380422b",
+    "failure_evidence_sha256": "0d2db4f9005bb02fb636a6ed42df93dd65730b3aef1e45356c9ff75a930be9c3",
+    "input_sha256": "25fd80342ef096a6ff2ad359728e44e99d190a9e2b1a25c1465970cd6a1617eb",
+    "failed_checkpoint_sha256": "4efc038604a686cfc3110a4d3d555f11d06b18f92e08c8e97c40d6847ad52104",
+    "failure": {
+      "contacts": [
+        "Infected:<CharacterBody3D#1145330215667>",
+        "CampusGround:<StaticBody3D#1088136682947>"
+      ],
+      "flow_mode": "",
+      "paused": false,
+      "player": "(-14.26408, -0.025001, -8.447543)",
+      "target": "(-49.0, 0.0, -11.0)",
+      "waypoint": "(-16.0, 0.03, -8.5)"
+    },
+    "paused": false,
+    "qa_defect": "PA approach overrode normal inherited combat controls and unconditionally released fire along the entire approach. Live infected body blocks the recorded waypoint. Remove only this QA suppression; keep production navigation/collision/AI and PA assertions unchanged. New candidate and same earned seed will be tested separately.",
+    "production_files_changed": false,
+    "do_not_relabel_failed_attempt": true
+  },
+  "original_launcher_attempt_rejected": {
+    "original_attempt_rejected": true,
+    "original_results_sha256": "ad7006c918bc7ddd45cae01809e6ecac8e9af0df9f02d5573967a8650750d7db",
+    "observed_engine_exit": 0,
+    "original_failed_case": "relay_read",
+    "actual_raw_save_only_changed_field": [
+      "stash_layout"
+    ],
+    "original_backup_sha256": "f083d069da4491637ed2499c8fdfa5158eafc94f66027d2806ca0d5eda104834",
+    "current_sha256": "62e14d1c63c5f59254c21f421723be7547c218313f9e9a16464f865f0da41bf3",
+    "no_gameplay_delta": true,
+    "correction": "Normal BOOT reconciles display-only stash positions before QA captures to_dict. New isolated CMD run will compare raw complete envelopes before/after, excluding only stash_layout for this normal-BOOT read; all progression/inventory/credits/schema still must match. All other CMD read cases retain byte equality.",
+    "same_exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "same_pck_sha256": "5ec8dec14b3ef9cae6e2fc39d551afafb97e90bcb47a8a5e3601c3570af0834d",
+    "same_archive_sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d"
+  },
+  "actual_failed_world_recovery": {
+    "same_original_earned_seed": "D:\\tmp\\bunny_campus_pa_packing_20261020_build01\\campus_relay_seed\\profile.json",
+    "sha256": "25fd80342ef096a6ff2ad359728e44e99d190a9e2b1a25c1465970cd6a1617eb",
+    "original_failed_case": "D:\\tmp\\bunny_campus_pa_packing_20261020_build01\\portable_relay_earned_forward",
+    "live_blocker": {
+      "key": "CampusInfected10",
+      "health": 45,
+      "engaged": true,
+      "target_visible": true
+    },
+    "only_qa_change": "Remove unconditional fire release on PA approach; use unchanged inherited live combat controller. No production AI, damage, collision, positions, map or PA changes.",
+    "actual_original_world_recovery": {
+      "path": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\pa_original_checkpoint_resume02_captures\\campus_entry.json",
+      "sha256": "0f56bca6981bae3c79e3b4ca6b03d1fbe1a0b6a2749a9ec9ea8f3c08713daf24",
+      "checks": 16,
+      "shots": 7,
+      "kills": 3,
+      "health": 156.32,
+      "actual_blocker_before": {
+        "enemy_position": "(-15.11362, 0.080095, -8.33666)",
+        "health": 45.0,
+        "key": "CampusInfected10",
+        "player_position": "(-14.26045, -0.024909, -8.448016)"
+      },
+      "actual_died_signal_observed": true,
+      "independent_boot_read_passed": true
+    }
+  },
+  "source_resume_first_attempt_rejected": {
+    "pass": false,
+    "engine_exit_does_not_override_script_error": true,
+    "reason": "QA kept an enemy object reference after normal death cleanup; rejected SCRIPT ERROR despite old PASS marker. Use observed died signal and require final profile_after before PASS. Production unchanged.",
+    "input_sha256": "4efc038604a686cfc3110a4d3d555f11d06b18f92e08c8e97c40d6847ad52104"
+  },
+  "protected_files_unchanged": [
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+      "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+      "mtime_ns": 1792485868281761900
+    },
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+      "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+      "mtime_ns": 1792485868289265500
+    },
+    {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+      "mtime_ns": 1792376341839829300
+    }
+  ],
+  "previous_medical_delivery_preserved": true,
+  "full_compiled_normal_chain": {
+    "safe_returns": 10,
+    "campus_finished": true,
+    "ending_reached": true,
+    "not_human_playtime": true
+  },
+  "new_minutes_claimed": 0,
+  "limitations": [
+    "LOCAL_ONLY: not uploaded or publicly licensed",
+    "5-hour human playtime and real 80% positive reviews not achieved",
+    "native generated controls are not human acceptance or balance",
+    "Dummy audio; actual listening, minimum spec and clean-machine tests pending",
+    "optional selected-mission failure still has a misleading generic debrief label",
+    "existing English shop credit suffix remains Chinese",
+    "original heroine unchanged; Arcana and purchased CombatGirls are excluded"
+  ],
+  "subsequent_source_work": {
+    "debrief": "docs/debrief_guidance_2026-10-21_validation.json",
+    "recovered_arms": "docs/recovered_arms_2026-10-21_validation.json",
+    "not_in_this_packet": true,
+    "historical_build_checks_preserved": true
+  }
+}

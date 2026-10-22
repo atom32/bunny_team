@@ -12,6 +12,7 @@ const SCENES := {
 	&"supply.bottled_water":"bottled_water", &"supply.citrus_drink":"citrus_drink",
 }
 const EXISTING := {
+	&"material.market_carrier_frame":"res://scenes/props/supply_art_v1/carrier_frame.tscn",
 	&"ammo.556_standard":"res://scenes/weapons/art_pack_v1/ammo_556_box.tscn",
 	&"material.quickloader_kit":"res://scenes/weapons/art_pack_v1/quickloader_magazine.tscn",
 	&"material.suppressor_kit":"res://scenes/weapons/art_pack_v1/suppressor.tscn",

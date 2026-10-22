@@ -14,6 +14,10 @@ func initialize(path: String = SaveService.DEFAULT_SAVE_PATH) -> void:
 	recovery_path = path
 	if SaveService.save_exists(path):
 		recovery_required = not load_profile(path)
+	elif FileAccess.file_exists(path + ".bak"):
+		# A missing primary does not make its remaining backup a new player.
+		# Keep the preview read-only until the player chooses how to recover.
+		recovery_required = true
 
 
 func get_profile() -> ProfileState:
@@ -47,7 +51,8 @@ func recover_profile(use_backup: bool) -> Error:
 	if not candidate:
 		return ERR_FILE_CORRUPT
 	_upgrade(candidate)
-	var error := SaveService.archive_save(recovery_path)
+	var archive_path := recovery_path if FileAccess.file_exists(recovery_path) else recovery_path + ".bak"
+	var error := SaveService.archive_save(archive_path)
 	if error == OK:
 		error = SaveService.save_profile(candidate, recovery_path)
 	if error == OK:

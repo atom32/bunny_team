@@ -1,0 +1,293 @@
+{
+  "status": "source_full_pass_local_trial_ready",
+  "feature": "Q01 physical north gate: outside E or shot chain with exactly two finite guards; original retreat preserved",
+  "full_source01": {
+    "pass": false,
+    "completed_categories": 86,
+    "passed_categories": 85,
+    "failed": [
+      {
+        "name": "q01_slice_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_campus_exit_gate_20261021_final01\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/q01_slice_test.tscn",
+          "--quit-after",
+          "1200"
+        ],
+        "exit": 1,
+        "pass": false,
+        "errors": [
+          "ERROR: Q01: gate caption preserves actual open/records requirement",
+          "ERROR: Q01: actual nearest plaque interaction: streets_exit_2",
+          "ERROR: Q01: actual nearest plaque interaction: streets_exit_2",
+          "ERROR: Q01: second actual observation carries Tang and Shen's reply",
+          "ERROR: Q01: two observations remain provisional before extraction",
+          "ERROR: Q01: G valid-but-different outcome/session facts rejected",
+          "ERROR: Q01: G altered terminal session rejected against outcome",
+          "ERROR: Q01: strict valid result resume passes",
+          "ERROR: Q01: C successful sortie persists Q01",
+          "ERROR: Q01: C Q01 pays exactly once independently of incomplete mission",
+          "ERROR: Q01: settled status follows current language",
+          "ERROR: Q01: candidate copy does not alias task facts"
+        ],
+        "warnings": [],
+        "sha256": "8dc24c0a8b20e4d26d55644b59029c384462edc9561ed59e4fe05b078e547974"
+      }
+    ],
+    "reason": "Legacy Q01 unit fixture teleports straight to the north plaque without operating the newly added physical gate. Also conditions text omits records while closed. Preserve failures; fix production readout and explicit fixture action, then rerun fresh full."
+  },
+  "full_source02": {
+    "pass": false,
+    "completed_categories": 104,
+    "passed_categories": 103,
+    "failed": [
+      {
+        "name": "sortie_guidance_test",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_campus_exit_gate_20261021_final02\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/sortie_guidance_test.tscn",
+          "--quit-after",
+          "12000"
+        ],
+        "exit": 1,
+        "pass": false,
+        "errors": [
+          "ERROR: Actual assigned exit sign observed",
+          "ERROR: Actual assigned exit sign observed"
+        ],
+        "warnings": [],
+        "sha256": "04ee69620607299deb9561e52c28795510b95f228adcbaa04dabae7d5fb38871"
+      }
+    ],
+    "reason": "Q01 day/night now passes; second explicitly positioned old guidance fixture still attempts closed north plaque without outside bolt. Production normal routes previously pass. Correct explicit fixture action then fresh full03, never discard the old failure."
+  },
+  "native01_logic_and_reads": 8,
+  "native01_visual": {
+    "visual_acceptance": false,
+    "gameplay_and_read_cases": 8,
+    "images_personally_reviewed": [
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\component_native_forward01\\gate_closed.png",
+        "sha256": "7f64e686766532c779ff2a54c2dae3ebc03e389b3fc7bf9f7bce3bfb7ac0410d"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\component_native_forward01\\gate_outside.png",
+        "sha256": "9001ebc1802320afee35a3f12a672fd5b7ddaeb7eb060810e6969c9d10791116"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\component_native_forward01\\gate_open.png",
+        "sha256": "14d40bf812b9724d72e8fb298817aa31794966cce45f86fd6a933be3e82bbab1"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\component_native_compat_en01\\gate_closed.png",
+        "sha256": "334ded75a5bd31815042e375bfd14b8619e7123873ff7c01f57b34a0ce8c4fc5"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\component_native_compat_en01\\gate_open.png",
+        "sha256": "f23fa47f4a377679e7fd55902608108a530a6f8a8ac7c1cf03b7f1385082e09f"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_forward01\\gate_00_bolted.png",
+        "sha256": "186ffaf5d86a618e8d3625c491e4ef60040591c8317626a1106566f4b8ea08b8"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_forward01\\gate_01_outside_bolt.png",
+        "sha256": "82670003e0b56d1d514f7eb1cebf20cc1605cf0598741895168c4a3a551b3401"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_forward01\\gate_02_opened.png",
+        "sha256": "a6f190a59a4801b4a064d2f32812b126da15cde5b9b5486e9db8c84939e49f2f"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_forward01\\04_plaque_streets_exit_2.png",
+        "sha256": "635ee17f7b94d2ae6d2779047edc1604b1dad3f52a84fff8bda4c13b8256a3dd"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_forward01\\05_q01_debrief.png",
+        "sha256": "ea397c421d7ce67a73145a91f8acc3fc49680e7bf6b990ee64fa51805376c0f7"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_compat_en01\\gate_00_bolted.png",
+        "sha256": "3a16cf61210f206c5fedd3790e9c96c46261b41c49133c9108ac1b588a830380"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_compat_en01\\gate_02_opened.png",
+        "sha256": "a6504684576545698e5ecede71ac0878a126312c98358a51f809b62b6eb915cf"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_compat_en01\\04_plaque_streets_exit_2.png",
+        "sha256": "7831e375f00d79b943c0f13dbc235806ead4f5334ecf591770f3837522a36468"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_compat_en01\\05_q01_debrief.png",
+        "sha256": "38fa3298e64691c616291125e0a8858194e5c3ccb283eabf46295aa38440deab"
+      }
+    ],
+    "issues": [
+      "Controlled close-ups have overlapping old extraction name/plaque billboards; no-depth plaque draws through shutter.",
+      "Ordinary outside camera shows E prompt but the brass bolt is hidden behind tall panel/cap; world chain label too small.",
+      "The earned Compatibility case requested English but BOOT initialized Chinese. It is NOT evidence of an English earned route.",
+      "Existing graybox cutting, bright Compatibility floor, small heroine and debrief contrast remain."
+    ],
+    "scope": "Logic and real routes pass, visual release gate refused; no new user package."
+  },
+  "post_fix_component_cases": 8,
+  "post_fix_q01_day_night_and_old_exported_v5_cases": 3,
+  "new_windows_package": false,
+  "human_playtime_proven": false,
+  "paid_payload_in_root": false,
+  "evidence_directory": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01",
+  "full_source03": {
+    "pass": true,
+    "scene_count": 127,
+    "categories": 250,
+    "results_sha256": "152a6f81d8c874e9ae6a1d640967d969b3c94ff49610d5d0b676d61dd3c58d80",
+    "current_root_non_document_inputs_match": 4091,
+    "protected_files_unchanged": [
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+        "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+        "mtime_ns": 1792485868281761900
+      },
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+        "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+        "mtime_ns": 1792485868289265500
+      },
+      {
+        "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+        "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+        "mtime_ns": 1792376341839829300
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+        "mtime_ns": 1792510165593990200
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+        "mtime_ns": 1792542556303376100
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "b20b04ee1a281e7d51d555c82b878b73a3e894ea5a88cef5efaa59723197ccd5",
+        "mtime_ns": 1792553093529563600
+      }
+    ],
+    "scope": "Current default source regression, no paid library, no native/public-release or new Windows acceptance. External between-engine yield only does not alter tests."
+  },
+  "native02_logic_and_reads": 8,
+  "native02_visual": {
+    "targeted_local_graybox_acceptance": true,
+    "whole_game_visual_release_acceptance": false,
+    "logic_and_read_cases": 8,
+    "images_personally_reviewed": [
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\component_native_forward02\\gate_closed.png",
+        "sha256": "1aff9d16265b62ef6df5f2fa7b777dbda136d9bca440eebea75cd6376d4dbb5e"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\component_native_forward02\\gate_outside.png",
+        "sha256": "5d93e973c7d9c869cf495e05cf5481f284211f3a9bcee09530f38e01806f3f26"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\component_native_forward02\\gate_open.png",
+        "sha256": "989bf1abaedcce561bc3a5071f486223e28e71f35120abaea46c15e320339322"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\component_native_compat_en02\\gate_closed.png",
+        "sha256": "8412e14ed5994e1625a16e6fa97a0c9d0daccc7d5abb6eb5705d89f3ac2536c5"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\component_native_compat_en02\\gate_open.png",
+        "sha256": "a2d25f1139db5c8aa860eae9581630e2337eba3f89ec05d2feee0e18ea0e6168"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_forward02\\gate_00_bolted.png",
+        "sha256": "042da114917f3f892ae2ae297f106d4e6fb55796ab106dfac02e36aad8f69292"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_forward02\\gate_01_outside_bolt.png",
+        "sha256": "8c622ff67a21bf5de7258dd38d6c65d32514bf53ba1a1120ba87ebd703cc1921"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_forward02\\gate_02_opened.png",
+        "sha256": "68a06e55e98c5d0a01c342f7e316f39f2248ca9d559282e05d4f5531e63d43ae"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_forward02\\04_plaque_streets_exit_2.png",
+        "sha256": "ff753e392ed757dd0bc0513cfb07dc8b1a91ac49abe76abc2df876b368acd74e"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_forward02\\05_q01_debrief.png",
+        "sha256": "e177429a6000f3a8c90c1ad971c119b5f02f1259b8829d5411ab56e496afbc17"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_compat_en02\\gate_00_bolted.png",
+        "sha256": "0e39e73923cc7ddd817a6b66853f3dd71d46e0248df7ed8022dc424c1713e36b"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_compat_en02\\gate_02_opened.png",
+        "sha256": "5de4f8dc1c08ddf9f7007affe2ea5765395265acced00bb7d356c369fb53493b"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_compat_en02\\04_plaque_streets_exit_2.png",
+        "sha256": "4b4648fdbb23f4c6e466f8aec8459d4dc60a2d801b27a780d846f0e097b0eeb4"
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_exit_gate_20261021_dev01\\earned_native_compat_en02\\05_q01_debrief.png",
+        "sha256": "45e94dffd7abc37fbacc99e5eb998c71e5da69d2cf6b0cbce811795c0b3ff0cb"
+      }
+    ],
+    "verified": [
+      "Old name/plaque billboards no longer stack across closed shutter or heroine.",
+      "Brass outside bolt and raised handle visible in close-up; ordinary outside view shows it with actual E prompt.",
+      "Shutter genuinely closed/open; open passage has no floating raised panel.",
+      "Actual quiet and loud routes return, durable Q01 only; loud ordinary image shows both authored guards.",
+      "Earned Compatibility actually uses English HUD/dialogue, confirmed screenshot and evidence text."
+    ],
+    "remaining": [
+      "Small world lettering remains low contrast at normal overhead scale.",
+      "Controlled oblique chain caption is partly depth-occluded by shutter; red physical links and ordinary-view caption are visible, full HUD explains both methods.",
+      "Marker is wayfinding, not a hand-to-bolt contact animation. Do not claim hand contact or advanced art.",
+      "Old graybox cutting, debug/visibility cones, bright Compatibility surfaces, partly Chinese hardcoded secondary prompts, debrief contrast and small heroine remain."
+    ],
+    "scope": "Suitable for optional local prototype trial, not itch/public-release visual acceptance; first rejected review remains unchanged."
+  },
+  "local_trial": {
+    "pass": true,
+    "launchers": [
+      "运行北门与十六动作本地版.cmd",
+      "预览校园北门.cmd"
+    ],
+    "new_windows_package": false,
+    "native_cases": 8,
+    "native_visual_scope": "Targeted local graybox only; exact limitations in native_visual_review02.json",
+    "production_inputs_compared": 1563,
+    "intentional_local_motion_hooks": [
+      "scenes/player/player.tscn",
+      "scripts/player/player_controller.gd"
+    ],
+    "preview_seed_sha256": "79adc18573091743243473dde41920fc95a73e83fa5a65b78913f461ae117f04",
+    "source_full_result": "full_source03_complete.json",
+    "project_manifest_entries": 4762,
+    "original_user_profiles_untouched": true,
+    "launcher_validation": "Static same known local-trial CMD pattern; actual ordinary BOOT/deploy/native routes and signed seed tested separately. No new CMD-native or independent ZIP claim."
+  },
+  "launcher_static": {
+    "pass": true,
+    "scope": "Both UTF-8 CMD paths/isolation/required Godot verified statically; ordinary native BOOT/routes tested separately. Launchers not started, user folders remain fresh. No new compiled/CMD-native acceptance."
+  },
+  "protected_check": "D:/tmp/bunny_campus_exit_gate_20261021_dev01/protected_check03.json"
+}

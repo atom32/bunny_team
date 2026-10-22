@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3]
+[sub_resource type="StandardMaterial3D" id="metal"]
+albedo_color = Color(0.31, 0.39, 0.43, 1)
+metallic = 0.55
+roughness = 0.7
+[sub_resource type="StandardMaterial3D" id="strap"]
+albedo_color = Color(0.63, 0.45, 0.23, 1)
+roughness = 0.9
+[sub_resource type="BoxMesh" id="rail"]
+material = SubResource("metal")
+size = Vector3(0.055, 0.78, 0.055)
+[sub_resource type="BoxMesh" id="bar"]
+material = SubResource("metal")
+size = Vector3(0.57, 0.055, 0.055)
+[sub_resource type="BoxMesh" id="belt"]
+material = SubResource("strap")
+size = Vector3(0.065, 0.55, 0.035)
+[node name="OldCarrierFrame" type="Node3D"]
+[node name="LeftRail" type="MeshInstance3D" parent="."]
+position = Vector3(-0.26, 0.39, 0)
+mesh = SubResource("rail")
+[node name="RightRail" type="MeshInstance3D" parent="."]
+position = Vector3(0.26, 0.39, 0)
+mesh = SubResource("rail")
+[node name="TopBar" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.75, 0)
+mesh = SubResource("bar")
+[node name="MiddleBar" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.4, 0)
+mesh = SubResource("bar")
+[node name="BottomBar" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.06, 0)
+mesh = SubResource("bar")
+[node name="LeftStrap" type="MeshInstance3D" parent="."]
+position = Vector3(-0.16, 0.4, 0.055)
+rotation = Vector3(0, 0, -0.13)
+mesh = SubResource("belt")
+[node name="RightStrap" type="MeshInstance3D" parent="."]
+position = Vector3(0.16, 0.4, 0.055)
+rotation = Vector3(0, 0, 0.13)
+mesh = SubResource("belt")

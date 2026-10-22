@@ -1,19 +1,26 @@
 class_name DeploymentPlan
 extends RefCounted
-const STREET_MISSIONS := [&"streets_recon", &"streets_relay"]
+const STREET_MISSIONS := [&"streets_recon", &"streets_relay", &"waterworks_run", &"blockade_run", &"maintenance_rescue", &"maintenance_shutdown"]
 static var selected_lighting_variant := "day"
 static var selected_street_mission: StringName = &"streets_recon"
+
+static func area_for_mission(mission: StringName) -> StringName:
+	if mission==FinaleStory.MISSION:return FinaleStory.AREA
+	if mission == MaintenanceStory.MISSION:return MaintenanceStory.AREA
+	if mission == BlockadeStory.MISSION: return BlockadeStory.AREA
+	return WaterworksStory.AREA if mission == WaterworksStory.MISSION else &"street_district"
 
 # Preview exact rounds; materialize partial stacks only inside deployment transaction.
 var ammo_ids: Array[String] = []
 var ammo_quantities: Dictionary = {} # Source stack ID -> exact quantity to carry.
 var medical_ids: Array[String] = []
+var cargo_ids: Array[String] = []
 var weight := 0.0
 var capacity := 0.0
 var message := ""
 var error := ""
 
-static func build(profile: ProfileState) -> DeploymentPlan:
+static func build(profile: ProfileState, mission: StringName = &"") -> DeploymentPlan:
 	var plan := DeploymentPlan.new()
 	if not profile or not profile.validate():
 		plan.error = "Profile is unavailable. Return to the menu to recover your save."
@@ -31,6 +38,20 @@ static func build(profile: ProfileState) -> DeploymentPlan:
 	if plan.weight > carried_capacity:
 		plan.error = "Equipment is overweight. Select a lighter loadout."
 	var lines: Array[String] = []
+	var chosen := selected_street_mission if mission.is_empty() else mission
+	if chosen==FinaleStory.MISSION and not FinaleStory.available(profile):
+		plan.error="Bring home water, clear the checkpoint and rescue Xu Tang before entering the backup core."
+	if chosen==MaintenanceStory.MISSION and not MaintenanceStory.available(profile):
+		plan.error="Finish the campus requests before entering sealed maintenance."
+	if chosen == WaterworksStory.MISSION:
+		for item in profile.inventory.get_items():
+			if item.definition_id != WaterworksStory.CELL: continue
+			if plan.weight + item.total_weight() > carried_capacity:
+				plan.error = "Stored pump battery exceeds carry capacity. Select lighter equipment."
+				break
+			plan.cargo_ids.append(item.instance_id); plan.weight += item.total_weight()
+			lines.append(TranslationServer.translate("Stored pump battery packed / 8kg"))
+			break
 	for ammo_id in targets:
 		var count := 0
 		var definition := ContentDB.get_ammo(ammo_id, false)
@@ -66,6 +87,7 @@ static func build(profile: ProfileState) -> DeploymentPlan:
 func carried_ids() -> Array[String]:
 	var ids := ammo_ids.duplicate()
 	ids.append_array(medical_ids)
+	ids.append_array(cargo_ids)
 	return ids
 
 static func set_medical_count(id: String, quantity: int, path := SaveService.DEFAULT_SAVE_PATH) -> Error:
@@ -109,10 +131,11 @@ static func default_ammo_counts(profile: ProfileState) -> Dictionary:
 	return counts
 
 static func prepare(profile: ProfileState, area: StringName, mission: StringName) -> Dictionary:
-	var plan := build(profile)
+	var plan := build(profile,mission)
 	if not plan.error.is_empty(): return {"error":ERR_INVALID_DATA,"message":plan.error}
 	var candidate := ProfileState.from_dict(profile.to_dict())
 	var ids: Array[String] = plan.medical_ids.duplicate()
+	ids.append_array(plan.cargo_ids)
 	for id in plan.ammo_quantities:
 		var source := candidate.inventory.get_item(id)
 		var amount: int = plan.ammo_quantities[id]

@@ -1,0 +1,1547 @@
+{
+  "status": "local_source_readability16_ready_compiled_149_pass",
+  "source_delta": {
+    "scope": "5 UI/v8 marker and existing QA changes only; no game rules, schema, loot, grants, paid payload or player hooks copied. Native/full still pending.",
+    "files": [
+      {
+        "path": "scenes/world/campus_actions/exit_gate.tscn",
+        "before": "f72e43b508fc698b4ddd429f0cd168367e1d84a3ac627bf4bdaa36428d229c45",
+        "after": "54b31698ff58c7d7b1331b418f2a39ea45a0667f3edc75cb324a569eb5c57dab"
+      },
+      {
+        "path": "scripts/ui/result_ui.gd",
+        "before": "1ce4f745a777bc431dfda32f2de1578cf26a9df7d1b50081185a86cc002a2a59",
+        "after": "538d3d3cfeb964572bf5bd4481ce2f225e520459c519495cce23c997fb02e15d"
+      },
+      {
+        "path": "scripts/world/streets/exit_gate.gd",
+        "before": "fba486476a05c5e9649b8bcb277de0ffccefb146611c56d1bae5e9e42adef962",
+        "after": "f1e8611fc179bae8a283d94e35efabfc8eae69cdc634f0761d9a5c0d5d13205a"
+      },
+      {
+        "path": "tests/campus_exit_gate_test.gd",
+        "before": "3bbfa782cb1cbe3a6897620f723af1fdb9a253e9178a2339e7257fcd7836abb2",
+        "after": "4832b9b191c6785701fb9b19d2ce88074b5a76828c6ec5129a0cd059e97eb707"
+      },
+      {
+        "path": "tests/debrief_guidance_test.gd",
+        "before": "0977166b9205d965067827f844dafcca2f55a9a473e9211dbf5d782c12c96c6c",
+        "after": "486143bd939315830296121c2953936bea0e035ce46678d811378138f2c76b62"
+      }
+    ]
+  },
+  "targeted": {
+    "pass": true,
+    "rows": [
+      {
+        "name": "debrief_matrix",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "7ae355afd11f2cc8b706a312bd9608369942a0c9d47d3ed866972410e458ab2f"
+      },
+      {
+        "name": "result_return",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "9985118cd4cbd5cb1f239a038576b027c3c7391fc26cbf4267e4a133d12f8e66"
+      },
+      {
+        "name": "bucket_result",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "89bbe3989b5aa08f3623e61fffed2d39a9bdc48c2e7e67daba78cf50cf54d53c"
+      },
+      {
+        "name": "bucket_result_en",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "89bbe3989b5aa08f3623e61fffed2d39a9bdc48c2e7e67daba78cf50cf54d53c"
+      },
+      {
+        "name": "rescue_result",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "c20addc5f85a133abef8364d7e329cdc9fe6051190a7cef8a301d4728d4370f4"
+      },
+      {
+        "name": "rescue_result_en",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "c20addc5f85a133abef8364d7e329cdc9fe6051190a7cef8a301d4728d4370f4"
+      },
+      {
+        "name": "gate_quiet",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "d6f13b8f03e142e27d617b3d4b958ac93d63c1961813b87e8796a20d3f2cab6c"
+      },
+      {
+        "name": "gate_quiet_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "2612149350fe407b832b561b42c59d23deca49845fa0568a61c5fceae57c0324"
+      },
+      {
+        "name": "gate_loud",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "d6f13b8f03e142e27d617b3d4b958ac93d63c1961813b87e8796a20d3f2cab6c"
+      },
+      {
+        "name": "gate_loud_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "2612149350fe407b832b561b42c59d23deca49845fa0568a61c5fceae57c0324"
+      }
+    ],
+    "scope": "Controlled outcomes in both languages, actual return/save failure and retry, near-only v8 markers with real open/shot/signed read. Default motions; not native or full regression."
+  },
+  "new_windows": false,
+  "whole_game_visual_acceptance": false,
+  "human_gameplay_time_proven": false,
+  "source_full": {
+    "pass": true,
+    "scene_count": 127,
+    "categories": 251,
+    "results_sha256": "e2265a7959fdb58ee342e4d5fc9beaafc3de2cc041514a4d8239c9d896392e70",
+    "current_root_non_document_inputs_match": 4092,
+    "protected_files_unchanged": [
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+        "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+        "mtime_ns": 1792485868281761900
+      },
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+        "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+        "mtime_ns": 1792485868289265500
+      },
+      {
+        "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+        "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+        "mtime_ns": 1792376341839829300
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+        "mtime_ns": 1792510165593990200
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+        "mtime_ns": 1792542556303376100
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "b20b04ee1a281e7d51d555c82b878b73a3e894ea5a88cef5efaa59723197ccd5",
+        "mtime_ns": 1792553093529563600
+      }
+    ],
+    "scope": "Current default source regression, no paid library, no native/public-release or new Windows acceptance. External between-engine yield only does not alter tests."
+  },
+  "native": "current6/6 plus personal image review; earlier7/8 failure retained separately",
+  "technical_reference": "https://docs.godotengine.org/en/stable/classes/class_label3d.html",
+  "scope": "Readability only, no game rules or measured content minutes. Previous delivered local gate+16 trial kept frozen.",
+  "source_full01_rejected": {
+    "pass": false,
+    "passed_engine_categories": 176,
+    "expected_categories": 250,
+    "reason": "Python runner asserts Q02 must take exactly1 scavenge sortie (R3). Actual allowed random loot required2 real sorties, so settledQ02 valid R4; engine route passed. Do not reroll loot, reset/relabel profile, drop the original random route, or declare full250."
+  },
+  "source_full02_rejected": {
+    "pass": false,
+    "reason": "New pure Python unittest correctly reports OK, but verifier generic branch required PASS. Corrected explicit Python OK branch. Original rc0 unit log and rejected row retained; no game failure or profile reset.",
+    "rows": [
+      {
+        "name": "localization_build",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_readability_20261021_final02\\project\\tests\\test_localization_build.py",
+          "-v"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "7359362ca9b4388fd1f52aba9be266de8147379618b1bb928bb1ff430d856ac1"
+      },
+      {
+        "name": "cold_import",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_readability_20261021_final02\\project",
+          "--headless",
+          "--editor",
+          "--import"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+        ],
+        "sha256": "649f266f6d67acbcb769658848074d6b57d45c318aece78bdf7bca5cf8b852dd"
+      },
+      {
+        "name": "campaign_return_offsets_unit",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_readability_20261021_final02\\project\\tests\\test_campaign_return_offsets.py",
+          "-v"
+        ],
+        "exit": 0,
+        "pass": false,
+        "errors": [],
+        "warnings": [],
+        "sha256": "e4bc30c1f236ec8de6730dbc4e8b5fa4354e54362f76132e8b7e9be3de4b28a9"
+      }
+    ]
+  },
+  "source_full03": {
+    "pass": true,
+    "scene_count": 127,
+    "categories": 251,
+    "results_sha256": "e2265a7959fdb58ee342e4d5fc9beaafc3de2cc041514a4d8239c9d896392e70",
+    "current_root_non_document_inputs_match": 4092,
+    "protected_files_unchanged": [
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+        "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+        "mtime_ns": 1792485868281761900
+      },
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+        "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+        "mtime_ns": 1792485868289265500
+      },
+      {
+        "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+        "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+        "mtime_ns": 1792376341839829300
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+        "mtime_ns": 1792510165593990200
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+        "mtime_ns": 1792542556303376100
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "b20b04ee1a281e7d51d555c82b878b73a3e894ea5a88cef5efaa59723197ccd5",
+        "mtime_ns": 1792553093529563600
+      }
+    ],
+    "scope": "Current default source regression, no paid library, no native/public-release or new Windows acceptance. External between-engine yield only does not alter tests."
+  },
+  "native01_rejected": {
+    "pass": false,
+    "passed_cases": 7,
+    "failed": "earned_native_compat_en01",
+    "scope": "Actual live route fired14 rounds but chain remained intact; do not count final image named opened as open. Original profile/checkpoint/log/images preserved.",
+    "observed_checkpoint": "Actual durable checkpoint has21/30 rounds, actor x=-8.3416, aim x=0,z=-1, chain centre x=-8 sphere radius.2. Do not call this pause/focus failure."
+  },
+  "font_and_controller_fix": {
+    "source_changes": [
+      {
+        "path": "scenes/world/campus_actions/exit_gate.tscn",
+        "before": "54b31698ff58c7d7b1331b418f2a39ea45a0667f3edc75cb324a569eb5c57dab",
+        "after": "64c80b67cfdcf52e398ef3426ddd34f81fe84c8311efb7eda1bcaeec94b100d1"
+      },
+      {
+        "path": "tests/campus_exit_gate_test.gd",
+        "before": "4832b9b191c6785701fb9b19d2ce88074b5a76828c6ec5129a0cd059e97eb707",
+        "after": "9a7ebd17d520834aa1427a5348e4a75357fbe81e317e7f345ddb999fdef5c709"
+      },
+      {
+        "path": "tools/campus_exit_gate_run.gd",
+        "before": "f6c0ad836c97b4a7d159ab56e3e1b045c7e82d3ad80842e28115996b3dab1ccb",
+        "after": "51587fb794b91271189dd4222a72d4081f95e1dcef51ae38a3ac579381ff44db"
+      }
+    ],
+    "font_evidence": [
+      {
+        "class": "FontFile",
+        "font_name": "Noto Sans SC Thin",
+        "style_name": "Thin"
+      },
+      {
+        "class": "FontVariation",
+        "variation_opentype": {
+          "2003265652": 400.0
+        }
+      }
+    ],
+    "original_aim_evidence": {
+      "aim_point": "(-8.341615, 1.22584, -78.85466)",
+      "chain": "(-8.0, 1.15, -47.74)",
+      "first_nominal_collider": "/root/Battle/AreaRoot/StreetDistrict/CampusExitGate/GateBody",
+      "muzzle": "(-7.807197, 1.540118, -45.17109)",
+      "paused": false,
+      "player": "(-8.341615, -0.02416, -44.85466)",
+      "saved_rounds": 21
+    },
+    "successful_recovery": {
+      "before_kills": 0,
+      "before_observations": [],
+      "before_shots": 0,
+      "gate_mode": 2,
+      "inside": "(-8.341615, -0.02416, -44.85466)",
+      "lined_up_position": "(-8.021299, -0.02416, -44.85466)",
+      "method": "loud",
+      "opening_shots": 1,
+      "pose_usage": {
+        "AimIdle": 3,
+        "Dodge": 0,
+        "Hit": 0,
+        "Idle": 1,
+        "PutGun": 0,
+        "Reload": 0,
+        "Run": 0,
+        "Shoot": 3,
+        "TakeGun": 86,
+        "Walk": 0,
+        "WalkBL": 0,
+        "WalkBR": 0,
+        "WalkBack": 0,
+        "WalkFL": 0,
+        "WalkFR": 0,
+        "WalkRelaxed": 0
+      },
+      "task_index": 2
+    },
+    "scope": "Raw font is named Noto Sans SC Thin; use existing 400-weight HUD FontVariation. QA now physically lines up via normal precision movement before cardinal fire, no mouse warp, hitbox resize, aim assignment, teleport or ammo grant. Original failed checkpoint21 rounds restored without reset; original end had16, latest durable had21. Controller fix is QA only."
+  },
+  "failed_checkpoint_actual_recovery": {
+    "pass": true,
+    "rows": [
+      {
+        "name": "recovery06",
+        "pass": true,
+        "exit": 0
+      },
+      {
+        "name": "recovery06_read",
+        "pass": true,
+        "exit": 0
+      }
+    ],
+    "scope": "Raw clone of failed native run latest durable checkpoint (21 rounds, not end-of-process16). Normal BOOT/RESUME/aim/fire/plaque/extraction/return; full original failure files retained. Not a native rerun."
+  },
+  "real_two_outing_Q02_continuation": {
+    "pass": true,
+    "rows": [
+      {
+        "name": "relay",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "60f8899b75dd62042b302f808691f72b7f1bc5839019d7a6164a9d275386b892"
+      },
+      {
+        "name": "relay_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "4a990a30d983d8ad72974b7331fb1f47c6fa007b177a6a389ca4d4fc2e1c7e92"
+      },
+      {
+        "name": "power",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "64e3e73ad5d0ed0fe47f7e8d42f97376749c219c79352fab02b7ba7c2e59cadd"
+      },
+      {
+        "name": "pack",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "30d581abeb6e6d30dd0c3b0bd3d186b8d0b418ab2906256b727209270e45331f"
+      },
+      {
+        "name": "supply",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "9978076e059f3d3c2b19f3cc42e5a74a1ad4f62b421feb207dff99a8bee426d5"
+      },
+      {
+        "name": "complete_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bd525cd6a6d329ee293a49f74983554efcc85a3e5d0b1eff3598cd57df5fbd96"
+      }
+    ],
+    "input_unchanged": {
+      "path": "D:\\tmp\\bunny_readability_20261021_final01\\first_sortie_run_userdata\\Godot\\app_userdata\\Bunny Verification bunny_readability_20261021_final01\\profile.json",
+      "sha256": "bed0f317040647f8eea2c365c3b6ec7bab60a2dbd949c5eba7819c85931e6417",
+      "mtime_ns": 1792580805947339400
+    },
+    "before_returns": 4,
+    "after_returns": 7,
+    "scope": "Actual stopped-full R4 from2 random Q02 trips retained without reroll. Normal relay/power/packing/field handoff and reads; exactly3 additional safe returns, not resetting or relabeling R4 toR3."
+  },
+  "compiled_candidate": {
+    "pass": true,
+    "compiled_categories": 149,
+    "current_non_doc_inputs_match": 4092,
+    "scope": "Actual new Windows candidate with default motions, not paid payload, not ZIP/native/CMD/public acceptance. Old candidate and user deliveries unchanged.",
+    "manifest": "D:\\tmp\\bunny_readability_20261021_build01\\local_build_manifest.json"
+  },
+  "native02": {
+    "pass": true,
+    "rows": [
+      {
+        "name": "component_native_forward02",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "0592988bf2dac3253953d2d5119e6dcfe8ba8ddc6f6ad8437bec20d6dd51c7e5"
+      },
+      {
+        "name": "component_native_forward02_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "2612149350fe407b832b561b42c59d23deca49845fa0568a61c5fceae57c0324"
+      },
+      {
+        "name": "component_native_compat_en02",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "db33f7109f8c0fd055ce3ce4fa936cb18a0c86b2735c1d197b39826696de53c2"
+      },
+      {
+        "name": "component_native_compat_en02_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "2612149350fe407b832b561b42c59d23deca49845fa0568a61c5fceae57c0324"
+      },
+      {
+        "name": "recovery_native_compat_en02",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "eaf3fc6a504e49e34c2465c656e52461d7b61678f69d2d0af1834943c0af5814"
+      },
+      {
+        "name": "recovery_native_compat_en02_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "517a1cde238c13ce9489aa867b7ce48a8d814ef54915cea6ed892cfb23f5a4c8"
+      }
+    ],
+    "scope": "Only this local readability target accepted, not public-release or whole-game visuals. Six current cases are two controlled camera/read pairs and one original-failed-checkpoint recovery/read pair. Earlier unchanged ResultUI bilingual outcome matrix and Forward+ ordinary return are separate earlier evidence, not a fresh combined 9/9 run. Latest durable original checkpoint had21 rounds; original failed process ended with16. Original file retained byte/mtime unchanged.",
+    "corrects": "native_complete02.json footer overbroad scope description; original result/logs retained unchanged"
+  },
+  "native_visual_review02": {
+    "targeted_local_readability_acceptance": true,
+    "debrief_backing_target": true,
+    "near_marker_font_target": true,
+    "whole_game_visual_acceptance": false,
+    "images_personally_reviewed": [
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_dev01\\component_native_forward02\\gate_closed.png",
+        "sha256": "7dc7a2dd9c75f2ae1b97612a80f0dc3c992efec51ab211006f141887a89f9db9"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_dev01\\component_native_forward02\\gate_outside.png",
+        "sha256": "33f5eac5cd75447b9db674ba6b75affe85369104694690dc7f845c833b1cff7f"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_dev01\\component_native_forward02\\gate_open.png",
+        "sha256": "ad9b1d017b6d874303c7970f0d76492d0ef8a4d1c60cce04474da0d26c234622"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_dev01\\component_native_compat_en02\\gate_closed.png",
+        "sha256": "068013030a2208402d99b2d35c09d97331738e72dce882d256a5616d51b4a990"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_dev01\\component_native_compat_en02\\gate_open.png",
+        "sha256": "30738775059af60987be7a049d7029867cd2ad0578e3506f276ddb507ed4d433"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_dev01\\recovery_native_compat_en02\\gate_00_bolted.png",
+        "sha256": "27dd37c3fc22b3edc5588d85d4c05a8bac70ab4575aef48d88eb4936a95be158"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_dev01\\recovery_native_compat_en02\\gate_02_opened.png",
+        "sha256": "4c1dce674e42e71880774b628ddcbb59aad06d5172bd60f596a0f7a09c132f12"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_dev01\\recovery_native_compat_en02\\recovered_debrief.png",
+        "sha256": "e6b39b7a3ea1340865136751ec887beadcbd02057ca5c50997ba96dbc68e853e"
+      }
+    ],
+    "findings": [
+      "Actual Compatibility English debrief has readable pale body on solid dark card over the 3D floor; no overlap with return button or heroine body.",
+      "Controlled Forward+ Chinese and Compatibility English near views show larger regular-font gate/chain/latch captions, chain hint visible on the inside and outside latch visible from outside.",
+      "Actual resumed failed checkpoint opened with one real shot after normal precision alignment; old closed and new opened screenshots differ genuinely. Real English debrief and independent return read passed.",
+      "World-space captions remain gray and small at ordinary overhead distance; English gate title may extend behind the dialogue card. Primary action instruction is separately readable in the opaque bottom HUD. These remain polish issues, not approved final typography.",
+      "Lighting/graybox, incomplete localization of some secondary world captions, and lack of hand-to-latch contact remain."
+    ],
+    "scope": "Only this local readability target accepted, not public-release or whole-game visuals. Six current cases are two controlled camera/read pairs and one original-failed-checkpoint recovery/read pair. Earlier unchanged ResultUI bilingual outcome matrix and Forward+ ordinary return are separate earlier evidence, not a fresh combined 9/9 run. Latest durable original checkpoint had21 rounds; original failed process ended with16. Original file retained byte/mtime unchanged."
+  },
+  "protected": {
+    "pass": true,
+    "files": [
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+        "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+        "mtime_ns": 1792485868281761900
+      },
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+        "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+        "mtime_ns": 1792485868289265500
+      },
+      {
+        "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+        "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+        "mtime_ns": 1792376341839829300
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+        "mtime_ns": 1792510165593990200
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+        "mtime_ns": 1792542556303376100
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "b20b04ee1a281e7d51d555c82b878b73a3e894ea5a88cef5efaa59723197ccd5",
+        "mtime_ns": 1792553093529563600
+      },
+      {
+        "path": "D:/tmp/bunny_maintenance_shared_20261021_build02/LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "6b3ebd03491dd0700c5444580a7bf68fcc93e9bd1b1ebb022fda6cd98ad6db19",
+        "mtime_ns": 1792565384090933000
+      },
+      {
+        "path": "D:/tmp/bunny_combat16_20261021_dev01/actual16_forward01/userdata/Godot/app_userdata/Bunny Verification bunny_combat16_20261021_dev01/profile.json",
+        "sha256": "79adc18573091743243473dde41920fc95a73e83fa5a65b78913f461ae117f04",
+        "mtime_ns": 1792570795954911700
+      },
+      {
+        "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+        "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec",
+        "mtime_ns": 1790951818552782600
+      }
+    ],
+    "failed_native_checkpoint_unchanged": {
+      "path": "D:\\tmp\\bunny_readability_20261021_dev01\\earned_native_compat_en01_userdata\\Godot\\app_userdata\\Bunny Verification bunny_readability_20261021_dev01\\profile.json",
+      "sha256": "995462deb60ce1056c61a2036f4e1dfdc5eb0e3d6df67914dea3f8eb67093c00",
+      "mtime_ns": 1792580389145797000,
+      "scope": "Latest original failed native durable checkpoint,21 primary rounds; process ended with16. Never call it an exact14-shot rollback-free end-state."
+    }
+  },
+  "local_source_trial": {
+    "pass": true,
+    "launchers": [
+      "运行可读性与十六动作本地版.cmd",
+      "预览修正版校园北门.cmd"
+    ],
+    "new_windows_package": false,
+    "native_cases": 6,
+    "native_visual_scope": "Targeted readability only; current6 cases and earlier unchanged UI matrix scope kept separate; exact limitations in native_visual_review02.json",
+    "production_inputs_compared": 1563,
+    "intentional_local_motion_hooks": [
+      "scenes/player/player.tscn",
+      "scripts/player/player_controller.gd"
+    ],
+    "preview_seed_sha256": "79adc18573091743243473dde41920fc95a73e83fa5a65b78913f461ae117f04",
+    "source_full_result": "full_source03_complete.json",
+    "project_manifest_entries": 4759,
+    "original_user_profiles_untouched": true,
+    "launcher_validation": "Static same known local-trial CMD pattern; actual ordinary BOOT/deploy/native routes and signed seed tested separately. No new CMD-native or independent ZIP claim."
+  },
+  "final_local_delivery": {
+    "pass": true,
+    "source_full": {
+      "pass": true,
+      "scene_count": 127,
+      "categories": 251,
+      "results_sha256": "e2265a7959fdb58ee342e4d5fc9beaafc3de2cc041514a4d8239c9d896392e70",
+      "current_root_non_document_inputs_match": 4092,
+      "protected_files_unchanged": [
+        {
+          "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+          "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+          "mtime_ns": 1792485868281761900
+        },
+        {
+          "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+          "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+          "mtime_ns": 1792485868289265500
+        },
+        {
+          "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+          "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+          "mtime_ns": 1792376341839829300
+        },
+        {
+          "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+          "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+          "mtime_ns": 1792510165593990200
+        },
+        {
+          "path": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+          "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+          "mtime_ns": 1792542556303376100
+        },
+        {
+          "path": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+          "sha256": "b20b04ee1a281e7d51d555c82b878b73a3e894ea5a88cef5efaa59723197ccd5",
+          "mtime_ns": 1792553093529563600
+        }
+      ],
+      "scope": "Current default source regression, no paid library, no native/public-release or new Windows acceptance. External between-engine yield only does not alter tests."
+    },
+    "compiled_candidate": {
+      "pass": true,
+      "compiled_categories": 149,
+      "current_non_doc_inputs_match": 4092,
+      "scope": "Actual new Windows candidate with default motions, not paid payload, not ZIP/native/CMD/public acceptance. Old candidate and user deliveries unchanged.",
+      "manifest": "D:\\tmp\\bunny_readability_20261021_build01\\local_build_manifest.json"
+    },
+    "pck_audit": {
+      "pass": true,
+      "pck_sha256": "85c5826c7387a785240d4863bfe57e7fbf7b8450955bd6137d4f3d2bbe2f6535",
+      "entries": 1673,
+      "all_byte_ranges_and_md5_verified": true,
+      "all_previous_content_gates_preserved": true,
+      "north_gate_and_font_and_result_runtime_present": true,
+      "external_diagnostics_and_paid_library_absent": true,
+      "no_profile_backup_userdata": true,
+      "public_release_approved": false,
+      "scope": "PCK audit only, not independentZIP/native/CMD or all asset rights."
+    },
+    "local_source_trial": {
+      "pass": true,
+      "launchers": [
+        "运行可读性与十六动作本地版.cmd",
+        "预览修正版校园北门.cmd"
+      ],
+      "new_windows_package": false,
+      "native_cases": 6,
+      "native_visual_scope": "Targeted readability only; current6 cases and earlier unchanged UI matrix scope kept separate; exact limitations in native_visual_review02.json",
+      "production_inputs_compared": 1563,
+      "intentional_local_motion_hooks": [
+        "scenes/player/player.tscn",
+        "scripts/player/player_controller.gd"
+      ],
+      "preview_seed_sha256": "79adc18573091743243473dde41920fc95a73e83fa5a65b78913f461ae117f04",
+      "source_full_result": "full_source03_complete.json",
+      "project_manifest_entries": 4759,
+      "original_user_profiles_untouched": true,
+      "launcher_validation": "Static same known local-trial CMD pattern; actual ordinary BOOT/deploy/native routes and signed seed tested separately. No new CMD-native or independent ZIP claim."
+    },
+    "native_current_cases": 6,
+    "native_visual_scope": "Only this local readability target accepted, not public-release or whole-game visuals. Six current cases are two controlled camera/read pairs and one original-failed-checkpoint recovery/read pair. Earlier unchanged ResultUI bilingual outcome matrix and Forward+ ordinary return are separate earlier evidence, not a fresh combined 9/9 run. Latest durable original checkpoint had21 rounds; original failed process ended with16. Original file retained byte/mtime unchanged.",
+    "protected_files_unchanged": [
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+        "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+        "mtime_ns": 1792485868281761900
+      },
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+        "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+        "mtime_ns": 1792485868289265500
+      },
+      {
+        "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+        "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+        "mtime_ns": 1792376341839829300
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+        "mtime_ns": 1792510165593990200
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+        "mtime_ns": 1792542556303376100
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "b20b04ee1a281e7d51d555c82b878b73a3e894ea5a88cef5efaa59723197ccd5",
+        "mtime_ns": 1792553093529563600
+      },
+      {
+        "path": "D:/tmp/bunny_maintenance_shared_20261021_build02/LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "6b3ebd03491dd0700c5444580a7bf68fcc93e9bd1b1ebb022fda6cd98ad6db19",
+        "mtime_ns": 1792565384090933000
+      },
+      {
+        "path": "D:/tmp/bunny_combat16_20261021_dev01/actual16_forward01/userdata/Godot/app_userdata/Bunny Verification bunny_combat16_20261021_dev01/profile.json",
+        "sha256": "79adc18573091743243473dde41920fc95a73e83fa5a65b78913f461ae117f04",
+        "mtime_ns": 1792570795954911700
+      },
+      {
+        "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+        "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec",
+        "mtime_ns": 1790951818552782600
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_dev01\\earned_native_compat_en01_userdata\\Godot\\app_userdata\\Bunny Verification bunny_readability_20261021_dev01\\profile.json",
+        "sha256": "995462deb60ce1056c61a2036f4e1dfdc5eb0e3d6df67914dea3f8eb67093c00",
+        "mtime_ns": 1792580389145797000
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_final01\\first_sortie_run_userdata\\Godot\\app_userdata\\Bunny Verification bunny_readability_20261021_final01\\profile.json",
+        "sha256": "bed0f317040647f8eea2c365c3b6ec7bab60a2dbd949c5eba7819c85931e6417",
+        "mtime_ns": 1792580805947339400
+      }
+    ],
+    "local_motion_sha256": "a747a05bb010083d413ce7e8aa36a114c22ef3dd7339251493fc034a22069ec4",
+    "source_project_frozen": true,
+    "active_game_engines": [],
+    "new_windows_zip": false,
+    "new_windows_user_delivery": false,
+    "public_release_approved": false,
+    "human_five_hours_or_80_percent_rating_claim": false,
+    "goal_status": "active",
+    "remaining": "Independent ZIP/CMD/native acceptance for the new candidate; human playtime/fun, rights, listening, low-end and clean machine. World captions still low-contrast at overhead distance."
+  },
+  "new_windows_candidate_built": true,
+  "new_windows_user_delivery": false,
+  "pck_audit": {
+    "pass": true,
+    "pck_sha256": "85c5826c7387a785240d4863bfe57e7fbf7b8450955bd6137d4f3d2bbe2f6535",
+    "entries": 1673,
+    "all_byte_ranges_and_md5_verified": true,
+    "all_previous_content_gates_preserved": true,
+    "north_gate_and_font_and_result_runtime_present": true,
+    "external_diagnostics_and_paid_library_absent": true,
+    "no_profile_backup_userdata": true,
+    "public_release_approved": false,
+    "scope": "PCK audit only, not independentZIP/native/CMD or all asset rights."
+  },
+  "source_delta_scope": "Initial historical five-file delta, followed by font/controller QA and counter-offset correction recorded separately; current complete results supersede pending text.",
+  "packet_status": "older_internal_zip41of96_gate_visual_pass_known_orphan_backup_source_fix_not_in_packet",
+  "packet_archive": {
+    "archive": "D:\\tmp\\bunny_readability_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 246384929,
+    "sha256": "dd56834065d26fa0fdd0a2b9eadeaa56c5729e7c13ea3c6e88823f9d9f3cf2ca",
+    "extracted_to": "D:\\tmp\\小兔试玩 北门与可读性 20261021 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false
+  },
+  "packet_previews": 15,
+  "packet_cmd_launchers": 16,
+  "packet_native": "batch ended, no pending question; fresh availability required for any more native",
+  "packet_planned_cases": 96,
+  "packet_helper_scope": "All previous87 cases retained; add9 gate cases. No previous candidate rows reused. Backup-aware CMD initialization added in new packet only. Original six-dry profile current release recovery/read and real current R1 earning/read passed separately.",
+  "packet_headless_complete": {
+    "pass": true,
+    "scope": "INTERNAL headless packet phase only; NOT a native/full release or new Windows user delivery.",
+    "backup_guard_calls": 30,
+    "backup_guard_scope": "All15 preview launchers with lone backup and existing main, --version only",
+    "all_previous87_case_definitions_retained": true,
+    "all_previous_static_entry_names_retained": true,
+    "new_gate_preview_actual_current_R1": true,
+    "current_pck_gate_font_UI_audit": {
+      "pass": true,
+      "pck_sha256": "85c5826c7387a785240d4863bfe57e7fbf7b8450955bd6137d4f3d2bbe2f6535",
+      "entries": 1673,
+      "all_byte_ranges_and_md5_verified": true,
+      "all_previous_content_gates_preserved": true,
+      "north_gate_and_font_and_result_runtime_present": true,
+      "external_diagnostics_and_paid_library_absent": true,
+      "no_profile_backup_userdata": true,
+      "public_release_approved": false,
+      "scope": "PCK audit only, not independentZIP/native/CMD or all asset rights."
+    },
+    "compiled_gates": 149,
+    "zip_headless_accepted": 37,
+    "zip_planned_full_cases": 96,
+    "zip_remaining_native_or_dependent_cases": 59,
+    "cmd_positive_invocations": 30,
+    "cmd_isolated_groups": 16,
+    "cmd_expected_negative_exit": 1,
+    "cmd_log_hashes": [
+      {
+        "name": "relay",
+        "sha256": "cad0b1c6158d18e5ab1d856b9cb9644aac3768a595081de4aff377aabc546b4a"
+      },
+      {
+        "name": "relay_read",
+        "sha256": "bd82eab88e65807b98b55054e2758d5dd84d1533119d3e99a5e265fe063ffc86"
+      },
+      {
+        "name": "medical",
+        "sha256": "fd39f0edac0281352ab4380c226781b0dd179ec10ac3ac9bd08f21f6ada300a6"
+      },
+      {
+        "name": "medical_read",
+        "sha256": "0c66806be55288fab94d08e349e5e09a8d2e887b11db7807ef9628bb5b52aa53"
+      },
+      {
+        "name": "handoff",
+        "sha256": "ed62cc215e56766a7ce96359c2f22c68c900f7489bc33612f80e05546112c091"
+      },
+      {
+        "name": "handoff_read",
+        "sha256": "0c66806be55288fab94d08e349e5e09a8d2e887b11db7807ef9628bb5b52aa53"
+      },
+      {
+        "name": "rescue",
+        "sha256": "91ff657e69ec7db30e2ca53a99bae15c23517c20d72c501678dca27d5d02866e"
+      },
+      {
+        "name": "rescue_read",
+        "sha256": "dfd758e79f674322c7776372c9939a82f3a59e1332a9f72017eff048d2f4fd47"
+      },
+      {
+        "name": "maintenance",
+        "sha256": "404b83c8985ee99a24de22d2a7e5d73a31e3e8726245effe1095e04e1ec3426b"
+      },
+      {
+        "name": "maintenance_read",
+        "sha256": "4aab67fca578837af04759dd31770e15b7939546e8638ab9fc664943f525ebd1"
+      },
+      {
+        "name": "blockade",
+        "sha256": "2abde5b1c7ef27142a479653a81d71aede019a9e3396f434b9866cc2c3c153a6"
+      },
+      {
+        "name": "blockade_read",
+        "sha256": "67c15c4dfc2d68069ea8300fa20d5ee9ed3c67b28956049cc1378b95014dcf1a"
+      },
+      {
+        "name": "default",
+        "sha256": "84949af964dc4aa76ce2c6c91c2d3f14c1f2b865d134a3a9c40bc6e26d1588bf"
+      },
+      {
+        "name": "campus",
+        "sha256": "423ba240a109ca46e7360079e149e45259d2cc7f106a477c138494698f9bbd5c"
+      },
+      {
+        "name": "campus_supply",
+        "sha256": "efb10acbb472f0cdd0f5dbdbc76b7e7599eeb6fd760ac61b692350d6a401679a"
+      },
+      {
+        "name": "campus_read",
+        "sha256": "0c66806be55288fab94d08e349e5e09a8d2e887b11db7807ef9628bb5b52aa53"
+      },
+      {
+        "name": "act2",
+        "sha256": "e7c0f30212f385a051f3dc87d0caf6698b7eaf14e266769ea2b398f288087e3f"
+      },
+      {
+        "name": "act2_read",
+        "sha256": "b470804bea39094b94b215f5eefb0f2598d2bca52f02cf71a1a85fda12b61c4a"
+      },
+      {
+        "name": "ending",
+        "sha256": "b470804bea39094b94b215f5eefb0f2598d2bca52f02cf71a1a85fda12b61c4a"
+      },
+      {
+        "name": "bucket",
+        "sha256": "e1227cb629def7bb739928a3a457c8894c05a1b41f5811d4f21c184db594d18a"
+      },
+      {
+        "name": "find",
+        "sha256": "cac453a7fda3c5d652703b8daff6902743cbe52ff520e68d210d59a33a559e4a"
+      },
+      {
+        "name": "find_read",
+        "sha256": "20d8bb80317a819ac49ac2e3d625eb0fc6f7f5d4fe4e70d858f873e1059068ef"
+      },
+      {
+        "name": "courier",
+        "sha256": "65a49b42ce328b8ec2696c8a592bfe47a37f5f8261616bbe817a76b8aacd4ce3"
+      },
+      {
+        "name": "courier_read",
+        "sha256": "54c4dd14167e1e307247e624c4d49f2c73baebb04f9bface9f776585220fe519"
+      },
+      {
+        "name": "freight",
+        "sha256": "65a49b42ce328b8ec2696c8a592bfe47a37f5f8261616bbe817a76b8aacd4ce3"
+      },
+      {
+        "name": "freight_read",
+        "sha256": "54c4dd14167e1e307247e624c4d49f2c73baebb04f9bface9f776585220fe519"
+      },
+      {
+        "name": "shared",
+        "sha256": "4aab67fca578837af04759dd31770e15b7939546e8638ab9fc664943f525ebd1"
+      },
+      {
+        "name": "shared_read",
+        "sha256": "4aab67fca578837af04759dd31770e15b7939546e8638ab9fc664943f525ebd1"
+      },
+      {
+        "name": "gate",
+        "sha256": "67ff4e52115bbbb04dbc656b12c2657811db3f4be9ee1ecce7dd133b44ff9129"
+      },
+      {
+        "name": "gate_read",
+        "sha256": "c1ae4d14366ae7c9d0db1df1c09d8a96fa4d6c1be60be80f95c60cfe5549a4a4"
+      }
+    ],
+    "static_files": 43,
+    "actual_compiled_preview_sources": 15,
+    "new_shared_preview_same_actual_item_and_metadata": true,
+    "archive": {
+      "archive": "D:\\tmp\\bunny_readability_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "bytes": 246384929,
+      "sha256": "dd56834065d26fa0fdd0a2b9eadeaa56c5729e7c13ea3c6e88823f9d9f3cf2ca",
+      "extracted_to": "D:\\tmp\\小兔试玩 北门与可读性 20261021 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+      "all_files_match": true,
+      "matches_official_release_template": true,
+      "public_release_approved": false
+    },
+    "pck_audit": {
+      "pass": true,
+      "pck_sha256": "85c5826c7387a785240d4863bfe57e7fbf7b8450955bd6137d4f3d2bbe2f6535",
+      "entries": 1673,
+      "all_byte_ranges_and_md5_verified": true,
+      "all_previous_content_gates_preserved": true,
+      "shared_v3_and_kit_table_and_private_qa_present": true,
+      "external_diagnostic_not_shipped": true,
+      "no_profile_backup_userdata": true,
+      "public_release_approved": false
+    },
+    "root_non_document_inputs_match": 4092,
+    "protected11_unchanged": [
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+        "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+        "mtime_ns": 1792485868281761900
+      },
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+        "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+        "mtime_ns": 1792485868289265500
+      },
+      {
+        "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+        "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+        "mtime_ns": 1792376341839829300
+      },
+      {
+        "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+        "mtime_ns": 1792510165593990200
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+        "mtime_ns": 1792542556303376100
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "b20b04ee1a281e7d51d555c82b878b73a3e894ea5a88cef5efaa59723197ccd5",
+        "mtime_ns": 1792553093529563600
+      },
+      {
+        "path": "D:/tmp/bunny_maintenance_shared_20261021_build02/LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+        "sha256": "6b3ebd03491dd0700c5444580a7bf68fcc93e9bd1b1ebb022fda6cd98ad6db19",
+        "mtime_ns": 1792565384090933000
+      },
+      {
+        "path": "D:/tmp/bunny_combat16_20261021_dev01/actual16_forward01/userdata/Godot/app_userdata/Bunny Verification bunny_combat16_20261021_dev01/profile.json",
+        "sha256": "79adc18573091743243473dde41920fc95a73e83fa5a65b78913f461ae117f04",
+        "mtime_ns": 1792570795954911700
+      },
+      {
+        "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+        "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec",
+        "mtime_ns": 1790951818552782600
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_dev01\\earned_native_compat_en01_userdata\\Godot\\app_userdata\\Bunny Verification bunny_readability_20261021_dev01\\profile.json",
+        "sha256": "995462deb60ce1056c61a2036f4e1dfdc5eb0e3d6df67914dea3f8eb67093c00",
+        "mtime_ns": 1792580389145797000
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_final01\\first_sortie_run_userdata\\Godot\\app_userdata\\Bunny Verification bunny_readability_20261021_final01\\profile.json",
+        "sha256": "bed0f317040647f8eea2c365c3b6ec7bab60a2dbd949c5eba7819c85931e6417",
+        "mtime_ns": 1792580805947339400
+      }
+    ],
+    "native_windows_launched_this_phase": false,
+    "native_visual_accepted": false,
+    "full_zip_accepted": false,
+    "fresh_user_delivery_created": false,
+    "public_release_approved": false,
+    "measured_playtime_added_minutes": 0
+  },
+  "packet_cmd": {
+    "pass": true,
+    "gameplay_or_boot_cmd_processes": 30,
+    "isolated_groups": 16,
+    "expected_invalid_exit": 1,
+    "backup_only_and_main_guards": 30,
+    "scope": "Current independent ZIP, actual CMD invocation. Separate guard calls use --version, not gameplay or native visuals. No fresh user delivery created."
+  },
+  "packet_backup_guard": {
+    "pass": true,
+    "preview_launchers": 15,
+    "backup_only_checks": 15,
+    "existing_main_and_backup_checks": 15,
+    "rows": [
+      {
+        "script": "继续后半程.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\继续后半程.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "继续后半程.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\继续后半程.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览中继广播.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览中继广播.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览中继广播.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览中继广播.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览互助收获.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览互助收获.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览互助收获.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览互助收获.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览哨卡突围.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览哨卡突围.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览哨卡突围.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览哨卡突围.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览回家尾声.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览回家尾声.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览回家尾声.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览回家尾声.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览宿舍接应.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览宿舍接应.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览宿舍接应.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览宿舍接应.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览改装收获.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览改装收获.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览改装收获.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览改装收获.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览最大的桶.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览最大的桶.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览最大的桶.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览最大的桶.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览校园供电.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览校园供电.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览校园供电.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览校园供电.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览校园北门.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览校园北门.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览校园北门.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览校园北门.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览药房截取.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览药房截取.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览药房截取.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览药房截取.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览蒸汽救援.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览蒸汽救援.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览蒸汽救援.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览蒸汽救援.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览轻便挎包.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览轻便挎包.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览轻便挎包.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览轻便挎包.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览重载背架.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览重载背架.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览重载背架.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览重载背架.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览门先别关.cmd",
+        "mode": "backup_only",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览门先别关.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      },
+      {
+        "script": "预览门先别关.cmd",
+        "mode": "existing_main_and_backup",
+        "pass": true,
+        "exit": 0,
+        "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 北门与可读性 20261021 备份隔离01\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览门先别关.cmd\" --version\"",
+        "files_unchanged": [
+          "profile.json",
+          "profile.json.bak"
+        ],
+        "log_sha256": "b18270e6148162ad047a4da2dcf31112a22f9fc2e5f282c79727e2a35f2cd1c9"
+      }
+    ],
+    "scope": "Actual CMD --version invocations prove launchers do not seed over existing main or a lone backup and preserve argument forwarding. Sentinel files intentionally not parsed; normal save recovery is covered separately by runtime tests. Not gameplay/native or thirty new story routes."
+  },
+  "packet_native_remaining": 55,
+  "packet_new_windows_delivery": false,
+  "packet_native_current": {
+    "pass": true,
+    "new_current_cases": 4,
+    "total_zip_accepted": 41,
+    "planned_zip_cases": 96,
+    "visual_review_required": true,
+    "scope": "Same actual independent ZIP Forward+ quiet/Compatibility English loud R1->R2 routes and independent reads. Footer-only repair compares returned entire gameplay profile with independently read profile; display stash layout excluded as existing runtime contract. Original rejected footer/log retained. No route rerun, grants or reset; not remaining55/native full/listening/human playtime."
+  },
+  "packet_native_visual": {
+    "targeted_zip_gate_readability_acceptance": true,
+    "whole_game_visual_acceptance": false,
+    "images_personally_reviewed": [
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_build01\\portable_gate_earned_forward\\gate_00_bolted.png",
+        "sha256": "7db4476ef04364b71594db4b598717d2969dd28d8c1c1b8b6d4ca52e7f7f4d19"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_build01\\portable_gate_earned_forward\\gate_01_outside_bolt.png",
+        "sha256": "8c190002dc4c87a03459c765dd4505265d3a0311c35e9a31724c819fe55d79b6"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_build01\\portable_gate_earned_forward\\gate_02_opened.png",
+        "sha256": "bedfd05dcb321915024c990d06c2d7f8a01bafc81b46fc5d2d062f34f350196b"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_build01\\portable_gate_earned_forward\\05_q01_debrief.png",
+        "sha256": "4b5e0bd859e617c8cbe2cc3e4334da767f3227dd7f6ba4dfc5bc0c195f08f855"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_build01\\portable_gate_earned_compat_en\\gate_00_bolted.png",
+        "sha256": "da1a69ca98a425d7376fef466874e7c1d44bfd0b3887475cb570942ef2439d86"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_build01\\portable_gate_earned_compat_en\\gate_02_opened.png",
+        "sha256": "f30d1dff6e6179da5e7e74a36e3acb2c17f977b8c9a167dcb01907aa915eb05e"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_build01\\portable_gate_earned_compat_en\\05_q01_debrief.png",
+        "sha256": "c72c8ef4776dc25004a3d912afd8748ce176c747b7e545f2fe1a08fefd607fad"
+      },
+      {
+        "path": "D:\\tmp\\bunny_readability_20261021_build01\\portable_gate_earned_compat_en\\06_tang_next_request.png",
+        "sha256": "826100de2b01c9dcf91fd1dc9edfec1ae631a8c0e1e5d4ce2758ebb780a2792f"
+      }
+    ],
+    "findings": [
+      "Actual ZIP Forward+ quiet route reaches visible outside handle and opens shutter with no opening shot. Compatibility English loud route really opens and shows two finite guards.",
+      "Chinese and English actual debrief bodies on opaque card are legible over3D floor; heroine body and return remain visible. Q01 signs2/2 shown separately from untouched optional archive condition; actual next Tang Q02 visible after return.",
+      "Overhead world captions still gray/small; English secondary physical board remainsChinese. Gate label can cross heroine silhouette. Local graybox target only, not final typography/art/character animation quality."
+    ],
+    "route_stats": {
+      "gate_earned_forward": {
+        "shots": 10,
+        "kills": 3,
+        "paused": false,
+        "opening_shots": 0,
+        "before_returns": 1,
+        "after_returns": 2
+      },
+      "gate_earned_compat_en": {
+        "shots": 17,
+        "kills": 5,
+        "paused": false,
+        "opening_shots": 2,
+        "before_returns": 1,
+        "after_returns": 2
+      }
+    },
+    "scope": "New independent ZIP native4/read cases only; overall41/96. Initial outer footer rejected missing read profile_before, repaired against same parent return/profile_after and independent read, no replay/reset. Original rejection kept. Default motions, not paid16. Dummy audio is not listening or human fun/playtime."
+  },
+  "orphan_backup_source_fix": {
+    "status": "integrated_two_files_full_regression_running",
+    "integration": {
+      "pass": true,
+      "files": [
+        {
+          "path": "scripts/systems/profile_runtime.gd",
+          "before": "a4803b5bf945b127b16cb1dc7b509f420b95cae328c63ffdf3bd424e1ad08546",
+          "after": "e5c227717a03db740b3a3efc4dd884e4cdd2cad39f55a1eca6d15dc5541977b0",
+          "diff": "--- scripts/systems/profile_runtime.gd before\n+++ scripts/systems/profile_runtime.gd after\n@@ -1,61 +1,66 @@\n-extends Node\r\n-\r\n-var _profile: ProfileState\r\n-var recovery_required := false\r\n-var recovery_path := SaveService.DEFAULT_SAVE_PATH\r\n-\r\n-\r\n-func _ready() -> void:\r\n-\tinitialize()\r\n-\r\n-\r\n-func initialize(path: String = SaveService.DEFAULT_SAVE_PATH) -> void:\r\n-\tnew_profile()\r\n-\trecovery_path = path\r\n-\tif SaveService.save_exists(path):\r\n-\t\trecovery_required = not load_profile(path)\r\n-\r\n-\r\n-func get_profile() -> ProfileState:\r\n-\treturn _profile\r\n-\r\n-\r\n-func new_profile() -> ProfileState:\r\n-\t_profile = ProfileState.create_new()\r\n-\trecovery_required = false\r\n-\treturn _profile\r\n-\r\n-\r\n-func save_profile(path: String = SaveService.DEFAULT_SAVE_PATH) -> Error:\r\n-\tif recovery_required:\r\n-\t\treturn ERR_FILE_CORRUPT\r\n-\treturn SaveService.save_profile(_profile, path)\r\n-\r\n-\r\n-func load_profile(path: String = SaveService.DEFAULT_SAVE_PATH) -> bool:\r\n-\tvar loaded_profile := SaveService.load_profile(path, false)\r\n-\tif not loaded_profile:\r\n-\t\treturn false\r\n-\t_upgrade(loaded_profile)\r\n-\t_profile = loaded_profile\r\n-\trecovery_required = false\r\n-\treturn true\r\n-\r\n-\r\n-func recover_profile(use_backup: bool) -> Error:\r\n-\tvar candidate := SaveService.load_profile(recovery_path + \".bak\", false) if use_backup else ProfileState.create_new()\r\n-\tif not candidate:\r\n-\t\treturn ERR_FILE_CORRUPT\r\n-\t_upgrade(candidate)\r\n-\tvar error := SaveService.archive_save(recovery_path)\r\n-\tif error == OK:\r\n-\t\terror = SaveService.save_profile(candidate, recovery_path)\r\n-\tif error == OK:\r\n-\t\t_profile = candidate\r\n-\t\trecovery_required = false\r\n-\treturn error\r\n-\r\n-\r\n-func _upgrade(profile: ProfileState) -> void:\r\n-\tprofile.inventory.capacity = maxf(profile.inventory.capacity, ProfileState.DEFAULT_WAREHOUSE_CAPACITY)\r\n+extends Node\n+\n+var _profile: ProfileState\n+var recovery_required := false\n+var recovery_path := SaveService.DEFAULT_SAVE_PATH\n+\n+\n+func _ready() -> void:\n+\tinitialize()\n+\n+\n+func initialize(path: String = SaveService.DEFAULT_SAVE_PATH) -> void:\n+\tnew_profile()\n+\trecovery_path = path\n+\tif SaveService.save_exists(path):\n+\t\trecovery_required = not load_profile(path)\n+\telif FileAccess.file_exists(path + \".bak\"):\n+\t\t# A missing primary does not make its remaining backup a new player.\n+\t\t# Keep the preview read-only until the player chooses how to recover.\n+\t\trecovery_required = true\n+\n+\n+func get_profile() -> ProfileState:\n+\treturn _profile\n+\n+\n+func new_profile() -> ProfileState:\n+\t_profile = ProfileState.create_new()\n+\trecovery_required = false\n+\treturn _profile\n+\n+\n+func save_profile(path: String = SaveService.DEFAULT_SAVE_PATH) -> Error:\n+\tif recovery_required:\n+\t\treturn ERR_FILE_CORRUPT\n+\treturn SaveService.save_profile(_profile, path)\n+\n+\n+func load_profile(path: String = SaveService.DEFAULT_SAVE_PATH) -> bool:\n+\tvar loaded_profile := SaveService.load_profile(path, false)\n+\tif not loaded_profile:\n+\t\treturn false\n+\t_upgrade(loaded_profile)\n+\t_profile = loaded_profile\n+\trecovery_required = false\n+\treturn true\n+\n+\n+func recover_profile(use_backup: bool) -> Error:\n+\tvar candidate := SaveService.load_profile(recovery_path + \".bak\", false) if use_backup else ProfileState.create_new()\n+\tif not candidate:\n+\t\treturn ERR_FILE_CORRUPT\n+\t_upgrade(candidate)\n+\tvar archive_path := recovery_path if FileAccess.file_exists(recovery_path) else recovery_path + \".bak\"\n+\tvar error := SaveService.archive_save(archive_path)\n+\tif error == OK:\n+\t\terror = SaveService.save_profile(candidate, recovery_path)\n+\tif error == OK:\n+\t\t_profile = candidate\n+\t\trecovery_required = false\n+\treturn error\n+\n+\n+func _upgrade(profile: ProfileState) -> void:\n+\tprofile.inventory.capacity = maxf(profile.inventory.capacity, ProfileState.DEFAULT_WAREHOUSE_CAPACITY)\n \t# Alpha ownership is persistent. Never regrant sold/lost guns on load.\n"
+        },
+        {
+          "path": "tests/p0_recovery_test.gd",
+          "before": "ac7d6d2649b20c93b1fff4101ab1439255b03093e40b29d60696d2a8363603e3",
+          "after": "630932398781b1f6d43a3b3fb5d682dd331db560aaf92eb6e73100778feb9b08",
+          "diff": "--- tests/p0_recovery_test.gd before\n+++ tests/p0_recovery_test.gd after\n@@ -1,126 +1,165 @@\n-extends Node\r\n-var failures: Array[String] = []\r\n-var path := \"user://p0_recovery.json\"\r\n-\r\n-func _ready() -> void:\r\n-\tawait get_tree().process_frame\r\n-\t_test_malformed_saves()\r\n-\t_test_atomic_save_and_recovery()\r\n-\t_test_load_and_ammo()\r\n-\t_test_finalize_retry()\r\n-\tSortieRuntime.clear_session()\r\n-\tProfileRuntime.new_profile()\r\n-\tAudioDirector.shutdown_for_test()\r\n-\tawait get_tree().create_timer(0.2).timeout\r\n-\tfor failure in failures:\r\n-\t\tpush_error(failure)\r\n-\tprint(\"P0_RECOVERY_TEST: \" + (\"PASS\" if failures.is_empty() else \"FAIL\"))\r\n-\tget_tree().quit(0 if failures.is_empty() else 1)\r\n-\r\n-func check(condition: bool, description: String) -> void:\r\n-\tif not condition:\r\n-\t\tfailures.append(description)\r\n-\r\n-func _write(data: Variant) -> void:\r\n-\tvar file := FileAccess.open(path, FileAccess.WRITE)\r\n-\tfile.store_string(JSON.stringify(data))\r\n-\tfile.close()\r\n-\r\n-func _test_malformed_saves() -> void:\r\n-\tvar source := ProfileState.create_new().to_dict()\r\n-\tfor value in [null, [], {}, \"1\", true, 1.5]:\r\n-\t\t_write({\"schema_version\": value, \"profile\": source})\r\n-\t\tcheck(SaveService.load_profile(path, false) == null, \"Hostile schema type rejected\")\r\n-\tfor value in [null, {}, [], \"100\", true, -1, 1e30]:\r\n-\t\tvar data := source.duplicate(true)\r\n-\t\tdata.inventory.capacity = value\r\n-\t\t_write({\"schema_version\": 1, \"profile\": data})\r\n-\t\tcheck(SaveService.load_profile(path, false) == null, \"Hostile capacity rejected\")\r\n-\tfor key in [\"quantity\", \"durability\", \"instance_id\", \"definition_id\"]:\r\n-\t\tfor value in [null, [], {}, true]:\r\n-\t\t\tvar data := source.duplicate(true)\r\n-\t\t\tdata.inventory.items[0][key] = value\r\n-\t\t\t_write({\"schema_version\": 1, \"profile\": data})\r\n-\t\t\tcheck(SaveService.load_profile(path, false) == null, \"Hostile item field rejected: \" + key)\r\n-\tvar data := source.duplicate(true)\r\n-\tdata.loadout.weapon_primary = []\r\n-\t_write({\"schema_version\": 1, \"profile\": data})\r\n-\tcheck(SaveService.load_profile(path, false) == null, \"Hostile loadout ID rejected\")\r\n-\r\n-func _test_atomic_save_and_recovery() -> void:\r\n-\tvar profile := ProfileState.create_new()\r\n-\tcheck(SaveService.save_profile(profile, path) == OK, \"Valid profile saved atomically\")\r\n-\tcheck(SaveService.save_profile(profile, path) == OK, \"Second save rotates backup\")\r\n-\tcheck(SaveService.load_profile(path + \".bak\", false).to_dict() == profile.to_dict(), \"Backup is valid previous profile\")\r\n-\tvar good_backup := FileAccess.get_file_as_string(path + \".bak\")\r\n-\t_write({\"broken\": true})\r\n-\tvar broken := FileAccess.get_file_as_string(path)\r\n-\tProfileRuntime.initialize(path)\r\n-\tcheck(ProfileRuntime.recovery_required and ProfileRuntime.get_profile().validate(), \"Bad save supplies safe preview profile and requires explicit recovery\")\r\n-\tcheck(ProfileRuntime.save_profile(path) == ERR_FILE_CORRUPT and FileAccess.get_file_as_string(path) == broken, \"Fallback cannot overwrite bad save\")\r\n-\tcheck(ProfileRuntime.recover_profile(true) == OK, \"Backup recovery succeeds\")\r\n-\tcheck(not ProfileRuntime.recovery_required and SaveService.load_profile(path, false) != null, \"Recovered save reopens\")\r\n-\tcheck(FileAccess.get_file_as_string(path + \".bak\") == good_backup, \"Bad primary did not replace good backup\")\r\n-\tvar directory := DirAccess.open(\"user://\")\r\n-\tvar archived := false\r\n-\tfor file in directory.get_files():\r\n-\t\tif file.begins_with(\"p0_recovery.json.recovery-\") and FileAccess.get_file_as_string(\"user://\" + file) == broken:\r\n-\t\t\tarchived = true\r\n-\tcheck(archived, \"Corrupt original archived byte-for-byte\")\r\n-\tvar original := FileAccess.get_file_as_string(path)\r\n-\tprofile.inventory.capacity = -1\r\n-\tcheck(SaveService.save_profile(profile, path) != OK and FileAccess.get_file_as_string(path) == original, \"Rejected save leaves primary untouched\")\r\n-\r\n-func _test_load_and_ammo() -> void:\r\n-\tvar profile := ProfileState.create_new()\r\n-\tcheck(profile.inventory.add_item(ItemInstance.new(&\"ammo.556_standard\", 20000)), \"Large warehouse ammo fixture\")\r\n-\tvar before := profile.to_dict()\r\n-\tvar plan := DeploymentPlan.build(profile)\r\n-\tcheck(plan.ammo_ids.size() <= 3 and plan.weight < 100, \"Automatic plan bounds ammunition even with 20,000 warehouse rounds\")\r\n-\tvar request := profile.create_sortie_request(SortieRequest.PROTOTYPE_AREA_ID, SortieRequest.PROTOTYPE_MISSION_ID, plan.ammo_ids)\r\n-\tvar session := SortieRuntime.start_sortie(request, profile)\r\n-\tcheck(session != null, \"Bounded plan creates session\")\r\n-\tcheck(SortieRuntime.start_sortie(request, profile) == null and SortieRuntime.get_current_session() == session, \"Duplicate start cannot replace live session\")\r\n-\tcheck(profile.to_dict() == before, \"Plan and session leave warehouse untouched\")\r\n-\tvar weapon_id := session.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)\r\n-\tvar total_before: int = session.get_reserve_ammo(weapon_id) + session.get_weapon_runtime_state(weapon_id).magazine_ammo\r\n-\tvar weight_before := session.inventory.current_weight\r\n-\tcheck(session.fire_weapon(weapon_id), \"One shot fires\")\r\n-\tcheck(is_equal_approx(session.inventory.current_weight, weight_before - ContentDB.get_ammo(&\"ammo.556_standard\").weight), \"Magazine rounds count toward weight\")\r\n-\tcheck(session.reload_weapon(weapon_id) == 1, \"Reload transfers fired round\")\r\n-\t# Fill all remaining usable capacity, with no space beyond the reserved magazines.\r\n-\tvar loot := ItemInstance.new(&\"loot.salvage_core_01\")\r\n-\tsession.inventory.capacity = session.inventory.current_weight + ContentDB.get_item(loot.definition_id).weight\r\n-\tcheck(session.inventory.add_item(loot), \"Cargo fills to exact capacity\")\r\n-\tcheck(session.complete_extraction(), \"Full cargo with two loaded magazines extracts\")\r\n-\tcheck(_quantity(session.inventory, &\"ammo.556_standard\") == total_before - 1, \"Extraction obeys ammo conservation\")\r\n-\tvar outcome := SortieRuntime.get_outcome()\r\n-\tprofile.inventory.capacity = profile.inventory.current_weight\r\n-\tcheck(SortieOutcomeService.commit_outcome(profile, outcome) == OK, \"Full warehouse expands to accept extracted cargo\")\r\n-\tcheck(profile.inventory.contains(loot.instance_id), \"Overflow recovery keeps loot\")\r\n-\tSortieRuntime.clear_session()\r\n-\t# Explicit oversized requests get an error without touching warehouse or session.\r\n-\tvar ids: Array[String] = []\r\n-\tfor item in profile.inventory.get_items():\r\n-\t\tif item.definition_id == &\"ammo.556_standard\": ids.append(item.instance_id)\r\n-\trequest = profile.create_sortie_request(SortieRequest.PROTOTYPE_AREA_ID, SortieRequest.PROTOTYPE_MISSION_ID, ids)\r\n-\tcheck(SortieRuntime.start_sortie(request, profile) == null and SortieRuntime.last_error.begins_with(\"Overweight\"), \"Oversized explicit request is recoverable\")\r\n-\r\n-func _test_finalize_retry() -> void:\r\n-\tvar profile := ProfileRuntime.new_profile()\r\n-\tvar original := profile.to_dict()\r\n-\tvar session := SortieRuntime.start_sortie(profile.create_sortie_request(), profile)\r\n-\tcheck(session.inventory.add_item(ItemInstance.new(&\"loot.salvage_core_01\", 1, 100, \"retry_loot\")), \"Retry fixture loot\")\r\n-\tcheck(session.complete_extraction(), \"Retry fixture extraction\")\r\n-\tcheck(SortieRuntime.finalize_sortie(\"user://missing-folder/profile.json\") != OK, \"Unwritable destination reports error\")\r\n-\tcheck(profile.to_dict() == original and SortieRuntime.get_current_session() == session, \"Failed save publishes nothing and retains session\")\r\n-\tcheck(SortieRuntime.finalize_sortie(path) == OK, \"Retry succeeds\")\r\n-\tcheck(profile.inventory.contains(\"retry_loot\") and SortieRuntime.get_current_session() == null, \"Successful retry publishes once and clears session\")\r\n-\tvar committed := profile.to_dict()\r\n-\tcheck(SortieRuntime.finalize_sortie(path) == OK and profile.to_dict() == committed, \"Retry after successful finalize remains safe\")\r\n-\r\n-func _quantity(inventory: InventoryState, id: StringName) -> int:\r\n-\tvar result := 0\r\n-\tfor item in inventory.get_items():\r\n-\t\tif item.definition_id == id: result += item.quantity\r\n-\treturn result\r\n+extends Node\n+var failures: Array[String] = []\n+var path := \"user://p0_recovery.json\"\n+\n+func _ready() -> void:\n+\tawait get_tree().process_frame\n+\t_test_malformed_saves()\n+\t_test_atomic_save_and_recovery()\n+\t_test_backup_only_recovery()\n+\t_test_load_and_ammo()\n+\t_test_finalize_retry()\n+\tSortieRuntime.clear_session()\n+\tProfileRuntime.new_profile()\n+\tAudioDirector.shutdown_for_test()\n+\tawait get_tree().create_timer(0.2).timeout\n+\tfor failure in failures:\n+\t\tpush_error(failure)\n+\tprint(\"P0_RECOVERY_TEST: \" + (\"PASS\" if failures.is_empty() else \"FAIL\"))\n+\tget_tree().quit(0 if failures.is_empty() else 1)\n+\n+func check(condition: bool, description: String) -> void:\n+\tif not condition:\n+\t\tfailures.append(description)\n+\n+func _write(data: Variant) -> void:\n+\tvar file := FileAccess.open(path, FileAccess.WRITE)\n+\tfile.store_string(JSON.stringify(data))\n+\tfile.close()\n+\n+func _test_malformed_saves() -> void:\n+\tvar source := ProfileState.create_new().to_dict()\n+\tfor value in [null, [], {}, \"1\", true, 1.5]:\n+\t\t_write({\"schema_version\": value, \"profile\": source})\n+\t\tcheck(SaveService.load_profile(path, false) == null, \"Hostile schema type rejected\")\n+\tfor value in [null, {}, [], \"100\", true, -1, 1e30]:\n+\t\tvar data := source.duplicate(true)\n+\t\tdata.inventory.capacity = value\n+\t\t_write({\"schema_version\": 1, \"profile\": data})\n+\t\tcheck(SaveService.load_profile(path, false) == null, \"Hostile capacity rejected\")\n+\tfor key in [\"quantity\", \"durability\", \"instance_id\", \"definition_id\"]:\n+\t\tfor value in [null, [], {}, true]:\n+\t\t\tvar data := source.duplicate(true)\n+\t\t\tdata.inventory.items[0][key] = value\n+\t\t\t_write({\"schema_version\": 1, \"profile\": data})\n+\t\t\tcheck(SaveService.load_profile(path, false) == null, \"Hostile item field rejected: \" + key)\n+\tvar data := source.duplicate(true)\n+\tdata.loadout.weapon_primary = []\n+\t_write({\"schema_version\": 1, \"profile\": data})\n+\tcheck(SaveService.load_profile(path, false) == null, \"Hostile loadout ID rejected\")\n+\n+func _test_atomic_save_and_recovery() -> void:\n+\tvar profile := ProfileState.create_new()\n+\tcheck(SaveService.save_profile(profile, path) == OK, \"Valid profile saved atomically\")\n+\tcheck(SaveService.save_profile(profile, path) == OK, \"Second save rotates backup\")\n+\tcheck(SaveService.load_profile(path + \".bak\", false).to_dict() == profile.to_dict(), \"Backup is valid previous profile\")\n+\tvar good_backup := FileAccess.get_file_as_string(path + \".bak\")\n+\t_write({\"broken\": true})\n+\tvar broken := FileAccess.get_file_as_string(path)\n+\tProfileRuntime.initialize(path)\n+\tcheck(ProfileRuntime.recovery_required and ProfileRuntime.get_profile().validate(), \"Bad save supplies safe preview profile and requires explicit recovery\")\n+\tcheck(ProfileRuntime.save_profile(path) == ERR_FILE_CORRUPT and FileAccess.get_file_as_string(path) == broken, \"Fallback cannot overwrite bad save\")\n+\tcheck(ProfileRuntime.recover_profile(true) == OK, \"Backup recovery succeeds\")\n+\tcheck(not ProfileRuntime.recovery_required and SaveService.load_profile(path, false) != null, \"Recovered save reopens\")\n+\tcheck(FileAccess.get_file_as_string(path + \".bak\") == good_backup, \"Bad primary did not replace good backup\")\n+\tvar directory := DirAccess.open(\"user://\")\n+\tvar archived := false\n+\tfor file in directory.get_files():\n+\t\tif file.begins_with(\"p0_recovery.json.recovery-\") and FileAccess.get_file_as_string(\"user://\" + file) == broken:\n+\t\t\tarchived = true\n+\tcheck(archived, \"Corrupt original archived byte-for-byte\")\n+\tvar original := FileAccess.get_file_as_string(path)\n+\tprofile.inventory.capacity = -1\n+\tcheck(SaveService.save_profile(profile, path) != OK and FileAccess.get_file_as_string(path) == original, \"Rejected save leaves primary untouched\")\n+\n+func _test_backup_only_recovery() -> void:\n+\tvar orphan := \"user://p0_orphan_%s.json\" % Time.get_ticks_usec()\n+\tvar profile := ProfileState.create_new()\n+\tprofile.credits = 2417\n+\tcheck(SaveService.save_profile(profile, orphan + \".bak\") == OK, \"Only-backup fixture is valid\")\n+\tvar original := FileAccess.get_file_as_bytes(orphan + \".bak\")\n+\tProfileRuntime.initialize(orphan)\n+\tcheck(ProfileRuntime.recovery_required and not FileAccess.file_exists(orphan), \"Missing primary with backup requires an explicit choice\")\n+\tif not ProfileRuntime.recovery_required: return\n+\tcheck(ProfileRuntime.save_profile(orphan) == ERR_FILE_CORRUPT and not FileAccess.file_exists(orphan), \"Fallback cannot silently replace an orphan backup with a new game\")\n+\tcheck(FileAccess.get_file_as_bytes(orphan + \".bak\") == original, \"Blocked save preserves entire backup bytes\")\n+\tcheck(ProfileRuntime.recover_profile(true) == OK, \"Valid orphan backup can be explicitly restored\")\n+\tcheck(not ProfileRuntime.recovery_required and SaveService.load_profile(orphan, false).to_dict() == profile.to_dict(), \"Restored orphan retains all gameplay fields\")\n+\tcheck(FileAccess.get_file_as_bytes(orphan + \".bak\") == original, \"Restore does not rotate fallback into the only backup\")\n+\tcheck(_archived_bytes(orphan + \".bak\", original), \"Orphan backup is archived byte-for-byte before recovery\")\n+\tvar broken := orphan + \".broken\"\n+\tvar file := FileAccess.open(broken + \".bak\", FileAccess.WRITE)\n+\tfile.store_string(\"{unfinished backup\"); file.close()\n+\tvar damaged := FileAccess.get_file_as_bytes(broken + \".bak\")\n+\tProfileRuntime.initialize(broken)\n+\tcheck(ProfileRuntime.recovery_required, \"Unreadable lone backup also cannot silently start fresh\")\n+\tcheck(ProfileRuntime.recover_profile(true) == ERR_FILE_CORRUPT and not FileAccess.file_exists(broken), \"Invalid backup cannot be reported as restored\")\n+\tcheck(FileAccess.get_file_as_bytes(broken + \".bak\") == damaged, \"Failed restore preserves unreadable backup bytes\")\n+\tcheck(ProfileRuntime.recover_profile(false) == OK, \"Explicit start fresh remains available\")\n+\tcheck(_archived_bytes(broken + \".bak\", damaged), \"Explicit fresh start archives lone damaged backup, not a missing primary\")\n+\tcheck(SaveService.load_profile(broken, false) != null and not ProfileRuntime.recovery_required, \"Confirmed fresh profile is valid\")\n+\tvar empty := orphan + \".empty\"\n+\tProfileRuntime.initialize(empty)\n+\tcheck(not ProfileRuntime.recovery_required and not FileAccess.file_exists(empty), \"Neither primary nor backup remains an ordinary fresh player\")\n+\n+\n+func _archived_bytes(original_path: String, bytes: PackedByteArray) -> bool:\n+\tfor file in DirAccess.open(\"user://\").get_files():\n+\t\tif file.begins_with(original_path.get_file() + \".recovery-\") and FileAccess.get_file_as_bytes(\"user://\" + file) == bytes:\n+\t\t\treturn true\n+\treturn false\n+\n+\n+func _test_load_and_ammo() -> void:\n+\tvar profile := ProfileState.create_new()\n+\tcheck(profile.inventory.add_item(ItemInstance.new(&\"ammo.556_standard\", 20000)), \"Large warehouse ammo fixture\")\n+\tvar before := profile.to_dict()\n+\tvar plan := DeploymentPlan.build(profile)\n+\tcheck(plan.ammo_ids.size() <= 3 and plan.weight < 100, \"Automatic plan bounds ammunition even with 20,000 warehouse rounds\")\n+\tvar request := profile.create_sortie_request(SortieRequest.PROTOTYPE_AREA_ID, SortieRequest.PROTOTYPE_MISSION_ID, plan.ammo_ids)\n+\tvar session := SortieRuntime.start_sortie(request, profile)\n+\tcheck(session != null, \"Bounded plan creates session\")\n+\tcheck(SortieRuntime.start_sortie(request, profile) == null and SortieRuntime.get_current_session() == session, \"Duplicate start cannot replace live session\")\n+\tcheck(profile.to_dict() == before, \"Plan and session leave warehouse untouched\")\n+\tvar weapon_id := session.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)\n+\tvar total_before: int = session.get_reserve_ammo(weapon_id) + session.get_weapon_runtime_state(weapon_id).magazine_ammo\n+\tvar weight_before := session.inventory.current_weight\n+\tcheck(session.fire_weapon(weapon_id), \"One shot fires\")\n+\tcheck(is_equal_approx(session.inventory.current_weight, weight_before - ContentDB.get_ammo(&\"ammo.556_standard\").weight), \"Magazine rounds count toward weight\")\n+\tcheck(session.reload_weapon(weapon_id) == 1, \"Reload transfers fired round\")\n+\t# Fill all remaining usable capacity, with no space beyond the reserved magazines.\n+\tvar loot := ItemInstance.new(&\"loot.salvage_core_01\")\n+\tsession.inventory.capacity = session.inventory.current_weight + ContentDB.get_item(loot.definition_id).weight\n+\tcheck(session.inventory.add_item(loot), \"Cargo fills to exact capacity\")\n+\tcheck(session.complete_extraction(), \"Full cargo with two loaded magazines extracts\")\n+\tcheck(_quantity(session.inventory, &\"ammo.556_standard\") == total_before - 1, \"Extraction obeys ammo conservation\")\n+\tvar outcome := SortieRuntime.get_outcome()\n+\tprofile.inventory.capacity = profile.inventory.current_weight\n+\tcheck(SortieOutcomeService.commit_outcome(profile, outcome) == OK, \"Full warehouse expands to accept extracted cargo\")\n+\tcheck(profile.inventory.contains(loot.instance_id), \"Overflow recovery keeps loot\")\n+\tSortieRuntime.clear_session()\n+\t# Explicit oversized requests get an error without touching warehouse or session.\n+\tvar ids: Array[String] = []\n+\tfor item in profile.inventory.get_items():\n+\t\tif item.definition_id == &\"ammo.556_standard\": ids.append(item.instance_id)\n+\trequest = profile.create_sortie_request(SortieRequest.PROTOTYPE_AREA_ID, SortieRequest.PROTOTYPE_MISSION_ID, ids)\n+\tcheck(SortieRuntime.start_sortie(request, profile) == null and SortieRuntime.last_error.begins_with(\"Overweight\"), \"Oversized explicit request is recoverable\")\n+\n+func _test_finalize_retry() -> void:\n+\tvar profile := ProfileRuntime.new_profile()\n+\tvar original := profile.to_dict()\n+\tvar session := SortieRuntime.start_sortie(profile.create_sortie_request(), profile)\n+\tcheck(session.inventory.add_item(ItemInstance.new(&\"loot.salvage_core_01\", 1, 100, \"retry_loot\")), \"Retry fixture loot\")\n+\tcheck(session.complete_extraction(), \"Retry fixture extraction\")\n+\tcheck(SortieRuntime.finalize_sortie(\"user://missing-folder/profile.json\") != OK, \"Unwritable destination reports error\")\n+\tcheck(profile.to_dict() == original and SortieRuntime.get_current_session() == session, \"Failed save publishes nothing and retains session\")\n+\tcheck(SortieRuntime.finalize_sortie(path) == OK, \"Retry succeeds\")\n+\tcheck(profile.inventory.contains(\"retry_loot\") and SortieRuntime.get_current_session() == null, \"Successful retry publishes once and clears session\")\n+\tvar committed := profile.to_dict()\n+\tcheck(SortieRuntime.finalize_sortie(path) == OK and profile.to_dict() == committed, \"Retry after successful finalize remains safe\")\n+\n+func _quantity(inventory: InventoryState, id: StringName) -> int:\n+\tvar result := 0\n+\tfor item in inventory.get_items():\n+\t\tif item.definition_id == id: result += item.quantity\n+\treturn result\n"
+        }
+      ],
+      "other_non_doc_inputs_unchanged": 4090,
+      "scope": "Only orphan-backup startup guard, archive the surviving original file before confirmed recovery, and existing P0 regression expansion. No schema, loot, combat, personal data, paid hooks or current ZIP changes."
+    },
+    "targeted5": {
+      "pass": true,
+      "rows": [
+        {
+          "name": "orphan_after01",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "c670ef911ae080f584a2ab199c9071829877368faaf1720e2ff55af3264d8819"
+        },
+        {
+          "name": "orphan_actual_read01",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+        },
+        {
+          "name": "p0_recovery01",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+        },
+        {
+          "name": "fresh_return01",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "8916a76f73c4f195889622e731168cc942225658e7f9f8430c8f0542db4435a3"
+        },
+        {
+          "name": "fresh_read01",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+        }
+      ],
+      "scope": "Same original failed valid R1 backup, no reset: real BOOT recovery-button callback to base, entire earned gameplay profile and independent read. Expanded P0 direct controlled malformed/orphan restore/start-fresh/archive checks and normal fresh sortie/read. Headless only, no native/compiled/currentZIP fix claim.",
+      "original_earned_source_unchanged": {
+        "pass": true,
+        "rows": [
+          {
+            "name": "route",
+            "pass": true,
+            "exit": 0,
+            "log_sha256": "8916a76f73c4f195889622e731168cc942225658e7f9f8430c8f0542db4435a3"
+          },
+          {
+            "name": "read",
+            "pass": true,
+            "exit": 0,
+            "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+          }
+        ],
+        "source": "D:\\tmp\\bunny_readability_package_20261021_dev01\\gate_preview_source_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+        "sha256": "280766f5a3829ca8b18523581c73ae3e491a95e8ae6ec245c765f569fe412292",
+        "mtime_ns": 1792584780393709200,
+        "successful_sorties": 1,
+        "scope": "Current release EXE actually earned normal first-sortie return and AR upgrade, independent read. No fixture, grants, forced stage or transferred old-source profile; convenience preview only."
+      }
+    },
+    "actual_pending_continuation_and_broken_UI2": {
+      "pass": true,
+      "rows": [
+        {
+          "name": "pending_after04",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "c670ef911ae080f584a2ab199c9071829877368faaf1720e2ff55af3264d8819"
+        },
+        {
+          "name": "damaged_after04",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "886a5ace3c0a03e5b291c19d571c0b970e68e9b5738c2a454f0d30028b5f6004"
+        }
+      ],
+      "scope": "Same pending_boot02 userdata after earlier UI restoration, no reset: normal existing-main BOOT/RESUME of signed v8 checkpoint. Full gameplay comparison excludes display stash layout and allows <=1e-6 only in enemy firing-bone matrices, every permitted delta recorded; ammo/loot/health/progression exact. Original raw backup retained in recovery archive, legitimate new checkpoint may rotate .bak. Controlled malformed backup actual archive/start-fresh button also passed. Initial failed assertions/logs retained."
+    },
+    "full_output": "D:/tmp/bunny_backup_only_20261021_final01",
+    "full_expected_categories": 251,
+    "current_binary_contains_fix": false
+  },
+  "user_priority": "Playable now; stop expanding exhaustiveQA",
+  "playable_delivery": {
+    "pass": true,
+    "launchers": [
+      "开始游戏.cmd",
+      "快速进入校园.cmd"
+    ],
+    "local16": true,
+    "current_backup_fix_in_source": true,
+    "normal_fight_extract_return_and_independent_read_pass": true,
+    "full_regression": "Optional251 stopped at verified engine boundary after87 accepted, allPASS, on explicit playable-priority request. Not completed251.",
+    "new_windows_package": false,
+    "user_game_auto_launched": false,
+    "old_progress_untouched": true,
+    "source_project_frozen": true,
+    "launcher_checks": "Existing static known CMD pattern; no additional native window or full matrix imposed.",
+    "scope": "Playable local source delivery using installed Godot; no public-license/five-hour/80percent-review claim."
+  },
+  "optional_full_stop": {
+    "scope": "User requested fast playable delivery, not exhaustive matrix; optional full job deliberately stopped BETWEEN engine cases, not a game test failure or goal completion.",
+    "accepted_so_far": 87,
+    "all_accepted_rows_pass": true,
+    "full251_claim": false,
+    "yield_proof": {
+      "pid": 17256,
+      "before_case": "q02_slice_test",
+      "no_engine_started_for_this_case": true
+    },
+    "reason": "抓紧了，Token也不是无限的，能玩就行"
+  }
+}

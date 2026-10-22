@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-20",
+  "scope": "Campus power v3 committed shield charge encounter. Not five-hour/human/release acceptance.",
+  "goal_status": "active",
+  "source": {
+    "snapshot": "D:\\tmp\\bunny_campus_ram_20261020_final04",
+    "test_scenes": 111,
+    "categories": 179,
+    "all_pass": true,
+    "results_sha256": "0a6945bf262e0971c19aaaed13638e586039fdea00a405b556215d2cab8087bb",
+    "original_fbx_import_warnings": 2
+  },
+  "build": {
+    "folder": "D:\\tmp\\bunny_campus_ram_20261020_build01",
+    "categories": 71,
+    "all_pass": true
+  },
+  "independent_zip": {
+    "categories": 12,
+    "launcher_cases": 8,
+    "actual_compiled_seed_prefix_cases": 4,
+    "all_pass": true,
+    "native_serial": true,
+    "system_only_PATH": true
+  },
+  "archive": {
+    "archive": "D:\\tmp\\bunny_campus_ram_20261020_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 245197996,
+    "sha256": "5ecfb6bdbfc0dcdd1e9f85b8ecab780199ccff49f544b18fc3d21c3b18f4bce8",
+    "extracted_to": "D:\\tmp\\小兔试玩 校园供电 20261020 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false,
+    "fresh_delivery_extracted_to": "D:\\tmp\\小兔试玩 校园供电 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "fresh_static_files_match": true,
+    "fresh_preview_userdata_not_preplayed": true
+  },
+  "pack_audit": {
+    "entries": 1454,
+    "all_byte_ranges_and_md5": true,
+    "forbidden_original": [],
+    "forbidden_cache": [],
+    "arcana": [],
+    "combatgirls": [],
+    "legacy_and_v2_maps": true,
+    "bucket_scene_and_script_present": true
+  },
+  "all_non_document_root_frozen_build_sources_match": true,
+  "actual_earned_routes": {
+    "earned_forward": {
+      "evidence": "D:\\tmp\\bunny_campus_ram_20261020_build01\\portable_earned_forward\\campus_entry.json",
+      "sha256": "c167862d4bdfc7e1390fb6d26a2fd95ca5d644c6ce3b999948d32a01249aab17",
+      "checks": 16,
+      "power_encounter": {
+        "committed_direction": [
+          -0.305500537157059,
+          0.0,
+          0.952191948890686
+        ],
+        "frames": 170,
+        "ordinary_shots_after": 8,
+        "ordinary_shots_before": 3,
+        "player_impacts": 0,
+        "wall_impacts": 1,
+        "windup_seen": true
+      },
+      "before_returns": 4,
+      "after_returns": 5,
+      "final_health": 260.0
+    },
+    "earned_compat_en": {
+      "evidence": "D:\\tmp\\bunny_campus_ram_20261020_build01\\portable_earned_compat_en\\campus_entry.json",
+      "sha256": "13e29ced5340040585e0baab06c9ede04b2f3bb7297e15e8f740cbe5d0b9bc16",
+      "checks": 16,
+      "power_encounter": {
+        "committed_direction": [
+          -0.311690360307693,
+          0.0,
+          0.950183689594269
+        ],
+        "frames": 171,
+        "ordinary_shots_after": 8,
+        "ordinary_shots_before": 3,
+        "player_impacts": 0,
+        "wall_impacts": 1,
+        "windup_seen": true
+      },
+      "before_returns": 4,
+      "after_returns": 5,
+      "final_health": 260.0
+    }
+  },
+  "legacy_v2_producer": {
+    "producer_project": "D:\\tmp\\bunny_bucket_20261020_final01\\project",
+    "source_manifest": "D:\\tmp\\bunny_bucket_20261020_final01\\source_manifest.json",
+    "source_manifest_sha256": "de65a6d878d2888ac7339025263ee1c99b21a086b14ba5ef2ae5bcba0f1c94b1",
+    "input_profile_sha256": "f1186e9ee42e9d1e03324baf42dc7cae1640a14bbb92f77a6feae62c3baec71c",
+    "produced": "D:\\tmp\\bunny_campus_ram_20261020_dev01\\old_producer02_userdata\\Godot\\app_userdata\\Bunny Verification bunny_bucket_20261020_final01\\campus_chapter_test.json",
+    "sha256": "a509c8855fdf2e80f4a71d028076d172dec19969ffee5689610aee67b4b4a327",
+    "reader_input": "D:\\tmp\\bunny_campus_ram_20261020_dev01\\legacy_userdata\\Godot\\app_userdata\\Bunny Verification bunny_campus_ram_20261020_dev01\\campus_chapter_test.json"
+  },
+  "preserved": {
+    "assets/": {
+      "old_count": 881,
+      "all_unchanged": true
+    },
+    "scenes/": {
+      "old_count": 99,
+      "all_unchanged": true
+    },
+    "translations": {
+      "old": 1555,
+      "current": 1567,
+      "old_unchanged": true
+    }
+  },
+  "originals_preserved": {
+    "assets/": {
+      "old_count": 881,
+      "all_original_bytes_preserved": true
+    },
+    "scenes/": {
+      "old_count": 97,
+      "all_original_bytes_preserved": true
+    },
+    "personal_saves": {
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455246252200
+      },
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455253759300
+      }
+    },
+    "paid_archive": {
+      "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+      "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec"
+    },
+    "arcana": {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd"
+    },
+    "translations": {
+      "old_preserved": 1495,
+      "current": 1525
+    }
+  },
+  "campus_facts_version": 3,
+  "profile_schema": 11,
+  "checkpoint_schema": 6,
+  "paid_motion_data_in_default_package": false,
+  "public_release_approved": false,
+  "not_claimed": [
+    "human duration, difficulty or enjoyment",
+    "80 percent positive reviews",
+    "minimum hardware or clean VM",
+    "audio listening acceptance",
+    "final melee animation or final environment art"
+  ]
+}

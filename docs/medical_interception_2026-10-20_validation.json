@@ -1,0 +1,684 @@
+{
+  "recorded_at": "2026-10-20T15:13:29.554944+08:00",
+  "status": "local_windows_packet_independent_zip_and_launchers_verified_not_public_release",
+  "goal_achieved": false,
+  "source": {
+    "directory": "D:\\tmp\\bunny_medical_runners_20261020_final03",
+    "test_scenes": 119,
+    "categories": 221,
+    "all_pass": true,
+    "results_sha256": "50011b5d4a432051922375b28373ea3cf55992251013198e00e078a013242c08"
+  },
+  "build": {
+    "directory": "D:\\tmp\\bunny_medical_runners_20261020_build02",
+    "categories": 113,
+    "all_pass": true,
+    "results_sha256": "17ce98f65409b1e4bfc600b74f7a88bc12563af6e0dc02d040c21a00f38b6b9b"
+  },
+  "independent_zip": {
+    "categories": 33,
+    "same_binary_native_pause_continuation": {
+      "method": "Continue unchanged current binary after verified pause-menu interruption; preserve original 11-row attempt. Reuse only its first ten successful cases, then run remaining23 in new isolated folders with original unedited seeds. No automatic retry loop, force focus/unpause, source/build changes or relaxed checks.",
+      "archive_sha256": "b4a1da82b25a88effe337bbf89b9df52adac085a8c8534c63e856c03819b84e2",
+      "exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+      "pck_sha256": "27e23ab2799797d1885d3ad42bc809986e6053a0f6b3d3cd802a014514e50473",
+      "all_static_files_unchanged": true,
+      "original_results_sha256": "f5c02960dc8dffbf04b12587bb83cbf38b9e8812495e7e2387f47d173def2a3f",
+      "failed_case": {
+        "name": "medical_earned_compat_en",
+        "pass": false,
+        "exit": 1,
+        "command": [
+          "D:\\tmp\\小兔试玩 药房截取 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "medical_intercept",
+          "--english"
+        ],
+        "evidence_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_medical_earned_compat_en",
+        "data_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_medical_earned_compat_en",
+        "log_sha256": "ea3686864d796cf65f9872dbcf001cc553ba3b7ad44defcf557c17e7ed3cf77c"
+      },
+      "failure_state": {
+        "contacts": [
+          "CampusGround:<StaticBody3D#602721492494>"
+        ],
+        "flow_mode": "pause",
+        "paused": true,
+        "player": "(47.0, -0.025781, -48.0)",
+        "target": "(-18.0, 0.0, -10.0)",
+        "waypoint": "(46.0, 0.03, -47.92308)"
+      },
+      "reused_success_names": [
+        "medical_forward",
+        "medical_compat_en",
+        "medical_drop_write",
+        "medical_drop_read",
+        "medical_route_write",
+        "medical_route_read",
+        "medical_escape",
+        "actual_old_medical_v5_read",
+        "medical_earned_forward",
+        "medical_earned_forward_read"
+      ]
+    },
+    "human_confirmed_foreground_continuation": {
+      "method": "Human explicitly confirmed availability to keep native game window foreground. Continue identical archive with fresh isolated data for remaining14 cases; reuse only nineteen completed cases. Exclude case20 despite its QA PASS marker because paused transition left no profile_after. Preserve both earlier attempts. No forced focus/unpause, source changes or relaxed completion checks.",
+      "archive_sha256": "b4a1da82b25a88effe337bbf89b9df52adac085a8c8534c63e856c03819b84e2",
+      "exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+      "pck_sha256": "27e23ab2799797d1885d3ad42bc809986e6053a0f6b3d3cd802a014514e50473",
+      "all_static_files_unchanged": true,
+      "original_attempt02_results_sha256": "82a634753801c4d467a75d7337d616571a784e725072bc346f201b129e863dda",
+      "excluded_incomplete_case": {
+        "name": "handoff_earned_forward",
+        "pass": true,
+        "exit": 0,
+        "command": [
+          "D:\\tmp\\小兔试玩 药房截取 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "campus_chapter"
+        ],
+        "evidence_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_attempt02_handoff_earned_forward",
+        "data_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_attempt02_handoff_earned_forward",
+        "log_sha256": "c80c5b27a0b3ad0fdf06768f7bef8ab93a9fb6132fd8597664998cb99eb30066"
+      },
+      "failure_state": {
+        "actual": "res://scenes/presentation/slice/deployment.tscn",
+        "flow_mode": "pause",
+        "paused": true,
+        "scene_elapsed": 3.01757533333333,
+        "transitioning": false,
+        "wanted": "res://scenes/battle/battle.tscn",
+        "window_focused": false
+      },
+      "reused_success_names": [
+        "medical_forward",
+        "medical_compat_en",
+        "medical_drop_write",
+        "medical_drop_read",
+        "medical_route_write",
+        "medical_route_read",
+        "medical_escape",
+        "actual_old_medical_v5_read",
+        "medical_earned_forward",
+        "medical_earned_forward_read",
+        "medical_earned_compat_en",
+        "medical_earned_compat_en_read",
+        "inventory",
+        "handoff_forward",
+        "handoff_compat_en",
+        "handoff_pending_write",
+        "handoff_pending_read",
+        "actual_old_v4_read",
+        "actual_old_v3_read"
+      ],
+      "human_foreground_availability_confirmed": true
+    },
+    "previous_case20_QA_PASS_marker_rejected_for_missing_profile_after": true,
+    "first_ten_successes_reused_without_relabeling_original_failed_case": true,
+    "actual_launcher_success_cases": 18,
+    "expected_failure_status_propagation": {
+      "pass": true,
+      "expected_exit": 1,
+      "observed_exit": 1,
+      "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 药房截取 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\运行本地试玩.cmd\" --headless --fixed-fps 60 -- --local-qa invalid_mode\""
+    },
+    "all_pass": true,
+    "all_current_binary_fresh_cases": true,
+    "native_serial": true,
+    "system_only_PATH": true
+  },
+  "archive": {
+    "archive": "D:\\tmp\\bunny_medical_runners_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 246170968,
+    "sha256": "b4a1da82b25a88effe337bbf89b9df52adac085a8c8534c63e856c03819b84e2",
+    "extracted_to": "D:\\tmp\\小兔试玩 药房截取 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false,
+    "fresh_delivery_extracted_to": "D:\\tmp\\小兔试玩 药房截取 20261020 04\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "fresh_static_files_match": true,
+    "fresh_preview_userdata_not_preplayed": true
+  },
+  "pack_audit": {
+    "entries": 1569,
+    "all_byte_ranges_and_md5": true,
+    "forbidden_original": [],
+    "forbidden_cache": [],
+    "arcana": [],
+    "combatgirls": [],
+    "legacy_and_v2_maps": true,
+    "bucket_scene_and_script_present": true,
+    "water_v1_v2_v3_maps": true,
+    "market_scripts_present": true,
+    "rescue_scene_and_script_present": true,
+    "handoff_scene_and_script_present": true,
+    "medical_scene_and_private_qa_present": true,
+    "fresh_campus_navigation_variants_present": [
+      "resources/navigation/campus_cabinet_0.tres.remap",
+      "resources/navigation/campus_cabinet_1.tres.remap",
+      "resources/navigation/campus_cabinet_2.tres.remap",
+      "resources/navigation/campus_cabinet_3.tres.remap",
+      "resources/navigation/campus_handoff_closed_0.tres.remap",
+      "resources/navigation/campus_handoff_closed_1.tres.remap",
+      "resources/navigation/campus_handoff_closed_2.tres.remap",
+      "resources/navigation/campus_handoff_closed_3.tres.remap"
+    ]
+  },
+  "preview_preparation": [
+    {
+      "name": "medical",
+      "pass": true,
+      "command": null,
+      "source_sha256": "2448bce4d922e0e884ffb16e5a16aa572cb04b356020181b83ae29803498bc91",
+      "prepared_sha256": "2448bce4d922e0e884ffb16e5a16aa572cb04b356020181b83ae29803498bc91",
+      "only_stash_display_layout_may_change": true,
+      "method": "exact compiled Q01-return byte copy; actual BOOT/Continue/medical route already verified in compiled earned case",
+      "exact_source_bytes": true,
+      "compiled_boot_route_evidence": "D:\\tmp\\bunny_medical_runners_20261020_build02\\medical_intercept_earned_captures\\campus_entry.json",
+      "compiled_boot_route_evidence_sha256": "93145167fe10c4a0123eef7140cdf0fe1b5be69d3c535c4af80ce646dd74275b"
+    },
+    {
+      "name": "campus",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_medical_runners_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "6e6cc91441b38692d916fad9e3b4802bcbf0bf44a75e360a3c6da09ba0f963b2",
+      "prepared_sha256": "324728799190f86156c1c07c9960459d8c501b14f6a8f4e606980dd02442a54a",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "handoff",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_medical_runners_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "2a5e021c0b0c01e3ca8d953e4ae80f898893c0a15e0254ac49d51bc3877187eb",
+      "prepared_sha256": "2a5e021c0b0c01e3ca8d953e4ae80f898893c0a15e0254ac49d51bc3877187eb",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "maintenance",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_medical_runners_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "743f8c332942781cd082ff8ed2dfe7e22c19f8e1a7a0d3033d8130ed1bfc5d2b",
+      "prepared_sha256": "743f8c332942781cd082ff8ed2dfe7e22c19f8e1a7a0d3033d8130ed1bfc5d2b",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "rescue",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_medical_runners_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "12df46297525dd51c8d931994914c625e5166a70dbee2b1500746899bb419fcd",
+      "prepared_sha256": "7f963ed368a2ce0a39826f45b6ee2568db6a1a1f0e586e1192661e7a69ee7839",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "act2",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_medical_runners_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "12df46297525dd51c8d931994914c625e5166a70dbee2b1500746899bb419fcd",
+      "prepared_sha256": "7f963ed368a2ce0a39826f45b6ee2568db6a1a1f0e586e1192661e7a69ee7839",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "ending",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_medical_runners_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "5f798d0ad65a07de8ba3579b5e2a770e379837e4f47fccbfba88e46d795713c1",
+      "prepared_sha256": "2599ec91f96e6aa70cb180be704c98cb01a4dc63275637fc94660e39a27a401d",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "bucket",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_medical_runners_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "eb0c1b9fa02dabb1095d0ede40400f9b0fcc8d29abea15c5faf8cff87d12fac1",
+      "prepared_sha256": "085f4b1a43e29e283783a219294208ae01cb9d3ed81c4bf31d533bab849c783b",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    },
+    {
+      "name": "blockade",
+      "pass": true,
+      "command": [
+        "D:\\tmp\\bunny_medical_runners_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_chapter",
+        "--bootstrap-only"
+      ],
+      "source_sha256": "eb0c1b9fa02dabb1095d0ede40400f9b0fcc8d29abea15c5faf8cff87d12fac1",
+      "prepared_sha256": "085f4b1a43e29e283783a219294208ae01cb9d3ed81c4bf31d533bab849c783b",
+      "only_stash_display_layout_may_change": true,
+      "method": "ordinary BOOT/Continue bootstrap only",
+      "log_sha256": "b157ec6b58c418dad9c12de09fc6d072624b1b73cf0349dc3c55ec9b0d939af9"
+    }
+  ],
+  "medical_seed_exact_copy_other_eight_normal_boot_prepared": true,
+  "prezip_native_gates": [
+    {
+      "name": "market_fresh",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "D:\\tmp\\bunny_medical_runners_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--rendering-method",
+        "forward_plus",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "--",
+        "--local-qa",
+        "market_earned"
+      ],
+      "log_sha256": "76ea0bf4a4ce9765b8f504c1b76662f54663e3eb51e313c8c1b82ef6618ee1b9"
+    },
+    {
+      "name": "actual_failed_resume",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "D:\\tmp\\bunny_medical_runners_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--rendering-method",
+        "forward_plus",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "--",
+        "--local-qa",
+        "market_earned",
+        "--resume-delivery"
+      ],
+      "log_sha256": "a38519b9ec9dd3641772b56f1f08e9c9f91755416c0e71c0502d654b6d5aa651"
+    }
+  ],
+  "actual_failed_delivery_resume": {
+    "row": {
+      "name": "actual_failed_delivery_resume",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "D:\\tmp\\小兔试玩 药房截取 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--rendering-method",
+        "forward_plus",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "--",
+        "--local-qa",
+        "market_earned",
+        "--resume-delivery"
+      ],
+      "evidence_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_attempt03_actual_failed_delivery_resume",
+      "data_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_attempt03_actual_failed_delivery_resume",
+      "log_sha256": "a38519b9ec9dd3641772b56f1f08e9c9f91755416c0e71c0502d654b6d5aa651"
+    },
+    "read": {
+      "name": "actual_failed_delivery_resume_read",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "D:\\tmp\\小兔试玩 药房截取 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "market_earned",
+        "--read"
+      ],
+      "evidence_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_attempt03_actual_failed_delivery_resume_read",
+      "data_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_attempt03_actual_failed_delivery_resume",
+      "log_sha256": "e6266651de5f968142e4e21932bab2785a7fbac7c2cc627c3688c370f2ee6750"
+    },
+    "input_sha256": "9ba59ab76f0037015594d926911ded902dc0d0808a7bbff6b72f4107177b12dc",
+    "result_sha256": "7ae6ea622081e79ef74c4f7072003e2786f73e8edad53c3326f90122f70eb324",
+    "exact_cargo_id": "763204ebd99e7d4acd3070fa714f7b7f",
+    "original_failure_cause_not_confirmed": true
+  },
+  "prior_failed_build01_zip": {
+    "exec_session": 53080,
+    "status": "terminal_failure_independent_zip_case25_market_earned_forward",
+    "terminal_exit": 1,
+    "completed_categories": 25,
+    "passed_categories": 24,
+    "expected_categories": 31,
+    "failed_case": {
+      "name": "market_earned_forward",
+      "pass": false,
+      "exit": 1,
+      "command": [
+        "D:\\tmp\\小兔试玩 药房截取 20261020 01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--rendering-method",
+        "forward_plus",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "--",
+        "--local-qa",
+        "market_earned"
+      ],
+      "evidence_folder": "D:\\tmp\\bunny_medical_runners_20261020_build01\\portable_market_earned_forward",
+      "data_folder": "D:\\tmp\\bunny_medical_runners_20261020_build01\\portable_market_earned_forward",
+      "log_sha256": "a98c1733b71db879509264c0c8043f64eba0fac20fe7cd604fab34f3bc18b541"
+    },
+    "launchers_executed": false,
+    "fresh_delivery_created": false,
+    "archive": {
+      "archive": "D:\\tmp\\bunny_medical_runners_20261020_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "bytes": 246168948,
+      "sha256": "5348992c363f153d14b41eb89bb759010e0844942a689e65f3d200804597311e",
+      "extracted_to": "D:\\tmp\\小兔试玩 药房截取 20261020 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+      "all_files_match": true,
+      "matches_official_release_template": true,
+      "public_release_approved": false
+    },
+    "failure_original_cause": "Unconfirmed. Original build01 walk did not record pause/focus/contacts; fresh source run and exact failed checkpoint source recovery passed. Do not claim collision bug fixed or original attempt passed."
+  },
+  "actual_earned_native_routes": {
+    "medical_earned_forward": {
+      "path": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_medical_earned_forward\\campus_entry.json",
+      "sha256": "6c2440e5281bb2486e069e88d07e5870d8a1eaf194c394958e52863fe97ae928",
+      "checks": 29,
+      "shots": 15,
+      "kills": 5,
+      "health": 260.0,
+      "from_returns": 2,
+      "to_returns": 3,
+      "not_human_timing_or_balance": true
+    },
+    "medical_earned_compat_en": {
+      "path": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_attempt02_medical_earned_compat_en\\campus_entry.json",
+      "sha256": "7e635401a8b35b19dcd6b829a77640a008aa9d7a26aa551e9a156f054b701ee3",
+      "checks": 31,
+      "shots": 15,
+      "kills": 5,
+      "health": 260.0,
+      "from_returns": 2,
+      "to_returns": 3,
+      "not_human_timing_or_balance": true
+    }
+  },
+  "actual_old_exported_v5": {
+    "pass": true,
+    "scope": "Genuine delivered old exported map5 medical world captured read-only during ordinary movement; old QA process naturally completes. New seed is an actually earned current compiled two-return base profile, no hand-edited milestones. No script injection, forced interruption, focus/unpause override or world/signature editing.",
+    "old_exe": "D:\\tmp\\bunny_campus_handoff_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+    "old_exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "old_pck_sha256": "73c98feab0493224de154fd94fba50140c0e9a2624b52fbcf1dc3582e5eb1413",
+    "input_seed": "D:\\tmp\\bunny_medical_runners_20261020_build01\\medical_seed\\profile.json",
+    "input_seed_sha256": "fdd004dbc08c5fcf25b42804a9f32a24fd752654b62cfa7472ccc50a87550400",
+    "checkpoint": "D:\\tmp\\bunny_medical_runners_20261020_dev01\\old_exported_v5_producer02\\actual_old_exported_v5_checkpoint.json",
+    "checkpoint_sha256": "35526f8f3db8a7ee21618991adb9105cfed24734056b970e5413a6e52b9e7008",
+    "producer_exit": 0,
+    "old_completed_medical_delivery": true,
+    "producer_command": [
+      "D:\\tmp\\bunny_campus_handoff_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+      "--rendering-method",
+      "gl_compatibility",
+      "--audio-driver",
+      "Dummy",
+      "--resolution",
+      "1280x720",
+      "--",
+      "--local-qa",
+      "campus_q02"
+    ]
+  },
+  "actual_old_exported_v5_current_read": {
+    "name": "actual_old_medical_v5_read",
+    "pass": true,
+    "exit": 0,
+    "command": [
+      "D:\\tmp\\小兔试玩 药房截取 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--",
+      "--local-qa",
+      "medical_runners",
+      "--legacy-v5-read"
+    ],
+    "evidence_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_actual_old_medical_v5_read",
+    "data_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_actual_old_medical_v5_read",
+    "log_sha256": "ab96657107d5709cf4627abc8a664cd5801a9276d002196d2c43d401db39fae1",
+    "old_checkpoint_sha256": "35526f8f3db8a7ee21618991adb9105cfed24734056b970e5413a6e52b9e7008",
+    "current_exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "current_pck_sha256": "27e23ab2799797d1885d3ad42bc809986e6053a0f6b3d3cd802a014514e50473"
+  },
+  "other_old_exported_reads": {
+    "v3_supply": {
+      "name": "actual_old_v3_read",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "D:\\tmp\\小兔试玩 药房截取 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_handoff",
+        "--legacy-read"
+      ],
+      "evidence_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_attempt02_actual_old_v3_read",
+      "data_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_attempt02_actual_old_v3_read",
+      "log_sha256": "d86698b594bda8a57afe1c87de30c1398024f9160cd3b9637b1b59066fae2ecd"
+    },
+    "v4_supply_state_restore_only_original_navigation_retained": {
+      "name": "actual_old_v4_read",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "D:\\tmp\\小兔试玩 药房截取 20261020 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "campus_handoff",
+        "--legacy-v4-read"
+      ],
+      "evidence_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_attempt02_actual_old_v4_read",
+      "data_folder": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_attempt02_actual_old_v4_read",
+      "log_sha256": "ac431e7f55befcd99fe6efc73d19345bdb81abdecd3e0d7331fc62fcdef831aa"
+    }
+  },
+  "full_compiled_normal_chain": {
+    "profile": "D:\\tmp\\bunny_medical_runners_20261020_build02\\first_sortie_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+    "sha256": "5f798d0ad65a07de8ba3579b5e2a770e379837e4f47fccbfba88e46d795713c1",
+    "successful_sorties": 10,
+    "campus_finished": true,
+    "finale_closed": true,
+    "no_pending_sortie": true,
+    "not_human_playtime": true
+  },
+  "compiled_visual_review": {
+    "recorded_at": "2026-10-20T15:12:58.840027+08:00",
+    "reviewed": true,
+    "images": {
+      "portable_medical_forward/medical_carrier.png": "3a3d5ba10a7e343241e20304a297adc1e240b62e0d7cd75e014cc0d5b01036e8",
+      "portable_medical_forward/medical_dropped.png": "a2568a01af6a89ba84dfe1f32c1428ba3de8079ed32fdf5cc13033dde73d3fb6",
+      "portable_medical_compat_en/medical_carrier.png": "8f66ed130a3e5edb7f0087d3cbc5ad706c1434b840584625324f608d5c2b3293",
+      "portable_medical_compat_en/medical_dropped.png": "32d3afa0998b5ae9fc89a4cb1dd7b39d4a4f1250ba393911ff4a118e4eb52900",
+      "portable_medical_earned_forward/02_medical_interception.png": "8299be74c6fca34d748e0a1fb92aa32b134694b065c3ae5f89fc5a87da3bc43c",
+      "portable_medical_earned_forward/03_medical_cargo.png": "9515bdded37c56a85c291e6b83634c4d4e5cff13c0bf5a6ab46f9a120d1c6b59",
+      "portable_attempt02_medical_earned_compat_en/02_medical_interception.png": "1183ba41d7c5e2e808dc4665eee6969b49230f5aa29fbf46356ef95ebb5fb453",
+      "portable_attempt02_medical_earned_compat_en/03_medical_cargo.png": "ce51fec6bb3034f1a0655e896d34babb086b2c284c26a6bec8ececf9ebb17bca",
+      "portable_attempt03_actual_failed_delivery_resume/market_resumed_bypass.png": "dde6ccece3c27601ee6f73a840201602228f83ed83767db271ed2c2fa257c770"
+    },
+    "exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "pck_sha256": "27e23ab2799797d1885d3ad42bc809986e6053a0f6b3d3cd802a014514e50473",
+    "archive_sha256": "b4a1da82b25a88effe337bbf89b9df52adac085a8c8534c63e856c03819b84e2",
+    "scope": "Nine actual current compiled independent ZIP native screenshots inspected by the model, not reused source or build01 pixels. Includes live/drop fixtures, actual normal medical earned routes, and actual old failed exported checkpoint restored by current ZIP via ordinary BOOT/RESUME/bypass/extraction.",
+    "observations": [
+      "White medical bag and short tag are visible only with live carrier presentation; no floating second bag/tag after death.",
+      "Dropped compact caches use original E/TAKE interaction and separate dressings; cargo screen confirms carried supplies.",
+      "Chinese Forward+ and English Compatibility inspected; ordinary pressure bypass is physically reached in resumed old exported battle."
+    ],
+    "remaining_visual_limits": [
+      "Graybox; characters small in combat view, old stock-cache labels remain oversized and overlapping in places.",
+      "Death actors have visibly stiff arm poses; not final death-animation or art acceptance.",
+      "No original heroine replacement or paid-animation inclusion; no audio listening, human pacing, minimum-spec/clean-machine or final-release-quality claim."
+    ]
+  },
+  "all_non_document_root_frozen_build_files_match": false,
+  "preserved": {
+    "assets/": {
+      "count": 881,
+      "all_unchanged": true
+    },
+    "scenes/": {
+      "count": 106,
+      "all_unchanged": true
+    },
+    "translations": {
+      "old": 1705,
+      "current": 1710,
+      "old_unchanged": true
+    }
+  },
+  "originals": [
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+      "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+      "mtime_ns": 1792216455246252200
+    },
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+      "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+      "mtime_ns": 1792216455253759300
+    },
+    {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+      "mtime_ns": 1792376341839829300
+    },
+    {
+      "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+      "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec",
+      "mtime_ns": 1790951818552782600
+    }
+  ],
+  "versions": {
+    "profile": 11,
+    "checkpoint": 6,
+    "campus_facts": 5,
+    "new_medical_map": 6,
+    "other_fresh_campus_map": 5,
+    "old_maps_preserved": true
+  },
+  "prior_source_evidence": {
+    "path": "D:\\tmp\\bunny_medical_runners_20261020_build02\\prior_medical_source_validation.json",
+    "sha256": "7385accc9ee751244cb6c92a4f4eded086af8f2971c335957fecf3869cb34782"
+  },
+  "limits": [
+    "LOCAL_ONLY, publishing permissions not cleared.",
+    "Graybox; old stock-case labels and final character/hand-contact presentation remain unfinished.",
+    "Dummy audio, no listening/minimum-spec/clean-machine acceptance.",
+    "No human first-play duration/five-hour proof, satisfaction data or 80-percent real reviews.",
+    "No commit/push/upload, model replacement, author contact or subagents."
+  ],
+  "current_root_is_delivered_snapshot": false,
+  "inputs_matched_at_delivery": true,
+  "subsequent_source_work": {
+    "recorded_at": "2026-10-20T15:39:33.731138+08:00",
+    "QA_timeout_failure_fixed": true,
+    "relay_PA_source_only": true,
+    "validation": "docs/campus_relay_diversion_2026-10-20_validation.json",
+    "delivered_archive_unchanged": true
+  }
+}

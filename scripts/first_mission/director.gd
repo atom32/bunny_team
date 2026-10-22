@@ -101,7 +101,9 @@ func _process(delta: float) -> void:
 				patrol.set_physics_process(true)
 				_advance(Stage.PMC)
 		Stage.RELOAD:
-			if reload_seen and battle.player.get_reload_remaining() <= 0.0:
+			# Full magazines and exhausted compatible stock cannot be reloaded.
+			# Continue without granting ammo or pretending a reload happened.
+			if battle.player.get_reload_remaining() <= 0.0 and (reload_seen or not battle.player.can_reload()):
 				_advance(Stage.TERMINAL if patrol_looted else Stage.LOOT)
 		Stage.LOOT:
 			if patrol_looted: _advance(Stage.TERMINAL)
@@ -116,6 +118,11 @@ func _process(delta: float) -> void:
 
 func _advance(next: Stage) -> void:
 	stage = next
+	# Inputs made while exploring an earlier lesson must not instantly finish
+	# the next card (or activate its patrol without a fresh training shot).
+	if stage == Stage.AIM: start_aim = battle.player.aim_direction
+	elif stage == Stage.FIRE: fired = false
+	elif stage == Stage.RELOAD: reload_seen = false
 	_refresh_guide()
 	_refresh_destination()
 	AudioDirector.play_sfx(&"ui_confirm", -6)

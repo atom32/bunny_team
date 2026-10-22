@@ -11,6 +11,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	_pickup_feedback()
 	await _cache_ui()
+	await _keyboard_cache()
 	AudioDirector.shutdown_for_test()
 	await get_tree().create_timer(.3).timeout
 	for failure in failures: push_error(failure)
@@ -215,3 +216,151 @@ func _count(inventory: InventoryState, id: StringName) -> int:
 	for item in inventory.get_items():
 		if item.definition_id == id: quantity += item.quantity
 	return quantity
+
+
+func _ui_frames() -> void:
+	for frame in 5: await get_tree().process_frame
+
+
+func _ui_action(action: String) -> void:
+	var keys := {"ui_accept":KEY_ENTER, "ui_up":KEY_UP, "ui_down":KEY_DOWN, "ui_focus_next":KEY_TAB, "ui_cancel":KEY_ESCAPE, "interact":KEY_E}
+	for pressed in [true, false]:
+		var event := InputEventKey.new()
+		event.keycode = keys[action]
+		event.physical_keycode = keys[action]
+		event.pressed = pressed
+		get_viewport().push_input(event)
+		await get_tree().process_frame
+	await _ui_frames()
+
+
+func _pad_button(button: JoyButton) -> void:
+	for pressed in [true, false]:
+		var event := InputEventJoypadButton.new()
+		event.button_index = button
+		event.pressed = pressed
+		Input.parse_input_event(event)
+		await get_tree().physics_frame
+		await get_tree().process_frame
+	await _ui_frames()
+
+
+func _keyboard_cache() -> void:
+	# Explicit cache fixture: input/ownership regression, not normal-AI playtesting.
+	if DisplayServer.get_name() != "headless":
+		get_window().size = Vector2i(1280, 720)
+		await _ui_frames()
+	GameLanguage.set_language("en", false)
+	var profile := ProfileRuntime.new_profile()
+	var deployed := DeploymentPlan.deploy(profile, SortieRequest.PROTOTYPE_AREA_ID, SortieRequest.PROTOTYPE_MISSION_ID, "", false)
+	check(deployed.error == OK, "keyboard cache fixture deploys normally")
+	if deployed.error != OK: return
+	var battle: Node3D = load("res://scenes/battle/battle.tscn").instantiate()
+	battle.result_transition_enabled = false
+	add_child(battle)
+	await _ui_frames()
+	battle.player.set_physics_process(false)
+	for enemy in battle.enemy_container.get_children(): enemy.process_mode = Node.PROCESS_MODE_DISABLED
+	var ui: Node = battle.get_node("SlicePresentation")
+	ui.container = ui.crates.values()[0]
+	battle.player.global_position = ui.container.global_position + Vector3.RIGHT
+	for pickup in ui.container.contents(): pickup.free()
+	for index in 14:
+		var pickup := LootPickup.new()
+		pickup.setup(ItemInstance.new(&"material.data_drive", 3))
+		ui.container.get_parent().add_child(pickup)
+	var session: SortieSession = battle.session
+	var exchange_cargo := ItemInstance.new(&"material.fabric", 2)
+	check(session.inventory.add_item_preserving_instance(exchange_cargo), "keyboard exchange fixture carries real salvage")
+	var capacity := session.inventory.capacity
+	session.inventory.capacity = session.inventory.current_weight + .45
+	var weapon_id: String = session.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)
+	var rounds: int = session.get_weapon_runtime_state(weapon_id).magazine_ammo
+	var before_profile := profile.to_dict()
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	await _ui_action("interact")
+	check(is_instance_valid(ui.panel), "physical interaction key opens the actual nearby cache")
+	if not is_instance_valid(ui.panel):
+		battle.free(); SortieRuntime.clear_session(); return
+	var focus := get_viewport().gui_get_focus_owner()
+	check(focus != null and ui.panel.is_ancestor_of(focus), "opening supply cache immediately gives keyboard/controller a usable focus")
+	if focus == null or not ui.panel.is_ancestor_of(focus):
+		ui._close_loot(); battle.free(); SortieRuntime.clear_session(); return
+	check(focus.name == &"Take0", "initial cache focus is the first TAKE, not a background control")
+	check(focus.get_theme_stylebox("focus").border_color == FieldManualStyle.INK and focus.get_theme_stylebox("focus").border_width_left == 2, "focused cache action has a distinct dark outline over the orange TAKE button")
+	var before_count := _count(session.inventory, &"material.data_drive")
+	await _ui_action("ui_accept")
+	check(_count(session.inventory, &"material.data_drive") == before_count + 3, "actual UI accept takes exactly one whole stack")
+	check(get_viewport().gui_get_focus_owner() != null and get_viewport().gui_get_focus_owner().name == &"Take0", "taking a row keeps focus on the next remaining row")
+	var hint := ui.panel.find_child("CapacityHint0", true, false) as Label
+	check(hint != null and hint.text == tr("SHORT BY %.2f kg") % .45, "cache announces exact shortfall before another TAKE")
+	var before_full := session.inventory.to_dict()
+	await _ui_action("ui_accept")
+	check(session.inventory.to_dict() == before_full, "keyboard overweight rejection never splits or duplicates a stack")
+	check(ui.panel.find_child("PickupFeedback", true, false).text.contains("Overweight:"), "keyboard user can read the ordinary capacity rejection")
+	check(get_viewport().gui_get_focus_owner() != null and get_viewport().gui_get_focus_owner().name == &"Take0", "failed TAKE does not strand keyboard focus")
+	session.inventory.capacity = capacity
+	await _ui_frames()
+	hint = ui.panel.find_child("CapacityHint0", true, false) as Label
+	check(hint != null and not hint.text.contains("SHORT BY"), "weight hints refresh while case stays open when carried weight/capacity changes")
+	var scroll := ui.panel.find_child("CacheScroll", true, false) as ScrollContainer
+	var deep_row := ui.panel.find_child("Take11", true, false) as Button
+	check(deep_row != null, "long cache contains offscreen keyboard action")
+	if deep_row:
+		deep_row.grab_focus()
+		await _ui_frames()
+		check(scroll.scroll_vertical > 0 and scroll.get_global_rect().encloses(deep_row.get_global_rect()), "keyboard focus automatically scrolls the chosen row into view")
+		ui._show_loot()
+		await _ui_frames()
+		check(get_viewport().gui_get_focus_owner() != null and get_viewport().gui_get_focus_owner().name == &"Take11", "refresh preserves chosen row instead of jumping to the first item")
+		await _ui_action("ui_up")
+		check(get_viewport().gui_get_focus_owner() != null and get_viewport().gui_get_focus_owner().name == &"Take10", "directional controller navigation follows cache rows")
+		await _pad_button(JOY_BUTTON_DPAD_UP)
+		check(get_viewport().gui_get_focus_owner() != null and get_viewport().gui_get_focus_owner().name == &"Take9", "physical D-pad event navigates the actual cache")
+		await _ui_action("ui_focus_next")
+		focus = get_viewport().gui_get_focus_owner()
+		check(focus != null and ui.panel.is_ancestor_of(focus), "Tab traversal remains inside the live cache")
+	GameLanguage.set_language("zh_CN", false)
+	session.inventory.capacity = session.inventory.current_weight
+	await _ui_frames()
+	hint = ui.panel.find_child("CapacityHint0", true, false) as Label
+	check(hint != null and hint.text == tr("SHORT BY %.2f kg") % .45 and not hint.text.contains("SHORT BY"), "Chinese shortfall is localized and live")
+	check(get_viewport().gui_get_focus_owner() != null and ui.panel.is_ancestor_of(get_viewport().gui_get_focus_owner()), "language rebuild retains keyboard focus")
+	if DisplayServer.get_name() != "headless" and "--capture" in OS.get_cmdline_user_args():
+		await RenderingServer.frame_post_draw
+		get_viewport().get_texture().get_image().save_png(OS.get_environment("BUNNY_EVIDENCE").path_join("cache_keyboard_shortfall_zh.png"))
+	GameLanguage.set_language("en", false)
+	session.inventory.capacity = capacity
+	var choice := ui.panel.find_child("ExchangeCargo", true, false) as OptionButton
+	choice.grab_focus()
+	await _ui_action("ui_accept")
+	await _ui_action("ui_down")
+	await _ui_action("ui_accept")
+	check(ui.exchange_id == exchange_cargo.instance_id, "real keyboard popup selects the carried exchange stack")
+	check(get_viewport().gui_get_focus_owner() != null and get_viewport().gui_get_focus_owner().name == &"ExchangeCargo", "exchange selection rebuild returns focus to its selector")
+	var first_pickup: LootPickup = ui.container.contents()[0]
+	var incoming := first_pickup.item_instance
+	var swap := ui.panel.find_child("Swap0", true, false) as Button
+	check(swap != null and not swap.disabled, "selecting salvage enables the actual exchange action")
+	if swap and not swap.disabled:
+		swap.grab_focus()
+		battle.player.set_physics_process(true)
+		await get_tree().physics_frame
+		var before_position: Vector3 = battle.player.global_position
+		await _pad_button(JOY_BUTTON_A)
+		check(session.inventory.get_item(incoming.instance_id) == incoming and first_pickup.item_instance == exchange_cargo, "keyboard exchange transfers incoming identity and leaves outgoing stack recoverable")
+		check(not session.inventory.contains(exchange_cargo.instance_id), "keyboard exchange does not duplicate outgoing salvage")
+		check(battle.player._dodge_cooldown_time <= 0.0 and Vector2(before_position.x-battle.player.global_position.x,before_position.z-battle.player.global_position.z).length() < .15, "live-physics controller A confirms without triggering the overlapping dodge binding")
+	for pickup in ui.container.contents(): ui._take(pickup)
+	await _ui_frames()
+	check(get_viewport().gui_get_focus_owner() != null and get_viewport().gui_get_focus_owner().name == &"CloseCache", "empty cache focuses close instead of a freed item")
+	check(profile.to_dict() == before_profile, "keyboard cache leaves warehouse and rewards untouched")
+	check(session.get_weapon_runtime_state(weapon_id).magazine_ammo == rounds and not get_tree().paused, "keyboard cache neither fires weapon nor pauses combat")
+	await _pad_button(JOY_BUTTON_B)
+	check(not is_instance_valid(ui.panel) and not battle.player.aim_input_captured, "cancel closes cache and restores aiming")
+	check(not get_tree().paused and not FlowMenu.is_open(), "controller cancel does not leak through into the pause menu")
+	await _pad_button(JOY_BUTTON_A)
+	check(battle.player._dodge_cooldown_time > 0.0, "normal controller dodge remains available after cache closes")
+	battle.free()
+	SortieRuntime.clear_session()

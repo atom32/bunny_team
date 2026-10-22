@@ -54,7 +54,20 @@ func _ready() -> void:
 func _test_resources() -> void:
 	var profile := ProfileRuntime.get_profile()
 	check(profile != null and profile.validate(), "ProfileRuntime owns a valid current profile")
-	check(ContentDB.get_items().size() == 36, "content manifest preserves 31 prior definitions and adds five food/drink trade goods")
+	var expected_ids: Array[String] = [
+		"weapon.assault_rifle_01", "weapon.smg_01", "weapon.rocket_launcher_01", "armor.recon_shell_01", "armor.bulwark_plate_01",
+		"equipment.field_pack_01", "equipment.thruster_pack_01", "ammo.556_standard", "ammo.556_ap", "loot.salvage_core_01",
+		"ammo.rocket_standard", "weapon.pistol_01", "weapon.shotgun_01", "weapon.sniper_01", "weapon.lmg_01",
+		"ammo.9mm_standard", "ammo.12g_buckshot", "ammo.762_standard", "material.scrap", "material.propellant",
+		"material.electronics", "material.fabric", "material.parts", "material.wiring", "material.data_drive",
+		"medical.field_dressing", "medical.medkit", "material.quickloader_kit", "material.suppressor_kit", "material.observation_optic_kit",
+		"story.experiment_recorder", "supply.field_ration", "supply.energy_bar", "supply.canned_beans", "supply.bottled_water",
+		"supply.citrus_drink", "story.pump_battery", "material.market_carrier_frame", "equipment.courier_sling", "equipment.freight_frame",
+	]
+	var actual_ids: Array[String] = []
+	for definition in ContentDB.get_items(): actual_ids.append(String(definition.id))
+	expected_ids.sort(); actual_ids.sort()
+	check(actual_ids == expected_ids, "content manifest retains all prior37 IDs and adds exactly carrier frame plus two rebuilt packs")
 	for medical_id in [&"medical.field_dressing", &"medical.medkit"]:
 		var medical := ContentDB.get_item(medical_id, false) as MedicalDefinition
 		check(medical != null and medical.healing > 0 and medical.use_seconds > 0 and medical.weight > 0, "medical consumable resolves with real healing, use time and carried weight")

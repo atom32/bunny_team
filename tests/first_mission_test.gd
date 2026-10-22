@@ -53,20 +53,34 @@ func _run() -> void:
 		var high_case = battle.area_root.find_child("HighValueLootSpawn", true, false)
 		check(not director.patrol.is_physics_processing() and not patrol_case.visible and not high_case.visible, "Training starts safely with no visible supplies or active PMC")
 		check(not extraction.can_extract(session), "Cannot skip mission from the spawn beacon")
+		extraction._process(0.0)
+		check(not extraction.is_in_group("interactable") and extraction.get_interaction_prompt(battle.player, session).is_empty(), "Locked beacon cannot steal focus or teach the terminal before movement")
+		for child in extraction.get_children():
+			if child is VisualInstance3D: check(not child.visible, "Locked return visual does not cover the starting heroine")
 		check(not terminal.interact(battle.player, session).success, "Cannot investigate before training")
 		director.set_process(false)
+		battle.player.aim_direction = Vector3.RIGHT
+		check(session.fire_weapon(battle.player.weapon_instance.instance_id), "Early exploration shot consumes real ammunition")
+		battle.player.weapon_fired.emit(0.1)
+		director.reload_seen = true # Explicit earlier-step history fixture.
 		battle.player.global_position += Vector3(4,0,0)
 		director._process(0.1)
 		check(director.stage == director.Stage.AIM, "Actual travel advances movement training")
+		director._process(0.1)
+		check(director.stage == director.Stage.AIM, "Pre-lesson aim does not skip the aiming card")
 		battle.player.aim_direction = -director.start_aim
 		director._process(0.1)
 		check(director.stage == director.Stage.FIRE, "Aim change advances aiming training")
+		director._process(0.1)
+		check(director.stage == director.Stage.FIRE and not director.fired, "Past exploration shot cannot activate the new patrol step")
 		check(session.fire_weapon(battle.player.weapon_instance.instance_id), "Training shot consumes real ammo")
 		battle.player.weapon_fired.emit(0.1)
 		director._process(0.1)
 		check(director.stage == director.Stage.PMC and director.patrol.is_physics_processing(), "Real shot activates first PMC")
 		director.patrol._die(Vector3.ZERO)
 		check(director.stage == director.Stage.RELOAD and patrol_case.visible, "PMC death reveals guaranteed upgrade material")
+		director._process(0.1)
+		check(director.stage == director.Stage.RELOAD and not director.reload_seen, "Past reload history cannot skip the fresh-magazine lesson")
 		check(battle.player.reload_weapon(), "Reload uses real reserve ammunition")
 		director._process(0.1)
 		battle.player._reload_remaining_by_weapon[battle.player.weapon_instance.instance_id] = 0.0
@@ -109,6 +123,10 @@ func _run() -> void:
 		terminal._process(8.1)
 		check(session.is_mission_completed() and director.stage == director.Stage.CHOICE, "Investigation completes and exposes risk choice")
 		check(high_case.visible and extraction.can_extract(session), "Both routes are available after the alarm")
+		extraction._process(0.0)
+		check(extraction.is_in_group("interactable") and not extraction.get_interaction_prompt(battle.player, session).is_empty(), "Actual terminal completion enables ordinary beacon interaction")
+		for child in extraction.get_children():
+			if child is VisualInstance3D: check(child.visible, "Unlocked beacon restores its real visual")
 		await _capture("choice")
 		director.choose_route(bonus)
 		director._process(12.1)
@@ -182,6 +200,7 @@ func _run() -> void:
 		workshop.queue_free()
 		get_tree().current_scene = null
 		await get_tree().process_frame
+	for mode in ["full", "no_reserve"]: await _test_reload_admission(mode)
 	# Failure must leave the first mission available.
 	var retry_profile := ProfileRuntime.new_profile()
 	var retry_session := SortieRuntime.start_sortie(retry_profile.create_sortie_request(&"first_mission_area", &"first_mission"), retry_profile)
@@ -213,6 +232,37 @@ func _capture(label: String) -> void:
 	if directory.is_empty(): directory = ProjectSettings.globalize_path("user://first_mission_captures")
 	check(DirAccess.make_dir_recursive_absolute(directory) == OK, "Graphical evidence directory is writable")
 	check(get_viewport().get_texture().get_image().save_png(directory.path_join("first_mission_%s.png" % label)) == OK, "Graphical evidence saved: " + label)
+
+func _test_reload_admission(mode: String) -> void:
+	# Controlled edge fixtures, not an input-driven playthrough: an already
+	# full gun or exhausted compatible stock must not demand an impossible reload.
+	SortieRuntime.clear_session()
+	var profile := ProfileRuntime.new_profile()
+	var plan := DeploymentPlan.build(profile)
+	var session := SortieRuntime.start_sortie(profile.create_sortie_request(&"first_mission_area", &"first_mission", plan.ammo_ids), profile)
+	var battle = load("res://scenes/battle/battle.tscn").instantiate()
+	battle.result_transition_enabled = false
+	get_tree().root.add_child(battle)
+	get_tree().current_scene = battle
+	battle.player.set_physics_process(false)
+	var director = battle.get_node("FirstMissionDirector")
+	director.set_process(false)
+	check(session.fire_weapon(battle.player.weapon_instance.instance_id), "Reload admission fixture spends a real round: " + mode)
+	if mode == "full":
+		check(session.reload_weapon(battle.player.weapon_instance.instance_id) == 1, "Already-full fixture uses actual reserve, not a magazine grant")
+	else:
+		for item in session.inventory.get_items():
+			if String(item.definition_id) in battle.player.weapon_data.compatible_ammo_ids: session.inventory.remove_item(item.instance_id)
+	check(not battle.player.can_reload() and session.validate(), "Edge fixture is a valid sortie with no possible reload: " + mode)
+	var before := session.inventory.to_dict()
+	director._advance(director.Stage.PMC)
+	director.patrol._die(Vector3.ZERO)
+	director._process(0.1)
+	check(director.stage == director.Stage.LOOT and not director.reload_seen, "Impossible reload never soft-locks the earned salvage step: " + mode)
+	check(session.inventory.to_dict() == before and not session.is_mission_completed() and not profile.first_mission_completed, "Admission grants no ammunition, loot, victory or reward: " + mode)
+	battle.queue_free(); get_tree().current_scene = null
+	await get_tree().process_frame
+	SortieRuntime.clear_session()
 
 func _test_upgraded_hit(session: SortieSession) -> void:
 	check(session.activate(), "Upgraded next sortie activates")

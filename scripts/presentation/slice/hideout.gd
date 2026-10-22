@@ -155,28 +155,66 @@ func show_section(value: String) -> void:
 			description += tr("\nRecover supplies. Reach the south\nextraction beacon to return alive.") if first else tr("\nTwo exits assigned on arrival.\n%s: objectives and extraction map.") % ControlBindings.label("route_map")
 			if mission.mission_id == &"streets_relay":
 				description = tr("REPAIR BOTH RELAYS, THEN EXTRACT\n\nReading hall + maintenance yard.\n12s nearby each; damage cancels.\nLocal noise; no materials needed.\n\nRecords: optional alternate exit.\n%s: objectives and extraction map.") % ControlBindings.label("route_map")
+			if mission.mission_id in [MaintenanceStory.MISSION,FinaleStory.MISSION]:
+				description=tr(mission.display_name)+"\n\n"+tr(mission.description)
+			if mission.mission_id == BlockadeStory.MISSION:
+				description = tr(mission.display_name) + "\n\n" + tr(BlockadeJourney.BRIEF)
+			if mission.mission_id == WaterworksStory.MISSION:
+				description = tr(mission.display_name) + "\n\n" + tr("West garage: 8kg battery. East pump: 8s installation.\nChoose courtyard water + dressings, or tanker water + ammunition.\nSouth retreat stays open. %s: street map.") % ControlBindings.label("route_map")
 		elif value == "Workshop": description = "MODERN ARMORY\n\nPistol / SMG / Assault Rifle\nShotgun / Sniper / Light Machine Gun\nRPG Field Launcher\n\nSelect two weapons in the Hanger.\nAmmo is carried for your loadout.\nHold Shift with the sniper to survey."
 		elif value == "Rest": description = "PERSONAL QUARTERS\n\nField operator quarters.\nThe city's security network is hostile.\nThis room is still yours.\n\nRecover. Re-equip. Come home."
+		if value=="Rest" and ProfileRuntime.get_profile().maintenance_closed:description=tr("HOME / EVERYONE IS BACK\n\nThe food is still warm. The radio can wait.\n\nFree sorties remain available.")
 		if value == "Workshop":
 			var profile := ProfileRuntime.get_profile()
 			description = tr("WAREHOUSE / SALVAGE CORE × %d\n\nAR / WEAPON UPGRADE\nCost: 1 Salvage Core\nDamage: 20 → 22 (+10%%)\n\n%s") % [FirstMissionPreparation.salvage_count(profile), tr("INSTALLED / READY FOR SORTIE 02" if profile.ar_damage_upgraded else ("Materials secured. Install your upgrade." if profile.first_mission_completed else "Bring materials home from First Mission."))]
 			if profile.first_mission_completed and not profile.ar_damage_upgraded:
 				var upgrade := SliceUI.button(panel, "UPGRADE AR / 1 SALVAGE CORE", Vector2(24,276), Vector2(312,48), _upgrade_weapon)
 				upgrade.disabled = FirstMissionPreparation.salvage_count(profile) < 1
-		var detail := _label(panel, description, Vector2(24,88), 16, FieldManualStyle.MUTED)
+		var request: Array = SortieGuidance.at_base(ProfileRuntime.get_profile()) if value == "Operations" else []
+		if value=="Operations" and ProfileRuntime.get_profile().campus_chapter.finished:request=[]
+		if value == "Operations" and DeploymentPlan.selected_street_mission in [WaterworksStory.MISSION, BlockadeStory.MISSION, MaintenanceStory.MISSION, FinaleStory.MISSION]: request = []
+		if not request.is_empty():
+			var operation := ContentDB.get_mission(DeploymentPlan.selected_street_mission)
+			description = "%s\n\n%s\n\n%s" % [request[0], request[1], tr("Optional operation: %s") % tr(operation.display_name)]
+			var details := SliceUI.button(panel, "OPEN REQUEST / CONTACT", Vector2(24,282), Vector2(312,44), func():
+				var contact := SortieGuidance.contact_at_base(ProfileRuntime.get_profile())
+				show_section("Workshop")
+				screen.get_node("ContactPanel").open_contact(contact, "quests"))
+			details.name = "RequestDetails"
+			if CampusChapter.stage(ProfileRuntime.get_profile().campus_chapter)=="supply" and ProfileRuntime.get_profile().narrative_slice.settled.Q02:
+				details.text=tr("PACK EQUIPMENT / SHEN") if not ProfileRuntime.get_profile().campus_chapter.delivered_armor or ProfileRuntime.get_profile().campus_chapter.delivered_ammo<60 else tr("VIEW DORMITORY HANDOFF / SHEN")
+		var detail := _wrapped_label(panel, description, Vector2(24,88), Vector2(312, 184 if not request.is_empty() else 236), 16, FieldManualStyle.MUTED)
 		if value == "Operations": detail.name = "MissionBriefing"
-		detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		detail.size = Vector2(312, 236)
-		var action := SliceUI.button(panel, "CONFIRM DEPLOYMENT" if value == "Operations" else ("SECOND SORTIE / LOADOUT" if value == "Workshop" and ProfileRuntime.get_profile().ar_damage_upgraded else "MISSION TERMINAL"), Vector2(24,338), Vector2(312,58), _deploy if value == "Operations" else func(): show_section("Hanger" if value == "Workshop" and ProfileRuntime.get_profile().ar_damage_upgraded else "Operations"))
+		var action := SliceUI.button(panel, "CONFIRM DEPLOYMENT" if value == "Operations" else ("SECOND SORTIE / LOADOUT" if value == "Workshop" and ProfileRuntime.get_profile().ar_damage_upgraded else "MISSION TERMINAL"), Vector2(24,338), Vector2(312,58), _deploy if value == "Operations" else (_open_training if value == "Rest" else func(): show_section("Hanger" if value == "Workshop" and ProfileRuntime.get_profile().ar_damage_upgraded else "Operations")))
+		if value == "Rest":
+			var door_ready:=preload("res://scripts/presentation/slice/rescue_return.gd").unlocked(ProfileRuntime.get_profile())
+			var bucket_ready:=preload("res://scripts/presentation/slice/bucket_return.gd").unlocked(ProfileRuntime.get_profile())
+			var replay_size:=Vector2(168 if door_ready and bucket_ready else 350,42)
+			if door_ready:
+				var replay:=SliceUI.button(screen,"THE DOOR CAN WAIT",Vector2(42,590),replay_size,func():GameState.present_scene("res://scenes/presentation/slice/rescue_return.tscn","THE DOOR CAN WAIT"))
+				replay.name="OpenRescueMoment"
+				if bucket_ready:replay.add_theme_font_size_override("font_size",14)
+			if bucket_ready:
+				var replay:=SliceUI.button(screen,"THE BIGGEST BUCKET",Vector2(224 if door_ready else 42,590),replay_size,func():GameState.present_scene("res://scenes/presentation/slice/bucket_return.tscn","THE BIGGEST BUCKET"))
+				replay.name="OpenBucketMoment"
+				if door_ready:replay.add_theme_font_size_override("font_size",14)
+			action.text = tr("OPEN TRAINING ROOM")
+			action.name = "OpenTrainingRoom"
+			if ProfileRuntime.get_profile().maintenance_closed:
+				SliceUI.button(panel,"REPLAY / EVERYONE IS HOME",Vector2(24,214),Vector2(312,48),_open_finale).name="ReplayHomecoming"
+			if preload("res://scripts/presentation/slice/seat_moment.gd").available(ProfileRuntime.get_profile()):
+				var moment := SliceUI.button(panel, "SAVED YOU A SEAT", Vector2(24,276), Vector2(312,48), _open_seat_moment)
+				moment.name = "OpenSeatMoment"
 		FieldManualStyle.primary(action)
 	if value == "Overview":
 		var brief := _panel(screen, Vector2(42,152), Vector2(350,344))
 		brief.name = "BaseBriefing"
 		_label(brief, tr("Overview").to_upper(), Vector2(22,20), 26)
 		_label(brief, tr("QUARTERMASTER  /  %d CREDITS") % ProfileRuntime.get_profile().credits, Vector2(22,68), 16, FieldManualStyle.ACCENT)
-		var briefing := _label(brief, "Your forward operating base.\n\nEquip in the Hanger.\nReview the operation at the Terminal.\nReturn here with what you recover.", Vector2(22,112), 18)
-		briefing.size = Vector2(306,210)
-		briefing.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		var request := SortieGuidance.at_base(ProfileRuntime.get_profile())
+		var text := "%s\n\n%s" % [request[0], request[1]] if not request.is_empty() else "Your forward operating base.\n\nEquip in the Hanger.\nReview the operation at the Terminal.\nReturn here with what you recover."
+		var briefing := _wrapped_label(brief, text, Vector2(22,112), Vector2(306,210), 18)
+		briefing.name = "OverviewRequest"
 		# Keep onboarding present and visible when gear selection is actually needed.
 		_first_mission_panel()
 		var onboarding := screen.get_node_or_null("FirstMissionPanel") as Control
@@ -187,18 +225,21 @@ func show_section(value: String) -> void:
 		contracts.size = Vector2(800, 474)
 		screen.add_child(contracts)
 		contracts.hide()
-		var contact_button := SliceUI.button(screen, "补给与委托", Vector2(42, 516), Vector2(320, 40), func(): show_section("Workshop"))
+		var contact_button := SliceUI.button(screen, "SUPPLIES & REQUESTS", Vector2(42, 516), Vector2(320, 40), func(): show_section("Workshop"))
 		contact_button.name = "ContactsToggle"
-		var contracts_toggle := SliceUI.button(screen, "委托记录", Vector2(908,44), Vector2(208,40), func():
+		var contracts_toggle := SliceUI.button(screen, "CONTRACT RECORDS", Vector2(908,44), Vector2(208,40), func():
 			contracts.visible = not contracts.visible
 			brief.visible = not contracts.visible
 			contact_button.visible = not contracts.visible)
 		contracts_toggle.name = "ContractsToggle"
-		FieldManualStyle.primary(SliceUI.button(screen, "PREPARE SORTIE", Vector2(918,556), Vector2(320,52), func():
+		var story_next:=FinaleStory.next_mission(ProfileRuntime.get_profile())
+		FieldManualStyle.primary(SliceUI.button(screen, "CONTINUE MAIN STORY" if not story_next.is_empty() else "PREPARE SORTIE", Vector2(918,556), Vector2(320,52), func():
 			if not ProfileRuntime.get_profile().first_mission_completed:
 				if screen.has_node("FirstMissionPanel"):
 					screen.get_node("FirstMissionPanel").visible = not screen.get_node("FirstMissionPanel").visible
-			else: show_section("Operations")))
+			else:
+				if not story_next.is_empty():DeploymentPlan.selected_street_mission=story_next
+				show_section("Operations")))
 		contracts.contract_claimed.connect(func():
 			hanger.hanger_ui.configure(ProfileRuntime.get_profile().inventory, ProfileRuntime.get_profile().loadout)
 			hanger.hanger_ui.refresh_owned_items()
@@ -224,12 +265,19 @@ func show_section(value: String) -> void:
 			upgrade.name = "WorkshopUpgrade"
 			upgrade.disabled = FirstMissionPreparation.salvage_count(profile) < 1
 			upgrade.tooltip_text = "AR 伤害 20 → 22；消耗仓库回收核心 ×1"
+		elif profile.ar_damage_upgraded:
+			var fitting := SliceUI.button(screen, "REPLAY / ONE SPARE SCREW", Vector2(882,98), Vector2(360,46), _open_upgrade_moment)
+			fitting.name = "ReplayWorkshopMoment"
 		supplies.contract_claimed.connect(func():
 			hanger.hanger_ui.configure(ProfileRuntime.get_profile().inventory, ProfileRuntime.get_profile().loadout)
 			hanger.hanger_ui.refresh_owned_items()
 		)
 	if value == "Operations":
 		if ProfileRuntime.get_profile().first_mission_completed:
+			var operation_tag := _panel(screen, Vector2(42,116), Vector2(348,24))
+			var next_story:=FinaleStory.next_mission(ProfileRuntime.get_profile())
+			var operation_label := _label(operation_tag, "MAIN STORY / NEXT OPERATION" if not next_story.is_empty() and DeploymentPlan.selected_street_mission==next_story else "FIELD OPERATION / OPTIONAL", Vector2(8,3), 12)
+			operation_label.name = "OptionalOperationLabel"
 			var choices := OptionButton.new()
 			choices.name = "MissionChoice"
 			choices.position = Vector2(42,144)
@@ -242,11 +290,14 @@ func show_section(value: String) -> void:
 			screen.add_child(choices)
 			var time_choice := OptionButton.new()
 			time_choice.name = "LightingChoice"
+			time_choice.disabled = DeploymentPlan.selected_street_mission in [WaterworksStory.MISSION, BlockadeStory.MISSION, MaintenanceStory.MISSION, FinaleStory.MISSION]
 			time_choice.position = Vector2(402,144)
 			time_choice.size = Vector2(188,48)
 			time_choice.add_item(tr("DAY / CAMPUS"))
 			time_choice.add_item(tr("NIGHT / CAMPUS"))
 			time_choice.select(1 if DeploymentPlan.selected_lighting_variant == "night" else 0)
+			if DeploymentPlan.selected_street_mission in [WaterworksStory.MISSION, BlockadeStory.MISSION, MaintenanceStory.MISSION, FinaleStory.MISSION]:
+				time_choice.clear(); time_choice.add_item(tr("WORK LIGHTS / MAINTENANCE" if DeploymentPlan.selected_street_mission in [MaintenanceStory.MISSION,FinaleStory.MISSION] else "DAWN / WATER TOWER")); time_choice.select(0)
 			time_choice.item_selected.connect(func(index: int): DeploymentPlan.selected_lighting_variant = "night" if index == 1 else "day")
 			screen.add_child(time_choice)
 		var preparation_panel := _panel(screen, Vector2(42,208), Vector2(548,386))
@@ -264,7 +315,7 @@ func show_section(value: String) -> void:
 		SliceUI.button(preparation_panel, "CHARACTER / STASH", Vector2(18,190), Vector2(512,48), func(): show_section("Hanger"))
 		var warning := Label.new()
 		warning.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		warning.text = "AT RISK: all deployed equipment and supplies.\nDeath or abandonment loses carried items. Base storage is safe."
+		warning.text = tr("AT RISK: all deployed equipment and supplies.\nDeath or abandonment loses carried items. Base storage is safe.")
 		warning.position = Vector2(18,266)
 		warning.add_theme_font_size_override("font_size",16)
 		warning.add_theme_color_override("font_color",FieldManualStyle.ACCENT)
@@ -283,6 +334,13 @@ func show_section(value: String) -> void:
 
 func _deploy() -> void:
 	hanger._on_deploy_requested()
+
+func _open_training() -> void:
+	GameState.present_scene("res://scenes/presentation/slice/training_room.tscn", "OFF-DUTY TRAINING")
+
+func _open_seat_moment() -> void:
+	if preload("res://scripts/presentation/slice/seat_moment.gd").available(ProfileRuntime.get_profile()):
+		GameState.present_scene("res://scenes/presentation/slice/seat_moment.tscn", "SAVED YOU A SEAT")
 
 func _first_mission_panel() -> void:
 	var profile := ProfileRuntime.get_profile()
@@ -316,9 +374,29 @@ func _upgrade_weapon() -> void:
 	hanger.hanger_ui.sync_loadout_selection()
 	AudioDirector.play_sfx(&"ui_confirm")
 	show_section("Workshop")
+	_open_upgrade_moment()
+
+func _open_upgrade_moment() -> void:
+	if not ProfileRuntime.get_profile().ar_damage_upgraded: return
+	var error := GameState.present_scene("res://scenes/presentation/slice/workshop_moment.tscn", "ONE SPARE SCREW / BACK AT HOME")
+	if error != OK and error != ERR_BUSY:
+		FlowMenu.show_error(tr("Could not open the fitting. Your upgrade is saved; replay it from the workshop."))
 
 
 # Presentation-only adapters; callbacks and data ownership remain unchanged.
+func _wrapped_label(parent: Node, text: String, at: Vector2, extent: Vector2, font_size: int, color: Color = FieldManualStyle.INK) -> Label:
+	var result := Label.new()
+	# Establish wrapping before entering the tree: an unwrapped initial minimum
+	# can clamp a subsequent size assignment and leave long briefs wider than the card.
+	result.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	result.text = text
+	result.position = at
+	result.size = extent
+	result.add_theme_font_size_override("font_size", font_size)
+	result.add_theme_color_override("font_color", color)
+	parent.add_child(result)
+	return result
+
 func _panel(parent: Node, at: Vector2, extent: Vector2) -> Panel:
 	var result := SliceUI.panel(parent, at, extent)
 	result.add_theme_stylebox_override("panel", FieldManualStyle.panel())
@@ -326,3 +404,6 @@ func _panel(parent: Node, at: Vector2, extent: Vector2) -> Panel:
 
 func _label(parent: Node, text: String, at: Vector2, font_size: int = 18, color: Color = FieldManualStyle.INK) -> Label:
 	return SliceUI.label(parent, text, at, font_size, color)
+
+func _open_finale() -> void:
+	if ProfileRuntime.get_profile().maintenance_closed:GameState.present_scene("res://scenes/presentation/slice/homecoming_finale.tscn","EVERYONE IS HOME")

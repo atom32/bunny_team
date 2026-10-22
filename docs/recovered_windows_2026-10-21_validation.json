@@ -1,0 +1,148 @@
+{
+  "pass": true,
+  "status": "local_windows_packet_verified_fresh_delivery_ready",
+  "visibility": "LOCAL_ONLY_DO_NOT_UPLOAD",
+  "public_release_approved": false,
+  "goal_complete": false,
+  "delivery": "D:\\tmp\\小兔试玩 改装收获 20261021 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+  "never_launched_delivery": true,
+  "all_static_files_match": true,
+  "static_files": 32,
+  "archive": {
+    "archive": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 246268606,
+    "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+    "extracted_to": "D:\\tmp\\小兔试玩 改装收获 20261021 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false
+  },
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "current_root_non_document_inputs_match": 4047,
+  "source_manifest_sha256": "8d4618721e688bc9420b9eade3709fe36342c8152e189e38c309ef2de0f3151d",
+  "compiled_categories": 125,
+  "compiled_results_sha256": "87505010a64aeaf05bf26feb721c7f8de8a7108a1ff2885a2ce356a3bcdaa199",
+  "independent_zip_cases": 60,
+  "independent_results_sha256": "c751a201a82c2a1b5305b7775f43a8374d382f87a668e12755dd7347ac202b5c",
+  "semantic_acceptance_sha256": "6bcf47988af92a88c584f231ef027711bb45954879f6e80cb007d09626dd9aea",
+  "cmd_successful_launches": 22,
+  "cmd_isolated_groups": 12,
+  "cmd_expected_negative_exit": 1,
+  "cmd_results_sha256": "c0476127d0a6ee95bc7e9218cd656d82e81a97af8776f8a23628625650a5c63b",
+  "preview_sources": 11,
+  "pck": {
+    "pass": true,
+    "pck_sha256": "c548de61183b876df458626a30891070400f9ffd27ca0f633975723a856f5923",
+    "entries": 1611,
+    "all_byte_ranges_and_md5_verified": true,
+    "new_loot_and_private_qa_present": true,
+    "no_profile_backup_userdata": true
+  },
+  "earned_finds": [
+    {
+      "name": "recovered_earned_forward02",
+      "before_returns": 3,
+      "after_returns": 10,
+      "searches": 6,
+      "find": {
+        "definition_id": "weapon.smg_01",
+        "durability": 100.0,
+        "fitting": "quickloader",
+        "instance_id": "c21c0599655c7167bbb6a3c98038164c",
+        "quantity": 1
+      },
+      "trial": {
+        "find": {
+          "definition_id": "weapon.smg_01",
+          "durability": 100.0,
+          "fitting": "quickloader",
+          "instance_id": "c21c0599655c7167bbb6a3c98038164c",
+          "quantity": 1
+        },
+        "health": 260.0,
+        "kills": 2,
+        "reload": {
+          "expected": 1.08,
+          "observed": 1.08,
+          "remaining": 1.08
+        },
+        "shots": 42
+      },
+      "evidence_sha256": "7d87d35210f609ff3c8a303cc43ffe3e2e12091db88b819edefdaf1a17ac1d90"
+    },
+    {
+      "name": "recovered_earned_compat_en",
+      "before_returns": 3,
+      "after_returns": 5,
+      "searches": 1,
+      "find": {
+        "definition_id": "weapon.sniper_01",
+        "durability": 100.0,
+        "fitting": "observation_optic",
+        "instance_id": "82085ae1784017cc160554e18706a2b7",
+        "quantity": 1
+      },
+      "trial": {
+        "find": {
+          "definition_id": "weapon.sniper_01",
+          "durability": 100.0,
+          "fitting": "observation_optic",
+          "instance_id": "82085ae1784017cc160554e18706a2b7",
+          "quantity": 1
+        },
+        "health": 260.0,
+        "kills": 3,
+        "reload": {
+          "expected": 2.42,
+          "observed": 2.42,
+          "remaining": 2.42
+        },
+        "shots": 3
+      },
+      "evidence_sha256": "601f0cd658b470ebd2222ac05f06a4861ab624a3103e1365ff3c7af08add6244"
+    }
+  ],
+  "visual_review": {
+    "count": 12,
+    "path": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\visual_review_complete.json",
+    "sha256": "9a2d5f02192fc662eeefb95af6da25945def1d3927434304daa4c3868530fe03"
+  },
+  "protected_files_unchanged": [
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+      "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+      "mtime_ns": 1792485868281761900
+    },
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+      "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+      "mtime_ns": 1792485868289265500
+    },
+    {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+      "mtime_ns": 1792376341839829300
+    },
+    {
+      "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+      "mtime_ns": 1792510165593990200
+    }
+  ],
+  "failed_attempts_retained": [
+    "portable_results.json",
+    "portable_results02.json",
+    "focus_interruption_original_profile.json",
+    "relay_focus_interruption_original_profile.json",
+    "focus_resume_diagnostic01/result.json"
+  ],
+  "accepted_retries_do_not_claim_original_interrupted_world_resumed": true,
+  "scope_limits": [
+    "Synthetic native controls and Dummy audio, not human gameplay duration, difficulty, sound or fun.",
+    "124-scene/231-category source baseline predates explicitly documented visibility/earned-QA delta; current compiled125 and independentZIP60 cover current packet.",
+    "Not five-hour human first playthrough; no real review approval percentage.",
+    "Existing heroine unchanged; Arcana and Aigei-paid CombatGirls sources/animations excluded.",
+    "Public redistribution licensing, clean machine and minimum specification remain pending.",
+    "Foreground gate beam and debrief text contrast still need visual polish."
+  ]
+}

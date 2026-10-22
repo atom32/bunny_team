@@ -23,7 +23,7 @@ func validate_profile() -> bool:
 	if id.is_empty() or not model or not animation_library or skeleton_path.is_empty() or not is_finite(model_scale) or model_scale <= 0 or not is_finite(forward_yaw): return false
 	for semantic in [&"idle", &"walk", &"run", &"attack", &"hit", &"death"]:
 		if not semantic_clips.has(semantic) or not animation_library.has_animation(semantic_clips[semantic]): return false
-	var review := preload("res://addons/neon_content/asset_review.gd")
+	var review := preload("res://scripts/data/scene_safety.gd")
 	if review.has_scripts(model): return false
 	var instance := model.instantiate()
 	var skeleton := instance.get_node_or_null(skeleton_path) as Skeleton3D

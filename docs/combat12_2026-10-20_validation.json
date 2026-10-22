@@ -1,0 +1,2018 @@
+{
+  "date": "2026-10-20T01:30:08.456465+08:00",
+  "status": "verified_combat12_local_source_trial_not_public_release",
+  "goal_achieved": false,
+  "five_hour_game_complete": false,
+  "public_release_approved": false,
+  "content": "Twelve CombatGirls clips drive the original heroine in an isolated normally playable source project. No new chapter or NPC scene in this batch.",
+  "source": {
+    "directory": "D:\\tmp\\bunny_combat12_20261020_final03",
+    "non_document_files": 3760,
+    "default_runtime_files": 1425,
+    "cold_import_and_localization": [
+      {
+        "name": "localization_build",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_combat12_20261020_final03\\project\\tests\\test_localization_build.py",
+          "-v"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "afe2c94a12f916b847bb85af7e0c6d5d1d3e696e11742ddde24175b4ee4cf929"
+      },
+      {
+        "name": "cold_import",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_combat12_20261020_final03\\project",
+          "--headless",
+          "--editor",
+          "--import"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+        ],
+        "sha256": "bb9abd937184b17fe15fcbe7bffc51b1d4b2880e7ba3aea565cef52227f1ec3e"
+      }
+    ],
+    "headless_default_regression": {
+      "directory": "D:\\tmp\\bunny_combat12_20261020_base01",
+      "test_scenes": 103,
+      "categories": 149,
+      "passed": 149,
+      "warnings": "Two pre-existing FBX warnings at cold import only",
+      "native_26_route_suite_rerun": false,
+      "runtime_hashes_match_current_except_isolated_configuration": true
+    },
+    "default_runtime_change": "Preserve Input.get_vector magnitude in player velocity; no full-keyboard or dodge speed change."
+  },
+  "installation": {
+    "scope": "LOCAL ONLY, no model substitution or public distribution approval",
+    "library_input": "D:\\tmp\\bunny_combat12_20261020_dev01\\project\\baked_motion\\combat12_52.tres",
+    "library_sha256": "642d70497ddfaecef9ae2b096d1af4341ff0dd964f741db99950e2ff47e8d363",
+    "patched_base_files": [
+      {
+        "path": "scenes/player/player.tscn",
+        "before": "73b84dd2cc13f8e87212de1b2b3f8bdcc93ce5f63043f4a1fcf487a0ab57a69f",
+        "replacement": [
+          "res://scripts/player/player_controller.gd",
+          "res://local_motion/player.gd"
+        ],
+        "after": "7d157fc458fc54737f9ec2beb34333f02f9fb5f67a23b1c8005e626093426074"
+      },
+      {
+        "path": "scripts/player/player_controller.gd",
+        "before": "f87f9cafc49a17dcdc1a5ebb6ee3412607c711f0052c00c4a9a827349981d1a7",
+        "replacement": [
+          "res://scripts/presentation/artoria_bunny/pose_adapter.gd",
+          "res://local_motion/rig.gd"
+        ],
+        "after": "dd6b252a5666a8f945c8be986627370d94531615bfb948081aa3d46df53da622"
+      }
+    ],
+    "generated_files": {
+      "player.gd": "8417afb3eb0b78ae40f6fb7c494e3dc43380c6bb9e544745dda574ad4a83673c",
+      "rig.gd": "a1ff7c4e0c2f5bfc9e237201f618b1b709f7a539de45499a6d9884b25ae47e05",
+      "hands.gd": "9da6541503051a2e9ed210d12feb77f283ca940e8660995f3165b8a3cf5776db",
+      "axis.gd": "2e886ae428d8c636e84b5abbae8e8f819013932d94e52f1c30882c3f7d591264",
+      "gaze.gd": "c5d2ae8e62baf8d69f6d0b800e119ffa4e76d237328dac1bc629e87363024efd",
+      "relax.gd": "27a07cdd319c6e8cc8712bb6b70ce83e9df49b2dc8062eded9476962560962c7",
+      "library.tres": "642d70497ddfaecef9ae2b096d1af4341ff0dd964f741db99950e2ff47e8d363"
+    }
+  },
+  "local_files": {
+    "local_motion/axis.gd": "2e886ae428d8c636e84b5abbae8e8f819013932d94e52f1c30882c3f7d591264",
+    "local_motion/gaze.gd": "c5d2ae8e62baf8d69f6d0b800e119ffa4e76d237328dac1bc629e87363024efd",
+    "local_motion/hands.gd": "9da6541503051a2e9ed210d12feb77f283ca940e8660995f3165b8a3cf5776db",
+    "local_motion/installation.json": "62d1eab57d43a0293c717a1dfa0d81dc3d9715ff92e8fc72cab542cf278919d4",
+    "local_motion/library.tres": "642d70497ddfaecef9ae2b096d1af4341ff0dd964f741db99950e2ff47e8d363",
+    "local_motion/player.gd": "8417afb3eb0b78ae40f6fb7c494e3dc43380c6bb9e544745dda574ad4a83673c",
+    "local_motion/relax.gd": "27a07cdd319c6e8cc8712bb6b70ce83e9df49b2dc8062eded9476962560962c7",
+    "local_motion/rig.gd": "a1ff7c4e0c2f5bfc9e237201f618b1b709f7a539de45499a6d9884b25ae47e05"
+  },
+  "matrix": [
+    {
+      "name": "workshop_headless",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_combat12_20261020_final03\\project",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "res://tests/workshop_moment_test.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "elapsed": 4.269272804260254,
+      "log_sha256": "1b5f36e806ef8b3a767cac394ce58810421ebe1aad238d21ec84a6de26b51564"
+    },
+    {
+      "name": "training_headless",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_combat12_20261020_final03\\project",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "res://tests/training_room_test.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "elapsed": 4.44743800163269,
+      "log_sha256": "1f3b5de8b07a8abfe9df6d04895bd404afc273196600b407594614d8c0aaab6a"
+    },
+    {
+      "name": "controlled_headless",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_combat12_20261020_final03\\project",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "res://tools/local_combat_review.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "elapsed": 3.7931220531463623,
+      "log_sha256": "9ca754a71537fb96e1c28f6d4c151d56d88a66025f577838c21f4573f3959a0d"
+    },
+    {
+      "name": "actual_headless",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_combat12_20261020_final03\\project",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "res://tools/local_combat_run.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "elapsed": 9.562511920928955,
+      "log_sha256": "a13e0f75319fdb3a36b6fcbf450c550c3a233ece19a24c01ac730e1d8baf45a1"
+    },
+    {
+      "name": "controlled_forward",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_combat12_20261020_final03\\project",
+        "--rendering-method",
+        "forward_plus",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "--fixed-fps",
+        "60",
+        "res://tools/local_combat_review.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "elapsed": 61.02969765663147,
+      "log_sha256": "c6fa3e1246318cc8c14c1bc77277c7edda6d0d6784784840e665df7cd47a9b5e"
+    },
+    {
+      "name": "controlled_compat",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_combat12_20261020_final03\\project",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "--fixed-fps",
+        "60",
+        "res://tools/local_combat_review.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "elapsed": 20.500524520874023,
+      "log_sha256": "87f98d178cf299aca54f5030cc0d4546d45d03014a05f928ee16fbf379c17496"
+    },
+    {
+      "name": "actual_forward",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_combat12_20261020_final03\\project",
+        "--rendering-method",
+        "forward_plus",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "res://tools/local_combat_run.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "elapsed": 123.16956067085266,
+      "log_sha256": "78e70712c99acc6e8a9508f516b3a0e0c276575f812d1e16ee2b7bca5f5d115a"
+    },
+    {
+      "name": "forward_read",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_combat12_20261020_final03\\project",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "res://tests/first_sortie_run.tscn",
+        "--quit-after",
+        "600000",
+        "--",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "elapsed": 2.3082754611968994,
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    },
+    {
+      "name": "actual_compat",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_combat12_20261020_final03\\project",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "res://tools/local_combat_run.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "elapsed": 119.18057799339294,
+      "log_sha256": "7cab70d5b279332cf13e7352ea403748b69fdbd048664655e077b0d14f544471"
+    },
+    {
+      "name": "compat_read",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_combat12_20261020_final03\\project",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "res://tests/first_sortie_run.tscn",
+        "--quit-after",
+        "600000",
+        "--",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "elapsed": 2.3072597980499268,
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    }
+  ],
+  "controlled": [
+    {
+      "name": "controlled_headless",
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_headless\\review.json",
+      "sha256": "1caf2dcf119af1dbd14f6827cfb97bcaaba96f596e1a0d398a020a6c6ef2ae5e",
+      "measures": {
+        "failures": [],
+        "max_authored_reload_delta": 0.194534927606583,
+        "max_length_error": 5.49480319023132e-07,
+        "max_weapon_fit_offset": 0.170705810189247,
+        "scope": "Controlled pose/weapon review, not normal play or human acceptance",
+        "states": {
+          "AimIdle": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.155434280633926,
+            "max_left_error": 4.90243792228284e-07,
+            "max_right_error": 3.74387042256785e-07,
+            "min_foot_y": 0.0937748551368713,
+            "source": "R_AimIdle"
+          },
+          "Dodge": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.20477981865406,
+            "max_left_error": 5.05446507759189e-07,
+            "max_right_error": 3.12857849849024e-07,
+            "min_foot_y": 0.0807927325367928,
+            "source": "R_Evade_fix"
+          },
+          "Hit": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.152116864919662,
+            "max_left_error": 3.87877690855021e-07,
+            "max_right_error": 3.92147626371298e-07,
+            "min_foot_y": 0.0989900156855583,
+            "source": "R_Hit1_high"
+          },
+          "Holstered": {
+            "free_left_frames": 150,
+            "free_right_frames": 150,
+            "max_foot_y": 0.151804909110069,
+            "max_left_error": 0.0,
+            "max_right_error": 0.0,
+            "min_foot_y": 0.135166242718697,
+            "source": "R_PutGun"
+          },
+          "HolsteredRun": {
+            "free_left_frames": 123,
+            "free_right_frames": 123,
+            "max_foot_y": 0.623300909996033,
+            "max_left_error": 0.0,
+            "max_right_error": 0.0,
+            "min_foot_y": 0.0709969401359558,
+            "source": "R_Run"
+          },
+          "HolsteredWalk": {
+            "free_left_frames": 204,
+            "free_right_frames": 204,
+            "max_foot_y": 0.311901062726974,
+            "max_left_error": 0.0,
+            "max_right_error": 0.0,
+            "min_foot_y": 0.104697361588478,
+            "source": "R_Walk"
+          },
+          "Idle": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.152807995676994,
+            "max_left_error": 4.94471748879732e-07,
+            "max_right_error": 4.43372158542843e-07,
+            "min_foot_y": 0.123201563954353,
+            "source": "R_Idle"
+          },
+          "PutGun": {
+            "free_left_frames": 150,
+            "free_right_frames": 60,
+            "max_foot_y": 0.172707960009575,
+            "max_left_error": 0.0,
+            "max_right_error": 5.10364770889282e-07,
+            "min_foot_y": 0.0993619784712791,
+            "source": "R_PutGun"
+          },
+          "Reload": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.15680368244648,
+            "max_left_error": 3.95372495631818e-07,
+            "max_right_error": 4.80778965084028e-07,
+            "min_foot_y": 0.0941497832536697,
+            "source": "Rifle_Reload"
+          },
+          "Run": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.623300909996033,
+            "max_left_error": 4.96959842166689e-07,
+            "max_right_error": 3.02827373843684e-07,
+            "min_foot_y": 0.0709969401359558,
+            "source": "R_Run"
+          },
+          "Shoot": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.153755724430084,
+            "max_left_error": 3.83107675361316e-07,
+            "max_right_error": 4.82852783534327e-07,
+            "min_foot_y": 0.0986626744270325,
+            "source": "R_AimIdle_Shoot"
+          },
+          "TakeGun": {
+            "free_left_frames": 267,
+            "free_right_frames": 0,
+            "max_foot_y": 0.224306061863899,
+            "max_left_error": 4.88112561924936e-07,
+            "max_right_error": 4.90555123633385e-07,
+            "min_foot_y": 0.0976135358214378,
+            "source": "R_TakeGun_fix"
+          },
+          "Walk": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.310130834579468,
+            "max_left_error": 5.18123442816432e-07,
+            "max_right_error": 3.87806124990675e-07,
+            "min_foot_y": 0.088154524564743,
+            "source": "R_AimWalk_F"
+          },
+          "WalkBack": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.311554074287415,
+            "max_left_error": 6.25407892584917e-07,
+            "max_right_error": 4.89149215354701e-07,
+            "min_foot_y": 0.0916620045900345,
+            "source": "R_AimWalk_B"
+          },
+          "WalkRelaxed": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.311901062726974,
+            "max_left_error": 5.99948123181093e-07,
+            "max_right_error": 4.3636811142278e-07,
+            "min_foot_y": 0.104697361588478,
+            "source": "R_Walk"
+          },
+          "WalkReload": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.310130834579468,
+            "max_left_error": 5.16406373662903e-07,
+            "max_right_error": 4.80778965084028e-07,
+            "min_foot_y": 0.088154524564743,
+            "source": "R_AimWalk_F"
+          }
+        }
+      },
+      "measurement_scope": "Contact, length and arm-drop are measured in the modifier callback. Foot heights are raw FK diagnostics read outside that callback, not final rendered sole planting."
+    },
+    {
+      "name": "controlled_forward",
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\review.json",
+      "sha256": "1caf2dcf119af1dbd14f6827cfb97bcaaba96f596e1a0d398a020a6c6ef2ae5e",
+      "measures": {
+        "failures": [],
+        "max_authored_reload_delta": 0.194534927606583,
+        "max_length_error": 5.49480319023132e-07,
+        "max_weapon_fit_offset": 0.170705810189247,
+        "scope": "Controlled pose/weapon review, not normal play or human acceptance",
+        "states": {
+          "AimIdle": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.155434280633926,
+            "max_left_error": 4.90243792228284e-07,
+            "max_right_error": 3.74387042256785e-07,
+            "min_foot_y": 0.0937748551368713,
+            "source": "R_AimIdle"
+          },
+          "Dodge": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.20477981865406,
+            "max_left_error": 5.05446507759189e-07,
+            "max_right_error": 3.12857849849024e-07,
+            "min_foot_y": 0.0807927325367928,
+            "source": "R_Evade_fix"
+          },
+          "Hit": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.152116864919662,
+            "max_left_error": 3.87877690855021e-07,
+            "max_right_error": 3.92147626371298e-07,
+            "min_foot_y": 0.0989900156855583,
+            "source": "R_Hit1_high"
+          },
+          "Holstered": {
+            "free_left_frames": 150,
+            "free_right_frames": 150,
+            "max_foot_y": 0.151804909110069,
+            "max_left_error": 0.0,
+            "max_right_error": 0.0,
+            "min_foot_y": 0.135166242718697,
+            "source": "R_PutGun"
+          },
+          "HolsteredRun": {
+            "free_left_frames": 123,
+            "free_right_frames": 123,
+            "max_foot_y": 0.623300909996033,
+            "max_left_error": 0.0,
+            "max_right_error": 0.0,
+            "min_foot_y": 0.0709969401359558,
+            "source": "R_Run"
+          },
+          "HolsteredWalk": {
+            "free_left_frames": 204,
+            "free_right_frames": 204,
+            "max_foot_y": 0.311901062726974,
+            "max_left_error": 0.0,
+            "max_right_error": 0.0,
+            "min_foot_y": 0.104697361588478,
+            "source": "R_Walk"
+          },
+          "Idle": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.152807995676994,
+            "max_left_error": 4.94471748879732e-07,
+            "max_right_error": 4.43372158542843e-07,
+            "min_foot_y": 0.123201563954353,
+            "source": "R_Idle"
+          },
+          "PutGun": {
+            "free_left_frames": 150,
+            "free_right_frames": 60,
+            "max_foot_y": 0.172707960009575,
+            "max_left_error": 0.0,
+            "max_right_error": 5.10364770889282e-07,
+            "min_foot_y": 0.0993619784712791,
+            "source": "R_PutGun"
+          },
+          "Reload": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.15680368244648,
+            "max_left_error": 3.95372495631818e-07,
+            "max_right_error": 4.80778965084028e-07,
+            "min_foot_y": 0.0941497832536697,
+            "source": "Rifle_Reload"
+          },
+          "Run": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.623300909996033,
+            "max_left_error": 4.96959842166689e-07,
+            "max_right_error": 3.02827373843684e-07,
+            "min_foot_y": 0.0709969401359558,
+            "source": "R_Run"
+          },
+          "Shoot": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.153755724430084,
+            "max_left_error": 3.83107675361316e-07,
+            "max_right_error": 4.82852783534327e-07,
+            "min_foot_y": 0.0986626744270325,
+            "source": "R_AimIdle_Shoot"
+          },
+          "TakeGun": {
+            "free_left_frames": 267,
+            "free_right_frames": 0,
+            "max_foot_y": 0.224306061863899,
+            "max_left_error": 4.88112561924936e-07,
+            "max_right_error": 4.90555123633385e-07,
+            "min_foot_y": 0.0976135358214378,
+            "source": "R_TakeGun_fix"
+          },
+          "Walk": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.310130834579468,
+            "max_left_error": 5.18123442816432e-07,
+            "max_right_error": 3.87806124990675e-07,
+            "min_foot_y": 0.088154524564743,
+            "source": "R_AimWalk_F"
+          },
+          "WalkBack": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.311554074287415,
+            "max_left_error": 6.25407892584917e-07,
+            "max_right_error": 4.89149215354701e-07,
+            "min_foot_y": 0.0916620045900345,
+            "source": "R_AimWalk_B"
+          },
+          "WalkRelaxed": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.311901062726974,
+            "max_left_error": 5.99948123181093e-07,
+            "max_right_error": 4.3636811142278e-07,
+            "min_foot_y": 0.104697361588478,
+            "source": "R_Walk"
+          },
+          "WalkReload": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.310130834579468,
+            "max_left_error": 5.16406373662903e-07,
+            "max_right_error": 4.80778965084028e-07,
+            "min_foot_y": 0.088154524564743,
+            "source": "R_AimWalk_F"
+          }
+        }
+      },
+      "measurement_scope": "Contact, length and arm-drop are measured in the modifier callback. Foot heights are raw FK diagnostics read outside that callback, not final rendered sole planting."
+    },
+    {
+      "name": "controlled_compat",
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_compat\\review.json",
+      "sha256": "1caf2dcf119af1dbd14f6827cfb97bcaaba96f596e1a0d398a020a6c6ef2ae5e",
+      "measures": {
+        "failures": [],
+        "max_authored_reload_delta": 0.194534927606583,
+        "max_length_error": 5.49480319023132e-07,
+        "max_weapon_fit_offset": 0.170705810189247,
+        "scope": "Controlled pose/weapon review, not normal play or human acceptance",
+        "states": {
+          "AimIdle": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.155434280633926,
+            "max_left_error": 4.90243792228284e-07,
+            "max_right_error": 3.74387042256785e-07,
+            "min_foot_y": 0.0937748551368713,
+            "source": "R_AimIdle"
+          },
+          "Dodge": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.20477981865406,
+            "max_left_error": 5.05446507759189e-07,
+            "max_right_error": 3.12857849849024e-07,
+            "min_foot_y": 0.0807927325367928,
+            "source": "R_Evade_fix"
+          },
+          "Hit": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.152116864919662,
+            "max_left_error": 3.87877690855021e-07,
+            "max_right_error": 3.92147626371298e-07,
+            "min_foot_y": 0.0989900156855583,
+            "source": "R_Hit1_high"
+          },
+          "Holstered": {
+            "free_left_frames": 150,
+            "free_right_frames": 150,
+            "max_foot_y": 0.151804909110069,
+            "max_left_error": 0.0,
+            "max_right_error": 0.0,
+            "min_foot_y": 0.135166242718697,
+            "source": "R_PutGun"
+          },
+          "HolsteredRun": {
+            "free_left_frames": 123,
+            "free_right_frames": 123,
+            "max_foot_y": 0.623300909996033,
+            "max_left_error": 0.0,
+            "max_right_error": 0.0,
+            "min_foot_y": 0.0709969401359558,
+            "source": "R_Run"
+          },
+          "HolsteredWalk": {
+            "free_left_frames": 204,
+            "free_right_frames": 204,
+            "max_foot_y": 0.311901062726974,
+            "max_left_error": 0.0,
+            "max_right_error": 0.0,
+            "min_foot_y": 0.104697361588478,
+            "source": "R_Walk"
+          },
+          "Idle": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.152807995676994,
+            "max_left_error": 4.94471748879732e-07,
+            "max_right_error": 4.43372158542843e-07,
+            "min_foot_y": 0.123201563954353,
+            "source": "R_Idle"
+          },
+          "PutGun": {
+            "free_left_frames": 150,
+            "free_right_frames": 60,
+            "max_foot_y": 0.172707960009575,
+            "max_left_error": 0.0,
+            "max_right_error": 5.10364770889282e-07,
+            "min_foot_y": 0.0993619784712791,
+            "source": "R_PutGun"
+          },
+          "Reload": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.15680368244648,
+            "max_left_error": 3.95372495631818e-07,
+            "max_right_error": 4.80778965084028e-07,
+            "min_foot_y": 0.0941497832536697,
+            "source": "Rifle_Reload"
+          },
+          "Run": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.623300909996033,
+            "max_left_error": 4.96959842166689e-07,
+            "max_right_error": 3.02827373843684e-07,
+            "min_foot_y": 0.0709969401359558,
+            "source": "R_Run"
+          },
+          "Shoot": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.153755724430084,
+            "max_left_error": 3.83107675361316e-07,
+            "max_right_error": 4.82852783534327e-07,
+            "min_foot_y": 0.0986626744270325,
+            "source": "R_AimIdle_Shoot"
+          },
+          "TakeGun": {
+            "free_left_frames": 267,
+            "free_right_frames": 0,
+            "max_foot_y": 0.224306061863899,
+            "max_left_error": 4.88112561924936e-07,
+            "max_right_error": 4.90555123633385e-07,
+            "min_foot_y": 0.0976135358214378,
+            "source": "R_TakeGun_fix"
+          },
+          "Walk": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.310130834579468,
+            "max_left_error": 5.18123442816432e-07,
+            "max_right_error": 3.87806124990675e-07,
+            "min_foot_y": 0.088154524564743,
+            "source": "R_AimWalk_F"
+          },
+          "WalkBack": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.311554074287415,
+            "max_left_error": 6.25407892584917e-07,
+            "max_right_error": 4.89149215354701e-07,
+            "min_foot_y": 0.0916620045900345,
+            "source": "R_AimWalk_B"
+          },
+          "WalkRelaxed": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.311901062726974,
+            "max_left_error": 5.99948123181093e-07,
+            "max_right_error": 4.3636811142278e-07,
+            "min_foot_y": 0.104697361588478,
+            "source": "R_Walk"
+          },
+          "WalkReload": {
+            "free_left_frames": 0,
+            "free_right_frames": 0,
+            "max_foot_y": 0.310130834579468,
+            "max_left_error": 5.16406373662903e-07,
+            "max_right_error": 4.80778965084028e-07,
+            "min_foot_y": 0.088154524564743,
+            "source": "R_AimWalk_F"
+          }
+        }
+      },
+      "measurement_scope": "Contact, length and arm-drop are measured in the modifier callback. Foot heights are raw FK diagnostics read outside that callback, not final rendered sole planting."
+    }
+  ],
+  "normal_start_routes": [
+    {
+      "name": "actual_headless",
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\actual_headless\\normal_start.json",
+      "sha256": "f1105adcc0d3adace3a511c73039371f8edef663c608a36962f180e3f94a4acd",
+      "checks": 92,
+      "motion_frames": {
+        "AimIdle": 691,
+        "Dodge": 9,
+        "Hit": 32,
+        "Idle": 797,
+        "PutGun": 156,
+        "Reload": 194,
+        "Run": 98,
+        "Shoot": 175,
+        "TakeGun": 206,
+        "Walk": 1173,
+        "WalkBack": 18,
+        "WalkRelaxed": 94
+      },
+      "usage_counter_semantics": "State/overlay sampling counts, not exact on-screen contribution or frame-perfect blend coverage",
+      "events": {
+        "damage": 1,
+        "dodge": 1,
+        "fire": 14,
+        "interrupt": 2,
+        "put": 3,
+        "take": 2
+      },
+      "shots": 14,
+      "kills": 3,
+      "health": 257.12,
+      "max_authored_reload_delta": 0.194427043199539,
+      "max_weapon_fit_offset": 0.240105032920837,
+      "final_profile": {
+        "ar_damage_upgraded": true,
+        "credits": 2100,
+        "first_mission_completed": true,
+        "successful_sorties": 1
+      }
+    },
+    {
+      "name": "actual_forward",
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\actual_forward\\normal_start.json",
+      "sha256": "be178d4db54da55f34383bcf072c59b2b37a90e27c1370327ab335910423f41c",
+      "checks": 92,
+      "motion_frames": {
+        "AimIdle": 668,
+        "Dodge": 9,
+        "Hit": 32,
+        "Idle": 812,
+        "PutGun": 156,
+        "Reload": 194,
+        "Run": 98,
+        "Shoot": 175,
+        "TakeGun": 206,
+        "Walk": 1168,
+        "WalkBack": 18,
+        "WalkRelaxed": 94
+      },
+      "usage_counter_semantics": "State/overlay sampling counts, not exact on-screen contribution or frame-perfect blend coverage",
+      "events": {
+        "damage": 1,
+        "dodge": 1,
+        "fire": 14,
+        "interrupt": 2,
+        "put": 3,
+        "take": 2
+      },
+      "shots": 14,
+      "kills": 3,
+      "health": 257.12,
+      "max_authored_reload_delta": 0.194427043199539,
+      "max_weapon_fit_offset": 0.241654992103577,
+      "final_profile": {
+        "ar_damage_upgraded": true,
+        "credits": 2100,
+        "first_mission_completed": true,
+        "successful_sorties": 1
+      }
+    },
+    {
+      "name": "actual_compat",
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\actual_compat\\normal_start.json",
+      "sha256": "c4af2df6114200c2f0395484ae8f47ddf1d3a9d574ef5a93cc696b2cea1a8632",
+      "checks": 92,
+      "motion_frames": {
+        "AimIdle": 623,
+        "Dodge": 9,
+        "Hit": 32,
+        "Idle": 789,
+        "PutGun": 150,
+        "Reload": 194,
+        "Run": 95,
+        "Shoot": 175,
+        "TakeGun": 206,
+        "Walk": 1160,
+        "WalkBack": 18,
+        "WalkRelaxed": 94
+      },
+      "usage_counter_semantics": "State/overlay sampling counts, not exact on-screen contribution or frame-perfect blend coverage",
+      "events": {
+        "damage": 1,
+        "dodge": 1,
+        "fire": 14,
+        "interrupt": 2,
+        "put": 3,
+        "take": 2
+      },
+      "shots": 14,
+      "kills": 3,
+      "health": 257.12,
+      "max_authored_reload_delta": 0.194427043199539,
+      "max_weapon_fit_offset": 0.246947750449181,
+      "final_profile": {
+        "ar_damage_upgraded": true,
+        "credits": 2100,
+        "first_mission_completed": true,
+        "successful_sorties": 1
+      }
+    }
+  ],
+  "animation": {
+    "archive": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+    "archive_sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec",
+    "samples": "D:\\tmp\\bunny_combat12_20261020\\source_motion12.json",
+    "samples_sha256": "070698c0b611138d11504029619c0e5219cb5b05c00a70f45bf6dfd12bbaa873",
+    "bake": {
+      "arm_scale": 0.855090859419676,
+      "clips": {
+        "AimIdle": {
+          "length": 2.56666666666667,
+          "samples": 78,
+          "source": "R_AimIdle",
+          "tracks": 53
+        },
+        "Dodge": {
+          "length": 1.36666666666667,
+          "samples": 42,
+          "source": "R_Evade_fix",
+          "tracks": 53
+        },
+        "Hit": {
+          "length": 1.26666666666667,
+          "samples": 39,
+          "source": "R_Hit1_high",
+          "tracks": 53
+        },
+        "Idle": {
+          "length": 3.0,
+          "samples": 91,
+          "source": "R_Idle",
+          "tracks": 53
+        },
+        "PutGun": {
+          "length": 0.833333333333333,
+          "samples": 26,
+          "source": "R_PutGun",
+          "tracks": 53
+        },
+        "Reload": {
+          "length": 0.933333333333333,
+          "samples": 29,
+          "source": "Rifle_Reload",
+          "tracks": 53
+        },
+        "Run": {
+          "length": 0.666666666666667,
+          "samples": 21,
+          "source": "R_Run",
+          "tracks": 53
+        },
+        "Shoot": {
+          "length": 0.966666666666667,
+          "samples": 30,
+          "source": "R_AimIdle_Shoot",
+          "tracks": 53
+        },
+        "TakeGun": {
+          "length": 1.73333333333333,
+          "samples": 53,
+          "source": "R_TakeGun_fix",
+          "tracks": 53
+        },
+        "Walk": {
+          "length": 1.13333333333333,
+          "samples": 35,
+          "source": "R_AimWalk_F",
+          "tracks": 53
+        },
+        "WalkBack": {
+          "length": 1.13333333333333,
+          "samples": 35,
+          "source": "R_AimWalk_B",
+          "tracks": 53
+        },
+        "WalkRelaxed": {
+          "length": 1.13333333333333,
+          "samples": 35,
+          "source": "R_Walk",
+          "tracks": 53
+        }
+      },
+      "leg_scale": 0.897746385354294,
+      "library_sha256": "642d70497ddfaecef9ae2b096d1af4341ff0dd964f741db99950e2ff47e8d363",
+      "mapped_body_bones": 22,
+      "mapped_bones": 52,
+      "mapped_finger_bones": 30,
+      "scope": "Local trial only, no distribution permission asserted",
+      "source_sample_sha256": "070698c0b611138d11504029619c0e5219cb5b05c00a70f45bf6dfd12bbaa873",
+      "target_bones": 140
+    },
+    "mapped_body_bones": 22,
+    "mapped_finger_bones": 30,
+    "driver_bones": 140,
+    "display_bones": 52,
+    "finger_policy": "Authored finger FK during free-hand phases; existing contact solver during grip.",
+    "root_policy": "In-place horizontal root, display-only authored vertical hip shift; cadence follows source root travel and actual motor speed.",
+    "event_policy": "Original real fire/damage signals; original ammo, timing and dash rules. Visual shot compressed to .28sec, hit to .55sec. Evade samples early .2sec during original .16sec dash then upper-body recovery.",
+    "holster_policy": "V local-only. Source socket timings interpreted as visual visibility, not executed Unity callbacks. Put hides at .49282077s; take shows at .086127274s. Original Quaternius arm recovery avoids transition T-pose. No back-mounted gun model or gameplay penalty."
+  },
+  "preservation": {
+    "assets_unchanged": 881,
+    "original_scene_files_unchanged": 93,
+    "personal_saves": {
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455246252200
+      },
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455253759300
+      }
+    },
+    "arcana_and_archive_unchanged": true,
+    "paid_generated_data_in_repo": false,
+    "actual_project_exceptions": "isolated app name plus exactly two installation hooks"
+  },
+  "diagnostics": {
+    "controlled01_02": "Review script type-inference and nonexistent cancel_reload calls; rejected logs preserved.",
+    "native_review01": "All contact/length checks passed but manual sprint showed receiver cutting face and holstered endpoint stuck at transition T-pose. Rejected as presentation candidate.",
+    "controlled04": "New relax variable lacked type; rejected compile log preserved.",
+    "controlled06": "Pose inspection outside modifier callback read restored FK rather than rendered arm pose. Assertions moved into modifier-processed measurements, same .25m drop threshold.",
+    "actual03_diagnostic": "1.07m maximum fitting traced to uninitialized newly mounted gun at model origin, not ongoing movement. Solver now waits for first valid controller pose.",
+    "final01": "Cold import only before last startup guard. Never installed, native-tested or delivered.",
+    "final02": "All 10 structural/input cases passed, but full-speed holstered movement still selected an accelerated WalkRelaxed clip. Superseded by final03: source Run lower-body at full speed, plus controlled and normal-input checks."
+  },
+  "previews": [
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\combat12_actions_front.gif",
+      "sha256": "916eeda0a45f4d3425630fdb76c2d7c20a1943325f577635198080dc11cd7022",
+      "bytes": 5538970,
+      "frames": 144,
+      "source_frames": [
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_000.png",
+          "sha256": "6390fa2b83c4b7ee09e0fd370e0e7d6958448687c8fb0739c95dcb85f5ade3bb"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_005.png",
+          "sha256": "d8fd7d41522427832c1a6ba104acdf325341a4dde9526c43c1ded459757dab77"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_010.png",
+          "sha256": "c7952138952e9e5ac08a5acdf588b5fca7f30ebf289db3e91a67eeab1f3a767b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_015.png",
+          "sha256": "6bf85702630eedac2c16aa9772261f63f470996398cbdb43024dac161ce72e1b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_020.png",
+          "sha256": "166accacdc7a371395a5863b302a4c16089be65c7c7c870a38b26936b43dbe4c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_025.png",
+          "sha256": "3060e1e574d7601fae9914b45edc0505ae7016364b9f5420a8799c7779681358"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_030.png",
+          "sha256": "9401dda8dbfff57f3e59fa223157ef676eb259825eeb03846407f4976cf090f3"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_035.png",
+          "sha256": "e3bd2292b2e102436d9052cc9fb88f63aaae3de0e2d8aab957107817b4de92b2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_040.png",
+          "sha256": "fea22ccbe298916b364b5d45e30c80efc09a49c0af3bd9b669fbca66dbf4a0c2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_045.png",
+          "sha256": "47fc9b0a50dc88a68080fcf1a35e58a630f443f62fd8db733e2e4bd08053405c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_050.png",
+          "sha256": "c943e2a489db53a5aa6b26b9b53e863842cb2aadf5ca14bac70872b17b6058b5"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_055.png",
+          "sha256": "0867b6caf4fbb69d334562f9f9b0fbccabb3f1b381f16b3bcf7205e5c6b45bea"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_060.png",
+          "sha256": "562878d7fb1487d7f90d439c0ab7abc7dc327e08ac5efba15065923d886ca259"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_front_065.png",
+          "sha256": "6a6ba0fbe4259750b804057fbf457d1cd4fe7b75c4f26e6c5fcdc48b4d2b96db"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_front_000.png",
+          "sha256": "4291d754955e0555a3e14513a3f2dcf07b514601dee4ac6ec868210993b072ff"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_front_005.png",
+          "sha256": "f6ac2b0cfe7afa02a3f0e379a3260c0cc8134170444722251f80212d24d8b7e5"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_front_010.png",
+          "sha256": "1da7b24f2635bd8f935743bd6a1a77184a6383f28bce9392a439e7dc960d85ad"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_front_015.png",
+          "sha256": "bdf8165ca1834881906da5a09997b622c4615786dc46c2896d956e98a8657cc7"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_front_020.png",
+          "sha256": "1c912b20546fc90faa9a9fec3638f0cc5cf9dceaa87b16298bd7da0ed8f496ec"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_front_025.png",
+          "sha256": "16914587b468b4bd26fbd495721f06762815a4b873ab503e14345c3931e74079"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_front_030.png",
+          "sha256": "183c646efbef1997ee2c5ae50c4f458e6f09ff6edd019d1005ed28bc510d1998"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_front_035.png",
+          "sha256": "59c09e50a01c6e49d4079cdb5492e48ba920cc75d7c735b3d1712c4d8378b18b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_front_040.png",
+          "sha256": "7606aeb5507d1dec527d45e4844595adb9d4ab4ca3da04f2b8078c600b27c281"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_000.png",
+          "sha256": "4bf898b5d6fbac84e5d7c991f073d5f552036d3a5bf6d97a9f6616a0eb93b4ee"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_005.png",
+          "sha256": "a04db5f1de94b4ba0129d2d45815fefc1cb7d6446c1fdc320ba4048dd1e737ea"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_010.png",
+          "sha256": "e3115872821ec7cf408d74bb26b71fbbc3f6ac516b3f311f2d5cb641ac310524"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_015.png",
+          "sha256": "f22cb60efcf119ee8b71b1303a4dfa04101c5351ddb316b2c0b82b8bbfbfbcef"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_020.png",
+          "sha256": "c042650e8f59ddf030f8bcb8f1482da4fb30226b1e9d525bbe734c7b82371de1"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_025.png",
+          "sha256": "1a55c7836e06bc6546eb5be3370ebf24a5171087aff5027e6d654d618cc8b2d9"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_030.png",
+          "sha256": "8d636d9c826806fa39cb9866cd81e5b665e718af187c882dc6a0c44c293af715"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_035.png",
+          "sha256": "c7bbc8ec1d87f1af4c154fd42f100819d02c6a9477a3a033e7a1088d2fff927e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_040.png",
+          "sha256": "d3bacb7dd834af9b7448cf5323480a8981bbe9bf4804125ce66751efa2d9fce4"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_045.png",
+          "sha256": "56bed5039f5e61b5c8f44be4b6ab5fbdb3fc83c75ee73f4e27c102d692563ac7"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_050.png",
+          "sha256": "3ed204e735816f62a7323dbbaabf846967c09c53edf80ab3862474b6a377dd11"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_055.png",
+          "sha256": "9bb9a97b9494f9bf432b65be0e339b2355c626e154d42d846432782090b3e9ce"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_060.png",
+          "sha256": "61737c091b14ba663820554a06f446b8ea5074c19e2b53fa33966d52a5abef05"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_front_065.png",
+          "sha256": "f6b5f1f40f2b481da61fa0909f0602bb0c0b22c90e8b1fb2e32f29b10f9428d6"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Shoot_front_000.png",
+          "sha256": "f9ce958d021dcb629330482ee6f84f4f56daa11ae99edef48834b79f56c83fd8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Shoot_front_005.png",
+          "sha256": "118ad0d20e3d452049e337314b23b3f538acdd490405c21ec6fe4f64923a4730"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Shoot_front_010.png",
+          "sha256": "eb3304ee2524383f05cef4685a261f061c8336d0aa5eafcded9ac4cd04702f8c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Shoot_front_015.png",
+          "sha256": "4eff9c6611253439103e40a046a110e20ba90c243aea353bfb8f4d8b447fee0a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Shoot_front_020.png",
+          "sha256": "a16ec8882ec4728cb65e8a2574a55de9f7bafd6d7fc10aecb98de288b25d02ce"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_000.png",
+          "sha256": "59ba209e0632587b68edbed6557e6233af888ed82361f2861b23b649aeede8e9"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_005.png",
+          "sha256": "9605198c557409e9c464405b7e87aa916425ba1b11eae15f991c2be2221e21cb"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_010.png",
+          "sha256": "30a82c9d1b00ed723c0f4f9ac9647fe99c22ef4110478d62536d649265ace68c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_015.png",
+          "sha256": "344b6fab5f37d450e8d74ffa01c0624d2c5265abd447980c0d64fc2c783c7e64"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_020.png",
+          "sha256": "fb8042c50d4108939e7073c5a51d528cd2aa077293e0c1f90bee6b3935c234ab"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_025.png",
+          "sha256": "88b41e6dca2b4115ff87dac98430697f34f25e437a8c0b57f61a131c1e7c8e6a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_030.png",
+          "sha256": "60ddb558e5a1e9fd86628b3dcda45095fddd48434e77f9f47728f5bcd49146ff"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_035.png",
+          "sha256": "78e364911b5b7d092ef3ee26b8b711975c2106ae3a1d82aa65108be6e620591d"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_040.png",
+          "sha256": "691ad510e995510c60bcabb66cc13b947ac2c46e65873fd0b2cc0ffc8f47b83a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_045.png",
+          "sha256": "78537c6242677d246cf764349f9503a5188547358df976293a8ee6a2e185b1dd"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_050.png",
+          "sha256": "0761430e6f2491b7ec4a8b1c86954dfbb907e349c2ae6a36b71195c883d66c4f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_front_055.png",
+          "sha256": "044f517e3734c924d517aff35db4d92eaa0f60e6eb83dddeda872a2e06f07ed5"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_front_000.png",
+          "sha256": "aebaa47fbb921cae344f4ed451d4fbfd414ea63aa8c678fa2a9d04713f8f69e5"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_front_005.png",
+          "sha256": "1c044248d118495c9cf5c0660ddffa7501ee078a81c2a62c1b9c607487e0b5ae"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_front_010.png",
+          "sha256": "f822f1751dd1d1e9bd1538afcc88b0ede10ebeb09a836c144078527f4c7dad9a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_front_015.png",
+          "sha256": "8ba2045cc6d5ef1fe7ca140cd02af17d56f6c1d353c569108f11b2c5b8a88538"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_front_020.png",
+          "sha256": "8b036873ff126058064077ffe30e2e772729c7a3a60c8866c59df44517ccbe1c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_front_025.png",
+          "sha256": "dbd9006b955b914a2f90805b888ed79713c599a56425885b5ca3ec15760ebc45"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_front_030.png",
+          "sha256": "775b571bdce9ddbde78ff33ef9ff4a7fcdbfaabcb2276785f4d6326392006a46"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_front_035.png",
+          "sha256": "7a270114ba1ac2ff2647cbcbc4e440e425591a0974a9c9eed75934308a6fd7af"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_front_000.png",
+          "sha256": "024a362494a7f8a115f7c43fedaf233676a8c0957125de9cb8a94e14bb6bff14"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_front_005.png",
+          "sha256": "60a637916567f306968a6bdb54e10c915e3f1ef59d0807e5027721f92a2e001e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_front_010.png",
+          "sha256": "14e0b6ffa43045e224435fb4a7221234133a1d846a26e034ebab6eb8842c4470"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_front_015.png",
+          "sha256": "e5906f5cfa89c1ca7e5211b7505968bb790a8b7e6ca0b19da4c0f206d9065cf1"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_front_020.png",
+          "sha256": "61954645f125d02a03685c16de37117e6be87e174c65cabb97db954e82b70e03"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_front_025.png",
+          "sha256": "9fe0e5bfa3eb924f6733e31cc6e13384c873113e8130523d8de42dca00c76e96"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_front_030.png",
+          "sha256": "2f10a5ace2c683f84660dc24df9d775444528101ef449d1e812a27d84d075ad6"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_000.png",
+          "sha256": "b16a81e5eb69480bd6fdf90a38f39ff43491fcfb3fb22e9041d8863a1f7883b4"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_005.png",
+          "sha256": "20c37e6a739544bded7665098bc244b867bc631b1fb660f711cd0f43187db715"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_010.png",
+          "sha256": "47ffd2bdd1c5a7b9f84a8ffd6f9bb286fc73e803e2233626e9dc5e04b558f0a2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_015.png",
+          "sha256": "937838efc7a69b12d6a333405c84f29505747ef8a51b97985d19eef0f770011d"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_020.png",
+          "sha256": "95f09f6659cbe22408d06fdd6851ab7264394bbb259760795a6c93cdebd9755a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_025.png",
+          "sha256": "0d68f48913225ceebbb34133010e783f65377bff80f1867ee98c4b950cecb764"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_030.png",
+          "sha256": "a146bf9a7018f035b17b1945eeb84dbb88fd86cc346d50416c22fe07207e3300"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_035.png",
+          "sha256": "342763a4500b3ad48763232aa4cacfa2e7ef64ebfa6efa24170f389f4c24eb33"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_040.png",
+          "sha256": "5cb1981efb633d8969ee06ec577212a0062b4bd4e6629f84ee811411a27c25e9"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_045.png",
+          "sha256": "f4701648efe20afcabb9ae2255e9d6515dc98a5fd4e6acc976863902432793e9"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_050.png",
+          "sha256": "d7880a1d7f2f62f82f8e12094a918f0b15c3725d418eab1ccefa728e94ab554f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_055.png",
+          "sha256": "62a5b206541e12ee2837cfa23504c4849d51a443dca74af6b106d29a37871c49"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_060.png",
+          "sha256": "0d32f04dc734ded6b664ae610937bb4f39d59f575f2c9c0d5a231d854d58e092"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_065.png",
+          "sha256": "ba91820d6e2b3a570b199d4e00d2257ad2a88976225856604f2c96bc81437190"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_070.png",
+          "sha256": "d49244393e6caa26c4409a2c32e9aeab51305ec0a26c2286a1243ff005ab7179"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_075.png",
+          "sha256": "be3b74503138b8ed1bb6fc4ad3c555f0b89813045f2987163673908d6e3ba797"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_080.png",
+          "sha256": "6dc1862070c8099a891ffecc173ffb1611d2ce65e9d514c647e2f5121f985360"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_085.png",
+          "sha256": "868b6d320dac1467bead2c1b351eb07caea2b8bc5f671c840913709b9cf18757"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_090.png",
+          "sha256": "373efb6b5b9f25d94c3d6e2b0301f0ae90733ae146be23ff6896a4f44e5290a1"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_095.png",
+          "sha256": "3292fe0580396aaaa05c993c9328dde55217699f85084e57e5a1c29b7ed07125"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_front_100.png",
+          "sha256": "419f20af2ac07a966dea2e08e70408c496dd3e71a42d2f14396cea75b3f1f869"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_front_000.png",
+          "sha256": "01c7a9574b8977a8e93bdf2e610459668d4c8d5a60bea08d6bcb950caa9d109d"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_front_005.png",
+          "sha256": "5eb1068042bd52c0714b8219fb2a579759295ad094c9d7d3c9e1ba75d4ee72c6"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_front_010.png",
+          "sha256": "901fd574f272d29e4ccdf299c8f0856c305cec57f5ea56a74a6bf310854bb989"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_front_015.png",
+          "sha256": "b58d1ea7875a904df2fc4f15e50a469cb90b3b24c1c578bd55f7a962b910117c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_front_020.png",
+          "sha256": "2b24547a3f340406c32e9a05abae7c31afa106cb4532de1994a479d2369342a7"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_front_025.png",
+          "sha256": "3c9876777c8cfd3e21df5b9b14f2429ada788829daa82969bdf7196aa789bee3"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_front_030.png",
+          "sha256": "4a8d323e5b3ff83a58e76fde89ed8d70c783d2ec84e73de5613ca85ae18844d4"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_front_035.png",
+          "sha256": "8ed5f09e71f2980199e8b635f7befc6b12edab80aa29066d70ca69cf92885700"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_front_040.png",
+          "sha256": "af146ed4c2e4d49b0325c85f057ab3bc914f80a4130a512756e5ff09485c5db2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_front_045.png",
+          "sha256": "c06151c7b211ee954bd18a4ba8119b89f602235e76ce48771c2516b016bc2813"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_000.png",
+          "sha256": "375559945ca84c5ac03c85db29b1bfd87ea57e9b5a6f16032a69a84e86338a84"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_005.png",
+          "sha256": "a5a142fad935876bde376a0326f08cc60f252931f8fa102e8c9d7cb1f8b5427d"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_010.png",
+          "sha256": "e8c11f4076851a359e95bbc226e0c2d56ef72e477035baf64c17b3b86a394e31"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_015.png",
+          "sha256": "ee9c31bb1f0e97d39fdd7201a76ca3b994d90d8924d1cfad9892adc6422ea8b8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_020.png",
+          "sha256": "776d324e1dfcbc3e1633e1c8e6c82292e746fad656a68620e884c50220c7c30c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_025.png",
+          "sha256": "a5c74f51f1e6a4809c16c12cd7c4d0c242abae44033308190733555f6aa449e0"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_030.png",
+          "sha256": "a60a95a32683b10074e1320598cb16cbc5dfcc1885f5a2fc89ea73ce4472c1e1"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_035.png",
+          "sha256": "177f480d7aae52b3d1acbff4e792789eb84e878b592a550295e219df7c4c5205"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_040.png",
+          "sha256": "be0421fd5f61027c13f573c458d599460c48b9c6ebf780d6ef54678f50afeb95"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_045.png",
+          "sha256": "238302074d26cabf778dad077db96f8930c2c86e91379d1a4cd5cd5cab045065"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_050.png",
+          "sha256": "9eab94c02b412c352fed5670f5e3dff49b6021bd796f59b4b9d450709271806f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_055.png",
+          "sha256": "5d3ada4a87c22f30e1961bee72a5d56392ac43ac84b12eff04abac935a9c6b9f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_060.png",
+          "sha256": "bde6593f992bcc0cbc330fc1f6d5d66a620c068f014a68e41b71ca2ff359e2b3"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_front_065.png",
+          "sha256": "71c79afeef508bbbd1781ed16153bad705a8c35f4becbdf30d999d09bf7c33c0"
+        }
+      ],
+      "processing": "Resize/quantize/encode real engine PNGs; repeated boundary frames only. Controlled source poses, NOT battle footage or synthesized evidence."
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\combat12_actions_side.gif",
+      "sha256": "8ebf0defbbbf77b825457d75d9b9d1db1f05f7d5fd75a7a89044d49a7188c42c",
+      "bytes": 5790485,
+      "frames": 144,
+      "source_frames": [
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_000.png",
+          "sha256": "00bb9af71b22c49606c39ad7bea7967a0ec43ba7604a24bddeec12da681d812a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_005.png",
+          "sha256": "21906ad6f54ae40e4a98fbd9e4559b3c5f10feb94317b83d0d39895812bd786e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_010.png",
+          "sha256": "ad831819bce8caf29b16f800e34544a756a84c2f28639a95067ff161c6f1ac5f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_015.png",
+          "sha256": "e875040a856f190fb0f6ff1df38143ad91ff932cb7757f82e601e4b7b11ccf35"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_020.png",
+          "sha256": "fea1cef2ad988519f9b54782eb545d3fffb6f81af8d9f699ff2f5d1bc568d203"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_025.png",
+          "sha256": "4923efa3833e37405cc875fa19055cbef0a38cc4032fb3e47645ddb74ec09aad"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_030.png",
+          "sha256": "579c0c763eac90c2a6b8bda7ca9acbf15a5a7e7792d9b38029cb11aee161bd6f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_035.png",
+          "sha256": "43dc88e2c291fc48dfb697632efb576dcd436f1b895822508ced515d856ccb69"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_040.png",
+          "sha256": "b6e631f604382b8eaaec2cff34577e5f81754c098182333d30c6396b74893dff"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_045.png",
+          "sha256": "9f8743bfc75da0c63ab94af4e144f93dcfc21800749403ba9937aa4c4d0b55a6"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_050.png",
+          "sha256": "6889f807eb492c9ec85f2cec3df73367c8bc39f64326f16c93a408740f1f5b14"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_055.png",
+          "sha256": "61e8bf92a4a4dee385af5d512e37ca2aa6827ce21b32bd45cf84c6ae0e5bdbb2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_060.png",
+          "sha256": "94a06897ab608a7fb99d7c327f770d984eb7de729f2e98da6c10d36e68a35b3f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkRelaxed_side_065.png",
+          "sha256": "59ff4ea3f87f7659ea71b6c426b26574557864d12dec99d86614e0e33b84b3dd"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_side_000.png",
+          "sha256": "70588057e6837d88f202cf19549186fddcb33a458ce3d22716de7164e67c0846"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_side_005.png",
+          "sha256": "0171753cee131c891404a3e29762494785b2cde77670f9352eedc8a7c9756c94"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_side_010.png",
+          "sha256": "9a202ead5d9061564bc7f7675afbb03c4edc599538d77841c982119ddcd7f243"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_side_015.png",
+          "sha256": "cac05ed6a59038c25ad4dd4826fe00cc7dec548f6ada6ae0dba8c4ed252c6115"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_side_020.png",
+          "sha256": "9bd40b65d356aac1532634d52fc0bdb33a1d50ea1a8cee393781d797af7f7bba"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_side_025.png",
+          "sha256": "c275d3811230605c913d77fb4802396ce4dac0f503e0834ff69844dd193fa300"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_side_030.png",
+          "sha256": "74ea460ac24b6538110098a3db59ea693a928e88e73d2c795940eda5f578ca9d"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_side_035.png",
+          "sha256": "e1639e477da1a1c25fe790770f602ccb39ec3a50c31c661fdb151fd379557c38"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Run_side_040.png",
+          "sha256": "70588057e6837d88f202cf19549186fddcb33a458ce3d22716de7164e67c0846"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_000.png",
+          "sha256": "ddff13447c7cc6502ff2df0e5ffa8c1451dc809a68fc51de7a02a33cbcf05f3c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_005.png",
+          "sha256": "01541a2821c19a35423991f66478c06bc7a2cbb3febd01d884d28ec05a2d2577"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_010.png",
+          "sha256": "9e0d99eee65fb174f4b349ca62deaa169ae38249a4e132c37786c7000a43651e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_015.png",
+          "sha256": "8c2ab256ff6d14dfca8ece1bc6b92e2a11ad2d0902d99776c3f4cfc6af095895"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_020.png",
+          "sha256": "b32434adddad59c1485351ebc09bac2a9451df9fc3328d3dcb358508b0dab181"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_025.png",
+          "sha256": "0d5babc3e5bc4dea966ef51cd371d4ea44f1544632038083aeaf4c594a882fa8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_030.png",
+          "sha256": "ccc6f3f045f42f68040af19b45be68cee1e6ee11c19af7cfb1cddc561ff27dbd"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_035.png",
+          "sha256": "c2afbd9ba4d2aee205baed1caa5293b16972bf6f8171d369a551267e04e0407a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_040.png",
+          "sha256": "70ee6e1f408343aa86f39e0ff61e7bd81ae3177d4775a6e08979f03929d76f9b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_045.png",
+          "sha256": "5a1cc4fffd42b0338b78cbc6bb079d7859a6394c1cd7cfcab9e56be78b29236a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_050.png",
+          "sha256": "f358a6520994e31f1abf8446bda00d2f697642da953003367c6c524990eb7347"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_055.png",
+          "sha256": "7085d5889afc3cf7814f01acd4c0298bd233f8ccc94c26ae0297d92d53bf829b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_060.png",
+          "sha256": "56c3894534367cc38b9a6d33ad29e39657ccb7b580fced135bc16d1da6f504ab"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_WalkBack_side_065.png",
+          "sha256": "2e45b17041becbd94fac5caa40f465371bda73443ebf73c213263b2049c4991d"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Shoot_side_000.png",
+          "sha256": "338d07eda84c1eae3d253dd3bc10fd9d30b7c6505755affd2a12026954170a6b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Shoot_side_005.png",
+          "sha256": "cd8d295af4d84056d641c9f052dfcf6ae4d0877f73e91a4e880c445b4544c117"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Shoot_side_010.png",
+          "sha256": "7a1ed3380eefc1595cbe07281abdec81444db809e954966f9d5b4e97219c95d1"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Shoot_side_015.png",
+          "sha256": "c5b79b6e1525fd6c14c7ccb64c23134e0b11945d3d52a9d228b3885a4ff0d2c3"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Shoot_side_020.png",
+          "sha256": "b26bd195e452cd123e741e67ed64b0d3d31d51e90a9f74c1bc189b75c3fa6643"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_000.png",
+          "sha256": "d15a04b51207df4b0893c73e54cec6b4c2f4f4cf51e1f5a77cda11f98bf86524"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_005.png",
+          "sha256": "35af39c86455757903d8a0ac5c90fccd14b6a01dce4f14d649d2dd5decb77503"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_010.png",
+          "sha256": "b9854070715bff74c793eb7bfdee6f5d7fe8ec5b51772cf1e398cfe74482c9e4"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_015.png",
+          "sha256": "ad24f6ac08771203b37b3cd8993aa449a3107da576780031f46164a56bd3f08f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_020.png",
+          "sha256": "6cc3d1df9706a8fada11d66edba03e66e3c954eac583721d89f903394edae991"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_025.png",
+          "sha256": "5e262d8e34bdad8790fbdd287ee524550750c12dd1797ad8f34a7d3edaceaa17"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_030.png",
+          "sha256": "d9ec76e5240839af2c7d288d2885a6a2f1d957bf7a7875c8aeadcbf434e35033"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_035.png",
+          "sha256": "ad63e480612a5dfd992e870b8d062fcba600abf599ce15858ffd2254064caade"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_040.png",
+          "sha256": "9a7ae177395a184409d86bf623ee4f6a8949cd6bc8152f3dfea4fbd081061981"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_045.png",
+          "sha256": "dacd93cd02f0bfecf5968577c3538d1076fade251650dfeb03b250b96eac3c55"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_050.png",
+          "sha256": "7ee3d7dc7743c46eff864f841adff291281568cb4414cbcc9986c7c0be0a502b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Reload_side_055.png",
+          "sha256": "a001dc43b086a4ad3fa6f44dceb53cb01cc413305617e64678ba200d40846942"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_side_000.png",
+          "sha256": "8497896ce9b959580573f3d424ea849326d426386177b4877056fe88e26161c6"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_side_005.png",
+          "sha256": "fd8019fecef5dfc29cc6facfe2e8b98b7716b2bfca6c9d8896831e3f9ecdd1e3"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_side_010.png",
+          "sha256": "db5397a15728f4d88d36b34bf20923b2f1ba93eda1718d62a0fc1a55e0deac27"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_side_015.png",
+          "sha256": "a9ff6ed85ef00501d3d12b806c7ef352e2c0e9c9d1d15b928491d36f0ae30a38"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_side_020.png",
+          "sha256": "bb2a7c3d1dcc2e489e7e33fd754a3f567c5d74572bc10a2edccb3bb812bde49f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_side_025.png",
+          "sha256": "697e9eba22aa72b04334865e7ad5006f7c9055ea8f1fcca45243030720ed9766"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_side_030.png",
+          "sha256": "4ae957cf910bd0b5d3d6bc0f04c844ce7b29cf5b06be5c63e7eb99c2a26d0fd5"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Hit_side_035.png",
+          "sha256": "9297cbbc11878ae7eba0af68a3691bcd2c758e7ee2cdb3650db84b2cc648aeda"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_side_000.png",
+          "sha256": "2c5f6ef07362db9a66892a806b8cd21b8f4d548399ac5f111e0dfef79beb9e7a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_side_005.png",
+          "sha256": "3e49cda798c4f90b419d61f70bc327001e2925c91bd9c12b2cf922cf38b5ff42"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_side_010.png",
+          "sha256": "ab1fdd3aa8ed96af9fba39bf3eba53c12e15e0011f10718423b562bf5225205b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_side_015.png",
+          "sha256": "cdc67de3e338ffda93d479b0694a676db5a40b44adb7d14f2d06c6a55f295d0e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_side_020.png",
+          "sha256": "eb0f457f276ce26e99941bc584c80cd4dbaf407a28774f28291d2055b698062f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_side_025.png",
+          "sha256": "b5a758c8f2d37744c7018956609828f3fb87254d063ed78fe15f6f107c0abf5e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_Dodge_side_030.png",
+          "sha256": "fd5938262ac1db4fb2df14ad7bbf3eeaddcf568b8fadf47cbd919721d176cf88"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_000.png",
+          "sha256": "4c1321858153259a80ae0537f5b76bcf75b63858e0b8bdb9b4c8f14ddfc67d9b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_005.png",
+          "sha256": "dda4f2a780a769a0c7d673735c6464b9450f3a6ac26215525b9845bf99812b40"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_010.png",
+          "sha256": "b177182a7b7cf239db1a3da60916d202f43675c94e6de8c1fa44f4594a1bc622"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_015.png",
+          "sha256": "9d4c069c57bf089c2a31957e5c90e4b28598108104be063deb153eefe754db6f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_020.png",
+          "sha256": "e4b1862590386d5c0479f25e1d105d62737f94ee6a0930161d286bfc8849c5ac"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_025.png",
+          "sha256": "1bbf12c482721bac1975f656968503612ac88b78953995b79b0dedfd067805fb"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_030.png",
+          "sha256": "690b6a882095fbeabfbe6ad2ca03efbb16f1f6bb8409bed3c6efb08984a73a54"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_035.png",
+          "sha256": "7d664bba102a7d1166b1fdeec5340ab4b98e803f0c9772db33edd6ec46eb1b79"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_040.png",
+          "sha256": "4dc0c3cd2182a630de0e46950036f6bde5b31d23d9a5e28dc69f3a4bab312ae2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_045.png",
+          "sha256": "47e0470b0a51624f956944a6093c687ec5a4489ac6fa54bf30b662bcc32808cd"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_050.png",
+          "sha256": "9ac0fc75fc2b2f5aeed52a1191acff90631d2cdfcfbe7f0b9bd4d68310757d0e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_055.png",
+          "sha256": "04e49f5e48039b83a235efc2f0789f38bc829b866939713d6970dfd2c7bad5a3"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_060.png",
+          "sha256": "c265005ef53fb77871fb3d69b6357ffe6326b4c3655cba46971de6c0507b1392"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_065.png",
+          "sha256": "219dc367936175d584a4b0ab2a7655792b93a3b56e7ec4b4a73b6353b0ddde54"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_070.png",
+          "sha256": "5f39a889ac6256c4ccc179b16cfe06ebfb1e38eae00ce2212900ca03e6346fae"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_075.png",
+          "sha256": "3e89306ee36c0aaef3e11b6c1b1640e2c7a527da96787d5bdd5021d9b94b15ab"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_080.png",
+          "sha256": "e19e53271e26a3a70800dd95dfc9f4ce91c18543e8f3e59461ab3f13a6d72a38"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_085.png",
+          "sha256": "74b5a07eac3595682c7f5a40052368b91a33332c7e1eed40bbfe34e3ae5a73e4"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_090.png",
+          "sha256": "b1c9a8849c29cd6a41e2d252f75f628ecda6c023c9221abf89c9370afffd3452"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_095.png",
+          "sha256": "2f537d7a0826b45076d7568460c266b72ed662eb941f0cce6fd8b378b7628eb6"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_TakeGun_side_100.png",
+          "sha256": "7794e2e21b353161f15d3e46fb6075544a7d4ce672ec9a7bc1c47258bf2f2991"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_side_000.png",
+          "sha256": "45790f5b3ac157443dc59608faafccd0652bff1673dae2a19c52180e25b21272"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_side_005.png",
+          "sha256": "eba3caa21d3d0ce533ccec36ceb3c66da832a08babd8bd9b16b110cb92b568cb"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_side_010.png",
+          "sha256": "39b3ec8a7b071c0efedd0e644d9f37dad64ef16c6a4440df404b92bbfbef3c2a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_side_015.png",
+          "sha256": "b5bbc9e9e982df1500801a7e9e186eed2dbca22565d31ad7d5117022a940bfbb"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_side_020.png",
+          "sha256": "03dd9db11c813203ac055909457183a0fbbac28ed955d4a0b0351a4166258fbd"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_side_025.png",
+          "sha256": "610b9ce675699a9bfba9398476a34eb62502d5f933d091933b4e0e6b8d1b755b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_side_030.png",
+          "sha256": "68e709472c1a2bce898c33b3434d1d681d8bb2dfe3f8fcabcf30cf9d31743e84"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_side_035.png",
+          "sha256": "cd8d9a81746a3ded257e99332931dcb1eaf03090d6700f0939893aa11c4dfcae"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_side_040.png",
+          "sha256": "0a0c8534f425b18d33fa7eb2f256e37f1ac521b731592e99bc6892a95c7f54bb"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_PutGun_side_045.png",
+          "sha256": "d27fe2af9ce90f0bf760326f2be6e019896ea748f8e018e11e51435b0e086139"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_000.png",
+          "sha256": "da6c5b0d14bcd8d71c1c930a74b40f2f690bdf2c99cb051b8c5c3fb06693f967"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_005.png",
+          "sha256": "3c3723453e99e3098e811ccb23b1f99c897d36d116d883a55b70d7f9f43f9a98"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_010.png",
+          "sha256": "676ba8290a8e8637752dd84af382bafcab8b02e271713c0670b4cf393a2ad6bf"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_015.png",
+          "sha256": "73439f15f62312622c36555cf5f526d8226eb801d01ef74aab11d0e2523ca7c9"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_020.png",
+          "sha256": "8b3ce21ae1bfe384f646ca802c81c54d2b607a5d826afc5698ddf1822e762d54"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_025.png",
+          "sha256": "29c4c5ef5091cd4d2f6744e05a40844267e8d7709282010daa40698c19d763c1"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_030.png",
+          "sha256": "e0d98989723f047a22cefd5221d1da2efb678c717b6caeb908680b1c55835d99"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_035.png",
+          "sha256": "02e3bc0792aae34a58bed6210629d41be997c9c09b90b65d6a114a7814a52d61"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_040.png",
+          "sha256": "f2ac0772ba889633489031177f17f37fa300fc6f146262f0435e3237e22ec60e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_045.png",
+          "sha256": "282e98cc740a73b64d68adbedfa44c0087895c54b41e5d73e36ab5d340210b8b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_050.png",
+          "sha256": "05f343df360d5b3d8e0390a1ef0ec73f6abe2f1ad8effd6551c781de07733cc5"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_055.png",
+          "sha256": "fe62375ca864428fd48eb30e49ae234d0221def02c94d0a6d7967a901433d9cc"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_060.png",
+          "sha256": "db0274fc44f7f3eb27667db945c9bac3736f9b78eaf306080186ef360361dbab"
+        },
+        {
+          "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\frame_HolsteredWalk_side_065.png",
+          "sha256": "2a08446197cd4a16e47d357d179d66a6ea05f5f7fac5aef1519aa0a570a36317"
+        }
+      ],
+      "processing": "Resize/quantize/encode real engine PNGs; repeated boundary frames only. Controlled source poses, NOT battle footage or synthesized evidence."
+    }
+  ],
+  "manually_reviewed_captures": [
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\Run_side.png",
+      "sha256": "9bd40b65d356aac1532634d52fc0bdb33a1d50ea1a8cee393781d797af7f7bba"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\Reload_front.png",
+      "sha256": "c7291a795da61f5c182f9feb44098541038bcbe944e68ccf72115f122c1a6ba1"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\HolsteredWalk_side.png",
+      "sha256": "5737078695fb5e1111aa6137d936b2a3ebf20f489a4c3ca0f4f0bf9af1405179"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\Holstered_front.png",
+      "sha256": "74838be02e55756cab41812887a06681899ca8eaab29443cd6e15376fb0d0353"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_forward\\HolsteredRun_side.png",
+      "sha256": "293a1b6b8651c125a30cd549b447b8e04dede4bc910f31f94ababeb57e9fb8a1"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_compat\\TakeGun_side.png",
+      "sha256": "1b776268f11f1995d52ed0c95ecad7d8fd92bac31d7847a9453e8974f4687848"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\controlled_compat\\PutGun_front.png",
+      "sha256": "08f914e79f8b6bb26f7816955ba9647fb9cbfe0e2eaa1120b1f15554569912de"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\actual_forward\\10a_source_put_gun.png",
+      "sha256": "b482e6da20f87d8cfbee7885a3d04f35bfe766a62b18d0815f9273d6e1400925"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\actual_forward\\10b_mobility_and_interrupt.png",
+      "sha256": "412652058a96d4bc5f22081fd22848475da1b8b4972259d5cc51e73b806fa528"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat12_20261020_final03\\actual_compat\\13_defend_return.png",
+      "sha256": "bc031082e3d1cb1b23e2710a38b37ad78ba3688f2f31155375b8e6364d4d285a"
+    }
+  ],
+  "author_contact": "User handles draft/reply. No author PM, login, page or polling. No new license supplied.",
+  "limitations": [
+    "This is local source integration, not a new EXE/PCK or production/default replacement.",
+    "AR-556 plus normal first sortie checked; all weapons, melee, cloth intersections, aiming cover interactions and full checkpoint/death/rapid-switch matrix are not certified.",
+    "Controlled free-hand phases intentionally do not assert weapon contact. Bone rest and lengths remain checked. Foot cadence/height is not all-frame sole planting.",
+    "Synthetic input/viewport clicking with visible-enemy aim, not physical gamepad or human first-hour acceptance.",
+    "The full previous 174 native-inclusive matrix was not rerun. Current default headless suite 149 categories plus local 10-case motion suite have separate scopes.",
+    "Five-hour content, maintenance zone/finale, more physical character scenes, audio/minimum hardware, rights and real player reviews remain work.",
+    "No commit, push, upload, author messaging or original heroine replacement."
+  ]
+}

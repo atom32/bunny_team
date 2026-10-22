@@ -1,7 +1,7 @@
 class_name SaveService
 extends RefCounted
 
-const SCHEMA_VERSION := 8
+const SCHEMA_VERSION := 11
 const DEFAULT_SAVE_PATH := "user://profile.json"
 const MAX_SAVE_BYTES := 8 * 1024 * 1024
 
@@ -47,7 +47,7 @@ static func load_profile(path: String = DEFAULT_SAVE_PATH, report_errors := true
 		return _load_failure("Profile save is not valid JSON data", report_errors)
 	var envelope := json.data as Dictionary
 	var version: Variant = envelope.get("schema_version")
-	if not is_number(version) or float(version) not in [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]:
+	if not is_number(version) or float(version) not in [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0]:
 		return _load_failure("Unsupported profile schema version", report_errors)
 	var profile_data: Variant = envelope.get("profile")
 	if typeof(profile_data) != TYPE_DICTIONARY:
@@ -67,6 +67,12 @@ static func load_profile(path: String = DEFAULT_SAVE_PATH, report_errors := true
 		return _load_failure("Profile save is missing Q04 state", report_errors)
 	if float(version)>=8.0 and not CampusChapter.valid_state(profile_data.get("campus_chapter")):
 		return _load_failure("Profile save is missing campus chapter state",report_errors)
+	if float(version) >= 9.0 and not profile_data.has("waterworks_memory"):
+		return _load_failure("Profile save is missing waterworks memory", report_errors)
+	if float(version)>=10.0 and typeof(profile_data.get("maintenance_rescued"))!=TYPE_BOOL:
+		return _load_failure("Profile save is missing maintenance rescue state",report_errors)
+	if float(version)>=11.0 and (typeof(profile_data.get("blockade_cleared"))!=TYPE_BOOL or typeof(profile_data.get("maintenance_closed"))!=TYPE_BOOL):
+		return _load_failure("Profile save is missing final story state",report_errors)
 	var profile := ProfileState.from_dict(profile_data)
 	if not profile or not profile.validate():
 		return _load_failure("Profile save failed validation", report_errors)

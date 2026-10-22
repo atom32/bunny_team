@@ -11,6 +11,7 @@ static var current: Dictionary = {}
 static var revision := 0
 
 static func initialize(path := PATH) -> void:
+	_install_ui_gamepad()
 	if defaults.is_empty():
 		MedicalTreatment.install_input_actions()
 		if not InputMap.has_action("route_map"):
@@ -28,6 +29,20 @@ static func initialize(path := PATH) -> void:
 	var saved: Variant = {}
 	if config.load(path) == OK: saved = config.get_value("controls","bindings",{})
 	_publish(saved if valid(saved) else defaults)
+
+
+static func _install_ui_gamepad() -> void:
+	# These built-in actions have keyboard defaults, but no pad events in our
+	# current runtime. Add device-independent UI events without replacing keys
+	# or the player's saved gameplay bindings. D-pad navigation avoids movement.
+	var buttons := {"ui_accept":JOY_BUTTON_A, "ui_cancel":JOY_BUTTON_B,
+		"ui_up":JOY_BUTTON_DPAD_UP, "ui_down":JOY_BUTTON_DPAD_DOWN,
+		"ui_left":JOY_BUTTON_DPAD_LEFT, "ui_right":JOY_BUTTON_DPAD_RIGHT}
+	for action in buttons:
+		var event := InputEventJoypadButton.new()
+		event.device = -1
+		event.button_index = buttons[action]
+		if not InputMap.action_has_event(action, event): InputMap.action_add_event(action, event)
 
 static func code(event: InputEvent) -> int:
 	if event is InputEventKey:

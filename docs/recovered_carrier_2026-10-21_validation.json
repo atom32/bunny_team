@@ -1,0 +1,508 @@
+{
+  "status": "source_and_local_windows_packet_verified_delivered",
+  "evidence_directory": "D:\\tmp\\bunny_recovered_carrier_20261021_dev01",
+  "targeted": [
+    {
+      "name": "component_headless03",
+      "scene": "recovered_carrier_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "83140d4cc28b44514d30b8111aa075d9d867caa3b51bdf8ed0e2d57704246e2c"
+    },
+    {
+      "name": "component_read03",
+      "scene": "recovered_carrier_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "1f0d1b3575d95b24348123d5030e8f963a7fc8b541db8d114068acb18b9400cb"
+    },
+    {
+      "name": "world_write01",
+      "scene": "recovered_carrier_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "0dd8990c6ca06591d639c461f60948ca85619d48898d625a0a7710edfaac098b"
+    },
+    {
+      "name": "world_read01",
+      "scene": "recovered_carrier_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "ddf696ef64e3462c4f4ae0483b5488719d0284b61f3500d128da1d726722b32e"
+    },
+    {
+      "name": "actual_old_opened01",
+      "scene": "recovered_carrier_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "ddf696ef64e3462c4f4ae0483b5488719d0284b61f3500d128da1d726722b32e"
+    },
+    {
+      "name": "water_market_test01",
+      "scene": "water_market_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "75f6fbc8aa4df38de4851b23cc7ad078659f14aa0b35aa52e736cbf25c5a3671"
+    },
+    {
+      "name": "water_delivery_test01",
+      "scene": "water_delivery_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "2bb0d72da0b78c294bf00f9e10d3d8e2d1e38b27372581763e736eb6bd70e3a2"
+    },
+    {
+      "name": "alpha_economy_test01",
+      "scene": "alpha_economy_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "061c537f51fc7df8558a5fb0c1d4b9973f710ace02f5e4238c4a2e2106f23ea5"
+    },
+    {
+      "name": "campaign_test01",
+      "scene": "campaign_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "5191c227d4ffa30c55a96d86c577c4114803367bf8c8aa05d50ec599a6e286b3"
+    },
+    {
+      "name": "carried_backpack_ui_test01",
+      "scene": "carried_backpack_ui_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "ba2ddffa3ccea9610eb7b22ddaf8e83d6d15ee8a35946fe4f17e4a6ae4761d93"
+    },
+    {
+      "name": "recovered_arms_test01",
+      "scene": "recovered_arms_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "b2a7ea8e6f4d42bb1492624030d20e25ec9905a4f71299304c5020f4ec8e031c"
+    }
+  ],
+  "earned": [
+    {
+      "name": "earned_headless01",
+      "checks": 39,
+      "failures": [],
+      "carrier": {
+        "definition_id": "material.market_carrier_frame",
+        "durability": 100.0,
+        "fitting": "",
+        "instance_id": "37db26178911c9c8f52bd10f7719add3",
+        "quantity": 1
+      },
+      "rebuilt_id": "d124b8aea2202970abe421adfc21df80",
+      "before_returns": 7,
+      "after_returns": 8,
+      "evidence_path": "D:\\tmp\\bunny_recovered_carrier_20261021_dev01\\earned_headless01\\carrier_earned.json",
+      "sha256": "304d7a36fa30beb0df5980e7737162fc482bb82e9798afe36217eb348fa9c7a6"
+    },
+    {
+      "name": "earned_owned02",
+      "checks": 9,
+      "failures": [],
+      "carrier": {
+        "definition_id": "material.market_carrier_frame",
+        "durability": 100.0,
+        "fitting": "",
+        "instance_id": "37db26178911c9c8f52bd10f7719add3",
+        "quantity": 1.0
+      },
+      "rebuilt_id": "d124b8aea2202970abe421adfc21df80",
+      "before_returns": 8,
+      "after_returns": 8,
+      "evidence_path": "D:\\tmp\\bunny_recovered_carrier_20261021_dev01\\earned_owned02\\carrier_earned.json",
+      "sha256": "65e351a54011329d50f7cda0240f02b3556613a5ff03e0a4f4a947af1e29b56a"
+    },
+    {
+      "name": "earned_read02",
+      "checks": 4,
+      "failures": [],
+      "carrier": {
+        "definition_id": "material.market_carrier_frame",
+        "durability": 100.0,
+        "fitting": "",
+        "instance_id": "37db26178911c9c8f52bd10f7719add3",
+        "quantity": 1.0
+      },
+      "rebuilt_id": "d124b8aea2202970abe421adfc21df80",
+      "before_returns": 8,
+      "after_returns": 8,
+      "evidence_path": "D:\\tmp\\bunny_recovered_carrier_20261021_dev01\\earned_read02\\carrier_earned.json",
+      "sha256": "360e08ca899770c92183bebfdd717e18337d1c113d56687474dc649730f3df6b"
+    },
+    {
+      "name": "earned_freight01",
+      "checks": 41,
+      "failures": [],
+      "carrier": {
+        "definition_id": "material.market_carrier_frame",
+        "durability": 100.0,
+        "fitting": "",
+        "instance_id": "e8591ea319a6b293a83f0ef1ccddd69c",
+        "quantity": 1
+      },
+      "rebuilt_id": "0991a5956470235c73c95f677cf3e36e",
+      "before_returns": 7,
+      "after_returns": 8,
+      "evidence_path": "D:\\tmp\\bunny_recovered_carrier_20261021_dev01\\earned_freight01\\carrier_earned.json",
+      "sha256": "b24be8fb1e948fb470a637ee3f48426dc8d9d858363a89f0672057ea82d08ba6"
+    },
+    {
+      "name": "earned_freight_read02",
+      "checks": 4,
+      "failures": [],
+      "carrier": {
+        "definition_id": "material.market_carrier_frame",
+        "durability": 100.0,
+        "fitting": "",
+        "instance_id": "e8591ea319a6b293a83f0ef1ccddd69c",
+        "quantity": 1.0
+      },
+      "rebuilt_id": "0991a5956470235c73c95f677cf3e36e",
+      "before_returns": 8,
+      "after_returns": 8,
+      "evidence_path": "D:\\tmp\\bunny_recovered_carrier_20261021_dev01\\earned_freight_read02\\carrier_earned.json",
+      "sha256": "2b21b97b0a25c01d96c285eda0ea85c92c3f01089a2c3fba34189ee0e550152c"
+    }
+  ],
+  "native_component_scopes": [
+    {
+      "name": "native_forward03",
+      "pass": true,
+      "log_sha256": "bb9a68d204ddade759857385241e944629590db504353047d37cc8a158e71674",
+      "current_common_fixture_forward06_failure_not_accepted": false
+    },
+    {
+      "name": "native_compat_en06",
+      "pass": true,
+      "log_sha256": "04a2e116587b2ef959d29c1b5e9c0a560ec7b795fc87c97ad1a02d0be60b2479",
+      "current_common_fixture_forward06_failure_not_accepted": false
+    },
+    {
+      "name": "native_forward06",
+      "pass": false,
+      "log_sha256": "3c6e0e63e60ab4d3c05954e8f23b2f07d48d00eae12b94dcaec2045c6482073b",
+      "current_common_fixture_forward06_failure_not_accepted": true
+    }
+  ],
+  "visual_review": {
+    "reviewed_by_assistant": true,
+    "images": [
+      {
+        "path": "D:\\tmp\\bunny_recovered_carrier_20261021_dev01\\native_forward02\\carrier_cache.png",
+        "sha256": "fa67d0caf9f14d31f0f151495726fe2b404ab47ad8fd7a8a2954a68edd4929db",
+        "observation": "真实新增背架及用途说明；受控夹具，不是赚取路线。"
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_carrier_20261021_dev01\\native_forward03\\carrier_courier_equipped.png",
+        "sha256": "b49104c61d68dd176caad58612557387e7a3dcb1d4801d28dbc5f992445f8d58",
+        "observation": "轻便挎包实际选择、27kg与8.8m/s显示；当时QA版本基础流程通过。"
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_carrier_20261021_dev01\\native_compat_en06\\carrier_choice.png",
+        "sha256": "62103de44fbccd8eb4ce31af895bf35c3b9500d6d2ea6b55fcc7fc94dcc7add0",
+        "observation": "英文重载选项滚到可见区域；最新QA真实鼠标点击通过。"
+      },
+      {
+        "path": "D:\\tmp\\bunny_recovered_carrier_20261021_dev01\\native_compat_en06\\carrier_freight_equipped.png",
+        "sha256": "1d0ed554bfd5f7018bd0d18f4dd6124176877e1d4bdbede3258ade6f34f9c4b4",
+        "observation": "英文重载包、47kg与7.3m/s显示；图标仍为复用占位。"
+      }
+    ],
+    "scope": "Four selected native captures personally viewed, not all frames. Earlier unrefreshed selection and clipped-choice screenshots are rejected as final UI proof. Latest Forward06 failure is not erased."
+  },
+  "full_source_process": {
+    "pid": 43744,
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "D:\\bunny_team\\tools\\verify_migration.py",
+      "--godot",
+      "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+      "--output",
+      "D:\\tmp\\bunny_recovered_carrier_20261021_final03"
+    ]
+  },
+  "planned_full_scene_count": 125,
+  "planned_full_categories": 235,
+  "new_windows_packet": true,
+  "public_release_approved": false,
+  "measured_playtime_added_minutes": 0,
+  "rejected_attempts_retained": [
+    "headless01.log",
+    "native_forward01.log",
+    "native_compat_en03.log",
+    "native_compat_en04.log",
+    "native_compat_en05.log",
+    "native_forward06.log",
+    "earned_read01.log",
+    "earned_native_forward01.log",
+    "use_script_check01.log"
+  ],
+  "save_scope": "Equipment selection is durably saved on ordinary deployment or normal Menu/Save & Quit. Original QA raw tree.quit skipped that; continued same owned pack via normal Menu, then independent read. No production save-system change.",
+  "old_opened_checkpoint": {
+    "path": "D:\\tmp\\bunny_medical_runners_20261020_build01\\portable_market_earned_forward\\userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+    "sha256": "9ba59ab76f0037015594d926911ded902dc0d0808a7bbff6b72f4107177b12dc",
+    "copied_byte_identically": true
+  },
+  "protected_files_before": [
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+      "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+      "mtime_ns": 1792485868281761900
+    },
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+      "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+      "mtime_ns": 1792485868289265500
+    },
+    {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+      "mtime_ns": 1792376341839829300
+    },
+    {
+      "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+      "mtime_ns": 1792510165593990200
+    },
+    {
+      "path": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+      "mtime_ns": 1792542556303376100
+    }
+  ],
+  "original_full_source01_rejected": {
+    "evidence": "D:\\tmp\\bunny_recovered_carrier_20261021_final01\\results.json",
+    "reason": "obsolete exact37-item assertion; reviewed against actual old build, all37 retained, exactly three new items, gate now exact40 IDs"
+  },
+  "catalog_delta": {
+    "pass": true,
+    "actual_previous_build_catalog": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\project\\resources\\content\\content_manifest.tres",
+    "old_items": 37,
+    "new_items": 40,
+    "removed_ids": [],
+    "added_ids": [
+      "equipment.courier_sling",
+      "equipment.freight_frame",
+      "material.market_carrier_frame"
+    ]
+  },
+  "full_source_directory": "D:\\tmp\\bunny_recovered_carrier_20261021_final03",
+  "full_source_pty": 61689,
+  "full_source_not_terminal_yet": false,
+  "current_source_inputs_matching_full_snapshot": 4062,
+  "additional_current_static_art_and_component_results": [
+    {
+      "name": "supply_art_fixed01",
+      "pass": true,
+      "log_sha256": "3b27c28c0efe7659cd143e24a97bfff8a5a24c4de906c95e8e0b504385d8ba00"
+    },
+    {
+      "name": "component_headless04",
+      "pass": true,
+      "log_sha256": "83140d4cc28b44514d30b8111aa075d9d867caa3b51bdf8ed0e2d57704246e2c"
+    },
+    {
+      "name": "component_read04",
+      "pass": true,
+      "log_sha256": "1f0d1b3575d95b24348123d5030e8f963a7fc8b541db8d114068acb18b9400cb"
+    }
+  ],
+  "original_full_source02_rejected": {
+    "path": "D:\\tmp\\bunny_recovered_carrier_20261021_final02\\results.json",
+    "reason": "new pickup art used procedural equipment scene whose mesh only exists after ready; replaced with static authored bare frame, strict unchanged mesh-bounds check now passes"
+  },
+  "native_visual_scope_note": "Later real source-native earn/use captures personally reviewed; compiled independent ZIP capture review remains pending. Historical Forward06 failure cause is still unproven.",
+  "full_source_terminal": {
+    "pass": true,
+    "scene_count": 125,
+    "categories": 235,
+    "results_sha256": "73bf6d252d5f5bd4915726dbc3d5def8ed743acbde56dd59b777f2a846283f75",
+    "current_root_non_document_inputs_match": 4062,
+    "protected_files_unchanged": true,
+    "not_new_windows_packet": true,
+    "no_native_in_this_full_source_run": true,
+    "current_forward06_native_failure_not_erased": true
+  },
+  "post_full_source_delta": {
+    "full_source_baseline": "D:/tmp/bunny_recovered_carrier_20261021_final03",
+    "changed": [
+      "scripts/world/waterworks/market.gd",
+      "scripts/world/waterworks/market_control.gd",
+      "tests/recovered_carrier_test.gd",
+      "tools/build_local_windows.py",
+      "tools/local_build_probe.gd"
+    ],
+    "added": [
+      "tools/recovered_carrier_use_run.gd",
+      "tools/recovered_carrier_use_run.tscn"
+    ],
+    "scope": "QA further live sortie, local-only compiled QA mappings, and legacy open-depot hint suppression + explicit tests. Baseline full235 predates these reviewed changes."
+  },
+  "current_source_inputs_matching_build_snapshot": 4064,
+  "native_diagnostic_rerun": [
+    {
+      "name": "diagnostic_forward07",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "c6bf818e3d8f757afffb2a715dd2783dc1bb94e484afed8f856adadfcebf11e9",
+      "diagnostics": [
+        {
+          "flow_mode": "",
+          "hovered": "",
+          "message": "native UI gesture emits exactly one selected conversion press",
+          "mouse": "(-574.0, 400.0)",
+          "pass": true,
+          "paused": false
+        },
+        {
+          "flow_mode": "",
+          "hovered": "",
+          "message": "ordinary input actually moves at the selected pack speed",
+          "mouse": "(-574.0, 400.0)",
+          "pass": true,
+          "paused": false,
+          "player": {
+            "expected_speed": 8.75,
+            "position": "(-2.690277, -0.004161, 86.0)",
+            "velocity": "(-8.75, 0.0, 0.0)"
+          }
+        },
+        {
+          "flow_mode": "",
+          "hovered": "",
+          "message": "ordinary input actually moves at the selected pack speed",
+          "mouse": "(-574.0, 400.0)",
+          "pass": true,
+          "paused": false,
+          "player": {
+            "expected_speed": 7.3,
+            "position": "(-2.345, -0.004161, 86.0)",
+            "velocity": "(-7.3, 0.0, 0.0)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "diagnostic_compat_en07",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "04a2e116587b2ef959d29c1b5e9c0a560ec7b795fc87c97ad1a02d0be60b2479",
+      "diagnostics": [
+        {
+          "flow_mode": "",
+          "hovered": "",
+          "message": "native UI gesture emits exactly one selected conversion press",
+          "mouse": "(48.0, 1065.0)",
+          "pass": true,
+          "paused": false
+        },
+        {
+          "flow_mode": "",
+          "hovered": "",
+          "message": "ordinary input actually moves at the selected pack speed",
+          "mouse": "(48.0, 1065.0)",
+          "pass": true,
+          "paused": false,
+          "player": {
+            "expected_speed": 8.75,
+            "position": "(-2.690277, -0.004161, 86.0)",
+            "velocity": "(-8.75, 0.0, 0.0)"
+          }
+        },
+        {
+          "flow_mode": "",
+          "hovered": "",
+          "message": "ordinary input actually moves at the selected pack speed",
+          "mouse": "(48.0, 1065.0)",
+          "pass": true,
+          "paused": false,
+          "player": {
+            "expected_speed": 7.3,
+            "position": "(-2.345, -0.004161, 86.0)",
+            "velocity": "(-7.3, 0.0, 0.0)"
+          }
+        }
+      ]
+    }
+  ],
+  "native_earned_next_sortie": [
+    {
+      "name": "earned_native_forward02",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "6e80822b2d3fe3fbb2221d03eb47c701d588d525fa310dbd617c9f6fdb89cc0c"
+    },
+    {
+      "name": "earned_native_forward02_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "ef532e5777eeb81589a46029b149f9373c613d6ed01208891d75d17fb7895335"
+    },
+    {
+      "name": "earned_native_compat_en01",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "a01f0756d5ed971b0e06a34697353539207b4a9633042921e058cc167f66db5c"
+    },
+    {
+      "name": "earned_native_compat_en01_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "ef532e5777eeb81589a46029b149f9373c613d6ed01208891d75d17fb7895335"
+    }
+  ],
+  "compiled_build": {
+    "pass": true,
+    "compiled_categories": 133,
+    "results_sha256": "202dba8b83581b94572eb3a9007137684f9e0a6006aacefae04bba0fc4e7fe7d",
+    "current_root_non_document_inputs_match": 4064,
+    "protected_files_unchanged": true,
+    "not_independent_zip_delivered": true
+  },
+  "pck_audit": {
+    "pass": true,
+    "pck_sha256": "d6585cfb09a65892f4289a5d6fe072a1852b9a211694f2b5f2fb3ef74745a5c7",
+    "entries": 1639,
+    "all_byte_ranges_and_md5_verified": true,
+    "all_previous_content_gates_preserved": true,
+    "carrier_frame_both_packs_and_private_earn_use_qa_present": true,
+    "external_diagnostic_not_shipped": true,
+    "no_profile_backup_userdata": true,
+    "public_release_approved": false
+  },
+  "new_windows_packet_delivered": true,
+  "archive": {
+    "archive": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 246309576,
+    "sha256": "b20b04ee1a281e7d51d555c82b878b73a3e894ea5a88cef5efaa59723197ccd5",
+    "extracted_to": "D:\\tmp\\小兔试玩 背架改装 20261021 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false
+  },
+  "independent_zip_headless": {
+    "pass": true,
+    "accepted_cases": 25,
+    "planned_full_cases": 72,
+    "native_and_dependent_reads_still_required": true
+  },
+  "launcher_successful_launches": 26,
+  "launcher_isolated_save_groups": 14,
+  "launcher_expected_negative": {
+    "pass": true,
+    "expected_exit": 1,
+    "observed_exit": 1,
+    "command": "C:\\Windows\\system32\\cmd.exe /d /s /c \"\"D:\\tmp\\小兔试玩 背架改装 20261021 CMD01\\LOCAL_ONLY_DO_NOT_UPLOAD\\运行本地试玩.cmd\" --headless --fixed-fps 60 -- --local-qa invalid_mode\""
+  },
+  "foreground_state": "All three approved native batches terminal. No native active. CurrentZIP12 selected capture review completed after batch2, final packet accepted only after72 semantics.",
+  "independent_zip_cases": 72,
+  "delivery_complete_path": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\delivery_complete.json",
+  "delivery": "D:\\tmp\\小兔试玩 背架改装 20261021 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+  "delivery_never_launched": true
+}

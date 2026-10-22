@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyDefinition" format=3 uid="uid://cyg3q8lpw32n0"]
+[ext_resource type="Script" path="res://scripts/data/enemy_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/campus_rammer.tscn" id="2"]
+[ext_resource type="Resource" path="res://resources/presentation/subjects/campus_subject_profile.tres" id="3"]
+[resource]
+script = ExtResource("1")
+id = &"campus_rammer"
+display_name = "L-02 / Shielded Charger"
+scene = ExtResource("2")
+presentation_profile = ExtResource("3")
+humanoid_presentation = true
+tactical_role = 3
+max_health = 55.0
+move_speed = 3.2
+approach_speed = 1.0
+attack_damage = 22.0
+attack_range = 14.0
+attack_cooldown_min = 4.0
+attack_cooldown_max = 4.0
+detection_range = 26.0
+view_angle = 180.0
+acquire_seconds = 0.2
+search_duration = 18.0
+patrol_radius = 2.0

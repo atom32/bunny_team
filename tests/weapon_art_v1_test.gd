@@ -96,7 +96,7 @@ func run() -> void:
 	var kit:=ItemInstance.new(FITS[expected[gun_id]]);profile.inventory.add_item(kit)
 	check(WeaponFitting.install_kit(gun_id,kit.instance_id,PATH).error==OK,"Reinstall through real kit flow")
 	file=FileAccess.open("user://weapon_art_v1_expected.json",FileAccess.WRITE);file.store_string(JSON.stringify(expected));file.close()
-	check(SaveService.SCHEMA_VERSION==8 and SortieCheckpoint.VERSION==6,"No profile/checkpoint schema bump")
+	check(SaveService.SCHEMA_VERSION==11 and SortieCheckpoint.VERSION==6,"Schema 11 profile / unchanged schema 6 checkpoint")
 	await finish()
 func finish() -> void:
 	SortieRuntime.clear_session();AudioDirector.shutdown_for_test()

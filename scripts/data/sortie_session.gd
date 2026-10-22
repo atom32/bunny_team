@@ -35,6 +35,9 @@ var pharmacy_batch := ""
 var q04_active := false
 var delivery_receipt := ""
 var campus: Dictionary = {}
+var waterworks: Dictionary = {}
+var blockade: Dictionary = {}
+var maintenance: Dictionary = {}
 var outcome_created := false
 var threat_level := ThreatLevel.NORMAL
 var _initial_carried_instance_ids: Array[String] = []
@@ -85,6 +88,9 @@ static func create_from_profile(request: SortieRequest, profile: ProfileState) -
 	session.q02_active = profile.first_mission_completed and session.area_id == &"street_district" and profile.narrative_slice.settled.Q01 and not profile.narrative_slice.settled.Q02
 	session.q04_active = false # Legacy logistics is never new-story progress.
 	session.campus=CampusChapter.initial_facts(profile,session.area_id)
+	session.waterworks=WaterworksJourney.initial(session.area_id)
+	session.blockade=BlockadeJourney.initial(session.area_id)
+	session.maintenance=MaintenanceJourney.initial(session.area_id)
 	session.ar_damage_upgraded = profile.ar_damage_upgraded
 	if not session._initialize_weapon_runtime_state():
 		return null
@@ -295,6 +301,13 @@ func mark_outcome_created() -> bool:
 
 
 func validate() -> bool:
+	if not MaintenanceJourney.valid(maintenance,area_id,mission_id,get_objective_summary()):return false
+	if not BlockadeJourney.valid(blockade,area_id,mission_id,get_objective_summary()):return false
+	if not WaterworksJourney.valid(waterworks,area_id,mission_id,get_objective_summary()):return false
+	if not BlockadeStory.valid_pair(area_id, mission_id): return false
+	if not MaintenanceStory.valid_objectives(area_id,mission_id,get_objective_summary()):return false
+	if not FinaleStory.valid_objectives(area_id,mission_id,get_objective_summary()):return false
+	if not WaterworksStory.valid_choices(area_id, mission_id, get_objective_summary()): return false
 	if not CampusChapter.valid_facts(campus,area_id) or not CampusChapter.valid_inventory(campus,inventory,true): return false
 	if not SortieRequest.valid_lighting(lighting_variant, area_id): return false
 	return (

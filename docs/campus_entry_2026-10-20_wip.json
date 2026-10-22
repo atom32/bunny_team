@@ -1,0 +1,156 @@
+{
+  "recorded_at": "2026-10-20T00:04:16.059047+08:00",
+  "status": "work_in_progress_not_delivered",
+  "user_new_direction": "Prioritize resource animation use and a coherent itch release with about five-hour first completion. Planning now supersedes further packaging this incomplete candidate in this turn.",
+  "production_changes": [
+    "scripts/world/exit_plaque.gd",
+    "localization/zh_CN.json",
+    "localization/zh_CN.tres"
+  ],
+  "scope": "Readable actual gate names, explicit conditions and two unvoiced fresh Q01 observation exchanges; no gate/inventory/save/reward/AI/model change.",
+  "source": {
+    "directory": "D:\\tmp\\bunny_campusentry_20261019_final02",
+    "attempts": 113,
+    "passed": 112,
+    "failed": "campus_entry_q02",
+    "results_sha256": "7322cc8b11eb3068dd1218cc2e964b21f20ae49e529af5b519b152311d97c5a3",
+    "failure_evidence": "D:\\tmp\\bunny_campusentry_20261019_final02\\campus_entry_q02_captures\\campus_entry.json",
+    "reason": "Driver requires all Q02 materials from one random loot outing. Actual cargo had fabric2/dressings0; game supports warehouse/purchase delivery. RNG is not a guaranteed loot contract; no production softlock established. Not yet fixed."
+  },
+  "build": {
+    "directory": "D:\\tmp\\bunny_campusentry_20261019_build02",
+    "attempts": 39,
+    "all_pass": true,
+    "results_sha256": "e11e5ca06e3720e364ae167ba71a578b30ad1adcb30d5e1b16fae4fc9a77cf6e",
+    "portable_native_validation_started": false,
+    "delivered": false
+  },
+  "baseline_actual_chain": {
+    "runs": [
+      {
+        "name": "baseline03",
+        "process": "D:\\tmp\\bunny_campusentry_20261019\\baseline03\\process.json",
+        "sha256": "49ba712eb792401db00ed46feb22524deeef0d3f68f74722b30e93c82d92ef21",
+        "input_originals_unchanged": true
+      },
+      {
+        "name": "baseline04_native",
+        "process": "D:\\tmp\\bunny_campusentry_20261019\\baseline04_native\\process.json",
+        "sha256": "d798c77d6e7001cbf83f27bdb5debf8a54bbfd95e2c675ec1afc37d9a635e414",
+        "input_originals_unchanged": true
+      },
+      {
+        "name": "q02_baseline01",
+        "process": "D:\\tmp\\bunny_campusentry_20261019\\q02_baseline01\\process.json",
+        "sha256": "3f0ec74d03370dd0c1e9117817cb961ad96d688a05e94fde523264a83e8f7bfd",
+        "input_originals_unchanged": true
+      },
+      {
+        "name": "campus03_baseline02",
+        "process": "D:\\tmp\\bunny_campusentry_20261019\\campus03_baseline02\\process.json",
+        "sha256": "693726a9b38aeb8426dd28032d5d34291da947dd9dcf8637c57475278f98671c",
+        "input_originals_unchanged": true
+      },
+      {
+        "name": "campus05_baseline01",
+        "process": "D:\\tmp\\bunny_campusentry_20261019\\campus05_baseline01\\process.json",
+        "sha256": "d2a18b0781a298db9c54df9cab4d4afb26d42dca3e1c92879ab19b3ddf44eebb",
+        "input_originals_unchanged": true
+      },
+      {
+        "name": "campus06_baseline01",
+        "process": "D:\\tmp\\bunny_campusentry_20261019\\campus06_baseline01\\process.json",
+        "sha256": "3c207c6739821118d9e47925fe14746dcc7d7463a95face8de90e60ce54b5ac7",
+        "input_originals_unchanged": true
+      }
+    ],
+    "completed_profile": "D:\\tmp\\bunny_campusentry_20261019\\campus06_baseline01\\q01_actual.json",
+    "sha256": "ca2f5aa8a932a73766d584be7f9d962b0046168d3078d09f44897be083883152",
+    "successful_sorties": 6,
+    "current_release_full_chain_verified": false,
+    "scope": "Actual previous workshop portable first-return save copied with hash/mtime protection, normal controls through Q01/Q02 and CampusChapter. Q01 also native preview; remaining baseline stages headless. Synthetic controls not humans."
+  },
+  "earlier_candidates": {
+    "directories": [
+      "D:/tmp/bunny_campusentry_20261019_final01",
+      "D:/tmp/bunny_campusentry_20261019_build01"
+    ],
+    "reason": "New Q02 continuation assertion incorrectly required source UUID after legal stack merge. Exported run had exact cargo 2 dressings/3 fabric but one lost source ID. Corrected only QA to require real pickup signal, consumed/freed source and exact quantity increment. Actual-positive dev run passed with one real merged pickup. Source old-snapshot orchestrator/children deliberately stopped by verified command lines to avoid later GUI overlap; no observation-timeout restart. All files retained, not delivered.",
+    "negative": "D:/tmp/bunny_campusentry_20261019_build01/campus_entry_q02_captures/campus_entry.json",
+    "positive": "D:/tmp/bunny_campusentry_20261019/stack_positive01/campus_entry.json",
+    "production_inventory_logic_changed": false,
+    "delivered": false
+  },
+  "controlled_q01_unit_checks": 79,
+  "source_preservation_audit": "D:\\tmp\\bunny_campusentry_20261019_build02\\source_preservation_audit.json",
+  "animations": {
+    "assessment": "D:\\tmp\\combatgirls_trial_20261019\\assessment.json",
+    "assessment_sha256": "ddd09a7d0f084d6559402496914878127c4aeda37c6c9bd2d5e40387b63f6809",
+    "archive": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+    "package_sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec",
+    "source_animation_fbx_count": 39,
+    "visually_previewed": [
+      "R_Idle",
+      "R_AimIdle",
+      "R_AimWalk_F"
+    ],
+    "in_production": false,
+    "in_repo_or_game_package": false,
+    "cold_import_errors": 54,
+    "runtime_preview_errors": 0,
+    "limitations": [
+      "Original Unity UTS2 shader replaced with simplified Godot preview materials, not final shader parity.",
+      "Magica Cloth 2, hair/clothing physics and Unity event/constraint switching not migrated.",
+      "Initial FBX imports refer to missing legacy source textures; supplied PNGs bound explicitly for runtime preview.",
+      "Raw weapon FBX contains an extra Maya parent, omitted when rebuilding original prefab mesh attachment.",
+      "Reload/holster/other clips only probed, not certified as integrated animations.",
+      "No raw assets, preview project or package added to public Git or builds."
+    ],
+    "source_clips": [
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_AimWalk_FL.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Reload.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_AimWalk_BR.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_AimWalk_FL.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_AimTurn_L90.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_AimTurn_R90.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_AimIdle_AutoShoot.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Idle.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_AimJog.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_AimTurn_R90.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Die_F.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_PutGun.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_AimIdle.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_AimWalk_F.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Crouch_Jog.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Run.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_AimWalk_B.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_Shoot.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_AimTurn_L90.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Hit_Upper.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_AimWalk_FR.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_AimWalk_FR.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Die_B.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_TakeGun.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Evade.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Hit_Low.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_AimWalk_BL.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Walk.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_Reload.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_AutoShoot.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_AimIdle.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_AimWalk_F.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Shoot.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_AimWalk_BL.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Crouch_Walk.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Stun.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_Crouch_AimWalk_BR.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Normal/R_Crouch_Idle.fbx",
+      "Assets/CombatGirlsCharacterPack/RifleGirl/Animations/Aiming/R_AimWalk_B.fbx"
+    ]
+  },
+  "latest_delivered_package": "D:/tmp/bunny_fitting_20261019_build02/LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+  "further_action": "Fix QA to use actual warehouse stock, legal shop top-up and bounded real repeat sorties if fabric missing, then rerun explicit new evidence; do not fill flags/loot or claim candidate02 all green.",
+  "author_contact": "User sends draft and relays reply; no page/PM/poll/login/captcha operations this turn; no new permission text.",
+  "no_commit_push_upload": true,
+  "goal_achieved": false
+}

@@ -2,6 +2,8 @@ extends Node
 ## Visibility changes only. Never moves or rotates the gameplay camera.
 var faded: Dictionary = {}
 var aim_cutaways: Array[Node] = []
+var render_hidden: Dictionary = {}
+var needs_render_cutaway := RenderingServer.get_current_rendering_method() != "forward_plus"
 
 func update_occlusion(camera: Camera3D, actor: Node3D, delta: float) -> void:
 	_clear_aim_cutaways()
@@ -46,11 +48,25 @@ func update_occlusion(camera: Camera3D, actor: Node3D, delta: float) -> void:
 		var goal := maxf(original, float(blocking[mesh])) if blocking.has(mesh) else original
 		mesh.transparency = move_toward(mesh.transparency, goal, delta * 4.5)
 		if not blocking.has(mesh) and is_equal_approx(mesh.transparency,original): faded.erase(mesh)
+	if needs_render_cutaway:
+		# Mobile/Compatibility ignore per-instance transparency. Hide only the
+		# render instance: Node visibility stays truthful for canopy queries,
+		# destruction and gameplay. Never duplicate or replace shared materials.
+		for mesh in blocking:
+			RenderingServer.instance_set_visible(mesh.get_instance(), false)
+			render_hidden[mesh] = true
+		for mesh in render_hidden.keys():
+			if not is_instance_valid(mesh): render_hidden.erase(mesh)
+			elif not blocking.has(mesh):
+				RenderingServer.instance_set_visible(mesh.get_instance(), mesh.is_visible_in_tree())
+				render_hidden.erase(mesh)
 
 func _exit_tree() -> void:
 	_clear_aim_cutaways()
 	for mesh in faded:
 		if is_instance_valid(mesh): mesh.transparency = faded[mesh]
+	for mesh in render_hidden:
+		if is_instance_valid(mesh): RenderingServer.instance_set_visible(mesh.get_instance(), mesh.is_visible_in_tree())
 
 func _clear_aim_cutaways() -> void:
 	for body in aim_cutaways:

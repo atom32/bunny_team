@@ -1,8 +1,8 @@
 extends Node3D
 const INTRO := [
-	["01 / HOME SIGNAL", "The city went silent. Bastion 07 stayed on the air."],
-	["02 / FIELD OPERATOR", "Your frame is ready. The security network is not on your side."],
-	["03 / SIGNAL RECOVERY", "Access the Field Office. Recover supplies. Reach extraction. Come home."],
+	["01 / IS THIS THING ON?", "Tang Kui: Can you hear me? Knock twice if you can. Do not shoot the radio.\nSu Mi: She is still in the room.\nTang Kui: I know. I am saying it now."],
+	["02 / YOUR CHAIR IS STILL HERE", "Shen Yanshuang: I kept your chair. When you go out, remember to come back and sit in it.\nTang Kui: That is not what you said a minute ago.\nShen Yanshuang: Mute your radio, Tang Kui."],
+	["03 / BEFORE IT GETS COLD", "Tang Kui: I saved you a bowl. If it gets cold, I am eating it.\nSu Mi: She just filled another one.\nTang Kui: Could you pretend you did not hear that?"],
 ]
 var screen: Control
 var intro_time := 0.0
@@ -61,7 +61,7 @@ func _intro(index: int) -> void:
 	var panel := _panel(screen, Vector2(42,486), Vector2(1196,176))
 	_label(panel, INTRO[index][0], Vector2(24,20), 20, FieldManualStyle.ACCENT)
 	var description := _label(panel, INTRO[index][1], Vector2(24,72), 21)
-	description.size = Vector2(1148, 80)
+	description.size = Vector2(1148, 94)
 	description.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	SliceUI.button(screen, "SKIP OPENING  /  ENTER", Vector2(922,34), Vector2(316,44), show_menu)
 	AudioDirector.play_sfx(&"ui_confirm", -6)

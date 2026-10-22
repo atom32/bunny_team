@@ -30,6 +30,11 @@ func _ready() -> void:
 	get_tree().quit(0 if failures.is_empty() else 1)
 
 func exercise() -> void:
+	for action in ["ui_accept", "ui_cancel", "ui_up", "ui_down", "ui_left", "ui_right"]:
+		var events := InputMap.action_get_events(action)
+		check(events.any(func(event): return event is InputEventJoypadButton and event.device == -1), "device-independent controller UI binding: " + action)
+		ControlBindings.initialize(PATH)
+		check(InputMap.action_get_events(action).size() == events.size(), "reinitializing preserves UI keys and does not duplicate pad events: " + action)
 	check(ControlBindings.valid(ControlBindings.defaults),"project defaults form complete valid control map")
 	var joy := InputEventJoypadButton.new()
 	joy.button_index = JOY_BUTTON_X

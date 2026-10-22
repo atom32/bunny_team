@@ -1,0 +1,504 @@
+{
+  "date": "2026-10-19",
+  "feature": "off-duty 3D exercise and furniture interactions",
+  "source": {
+    "path": "D:\\tmp\\bunny_training_20261019_final03",
+    "scene_tests": 92,
+    "runner_rows": 133,
+    "all_pass": true,
+    "results_sha256": "f45ee8373e90729f892ac4ad21d1778ff498780959b03bf756284e04afe8c18f",
+    "initial_results_path": "D:\\tmp\\bunny_training_20261019_final03\\results.json",
+    "initial_results_sha256": "26502a1754815eeef3df6c320296129258cd635a1beb14c0f428af4eb9f8ab19",
+    "initial_failed_rows": [
+      {
+        "name": "campus_voice_gui",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_training_20261019_final03\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/campus_voice_test.tscn",
+          "--",
+          "--capture"
+        ],
+        "exit": 1,
+        "pass": false,
+        "errors": [
+          "ERROR: en/power/su_mi / One mouse click activates OpenConversation exactly once at [P: (304.0, 185.0), S: (898.0, 39.0)]",
+          "ERROR: en/power/su_mi / Read button opens actual conversation",
+          "ERROR: en/power/su_mi / One mouse click activates NextLine exactly once at [P: (304.0, 185.0), S: (103.0, 39.0)]",
+          "ERROR: en/power/su_mi / Next-line input visits line in order",
+          "ERROR: en/power/su_mi / One mouse click activates NextLine exactly once at [P: (304.0, 185.0), S: (103.0, 39.0)]",
+          "ERROR: en/power/su_mi / Next-line input visits line in order",
+          "ERROR: en/power/su_mi / One mouse click activates NextLine exactly once at [P: (304.0, 317.0), S: (447.0, 39.0)]",
+          "ERROR: en/power/su_mi / Next-line input visits line in order",
+          "ERROR: en/power/su_mi / Next-line input visits line in order",
+          "ERROR: en/power/su_mi / Replay returns to first line without granting progress"
+        ],
+        "warnings": [],
+        "sha256": "0d8ccbd7aa1a7d9f6f8ec303ba942d73cc6a29881fc56abbda97bf02e7d9458f"
+      }
+    ],
+    "errors_in_completed_checks": 0,
+    "warnings": [
+      "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+      "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+    ]
+  },
+  "build": {
+    "path": "D:\\tmp\\bunny_training_20261019_build03",
+    "checks": 12,
+    "all_pass": true,
+    "results_sha256": "aaeebad841ba9809abf0a06dd9668392748144c1af530c3d13c5d005292b2069"
+  },
+  "portable": {
+    "archive": "D:\\tmp\\bunny_training_20261019_build03\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 278044947,
+    "sha256": "03beffa69afdb5e08d4f67b38d5175285f9efacd3bcee2d408217fd9256066c7",
+    "extracted_to": "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "files_match": true,
+    "release_template_hash_matches": true,
+    "PATH": "C:\\Windows/System32;C:\\Windows",
+    "public_release_approved": false,
+    "rows": [
+      {
+        "name": "native_training",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "training",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "8a49471a94e86d5548d32e5af17753752fb008613aec0c1f0251b0c50ed27e6a"
+      },
+      {
+        "name": "compat_training",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "training",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "ed9c081ceef7a6f9c8e23582aae3416aacadedfef060ab93e50389d2bfaa2c9a"
+      },
+      {
+        "name": "default_start",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--quit-after",
+          "180"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "83cf0b082206af2aa236c83064fbcfa76be1e00a4aa3558574b2f65965d9481c"
+      },
+      {
+        "name": "zip_write",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "f975c79d44e2de3544a245dfccb482e2bc772ce4a1e6695ecba04d23af2ffa52"
+      },
+      {
+        "name": "zip_read",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "5006969489902788718574266ed88ba2767d0721fd498ee7a5dee9549dca815f"
+      },
+      {
+        "name": "native_boot",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "boot"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "46149b4faf47b7a3f1d7ac1d35d6777bcafd1b2c48a53bc7ba809e0ea547f5ea"
+      },
+      {
+        "name": "native_melee",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "melee",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "7dc0868a34e17d58ff981b82ce04e275827a3fbbd2dfc4052081f87fd7419b01"
+      },
+      {
+        "name": "compat_melee",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "melee",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "6d541f879f269ef095f5bf51d83af3a9ccfba8d4a3718cd79b6ca7308b553fc9"
+      },
+      {
+        "name": "compat_waterworks",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "waterworks",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "50b4319ad3e00eeb9041678044132fd5cb004d7bbfaac591db4f77e145d75f43"
+      },
+      {
+        "name": "native_waterworks",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "waterworks",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "00b560acb70f7dc6315c6257395043fefa09047ca122f4dfee3a528d3f9d0090"
+      },
+      {
+        "name": "native_water_public",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "water_public",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "dbd15d7eafbddfabf317fac0ed66c63f58c93ab9d7ede2ad8eb6486a53c6290c"
+      },
+      {
+        "name": "native_water_tanker_serial",
+        "category": "native_water_tanker",
+        "folder": "D:\\tmp\\bunny_training_20261019_build03",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "water_tanker",
+          "--tanker",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "413c5db2b288300c9b6142626f580f2bfb100790e2b30714f23cc020021331f8"
+      },
+      {
+        "name": "native_campus_serial",
+        "category": "native_campus",
+        "folder": "D:\\tmp\\bunny_training_20261019_build03",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "campus",
+          "--combat-capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "f3a5b304045b6c04aef12b425aca573ceb21e92bd6866c0e78ef2b87eebb53a3"
+      }
+    ],
+    "first_attempt_passed": false,
+    "first_attempt_file": "D:\\tmp\\bunny_training_20261019_build03\\portable_validation.json",
+    "first_attempt_sha256": "72774b064995725647edfea851ce07ed9c892dc3c1ec8ddf2ec855a37592b087",
+    "first_attempt_failed_rows": [
+      {
+        "name": "native_water_tanker",
+        "command": [
+          "D:\\tmp\\小兔训练室 最终试玩 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "water_tanker",
+          "--tanker",
+          "--capture"
+        ],
+        "exit": 1,
+        "pass": false,
+        "errors": [
+          "ERROR: COMBAT RUN stuck (0.086667, -0.004161, 29.0) heading to (1.0, 0.0, 29.0)\r"
+        ],
+        "warnings": [],
+        "log_sha256": "9c1733d1bbaefab55f251e600ca9cb39b4df25ed231f2f2a6473490ad3cdcbe6"
+      }
+    ]
+  },
+  "packaged_file_audit": {
+    "exported_file_entries": 1477,
+    "all_entry_checksums_verified": true,
+    "forbidden_original_entries": [],
+    "forbidden_imported_cache_entries": [],
+    "arcana_name_entries": [],
+    "local_qa_entries": [
+      "local_qa/campus_route.gd.remap",
+      "local_qa/campus_route.gdc",
+      "local_qa/campus_route.tscn.remap",
+      "local_qa/expected.json",
+      "local_qa/melee.gd.remap",
+      "local_qa/melee.gdc",
+      "local_qa/melee.tscn.remap",
+      "local_qa/probe.gd.remap",
+      "local_qa/probe.gdc",
+      "local_qa/training.gd.remap",
+      "local_qa/training.gdc",
+      "local_qa/training.tscn.remap",
+      "local_qa/water_route.gd.remap",
+      "local_qa/water_route.gdc",
+      "local_qa/water_route.tscn.remap",
+      "local_qa/waterworks.gd.remap",
+      "local_qa/waterworks.gdc",
+      "local_qa/waterworks.tscn.remap"
+    ],
+    "authoring_copies_of_canonical_runtime_import_metadata": [
+      {
+        "metadata": "art_source/unitychan_battle_derivative/battle_presentation.glb.import",
+        "declared_source": "assets/characters/unitychan_battle/battle_presentation.glb",
+        "packaged_caches": [
+          ".godot/imported/battle_presentation.glb-af83ba541127bc3157e57bdc96b1bc0e.scn"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_legacy/unitychan_battle.fbx.import",
+        "declared_source": "assets/characters/unitychan_battle/unitychan_battle.fbx",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/jpg/Dark_Silhouette.jpg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Dark_Silhouette.jpg",
+        "packaged_caches": [
+          ".godot/imported/Dark_Silhouette.jpg-d89c8a5db04224b5dc453126d7b81e94.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/jpg/Light_Silhouette.jpg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Light_Silhouette.jpg",
+        "packaged_caches": [
+          ".godot/imported/Light_Silhouette.jpg-be71f5e7194dfd9aaf5f2f178d614f32.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Dark_Silhouette.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Dark_Silhouette.png",
+        "packaged_caches": [
+          ".godot/imported/Dark_Silhouette.png-ab768330ba422bfead01b6b0fe68eca2.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Light_Frame.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Frame.png",
+        "packaged_caches": [
+          ".godot/imported/Light_Frame.png-504bcf1f3de3b1c250abc106b59cadcc.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Light_Silhouette.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Silhouette.png",
+        "packaged_caches": [
+          ".godot/imported/Light_Silhouette.png-8a512442649e04a800ae3fa5da139ac3.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Dark_Silhouette.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Dark_Silhouette.svg",
+        "packaged_caches": [
+          ".godot/imported/Dark_Silhouette.svg-af758fb9ecb503d24376ff81e177cf68.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Light_Frame.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Frame.svg",
+        "packaged_caches": [
+          ".godot/imported/Light_Frame.svg-0f9d2e1908bdde6a03b4eef8bfcd705e.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Light_Silhouette.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Silhouette.svg",
+        "packaged_caches": [
+          ".godot/imported/Light_Silhouette.svg-552825fced288c904e66130bae70955f.ctex"
+        ]
+      }
+    ]
+  },
+  "integrity": {
+    "source_manifest_files_identical": 3662,
+    "actual_source_files_byte_identical_except_config": 3661,
+    "expected_config_changes_verified": "isolated verification name; private prototype name and QA autoload only",
+    "prior_art_and_scene_files_unchanged": 965,
+    "translations": 1181,
+    "prior_translation_values_retained": 1152,
+    "changed_files": [
+      "localization/zh_CN.json",
+      "localization/zh_CN.tres",
+      "scenes/presentation/slice/training_room.tscn",
+      "scenes/presentation/training/environment.tscn",
+      "scripts/presentation/slice/hideout.gd",
+      "scripts/presentation/slice/training_motion.gd",
+      "scripts/presentation/slice/training_motion.gd.uid",
+      "scripts/presentation/slice/training_room.gd",
+      "scripts/presentation/slice/training_room.gd.uid",
+      "tests/training_room_test.gd",
+      "tests/training_room_test.gd.uid",
+      "tests/training_room_test.tscn",
+      "tools/author_training_room.py",
+      "tools/build_local_windows.py",
+      "tools/local_build_probe.gd",
+      "tools/verify_migration.py"
+    ],
+    "all_log_hashes_verified": true
+  },
+  "training_checks": {
+    "headless_source": 170,
+    "forward_plus_export": 182,
+    "compatibility_export": 182
+  },
+  "preview": {
+    "path": "D:\\tmp\\bunny_training_20261019_preview03\\training_preview.gif",
+    "bytes": 15647784,
+    "sha256": "2beec37d657e7f62fc59f9ba93fa1ebeb528e9da07460fa0a0caaa0e89df3feb",
+    "frames": 272,
+    "fps": 8,
+    "seconds": 34,
+    "source": "actual Forward+ Godot rendering; simulation sampled at 8fps; no recorded audio"
+  },
+  "limits": [
+    "Clothed existing heroine and dimensions unchanged; Arcana not installed or distributed.",
+    "Original campus dialogue mouse first attempt and native tanker route first attempt failed; serial rechecks retained separately. Root cause not established; no production fix claimed.",
+    "Authored basic side-bend rotation keys, existing CC0 gait and sit/stand clips; no IK/contact certification.",
+    "Keyboard/mouse generated events, not blind-human or physical-gamepad acceptance.",
+    "RTX 5090, Dummy audio; not minimum-hardware or listening acceptance.",
+    "Local-only prototype, unresolved asset permissions; no upload, public release or review target achieved."
+  ]
+}

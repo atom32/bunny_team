@@ -1,5 +1,21 @@
 # Third-Party Assets
 
+## Rescue door return moment
+
+The optional rescue-return scene keeps the current player and the existing Quaternius adult clothed survivor reference. Walking/idle poses reuse the repository's off-duty and survivor animation sources; the flat-hand door/catch contact is rotation-only project code, not a newly imported paid clip. Door, catch, room and bench are authored primitives, and the latch reuses the existing lock cue. No new asset download, paid motion data, model replacement or voice is introduced. Existing notices and LOCAL_ONLY restrictions remain.
+
+## Maintenance interior presentation
+
+The maintenance v2 render-only dressing reuses the repository's existing concrete floor/wall maps, Kenney computer-system terminal, compact-hideout radio and Poly Haven toolbox. Original asset files and their existing notices are unchanged. Floor paint/shader, signs, bed rails/blankets, shutter ribs, cabinets, valve wheel, drainage and gradient CPU vapor are authored in project code; no new third-party download, character, paid motion or voice is introduced. This is not a new provenance or public-release clearance. Collision/navigation and both legacy maintenance maps remain unchanged.
+
+## Biggest Bucket return vignette
+
+The water-return vignette keeps the existing player model and Quaternius off-duty stand, walk and sit sources. Two-handed bucket contact is original rotation-only presentation code, not a newly imported paid animation. The bucket, handles, stool, nameplate and small flower are created in code. No new third-party asset file, voice actor, Arcana model or CombatGirls data is introduced by this scene. Existing notices and LOCAL_ONLY status continue to apply.
+
+## Water Tower delivery expansion
+
+The anonymous courtyard residents reuse the existing Quaternius adult male and female reference profiles and their idle/walk animations. They are placeholder art, not replacements for the player or newly licensed story characters. The truck, gates, relief latch, tap and warning geometry are generated in project code. This batch imports no third-party asset files and does not include Arcana or the paid CombatGirls motion data in the default build. The existing asset audit and LOCAL_ONLY distribution restriction still apply.
+
 ## Unity-chan Battle Costume
 
 - Runtime animation FBXs: `assets/characters/unitychan_battle/animations/`; original hidden source rig/animation data retained.
@@ -35,7 +51,7 @@ The Unity-chan license package must remain alongside the character files when th
 - Author: Quaternius
 - Source: https://quaternius.com/packs/ultimatemodularwomen.html
 - Recorded license: CC0 1.0 Universal / Public Domain Dedication
-- Package discrepancy: the existing notice says Ultimate Modular Males while the prior source link says Women. The official Women page also lists CC0, but the local file has not been byte-matched to that archive; do not treat this as a newly completed provenance audit.
+- Package discrepancy: the existing notice says Ultimate Modular Males while the prior source link says Women. The official Women page also lists CC0, but the local file has not been byte-matched to that archive; do not treat this as a newly completed provenance audit. On 2026-10-21, following the official Women page to its public glTF folder found `SciFi.gltf`; the Men folder did not list that filename. This supports Women as the likely source, not an exact match. Both direct model and license downloads returned a public Drive quota page; no runtime/license file was replaced. Local runtime SHA256: `f163dfc7bb42676715ad3c69879e13b642ca97c235dc54895e65ac42f1d79f1c`. Evidence: `docs/runtime_rights_2026-10-21_validation.json`.
 - License text: `assets/characters/quaternius_scifi/LICENSE.txt`
 
 The SciFi model and its original skin/animations now provide the PMC patrol enemy. A red ground marker distinguishes hostiles. The authored pistol, movement, firing and death clips are retained. It is not the visible player character.
@@ -68,7 +84,7 @@ The SciFi model and its original skin/animations now provide the PMC patrol enem
 - User-provided official [free demo](https://mocaponline.itch.io/mocap-online-demo): 7 original Rifle animation FBXs, MotusMan_v55 reference skeleton, and the supplied M4 mesh/textures.
 - Files and provenance: `assets/animations/mocap_online_rifle/SOURCE.md` and `assets/weapons/mocap_m4/SOURCE.md`.
 - License: MoCap Online Standard License, not CC0; [official terms](https://mocaponline.com/pages/legal).
-- Animation clips are currently sampled by the isolated Bunny portrait. The supplied M4 mesh/textures also replace the runtime AR model. The demo contains no Rifle reload or firing clip.
+- Animation clips are currently sampled by the isolated Bunny portrait. The supplied M4 mesh/textures also replace the runtime AR model. The demo contains no Rifle reload or firing clip. The current [official free-animation product](https://mocaponline.com/products/free-mocap-animation-pack) describes an included Standard License, and the [licensing comparison](https://mocaponline.com/pages/licensing) distinguishes animation use from raw-data redistribution and AI uses. Those animation statements do not explicitly establish permission for the supplied M4 reference mesh/textures. The current candidate selects five M4 files; keep that separate scope check open rather than inferring a CC0 or public-source grant.
 
 ## Poly Haven streets textures
 
@@ -103,7 +119,7 @@ The SciFi model and its original skin/animations now provide the PMC patrol enem
 ## Quaternius adult subject references — 2026-10-15
 
 - Official sources: [Universal Base Characters](https://quaternius.com/packs/universalbasecharacters.html), [UAL1](https://quaternius.com/packs/universalanimationlibrary.html). Free Standard only, CC0; no teen or paid Source models.
-- Runtime/reference directories: `assets/characters/quaternius_subject/` and `assets/characters/quaternius_subject_female/`; each retains LICENSE.txt and SOURCE.json. Male subject now presents new infected sorties; female is an authoring reference, not a new player or randomly spawned enemy.
+- Runtime/reference directories: `assets/characters/quaternius_subject/` and `assets/characters/quaternius_subject_female/`; each retains LICENSE.txt and SOURCE.json. Male subject now presents new infected sorties; female now also provides the explicitly labeled CC0 placeholder survivor Xu Tang in the maintenance-rescue graybox and homecoming epilogue. It is not a player replacement or randomly spawned enemy. The female model is intentionally included in this local runtime; Arcana and paid source motions remain excluded.
 - Standard archive SHA256: `fdbf1804c90dfc1ea03e992bff7da2dfd1a79318e13270a660180f9308455f40`. UAL1 GLB SHA256: `69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997`. Original private download-session URLs/cookies are not redistributed.
 - Derived coverall/soft-shoe material partitions retain original positions, skin weights and bind skeleton; these are close-fitting material covers, not newly modeled loose clothes. Texture URI repair fixes missing upstream normal names; texture pixels are unchanged.
 - Seven target-rest-retargeted clips per adult rig are native AnimationLibrary/BoneMap resources under `resources/presentation/subjects*`. The source animations are universal/unisex authored clips, not verified male/female-performer mocap.
@@ -123,3 +139,20 @@ The existing MoCap Online M4 geometry/maps remain unchanged and keep their exist
 ## Field supplies art v1 (2026-10-15)
 
 Sixteen new project-authored supply/food/drink props and their actual-rendered PNG icons: `assets/props/supply_art_v1/SOURCE.md`. No new third-party asset download or generative service; labels reuse the existing Noto Sans SC font and retained SIL OFL. Original project rights are not reassigned to CC0. The reused prior magazine/fitting presentation remains subject to its existing MoCap Online source restrictions.
+
+## Water Tower Street prototype additions
+
+`scenes/areas/waterworks_district.tscn` contains project-authored native environment geometry, with existing sourced street textures and service props reused under their existing provenance entries. No new human character mesh or animation was generated or substituted. The pump-battery icon reuses the existing parts illustration.
+
+`assets/audio/water_horn.wav` is a project-authored synthesized two-tone PA cue produced by `tools/author_waterworks.py`, not a third-party recording or generated voice. New waterworks dialogue is original project text. These additions do not clear unresolved rights for the existing production character or authorize public distribution of the prototype.
+# 水塔街南市扩展的素材范围
+
+2026年10月20日新增南市与可选维修仓地图。建筑、卷门、货架、工作台、地面线路和分格由项目代码生成；复用原水塔街已有的墙地贴图、补给堆、敌人、字体与警报音效。没有新增下载素材、配音、角色或付费动画数据。原版本1和版本2地图保留用于旧档。本段记录来源范围，不改变此前仍为 LOCAL_ONLY 的分发限制。
+
+## Campus relay PA diversion additions
+
+The optional PA reuses the already-vendored compact-hideout radio under its existing provenance. Pole, horn, switch and indicator use project-authored native geometry. `assets/audio/campus_pa.wav` is original procedural feedback synthesis, reproducible with `tools/author_campus_pa_audio.py`; it contains no sampled recording or generated voice. No character, animation pack or third-party download was added. Existing distribution restrictions remain unchanged.
+
+## Carrier candidate companion integrity 2026 10 21
+
+The current local candidate contains all 30 selected companion-license files with exact member and SHA256 matches to its runtime inventory, plus engine notices matching its static-file manifest. This proves companion integrity, not rights clearance. The Artoria prototype permission, SciFi exact-source match and M4 reference-model scope remain open; neither open-source intent nor a local-only label resolves them. No candidate, asset, license file, heroine or private profile was changed by this check. Machine evidence: `docs/runtime_rights_2026-10-21_validation.json`.

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://c8waterbat19"]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/stash/supply_art_v1/parts.png" id="2"]
+[resource]
+script = ExtResource("1")
+id = &"story.pump_battery"
+display_name = "Pump vehicle battery"
+description = "Eight kilos of battery. Carry it from the west garage to the east pump. Only a completed installation consumes it."
+icon = ExtResource("2")
+stash_size = Vector2i(2,2)
+weight = 8.0
+base_value = 0
+item_tags = PackedStringArray("story")
+metadata/authoring_source = "res://tools/author_waterworks.py"
+metadata/license_ref = "res://THIRD_PARTY_ASSETS.md"

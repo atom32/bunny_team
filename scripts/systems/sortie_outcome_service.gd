@@ -57,6 +57,11 @@ static func commit_outcome(profile: ProfileState, outcome: SortieOutcome) -> Err
 	CampaignService.record_outcome(candidate, outcome)
 	NarrativeSlice.record_outcome(candidate, outcome)
 	CampusChapter.record_outcome(candidate,outcome)
+	var water_branch := WaterworksStory.returned_branch(outcome)
+	if not water_branch.is_empty(): candidate.waterworks_memory = water_branch
+	if MaintenanceStory.returned(outcome):candidate.maintenance_rescued=true
+	if outcome.result_type==SortieOutcome.ResultType.COMPLETED and outcome.area_id==BlockadeStory.AREA and outcome.mission_id==BlockadeStory.MISSION and outcome.mission_completed:candidate.blockade_cleared=true
+	if FinaleStory.returned(outcome):candidate.maintenance_closed=true
 	candidate.settled_outcomes.append(outcome.outcome_id)
 	if not candidate.validate(): return ERR_INVALID_DATA
 	profile.replace_with(candidate)

@@ -1,0 +1,180 @@
+{
+  "date": "2026-10-20",
+  "scope": "Render-only maintenance interior, low-contrast painted-concrete floor, ward beds, physical control styling and transparent CPU vapor; exact old v2 collision/nav signature retained; not full-game art or release acceptance.",
+  "goal_status": "active",
+  "source": {
+    "snapshot": "D:\\tmp\\bunny_maintenance_art_20261020_final01",
+    "test_scenes": 114,
+    "categories": 195,
+    "all_pass": true,
+    "results_sha256": "c3c9b34f8fe657e2d128fc97198e2196ef41785999f33e1e5c329451524fc347",
+    "original_fbx_import_warnings": 2
+  },
+  "build": {
+    "folder": "D:\\tmp\\bunny_maintenance_art_20261020_build01",
+    "categories": 87,
+    "all_pass": true
+  },
+  "independent_zip": {
+    "categories": 13,
+    "launcher_cases": 12,
+    "compiled_campus_seed_prefix_cases": 4,
+    "all_pass": true,
+    "native_serial": true,
+    "system_only_PATH": true
+  },
+  "archive": {
+    "archive": "D:\\tmp\\bunny_maintenance_art_20261020_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 245430326,
+    "sha256": "acedb0087e05faa4afa062cf743928282ea2e429396e732d62c0c7366ef9e962",
+    "extracted_to": "D:\\tmp\\小兔试玩 维护区场景 20261020 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false,
+    "fresh_delivery_extracted_to": "D:\\tmp\\小兔试玩 维护区场景 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "fresh_static_files_match": true,
+    "fresh_preview_userdata_not_preplayed": true
+  },
+  "pack_audit": {
+    "entries": 1497,
+    "all_byte_ranges_and_md5": true,
+    "forbidden_original": [],
+    "forbidden_cache": [],
+    "arcana": [],
+    "combatgirls": [],
+    "legacy_and_v2_maps": true,
+    "bucket_scene_and_script_present": true
+  },
+  "all_non_document_root_frozen_build_source_inputs_match": true,
+  "actual_earned_routes": {
+    "earned_forward": {
+      "evidence": "D:\\tmp\\bunny_maintenance_art_20261020_build01\\portable_earned_forward\\maintenance_run.json",
+      "sha256": "496bf070fa54e44ed30ed813d76cd1af595166522e41f9f51ad2e8df6d93a386",
+      "checks": 22,
+      "route": "preclear",
+      "shots": 22,
+      "kills": 7,
+      "health": 260.0,
+      "damage": 0,
+      "steam_facts": {
+        "steam_off": true,
+        "version": 2
+      },
+      "warned": false,
+      "followed": false,
+      "before_returns": 6,
+      "after_returns": 7
+    },
+    "earned_compat_en": {
+      "evidence": "D:\\tmp\\bunny_maintenance_art_20261020_build01\\portable_earned_compat_en\\maintenance_run.json",
+      "sha256": "18dc1ae6a0f787cd64b120a55c28bb0d6cf588ae35a31e546b9af536a74f0f38",
+      "checks": 26,
+      "route": "rescue_first",
+      "shots": 21,
+      "kills": 7,
+      "health": 254.6,
+      "damage": 5,
+      "steam_facts": {
+        "steam_off": true,
+        "version": 2
+      },
+      "warned": true,
+      "followed": true,
+      "before_returns": 6,
+      "after_returns": 7
+    }
+  },
+  "legacy_v1_producer": {
+    "producer_project": "D:\\tmp\\bunny_blockade_v2_20261020_final01\\project",
+    "source_manifest": "D:\\tmp\\bunny_blockade_v2_20261020_final01\\source_manifest.json",
+    "source_manifest_sha256": "5307d2fc1deda4c781766012d395b59c051f9b3dcffb30ed7145db955c93ccf8",
+    "input": "D:\\tmp\\bunny_maintenance_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD\\preview_save\\profile.json",
+    "input_sha256": "b5f37e57f2883499b9fb138ce5e3fa841957cc1b8747424f5bfa04408d8a0c93",
+    "produced": "D:\\tmp\\bunny_maintenance_v2_20261020_dev01\\old_producer_userdata\\Godot\\app_userdata\\Bunny Verification bunny_blockade_v2_20261020_final01\\maintenance_journey_test.json",
+    "sha256": "4e8e8e4e252325bf82c7189dc48c0fff8a7dbd4ac4750240eb813ce0d34b1973",
+    "reader_input": "D:\\tmp\\bunny_maintenance_v2_20261020_dev01\\legacy_userdata\\Godot\\app_userdata\\Bunny Verification bunny_maintenance_v2_20261020_dev01\\maintenance_journey_test.json"
+  },
+  "prior_v2_checkpoint": {
+    "producer_build": "D:/tmp/bunny_maintenance_v2_20261020_build01",
+    "produced": "D:\\tmp\\bunny_maintenance_v2_20261020_build01\\maintenance_journey_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\maintenance_journey_test.json",
+    "sha256": "54a702c6bc3498a0b51a756d7e3b3a03cf3a82a317cfa3c0f9efdf1b9f062747",
+    "reader_input": "D:\\tmp\\bunny_maintenance_art_20261020_dev01\\prior_v2_userdata\\Godot\\app_userdata\\Bunny Verification bunny_maintenance_art_20261020_dev01\\maintenance_journey_test.json",
+    "claim": "Unmodified previous compiled binary produced this signed hot-cycle checkpoint; current render-only change must accept it."
+  },
+  "preserved": {
+    "assets/": {
+      "old_count": 881,
+      "all_unchanged": true
+    },
+    "scenes/": {
+      "old_count": 103,
+      "all_unchanged": true
+    },
+    "translations": {
+      "old": 1628,
+      "current": 1634,
+      "old_unchanged": true
+    }
+  },
+  "originals_preserved": {
+    "assets/": {
+      "old_count": 881,
+      "all_original_bytes_preserved": true
+    },
+    "scenes/": {
+      "old_count": 97,
+      "all_original_bytes_preserved": true
+    },
+    "personal_saves": {
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455246252200
+      },
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455253759300
+      }
+    },
+    "paid_archive": {
+      "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+      "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec"
+    },
+    "arcana": {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd"
+    },
+    "translations": {
+      "old_preserved": 1495,
+      "current": 1525
+    }
+  },
+  "maintenance_facts_version": 2,
+  "maintenance_facts_fields": [
+    "version",
+    "steam_off"
+  ],
+  "profile_schema": 11,
+  "checkpoint_schema": 6,
+  "paid_motion_data_in_default_package": false,
+  "public_release_approved": false,
+  "not_claimed": [
+    "human time, difficulty, enjoyment or 80 percent reviews",
+    "minimum hardware or clean VM",
+    "audio listening acceptance",
+    "final environment art or future melee pack",
+    "three new modeled or voiced contacts"
+  ],
+  "native_art_capture_sha256": {
+    "D:\\tmp\\bunny_maintenance_art_20261020_build01\\portable_unit_art_forward\\maintenance_art_service.png": "edb26286201c4b73937b3376f4b16656d45824e76e31fdb46149a82fbaf7da10",
+    "D:\\tmp\\bunny_maintenance_art_20261020_build01\\portable_unit_art_forward\\maintenance_art_ward.png": "b0108cb2302f84e87a54a060ebb36447127bd4448f6923d53867667366d1805f",
+    "D:\\tmp\\bunny_maintenance_art_20261020_build01\\portable_unit_art_forward\\maintenance_art_steam.png": "0a3339233fcdbbf1d0967ae9b0a0978f295cc2956ad8b14b26009f500779edf0",
+    "D:\\tmp\\bunny_maintenance_art_20261020_build01\\portable_unit_art_forward\\maintenance_art_valve.png": "f450c92f860c8962a552aa62502724850898d1b41215e8f13c040ebaf7c43386",
+    "D:\\tmp\\bunny_maintenance_art_20261020_build01\\portable_unit_art_compat_en\\maintenance_art_service.png": "91447676b1019aaf390dfad8ec062587708e9e8cba426e842c740ea11dedb5b9",
+    "D:\\tmp\\bunny_maintenance_art_20261020_build01\\portable_unit_art_compat_en\\maintenance_art_ward.png": "32aae2875e45066436f99a600dca3ca9f9bd2268370fb9799a73132f447f121a",
+    "D:\\tmp\\bunny_maintenance_art_20261020_build01\\portable_unit_art_compat_en\\maintenance_art_steam.png": "b911649a60e40aa3404e84cb77c71ac4d77f2b3dddda902f42fff78a83fcf721",
+    "D:\\tmp\\bunny_maintenance_art_20261020_build01\\portable_unit_art_compat_en\\maintenance_art_valve.png": "81fdf78c0a24ed4468c0ed35fe66579ced2f6a3b2b969495c8c1e946f1130278"
+  },
+  "actual_visible_english_checked": true
+}

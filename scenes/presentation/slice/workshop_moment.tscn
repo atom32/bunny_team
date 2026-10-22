@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/presentation/slice/workshop_moment.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/presentation/compact_hideout/environment.tscn" id="2"]
+
+[node name="WorkshopMoment" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Environment" parent="." instance=ExtResource("2")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+fov = 57.0

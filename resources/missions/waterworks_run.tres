@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="MissionDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/data/mission_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/objective_definition.gd" id="2"]
+[sub_resource type="Resource" id="Battery"]
+script = ExtResource("2")
+objective_id = &"water_battery"
+display_name = "West garage / carry the 8kg battery"
+objective_type = 1
+target_id = &"water_battery"
+required = false
+[sub_resource type="Resource" id="Pump"]
+script = ExtResource("2")
+objective_id = &"water_pump"
+display_name = "East pump / install battery for 8s"
+objective_type = 1
+target_id = &"water_pump"
+[sub_resource type="Resource" id="Delivery"]
+script = ExtResource("2")
+objective_id = &"water_delivery"
+display_name = "Choose the first water delivery, then extract"
+objective_type = 1
+target_id = &"water_delivery"
+[sub_resource type="Resource" id="Decoy"]
+script = ExtResource("2")
+objective_id = &"water_decoy"
+display_name = "Optional / sound the square loudspeaker"
+objective_type = 1
+target_id = &"water_decoy"
+required = false
+[sub_resource type="Resource" id="Public"]
+script = ExtResource("2")
+objective_id = &"water_public"
+display_name = "Courtyard delivery / west exit and two dressings"
+objective_type = 1
+target_id = &"water_public"
+required = false
+[sub_resource type="Resource" id="Tanker"]
+script = ExtResource("2")
+objective_id = &"water_tanker"
+display_name = "Tanker delivery / north exit and ninety rounds"
+objective_type = 1
+target_id = &"water_tanker"
+required = false
+[resource]
+script = ExtResource("1")
+mission_id = &"waterworks_run"
+display_name = "Water Tower Street / Who Gets the First Bucket"
+description = "Tang Kui promised the courtyard water. Shen Yanshuang promised the back lanes a tanker. There is one pump battery, in the west garage. Bring 8kg of free capacity. Install it at the east pump, then choose which valve to open. West: two dressings and the courtyard exit. North: ninety rounds and the loading exit. The south retreat stays open."
+objective_definitions = Array[ExtResource("2")]([SubResource("Battery"),SubResource("Pump"),SubResource("Delivery"),SubResource("Decoy"),SubResource("Public"),SubResource("Tanker")])

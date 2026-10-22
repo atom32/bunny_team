@@ -99,7 +99,7 @@ func run() -> void:
 	var old:=SaveService.load_profile("user://supply_art_legacy.json",false)
 	check(old!=null and old.validate(),"Legacy profile reads without a schema bump or free food grant")
 	for id: StringName in FOOD:check(SupplyService.count(old,id)==0,"Old saves do not acquire invented possessions")
-	check(SaveService.SCHEMA_VERSION==8 and SortieCheckpoint.VERSION==6,"Profile/checkpoint contracts unchanged")
+	check(SaveService.SCHEMA_VERSION==11 and SortieCheckpoint.VERSION==6,"Schema 11 profile / unchanged schema 6 checkpoint")
 	check(SaveService.save_profile(profile,PATH)==OK,"Final normal owned quantities saved")
 	file=FileAccess.open("user://supply_art_expected.json",FileAccess.WRITE);file.store_string(JSON.stringify(expected));file.close()
 	await finish()

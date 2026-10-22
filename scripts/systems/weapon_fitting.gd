@@ -24,6 +24,18 @@ static func valid(item: ItemInstance) -> bool:
 static func caption(id: String) -> String:
 	return OPTIONS.get(id, OPTIONS[""]).name
 
+static func badge(id: String) -> String:
+	return TranslationServer.translate({"quickloader":"FAST RELOAD", "suppressor":"QUIET", "observation_optic":"OPTIC"}.get(id, ""))
+
+static func discovery_text(item: ItemInstance) -> String:
+	if not item or item.fitting.is_empty() or not valid(item): return ""
+	var tradeoff: String = {
+		"quickloader":"Reload 20% faster; +0.80 kg. Built for a close fight.",
+		"suppressor":"Gunshot hearing radius halved; reload 15% slower; +0.35 kg.",
+		"observation_optic":"Precision view +3 m; reload 10% slower; +0.55 kg.",
+	}.get(item.fitting, "")
+	return TranslationServer.translate("FIELD-MODIFIED / %s") % TranslationServer.translate(caption(item.fitting)) + "\n" + TranslationServer.translate(tradeoff)
+
 static func _value(item: ItemInstance, key: String) -> float:
 	return float(OPTIONS.get(item.fitting if item else "", OPTIONS[""]).get(key,0.0))
 

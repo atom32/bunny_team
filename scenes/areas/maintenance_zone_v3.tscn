@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3]
+[ext_resource type="PackedScene" path="res://scenes/areas/maintenance_zone_v2.tscn" id="base"]
+[ext_resource type="Script" path="res://scripts/world/maintenance/shared_cache.gd" id="cache"]
+[ext_resource type="Script" path="res://scripts/world/maintenance/shared_zone.gd" id="area"]
+[ext_resource type="Script" path="res://scripts/world/maintenance/shared_survivor.gd" id="helper"]
+[node name="MaintenanceZone" instance=ExtResource("base")]
+script = ExtResource("area")
+metadata/map_revision = 3
+[node name="SharedToolbox" type="Node3D" parent="."]
+position = Vector3(18.5,0,-9)
+script = ExtResource("cache")
+loot_table_id = &"street_pharmacy_loot"
+roll_count = 1
+bonus_loot_table_id = &"maintenance_saved_tools"
+bonus_chance = 1.0
+enabled = false
+
+[node name="Survivor" parent="." index="0"]
+script = ExtResource("helper")

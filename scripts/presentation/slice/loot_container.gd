@@ -6,6 +6,8 @@ var opened := false
 var motion: Tween
 
 func _ready() -> void:
+	var compact: bool=get_parent().get_meta("compact_drop",false)
+	if compact:scale=Vector3.ONE*.6
 	VisualFactory.box(self, Vector3(1.05,0.6,0.72), Vector3(0,0.3,0), Color("304755"), "Case")
 	for x in [-0.42,0.42]:
 		VisualFactory.box(self, Vector3(0.08,0.65,0.78), Vector3(x,0.33,0), Color("cda760"), "Band")
@@ -20,6 +22,7 @@ func _ready() -> void:
 			for visual in pickup.get_children():
 				if visual is Node3D: visual.hide()
 	var tag := SliceUI.sign(self, "SUPPLY CASE", Vector3(0,1.0,0))
+	tag.name="WorldTag";tag.visible=not compact
 	tag.font_size = 48
 	tag.pixel_size = 0.012
 	tag.outline_size = 4
@@ -34,7 +37,7 @@ func set_open(value: bool) -> void:
 		if not art:continue
 		art.visible=value and not displayed
 		ItemPresentation.fit_pickup(art)
-		if art.visible:art.position.y+=.65;displayed=true
+		if art.visible:art.position.y+=.65*scale.y;displayed=true
 	if motion and motion.is_valid(): motion.kill()
 	motion = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	motion.tween_property(lid,"rotation:x",deg_to_rad(-105.0) if value else 0.0,0.32)

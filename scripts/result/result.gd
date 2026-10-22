@@ -37,9 +37,11 @@ func _ready() -> void:
 	result_ui.configure(_pending_outcome)
 	add_child(result_ui)
 	result_ui.return_requested.connect(_return_to_hanger)
+	result_ui.bucket_return_requested.connect(func():_return_to_hanger(true))
+	result_ui.rescue_return_requested.connect(func():_return_to_hanger(false,true))
 
 
-func _return_to_hanger() -> void:
+func _return_to_hanger(water_moment:=false,rescue_moment:=false) -> void:
 	if result_ui:
 		result_ui.set_return_pending(true)
 	var finalize_error := finalize_sortie(finalize_save_path)
@@ -49,7 +51,15 @@ func _return_to_hanger() -> void:
 		return
 	if _pending_outcome.mission_id == &"first_mission" and ProfileRuntime.get_profile().first_mission_completed:
 		GameState.hideout_section = "Workshop"
-	var scene_error := GameState.return_to_hanger()
+	if rescue_moment and GameState.presentation_enabled and MaintenanceStory.returned(_pending_outcome):
+		var error:=GameState.present_scene("res://scenes/presentation/slice/rescue_return.tscn","THE DOOR CAN WAIT")
+		if error!=OK and result_ui:result_ui.show_return_error(tr("Your return is saved; replay this scene from quarters."))
+		return
+	if water_moment and GameState.presentation_enabled and not WaterworksStory.returned_branch(_pending_outcome).is_empty():
+		var error:=GameState.present_scene("res://scenes/presentation/slice/bucket_return.tscn","THE BIGGEST BUCKET")
+		if error!=OK and result_ui:result_ui.show_return_error(tr("Could not open this return moment. Your supplies are saved; replay it from quarters."))
+		return
+	var scene_error := GameState.present_scene("res://scenes/presentation/slice/homecoming_finale.tscn","EVERYONE IS HOME") if FinaleStory.returned(_pending_outcome) and GameState.presentation_enabled else GameState.return_to_hanger()
 	if scene_error != OK and result_ui:
 		result_ui.show_return_error(tr("Could not open Hanger: %s") % error_string(scene_error))
 

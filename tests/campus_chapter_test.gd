@@ -11,9 +11,14 @@ func profile_at_batch2() -> ProfileState:
 	profile.narrative_slice.settled.Q02=true;profile.narrative_slice.q02.delivered={"medical.field_dressing":2,"material.fabric":2};profile.narrative_slice.q02.message=NarrativeSlice.Q02_MESSAGE
 	check(profile.validate(),"Real Batch 1 prerequisites valid")
 	return profile
-func start_world() -> void:
+func chapter_path() -> String:return PATH
+
+func start_world(version:=CampusChapter.FACTS_VERSION) -> void:
 	var profile:=ProfileRuntime.get_profile()
-	check(DeploymentPlan.deploy(profile,&"street_district",&"streets_recon",PATH).error==OK,"Actual finite chapter sortie deployed")
+	check(DeploymentPlan.deploy(profile,&"street_district",&"streets_recon",chapter_path()).error==OK,"Actual finite chapter sortie deployed")
+	if version<CampusChapter.FACTS_VERSION:
+		SortieRuntime.get_current_session().campus.version=version
+		if version<4:SortieRuntime.get_current_session().campus.erase("supply_received")
 	battle=load("res://scenes/battle/battle.tscn").instantiate();battle.result_transition_enabled=false;add_child(battle)
 	battle.player.set_physics_process(false)
 	battle.player.interaction_component.interaction_finished.connect(func(message: String,_success: bool):feedback.append(message))
@@ -21,11 +26,11 @@ func start_world() -> void:
 	await get_tree().process_frame
 func finish_world(success: bool) -> void:
 	check(battle.session.complete_extraction() if success else battle.session.fail(),"Actual terminal outcome")
-	check(SortieRuntime.finalize_sortie(PATH)==OK,"Chapter outcome committed atomically")
+	check(SortieRuntime.finalize_sortie(chapter_path())==OK,"Chapter outcome committed atomically")
 	battle.free();battle=null;await get_tree().process_frame
 func _ready() -> void:
 	if "--read" in OS.get_cmdline_user_args():
-		var loaded:=SaveService.load_profile(PATH,false)
+		var loaded:=SaveService.load_profile(chapter_path(),false)
 		check(loaded!=null and loaded.campus_chapter.finished and loaded.campus_chapter.delivered_ammo==60,"Fresh process reads exact completed schema 8 chapter")
 		AudioDirector.shutdown_for_test()
 		print("CAMPUS_CHAPTER_READ: ","PASS" if failures.is_empty() else "FAIL")
@@ -79,7 +84,7 @@ func _ready() -> void:
 	check(read.success and read.information.contains("Military") and read.information.contains("L-02A"),"Recorder immediately reveals project and branch log without decryption")
 	check(not recorder.interact(battle.player,battle.session).success,"Unique recorder cannot be acquired twice")
 	check(battle.area_root.route_map._mission_brief()[1]=="Experiment recorder / bring it home","Map advances from repair/locate to actual carried-device extraction")
-	check(not battle.area_root.route_map._campus_map_points().any(func(entry):return entry.point.kind==&"recorder"),"Picked-up device is removed from map, not a stale live pickup marker")
+	check(not battle.area_root.route_map._campus_map_points().any(func(entry):return entry.point is CampusAction and entry.point.kind==&"recorder"),"Picked-up device is removed from map, not a stale live pickup marker")
 	var item_id: String=battle.session.campus.recorder_instance
 	check(battle.session.inventory.contains(item_id),"Real story device occupies carried inventory")
 	var world:=SortieCheckpoint.capture_world(battle)
@@ -87,7 +92,7 @@ func _ready() -> void:
 	await finish_world(true)
 	check(profile.campus_chapter.relays_returned and profile.campus_chapter.recorder_returned and not profile.inventory.contains(item_id),"One extraction can settle relay and recorder; device archived to contact record")
 	check(CampusChapter.stage(profile.campus_chapter)=="power","Returned device produces engineering branch plan")
-	await start_world()
+	await start_world(2) # Retain the exact old suspended timer path.
 	var control:=battle.area_root.get_node("L02BranchControl") as CampusAction
 	battle.player.global_position=control.global_position+Vector3.RIGHT
 	check(not control.confirm_power(),"Cannot bypass the explicit branch choice")
@@ -126,14 +131,14 @@ func _ready() -> void:
 	check(profile.campus_chapter.delivered_armor and profile.campus_chapter.delivered_ammo==60,"Exact required quantities persisted")
 	before=profile.to_dict()
 	check(CampusChapter.submit_delivery(PATH).error!=OK and profile.to_dict()==before,"Double submission cannot take a second armor or ammo stack")
-	await start_world();await finish_world(true)
-	check(profile.campus_chapter.finished and SaveService.load_profile(PATH,false).campus_chapter.finished,"Final campus extraction closes chapter in real save")
+	await start_world(3);await finish_world(true) # Historical supplied sorties retain their extraction-only contract; v4 is tested separately.
+	check(profile.campus_chapter.finished and SaveService.load_profile(chapter_path(),false).campus_chapter.finished,"Final campus extraction closes chapter in real save")
 	check(DeploymentPlan.STREET_MISSIONS.has(&"streets_recon"),"Free sorties remain available")
 	SortieRuntime.clear_session()
 	# The old v1 field contract retains the original device site and labels.
 	var legacy_profile:=profile_at_batch2()
 	var legacy_session:=SortieRuntime.start_sortie(legacy_profile.create_sortie_request(&"street_district",&"streets_recon"),legacy_profile)
-	legacy_session.campus.version=1
+	legacy_session.campus.version=1;legacy_session.campus.erase("supply_received")
 	check(CampusChapter.valid_facts(legacy_session.campus,&"street_district"),"Pre-polish field contract remains valid")
 	var legacy_area: Node3D=load("res://scenes/areas/street_district.tscn").instantiate();add_child(legacy_area)
 	check(legacy_area.get_node("ExperimentRecorder").position==NarrativeSlice.RECEIPT_POSITION,"Existing v1 suspended device never silently moves to another building")

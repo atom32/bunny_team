@@ -149,3 +149,4 @@ func _update_label() -> void:
 		return
 	var definition := ContentDB.get_item(item_instance.definition_id, false) if item_instance else null
 	_name_label.text = GameLanguage.item_name(definition.display_name) if definition else "UNKNOWN LOOT"
+	if get_parent().get_meta("compact_drop",false):_name_label.hide()

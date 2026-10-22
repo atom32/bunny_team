@@ -11,10 +11,10 @@ const Q04_REWARD := 200
 const PHARMACY_BATCH := "MED-TK-071"
 const PHARMACY_POSITION := Vector3(-22, 0, -24) # Inside the pharmacy, beyond exterior-wall interaction range.
 const BATCH_INFORMATION := "药房收货登记\n批次：MED-TK-071　登记日期：D-1\n登记数量：敷料×2、织物×2　状态：已收齐\n本批次收货格：敷料×0、织物×0（不含其他库存）"
-const Q01_REQUEST := "Shen Yanshuang: Armed patrols and escaped subjects both threaten the campus. Check both exit conditions before filling your pack. Find a way back alive."
-const Q02_REQUEST := "Tang Kui: Two people came back wounded after a failed evacuation. We need two dressings and two clean fabrics. Bring what you can; warehouse supplies count too."
+const Q01_REQUEST := "Shen Yanshuang: Before you fill that bag, find both ways out. I am not dragging a sack of scrap home with you attached."
+const Q02_REQUEST := "Tang Kui: Two dressings, two clean pieces of fabric. The man by the window owes me half a terrible joke. I want to hear the rest."
 const Q04_REQUEST := "Su Mi: The campus maintenance line is still lit. I heard a call from inside. I am preparing a repair plan; do not enter the sealed zone yet."
-const Q02_RESPONSE := "Tang Kui: Received. We can dress the wounds now. Su Mi picked up a call from the campus; she is checking the maintenance line."
+const Q02_RESPONSE := "Tang Kui: He is complaining about my bandaging again. Good. Leave the supplies here. There is food for you by the stove."
 const BATCH1_ENDPOINT := "Campus chapter / Field supply complete. Su Mi's maintenance operation is not available in this build. Trading and free sorties remain available."
 # Canonical stored message is retained for strict validation of existing saves.
 # The Chinese presentation translation supplies the revised NPC voice.
@@ -163,11 +163,11 @@ static func q02_status(profile: ProfileState, _session: SortieSession = null) ->
 	return TranslationServer.translate("Q02 / Urgent medicine / %s / Dressings %d/2, fabric %d/2") % [TranslationServer.translate(status), state.delivered["medical.field_dressing"], state.delivered["material.fabric"]]
 
 static func status_text(profile: ProfileState, session: SortieSession = null) -> String:
-	if profile.narrative_slice.settled.Q01: return "Q01 找条活路 / 已结算"
+	if profile.narrative_slice.settled.Q01: return TranslationServer.translate("Q01 / Find a way home / Settled")
 	var count := session.exit_observations.size() if session else 0
-	if count == 2: return "Q01 找条活路 / 已查看两个出口（2/2），待撤离"
-	if count == 1: return "Q01 找条活路 / 已查看一个出口（1/2）"
-	return "Q01 找条活路 / 未完成：查看两处出口铭牌"
+	if count == 2: return TranslationServer.translate("Q01 / Both exits checked (2/2) / Extract")
+	if count == 1: return TranslationServer.translate("Q01 / One exit checked (1/2)")
+	return TranslationServer.translate("Q01 / Read both exit signs")
 
 
 static func prepare_q04_submission(_profile: ProfileState) -> Dictionary:

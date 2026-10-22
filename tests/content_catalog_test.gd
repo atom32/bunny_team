@@ -3,7 +3,7 @@ var failures: Array[String] = []
 func check(ok: bool, message: String) -> void:
 	if not ok: failures.append(message); push_error(message)
 func _ready() -> void:
-	for entry in [["weapons", 7], ["items", 36], ["enemies", 3]]:
+	for entry in [["weapons", 7], ["items", 37], ["enemies", 4]]:
 		var registry: Resource = load("res://resources/editor_catalogs/" + entry[0] + ".tres")
 		check(registry != null, "Editor catalog exists: " + entry[0])
 		if not registry: continue

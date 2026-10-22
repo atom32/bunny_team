@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EquipmentDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/data/equipment_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/equipment/courier_sling.tscn" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/stash/field_pack_01_v2.png" id="icon"]
+[resource]
+script = ExtResource("1")
+id = &"equipment.courier_sling"
+display_name = "Courier Sling"
+description = "27kg total capacity / +0.55 m/s / 1.20kg. Compared with the Field Pack: 8kg less room, faster movement. Rebuilt from a recovered carrier frame."
+icon = ExtResource("icon")
+stash_size = Vector2i(2, 2)
+weight = 1.2
+carry_capacity_bonus = 9.0
+movement_modifier = 0.55
+base_value = 200
+item_tags = PackedStringArray("equipment", "backpack", "recovered_only")
+socket_name = &"Backpack"
+scene = ExtResource("2")

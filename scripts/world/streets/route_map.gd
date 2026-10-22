@@ -48,30 +48,27 @@ func _process(_delta: float) -> void:
 	status_panel.visible = not (is_instance_valid(actor) and actor.aim_input_captured)
 	if is_instance_valid(district):
 		map_hint.text = tr("OLD CAMPUS / %s : ROUTE MAP") % ControlBindings.label("route_map")
-		alarm_hint.text = district.get_node("StreetTerminal/RecordsAlarm").caption()
+		var alarm := district.get_node("StreetTerminal/RecordsAlarm") as RecordsAlarm
+		var guide := SortieGuidance.field(ProfileRuntime.get_profile(), SortieRuntime.get_current_session())
+		alarm_hint.text = guide[1] if alarm.phase == RecordsAlarm.Phase.IDLE and not guide.is_empty() else alarm.caption()
 	queue_redraw()
 
 func _point(at: Vector3) -> Vector2:
 	return MAP_RECT.position + Vector2(at.x + 58, at.z + 58) / 116.0 * MAP_RECT.size
+
+func _bell_map_marker() -> Dictionary:
+	var box := district.get_node_or_null("RecordsIsolator") as RecordsIsolator
+	return {"point":box.position,"label":box.status_label(),"color":box.status_color()} if box else {}
 
 func _text(at: Vector2, text: String, color := FieldManualStyle.INK, font_size := 15) -> void:
 	draw_string(UIFactory.FONT, at, tr(text), HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, color)
 
 func _mission_brief() -> Array:
 	var session:=SortieRuntime.get_current_session()
-	if session and not session.campus.is_empty():
-		var facts:=session.campus
-		if not facts.recorder_instance.is_empty():return [tr("CAMPUS / EXPERIMENT RECORDER"),tr("Experiment recorder / bring it home")]
-		if facts.version==1 and facts.stage in ["relay","recorder"]:
-			return [tr("CAMPUS / LEGACY SORTIE"),tr("Legacy sortie / recorder at dormitory registration desk")]
-		match facts.stage:
-			"relay":
-				if facts.relays.size()==2:return [tr("CAMPUS / EXPERIMENT RECORDER"),tr("Archive reading hall / take the device and extract.")]
-				return [tr("CAMPUS / L-02 RELAYS"),tr("Repair both relays; take the archive recorder, or extract first.")]
-			"recorder":return [tr("CAMPUS / EXPERIMENT RECORDER"),tr("Archive reading hall / take the device and extract.")]
-			"power":return [tr("CAMPUS / L-02 BRANCH"),tr("L-02B OFF / L-02A ON / Extract") if facts.power_cut else tr("Maintenance control / disconnect L-02B, preserve L-02A.")]
-			"supply":return [tr("CAMPUS / EQUIPMENT"),tr("Campus supplies delivered / Extract") if facts.gear_ready else tr("Deliver spare armor and 60 standard 5.56 rounds at base")]
-			"complete":return [tr("CAMPUS / COMPLETE"),tr("Campus chapter complete / free sorties remain available")]
+	var guide := SortieGuidance.field(ProfileRuntime.get_profile(), session)
+	if not guide.is_empty(): return guide
+	if session and not session.campus.is_empty() and session.campus.stage == "complete":
+		return [tr("CAMPUS / COMPLETE"),tr("Campus chapter complete / free sorties remain available")]
 	var repair:=district.has_node("RelayOffice")
 	return [tr("RELAYS: READING HALL + MAINTENANCE YARD") if repair else tr("RECORDS: ")+tr(district.district_names[district.task_index]),tr("12s each / damage or leaving cancels / local noise") if repair else tr("SURVEY: ")+tr(district.district_names[(district.task_index+2)%4])]
 
@@ -92,6 +89,10 @@ func _campus_map_points() -> Array:
 		elif point.kind==&"power" and session.campus.power_cut:
 			label="L-02B OFF / L-02A ON";color=Color("8ce3ad")
 		points.append({"point":point,"label":label,"color":color})
+	var handoff:=district.get_node_or_null("CampusSupplyHandoff") as CampusSupplyHandoff
+	if handoff:points.append({"point":handoff,"label":"DORMITORY / SUPPLIES RECEIVED" if session.campus.supply_received else "DORMITORY SOUTH / HANDOFF WINDOW","color":Color("8ce3ad") if session.campus.supply_received else Color("f0c276")})
+	var pa:=district.get_node_or_null("CampusRelayDiversion") as CampusRelayDiversion
+	if pa:points.append({"point":pa,"label":"WEST PA / ONE USE" if pa.phase==CampusRelayDiversion.Phase.READY else ("WEST PA / ACTIVE" if pa.phase==CampusRelayDiversion.Phase.PLAYING else "WEST PA / SPENT"),"color":Color("85d5cf") if pa.phase!=CampusRelayDiversion.Phase.SPENT else Color("465146")})
 	return points
 
 func _draw() -> void:
@@ -152,6 +153,11 @@ func _draw() -> void:
 		var index: int = district.EXITS.find(exit.position)
 		_text(at+Vector2(-35, -12 if exit.position.z>0 else 24),names[index],Color("a1e6b7"),11)
 	draw_circle(_point(terminal.position),6,Color("f0c276"))
+	var bell := _bell_map_marker()
+	if not bell.is_empty():
+		var box_at := _point(bell.point)
+		draw_rect(Rect2(box_at-Vector2(4,4),Vector2(8,8)),bell.color)
+		_text(box_at+Vector2(-24,18),bell.label,Color("24302a"),10)
 	if repair:
 		for name in ["RelayOffice","RelayRepair"]:
 			var relay: RelayStation = district.get_node(name)

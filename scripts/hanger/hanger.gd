@@ -159,7 +159,7 @@ func _on_deploy_requested() -> bool:
 	# also be able to retry the mission after an Alpha equipment loss.
 	var chosen := DeploymentPlan.selected_street_mission
 	if chosen not in DeploymentPlan.STREET_MISSIONS: chosen = &"streets_recon"
-	var deployed := DeploymentPlan.deploy(profile, &"first_mission_area" if first else (&"street_district" if GameState.presentation_enabled else SortieRequest.PROTOTYPE_AREA_ID), &"first_mission" if first else (chosen if GameState.presentation_enabled else SortieRequest.PROTOTYPE_MISSION_ID), FlowMenu.save_path, GameState.presentation_enabled)
+	var deployed := DeploymentPlan.deploy(profile, &"first_mission_area" if first else (DeploymentPlan.area_for_mission(chosen) if GameState.presentation_enabled else SortieRequest.PROTOTYPE_AREA_ID), &"first_mission" if first else (chosen if GameState.presentation_enabled else SortieRequest.PROTOTYPE_MISSION_ID), FlowMenu.save_path, GameState.presentation_enabled)
 	if deployed.error != OK:
 		FlowMenu.show_error(deployed.message)
 		return false

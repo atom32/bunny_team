@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="MissionDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/data/mission_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/objective_definition.gd" id="2"]
+[sub_resource type="Resource" id="O0"]
+script = ExtResource("2")
+objective_id = &"maintenance_bypass"
+display_name = "Relieve service pressure"
+objective_type = 1
+target_id = &"maintenance_bypass"
+required = false
+[sub_resource type="Resource" id="O1"]
+script = ExtResource("2")
+objective_id = &"maintenance_release"
+display_name = "Open the ward and find the caller"
+objective_type = 1
+target_id = &"maintenance_release"
+required = false
+[sub_resource type="Resource" id="O2"]
+script = ExtResource("2")
+objective_id = &"maintenance_gate"
+display_name = "Open the north shutter"
+objective_type = 1
+target_id = &"maintenance_gate"
+required = false
+[sub_resource type="Resource" id="O3"]
+script = ExtResource("2")
+objective_id = &"maintenance_rescue"
+display_name = "Bring Xu Tang to the north exit"
+objective_type = 1
+target_id = &"maintenance_rescue"
+required = true
+[resource]
+script = ExtResource("1")
+mission_id = &"maintenance_rescue"
+display_name = "Sealed Maintenance / Do Not Hang Up"
+description = "Unlatch the service bulkhead and open the ward. The central steam corridor cycles: clear for 2.4s, warning for 0.8s, hot for 1.6s. Use the clear window to cross and shut the far-side valve. You may clear it before releasing Xu Tang, or ask her to wait while you cross alone. She will not step into the marked corridor until the valve is closed. Then open the north shutter and bring her to the exit. South retreat stays open."
+objective_definitions = Array[ExtResource("2")]([SubResource("O0"),SubResource("O1"),SubResource("O2"),SubResource("O3")])

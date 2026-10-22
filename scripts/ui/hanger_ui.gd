@@ -133,8 +133,10 @@ func sync_loadout_selection() -> void:
 			var item := inventory.get_item(_instance_id_at(option, index))
 			if item:
 				var definition := ContentDB.get_item(item.definition_id)
-				option.set_item_text(index, GameLanguage.item_name(definition.display_name))
-				option.set_item_tooltip(index, tr(definition.description))
+				var caption := GameLanguage.item_name(definition.display_name)
+				if not item.fitting.is_empty(): caption += " / " + tr(WeaponFitting.caption(item.fitting))
+				option.set_item_text(index, caption)
+				option.set_item_tooltip(index, tr(definition.description) + ("\n" + WeaponFitting.discovery_text(item) if not item.fitting.is_empty() else ""))
 	_select_instance(weapon_option, loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY))
 	_select_instance(secondary_weapon_option, loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_SECONDARY))
 	_select_instance(armor_option, loadout.get_equipped_instance_id(LoadoutState.SLOT_ARMOR))
@@ -167,9 +169,11 @@ func _populate_inventory_option(option: OptionButton, required_tag: StringName) 
 	for item in inventory.get_items():
 		var definition := ContentDB.get_item(item.definition_id)
 		if not definition or not definition.has_tag(required_tag): continue
-		option.add_item(GameLanguage.item_name(definition.display_name))
+		var caption := GameLanguage.item_name(definition.display_name)
+		if not item.fitting.is_empty(): caption += " / " + tr(WeaponFitting.caption(item.fitting))
+		option.add_item(caption)
 		option.set_item_metadata(option.item_count - 1, item.instance_id)
-		option.set_item_tooltip(option.item_count - 1, tr(definition.description))
+		option.set_item_tooltip(option.item_count - 1, tr(definition.description) + ("\n" + WeaponFitting.discovery_text(item) if not item.fitting.is_empty() else ""))
 
 
 func _build_warehouse_summary(root: Control) -> void:

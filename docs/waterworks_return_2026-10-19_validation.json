@@ -1,0 +1,936 @@
+{
+  "date": "2026-10-19",
+  "purpose": "Local waterworks return dialogue; not a public release",
+  "public_release_approved": false,
+  "goal_80_percent_positive_reviews_achieved": false,
+  "story": {
+    "scenes": 6,
+    "bilingual_lines": 51,
+    "added_translation_entries": 57,
+    "memory": "latest successfully extracted and settled water_public or water_tanker; old unknown stays empty",
+    "profile_schema": 9,
+    "checkpoint_schema": 6,
+    "no_new_rewards_affinity_flags_or_forced_dialogue": true,
+    "normal_campus_conversation_preserved": true
+  },
+  "source_suite": {
+    "directory": "D:\\tmp\\bunny_waterreturn_20261019_final02",
+    "scenes": 99,
+    "categories": 150,
+    "all_pass": true,
+    "results_sha256": "db2b740fcef26dc56fd7c6a5eb2bf4ba9275173c3d36e4c31ce9ba2b6525ab1a"
+  },
+  "build": {
+    "directory": "D:\\tmp\\bunny_waterreturn_20261019_build02",
+    "categories": 25,
+    "all_pass": true,
+    "results_sha256": "ce0f8557e12419862c6dfd381f65ce90d923bc63dddb30da881168258634e648"
+  },
+  "portable": {
+    "archive": "D:\\tmp\\bunny_waterreturn_20261019_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 239309388,
+    "sha256": "83e6ccba92e108540b97abb7750e042c5c752962784376e708fe44aaa54a6b92",
+    "extracted_to": "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "files_match": true,
+    "release_template_hash_matches": true,
+    "PATH": "C:\\Windows/System32;C:\\Windows",
+    "public_release_approved": false,
+    "rows": [
+      {
+        "name": "inventory",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "inventory"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "b603afaa688f938feafec3c15f981766973ede1156107d111ed0e80b097e636b"
+      },
+      {
+        "name": "default_start",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--quit-after",
+          "180"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "83cf0b082206af2aa236c83064fbcfa76be1e00a4aa3558574b2f65965d9481c"
+      },
+      {
+        "name": "zip_write",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "d7e7605c72fb92f60bcc89221cabdaba21c4caea7404fbb3b4c0f9d4b9c85bdd"
+      },
+      {
+        "name": "zip_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "f819791261b04ba4d2398e647a6137ff55203f3763dda188ca484f5ed0e25246"
+      },
+      {
+        "name": "native_boot",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "boot"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "ab639c8a2ebfdd1d080a04befa30cc88c264024fd823fb157632a862ff8fc1ec"
+      },
+      {
+        "name": "native_readability",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_readability",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "2229fb93bdffef663211bbbfc34683475b488474e0a5b4fe01d05c373557edca"
+      },
+      {
+        "name": "compat_readability",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_readability",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "0f6698343bdb929375439827987bf039fc0e01584241129d802a2c12ac9e6d38"
+      },
+      {
+        "name": "native_blockade",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "e4e03d022aeeb66f43c23e98e86345966a32cd7f549fa066124387ecd9dab33c"
+      },
+      {
+        "name": "compat_blockade",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "33881b0ba6f35028e02082f233c5fb5ad098e89a66b39a673d13d12f09a2f326"
+      },
+      {
+        "name": "native_blockade_route",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_route",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "ed2c3e2dd65f8eda1a80ca5d9e10f19f8bbd2cfca8d8acbd7f0206ad01720ed4"
+      },
+      {
+        "name": "compat_blockade_route",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_route",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "bfac48b12607dd1bac2a377db8a11837c8a9d022d9f92defe8beec604aad7987"
+      },
+      {
+        "name": "native_training",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "training",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "8a49471a94e86d5548d32e5af17753752fb008613aec0c1f0251b0c50ed27e6a"
+      },
+      {
+        "name": "compat_training",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "training",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "ed9c081ceef7a6f9c8e23582aae3416aacadedfef060ab93e50389d2bfaa2c9a"
+      },
+      {
+        "name": "checkpoint_write",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "d403b366f0bd94ce4121ce5b7df17b1b090ee83093b802fa50744c14cbff2442"
+      },
+      {
+        "name": "checkpoint_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "72dd1da03f6f1361046c50c8b9363a91b938f863cf9fe003931a6c33279feb20"
+      },
+      {
+        "name": "prior_export_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "72dd1da03f6f1361046c50c8b9363a91b938f863cf9fe003931a6c33279feb20"
+      },
+      {
+        "name": "isolation_write",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "d28fcb5df7fd9d8aeb42c0656785daf27522757226b02d915034f4a4fe87ae2a"
+      },
+      {
+        "name": "isolation_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "2570bb727832afab19dce420372d433f936ec06575c3543f8040b8d04bf9ddee"
+      },
+      {
+        "name": "native_isolation",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "9cd98d3b127186524771c9d219ca7669395c8de5154758ffd5a868f6f733c342"
+      },
+      {
+        "name": "compat_isolation",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "ee153538f3bd1d2379e1aa6ecf0c1ff2aa2ddf269b8058cc45bcf6be75200c78"
+      },
+      {
+        "name": "native_isolation_route",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation_route",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "99fd7332e9072ef6691eff3e5c22131e9e62a0c4660329552b986d71cd53eca3"
+      },
+      {
+        "name": "compat_isolation_route",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation_route",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "9ccd1b0ab62d64da243f9b2aca351fe8ebbba78381be202a0f8e8b2aa8ad4e6b"
+      },
+      {
+        "name": "prior_campus_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "read",
+          "--expect-legacy-campus"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "f819791261b04ba4d2398e647a6137ff55203f3763dda188ca484f5ed0e25246"
+      },
+      {
+        "name": "prior_campus_resaved",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "read",
+          "--expect-legacy-campus"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "f819791261b04ba4d2398e647a6137ff55203f3763dda188ca484f5ed0e25246"
+      },
+      {
+        "name": "native_cutaway",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "cutaway",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "fa1426c97b570214d7641244e87a728dc7927a46b0e430e5d124de9a7822a14b"
+      },
+      {
+        "name": "compat_cutaway",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "cutaway",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "30541dbfcc24912f2d61a326cc4565c78420106dddcff933cc9898e1a6f67e04"
+      },
+      {
+        "name": "previous_isolation_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "isolation",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "2570bb727832afab19dce420372d433f936ec06575c3543f8040b8d04bf9ddee"
+      },
+      {
+        "name": "native_water_return",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "water_return",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "195dbbda3e95359133896d5e469259c070ae5f7702c370ce1894d234bf39c80d"
+      },
+      {
+        "name": "compat_water_return",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "water_return",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "ebd68e8674794fe9b327694c795f24a33d1e043aef44f7db67df1ef9c9c15c42"
+      },
+      {
+        "name": "water_return_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "water_return",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "37b115eb4aaf6ba55130f8a4356f649ed0157296618109bcdb74e556a23943a5"
+      },
+      {
+        "name": "schema8_migrate",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "water_return",
+          "--read-prior-schema8"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "dad7b92fb174d1ad1dd12daec82924ccb23e23dc06990a58528255fac626c562"
+      },
+      {
+        "name": "schema9_reload",
+        "command": [
+          "D:\\tmp\\小兔试玩 水塔街返营 20261019 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "water_return",
+          "--read-migrated-schema9"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "dad7b92fb174d1ad1dd12daec82924ccb23e23dc06990a58528255fac626c562"
+      }
+    ],
+    "prior_export": {
+      "original": "D:\\tmp\\bunny_blockade_20261019_build01\\checkpoint_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\blockade_test.json",
+      "sha256": "54a9c7c40a1fb4be49e8745de66d9f54cb8e48312870a0d8970a31889edd69e0",
+      "mtime_ns": 1792396261961861100,
+      "original_unchanged": true,
+      "fixture": "actual previous exported local build, mid-warning phase; not all historical saves"
+    },
+    "prior_campus": {
+      "original": "D:\\tmp\\bunny_export_20261019_build03\\portable_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\local_build_checkpoint.json",
+      "sha256": "658a1cfe920e754365563fa883e1974076412ba7556d9a30b6f7f5513b1dac09",
+      "mtime_ns": 1792401792352419500,
+      "original_unchanged": true,
+      "fixture": "actual previous selected-export build campus checkpoint, health137, idle alarm; re-saved and read in a second process, not all historical saves"
+    },
+    "previous_isolation": {
+      "originals": [
+        {
+          "path": "D:\\tmp\\bunny_records_20261019_build03\\isolation_portable_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\records_isolation.json",
+          "sha256": "2fc4eddc673b41fd6cb5eaa0a8704b332758dc1d2437a5e749d34c59d4939ad6",
+          "mtime_ns": 1792404804817869300
+        },
+        {
+          "path": "D:\\tmp\\bunny_records_20261019_build03\\isolation_portable_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\records_isolation_uplink.json",
+          "sha256": "4947a261502af8bc526b69b354e1cbcd3212b7679075217446741d45509fd3d5",
+          "mtime_ns": 1792404805146022800
+        }
+      ],
+      "originals_unchanged": true,
+      "fixture": "Two actual previous exported-build checkpoints: partial isolation and isolated urgent uplink; not all historical saves"
+    },
+    "schema8_migration": {
+      "original": "D:\\tmp\\bunny_cutaway_20261019_build02\\portable_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\local_build_checkpoint.json",
+      "sha256": "0a808b8494e4831023ef0c0476196d35893914082e838f7372d1e1354b8e9a36",
+      "mtime_ns": 1792407844514512600,
+      "original_unchanged": true,
+      "fixture": "Actual preceding exported package checkpoint; all old profile fields preserved, memory unknown; independent migrated schema 9 reload"
+    }
+  },
+  "new_test_markers": {
+    "waterworks_return_test": "WATERWORKS_RETURN_TEST: PASS (561 checks; native mouse: false)",
+    "waterworks_return_read": "WATERWORKS_RETURN_TEST: PASS (8 checks; native mouse: false)",
+    "waterworks_return_gui": "WATERWORKS_RETURN_TEST: PASS (699 checks; native mouse: true)",
+    "packaged_water_return": "WATERWORKS_RETURN_TEST: PASS (561 checks; native mouse: false)",
+    "packaged_water_return_read": "WATERWORKS_RETURN_TEST: PASS (8 checks; native mouse: false)",
+    "native_water_return": "WATERWORKS_RETURN_TEST: PASS (699 checks; native mouse: true)",
+    "compat_water_return": "WATERWORKS_RETURN_TEST: PASS (699 checks; native mouse: true)",
+    "water_return_read": "WATERWORKS_RETURN_TEST: PASS (8 checks; native mouse: false)",
+    "schema8_migrate": "WATERWORKS_RETURN_TEST: PASS (3 checks; native mouse: false)",
+    "schema9_reload": "WATERWORKS_RETURN_TEST: PASS (3 checks; native mouse: false)"
+  },
+  "source_preservation": {
+    "public_release_approved": false,
+    "non_document_source_count": 3711,
+    "all_non_document_source_matches_workspace": true,
+    "full_suite_non_document_source_differences": [],
+    "runtime_count_matching_full_suite": 1422,
+    "old_asset_files_unchanged": 881,
+    "old_scene_files_unchanged": 92,
+    "old_translation_entries_preserved": 1233,
+    "current_translation_entries": 1290,
+    "selected_resource_count": 662,
+    "plain_file_count": 23,
+    "companion_license_count": 29,
+    "all_companion_hashes_match": true,
+    "every_import_cache_has_selected_source": true,
+    "unused_review_models_and_caches_absent": true,
+    "source_changes_from_previous_package": [
+      "Handoff.md",
+      "README.md",
+      "docs/CAMERA_CUTAWAY_2026-10-19.md",
+      "docs/PUBLIC_PLAYTEST_TARGET.md",
+      "docs/RECORDS_ISOLATION_2026-10-19.md",
+      "docs/camera_cutaway_2026-10-19_validation.json",
+      "localization/zh_CN.json",
+      "localization/zh_CN.tres",
+      "resources/narrative/waterworks_returns.json",
+      "scripts/data/profile_state.gd",
+      "scripts/data/waterworks_story.gd",
+      "scripts/systems/save_service.gd",
+      "scripts/systems/sortie_outcome_service.gd",
+      "scripts/ui/campaign_panel.gd",
+      "tests/ap_ammo_test.gd",
+      "tests/campaign_test.gd",
+      "tests/stash_rotation_test.gd",
+      "tests/supply_art_v1_test.gd",
+      "tests/waterworks_return_test.gd",
+      "tests/waterworks_return_test.gd.uid",
+      "tests/waterworks_return_test.tscn",
+      "tests/waterworks_run.gd",
+      "tests/waterworks_test.gd",
+      "tests/weapon_art_v1_test.gd",
+      "tools/build_local_windows.py",
+      "tools/local_build_probe.gd",
+      "tools/verify_migration.py"
+    ],
+    "personal_saves": {
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455246252200
+      },
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455253759300
+      }
+    },
+    "arcana_original_sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd"
+  },
+  "actual_copies": [
+    {
+      "copy": "suite",
+      "directory": "D:\\tmp\\bunny_waterreturn_20261019_final02\\project",
+      "checked": 3711,
+      "allowed_configuration_changes": [
+        {
+          "path": "project.godot",
+          "sha256": "527122ee601a8fa5cfa8462b8afed0487005b8f9b925f9e9e7c34daf061f0b98",
+          "allowed": "isolated app name"
+        }
+      ],
+      "all_other_bytes_match_manifest": true
+    },
+    {
+      "copy": "build",
+      "directory": "D:\\tmp\\bunny_waterreturn_20261019_build02\\project",
+      "checked": 3711,
+      "allowed_configuration_changes": [
+        {
+          "path": "project.godot",
+          "sha256": "51e7b2f6a28fc618bceea056d17ee0a9bc6d61b44a5034139f72595bbb06dfb6",
+          "allowed": "isolated app name and private LocalBuildQA autoload"
+        }
+      ],
+      "all_other_bytes_match_manifest": true
+    }
+  ],
+  "packaged_file_audit": {
+    "exported_file_entries": 1287,
+    "all_entry_checksums_verified": true,
+    "forbidden_original_entries": [],
+    "forbidden_imported_cache_entries": [],
+    "arcana_name_entries": [],
+    "combatgirls_name_entries": [],
+    "local_qa_entries": [
+      "local_qa/blockade.gd.remap",
+      "local_qa/blockade.gdc",
+      "local_qa/blockade.tscn.remap",
+      "local_qa/blockade_readability.gd.remap",
+      "local_qa/blockade_readability.gdc",
+      "local_qa/blockade_readability.tscn.remap",
+      "local_qa/blockade_route.gd.remap",
+      "local_qa/blockade_route.gdc",
+      "local_qa/blockade_route.tscn.remap",
+      "local_qa/campus_route.gd.remap",
+      "local_qa/campus_route.gdc",
+      "local_qa/campus_route.tscn.remap",
+      "local_qa/cutaway.gd.remap",
+      "local_qa/cutaway.gdc",
+      "local_qa/cutaway.tscn.remap",
+      "local_qa/expected.json",
+      "local_qa/isolation.gd.remap",
+      "local_qa/isolation.gdc",
+      "local_qa/isolation.tscn.remap",
+      "local_qa/isolation_route.gd.remap",
+      "local_qa/isolation_route.gdc",
+      "local_qa/isolation_route.tscn.remap",
+      "local_qa/melee.gd.remap",
+      "local_qa/melee.gdc",
+      "local_qa/melee.tscn.remap",
+      "local_qa/probe.gd.remap",
+      "local_qa/probe.gdc",
+      "local_qa/training.gd.remap",
+      "local_qa/training.gdc",
+      "local_qa/training.tscn.remap",
+      "local_qa/water_return.gd.remap",
+      "local_qa/water_return.gdc",
+      "local_qa/water_return.tscn.remap",
+      "local_qa/water_route.gd.remap",
+      "local_qa/water_route.gdc",
+      "local_qa/water_route.tscn.remap",
+      "local_qa/waterworks.gd.remap",
+      "local_qa/waterworks.gdc",
+      "local_qa/waterworks.tscn.remap"
+    ],
+    "authoring_copies_of_canonical_runtime_import_metadata": [
+      {
+        "metadata": "art_source/unitychan_battle_derivative/battle_presentation.glb.import",
+        "declared_source": "assets/characters/unitychan_battle/battle_presentation.glb",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_legacy/unitychan_battle.fbx.import",
+        "declared_source": "assets/characters/unitychan_battle/unitychan_battle.fbx",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/jpg/Dark_Silhouette.jpg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Dark_Silhouette.jpg",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/jpg/Light_Silhouette.jpg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Light_Silhouette.jpg",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Dark_Silhouette.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Dark_Silhouette.png",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Light_Frame.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Frame.png",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Light_Silhouette.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Silhouette.png",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Dark_Silhouette.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Dark_Silhouette.svg",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Light_Frame.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Frame.svg",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Light_Silhouette.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Silhouette.svg",
+        "packaged_caches": []
+      }
+    ]
+  },
+  "packaged_narrative_hashes_match_source": {
+    "resources/narrative/waterworks_returns.json": "e915cec6b94567345559433578f020fdb35062b81ff3bdff5865dd166d918c42",
+    "resources/narrative/campus_conversations.json": "f905c2c3462fae04a6b469a9499398aa2f9d49bdc23a395f25c75f95d6df3e88",
+    "localization/zh_CN.json": "9333374f12e50052d594141fc14e632887574868e137faeece43579faee83ff4"
+  },
+  "rendered_views_reviewed": [
+    "D:\\tmp\\bunny_waterreturn_20261019_build02\\compat_water_return_captures\\water_tanker_shen_yanshuang_zh_CN.png",
+    "D:\\tmp\\bunny_waterreturn_20261019_build02\\native_water_return_captures\\water_public_tang_kui_en.png"
+  ],
+  "earlier_false_negative": {
+    "diagnostic_log": "D:/tmp/bunny_waterreturn_20261019_dev01/schema8_diagnostic.log",
+    "packaged_preflight_log": "D:/tmp/bunny_waterreturn_20261019_build01/schema8_preflight_python.log",
+    "finding": "Five nested dictionaries compare unequal for parsed JSON float values vs validated integer values; canonical JSON equal. Existing serializer also rounds floating-point pose values. This test repair required no production migration or numeric serializer change.",
+    "repair": "Compare every prior field after normalization through the existing save JSON representation; independently reload migrated schema 9. Raw source fixture remains untouched.",
+    "superseded_directories": [
+      "D:/tmp/bunny_waterreturn_20261019_final01",
+      "D:/tmp/bunny_waterreturn_20261019_build01"
+    ]
+  },
+  "limitations": [
+    "No human first-hour or dialogue preference acceptance",
+    "No actual 80% reviews",
+    "No author message sent or new model permission obtained",
+    "No model replacement, upload, commit or push",
+    "Local machine only; not clean VM, minimum hardware, mobile device, or listening evaluation"
+  ]
+}

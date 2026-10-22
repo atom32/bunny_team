@@ -1,0 +1,613 @@
+{
+  "status": "internal_game_zip_headless32of87_and_CMD28of15_pass_native_remaining_no_delivery",
+  "evidence_directory": "D:\\tmp\\bunny_recovered_arms_20261021_dev01",
+  "targeted": [
+    {
+      "name": "discovery_forward01",
+      "scene": "recovered_arms_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "a8ec4ffe53d1d5fcc262ec7750daee6775287a752279908e2a51d8204cbef1f3"
+    },
+    {
+      "name": "discovery_read01",
+      "scene": "recovered_arms_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "76fc2e2ff3d9180f3a16f2eb3211929d8b727d7349a9d8bc57fa087eab95fd83"
+    },
+    {
+      "name": "discovery_compat01",
+      "scene": "recovered_arms_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "e64e79b3c4737bb6071706e1206888ad76c119fade4e27fc1fdaf92554ed1e91"
+    },
+    {
+      "name": "loot_table_test01",
+      "scene": "loot_table_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "cb8b95eee494560b0090fd3e2101570ddb9cc0bbd939359cf3c461dfc410a3dd"
+    },
+    {
+      "name": "regional_loot_test01",
+      "scene": "regional_loot_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "7dc08d1cda9cf05fdad860b635bde2b48901428c7c9fafe157744d09cd173523"
+    },
+    {
+      "name": "carried_backpack_ui_test01",
+      "scene": "carried_backpack_ui_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "ba2ddffa3ccea9610eb7b22ddaf8e83d6d15ee8a35946fe4f17e4a6ae4761d93"
+    },
+    {
+      "name": "weapon_fitting_test01",
+      "scene": "weapon_fitting_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "d56503e0bc915f8fd17db5e8898b64c93b284883bce1dcd92a3a163281c6fb30"
+    },
+    {
+      "name": "weapon_behavior_test01",
+      "scene": "weapon_behavior_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "264f3cfaaf3d2b6b4d5eebf057246896cda1fb1e8b171c739b191441f58308dc"
+    },
+    {
+      "name": "save_service_test01",
+      "scene": "save_service_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "24d5b9bac3fac687a7cc964cc5e285070adfa0744e18230f1ebe2c89377be51d"
+    },
+    {
+      "name": "sortie_checkpoint_test01",
+      "scene": "sortie_checkpoint_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "80620568c499ae32c3327337ae6a999cf6365962b51d8ddd7e7723acb64884f0"
+    },
+    {
+      "name": "debrief_guidance_test01",
+      "scene": "debrief_guidance_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "9d22abdbd02f854e686924a58cf0875dc15fc6135bbba883698ad141623562e4"
+    }
+  ],
+  "visual_review": {
+    "reviewed": true,
+    "images": {
+      "discovery_forward01_captures/find_suppressor_zh_CN.png": "f806faff05565cdba4589c0a6b9e70dea51520159d71384694439714a94b43e4",
+      "discovery_forward01_captures/find_quickloader_en.png": "ff7609c4b754d0236f5ab46ac2b0299c238c6d09669dec93365f07fd298967b0",
+      "discovery_compat01_captures/find_observation_optic_en.png": "65a77d387b77855b715605d2056d02a5a47f0e5f9434c909096a45f401223aed",
+      "discovery_compat01_captures/find_observation_optic_zh_CN.png": "1241c432bebd60162e9d6d1447fb6546573a3daa2dba71f840661348874fe064"
+    },
+    "notes": [
+      "Current controlled native fixture, not earned combat.",
+      "Three actual gun icons, quantities, fitting mass, modifiers and tradeoffs visible.",
+      "Bilingual notes fit within cache rows. Ordinary Take/Exchange controls remain visible."
+    ],
+    "scope": "Four personally viewed current captures across Forward+ and Compatibility; not all12 captures claimed reviewed."
+  },
+  "source_full": {
+    "status": "passed_before_subsequent_visibility_polish",
+    "record": {
+      "pass": true,
+      "scene_count": 124,
+      "categories": 231,
+      "results_sha256": "a9e9abeecfdc8e79e3ce42af426ba3e4de7b62f03dbe33eb594ba1ffcdef05d6",
+      "current_root_non_document_inputs_match": 4044,
+      "protected_files_unchanged": true,
+      "not_new_windows_packet": true
+    },
+    "current_runtime_delta_explicitly_separate": true,
+    "audit": "D:\\tmp\\bunny_recovered_arms_20261021_dev01\\current_source_visibility_audit.json"
+  },
+  "distribution_fixture": {
+    "seeds": 500,
+    "finds": 185,
+    "nominal_chance": 0.35,
+    "unchanged_ordinary_rng": true
+  },
+  "scope": "Controlled finite-ammo next-sortie runtime, outcome failure/success and duplicate settlement, real isolated file save and independent process read; native UI fixtures have frozen actors/disabled enemies/placed player. Not an earned playthrough, human fun, or playtime proof.",
+  "protected_files_unchanged": true,
+  "latest_windows_unchanged": true,
+  "personal_save_modified": false,
+  "subsequent_accepted_cases": [
+    {
+      "name": "owned_read04",
+      "scene": "earned_find",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "b972007450d129d1c2efe2bbb61830e63310e266dcbe96945f9d829504ad8aae"
+    },
+    {
+      "name": "visibility_forward01",
+      "scene": "recovered_arms_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "9f2e8036067b1dea025777acee6fca6e8be4ec0bb6075ec0e72ff837cda66b1d"
+    },
+    {
+      "name": "visibility_compat01",
+      "scene": "recovered_arms_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "faf89af5a261462c259df09ea651340d58e0a4ebe0a0876c7bd9216fe90798f9"
+    },
+    {
+      "name": "earned_find_forward01",
+      "scene": "earned_find",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "c50d182c81ecd0f117ed99342ead3eead06fbb6998b181f1658b6e0f516c9819"
+    },
+    {
+      "name": "earned_find_forward_read01",
+      "scene": "earned_find",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "b972007450d129d1c2efe2bbb61830e63310e266dcbe96945f9d829504ad8aae"
+    },
+    {
+      "name": "earned_find_compat_en03_resume",
+      "scene": "earned_find",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "f88da731cf1911cc472cbcac6b91f9e3e0a2067347e8f0d46850efceb70a7297"
+    },
+    {
+      "name": "earned_find_compat_en03_read",
+      "scene": "earned_find",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "b0bbbe200b6672c0f1ae068e51a75bc0bb1955b2428b0c4bc6556f81e02fb474"
+    },
+    {
+      "name": "weapon_fitting_test_visibility01",
+      "scene": "weapon_fitting_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "d56503e0bc915f8fd17db5e8898b64c93b284883bce1dcd92a3a163281c6fb30"
+    },
+    {
+      "name": "stash_rotation_test_visibility01",
+      "scene": "stash_rotation_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "ed27dc0a23a189af0b8f785eda36bc900c80e9fc3c7cdeeb0e3c673fd0216776"
+    },
+    {
+      "name": "debrief_guidance_test_visibility01",
+      "scene": "debrief_guidance_test",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "9d22abdbd02f854e686924a58cf0875dc15fc6135bbba883698ad141623562e4"
+    }
+  ],
+  "subsequent_visual_review": {
+    "reviewed": true,
+    "images": {
+      "visibility_forward01_captures/stash_finds_zh_CN.png": "1f6ee6e6cd920ec7e24c1fc1ae3e114e62595cfa77490aad94e1ef1c2448bc1d",
+      "visibility_compat01_captures/stash_finds_en.png": "b032d3bb786ecf128a3bb58f06b8a03c611f7741e99d10f3abc7666673575134",
+      "earned_find_forward01_captures/04_recovered_equipped.png": "981ecd3d30e33d1781b016578a2c3a63e5d978b369090cc30affbfbf6484b7c8",
+      "earned_find_compat_en03_resume_captures/05_actual_recovered_trial.png": "e0625fded289a373eb4d36c97b3e2aa2c095cf7590db5bba4058c8af868e2e2b"
+    },
+    "scope": "Two current controlled inventory fixtures; actual Chinese earned SMG equipment and actual English resumed R7 live outing. Not all screenshots claimed reviewed.",
+    "notes": [
+      "Fitting badges distinguish same-base weapons in actual slots and stash.",
+      "English ordinary field gate image proves active R7/UI but the beam partly occludes the operator; no character visibility perfection claim."
+    ]
+  },
+  "subsequent_fixture_checks": {
+    "headless": 617,
+    "native_each_renderer": 625
+  },
+  "earned_scope": {
+    "chinese_forward": {
+      "start": 3,
+      "end": 5,
+      "find": "SMG quickloader",
+      "actual_trial_shots": 26,
+      "trial_kills": 1,
+      "reload_seconds": 1.08,
+      "independent_read": true
+    },
+    "english_compatibility": {
+      "search_start": 3,
+      "two_naturally_dry_cases": true,
+      "find_on_third_search": "R7 observation optic",
+      "original_failed_trial_returned_to": 7,
+      "unmodified_saved_qa_crash_resumed": true,
+      "successful_trial_end": 8,
+      "trial_shots": 1,
+      "trial_kills": 1,
+      "reload_seconds": 2.42,
+      "independent_read": true
+    },
+    "no_seed_grant_teleport_direct_damage_ai_disable_or_forced_focus": true,
+    "read_comparison_exception": "Only ordinary BOOT stash display-cell initialization; full inventory/loadout/credits/progression equal."
+  },
+  "retained_failed_attempts": [
+    "find_headless01: synchronous reload observation missed deferred input",
+    "find_headless02_owned: expected JSON number normalization, ownership itself intact",
+    "owned_read03: only stash_layout initialized on ordinary BOOT; full original comparison retained",
+    "earned_find_compat_en01: quiet trial room, required observation before later retreat combat",
+    "earned_find_compat_en02_owned: wrong guessed indoor node names; only verified owned QA engine stopped, actual saved checkpoint kept for normal RESUME"
+  ],
+  "windows_candidate": "D:/tmp/bunny_recovered_arms_20261021_build01",
+  "windows_status": "compiled125_pass_independent_zip60_running_not_delivered",
+  "build_process": {
+    "status": "verified_live",
+    "pty_session": 44695,
+    "process": {
+      "ProcessId": 42560,
+      "ParentProcessId": 27228,
+      "CommandLine": "\"C:\\Python314\\python.exe\" -X utf8 -B tools/build_local_windows.py --godot E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe --templates C:\\Users\\admin\\AppData\\Roaming\\Godot\\export_templates\\4.7.2.stable --output D:\\tmp\\bunny_recovered_arms_20261021_build01 --smoke"
+    },
+    "output": "D:\\tmp\\bunny_recovered_arms_20261021_build01",
+    "expected_compiled_categories": 125,
+    "not_delivered": true
+  },
+  "packet_state": {
+    "status": "compiled125_pass_preview11_prepared_independent_zip60_running",
+    "compiled_process_terminal_exit": 0,
+    "compiled_results_sha256": "87505010a64aeaf05bf26feb721c7f8de8a7108a1ff2885a2ce356a3bcdaa199",
+    "pck": {
+      "pass": true,
+      "pck_sha256": "c548de61183b876df458626a30891070400f9ffd27ca0f633975723a856f5923",
+      "entries": 1611,
+      "all_byte_ranges_and_md5_verified": true,
+      "new_loot_and_private_qa_present": true,
+      "no_profile_backup_userdata": true
+    },
+    "archive": {
+      "archive": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "bytes": 246268606,
+      "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+      "extracted_to": "D:\\tmp\\小兔试玩 改装收获 20261021 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+      "all_files_match": true,
+      "matches_official_release_template": true,
+      "public_release_approved": false
+    },
+    "current_process": {
+      "ProcessId": 18604,
+      "ParentProcessId": 25720,
+      "CommandLine": "\"C:\\Python314\\python.exe\" -X utf8 -B D:\\tmp\\bunny_recovered_arms_20261021_build01\\verify_packet.py"
+    },
+    "pty_session": 66714,
+    "planned_zip_cases": 60,
+    "not_delivered": true
+  },
+  "windows_delivery": {
+    "validation": "docs/recovered_windows_2026-10-21_validation.json",
+    "delivery": "D:\\tmp\\小兔试玩 改装收获 20261021 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "archive_sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+    "compiled_categories": 125,
+    "independent_zip_cases": 60,
+    "cmd_successful_launches": 22,
+    "public_release_approved": false
+  },
+  "previous_status_before_archive_support": "source_baseline_and_visibility_earned_verified_local_windows_delivered",
+  "current_archive_support": {
+    "integration": "D:\\tmp\\bunny_archive_support_20261021_dev01\\source_integration01.json",
+    "targeted_results": "D:\\tmp\\bunny_archive_support_20261021_dev01\\support_results_complete01.json",
+    "condition": "No valid fitted weapon in current owned profile inventory: archive bonus chance1; owning any valid fitted gun:35%. Kits alone do not disable support. No save field/pity counter, core/ordinary RNG untouched.",
+    "source_routes": [
+      {
+        "name": "failed_owned01",
+        "find": {
+          "definition_id": "weapon.assault_rifle_01",
+          "durability": 100.0,
+          "fitting": "suppressor",
+          "instance_id": "495b13578b0d4c1940fd82f2ec899577",
+          "quantity": 1
+        },
+        "before_returns": 9,
+        "after_returns": 11,
+        "actual_search_outings": 1,
+        "trial": {
+          "find": {
+            "definition_id": "weapon.assault_rifle_01",
+            "durability": 100.0,
+            "fitting": "suppressor",
+            "instance_id": "495b13578b0d4c1940fd82f2ec899577",
+            "quantity": 1
+          },
+          "health": 260.0,
+          "kills": 3,
+          "reload": {
+            "expected": 1.84,
+            "observed": 1.84,
+            "remaining": 1.84
+          },
+          "shots": 9
+        },
+        "sha256": "02144cbb8ddac6dfcc8095e3a93fb8273ced818d0983dd280d75244a207267b3"
+      },
+      {
+        "name": "fresh_en01",
+        "find": {
+          "definition_id": "weapon.sniper_01",
+          "durability": 100.0,
+          "fitting": "observation_optic",
+          "instance_id": "c73af5e3a2f37ead6cd2d486111986d8",
+          "quantity": 1
+        },
+        "before_returns": 3,
+        "after_returns": 5,
+        "actual_search_outings": 1,
+        "trial": {
+          "find": {
+            "definition_id": "weapon.sniper_01",
+            "durability": 100.0,
+            "fitting": "observation_optic",
+            "instance_id": "c73af5e3a2f37ead6cd2d486111986d8",
+            "quantity": 1
+          },
+          "health": 260.0,
+          "kills": 2,
+          "reload": {
+            "expected": 2.42,
+            "observed": 2.42,
+            "remaining": 2.40333333333333
+          },
+          "shots": 2
+        },
+        "sha256": "aea8a68aaa5a271547f72372bfbc17f097eae6fa2696a5a22297f8bc16c1f3bf"
+      }
+    ],
+    "failed_exported_candidate": {
+      "accepted": false,
+      "build": "D:\\tmp\\bunny_maintenance_shared_20261021_build01",
+      "gates_recorded": 66,
+      "passed": 65,
+      "failed": "packaged_recovered_earned",
+      "reason": "Six unseeded ordinary archive sorties all legitimately had no optional modified gun. Not a crash, not a failed shared-contact component. No reroll/reset accepted.",
+      "failed_profile": {
+        "path": "D:\\tmp\\bunny_maintenance_shared_20261021_build01\\recovered_earned_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+        "sha256": "01145606b243d4c3faaca6a5493ab78021c336d3897e2d4b921e3b076a560b07",
+        "mtime_ns": 1792562482943684500
+      },
+      "log_sha256": "e44f6c9887e83d58a5ec636a71296f682ff0d7fbc8a8658c771d4720d50c096f",
+      "next_gameplay_action": "Support a physical modified-weapon discovery when the player currently owns no valid fitted gun; existing owners retain 35%, no profile flag or direct grant. Test from raw copied failed profile."
+    },
+    "failed_candidate_replaced_or_accepted": false,
+    "full_source_output": "D:/tmp/bunny_archive_support_20261021_final01",
+    "full_source_complete": true,
+    "full_source_result": {
+      "pass": true,
+      "scene_count": 126,
+      "categories": 242,
+      "results_sha256": "c7b33413fd6dc6863df5742cfd375a707725379ddaf1f2955a6cc616f2ca89f3",
+      "current_root_non_document_inputs_match": 4078,
+      "protected_files_unchanged": true,
+      "not_new_windows_packet": true
+    },
+    "native_verified_for_current_archive_rule": false,
+    "new_windows_delivery": false,
+    "measured_playtime_added_minutes": 0,
+    "current_compiled_runtime": {
+      "status": "exported_runtime140_and_failed_profile_recovery_pass_native_and_game_zip_pending",
+      "build": "D:/tmp/bunny_maintenance_shared_20261021_build02",
+      "complete": {
+        "pass": true,
+        "actual_exported_runtime_gates": 140,
+        "old_133_gates_retained": true,
+        "new_7_shared_gates": [
+          "packaged_shared_component",
+          "packaged_shared_en_read",
+          "packaged_shared_en_route",
+          "packaged_shared_pending_read",
+          "packaged_shared_read",
+          "packaged_shared_zh_read",
+          "packaged_shared_zh_route"
+        ],
+        "root_non_document_inputs_match": 4078,
+        "protected6_unchanged": true,
+        "official_release_template_exact": true,
+        "native_visuals_verified": false,
+        "new_game_zip_or_delivery": false,
+        "build": "D:\\tmp\\bunny_maintenance_shared_20261021_build02",
+        "manifest_sha256": "47630779a9b92bfae21d4fc60cfb42bf376eee4afd0d1725b1d9ad8791c31f7f"
+      },
+      "original_six_dry_profile_in_current_binary": {
+        "pass": true,
+        "cases": [
+          {
+            "name": "route",
+            "pass": true,
+            "exit": 0,
+            "errors_or_warnings": [],
+            "log_sha256": "44cab71af033a3f50f02796df599c6bdafa38631219af198021688c1c4fdef2d"
+          },
+          {
+            "name": "read",
+            "pass": true,
+            "exit": 0,
+            "errors_or_warnings": [],
+            "log_sha256": "b972007450d129d1c2efe2bbb61830e63310e266dcbe96945f9d829504ad8aae"
+          }
+        ],
+        "actual_current_release_binary": true,
+        "original_failed_profile": {
+          "path": "D:\\tmp\\bunny_maintenance_shared_20261021_build01\\recovered_earned_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+          "sha256": "01145606b243d4c3faaca6a5493ab78021c336d3897e2d4b921e3b076a560b07",
+          "mtime_ns": 1792562482943684500
+        },
+        "original_unchanged": true,
+        "input_gameplay_fields_unchanged": true,
+        "before_returns": 9,
+        "after_returns": 11,
+        "search_outings": 1,
+        "find": {
+          "definition_id": "weapon.smg_01",
+          "durability": 100.0,
+          "fitting": "quickloader",
+          "instance_id": "f369038266640a36ff20db0b974ba457",
+          "quantity": 1
+        },
+        "trial": {
+          "find": {
+            "definition_id": "weapon.smg_01",
+            "durability": 100.0,
+            "fitting": "quickloader",
+            "instance_id": "f369038266640a36ff20db0b974ba457",
+            "quantity": 1
+          },
+          "health": 260.0,
+          "kills": 1,
+          "reload": {
+            "expected": 1.08,
+            "observed": 1.08,
+            "remaining": 1.08
+          },
+          "shots": 7
+        },
+        "independent_read_same_find": true,
+        "entire_gameplay_profile_roundtrip_unchanged": true,
+        "only_stash_display_layout_excluded": true,
+        "no_grants_seed_or_reset": true,
+        "native_visuals_or_human_playtime": false,
+        "initial_footer_failure_preserved": "D:\\tmp\\bunny_maintenance_package_20261021_dev01\\failed_profile_binary02_footer_rejected.json",
+        "continuation_scope": "Same successful engine logs and same actual route/read evidence; repaired only outer footer assumption. No process rerun or profile reset."
+      },
+      "root_runtime_source_full": "D:/tmp/bunny_archive_support_20261021_final01",
+      "source_full_scene_count": 126,
+      "source_full_gates": 242,
+      "native_visual_recheck_pending": true,
+      "native_question_pending": true,
+      "new_game_zip_or_delivery": false,
+      "public_release_approved": false,
+      "measured_playtime_added_minutes": 0
+    }
+  },
+  "current_exported_candidate02": {
+    "status": "exported_runtime140_and_failed_profile_recovery_pass_native_and_game_zip_pending",
+    "build": "D:/tmp/bunny_maintenance_shared_20261021_build02",
+    "complete": {
+      "pass": true,
+      "actual_exported_runtime_gates": 140,
+      "old_133_gates_retained": true,
+      "new_7_shared_gates": [
+        "packaged_shared_component",
+        "packaged_shared_en_read",
+        "packaged_shared_en_route",
+        "packaged_shared_pending_read",
+        "packaged_shared_read",
+        "packaged_shared_zh_read",
+        "packaged_shared_zh_route"
+      ],
+      "root_non_document_inputs_match": 4078,
+      "protected6_unchanged": true,
+      "official_release_template_exact": true,
+      "native_visuals_verified": false,
+      "new_game_zip_or_delivery": false,
+      "build": "D:\\tmp\\bunny_maintenance_shared_20261021_build02",
+      "manifest_sha256": "47630779a9b92bfae21d4fc60cfb42bf376eee4afd0d1725b1d9ad8791c31f7f"
+    },
+    "original_six_dry_profile_in_current_binary": {
+      "pass": true,
+      "cases": [
+        {
+          "name": "route",
+          "pass": true,
+          "exit": 0,
+          "errors_or_warnings": [],
+          "log_sha256": "44cab71af033a3f50f02796df599c6bdafa38631219af198021688c1c4fdef2d"
+        },
+        {
+          "name": "read",
+          "pass": true,
+          "exit": 0,
+          "errors_or_warnings": [],
+          "log_sha256": "b972007450d129d1c2efe2bbb61830e63310e266dcbe96945f9d829504ad8aae"
+        }
+      ],
+      "actual_current_release_binary": true,
+      "original_failed_profile": {
+        "path": "D:\\tmp\\bunny_maintenance_shared_20261021_build01\\recovered_earned_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+        "sha256": "01145606b243d4c3faaca6a5493ab78021c336d3897e2d4b921e3b076a560b07",
+        "mtime_ns": 1792562482943684500
+      },
+      "original_unchanged": true,
+      "input_gameplay_fields_unchanged": true,
+      "before_returns": 9,
+      "after_returns": 11,
+      "search_outings": 1,
+      "find": {
+        "definition_id": "weapon.smg_01",
+        "durability": 100.0,
+        "fitting": "quickloader",
+        "instance_id": "f369038266640a36ff20db0b974ba457",
+        "quantity": 1
+      },
+      "trial": {
+        "find": {
+          "definition_id": "weapon.smg_01",
+          "durability": 100.0,
+          "fitting": "quickloader",
+          "instance_id": "f369038266640a36ff20db0b974ba457",
+          "quantity": 1
+        },
+        "health": 260.0,
+        "kills": 1,
+        "reload": {
+          "expected": 1.08,
+          "observed": 1.08,
+          "remaining": 1.08
+        },
+        "shots": 7
+      },
+      "independent_read_same_find": true,
+      "entire_gameplay_profile_roundtrip_unchanged": true,
+      "only_stash_display_layout_excluded": true,
+      "no_grants_seed_or_reset": true,
+      "native_visuals_or_human_playtime": false,
+      "initial_footer_failure_preserved": "D:\\tmp\\bunny_maintenance_package_20261021_dev01\\failed_profile_binary02_footer_rejected.json",
+      "continuation_scope": "Same successful engine logs and same actual route/read evidence; repaired only outer footer assumption. No process rerun or profile reset."
+    },
+    "root_runtime_source_full": "D:/tmp/bunny_archive_support_20261021_final01",
+    "source_full_scene_count": 126,
+    "source_full_gates": 242,
+    "native_visual_recheck_pending": true,
+    "native_question_pending": true,
+    "new_game_zip_or_delivery": false,
+    "public_release_approved": false,
+    "measured_playtime_added_minutes": 0
+  },
+  "current_internal_packet_headless": {
+    "scope": "INTERNAL headless packet phase only; NOT a native/full release or user delivery.",
+    "compiled_gates": 140,
+    "zip_headless_accepted": 32,
+    "zip_planned_full_cases": 87,
+    "zip_remaining_native_or_dependent_cases": 55,
+    "cmd_positive_invocations": 28,
+    "cmd_isolated_groups": 15,
+    "cmd_expected_negative_exit": 1,
+    "static_files": 41,
+    "actual_compiled_preview_sources": 14,
+    "archive": {
+      "archive": "D:\\tmp\\bunny_maintenance_shared_20261021_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "bytes": 246351125,
+      "sha256": "6b3ebd03491dd0700c5444580a7bf68fcc93e9bd1b1ebb022fda6cd98ad6db19",
+      "extracted_to": "D:\\tmp\\小兔试玩 互助与收获 20261021 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+      "all_files_match": true,
+      "matches_official_release_template": true,
+      "public_release_approved": false
+    },
+    "native_visual_accepted": false,
+    "full_zip_accepted": false,
+    "fresh_user_delivery_created": false,
+    "public_release_approved": false,
+    "measured_playtime_added_minutes": 0,
+    "pck_entries": 1657,
+    "evidence_record": "D:\\tmp\\bunny_maintenance_shared_20261021_build02\\current_packet_headless_complete.json"
+  }
+}

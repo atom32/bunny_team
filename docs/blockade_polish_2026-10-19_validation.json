@@ -1,0 +1,540 @@
+{
+  "date": "2026-10-19",
+  "feature": "readable PA-van fight, independent power indications and real lifting traffic shield",
+  "visibility": "LOCAL_ONLY_DO_NOT_UPLOAD",
+  "source": {
+    "path": "D:\\tmp\\bunny_blockade_polish_20261019_final03",
+    "scene_tests": 95,
+    "categories": 140,
+    "all_pass": true,
+    "results_sha256": "25338f0355d9e13982d7b42773d00caa11f0afbd4a11db43a36e947fac5c3e39"
+  },
+  "build": {
+    "path": "D:\\tmp\\bunny_blockade_polish_20261019_build03",
+    "categories": 15,
+    "all_pass": true,
+    "results_sha256": "e0cd418f0467d62d6708b7e1c70d9032b2136273f1ea0144d25185ac2bc2e2d4"
+  },
+  "portable": {
+    "archive": "D:\\tmp\\bunny_blockade_polish_20261019_build03\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 278122331,
+    "sha256": "a434e2003220be7fa2ababcdaeaa3d03b01376dfa88509739e7e13e05f9c228e",
+    "extracted_to": "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "files_match": true,
+    "release_template_hash_matches": true,
+    "PATH": "C:\\Windows/System32;C:\\Windows",
+    "public_release_approved": false,
+    "rows": [
+      {
+        "name": "default_start",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--quit-after",
+          "180"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "83cf0b082206af2aa236c83064fbcfa76be1e00a4aa3558574b2f65965d9481c"
+      },
+      {
+        "name": "zip_write",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "b3f30c93417bce6f04b865e4137a9f51089add88e44b4c99fcb520307b13d7c4"
+      },
+      {
+        "name": "zip_read",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--",
+          "--local-qa",
+          "read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "d62a80cd4e2ba4866399779135c59dfff7211a358da94b2c03dd095da3d23f0c"
+      },
+      {
+        "name": "native_boot",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "boot"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "fcb9b77b838c2a238aef46fc15e150f8e0f71f51da6c2a5d397a6da34f582b9f"
+      },
+      {
+        "name": "native_readability",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_readability",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "749626e4980cebf3fa9b0eba8bfe0745cd27ed3f39d975c6b7cb33f4442f8510"
+      },
+      {
+        "name": "compat_readability",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_readability",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "a18ecd9d6f75b11b4513560c18065afb8023ede704a0be2c690d4f8d115b5d2e"
+      },
+      {
+        "name": "native_blockade",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "e4e03d022aeeb66f43c23e98e86345966a32cd7f549fa066124387ecd9dab33c"
+      },
+      {
+        "name": "compat_blockade",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "33881b0ba6f35028e02082f233c5fb5ad098e89a66b39a673d13d12f09a2f326"
+      },
+      {
+        "name": "native_blockade_route",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_route",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "ed2c3e2dd65f8eda1a80ca5d9e10f19f8bbd2cfca8d8acbd7f0206ad01720ed4"
+      },
+      {
+        "name": "compat_blockade_route",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade_route",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "bfac48b12607dd1bac2a377db8a11837c8a9d022d9f92defe8beec604aad7987"
+      },
+      {
+        "name": "native_training",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "training",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "8a49471a94e86d5548d32e5af17753752fb008613aec0c1f0251b0c50ed27e6a"
+      },
+      {
+        "name": "compat_training",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "training",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "ed9c081ceef7a6f9c8e23582aae3416aacadedfef060ab93e50389d2bfaa2c9a"
+      },
+      {
+        "name": "checkpoint_write",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "d403b366f0bd94ce4121ce5b7df17b1b090ee83093b802fa50744c14cbff2442"
+      },
+      {
+        "name": "checkpoint_read",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "72dd1da03f6f1361046c50c8b9363a91b938f863cf9fe003931a6c33279feb20"
+      },
+      {
+        "name": "prior_export_read",
+        "command": [
+          "D:\\tmp\\小兔哨卡 实物闸口 20261019 03\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "blockade",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "72dd1da03f6f1361046c50c8b9363a91b938f863cf9fe003931a6c33279feb20"
+      }
+    ],
+    "prior_export": {
+      "original": "D:\\tmp\\bunny_blockade_20261019_build01\\checkpoint_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\blockade_test.json",
+      "sha256": "54a9c7c40a1fb4be49e8745de66d9f54cb8e48312870a0d8970a31889edd69e0",
+      "mtime_ns": 1792396261961861100,
+      "original_unchanged": true,
+      "fixture": "actual previous exported local build, mid-warning phase; not all historical saves"
+    }
+  },
+  "packaged_file_audit": {
+    "exported_file_entries": 1511,
+    "all_entry_checksums_verified": true,
+    "forbidden_original_entries": [],
+    "forbidden_imported_cache_entries": [],
+    "arcana_name_entries": [],
+    "combatgirls_name_entries": [],
+    "local_qa_entries": [
+      "local_qa/blockade.gd.remap",
+      "local_qa/blockade.gdc",
+      "local_qa/blockade.tscn.remap",
+      "local_qa/blockade_readability.gd.remap",
+      "local_qa/blockade_readability.gdc",
+      "local_qa/blockade_readability.tscn.remap",
+      "local_qa/blockade_route.gd.remap",
+      "local_qa/blockade_route.gdc",
+      "local_qa/blockade_route.tscn.remap",
+      "local_qa/campus_route.gd.remap",
+      "local_qa/campus_route.gdc",
+      "local_qa/campus_route.tscn.remap",
+      "local_qa/expected.json",
+      "local_qa/melee.gd.remap",
+      "local_qa/melee.gdc",
+      "local_qa/melee.tscn.remap",
+      "local_qa/probe.gd.remap",
+      "local_qa/probe.gdc",
+      "local_qa/training.gd.remap",
+      "local_qa/training.gdc",
+      "local_qa/training.tscn.remap",
+      "local_qa/water_route.gd.remap",
+      "local_qa/water_route.gdc",
+      "local_qa/water_route.tscn.remap",
+      "local_qa/waterworks.gd.remap",
+      "local_qa/waterworks.gdc",
+      "local_qa/waterworks.tscn.remap"
+    ],
+    "authoring_copies_of_canonical_runtime_import_metadata": [
+      {
+        "metadata": "art_source/unitychan_battle_derivative/battle_presentation.glb.import",
+        "declared_source": "assets/characters/unitychan_battle/battle_presentation.glb",
+        "packaged_caches": [
+          ".godot/imported/battle_presentation.glb-af83ba541127bc3157e57bdc96b1bc0e.scn"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_legacy/unitychan_battle.fbx.import",
+        "declared_source": "assets/characters/unitychan_battle/unitychan_battle.fbx",
+        "packaged_caches": []
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/jpg/Dark_Silhouette.jpg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Dark_Silhouette.jpg",
+        "packaged_caches": [
+          ".godot/imported/Dark_Silhouette.jpg-d89c8a5db04224b5dc453126d7b81e94.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/jpg/Light_Silhouette.jpg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Light_Silhouette.jpg",
+        "packaged_caches": [
+          ".godot/imported/Light_Silhouette.jpg-be71f5e7194dfd9aaf5f2f178d614f32.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Dark_Silhouette.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Dark_Silhouette.png",
+        "packaged_caches": [
+          ".godot/imported/Dark_Silhouette.png-ab768330ba422bfead01b6b0fe68eca2.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Light_Frame.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Frame.png",
+        "packaged_caches": [
+          ".godot/imported/Light_Frame.png-504bcf1f3de3b1c250abc106b59cadcc.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Light_Silhouette.png.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Silhouette.png",
+        "packaged_caches": [
+          ".godot/imported/Light_Silhouette.png-8a512442649e04a800ae3fa5da139ac3.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Dark_Silhouette.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Dark_Silhouette.svg",
+        "packaged_caches": [
+          ".godot/imported/Dark_Silhouette.svg-af758fb9ecb503d24376ff81e177cf68.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Light_Frame.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Frame.svg",
+        "packaged_caches": [
+          ".godot/imported/Light_Frame.svg-0f9d2e1908bdde6a03b4eef8bfcd705e.ctex"
+        ]
+      },
+      {
+        "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Light_Silhouette.svg.import",
+        "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Silhouette.svg",
+        "packaged_caches": [
+          ".godot/imported/Light_Silhouette.svg-552825fced288c904e66130bae70955f.ctex"
+        ]
+      }
+    ]
+  },
+  "integrity": {
+    "non_document_entries_identical": 3692,
+    "actual_files_identical_except_config": 3691,
+    "config_differences_verified": true,
+    "prior_art_scene_files_retained": 967,
+    "intentional_scene_change": [
+      "scenes/areas/blockade_checkpoint.tscn"
+    ],
+    "prior_translations_retained": 1210,
+    "translations": 1218,
+    "changed_files": [
+      "assets/audio/blockade_lock.wav",
+      "assets/audio/blockade_lock.wav.import",
+      "assets/audio/blockade_vent.wav",
+      "assets/audio/blockade_vent.wav.import",
+      "localization/zh_CN.json",
+      "localization/zh_CN.tres",
+      "scenes/areas/blockade_checkpoint.tscn",
+      "scripts/battle/player_visibility.gd",
+      "scripts/systems/audio_director.gd",
+      "scripts/ui/battle_hud.gd",
+      "scripts/world/blockade/blockade_checkpoint.gd",
+      "scripts/world/blockade/blockade_readout.gd",
+      "scripts/world/blockade/blockade_readout.gd.uid",
+      "scripts/world/blockade/blockade_van.gd",
+      "tests/blockade_readability_test.gd",
+      "tests/blockade_readability_test.gd.uid",
+      "tests/blockade_readability_test.tscn",
+      "tools/author_blockade.py",
+      "tools/author_blockade_audio.py",
+      "tools/build_local_windows.py",
+      "tools/local_build_probe.gd",
+      "tools/verify_migration.py"
+    ],
+    "all_log_checksums_verified": true,
+    "personal_save_unchanged": [
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455246252200
+      },
+      {
+        "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455253759300
+      }
+    ]
+  },
+  "layout_compatibility": {
+    "static_collision_nav_sha256": "dea44b6b23863434d7495534d73302129175f4b293a2d08118f3a57c2cd8646a",
+    "map_revision": 1,
+    "profile_schema": 8,
+    "checkpoint_version": 6,
+    "hardware_state_derived_from_existing_van_state": true,
+    "actual_prior_export_fixture": {
+      "original": "D:\\tmp\\bunny_blockade_20261019_build01\\checkpoint_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\blockade_test.json",
+      "sha256": "54a9c7c40a1fb4be49e8745de66d9f54cb8e48312870a0d8970a31889edd69e0",
+      "mtime_ns": 1792396261961861100,
+      "original_unchanged": true,
+      "fixture": "actual previous exported local build, mid-warning phase; not all historical saves"
+    }
+  },
+  "cues": [
+    {
+      "path": "D:\\bunny_team\\assets\\audio\\blockade_lock.wav",
+      "sha256": "f50daf9e4ceb6a96ba57935562cfc66e9c1d15916a6eadbf7189b51b3c399de9",
+      "sample_rate": 44100,
+      "seconds": 0.42,
+      "peak_i16": 5243,
+      "original_synthesis_script": "tools/author_blockade_audio.py",
+      "external_recordings": false
+    },
+    {
+      "path": "D:\\bunny_team\\assets\\audio\\blockade_vent.wav",
+      "sha256": "ac85114ec38a825b64d838c05581ad4fd70b4f6a12d1f32577241f710d47f2c9",
+      "sample_rate": 44100,
+      "seconds": 0.38,
+      "peak_i16": 4290,
+      "original_synthesis_script": "tools/author_blockade_audio.py",
+      "external_recordings": false
+    }
+  ],
+  "superseded": [
+    "D:/tmp/bunny_blockade_polish_20261019_final01/SUPERSEDED.json",
+    "D:/tmp/bunny_blockade_polish_20261019_final02/SUPERSEDED.json"
+  ],
+  "limits": [
+    "Not a new map, moving boss, completed chapter or public release.",
+    "Original character, clothing and dimensions retained; candidate assets remain excluded.",
+    "Generated inputs and controlled native fixtures, not blind-human or physical-controller acceptance.",
+    "RTX 5090 / Dummy audio, not minimum-hardware or listening acceptance.",
+    "Decorative vehicle detailing uses the original coarse collider; no high-fidelity vehicle physics.",
+    "Public rights and actual review outcome remain unresolved; no commit, push or upload."
+  ]
+}

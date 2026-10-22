@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="MissionDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/data/mission_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/objective_definition.gd" id="2"]
+[sub_resource type="Resource" id="Van"]
+script = ExtResource("2")
+objective_id = &"blockade_van"
+display_name = "Disable the armored PA van, then extract"
+objective_type = 1
+target_id = &"blockade_van"
+[sub_resource type="Resource" id="Speaker"]
+script = ExtResource("2")
+objective_id = &"blockade_speaker"
+display_name = "Optional / cut the west alley PA supply"
+objective_type = 1
+target_id = &"blockade_speaker"
+required = false
+[resource]
+script = ExtResource("1")
+mission_id = &"blockade_run"
+display_name = "Checkpoint / Please Remain Calm"
+description = "Pass the sweeping searchlight using delivery-van cover. Open the west service shutter quietly, or shoot the street chain and face a finite alarm response. Disable the armored PA van during its blue cooling vents, enter the north yard and release the east-booth counterweight. Reach the raised north exit, or retreat south at any time."
+objective_definitions = Array[ExtResource("2")]([SubResource("Van"),SubResource("Speaker")])

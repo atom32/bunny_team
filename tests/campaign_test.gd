@@ -217,7 +217,7 @@ func _contacts() -> void:
 	panel.save_path = PATH
 	panel.open_contact("tang_kui")
 	await get_tree().process_frame
-	check(panel.find_child("display_name",true,false).text == "唐葵" and panel.find_child("Portrait",true,false) != null, "Tang Kui has named portrait placeholder and resident identity")
+	check(panel.find_child("display_name",true,false).text == tr("Tang Kui") and panel.find_child("Portrait",true,false) != null, "Tang Kui has localized named portrait and resident identity")
 	check(profile.to_dict() == before, "opening contacts never mutates profile or injects save fields")
 	var stock_seen := {}
 	for id: String in ContactDefinition.CONTACTS:
@@ -273,7 +273,7 @@ func _contacts() -> void:
 	legacy.erase("narrative_slice")
 	var file := FileAccess.open(PATH,FileAccess.WRITE)
 	file.store_string(JSON.stringify({"schema_version":4,"profile":legacy})); file.close()
-	check(SaveService.load_profile(PATH,false) != null and SaveService.SCHEMA_VERSION == 8, "contact layer retains schema 4 migration and versioned schema 8 campus envelope")
+	check(SaveService.load_profile(PATH,false) != null and SaveService.SCHEMA_VERSION == 11, "contact layer retains schema 4 migration and versioned schema 11 envelope preserves campus state")
 	profile.first_mission_completed = true
 	profile.narrative_slice.settled.Q01 = true
 	profile.narrative_slice.q01_exits = ["streets_exit_0","streets_exit_1"]

@@ -1,6 +1,7 @@
 class_name CampaignPanel
 extends PanelContainer
 signal contract_claimed
+signal campus_supplies_requested
 var save_path := SaveService.DEFAULT_SAVE_PATH
 var contact_id := ""
 var selected := -1
@@ -9,6 +10,7 @@ var feedback := "Only the active contract advances. Claim it at base to begin th
 func _ready() -> void:
 	theme = FieldManualStyle.theme()
 	add_theme_stylebox_override("panel", FieldManualStyle.panel(FieldManualStyle.SURFACE))
+	GameLanguage.language_changed.connect(_refresh)
 	_refresh()
 
 func _refresh() -> void:
@@ -22,21 +24,33 @@ func _refresh() -> void:
 	add_child(scroll)
 	body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	scroll.add_child(body)
+	# Keep the active delivery and its buttons above conversations and archives.
+	var packing_first: bool=contact_id=="shen_yanshuang" and profile.narrative_slice.settled.Q02 and CampusChapter.stage(profile.campus_chapter)=="supply"
+	if packing_first:_campus_supply(body,profile)
 	if contact_id.is_empty():
-		_label(body, "委托记录", 22)
-		_heading(body, "居民委托")
+		_label(body, "CONTRACT RECORDS", 22)
+		_heading(body, "RESIDENT REQUESTS")
 	else:
-		_label(body, ContactDefinition.get_contact(contact_id).display_name + " / 委托", 18)
+		_label(body, tr("%s / REQUESTS") % tr(ContactDefinition.get_contact(contact_id).display_name), 18)
+		var conversation := ContactConversation.new()
+		conversation.scene_data = CampusConversations.get_scene(profile, contact_id)
+		body.add_child(conversation)
+		var water_scene := WaterworksStory.return_scene(profile, contact_id)
+		if not water_scene.is_empty():
+			var memory := ContactConversation.new()
+			memory.scene_data = water_scene
+			body.add_child(memory)
+			memory.name = "WaterworksReturn"
 	if contact_id == "su_mi" and not profile.narrative_slice.settled.Q02: _label(body, "Complete medical supply before the L-02 operation.", 16)
 	if ContactDefinition.owns_quest(contact_id, "Q01"):
 		_publisher(body, "Q01")
-		_label(body, NarrativeSlice.status_text(profile) if profile.first_mission_completed else "Q01 / 完成首任务后可进行出口观察", 14)
+		_label(body, NarrativeSlice.status_text(profile) if profile.first_mission_completed else "Q01 / Available after First Mission", 14)
 		if not profile.narrative_slice.settled.Q01:
 			_label(body, NarrativeSlice.Q01_REQUEST, 14)
-			_label(body, "要求：现场查看本局两处出口铭牌，并成功撤离。", 14)
+			_label(body, "REQUIREMENT / Read both assigned exit signs in the field and extract.", 14)
 	if contact_id == "tang_kui" and not profile.narrative_slice.settled.Q01:
 		_publisher(body, "Q02")
-		_label(body, "Q02 急用的药 / 尚未开放；需要先完成 Q01", 14)
+		_label(body, "Q02 / Urgent medicine / Locked until Q01 is settled", 14)
 	if ContactDefinition.owns_quest(contact_id, "Q02") and profile.narrative_slice.settled.Q01:
 		_publisher(body, "Q02")
 		if not profile.narrative_slice.settled.Q02:
@@ -46,20 +60,20 @@ func _refresh() -> void:
 		if not profile.narrative_slice.settled.Q02:
 			var submit := Button.new()
 			submit.name = "SubmitQ02"
-			submit.text = "交付材料（可分次）"
+			submit.text = tr("DELIVER MATERIALS / PARTIAL DELIVERY OK")
 			submit.disabled = NarrativeSlice.prepare_q02_delivery(profile).error != OK
 			body.add_child(submit)
 			submit.pressed.connect(_submit_q02)
 		if profile.narrative_slice.settled.Q02: _label(body, NarrativeSlice.Q02_RESPONSE, 14)
 	if ContactDefinition.owns_quest(contact_id, "Q02") and profile.narrative_slice.settled.Q02:
-		_label(body, "Su Mi: The L-02 repair plan is ready. Check the engineering contact for the next operation.", 14)
+		if not profile.campus_chapter.relays_returned: _label(body, "Su Mi has a repair job. Find her under Contacts.", 14)
 		if profile.narrative_slice.settled.Q04:
 			_label(body, "Legacy Q04 reward retained / no new story progress granted", 14)
 	_campus_quests(body,profile)
 	if not contact_id.is_empty():
 		if not feedback.begins_with("Only the active"): _label(body, feedback, 14)
 		return # Anonymous base-development contracts stay on the existing board.
-	_heading(body, "基地建设")
+	_heading(body, "BASE DEVELOPMENT")
 	_label(body, tr("%d / %d contracts claimed / %d credits") % [profile.campaign.stage, CampaignService.QUESTS.size(), profile.credits], 15)
 	var columns := HBoxContainer.new()
 	columns.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -169,9 +183,11 @@ func _campus_quests(body: Node,profile: ProfileState) -> void:
 	var completed:={"campus_relay":state.relays_returned,"campus_recorder":state.recorder_returned,"campus_power":state.power_returned,"campus_supply":state.finished}
 	for id: String in CampusChapter.QUESTS:
 		if not ContactDefinition.owns_quest(contact_id,id):continue
+		if id=="campus_supply" and contact_id=="shen_yanshuang" and CampusChapter.stage(state)=="supply":continue
 		_publisher(body,id)
 		_label(body,CampusChapter.QUESTS[id][0],16)
 		_label(body,"Settled" if completed[id] else ("Locked / complete preceding campus operation" if not ready[id] else CampusChapter.QUESTS[id][1]),14)
+		if ready[id] and not completed[id]: _label(body, CampusChapter.REQUIREMENTS[id], 14)
 		if id=="campus_supply" and ready[id] and not completed[id]:
 			_label(body,CampusChapter.status_text(profile),14)
 			var submit:=Button.new();submit.name="SubmitCampusEquipment";submit.text=tr("DELIVER SPARE ARMOR / STANDARD 5.56")
@@ -181,6 +197,30 @@ func _campus_quests(body: Node,profile: ProfileState) -> void:
 				if result.error==OK:contract_claimed.emit()
 				_refresh.call_deferred())
 		if id=="campus_recorder" and state.recorder_revealed:_label(body,CampusChapter.RECORD,14)
-		if id=="campus_power" and state.recorder_returned:_label(body,"Su Mi: L-02 has separable branches. Keep L-02A shelter power while disconnecting L-02B. This does not stop the escaped subjects.",14)
 		if id=="campus_power" and state.branch_disconnected:_label(body,CampusChapter.POWER_REPLY,14)
 	if state.finished:_label(body,"Campus chapter complete / free sorties remain available",16)
+
+func _campus_supply(body: Node,profile: ProfileState) -> void:
+	var card:=VBoxContainer.new();card.name="CampusPackingCard";card.add_theme_constant_override("separation",8);body.add_child(card)
+	_label(card,"EQUIPMENT DELIVERY / BASE → DORMITORY → EXTRACTION",16)
+	_label(card,CampusChapter.status_text(profile),14).name="CampusPackingStatus"
+	var state:=profile.campus_chapter
+	var packed: bool=state.delivered_armor and state.delivered_ammo==60
+	if packed:
+		_label(card,"BASE PACKING COMPLETE / No more equipment payment.",14)
+		_label(card,tr("NEXT / Deploy to campus. Clear the two gunmen at the dormitory south window, press %s to send the crate inside, then extract.") % ControlBindings.label("interact"),14)
+	else:
+		var missing:=CampusChapter.delivery_shortage(profile)
+		_label(card,tr("MISSING FROM WAREHOUSE / spare armor %d / standard 5.56 %d rounds") % [missing.armor,missing.ammo],14).name="CampusPackingShortage"
+		_label(card,"Use an unequipped light or heavy armor with durability 50+. Worn armor is kept. Only warehouse standard 5.56 counts; deployment quantities, 9mm and AP rounds do not.",14)
+		var shop:=Button.new();shop.name="GoCampusSupplyShop";shop.text=tr("BUY MISSING SUPPLIES / SHEN");card.add_child(shop)
+		shop.pressed.connect(func():campus_supplies_requested.emit())
+	var submit:=Button.new();submit.name="SubmitCampusEquipment"
+	submit.text=tr("PACKED / NEXT: DORMITORY WINDOW" if packed else "PACK AVAILABLE EQUIPMENT FROM WAREHOUSE")
+	submit.disabled=CampusChapter.prepare_delivery(profile).error!=OK;card.add_child(submit)
+	submit.tooltip_text=tr("Partial packing is saved. Packing is not the field handoff; extract after the dormitory receives it.")
+	submit.pressed.connect(func():
+		var result:=CampusChapter.submit_delivery(save_path);feedback=result.message
+		if result.error==OK:contract_claimed.emit()
+		_refresh.call_deferred())
+	card.add_child(HSeparator.new())

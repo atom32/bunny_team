@@ -1,0 +1,189 @@
+{
+  "status": "source_and_local_windows_independent_zip_verified_not_public_release",
+  "previous_goal_turn_classification": "progress: prior PA source work is real; frozen 121 scenes / 227 categories now confirmed terminal PASS, not still running",
+  "goal_achieved": false,
+  "method": "Actual player pre-help save copied as raw bytes; generated normal BOOT/menu/store inputs, never personal-save execution. Controlled boundary fixtures labelled separately.",
+  "cases": [
+    {
+      "case": "packing_component03",
+      "pass": true,
+      "process": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\packing_component03_captures\\process.json",
+      "log_sha256": "5efa7324f15a33022591d6b15cbd9952b56604f512c8b2a3ab54848795f1827b"
+    },
+    {
+      "case": "packing_actual_headless01",
+      "pass": true,
+      "process": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\packing_actual_headless01_captures\\process.json",
+      "log_sha256": "853a6336fa21ecf7f3707c3d3b0bbd0cb107ef32662b98861e4af579c902e023",
+      "checks": 19,
+      "language": "zh_CN"
+    },
+    {
+      "case": "packing_actual_read01",
+      "pass": true,
+      "process": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\packing_actual_read01_captures\\process.json",
+      "log_sha256": "de9ec3ddb4a6eb604a6911a586538cc27434204f0ef8c31385a099c2a287e762",
+      "checks": 7,
+      "language": "zh_CN"
+    },
+    {
+      "case": "packing_actual_forward01",
+      "pass": true,
+      "process": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\packing_actual_forward01_captures\\process.json",
+      "log_sha256": "04afe2447a504dc42d2d8c4d38b8f2732ce0e453b7b38666148b8ed8308cb43f",
+      "checks": 23,
+      "language": "zh_CN",
+      "delta": {
+        "credits": -75,
+        "delivered_ammo": [
+          35,
+          60
+        ],
+        "inventory_unchanged": true,
+        "loadout_unchanged": true,
+        "ammo_plan_unchanged": true,
+        "no_field_completion": true,
+        "sortie_counts_unchanged": true
+      }
+    },
+    {
+      "case": "packing_actual_forward_read01",
+      "pass": true,
+      "process": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\packing_actual_forward_read01_captures\\process.json",
+      "log_sha256": "de9ec3ddb4a6eb604a6911a586538cc27434204f0ef8c31385a099c2a287e762",
+      "checks": 7,
+      "language": "zh_CN"
+    },
+    {
+      "case": "packing_actual_compat_en02",
+      "pass": true,
+      "process": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\packing_actual_compat_en02_captures\\process.json",
+      "log_sha256": "ca81f49758d277c0e6e2cdf7c622b30d91391b0bbe7360dc60c1fe4202e62d86",
+      "checks": 25,
+      "language": "en",
+      "delta": {
+        "credits": -75,
+        "delivered_ammo": [
+          35,
+          60
+        ],
+        "inventory_unchanged": true,
+        "loadout_unchanged": true,
+        "ammo_plan_unchanged": true,
+        "no_field_completion": true,
+        "sortie_counts_unchanged": true
+      }
+    },
+    {
+      "case": "packing_actual_compat_en_read01",
+      "pass": true,
+      "process": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\packing_actual_compat_en_read01_captures\\process.json",
+      "log_sha256": "889c7b54b8013e7a0232ee93d03688d568e2b8256559d82573650163fa3a0f12",
+      "checks": 9,
+      "language": "en"
+    }
+  ],
+  "regressions": [
+    {
+      "case": "packing_actual_read01",
+      "exit": 0,
+      "errors": [],
+      "marker": "NORMAL_START_TEST: PASS",
+      "pass": true
+    },
+    {
+      "case": "packing_guidance_regression01",
+      "exit": 0,
+      "errors": [],
+      "marker": "SORTIE_GUIDANCE_TEST: PASS",
+      "pass": true
+    },
+    {
+      "case": "packing_chapter_regression01",
+      "exit": 0,
+      "errors": [],
+      "marker": "CAMPUS_CHAPTER_TEST: PASS",
+      "pass": true
+    },
+    {
+      "case": "packing_economy_regression01",
+      "exit": 0,
+      "errors": [],
+      "marker": "ALPHA_ECONOMY_TEST: PASS",
+      "pass": true
+    },
+    {
+      "case": "packing_contacts_regression01",
+      "exit": 0,
+      "errors": [],
+      "marker": "CAMPAIGN_TEST: PASS",
+      "pass": true
+    },
+    {
+      "case": "packing_base_ui_regression01",
+      "exit": 0,
+      "errors": [],
+      "marker": "BASE_MANUAL_UI_TEST: PASS",
+      "pass": true
+    }
+  ],
+  "visual_review": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\visual_review.json",
+  "localization": {
+    "entries": 1734,
+    "added": 12,
+    "previous_1722_values_preserved": true
+  },
+  "personal_profile_preserved": {
+    "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+    "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+    "mtime_ns": 1792485868281761900,
+    "length": 13031
+  },
+  "full_source": {
+    "directory": "D:/tmp/bunny_packing_guidance_20261020_final01",
+    "status": "passed",
+    "expected_test_scenes": 122,
+    "expected_categories": 228,
+    "exec_session": 57202,
+    "process_record": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\full_source01_process.json",
+    "child_pid": 34008,
+    "actual_categories": 228,
+    "all_pass": true,
+    "results_sha256": "6a303b8540402e68e3804ea0116f320c78dd09c10fa73383958cdf44992e3be1",
+    "current_non_document_inputs_match": true,
+    "current_non_document_input_count": 3969,
+    "source_audit": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\current_source_audit.json"
+  },
+  "retained_attempts": [
+    {
+      "case": "packing_component01",
+      "scope": "Parse error from inferred Variant/bool; exit0 rejected, not a pass"
+    },
+    {
+      "case": "packing_component02 / packing_layout_diagnose01",
+      "scope": "Active card below conversation clipped by 17 pixels; placement corrected to actual top, bounds not weakened"
+    },
+    {
+      "case": "packing_actual_compat01",
+      "scope": "Core flow passed but actual language was Chinese despite --english; not English evidence. Isolated language preference persisted and en02 explicitly checked post-BOOT locale en."
+    }
+  ],
+  "limits": [
+    "Base navigation/packing fix, no new chapter or measured play minutes.",
+    "Dummy audio, not human listening, playtime, fun, difficulty, minimum-spec or clean-machine acceptance.",
+    "Existing English shop credit suffix remains Chinese; recorded minor pre-existing localization defect.",
+    "No commit/push/upload, author contact, heroine replacement, paid motion inclusion or subagents."
+  ],
+  "current_personal_profile_hash_and_mtime_preserved": true,
+  "previous_source_status": "source_full_and_native_verified_not_in_latest_windows_delivery",
+  "subsequent_windows_delivery": {
+    "record": "docs/campus_windows_2026-10-20_validation.json",
+    "directory": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02",
+    "compiled_categories": 120,
+    "independent_zip_cases": 50,
+    "launcher_success_cases": 20,
+    "archive_sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+    "fresh_delivery": "D:\\tmp\\小兔试玩 广播与装箱 20261020 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "not_human_playtime_or_fun": true
+  }
+}

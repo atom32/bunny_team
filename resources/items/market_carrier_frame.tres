@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/stash/field_pack_01_v2.png" id="icon"]
+[resource]
+script = ExtResource("1")
+id = &"material.market_carrier_frame"
+display_name = "Old Carrier Frame"
+description = "Take it home to Su Mi: choose a fast 27kg courier sling OR a slow 47kg freight frame. One frame makes one pack. Cannot be equipped before rebuilding."
+icon = ExtResource("icon")
+stash_size = Vector2i(2, 3)
+weight = 3.0
+base_value = 150
+item_tags = PackedStringArray("loot", "material", "recovered_only")

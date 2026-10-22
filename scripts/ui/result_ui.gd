@@ -1,7 +1,12 @@
 class_name ResultUI
 extends CanvasLayer
 
+const STORY_SURFACE := Color("101c24")
+const STORY_TEXT := Color("eee9dd")
+
 signal return_requested
+signal bucket_return_requested
+signal rescue_return_requested
 
 var outcome: SortieOutcome
 var status_label: Label
@@ -10,6 +15,8 @@ var mission_label: Label
 var mission_completion_label: Label
 var objective_labels: Array[Label] = []
 var return_button: Button
+var bucket_button: Button
+var rescue_button: Button
 var return_error_label: Label
 
 
@@ -29,6 +36,7 @@ func _refresh_language() -> void:
 	_build_ui()
 
 func _build_ui() -> void:
+	bucket_button=null;rescue_button=null
 	if not outcome:
 		push_error("ResultUI requires a SortieOutcome")
 		return
@@ -38,6 +46,7 @@ func _build_ui() -> void:
 	add_child(root)
 
 	var panel := PanelContainer.new()
+	panel.name = "DebriefPanel"
 	panel.set_anchors_preset(Control.PRESET_CENTER)
 	panel.position = Vector2(70, -310)
 	panel.size = Vector2(530, 620)
@@ -45,7 +54,12 @@ func _build_ui() -> void:
 	root.add_child(panel)
 	SliceUI.label(root, "FIELD RECORDER\nDEBRIEF", Vector2(48,48), 38, SliceUI.CYAN)
 	SliceUI.label(root, "BASTION 07 / RETURN CHANNEL", Vector2(50,155), 16, SliceUI.MUTED)
+	var extracted := outcome.result_type == SortieOutcome.ResultType.COMPLETED
+	var primary := SortieGuidance.debrief(outcome)
 	var facts := ""
+	if outcome.result_type == SortieOutcome.ResultType.COMPLETED: facts = BlockadeStory.ending(outcome) if outcome.area_id == BlockadeStory.AREA else WaterworksStory.ending(outcome)
+	if MaintenanceStory.returned(outcome):facts=MaintenanceStory.ending(outcome)
+	if FinaleStory.returned(outcome):facts=FinaleStory.ending(outcome)
 	if outcome.result_type == SortieOutcome.ResultType.COMPLETED:
 		if not outcome.exit_observations.is_empty():
 			facts = "Q01 / 已查看出口 %d / 2\n回基地后计入进度。两处都已查看，奖励 150 信用点。" % outcome.exit_observations.size()
@@ -53,30 +67,45 @@ func _build_ui() -> void:
 			facts = tr("Legacy logistics sortie / carried possessions and rewards settle normally. No new campus story progress is granted.")
 		elif outcome.q02_active:
 			facts = tr("Q02 / Supplies recovered. Deliver dressings and fabric to Tang Kui at base; no delivery records required.")
+	if not primary.is_empty():
+		facts = primary[0] + "\n\n" + primary[1]
+		facts += "\n\n" + tr("Return to base to save the result. This screen does not settle rewards.")
 	if not facts.is_empty():
-		SliceUI.label(root, "出击与委托", Vector2(50, 235), 16, SliceUI.CYAN)
-		var notes := SliceUI.label(root, facts, Vector2(50, 275), 16, SliceUI.MUTED)
-		notes.size = Vector2(360, 135)
+		_ensure_story_readout(root)
+		var heading := SliceUI.label(root, tr("STORY COMMISSION") if not primary.is_empty() else "出击与委托", Vector2(50, 235), 16, SliceUI.CYAN)
+		heading.name = "CommissionHeading"
+		# Configure wrapping/bounds before text, including legacy result notes.
+		var notes := SliceUI.label(root, "", Vector2(50, 275), 18 if not primary.is_empty() else 16, STORY_TEXT)
+		notes.name = "ReturnFacts"
+		notes.size = Vector2(360, 300 if not primary.is_empty() or MaintenanceStory.returned(outcome) or FinaleStory.returned(outcome) else 135)
 		notes.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		notes.text = facts
+	if GameState.presentation_enabled and not WaterworksStory.returned_branch(outcome).is_empty():
+		bucket_button=SliceUI.button(root,"BRING THE BUCKET UPSTAIRS",Vector2(50,600),Vector2(360,44),func():bucket_return_requested.emit())
+		bucket_button.name="WaterBucketReturn"
+	if GameState.presentation_enabled and MaintenanceStory.returned(outcome):
+		rescue_button=SliceUI.button(root,"KEEP THE DOOR OPEN",Vector2(50,600),Vector2(360,44),func():rescue_return_requested.emit())
+		rescue_button.name="RescueDoorReturn"
 	var profile := ProfileRuntime.get_profile()
-	if profile.first_mission_completed:
+	if profile.first_mission_completed and primary.is_empty() and outcome.area_id not in [MaintenanceStory.AREA,FinaleStory.AREA]:
 		var preview := ProfileState.from_dict(profile.to_dict())
 		# Preview only; real progress waits for the atomic result/save transaction.
 		if outcome.outcome_id not in preview.settled_outcomes: CampaignService.record_outcome(preview, outcome)
 		var quest := CampaignService.current(preview)
 		if not quest.is_empty():
+			_ensure_story_readout(root)
 			var text := tr("ON RETURN / BASTION CONTRACT") + "\n\n" + tr(quest.title)
 			text += "\n\n" + (tr("PROJECTED ON RETURN / %d / %d") % [preview.campaign.progress, quest.target] if quest.target > 0 else tr("Turn in warehouse materials at Hideout Overview."))
-			var contract := SliceUI.label(root, text, Vector2(50, 420), 16, SliceUI.MUTED)
+			var contract := SliceUI.label(root, "", Vector2(50, 420), 16, STORY_TEXT)
 			contract.name = "CampaignPreview"
 			contract.size = Vector2(360, 170)
 			contract.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			contract.text = text
 	var content := VBoxContainer.new()
 	content.alignment = BoxContainer.ALIGNMENT_CENTER
 	content.add_theme_constant_override("separation", 6)
 	panel.add_child(content)
 
-	var extracted := outcome.result_type == SortieOutcome.ResultType.COMPLETED
 	status_label = Label.new()
 	status_label.name = "OutcomeStatus"
 	match outcome.result_type:
@@ -95,18 +124,20 @@ func _build_ui() -> void:
 	var mission := ContentDB.get_mission(outcome.mission_id, false)
 	mission_label = Label.new()
 	mission_label.name = "MissionName"
-	mission_label.text = tr("MISSION  /  %s") % (GameLanguage.item_name(mission.display_name) if mission else String(outcome.mission_id))
+	mission_label.text = tr("OPTIONAL OPERATION / %s" if not primary.is_empty() else "MISSION  /  %s") % (GameLanguage.item_name(mission.display_name) if mission else String(outcome.mission_id))
+	mission_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	mission_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	mission_label.add_theme_color_override("font_color", Color("a9c4d4"))
 	content.add_child(mission_label)
 	mission_completion_label = Label.new()
 	mission_completion_label.name = "MissionCompletion"
-	mission_completion_label.text = "MISSION COMPLETE" if outcome.mission_completed else "MISSION INCOMPLETE"
+	mission_completion_label.text = tr("OPTIONAL OPERATION COMPLETE" if outcome.mission_completed else "OPTIONAL OPERATION NOT COMPLETED") if not primary.is_empty() else ("MISSION COMPLETE" if outcome.mission_completed else "MISSION INCOMPLETE")
 	mission_completion_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	mission_completion_label.add_theme_color_override("font_color", SliceUI.CYAN if outcome.mission_completed else Color("ffbd72"))
 	content.add_child(mission_completion_label)
 	var objective_heading := Label.new()
-	objective_heading.text = "OBJECTIVES"
+	objective_heading.name = "ObjectiveHeading"
+	objective_heading.text = tr("OPTIONAL OBJECTIVES") if not primary.is_empty() else "OBJECTIVES"
 	objective_heading.add_theme_color_override("font_color", SliceUI.CYAN)
 	content.add_child(objective_heading)
 	for summary in outcome.get_objective_summaries():
@@ -178,7 +209,22 @@ func _build_ui() -> void:
 	)
 
 
+func _ensure_story_readout(root: Control) -> void:
+	if root.has_node("StoryReadout"): return
+	# An opaque backing makes the pending story result legible over both the
+	# dark sky and the lit 3D floor, without moving or hiding the heroine.
+	var backing := Panel.new()
+	backing.name = "StoryReadout"
+	backing.position = Vector2(28, 220)
+	backing.size = Vector2(406, 442)
+	backing.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	backing.add_theme_stylebox_override("panel", SliceUI.menu_style(STORY_SURFACE, Color("555749")))
+	root.add_child(backing)
+
+
 func set_return_pending(pending: bool) -> void:
+	if is_instance_valid(bucket_button):bucket_button.disabled=pending
+	if is_instance_valid(rescue_button):rescue_button.disabled=pending
 	if return_button:
 		return_button.disabled = pending
 		return_button.text = "FINALIZING..." if pending else ("RETURN TO HIDEOUT" if GameState.presentation_enabled else "RETURN TO HANGER")

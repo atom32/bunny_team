@@ -1,0 +1,1212 @@
+{
+  "date": "2026-10-20T00:42:56.736501+08:00",
+  "status": "verified_local_source_trial_not_production_release",
+  "previous_goal_turn": "progress: five-hour scope and animation audit saved; integration had not started then.",
+  "content": "Original heroine locally driven by R_Idle/R_AimWalk_F/Rifle_Reload; authored relative-hand path and moving upper-body overlay. No new NPC or story scene claimed.",
+  "public_release_approved": false,
+  "five_hour_game_complete": false,
+  "goal_achieved": false,
+  "source": {
+    "directory": "D:\\tmp\\bunny_rifle_20261020_final03",
+    "non_document_files": 3749,
+    "runtime_files": 1425,
+    "cold_import_and_localization": [
+      {
+        "name": "localization_build",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_rifle_20261020_final03\\project\\tests\\test_localization_build.py",
+          "-v"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "sha256": "c388a686a26077ea820bee83740eeae7058293176c70afef1b443e5a1ec9ba4a"
+      },
+      {
+        "name": "cold_import",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_rifle_20261020_final03\\project",
+          "--headless",
+          "--editor",
+          "--import"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+        ],
+        "sha256": "437bf8a89c4c57025ddd753a09faa76ed2ca4ce58070d976d99447c694dab58f"
+      }
+    ],
+    "full_174_category_suite_rerun": false
+  },
+  "installation": {
+    "scope": "LOCAL ONLY, no model substitution or public distribution approval",
+    "library_input": "D:\\tmp\\bunny_motion_20261020_dev01\\project\\local_motion\\driver04.tres",
+    "library_sha256": "dc57032e20aa2be91fcb2fbf1ec47d9ec3219c907d321dfd94aa5a4e2e3964ab",
+    "patched_base_files": [
+      {
+        "path": "scenes/player/player.tscn",
+        "before": "73b84dd2cc13f8e87212de1b2b3f8bdcc93ce5f63043f4a1fcf487a0ab57a69f",
+        "replacement": [
+          "res://scripts/player/player_controller.gd",
+          "res://local_motion/player.gd"
+        ],
+        "after": "7d157fc458fc54737f9ec2beb34333f02f9fb5f67a23b1c8005e626093426074"
+      },
+      {
+        "path": "scripts/player/player_controller.gd",
+        "before": "00a6725fd3dc7ef353a85c0964abc12de29073f3dc81e9c0d505fe8cbf19a414",
+        "replacement": [
+          "res://scripts/presentation/artoria_bunny/pose_adapter.gd",
+          "res://local_motion/rig.gd"
+        ],
+        "after": "d02a8df3c7e57d8ece8ab0610e6c70d7c235c55feec3c77e954b328445ea2711"
+      }
+    ],
+    "generated_files": {
+      "player.gd": "53663757de358ae64423ea3f010decfff95f6b42a4ef74743938dfb2f7b72e65",
+      "rig.gd": "d70c7c96bcbed891a86cd8a6c137691cd4296702afacc71c7335345faf76a7a9",
+      "hands.gd": "f70c426f96f4b85d54bcc31a5eb544a0bb4604391b6c73199815d7431bdaebe3",
+      "axis.gd": "2e886ae428d8c636e84b5abbae8e8f819013932d94e52f1c30882c3f7d591264",
+      "gaze.gd": "2d8c099429a38c26c17f75c3efcc8d2840835faaf3c3efd557ca3fdaacf8494d",
+      "library.tres": "dc57032e20aa2be91fcb2fbf1ec47d9ec3219c907d321dfd94aa5a4e2e3964ab"
+    }
+  },
+  "local_files": {
+    "local_motion/actual_run.gd": "179f64e9c7428e820b9a2bde63aae4e171936108e7e0fef8eadf7abfefe1c369",
+    "local_motion/actual_run.tscn": "a7a1f1d1ecc21b89627394e55a97780221a6a8caa173e2feabd2602681f15f76",
+    "local_motion/axis.gd": "2e886ae428d8c636e84b5abbae8e8f819013932d94e52f1c30882c3f7d591264",
+    "local_motion/gaze.gd": "2d8c099429a38c26c17f75c3efcc8d2840835faaf3c3efd557ca3fdaacf8494d",
+    "local_motion/hands.gd": "f70c426f96f4b85d54bcc31a5eb544a0bb4604391b6c73199815d7431bdaebe3",
+    "local_motion/installation.json": "4fc100df0de121b23c68c85acaa0377624b7f89a412799052178bcd16a6b6b0f",
+    "local_motion/library.tres": "dc57032e20aa2be91fcb2fbf1ec47d9ec3219c907d321dfd94aa5a4e2e3964ab",
+    "local_motion/player.gd": "53663757de358ae64423ea3f010decfff95f6b42a4ef74743938dfb2f7b72e65",
+    "local_motion/rig.gd": "d70c7c96bcbed891a86cd8a6c137691cd4296702afacc71c7335345faf76a7a9"
+  },
+  "matrix": [
+    {
+      "name": "workshop_headless",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_rifle_20261020_final03\\project",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "res://tests/workshop_moment_test.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "log_sha256": "1b5f36e806ef8b3a767cac394ce58810421ebe1aad238d21ec84a6de26b51564"
+    },
+    {
+      "name": "training_headless",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_rifle_20261020_final03\\project",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "res://tests/training_room_test.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "log_sha256": "1f3b5de8b07a8abfe9df6d04895bd404afc273196600b407594614d8c0aaab6a"
+    },
+    {
+      "name": "controlled_headless",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_rifle_20261020_final03\\project",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "res://tools/local_rifle_review.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "log_sha256": "21892e91dce460de1c6b752bf6d67b461bc7b5d11c259c1fadf742b76e3799d0"
+    },
+    {
+      "name": "controlled_forward",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_rifle_20261020_final03\\project",
+        "--rendering-method",
+        "forward_plus",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "res://tools/local_rifle_review.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "log_sha256": "4bac8eeefc62c39ec36f517461f5343d86332bbb2a31b858080cd2ba25d2cb39"
+    },
+    {
+      "name": "controlled_compat",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_rifle_20261020_final03\\project",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "res://tools/local_rifle_review.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "log_sha256": "83651dab7e0aadab2a97b092c6b926cd808866528c2c15e6c1d1226e88e0c7c7"
+    },
+    {
+      "name": "actual_forward",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_rifle_20261020_final03\\project",
+        "--rendering-method",
+        "forward_plus",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "res://local_motion/actual_run.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "log_sha256": "ecafe63ec7f16074404d3905209e2dc55106bf122c8bf1e5838b2ba3f081f1c3"
+    },
+    {
+      "name": "forward_read",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_rifle_20261020_final03\\project",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "res://tests/first_sortie_run.tscn",
+        "--quit-after",
+        "600000",
+        "--",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    },
+    {
+      "name": "actual_compat",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_rifle_20261020_final03\\project",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--resolution",
+        "1280x720",
+        "res://local_motion/actual_run.tscn",
+        "--quit-after",
+        "600000"
+      ],
+      "exit": 0,
+      "pass": true,
+      "log_sha256": "c278c6f3fde6a7b0d1cba79cc850733f4fafc5d92fde3c507dc1d45c2fc3bc86"
+    },
+    {
+      "name": "compat_read",
+      "command": [
+        "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_rifle_20261020_final03\\project",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "res://tests/first_sortie_run.tscn",
+        "--quit-after",
+        "600000",
+        "--",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    }
+  ],
+  "controlled": [
+    {
+      "name": "controlled_headless",
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_headless\\review.json",
+      "sha256": "003817e49478ca1e223b2b464fa6bf61ef3adbb2261ce6dadc6fdd31baf093c1",
+      "measures": {
+        "failures": [],
+        "max_authored_reload_delta": 0.194534927606583,
+        "max_length_error": 6.0349702835083e-07,
+        "max_weapon_fit_offset": 0.170705795288086,
+        "min_gaze_alignment": 0.99999988079071,
+        "scope": "Controlled pose/weapon review, not normal play or human acceptance",
+        "states": {
+          "Idle": {
+            "max_foot_y": 0.152807995676994,
+            "max_left_error": 4.1231828618038e-07,
+            "max_right_error": 4.52603615030966e-07,
+            "min_foot_y": 0.123201563954353,
+            "source": "R_Idle"
+          },
+          "Reload": {
+            "max_foot_y": 0.15680368244648,
+            "max_left_error": 4.77767571283039e-07,
+            "max_right_error": 3.72826946204441e-07,
+            "min_foot_y": 0.0941497832536697,
+            "source": "Rifle_Reload"
+          },
+          "Walk": {
+            "max_foot_y": 0.310130834579468,
+            "max_left_error": 4.88240459617373e-07,
+            "max_right_error": 4.85904138258775e-07,
+            "min_foot_y": 0.088154524564743,
+            "source": "R_AimWalk_F"
+          },
+          "WalkReload": {
+            "max_foot_y": 0.307859003543854,
+            "max_left_error": 5.52147866983432e-07,
+            "max_right_error": 4.15699673794734e-07,
+            "min_foot_y": 0.0881673544645309,
+            "source": "R_AimWalk_F"
+          }
+        }
+      }
+    },
+    {
+      "name": "controlled_forward",
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\review.json",
+      "sha256": "003817e49478ca1e223b2b464fa6bf61ef3adbb2261ce6dadc6fdd31baf093c1",
+      "measures": {
+        "failures": [],
+        "max_authored_reload_delta": 0.194534927606583,
+        "max_length_error": 6.0349702835083e-07,
+        "max_weapon_fit_offset": 0.170705795288086,
+        "min_gaze_alignment": 0.99999988079071,
+        "scope": "Controlled pose/weapon review, not normal play or human acceptance",
+        "states": {
+          "Idle": {
+            "max_foot_y": 0.152807995676994,
+            "max_left_error": 4.1231828618038e-07,
+            "max_right_error": 4.52603615030966e-07,
+            "min_foot_y": 0.123201563954353,
+            "source": "R_Idle"
+          },
+          "Reload": {
+            "max_foot_y": 0.15680368244648,
+            "max_left_error": 4.77767571283039e-07,
+            "max_right_error": 3.72826946204441e-07,
+            "min_foot_y": 0.0941497832536697,
+            "source": "Rifle_Reload"
+          },
+          "Walk": {
+            "max_foot_y": 0.310130834579468,
+            "max_left_error": 4.88240459617373e-07,
+            "max_right_error": 4.85904138258775e-07,
+            "min_foot_y": 0.088154524564743,
+            "source": "R_AimWalk_F"
+          },
+          "WalkReload": {
+            "max_foot_y": 0.307859003543854,
+            "max_left_error": 5.52147866983432e-07,
+            "max_right_error": 4.15699673794734e-07,
+            "min_foot_y": 0.0881673544645309,
+            "source": "R_AimWalk_F"
+          }
+        }
+      }
+    },
+    {
+      "name": "controlled_compat",
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_compat\\review.json",
+      "sha256": "1abce164c829fdd105810707cbecee3985f7b76897697a519e8cbbecd2fa8818",
+      "measures": {
+        "failures": [],
+        "max_authored_reload_delta": 0.194534927606583,
+        "max_length_error": 6.0349702835083e-07,
+        "max_weapon_fit_offset": 0.170705795288086,
+        "min_gaze_alignment": 0.99999988079071,
+        "scope": "Controlled pose/weapon review, not normal play or human acceptance",
+        "states": {
+          "Idle": {
+            "max_foot_y": 0.152807995676994,
+            "max_left_error": 4.1231828618038e-07,
+            "max_right_error": 4.52603615030966e-07,
+            "min_foot_y": 0.123201563954353,
+            "source": "R_Idle"
+          },
+          "Reload": {
+            "max_foot_y": 0.15680368244648,
+            "max_left_error": 4.77767571283039e-07,
+            "max_right_error": 3.72826946204441e-07,
+            "min_foot_y": 0.0940637588500977,
+            "source": "Rifle_Reload"
+          },
+          "Walk": {
+            "max_foot_y": 0.310130834579468,
+            "max_left_error": 4.88240459617373e-07,
+            "max_right_error": 4.85904138258775e-07,
+            "min_foot_y": 0.0844160839915276,
+            "source": "R_AimWalk_F"
+          },
+          "WalkReload": {
+            "max_foot_y": 0.307859003543854,
+            "max_left_error": 5.52147866983432e-07,
+            "max_right_error": 4.15699673794734e-07,
+            "min_foot_y": 0.0881673544645309,
+            "source": "R_AimWalk_F"
+          }
+        }
+      }
+    }
+  ],
+  "normal_start_routes": [
+    {
+      "name": "actual_forward",
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\actual_forward\\normal_start.json",
+      "sha256": "5cdc0a8419c4fc0057485dceb46d21c91f5d37086ab815685f0ee6a2fb623573",
+      "checks": 73,
+      "motion_frames": {
+        "Idle": 904,
+        "Reload": 194,
+        "Walk": 1057
+      },
+      "shots": 12,
+      "kills": 3,
+      "health": 260.0,
+      "max_authored_reload_delta": 0.194427043199539,
+      "max_weapon_fit_offset": 1.07290995121002,
+      "final_profile": {
+        "ar_damage_upgraded": true,
+        "credits": 2100,
+        "first_mission_completed": true,
+        "successful_sorties": 1
+      }
+    },
+    {
+      "name": "actual_compat",
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\actual_compat\\normal_start.json",
+      "sha256": "38112e3015d5f13ca98899ed3fd27d96497ea91cfce85db9c9128083cad88ed9",
+      "checks": 73,
+      "motion_frames": {
+        "Idle": 887,
+        "Reload": 194,
+        "Walk": 1054
+      },
+      "shots": 12,
+      "kills": 3,
+      "health": 260.0,
+      "max_authored_reload_delta": 0.194427043199539,
+      "max_weapon_fit_offset": 1.07290995121002,
+      "final_profile": {
+        "ar_damage_upgraded": true,
+        "credits": 2100,
+        "first_mission_completed": true,
+        "successful_sorties": 1
+      }
+    }
+  ],
+  "q02": {
+    "path": "D:\\tmp\\bunny_motion_20261020_dev01\\q02_positive02\\campus_entry.json",
+    "sha256": "9db0c08c04b3b93fc1aa3f675a98593fa6287baf4a1c414497c133c9251a306d",
+    "checks": 30,
+    "outings": [
+      {
+        "cargo": {
+          "dressings": 1,
+          "fabric": 3
+        },
+        "number": 1
+      }
+    ],
+    "purchased_dressings": 1,
+    "warehouse": {
+      "dressings": 2,
+      "fabric": 3
+    },
+    "input_originals_unchanged": true,
+    "scope": "Actual previous Q01 save, actual normal loot/return, one real dressing purchase at displayed price and delivery; not injected inventory. Extra fabric outings not exercised by this positive."
+  },
+  "animation": {
+    "archive": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+    "archive_sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec",
+    "samples": "D:\\tmp\\bunny_motion_20261020_dev01\\source_motion.json",
+    "samples_sha256": "00fa72f7369dd8b789f563dbe7cff755dc6e4f46bc1a51bd1141aee3ef2355b9",
+    "bake": {
+      "arm_scale": 0.855090859419676,
+      "clips": {
+        "Idle": {
+          "length": 3.0,
+          "samples": 91,
+          "source": "R_Idle",
+          "tracks": 23
+        },
+        "Reload": {
+          "length": 0.933333333333333,
+          "samples": 29,
+          "source": "Rifle_Reload",
+          "tracks": 23
+        },
+        "Walk": {
+          "length": 1.13333333333333,
+          "samples": 35,
+          "source": "R_AimWalk_F",
+          "tracks": 23
+        }
+      },
+      "leg_scale": 0.897746385354294,
+      "mapped_bones": 22,
+      "scope": "Local trial only, no distribution permission asserted",
+      "source_sample_sha256": "00fa72f7369dd8b789f563dbe7cff755dc6e4f46bc1a51bd1141aee3ef2355b9",
+      "target_bones": 140
+    },
+    "mapped_body_bones": 22,
+    "driver_bones": 140,
+    "display_bones": 52,
+    "finger_policy": "Existing contact solver, not sourced finger mocap.",
+    "root_policy": "In-place horizontal root, authored vertical pelvis shift on display root; cadence based on authored root travel and target leg scale.",
+    "reload_policy": "Original ammo and timer rules; standing full-body, moving filtered upper-body plus authored relative-hand path and whole-gun reach fit."
+  },
+  "preservation": {
+    "assets_unchanged": 881,
+    "scene_files_unchanged": 93,
+    "personal_saves": {
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455246252200
+      },
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455253759300
+      }
+    },
+    "arcana_and_combat_archive_unchanged": true,
+    "all_default_runtime_source_matches_manifest": true,
+    "actual_copy_exceptions": "Isolated app name and exactly two declared hooks. Data outside repo and all export packages.",
+    "paid_generated_data_in_repo": false
+  },
+  "diagnostics": {
+    "sample01": "Missing Animations path raised explicit script exception; only verified owned stuck processes stopped. sample02 succeeded.",
+    "bake01_02": "Early autoload dependency compile errors; bake02 printed PASS despite errors, rejected. bake03/04 clean.",
+    "pose01_04": "Left hand missed by up to 12.8cm; fitting before torso modifiers insufficient. Whole-gun reach fit moved after torso; relative authored path not clipped.",
+    "final01": {
+      "directory": "D:/tmp/bunny_rifle_20261020_final01",
+      "max_length_error": 0.0452688857913017,
+      "finding": "Global-transform reflection compressed UpperChest by 4.5cm in hunched poses. Rotation-only reflection rebuilds original offsets; same strict length threshold."
+    },
+    "final02": {
+      "directory": "D:/tmp/bunny_rifle_20261020_final02",
+      "all_9_structural_checks_passed": true,
+      "finding": "Manual front view still bowed gaze at feet; neutral-model-rest facing replaces assumed bone-local -Z in final03."
+    },
+    "q02_wrapper01": "Moved wrapper searched wrong baseline path; absent-profile guard rejected. Corrected absolute actual input source and retained negative."
+  },
+  "previews": [
+    {
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\rifle_actions_front.gif",
+      "sha256": "a85d8b5a118ad0df69667a9286bb2b746882251fd48cf4a0d1517b662aeb570f",
+      "bytes": 3690723,
+      "frames": 92,
+      "source_frames": [
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_000.png",
+          "sha256": "c2f29225eab46a6ba5fc286b16e96b6bef0722921609845d7dbc67fa89145e72"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_005.png",
+          "sha256": "5e7b8296a644dcc4b098e85d65d2ffabb1bc37eca402fcbba9ced37b4f2160b9"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_010.png",
+          "sha256": "8a43bc788cefd8ead864db5ff9be45ac4e35f9b099183539cf66423bd499e287"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_015.png",
+          "sha256": "84ef3355fac4310de6c73fc2497af45efab5497404dfc00ae6a2fdaa280c159f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_020.png",
+          "sha256": "82af40b8b5c289453f7af300950a555fbb8bdc08330d875100ea05007d6016b6"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_025.png",
+          "sha256": "9c4ffd5e58df42cca577b176d36727d6521c154ca84e01dbd87f1f0e4f801e3c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_030.png",
+          "sha256": "ed925df6e64222ae938e955c3bde9c135552f955feebe4a2302b9fe1a626754f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_035.png",
+          "sha256": "2d6679ef9d4e22d9268d16a099caf6898bf17c7fc586c35d436605ae9e340c33"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_040.png",
+          "sha256": "7a639fd013d3c278c064a48f876d6c54c86bb23429d161221b67d9031fd55e05"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_045.png",
+          "sha256": "8306c105c8203252924f49b3eaae6e373c11e98384997077cc1986258bb87d74"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_050.png",
+          "sha256": "2f85e068ed154b12fc216f79effce311bcf659cd567f5ef9f62142294adaed5b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_055.png",
+          "sha256": "d85ca2d27701ec0a47704042c287a175f779d23b766e49888386f112cb014b20"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_060.png",
+          "sha256": "03a07f94eb0c24a12e92f4346318d0c22c0bb1033f3816402a17f0aa38566020"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_065.png",
+          "sha256": "ee45bafdaadd6a0ed6b9c9830555174b07787405761715780c81a04c805e04d8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_070.png",
+          "sha256": "bde6a975e036abcee19082ab4e2ffe3811e0f5c1f83a70e395d58da7dfa87ea9"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_075.png",
+          "sha256": "876603eb02b9c4c8f857b6ec673e4f2135bc6e3c3b26ff91c50d0f8167850e81"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_080.png",
+          "sha256": "7109140b3a02cea8c79a59bde02221883e2aae81d0a5df0f698072840826f175"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_085.png",
+          "sha256": "83030b1aa08725324d53f0f04b6d7a000fa64eafb703289fc34ec48377370ae5"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_090.png",
+          "sha256": "d21a4a7992e1a2ddca5d7618b7abdb42f396ae55c138d4db88444400ea84398c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_095.png",
+          "sha256": "e7585c2713ff974604672f77ac99923cb80cfcff998d63a5be3f609d61f08806"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_100.png",
+          "sha256": "ce73fd65111afe22e1fead791c4aeb5b08a2f8c405bd6f9f47342c9dfc000d95"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_105.png",
+          "sha256": "4705e54ea1e8b88a72ad1270afb6f74790b88d0537c2ada1d6edf2bac270a039"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_110.png",
+          "sha256": "cfcf60d04b5d5cb5e9dbff511f3cd14020209bb364215e45e3c3f95a604971b8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_115.png",
+          "sha256": "0928a8649490402d1f6673bade272abdf510a4abf79d987b4df20e0488b783c3"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_120.png",
+          "sha256": "ca706472fc56436000ad668457c9f66685965cbc963c58c494211ab2b6aaa357"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_125.png",
+          "sha256": "5380f0506ed024a392777a21a65bbe9abacfb6f60fad672ec13e14b0dca0a9a3"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_130.png",
+          "sha256": "778030a149ec2a1c7d84f5cb1c1ac6701fa9d0e0e49db6a89836b5ea52c1e724"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_135.png",
+          "sha256": "c75a31afeee17ad575c683a385440a5d076a6871fbefb7617acb2a41c1b660a6"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_140.png",
+          "sha256": "53c6c2ec9d11a660506bbcde1a42df31e8fad782da7f54858d073bfa21002572"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_145.png",
+          "sha256": "366041f9ea4580258a801dfe19879bf81066352d0c41ce8dc67de617203fe7ea"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_150.png",
+          "sha256": "72c9f1ca46e046d55cad4add1d492c5a2055d8c941a86d91d4b32ce4d59c2ec2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_155.png",
+          "sha256": "fe4e626f9d3f83cfd9c0fdb744525a16726f337e8ea6ff5fa4638d6258d08c5e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_160.png",
+          "sha256": "8cf8bb91fe3848a973b6a02a029cadd3e737b76b2dda58daa4789f1bd69d9b99"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_165.png",
+          "sha256": "aa21728bfbf8a4cb04fa83dab23a7ce9d13dfd77f33ca49e7fb22e946201e6d2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_170.png",
+          "sha256": "32f1506e89ff65378e2ff152567b707d1045234cd39c7ae91174c9d21fb2e5a8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_front_175.png",
+          "sha256": "4f4c3f89c58ff8361ed48fda4826843e3a71458a6a171a9caa104a0e3932d0e7"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_000.png",
+          "sha256": "24f62b5177e64ae0e346fb2b8da65ce6bf4986d871a40560f13acc64899cb477"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_005.png",
+          "sha256": "6b5c6fbe94f8af11976183765e11a1433ce2ee3e677bfcf7541a838f2f3d5269"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_010.png",
+          "sha256": "a4d972be6f957e13653d777f5d15ad6ccfab908fbdf11460d65f06bfa532582a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_015.png",
+          "sha256": "599648ba9f1cb3ce1c802b8ec4c2365a1d82157baf1724ca435fbc610c36e4f0"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_020.png",
+          "sha256": "9671a6d001f332256b91710bcd94c0a48b61301f20c77b163d4555babd9315ca"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_025.png",
+          "sha256": "e8f4ae7ff0aceb80ed0d151de61c105f66330b75c2c3016ad00ab3b387ce2661"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_030.png",
+          "sha256": "c82c53d2ddc29130ac71ccc77bcc15f142df83ba056b443e1a914f92f6eca3d1"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_035.png",
+          "sha256": "7eac2e4903a40258cbd29b75ccad0a8c7020150420755c4985cf319303230acd"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_040.png",
+          "sha256": "872f81ee51bda8be902ff867bc63ef1c35cd407b616204a91b1bfd9f46c4f002"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_045.png",
+          "sha256": "ca2b2a041fad28f55392dd3e6a98f5f875015c9971dc2e4b67c3b1885e814d43"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_050.png",
+          "sha256": "e2c63aa3e50de1f0f6ab9f064e4c3839c47472c11f5e6fd7f15167d24a03fa19"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_055.png",
+          "sha256": "9870a71e4ad0f006bafc413a9e0cd012f5f8991cfcc756f583fa821c458553d0"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_060.png",
+          "sha256": "be8f6e910c7805bb0b28df653a4f12f8fb685cfc65d5205558b504e132d25b17"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_front_065.png",
+          "sha256": "d7c22efd529db26a09aa11c76d53858d5427d9486fab6a46376d6f6cb35f24c8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_000.png",
+          "sha256": "5eb3b5bd0aba4e15c66e40d9ed98c9628cee552c86c076fc3b0a139194f06271"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_005.png",
+          "sha256": "65c41f4d2940e71a80d6ba33c415bff101120645662f2568223bcf5dbb49c25c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_010.png",
+          "sha256": "146e51eddadc6fbe0db7ef3012dc8ac42f17719bbfded1a8ba3512c0964a80f5"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_015.png",
+          "sha256": "d47f056460073c4c4e5a56e8017da2fe44ad102252f6072c8dd7d1e3465de6f3"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_020.png",
+          "sha256": "732e181c82020d4a1540b4f60853575fec3e1cae1e16abea5a8cd2f0e750e125"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_025.png",
+          "sha256": "ca310cbeeb3b617bd6f6cf64f14f9f61fce4c9e7075be74e6840363a484d9e3a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_030.png",
+          "sha256": "66527fd988335f357aec973926f4155404415894a7b5e65dab3b0682ce1537fc"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_035.png",
+          "sha256": "2697ed0f531b6898de2c8b41219d2f76c8fb5e7cfd1ab1055762e157e873c272"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_040.png",
+          "sha256": "60b201a3600e02189925505982c86bdcc3cf0a88b1187c24bc563e5a5eabee1e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_045.png",
+          "sha256": "186169cb1583d7f06b5c761ea3061e94da471f06369aafcefe3c0bf1891aa90a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_050.png",
+          "sha256": "9ecf492f5f207d24ae41defbe581425ceeccfc209d9ceee54ba65025262231c7"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_front_055.png",
+          "sha256": "e15cd470a8395b2936135a4e57c79a5c5bdcf455cdc16f45001b96e871907705"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_000.png",
+          "sha256": "75a486b29a7e933c0c3a0e7794bc103e0bffafd0c300d5f8d491e8c366c809ad"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_005.png",
+          "sha256": "1353214b8b4b2df70435447ae7c15591ef6d94c7c35ae5b7a197335bd65da0ed"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_010.png",
+          "sha256": "f14375fdfc211010be6868277e067fad47e480169dc352dcc0d0c07a05906805"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_015.png",
+          "sha256": "03e99c7b1c036fe9930842462f4f4dbb65802845b03c09d298c59194215929e4"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_020.png",
+          "sha256": "2a3cb8bd9a3bfba8c2d1fb52db0eaff5c2bc129c83fc89a8a5ab349f9899a231"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_025.png",
+          "sha256": "6120aa7e72dc2927bc8b4f5230b6dd22516c0b275b1bbeaadf0a008e94646f5e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_030.png",
+          "sha256": "b256ab284ad64515e48456b78b515abbd9def5024d812003127c94c51f35260f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_035.png",
+          "sha256": "5504fefea2eac71986e07d3e2a0ac95d7df511ecf28f790a795a1d89d93e4a07"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_040.png",
+          "sha256": "4014ae2efe87a8949ae3b5e7c17a5ea7c1dce79d8cf22bc2d3f11985543f069f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_045.png",
+          "sha256": "8fee969ce2f202af47cc4cb21f10d3b7eecdfa2fdd757dc0a49a06feb97dd786"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_050.png",
+          "sha256": "c773fe3a385e7a1bcde072dffc048b886b9f35f1e99ad33d416eec033f116dd1"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_055.png",
+          "sha256": "966a8aafe0f880b389cb6ef6c1bcc04d45f581e038f887b59c67ded41939cc8b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_060.png",
+          "sha256": "3cd760a0f8ee68c339dfa7109209a12a5046cd70947b7392f67840fcb5e4c474"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_front_065.png",
+          "sha256": "8dcc0170c8a04aa3613cd6bf9c1d889aafe17667e1059c0f1a734529b304509d"
+        }
+      ],
+      "processing": "Resize/quantize/encode actual engine PNGs, repeated frames at cuts only; no generated or synthesized evidence images."
+    },
+    {
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\rifle_actions_side.gif",
+      "sha256": "363cb285047bf99d1cf97c2b946b0f00d4ffa0d71c427e1bbb6d314f7d819ad8",
+      "bytes": 3861463,
+      "frames": 92,
+      "source_frames": [
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_000.png",
+          "sha256": "ada06f8aa5438c2ccee2cfd5c6146d20330e0ff583a09ea17e84417bf235a10a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_005.png",
+          "sha256": "aa2c6e5053adb1569762578fbdcba17967b71f321bbaaaea3e447315db13426b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_010.png",
+          "sha256": "f028137653bacc9a5ffa3926ce841b161d40e547e3518bb7efeefa64b5633454"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_015.png",
+          "sha256": "af0560406c0ab3732eeda68691c05df9b765926a5bed648bcd0b29e10b0d43b4"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_020.png",
+          "sha256": "351e5728e30c927821adb83e4060005d44673787e2dfedb03e02d20fb5a4e269"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_025.png",
+          "sha256": "3d92e91b7938d4cc0a824a9af4336722acd12b795a9f4331840ac3da34a1a979"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_030.png",
+          "sha256": "a9d86ff11226917273aa3389c3e9ce82da7bceec9d2fd28a477591a68afb93b2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_035.png",
+          "sha256": "680431aadeaeb6117584acff76d4b0a1bf098f3ae42acfd5470a8f4bf7e14029"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_040.png",
+          "sha256": "155428a3eb9648af9f19b9c5e3e555d2d11cc347f4728b996198b41112a483d6"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_045.png",
+          "sha256": "acbb2efc38e93f2b56d74b39ca921584ef16fb9f782636558f71d142503a2add"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_050.png",
+          "sha256": "9269251ae09b5d64d69c2653dfc54fb590871df498e8063794a3db353a4eec77"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_055.png",
+          "sha256": "0c16822cd8ea1e299aeefcdc37d6af8d20450445dccb2f897b0dbd18d8f4f3b8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_060.png",
+          "sha256": "e20b68fa5f441c809f8de44d796bed67b2aa9b467ba0faee207a825e3b1f4c1c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_065.png",
+          "sha256": "4d18c868880db181c9caa666dbc7173404d1b99b66990f295a14bb5da820e668"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_070.png",
+          "sha256": "29d92a9e34966291344a167e3fe283ccb0491ae5cba8fd9172124ea4224556cb"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_075.png",
+          "sha256": "bce2e9fe915915fa8e1f3aaab549f90ba4a8423c97a86cc38df4e1bbc154da78"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_080.png",
+          "sha256": "d8ab72aa835e13872f93c4f8f27845ec0331447fde199e4bb7b2e6ffd4fe67d7"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_085.png",
+          "sha256": "587bc60b787002f0aaf748792773a9c6d87ea33bd87672110e37e420d82afc0f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_090.png",
+          "sha256": "209b29b5bcf4365f251945a8d251d5b22c3eed2b150a3df300abddd27bfb3fca"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_095.png",
+          "sha256": "976c8cfe963a0eb1c86e4eff872a016342165c3c3ad7ce90d721e28852c5bd03"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_100.png",
+          "sha256": "0f2d1d0a236679e7024722e55c0ae7b0c031168cbe202f44095bc323415f5b5f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_105.png",
+          "sha256": "59d318c4afeee8ff230aed8df0442ba49d7851b8b7b403080b95c422122bd3d8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_110.png",
+          "sha256": "8c75933e219cfd05c97cff5f8676f09e2002ffdbfb0bed2e40c7fb823603f5d7"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_115.png",
+          "sha256": "3463f3b0de616d8a1abdf4e4f1b0a6b46d2edfb72d0a003bc6c2eb7a1237854f"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_120.png",
+          "sha256": "c46bfe526f0f531c0b0d885eab0a534fcd36e3a1e6c7034b7e7e0eb704459373"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_125.png",
+          "sha256": "891cb08ef0b62565a9806bd5a57770b7629a7fff9a2512b2f8f53a4ed10db360"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_130.png",
+          "sha256": "b3bf0b63e477243f92e06186c3e8329ce1ee85e889e0812937098264fa89de58"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_135.png",
+          "sha256": "1a64e72722496f125e490cf66879e6d0e498a971f94235b0df101993c6dc8e6c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_140.png",
+          "sha256": "811f843f104b5dbffae4c9396da82aa54a47dbfd06dc0257f5e2406cdc3b2fa1"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_145.png",
+          "sha256": "1a21d1ebaf9791fb9ddc7d3e117b334c45b2d3ddde6f48c02350e1e828c8b180"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_150.png",
+          "sha256": "609a6892e3985b0a4b7d23561b675160d143ce831d9b3ce2f34d9decb3a33b05"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_155.png",
+          "sha256": "313e93614a5857c0d88333a7aff0d529b54b04a870c627e184dcf56a9fb0c6e2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_160.png",
+          "sha256": "9e1bc44bcbee596ca67e70598e9a7020ec56db3a59b290f696053fc22acfab26"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_165.png",
+          "sha256": "26dc1efa7c11b7b54758b9a5db471a213e45c26f80edde3187989365317b614b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_170.png",
+          "sha256": "da66ccdf51767322812be9e505e14ecd7466b6b25383d0e8b3b8828a4d70894e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Idle_side_175.png",
+          "sha256": "ab2bac3e1d687c883d45fe22e74c4df236a7b4fbf91a51f3cf79f026052f7747"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_000.png",
+          "sha256": "e43c2024460b59b4d19bfa38a978d1a566503eae0d05432c4044e526aa28357e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_005.png",
+          "sha256": "08aa7bea4fd943ac523673b16db252fe0402d47d79d27a6836c1c661e0b1fcd8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_010.png",
+          "sha256": "a64f425bd57c5b514b1685a81254ef42741e2157d55595ae1d7f20e5b0d9e5f9"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_015.png",
+          "sha256": "79cc12f5a4d140ccc64f27eac970cd0c4fcf29b7cf0b6b9a23f3fd73341aa2ef"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_020.png",
+          "sha256": "ba5c39b0bf21d3af44250a1d1e85dabd238d34174d338dd95380e6b7f6316f5a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_025.png",
+          "sha256": "9475ae97b2ea9a145251b239baba9c855c4be8fe3488f11404b6bc494515edd8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_030.png",
+          "sha256": "a6e80eabc94f8b9545e465a6dfed25772d4b5274b1a43c345542f65659ea5ffa"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_035.png",
+          "sha256": "24ee7fe2afefc6bdb9a8483b46a5d4d036ed8eeff7ac08b2748ac5529e6e6f07"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_040.png",
+          "sha256": "ff876df4a6d759c57f64a97e7cb2f94e5e63b4ddaba0bf519f4da221721ee70d"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_045.png",
+          "sha256": "6ef3be6dee9555770ac682a067fc30975e290e4539d0145b50cf14f0f428d209"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_050.png",
+          "sha256": "40275a8e9c8c10570b56136b8228912e3eb0fd68993958ce1adce0f4732edbac"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_055.png",
+          "sha256": "99b8dcd83934173c659ed869415f5387a27ccf7c0f42ab58109b58c2d39e6a98"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_060.png",
+          "sha256": "37a3b4aa34a4037cffb5d35dafbd785af4db75056616473a8d5ccee8cdda1ccc"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Walk_side_065.png",
+          "sha256": "d58279e6ddc401884f21df9db789ba4f647fcdb71bcfec09a13a5480b8c0c329"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_000.png",
+          "sha256": "866c0db0e87f0c7b497da66c7746968e0a2940b0d34478c5c175c85d553135cd"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_005.png",
+          "sha256": "e5e37b35880e5dcc144e260e8a48e0b201bd9633e42f7d5571daab29c42e87eb"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_010.png",
+          "sha256": "db15fced386de711a2cf9e792d6b0b24b86157bbc4d175aa198771837bc37f29"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_015.png",
+          "sha256": "b3d25c7012b5e6fc992f3e80aecde7f5c5ac85ac8f5578e8fb86dca078af78eb"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_020.png",
+          "sha256": "5e96d6a62f383c6027b3e52b0805c72db89f964c80a11a4b6d6af71b2340da0c"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_025.png",
+          "sha256": "8b40ce2a1ef264ca72a02cc95f5e899c13bda0c1c34942106ebdff7af079ec90"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_030.png",
+          "sha256": "e51a7e6fea5ef76f59b251f101e980fb2e46ccfdc15dc421a7ba603b938fffe2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_035.png",
+          "sha256": "4a0f4dc4daa6f7bbe4493bf4ec9b2ee62481b3da5022535620672e6f592620cf"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_040.png",
+          "sha256": "f1f1228efc1784537ccf008e740f4602154a6c8f098329bf8c81b5814aa2c45b"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_045.png",
+          "sha256": "9eea0d93f5ca280811bac50a02da08dba7af6bb0fa11407e3a6bcb6be3a4138a"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_050.png",
+          "sha256": "db606efa0510f18b3b9ec5d6b77744e73963642e0abe736d7d65238da42633d4"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_Reload_side_055.png",
+          "sha256": "b06127ec52ba5c4768f1af1749312bb8775c12604bc6ec6a7f838dfb50f258c6"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_000.png",
+          "sha256": "1bdebe14da66719385106462284805b6c91f5f919c223aef37355dbf3b6a132e"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_005.png",
+          "sha256": "308153cc4478f51150aa2dc3966e306b98af83ffe177f8f80b9b35cefc502964"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_010.png",
+          "sha256": "4cba1f27f9cd2752fec76d64dcdd5f4e2c02d31114e7e1486d913f7cee3d16c3"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_015.png",
+          "sha256": "539203a2e72348ddc3df43be8f40e5dce71c86cf3e5f4b136b4969dea970dff8"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_020.png",
+          "sha256": "18bd65539b7f50661ee45137871f9cfce02126538ea807c95d0857fbb8f13990"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_025.png",
+          "sha256": "3c79bea867b799c0f8827023919bc6500674f04162c3acabdd4c873e2201dce2"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_030.png",
+          "sha256": "1d2bde99d73016c96f9e69e22ed29672a94f4d93e1e4578d5bf9ff5a4062ede9"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_035.png",
+          "sha256": "1fdc011fd95b3a3e03b9fab2ae190be4beb8a082e882769aad383f6ce80151f3"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_040.png",
+          "sha256": "5f4bac21b22d367192a9fc515aaa0713b31649a01882d17ba9b98c184070f219"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_045.png",
+          "sha256": "9474a41b6f5374751c7efb079f5d020712444a85b5675a71f1e35acbe95207e4"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_050.png",
+          "sha256": "8c85fda19e7fa3ab3d97f262992f8cf2502c42ffcac2bb9b77c6a88d0c5bd9f4"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_055.png",
+          "sha256": "f5204e83e60e847577dcb40437aa798f1182a827ac676d8e38e85af96ffadc43"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_060.png",
+          "sha256": "4ddb55fe67a03047cd2ba4e6b70ce2d0cdb4c2fb1b3b24a111390c183e58eaac"
+        },
+        {
+          "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\frame_WalkReload_side_065.png",
+          "sha256": "f3d6d73cb18aa2a011390c021c1dbfaebca6170dad9d9fda6bdcca3a5f74e8b8"
+        }
+      ],
+      "processing": "Resize/quantize/encode actual engine PNGs, repeated frames at cuts only; no generated or synthesized evidence images."
+    }
+  ],
+  "manually_reviewed_captures": [
+    {
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\Walk_front.png",
+      "sha256": "d92f0b66afb0ba33bbb109077aafa55aa0c847739ecad23ac497c1624b71b4bb",
+      "observed": "Gaze no longer bowed at feet; authored head/body roll remains. Full figure fits frame."
+    },
+    {
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\WalkReload_side.png",
+      "sha256": "5e25251b401f0d182d87e37e2f77f6a27a04a5e3dadbc40934c11148caf0ce0f",
+      "observed": "Moving reload shows source upper-body/hand action with stepping legs, not static whole-body replacement."
+    },
+    {
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\Idle_front.png",
+      "sha256": "d9d2910d2f4a5ae8ca1a0241463dba311ff6ae5bb271c5ec2d24433e8d5784e7",
+      "observed": "Existing heroine and outfit retained, complete framing and both hand contacts visible."
+    },
+    {
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_forward\\Reload_side.png",
+      "sha256": "91ac830819c4b6f9ca9cdc87af4ca9ebaaab9d35792401cec1e048364ae5fd7b",
+      "observed": "Side view shows magazine-region reach without changing limb rest lengths."
+    },
+    {
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\controlled_compat\\Walk_game.png",
+      "sha256": "577b791848bd921fcdc210e25fc80a7f06df4e065d647fadf0c30597b19d6b78",
+      "observed": "Production-scale orthographic view remains small; this is scale evidence, not a claim of improved world-camera presentation."
+    },
+    {
+      "path": "D:\\tmp\\bunny_rifle_20261020_final03\\actual_forward\\13_defend_return.png",
+      "sha256": "1b03b272c4c367438f33bcd355845841f5981d193b9c52d09ba84bbeac553df8",
+      "observed": "Actual normal battle/extraction HUD; not a pose-room or fabricated mission-completion fixture."
+    }
+  ],
+  "author_contact": "User handles draft/reply. No author PM/page/login/captcha/poll and no new permission text.",
+  "limitations": [
+    "Local source trial needing Godot, not new independent EXE/PCK or public approval.",
+    "Only three of proposed twelve source motions integrated locally; repository default runtime still old motion.",
+    "AR-556 checked, not all weapon families, strafe/backward footwork, interruption/checkpoint matrices, long sessions or cloth contact.",
+    "Moving reload is a controlled combination, not a human continuous moving-reload acceptance test.",
+    "Gaze direction is constrained; authored head/body roll remains. Foot-bone heights and cadence do not prove all-frame sole planting.",
+    "Current full campus native chain, stranger first hour, five-hour story/ending, minimum hardware/audio, rights/publication and real 80% reviews remain incomplete.",
+    "No commit, push, model replacement or upload.",
+    "Weapon fitting changes the real muzzle transform; original cover/raycast rules remain, but all-pose cover intersections and all weapon families have not been regression-certified."
+  ]
+}

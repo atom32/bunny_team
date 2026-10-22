@@ -1,6 +1,8 @@
 class_name BattleHUD
 extends CanvasLayer
 
+const SOUND_LABELS := {&"gunfire":"GUNFIRE", &"gunshot":"GUNFIRE", &"alarm":"BROADCAST / ALARM", &"mechanism":"MACHINERY"}
+
 var inactive_weapon_label: Label
 var _banner_remaining := 0.0
 var enemy_label: Label
@@ -42,6 +44,10 @@ var objective_details: Label
 var _objectives_expanded := false
 var capacity_bar: ProgressBar
 var _objectives_panel: Control
+var _pending_objectives: Array[String] = []
+var _all_objectives: Array[String] = []
+var _request_title := ""
+var combat_feedback: CombatFeedback
 
 
 func _ready() -> void:
@@ -52,6 +58,14 @@ func _ready() -> void:
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.theme = FieldManualStyle.theme()
 	add_child(root)
+	# Damage warnings must remain visible above live supply-cache inspection (25),
+	# but below pause/recovery menus (200). This layer never intercepts input.
+	var feedback_layer := CanvasLayer.new()
+	feedback_layer.name = "CombatFeedbackLayer"
+	feedback_layer.layer = 30
+	add_child(feedback_layer)
+	combat_feedback = CombatFeedback.new()
+	feedback_layer.add_child(combat_feedback)
 	vision_overlay = VisionOverlay.new()
 	vision_overlay.name = "VisionOverlay"
 	root.add_child(vision_overlay)
@@ -96,6 +110,7 @@ func _ready() -> void:
 	slice_label.name = "Q01Status"
 	slice_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	slice_label.hide()
+	objectives.move_child(slice_label, 1) # Keep the current action above optional-operation disclosure.
 	threat_label = _line(objectives, "", 12, FieldManualStyle.ACCENT)
 	threat_label.hide()
 	enemy_label = _line(objectives, "", 12)
@@ -190,6 +205,7 @@ func _ready() -> void:
 	interaction_prompt.add_theme_color_override("font_color", FieldManualStyle.INK)
 	interaction_prompt.add_theme_stylebox_override("normal",FieldManualStyle.panel())
 	interaction_prompt.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	interaction_prompt.hide() # No blank paper bar before the first nearby interaction.
 	root.add_child(interaction_prompt)
 	var information_card := _card(root, "FieldInformation", Control.PRESET_TOP_RIGHT, Vector2(-378,174), Vector2(360,0))
 	field_information = _line(information_card, "", 14, FieldManualStyle.INK)
@@ -281,7 +297,7 @@ func set_perception(sensor: PlayerVisibility, camera: Camera3D) -> void:
 	if sound_hint.visible:
 		var bearings := ["S", "SE", "E", "NE", "N", "NW", "W", "SW"]
 		var index := posmod(roundi(atan2(sensor.heard_direction.x, sensor.heard_direction.z) / (PI / 4.0)), 8)
-		sound_hint.text = tr("HEARD / %s / %s") % [tr("GUNFIRE" if sensor.heard_kind == &"gunfire" else "MOVEMENT"), tr(bearings[index])]
+		sound_hint.text = tr("HEARD / %s / %s") % [tr(SOUND_LABELS.get(sensor.heard_kind,"MOVEMENT")), tr(bearings[index])]
 		sound_hint.modulate.a = minf(1.0, sensor.heard_remaining * 2.0)
 
 
@@ -306,19 +322,33 @@ func set_objective_progress(display_name: String, progress: int, target: int, co
 
 
 func set_objectives(objectives: Array[Dictionary]) -> void:
-	var lines: Array[String] = []
+	_pending_objectives.clear()
+	_all_objectives.clear()
 	for objective in objectives:
 		var state_text := "COMPLETE" if bool(objective.get("completed", false)) else tr("%d / %d") % [
 			int(objective.get("progress", 0)),
 			int(objective.get("target", 1)),
 		]
-		if bool(objective.get("completed", false)): continue
-		lines.append(tr("%s  %s") % [tr(str(objective.get("display_name", "Unknown"))).to_upper(), tr(state_text)])
-	objective_label.text = lines[0] if not lines.is_empty() else tr("OBJECTIVE COMPLETE / REACH EXTRACTION")
-	objective_toggle.visible = lines.size() > 1
-	objective_toggle.text = tr("OTHER OBJECTIVES %d") % maxi(0,lines.size()-1)
-	objective_details.text = "\n".join(lines.slice(1))
-	objective_details.visible = _objectives_expanded and lines.size() > 1
+		var line := tr("%s  %s") % [tr(str(objective.get("display_name", "Unknown"))).to_upper(), tr(state_text)]
+		_all_objectives.append(line)
+		if not bool(objective.get("completed", false)): _pending_objectives.append(line)
+	_refresh_objectives()
+
+func set_request(title: String, detail: String) -> void:
+	if _request_title == title and slice_label.text == detail: return
+	_request_title = title
+	slice_label.text = detail
+	slice_label.visible = not detail.is_empty()
+	_refresh_objectives()
+
+func _refresh_objectives() -> void:
+	var has_request := not _request_title.is_empty()
+	var lines := _all_objectives if has_request else _pending_objectives.slice(1)
+	objective_label.text = _request_title if has_request else (_pending_objectives[0] if not _pending_objectives.is_empty() else tr("OBJECTIVE COMPLETE / REACH EXTRACTION"))
+	objective_toggle.visible = not lines.is_empty()
+	objective_toggle.text = tr("OPTIONAL OBJECTIVES %d" if has_request else "OTHER OBJECTIVES %d") % lines.size()
+	objective_details.text = "\n".join(lines)
+	objective_details.visible = _objectives_expanded and not lines.is_empty()
 
 
 func set_weapon(display_name: String) -> void:
@@ -415,3 +445,4 @@ func show_field_information(text: String) -> void:
 func set_inspection_open(value: bool) -> void:
 	# Cosmetic only: world, damage, timers and HUD data updates keep running.
 	_root.visible = not value
+	combat_feedback.inspection_open = value

@@ -1,0 +1,256 @@
+{
+  "recorded_at": "2026-10-20T15:39:33.731138+08:00",
+  "status": "source_and_local_windows_independent_zip_verified_not_public_release",
+  "goal_achieved": false,
+  "targeted": [
+    {
+      "case": "wait_failure_regression02",
+      "pass": true,
+      "exit": 0,
+      "process": "D:\\tmp\\bunny_medical_runners_20261020_dev01\\wait_failure_regression02_captures\\process.json",
+      "log_sha256": "3b5bdd20cecff4c66db540074d653915e214681a1d847aacf8ef379d8b07ade1"
+    },
+    {
+      "case": "pa_component04",
+      "pass": true,
+      "exit": 0,
+      "process": "D:\\tmp\\bunny_medical_runners_20261020_dev01\\pa_component04_captures\\process.json",
+      "log_sha256": "54c579623e9f807eb9f0cd5a789dc12d101a71e655aef42dcfdc4c4c86a8ba40"
+    },
+    {
+      "case": "pa_pending_write01",
+      "pass": true,
+      "exit": 0,
+      "process": "D:\\tmp\\bunny_medical_runners_20261020_dev01\\pa_pending_write01_captures\\process.json",
+      "log_sha256": "aad5e61d7cfffabd2a8ed602cd92f9f57720aedc632d58b93fa6f60c892de22e"
+    },
+    {
+      "case": "pa_pending_read01",
+      "pass": true,
+      "exit": 0,
+      "process": "D:\\tmp\\bunny_medical_runners_20261020_dev01\\pa_pending_read01_captures\\process.json",
+      "log_sha256": "9bfbca7e27b3ebd58ed86a01142a55a90cc2be546cca0691bd5f8b33dddb57c2"
+    },
+    {
+      "case": "pa_earned01",
+      "pass": true,
+      "exit": 0,
+      "process": "D:\\tmp\\bunny_medical_runners_20261020_dev01\\pa_earned01_captures\\process.json",
+      "log_sha256": "bc4f3e9280bd16adcbd05a9b12234eed58ee6b9a3ac62c94538c2d14a995cb32"
+    },
+    {
+      "case": "pa_earned_read01",
+      "pass": true,
+      "exit": 0,
+      "process": "D:\\tmp\\bunny_medical_runners_20261020_dev01\\pa_earned_read01_captures\\process.json",
+      "log_sha256": "4a990a30d983d8ad72974b7331fb1f47c6fa007b177a6a389ca4d4fc2e1c7e92"
+    },
+    {
+      "case": "pa_skip_earned01",
+      "pass": true,
+      "exit": 0,
+      "process": "D:\\tmp\\bunny_medical_runners_20261020_dev01\\pa_skip_earned01_captures\\process.json",
+      "log_sha256": "70b66d6a04694af5fbbef62e33711dac74db331b9335ec436b77d9a78ece58d8"
+    },
+    {
+      "case": "pa_chapter_regression02",
+      "pass": true,
+      "exit": 0,
+      "process": "D:\\tmp\\bunny_medical_runners_20261020_dev01\\pa_chapter_regression02_captures\\process.json",
+      "log_sha256": "e7342f86b0ca5eae8ef729f89e38a2aed2a0543806478e3b1041dec43dabccd4"
+    },
+    {
+      "case": "pa_legacy_read01",
+      "pass": true,
+      "exit": 0,
+      "process": "D:\\tmp\\bunny_medical_runners_20261020_dev01\\pa_legacy_read01_captures\\process.json",
+      "log_sha256": "e21dcc275ba0b0699d7b8e6a267756f650a5e0902badf452053de83f545e6067"
+    }
+  ],
+  "expected_timeout_failure": {
+    "pass": true,
+    "expected_exit": 1,
+    "observed_exit": 1,
+    "failures": [
+      "Timed out waiting for scene res://scenes/battle/battle.tscn"
+    ],
+    "log_sha256": "873afc0b6da0077e10d3f1ee37fc75eec5597a3a870f0d8d5c2ee446db772c53",
+    "scope": "An actual process with ordinary inherited _finish after an early false return. Expected ERROR/FAIL/exit1 are the success criterion; no victory or gameplay scene."
+  },
+  "actual_earned_input": {
+    "source": "D:\\tmp\\bunny_medical_runners_20261020_build02\\portable_medical_earned_forward\\userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+    "sha256": "6b71539d45ba94e6e5b68ef76c2b07f42bb9b5689a388c05815d4ce92e0d1743",
+    "method": "Exact actually earned current exported Q02 return, copied without editing fields; three safe returns and no relays complete."
+  },
+  "actual_earned_route": {
+    "evidence": "D:\\tmp\\bunny_medical_runners_20261020_dev01\\pa_earned01_captures\\campus_entry.json",
+    "sha256": "3d7b513971b9476f6a7f05bc26f63cd0cda0625fc023887f94374740fccabf83",
+    "before_returns": 3,
+    "after_returns": 4,
+    "checks": 17,
+    "ordinary_listeners": [
+      "StreetPMC1"
+    ],
+    "generated_precise_controls_not_human": true,
+    "independent_read_checks": 6,
+    "skip_route_checks": 14
+  },
+  "old_source_reader": {
+    "provenance": "D:\\tmp\\bunny_relay_legacy_v5_20261020_01\\provenance.json",
+    "current_read_case": "pa_legacy_read01",
+    "checks": 3,
+    "not_exported_binary_proof": true
+  },
+  "versions": {
+    "profile": 11,
+    "checkpoint": 6,
+    "campus_facts": 5,
+    "new_relay_map": 7,
+    "medical_map": 6,
+    "other_fresh_campus_map": 5,
+    "old_maps_kept": true
+  },
+  "audio": {
+    "file": "assets/audio/campus_pa.wav",
+    "sha256": "5d68304a27f016270999e922e29452be8402e13fa55a9fde5616627efde2a307",
+    "method": "Reproducible original procedural synthesis; no samples or voice",
+    "author_tool": "tools/author_campus_pa_audio.py",
+    "heard_and_balanced": false
+  },
+  "source_full": {
+    "directory": "D:/tmp/bunny_relay_diversion_20261020_final01",
+    "status": "passed",
+    "expected_test_scenes": 121,
+    "expected_categories": 227,
+    "exec_session": 16680,
+    "process_record": "D:/tmp/bunny_medical_runners_20261020_dev01/pa_full_source01_process.json",
+    "child_pid": 27444,
+    "actual_categories": 227,
+    "all_pass": true,
+    "results_sha256": "e7495892ae358f712b35008a57c1765b8e463828fac4121e4216b4291ea18977",
+    "current_root_snapshot": false
+  },
+  "retained_failed_attempts": [
+    {
+      "case": "pa_component01",
+      "scope": "wrong QA assumption all12 authored spawns were active; and nav asynchronous not ready"
+    },
+    {
+      "case": "pa_diagnose02",
+      "scope": "same explicit diagnosis confirmed active5 and iteration1 empty path; fixture selects existing spawned guard1, waits actual path, never relaxes production AI/navigation"
+    },
+    {
+      "case": "pa_chapter_regression01",
+      "scope": "SCRIPT ERROR despite exit0/PASS in old map-marker test; rejected, typed CampusAction filter fixed and clean02 passed"
+    },
+    {
+      "case": "old_source_writer_post_validation",
+      "scope": "writer actually passed; source manifest intentionally differs at isolated project.godot config name; hash audit corrected without another producer or checkpoint edit"
+    }
+  ],
+  "limits": [
+    "Frozen source full 121/227 and combined122/228 passed; production runtime preserved, private QA/build deltas audited. Current local Windows120/ZIP50/CMD20 and native ordinary routes/readbacks passed; actual listening pending.",
+    "Controlled component places player/freezes unrelated actors, but observed guard walks using ordinary AI/hearing/navigation. Earned source route separately uses unedited actual prior save/live AI/ammo/collision.",
+    "No extra spawn/item/reward, no repaired relay on sound completion, no required PA route. Existing12s relay work not lengthened.",
+    "Not human time/difficulty/audio/min-spec/clean-machine acceptance, no five-hour or80-percent reviews claim.",
+    "No commit/push/upload, author contact, new heroine or paid motion inclusion, subagents."
+  ],
+  "subsequent_source_work": "2026-10-20: actual player partial-packing blocker prompted new guidance work after this frozen PA regression. New work is not claimed covered by the previous 227 rows.",
+  "native_source_2026_10_20": [
+    {
+      "case": "pa_native_forward01",
+      "pass": true,
+      "language": "zh_CN",
+      "checks": 17,
+      "evidence": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\pa_native_forward01_captures\\campus_entry.json",
+      "shots": 9,
+      "health": 172.16,
+      "kills": 3,
+      "activation": {
+        "health": 172.16,
+        "map": 7,
+        "no_new_reward": true,
+        "ordinary_listeners": [],
+        "position": "(-49.04348, -0.02416, -11.00097)",
+        "relays_before": [
+          "relay_office"
+        ],
+        "sound_origin": "(-50.0, 0.0, -43.0)"
+      }
+    },
+    {
+      "case": "pa_native_compat01",
+      "pass": true,
+      "language": "en",
+      "checks": 18,
+      "evidence": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\pa_native_compat01_captures\\campus_entry.json",
+      "shots": 15,
+      "health": 260.0,
+      "kills": 5,
+      "activation": {
+        "health": 260.0,
+        "map": 7,
+        "no_new_reward": true,
+        "ordinary_listeners": [
+          "StreetPMC1"
+        ],
+        "position": "(-48.81398, -0.02416, -10.99587)",
+        "relays_before": [
+          "relay_office"
+        ],
+        "sound_origin": "(-50.0, 0.0, -43.0)"
+      }
+    },
+    {
+      "case": "pa_native_forward_read01",
+      "pass": true,
+      "language": "zh_CN",
+      "checks": 6,
+      "evidence": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\pa_native_forward_read01_captures\\campus_entry.json",
+      "shots": null,
+      "health": null,
+      "kills": null,
+      "activation": null
+    },
+    {
+      "case": "pa_native_compat_read01",
+      "pass": true,
+      "language": "en",
+      "checks": 7,
+      "evidence": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\pa_native_compat_read01_captures\\campus_entry.json",
+      "shots": null,
+      "health": null,
+      "kills": null,
+      "activation": null
+    }
+  ],
+  "native_visual_review": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\visual_review.json",
+  "current_source_full": {
+    "directory": "D:/tmp/bunny_packing_guidance_20261020_final01",
+    "status": "passed",
+    "expected_test_scenes": 122,
+    "expected_categories": 228,
+    "exec_session": 57202,
+    "process_record": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\full_source01_process.json",
+    "child_pid": 34008,
+    "actual_categories": 228,
+    "all_pass": true,
+    "results_sha256": "6a303b8540402e68e3804ea0116f320c78dd09c10fa73383958cdf44992e3be1",
+    "current_non_document_inputs_match": true,
+    "current_non_document_input_count": 3969,
+    "source_audit": "D:\\tmp\\bunny_packing_guidance_20261020_dev01\\current_source_audit.json"
+  },
+  "native_listener_scope": "Forward+ activation had no new listeners; already seeing enemies kept pursuing. Compatibility observed StreetPMC1 INVESTIGATE with last_known at real speaker (-50,0,-43), not at player/switch. This snapshot does not itself prove a full walk to the speaker; controlled source component separately tested ordinary AI movement.",
+  "current_personal_profile_hash_and_mtime_preserved": true,
+  "previous_source_status": "source_targeted_verified_not_in_latest_windows_delivery",
+  "subsequent_windows_delivery": {
+    "record": "docs/campus_windows_2026-10-20_validation.json",
+    "directory": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02",
+    "compiled_categories": 120,
+    "independent_zip_cases": 50,
+    "launcher_success_cases": 20,
+    "archive_sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+    "fresh_delivery": "D:\\tmp\\小兔试玩 广播与装箱 20261020 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "not_human_playtime_or_fun": true
+  }
+}

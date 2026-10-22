@@ -44,8 +44,11 @@ func _available(current: SortieSession) -> bool:
 	match kind:
 		&"relay":return current.campus.stage=="relay" and String(action_id) not in current.campus.relays
 		&"recorder":return CampusChapter.recorder_available(current.campus)
-		&"power":return current.campus.stage=="power" and not current.campus.power_cut
+		&"power":return current.campus.stage=="power" and not current.campus.power_cut and (not _encounter() or _encounter().phase!=CampusPowerEncounter.Phase.ACTIVE)
 	return false
+
+func _encounter() -> CampusPowerEncounter:
+	return get_parent().get_node_or_null("CampusPowerEncounter") as CampusPowerEncounter
 
 func interact(player: Node3D,current: SortieSession) -> Dictionary:
 	if not player is PlayerController or not _available(current):return {"success":false,"message":"Campus action unavailable or already completed."}
@@ -57,10 +60,14 @@ func interact(player: Node3D,current: SortieSession) -> Dictionary:
 		current.campus.recorder_instance=item.instance_id;current.campus.recorder_revealed=true
 		_refresh_visual();SortieRuntime.request_checkpoint()
 		return {"success":true,"message":"Experiment recorder recovered / read the log now; bring it home.","information":tr(CampusChapter.RECORD)}
+	if kind==&"power" and _encounter() and _encounter().phase==CampusPowerEncounter.Phase.CLEARED:
+		session.campus.power_cut=true;session.campus.power_confirmed=true
+		get_parent().refresh_campus_power();actor.interaction_component.information_read.emit(tr(CampusChapter.POWER_REPLY));SortieRuntime.request_checkpoint()
+		return {"success":true,"message":"L-02B isolated. Shelter L-02A stays on. Extract safely."}
 	if remaining>0:return {"success":false,"message":"Work already active."}
 	if kind==&"power":
 		_open_choice()
-		return {"success":true,"message":"Confirm L-02B OFF / preserve L-02A ON, or leave without changing power."}
+		return {"success":true,"message":"Isolation plan open. L-02B is not cut yet; shelter L-02A stays on."} if _encounter() else {"success":true,"message":"Confirm L-02B OFF / preserve L-02A ON, or leave without changing power."}
 	_start_work()
 	return {"success":true,"message":"L-02 REPAIR / 12s nearby; damage or leaving cancels."}
 
@@ -72,7 +79,9 @@ func _start_work() -> void:
 func confirm_power() -> bool:
 	if not is_instance_valid(choice_layer):return false
 	if kind!=&"power" or not _near() or not _available(session):_close_choice();return false
-	_close_choice();_start_work();return true
+	_close_choice()
+	if _encounter():return _encounter().begin(actor)
+	_start_work();return true
 
 func _open_choice() -> void:
 	if is_instance_valid(choice_layer):return
@@ -81,9 +90,10 @@ func _open_choice() -> void:
 	var panel:=PanelContainer.new();panel.name="PowerChoice";panel.position=Vector2(300,190);panel.custom_minimum_size=Vector2(620,240)
 	panel.theme=SliceUI.menu_theme();choice_layer.add_child(panel)
 	var body:=VBoxContainer.new();panel.add_child(body)
-	var text:=Label.new();text.text=tr("L-02A / Shelter communications and lighting: ON\nL-02B / Experimental equipment: ON\nDisconnect only L-02B. Shelter power will remain ON. Work takes 6s and can be interrupted.")
+	var text:=Label.new();text.text=tr(CampusPowerEncounter.CHOICE if _encounter() else "L-02A / Shelter communications and lighting: ON\nL-02B / Experimental equipment: ON\nDisconnect only L-02B. Shelter power will remain ON. Work takes 6s and can be interrupted.")
 	text.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;body.add_child(text)
 	var confirm:=Button.new();confirm.name="ConfirmBranch";confirm.text=tr("DISCONNECT L-02B / KEEP L-02A")
+	if _encounter():confirm.text=tr("START ISOLATION / KEEP L-02A")
 	confirm.pressed.connect(confirm_power);body.add_child(confirm)
 	var cancel:=Button.new();cancel.name="CancelBranch";cancel.text=tr("NOT NOW / NO CHANGE");cancel.pressed.connect(_close_choice);body.add_child(cancel)
 	confirm.grab_focus()
@@ -119,6 +129,9 @@ func get_interaction_prompt(_player: Node3D,current: SortieSession) -> String:
 	if not current or current.campus.is_empty():return ""
 	if remaining>0:return tr("L-02 WORK %.1fs / Stay close; damage cancels") % remaining
 	if kind==&"power" and current.campus.power_cut:return tr("L-02B OFF / L-02A ON / Extract")
+	if kind==&"power" and _encounter():
+		if _encounter().phase==CampusPowerEncounter.Phase.ACTIVE:return tr("STEP OUT OF THE CHARGE / BAIT A WALL IMPACT")
+		if _encounter().phase==CampusPowerEncounter.Phase.CLEARED:return ControlBindings.label("interact")+"  "+tr("CUT L-02B / SHELTER STAYS ON")
 	if not _available(current):return ""
 	return ControlBindings.label("interact")+"  "+tr({&"relay":"REPAIR L-02 RELAY / 12s",&"recorder":"TAKE EXPERIMENT RECORDER",&"power":"OPEN L-02 BRANCH CONTROL"}[kind])
 

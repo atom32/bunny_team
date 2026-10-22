@@ -1,0 +1,569 @@
+{
+  "intro_shen": {
+    "title": "The empty chair",
+    "lines": [
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Check the exits before you go shopping in there."
+      },
+      {
+        "speaker": "player",
+        "text": "Do I get a loyalty card?"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Come back alive twice. I will find you a stamp."
+      },
+      {
+        "speaker": "player",
+        "text": "...Why is there a chair by the door?"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Mine. Get going."
+      }
+    ]
+  },
+  "intro_tang": {
+    "title": "A clean sleeve",
+    "lines": [
+      {
+        "speaker": "tang_kui",
+        "text": "Hold still. There is blood on your sleeve."
+      },
+      {
+        "speaker": "player",
+        "text": "Not mine."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "You all say that. Arm up."
+      },
+      {
+        "speaker": "player",
+        "text": "You always this bossy?"
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "Only the ones still breathing."
+      }
+    ]
+  },
+  "intro_su": {
+    "title": "An entirely normal noise",
+    "lines": [
+      {
+        "speaker": "su_mi",
+        "text": "If this thing makes a noise, do not kick it."
+      },
+      {
+        "speaker": "player",
+        "text": "What if it catches fire?"
+      },
+      {
+        "speaker": "su_mi",
+        "text": "Then kick me. I am cheaper to replace."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "I can hear you."
+      },
+      {
+        "speaker": "su_mi",
+        "text": "...No one here appreciates maintenance."
+      }
+    ]
+  },
+  "medicine_tang": {
+    "title": "Save the joke",
+    "lines": [
+      {
+        "speaker": "tang_kui",
+        "text": "The one by the window keeps making jokes when I change his bandage."
+      },
+      {
+        "speaker": "player",
+        "text": "Any good?"
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "Awful. Today he stopped halfway through one."
+      },
+      {
+        "speaker": "player",
+        "text": "I will get the dressings."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "And clean fabric. Not the shirt off your back. Keep that on."
+      }
+    ]
+  },
+  "medicine_shen": {
+    "title": "No medals",
+    "lines": [
+      {
+        "speaker": "player",
+        "text": "I found the exits. Am I officially useful now?"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Tang Kui needs dressings. Go ask her."
+      },
+      {
+        "speaker": "player",
+        "text": "That is a very moving award speech."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "You want a medal or a bandage?"
+      },
+      {
+        "speaker": "player",
+        "text": "Bandage."
+      }
+    ]
+  },
+  "medicine_su": {
+    "title": "A borrowed wire",
+    "lines": [
+      {
+        "speaker": "su_mi",
+        "text": "Do not sell all the fabric. Tang Kui will skin us both."
+      },
+      {
+        "speaker": "player",
+        "text": "Us? What did you do?"
+      },
+      {
+        "speaker": "su_mi",
+        "text": "Borrowed a bit of her lamp cable."
+      },
+      {
+        "speaker": "player",
+        "text": "Did you ask?"
+      },
+      {
+        "speaker": "su_mi",
+        "text": "I was hoping you would change the subject."
+      }
+    ]
+  },
+  "relay_tang": {
+    "title": "The rest of the joke",
+    "lines": [
+      {
+        "speaker": "tang_kui",
+        "text": "He finished the joke. It was worse than I thought."
+      },
+      {
+        "speaker": "player",
+        "text": "Want to tell me?"
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "No. Survive your next trip and suffer in person."
+      },
+      {
+        "speaker": "player",
+        "text": "Now there is a reason to live."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "Try it. I have your dinner."
+      }
+    ]
+  },
+  "relay_su": {
+    "title": "Someone on the line",
+    "lines": [
+      {
+        "speaker": "su_mi",
+        "text": "Someone said hello through the static last night."
+      },
+      {
+        "speaker": "player",
+        "text": "Maybe a recording?"
+      },
+      {
+        "speaker": "su_mi",
+        "text": "I swore at the radio. She swore back."
+      },
+      {
+        "speaker": "player",
+        "text": "Definitely alive, then."
+      },
+      {
+        "speaker": "su_mi",
+        "text": "Help me get both relays working. I want to hear her again."
+      }
+    ]
+  },
+  "relay_shen": {
+    "title": "Do not follow the voice",
+    "lines": [
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Su Mi wants you to fix the line. Not run into the sealed buildings."
+      },
+      {
+        "speaker": "player",
+        "text": "You told her that?"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Three times."
+      },
+      {
+        "speaker": "su_mi",
+        "text": "Four. I heard you the first time."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Then stop packing that bag."
+      }
+    ]
+  },
+  "recover_shen": {
+    "title": "A small machine",
+    "lines": [
+      {
+        "speaker": "player",
+        "text": "Who was on the radio?"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "I do not know. The archive recorder might tell us what happened."
+      },
+      {
+        "speaker": "player",
+        "text": "You want a machine brought back. Su Mi wants a person."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "I want you back. Start with that."
+      }
+    ]
+  },
+  "recover_su": {
+    "title": "Still listening",
+    "lines": [
+      {
+        "speaker": "su_mi",
+        "text": "Leave the radio there."
+      },
+      {
+        "speaker": "player",
+        "text": "You have been listening all night."
+      },
+      {
+        "speaker": "su_mi",
+        "text": "I know."
+      },
+      {
+        "speaker": "player",
+        "text": "I will check the recorder. You eat something."
+      },
+      {
+        "speaker": "su_mi",
+        "text": "Put it beside the radio."
+      }
+    ]
+  },
+  "lost_shen": {
+    "title": "Not an item",
+    "lines": [
+      {
+        "speaker": "player",
+        "text": "I heard the recording. I lost the device."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "We can go back for it."
+      },
+      {
+        "speaker": "player",
+        "text": "They called her an asset."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "I heard you. Put the bag down. Your hands are shaking."
+      }
+    ]
+  },
+  "lost_su": {
+    "title": "No signal",
+    "lines": [
+      {
+        "speaker": "su_mi",
+        "text": "Did the recorder say where she was?"
+      },
+      {
+        "speaker": "player",
+        "text": "No. I could not bring it back."
+      },
+      {
+        "speaker": "su_mi",
+        "text": "...Okay. Next trip. Do not run back out now."
+      },
+      {
+        "speaker": "player",
+        "text": "You first. Put your bag down."
+      }
+    ]
+  },
+  "power_su": {
+    "title": "The wrong switch",
+    "lines": [
+      {
+        "speaker": "su_mi",
+        "text": "I fixed their line."
+      },
+      {
+        "speaker": "player",
+        "text": "We heard someone asking for help."
+      },
+      {
+        "speaker": "su_mi",
+        "text": "And I powered their equipment. I could rip the whole thing out."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "My people are on that line too."
+      },
+      {
+        "speaker": "su_mi",
+        "text": "...I know. L-02B off. L-02A stays. I marked them. Twice."
+      }
+    ]
+  },
+  "power_shen": {
+    "title": "Nobody asked her",
+    "lines": [
+      {
+        "speaker": "player",
+        "text": "You heard the woman in the recording?"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Yes."
+      },
+      {
+        "speaker": "player",
+        "text": "And the guard still would not open the door."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Yes."
+      },
+      {
+        "speaker": "player",
+        "text": "Do not tell me he was following orders."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "I was not going to."
+      }
+    ]
+  },
+  "power_tang": {
+    "title": "A name for the label",
+    "lines": [
+      {
+        "speaker": "tang_kui",
+        "text": "Su Mi asked me what to write beside the shelter switch."
+      },
+      {
+        "speaker": "player",
+        "text": "L-02A?"
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "I gave her the names of everyone in there."
+      },
+      {
+        "speaker": "player",
+        "text": "That is a lot of names."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "Good. Let her complain about the handwriting."
+      }
+    ]
+  },
+  "cut_tang": {
+    "title": "Who gets the microphone",
+    "lines": [
+      {
+        "speaker": "tang_kui",
+        "text": "They all wanted to thank you on the radio."
+      },
+      {
+        "speaker": "player",
+        "text": "I only heard someone asking about soup."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "That was me. They were blocking the stove."
+      },
+      {
+        "speaker": "player",
+        "text": "So, where is the soup?"
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "Sit down. Yours has been waiting."
+      }
+    ]
+  },
+  "cut_su": {
+    "title": "The radio is still on",
+    "lines": [
+      {
+        "speaker": "su_mi",
+        "text": "L-02B is dark. The shelter is still talking."
+      },
+      {
+        "speaker": "player",
+        "text": "You can sleep now."
+      },
+      {
+        "speaker": "su_mi",
+        "text": "After this call."
+      },
+      {
+        "speaker": "player",
+        "text": "That is what you said three calls ago."
+      },
+      {
+        "speaker": "su_mi",
+        "text": "...You sound like Tang Kui."
+      }
+    ]
+  },
+  "cut_shen": {
+    "title": "Not the one you are wearing",
+    "lines": [
+      {
+        "speaker": "shen_yanshuang",
+        "text": "They need spare armor. Keep yours on."
+      },
+      {
+        "speaker": "player",
+        "text": "I have not even offered it yet."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "You were pulling at the straps."
+      },
+      {
+        "speaker": "player",
+        "text": "You watch people too closely."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Yes."
+      }
+    ]
+  },
+  "packed_shen": {
+    "title": "One more trip",
+    "lines": [
+      {
+        "speaker": "player",
+        "text": "Armor and sixty rounds. All there."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "South dormitory window. I will stay on the radio until you are back."
+      },
+      {
+        "speaker": "player",
+        "text": "Still sitting by the door?"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "The chair is comfortable."
+      }
+    ]
+  },
+  "finish_tang": {
+    "title": "A bowl with your name on it",
+    "lines": [
+      {
+        "speaker": "tang_kui",
+        "text": "Somebody wrote your name on a bowl."
+      },
+      {
+        "speaker": "player",
+        "text": "So no one steals my food?"
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "So the new cook knows to save you some."
+      },
+      {
+        "speaker": "player",
+        "text": "...You could have said that normally."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "Eat. It is getting cold."
+      }
+    ]
+  },
+  "finish_su": {
+    "title": "A terrible voice",
+    "lines": [
+      {
+        "speaker": "su_mi",
+        "text": "Someone is singing on the shelter channel."
+      },
+      {
+        "speaker": "player",
+        "text": "The woman we heard before?"
+      },
+      {
+        "speaker": "su_mi",
+        "text": "I do not know."
+      },
+      {
+        "speaker": "player",
+        "text": "Want me to turn it off?"
+      },
+      {
+        "speaker": "su_mi",
+        "text": "No. He is terrible. Come listen."
+      }
+    ]
+  },
+  "finish_shen": {
+    "title": "Still by the door",
+    "lines": [
+      {
+        "speaker": "player",
+        "text": "The road is open. They have supplies. You can move the chair."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Where to?"
+      },
+      {
+        "speaker": "player",
+        "text": "Anywhere. You do not have to keep watch."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "You going out again?"
+      },
+      {
+        "speaker": "player",
+        "text": "...Probably."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Then leave it."
+      }
+    ]
+  }
+}

@@ -62,10 +62,38 @@
 [ext_resource type="Resource" path="res://resources/items/bottled_water.tres" id="supply_bottled_water"]
 [ext_resource type="Resource" path="res://resources/items/citrus_drink.tres" id="supply_citrus_drink"]
 
+[ext_resource type="Resource" path="res://resources/areas/waterworks_district.tres" id="water_area"]
+
+[ext_resource type="Resource" path="res://resources/missions/waterworks_run.tres" id="water_mission"]
+
+[ext_resource type="Resource" path="res://resources/items/pump_battery.tres" id="water_cell"]
+
+[ext_resource type="Resource" path="res://resources/loot/water_public_reward.tres" id="water_public"]
+
+[ext_resource type="Resource" path="res://resources/loot/water_tanker_reward.tres" id="water_tanker"]
+[ext_resource type="Resource" path="res://resources/loot/campus_recovered_arms.tres" id="recovered_arms"]
+
+[ext_resource type="Resource" path="res://resources/areas/blockade_checkpoint.tres" id="blockade_area"]
+[ext_resource type="Resource" path="res://resources/missions/blockade_run.tres" id="blockade_mission"]
+
+[ext_resource type="Resource" path="res://resources/areas/maintenance_zone.tres" id="maintenance_area"]
+[ext_resource type="Resource" path="res://resources/missions/maintenance_rescue.tres" id="maintenance_mission"]
+
+[ext_resource type="Resource" path="res://resources/areas/maintenance_core.tres" id="core_area"]
+[ext_resource type="Resource" path="res://resources/missions/maintenance_shutdown.tres" id="core_mission"]
+
+[ext_resource type="Resource" path="res://resources/enemies/campus_rammer.tres" id="campus_ram"]
+[ext_resource type="Resource" path="res://resources/items/market_carrier_frame.tres" id="carrier_raw"]
+[ext_resource type="Resource" path="res://resources/equipment/courier_sling.tres" id="carrier_courier"]
+[ext_resource type="Resource" path="res://resources/equipment/freight_frame.tres" id="carrier_freight"]
+[ext_resource type="Resource" path="res://resources/loot/market_carrier_frame.tres" id="carrier_loot"]
+
+[ext_resource type="Resource" path="res://resources/loot/maintenance_saved_tools.tres" id="shared_tools"]
+
 [resource]
 script = ExtResource("51_uhvv5")
-definitions = Array[ExtResource("5_lo6rt")]([ExtResource("6_rkil1"), ExtResource("7_qa1uy"), ExtResource("8_an1qi"), ExtResource("9_e5yob"), ExtResource("10_rn5xg"), ExtResource("11_6m652"), ExtResource("12_wryso"), ExtResource("13_h2er0"), ExtResource("14_ii2le"), ExtResource("15_queyl"), ExtResource("16_grol2"), ExtResource("17_4wuox"), ExtResource("18_v8lg4"), ExtResource("19_2dmyr"), ExtResource("20_ncc0l"), ExtResource("21_xlnsj"), ExtResource("22_vqmab"), ExtResource("23_b85ny"), ExtResource("24_7gywt"), ExtResource("25_2ug52"), ExtResource("26_fcsxb"), ExtResource("27_crutq"), ExtResource("28_dmo3s"), ExtResource("29_efx41"), ExtResource("30_x1qwi"), ExtResource("31_3rgv5"), ExtResource("32_upe4o"), ExtResource("33_2s6ce"), ExtResource("34_i8w7s"), ExtResource("35_nwk86"), ExtResource("campus_recorder"), ExtResource("supply_field_ration"), ExtResource("supply_energy_bar"), ExtResource("supply_canned_beans"), ExtResource("supply_bottled_water"), ExtResource("supply_citrus_drink")])
-missions = Array[ExtResource("46_oij5f")]([ExtResource("47_08g8x"), ExtResource("48_fbgqx"), ExtResource("49_qceik"), ExtResource("50_2abyj")])
-loot_tables = Array[ExtResource("38_xey7e")]([ExtResource("39_a7u8e"), ExtResource("40_kqwfl"), ExtResource("41_tqqrc"), ExtResource("42_fog3q"), ExtResource("43_m8gso"), ExtResource("44_g7a24"), ExtResource("45_a1jd7")])
-areas = Array[ExtResource("1_h64jc")]([ExtResource("2_i8w7s"), ExtResource("3_nwk86"), ExtResource("4_hmyqg")])
-enemies = Array[ExtResource("34_5lebo")]([ExtResource("35_idj7o"), ExtResource("36_4w2r1"), ExtResource("37_hclgw")])
+definitions = Array[ExtResource("5_lo6rt")]([ExtResource("6_rkil1"), ExtResource("7_qa1uy"), ExtResource("8_an1qi"), ExtResource("9_e5yob"), ExtResource("10_rn5xg"), ExtResource("11_6m652"), ExtResource("12_wryso"), ExtResource("13_h2er0"), ExtResource("14_ii2le"), ExtResource("15_queyl"), ExtResource("16_grol2"), ExtResource("17_4wuox"), ExtResource("18_v8lg4"), ExtResource("19_2dmyr"), ExtResource("20_ncc0l"), ExtResource("21_xlnsj"), ExtResource("22_vqmab"), ExtResource("23_b85ny"), ExtResource("24_7gywt"), ExtResource("25_2ug52"), ExtResource("26_fcsxb"), ExtResource("27_crutq"), ExtResource("28_dmo3s"), ExtResource("29_efx41"), ExtResource("30_x1qwi"), ExtResource("31_3rgv5"), ExtResource("32_upe4o"), ExtResource("33_2s6ce"), ExtResource("34_i8w7s"), ExtResource("35_nwk86"), ExtResource("campus_recorder"), ExtResource("supply_field_ration"), ExtResource("supply_energy_bar"), ExtResource("supply_canned_beans"), ExtResource("supply_bottled_water"), ExtResource("supply_citrus_drink"), ExtResource("water_cell"), ExtResource("carrier_raw"), ExtResource("carrier_courier"), ExtResource("carrier_freight")])
+missions = Array[ExtResource("46_oij5f")]([ExtResource("47_08g8x"), ExtResource("48_fbgqx"), ExtResource("49_qceik"), ExtResource("50_2abyj"), ExtResource("water_mission"), ExtResource("blockade_mission"), ExtResource("maintenance_mission"), ExtResource("core_mission")])
+loot_tables = Array[ExtResource("38_xey7e")]([ExtResource("39_a7u8e"), ExtResource("40_kqwfl"), ExtResource("41_tqqrc"), ExtResource("42_fog3q"), ExtResource("43_m8gso"), ExtResource("44_g7a24"), ExtResource("45_a1jd7"), ExtResource("water_public"), ExtResource("water_tanker"), ExtResource("recovered_arms"), ExtResource("carrier_loot"), ExtResource("shared_tools")])
+areas = Array[ExtResource("1_h64jc")]([ExtResource("2_i8w7s"), ExtResource("3_nwk86"), ExtResource("4_hmyqg"), ExtResource("water_area"), ExtResource("blockade_area"), ExtResource("maintenance_area"), ExtResource("core_area")])
+enemies = Array[ExtResource("34_5lebo")]([ExtResource("35_idj7o"), ExtResource("36_4w2r1"), ExtResource("37_hclgw"), ExtResource("campus_ram")])

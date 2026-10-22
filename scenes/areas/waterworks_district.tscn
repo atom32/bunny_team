@@ -1,0 +1,1356 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/world/waterworks/waterworks_district.gd" id="district"]
+[ext_resource type="Script" path="res://scripts/world/waterworks/waterworks_action.gd" id="action"]
+[ext_resource type="Script" path="res://scripts/world/waterworks/waterworks_exit.gd" id="exit"]
+[ext_resource type="Script" path="res://scripts/world/enemy_spawn_point.gd" id="enemy"]
+[ext_resource type="Script" path="res://scripts/world/loot_spawn_point.gd" id="loot"]
+[ext_resource type="FontFile" path="res://assets/fonts/noto_sans_sc/NotoSansSC.ttf" id="font"]
+[ext_resource type="Texture2D" path="res://assets/environment/polyhaven_streets/asphalt_02_diff_1k.jpg" id="asphalt"]
+[ext_resource type="Texture2D" path="res://assets/environment/polyhaven_streets/wall_bricks_plaster_diff_1k.jpg" id="brick"]
+[ext_resource type="PackedScene" path="res://assets/environment/service_props/supply_stack.glb" id="supply"]
+
+[sub_resource type="StandardMaterial3D" id="road"]
+albedo_color = Color(0.5,0.5,0.5,1)
+roughness = 0.85
+albedo_texture = ExtResource("asphalt")
+uv1_triplanar = true
+uv1_scale = Vector3(0.25,0.25,0.25)
+
+[sub_resource type="StandardMaterial3D" id="brick"]
+albedo_color = Color(0.8,0.77,0.68,1)
+roughness = 0.85
+albedo_texture = ExtResource("brick")
+uv1_triplanar = true
+uv1_scale = Vector3(0.25,0.25,0.25)
+
+[sub_resource type="StandardMaterial3D" id="ground"]
+albedo_color = Color(0.34,0.39,0.33,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="steel"]
+albedo_color = Color(0.25,0.34,0.35,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="rust"]
+albedo_color = Color(0.57,0.32,0.21,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="cream"]
+albedo_color = Color(0.83,0.79,0.63,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="water"]
+albedo_color = Color(0.2,0.73,0.83,0.7)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="GroundMesh"]
+size = Vector3(80, 0.5, 68)
+
+[sub_resource type="BoxShape3D" id="GroundShape"]
+size = Vector3(80, 0.5, 68)
+
+[sub_resource type="BoxMesh" id="MainStreetMesh"]
+size = Vector3(13, 0.03, 65)
+
+[sub_resource type="BoxMesh" id="WestAlleyMesh"]
+size = Vector3(5, 0.03, 58)
+
+[sub_resource type="BoxMesh" id="NorthCrossingMesh"]
+size = Vector3(73, 0.03, 8)
+
+[sub_resource type="BoxMesh" id="SouthCrossingMesh"]
+size = Vector3(73, 0.03, 8)
+
+[sub_resource type="BoxMesh" id="LaneMarkN27Mesh"]
+size = Vector3(0.18, 0.02, 2.5)
+
+[sub_resource type="BoxMesh" id="LaneMarkN21Mesh"]
+size = Vector3(0.18, 0.02, 2.5)
+
+[sub_resource type="BoxMesh" id="LaneMarkN15Mesh"]
+size = Vector3(0.18, 0.02, 2.5)
+
+[sub_resource type="BoxMesh" id="LaneMarkN9Mesh"]
+size = Vector3(0.18, 0.02, 2.5)
+
+[sub_resource type="BoxMesh" id="LaneMarkN3Mesh"]
+size = Vector3(0.18, 0.02, 2.5)
+
+[sub_resource type="BoxMesh" id="LaneMark3Mesh"]
+size = Vector3(0.18, 0.02, 2.5)
+
+[sub_resource type="BoxMesh" id="LaneMark9Mesh"]
+size = Vector3(0.18, 0.02, 2.5)
+
+[sub_resource type="BoxMesh" id="LaneMark15Mesh"]
+size = Vector3(0.18, 0.02, 2.5)
+
+[sub_resource type="BoxMesh" id="LaneMark21Mesh"]
+size = Vector3(0.18, 0.02, 2.5)
+
+[sub_resource type="BoxMesh" id="LaneMark27Mesh"]
+size = Vector3(0.18, 0.02, 2.5)
+
+[sub_resource type="BoxMesh" id="WestTenementsMesh"]
+size = Vector3(17, 6.8, 15)
+
+[sub_resource type="BoxShape3D" id="WestTenementsShape"]
+size = Vector3(17, 6.8, 15)
+
+[sub_resource type="BoxMesh" id="WestTenementsWindow0Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="WestTenementsWindow1Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="WestTenementsWindow2Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="WestTenementsWindow3Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="EastWarehouseMesh"]
+size = Vector3(19, 6, 13)
+
+[sub_resource type="BoxShape3D" id="EastWarehouseShape"]
+size = Vector3(19, 6, 13)
+
+[sub_resource type="BoxMesh" id="EastWarehouseWindow0Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="EastWarehouseWindow1Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="EastWarehouseWindow2Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="EastWarehouseWindow3Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="NorthHomesMesh"]
+size = Vector3(23, 6.2, 8)
+
+[sub_resource type="BoxShape3D" id="NorthHomesShape"]
+size = Vector3(23, 6.2, 8)
+
+[sub_resource type="BoxMesh" id="NorthHomesWindow0Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="NorthHomesWindow1Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="NorthHomesWindow2Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="NorthHomesWindow3Mesh"]
+size = Vector3(1.6, 1.4, 0.04)
+
+[sub_resource type="BoxMesh" id="GarageBackMesh"]
+size = Vector3(17, 4, 0.5)
+
+[sub_resource type="BoxShape3D" id="GarageBackShape"]
+size = Vector3(17, 4, 0.5)
+
+[sub_resource type="BoxMesh" id="GarageLeftMesh"]
+size = Vector3(0.5, 4, 10)
+
+[sub_resource type="BoxShape3D" id="GarageLeftShape"]
+size = Vector3(0.5, 4, 10)
+
+[sub_resource type="BoxMesh" id="GarageRightMesh"]
+size = Vector3(0.5, 4, 10)
+
+[sub_resource type="BoxShape3D" id="GarageRightShape"]
+size = Vector3(0.5, 4, 10)
+
+[sub_resource type="BoxMesh" id="GarageFloorMesh"]
+size = Vector3(16, 0.05, 10)
+
+[sub_resource type="BoxMesh" id="Cover0Mesh"]
+size = Vector3(3, 1.3, 1)
+
+[sub_resource type="BoxShape3D" id="Cover0Shape"]
+size = Vector3(3, 1.3, 1)
+
+[sub_resource type="BoxMesh" id="Cover1Mesh"]
+size = Vector3(3, 1.3, 1)
+
+[sub_resource type="BoxShape3D" id="Cover1Shape"]
+size = Vector3(3, 1.3, 1)
+
+[sub_resource type="BoxMesh" id="Cover2Mesh"]
+size = Vector3(1, 1.3, 4)
+
+[sub_resource type="BoxShape3D" id="Cover2Shape"]
+size = Vector3(1, 1.3, 4)
+
+[sub_resource type="BoxMesh" id="Cover3Mesh"]
+size = Vector3(3, 1.3, 1)
+
+[sub_resource type="BoxShape3D" id="Cover3Shape"]
+size = Vector3(3, 1.3, 1)
+
+[sub_resource type="BoxMesh" id="Cover4Mesh"]
+size = Vector3(3, 1.3, 1)
+
+[sub_resource type="BoxShape3D" id="Cover4Shape"]
+size = Vector3(3, 1.3, 1)
+
+[sub_resource type="BoxMesh" id="Cover5Mesh"]
+size = Vector3(4, 1.3, 1)
+
+[sub_resource type="BoxShape3D" id="Cover5Shape"]
+size = Vector3(4, 1.3, 1)
+
+[sub_resource type="BoxMesh" id="TowerLeg0Mesh"]
+size = Vector3(0.6, 7.2, 0.6)
+
+[sub_resource type="BoxShape3D" id="TowerLeg0Shape"]
+size = Vector3(0.6, 7.2, 0.6)
+
+[sub_resource type="BoxMesh" id="TowerLeg1Mesh"]
+size = Vector3(0.6, 7.2, 0.6)
+
+[sub_resource type="BoxShape3D" id="TowerLeg1Shape"]
+size = Vector3(0.6, 7.2, 0.6)
+
+[sub_resource type="BoxMesh" id="TowerLeg2Mesh"]
+size = Vector3(0.6, 7.2, 0.6)
+
+[sub_resource type="BoxShape3D" id="TowerLeg2Shape"]
+size = Vector3(0.6, 7.2, 0.6)
+
+[sub_resource type="BoxMesh" id="TowerLeg3Mesh"]
+size = Vector3(0.6, 7.2, 0.6)
+
+[sub_resource type="BoxShape3D" id="TowerLeg3Shape"]
+size = Vector3(0.6, 7.2, 0.6)
+
+[sub_resource type="CylinderMesh" id="WaterTankMesh"]
+top_radius = 5
+bottom_radius = 5
+height = 4
+
+[sub_resource type="CylinderMesh" id="TowerRimMesh"]
+top_radius = 5.2
+bottom_radius = 5.2
+height = 0.2
+
+[sub_resource type="CylinderMesh" id="TowerPipeMesh"]
+top_radius = 0.18
+bottom_radius = 0.18
+height = 4
+
+[sub_resource type="CylinderMesh" id="RunningWaterMesh"]
+top_radius = 0.12
+bottom_radius = 0.12
+height = 1.5
+
+[sub_resource type="BoxMesh" id="PumpMotorMesh"]
+size = Vector3(1.4, 1.3, 1.5)
+
+[sub_resource type="BoxShape3D" id="PumpMotorShape"]
+size = Vector3(1.4, 1.3, 1.5)
+
+[sub_resource type="CylinderMesh" id="PumpHousingMesh"]
+top_radius = 0.55
+bottom_radius = 0.55
+height = 0.6
+
+[sub_resource type="CylinderMesh" id="TapStreamMesh"]
+top_radius = 0.09
+bottom_radius = 0.09
+height = 1.4
+
+[sub_resource type="CylinderMesh" id="LoadingStreamMesh"]
+top_radius = 0.12
+bottom_radius = 0.12
+height = 1.2
+
+[sub_resource type="CylinderMesh" id="Bucket0Mesh"]
+top_radius = 0.32
+bottom_radius = 0.32
+height = 0.5
+
+[sub_resource type="CylinderMesh" id="BucketRim0Mesh"]
+top_radius = 0.36
+bottom_radius = 0.36
+height = 0.05
+
+[sub_resource type="CylinderMesh" id="Bucket1Mesh"]
+top_radius = 0.32
+bottom_radius = 0.32
+height = 0.5
+
+[sub_resource type="CylinderMesh" id="BucketRim1Mesh"]
+top_radius = 0.36
+bottom_radius = 0.36
+height = 0.05
+
+[sub_resource type="CylinderMesh" id="Bucket2Mesh"]
+top_radius = 0.32
+bottom_radius = 0.32
+height = 0.5
+
+[sub_resource type="CylinderMesh" id="BucketRim2Mesh"]
+top_radius = 0.36
+bottom_radius = 0.36
+height = 0.05
+
+[sub_resource type="CylinderMesh" id="Bucket3Mesh"]
+top_radius = 0.32
+bottom_radius = 0.32
+height = 0.5
+
+[sub_resource type="CylinderMesh" id="BucketRim3Mesh"]
+top_radius = 0.36
+bottom_radius = 0.36
+height = 0.05
+
+[sub_resource type="CylinderMesh" id="Bucket4Mesh"]
+top_radius = 0.32
+bottom_radius = 0.32
+height = 0.5
+
+[sub_resource type="CylinderMesh" id="BucketRim4Mesh"]
+top_radius = 0.36
+bottom_radius = 0.36
+height = 0.05
+
+[sub_resource type="BoxMesh" id="TruckChassisMesh"]
+size = Vector3(3.1, 0.65, 7)
+
+[sub_resource type="BoxShape3D" id="TruckChassisShape"]
+size = Vector3(3.1, 0.65, 7)
+
+[sub_resource type="BoxMesh" id="TruckCabMesh"]
+size = Vector3(3, 2.3, 2)
+
+[sub_resource type="BoxShape3D" id="TruckCabShape"]
+size = Vector3(3, 2.3, 2)
+
+[sub_resource type="BoxMesh" id="TruckWindscreenMesh"]
+size = Vector3(2.3, 0.8, 0.08)
+
+[sub_resource type="CylinderMesh" id="TruckTankMesh"]
+top_radius = 1.35
+bottom_radius = 1.35
+height = 4
+
+[sub_resource type="CylinderMesh" id="TruckWheel0Mesh"]
+top_radius = 0.65
+bottom_radius = 0.65
+height = 0.45
+
+[sub_resource type="CylinderMesh" id="TruckWheel1Mesh"]
+top_radius = 0.65
+bottom_radius = 0.65
+height = 0.45
+
+[sub_resource type="CylinderMesh" id="TruckWheel2Mesh"]
+top_radius = 0.65
+bottom_radius = 0.65
+height = 0.45
+
+[sub_resource type="CylinderMesh" id="TruckWheel3Mesh"]
+top_radius = 0.65
+bottom_radius = 0.65
+height = 0.45
+
+[sub_resource type="BoxMesh" id="Boundary0Mesh"]
+size = Vector3(1, 4, 68)
+
+[sub_resource type="BoxShape3D" id="Boundary0Shape"]
+size = Vector3(1, 4, 68)
+
+[sub_resource type="BoxMesh" id="Boundary1Mesh"]
+size = Vector3(1, 4, 68)
+
+[sub_resource type="BoxShape3D" id="Boundary1Shape"]
+size = Vector3(1, 4, 68)
+
+[sub_resource type="BoxMesh" id="Boundary2Mesh"]
+size = Vector3(80, 4, 1)
+
+[sub_resource type="BoxShape3D" id="Boundary2Shape"]
+size = Vector3(80, 4, 1)
+
+[sub_resource type="BoxMesh" id="Boundary3Mesh"]
+size = Vector3(80, 4, 1)
+
+[sub_resource type="BoxShape3D" id="Boundary3Shape"]
+size = Vector3(80, 4, 1)
+
+[sub_resource type="BoxMesh" id="SpeakerPoleMesh"]
+size = Vector3(0.16, 4.4, 0.16)
+
+[sub_resource type="BoxShape3D" id="SpeakerPoleShape"]
+size = Vector3(0.16, 4.4, 0.16)
+
+[sub_resource type="BoxMesh" id="SpeakerBoxMesh"]
+size = Vector3(1.2, 0.7, 0.7)
+
+[sub_resource type="BoxMesh" id="TerminalPedestalMesh"]
+size = Vector3(0.8, 0.9, 0.6)
+
+[sub_resource type="BoxMesh" id="TerminalPedestalMesh"]
+size = Vector3(0.8, 0.9, 0.6)
+
+[sub_resource type="BoxMesh" id="BatteryCaseMesh"]
+size = Vector3(0.7, 0.55, 0.45)
+
+[sub_resource type="BoxMesh" id="Terminal0Mesh"]
+size = Vector3(0.1, 0.1, 0.15)
+
+[sub_resource type="BoxMesh" id="Terminal1Mesh"]
+size = Vector3(0.1, 0.1, 0.15)
+
+[sub_resource type="BoxMesh" id="TerminalPedestalMesh"]
+size = Vector3(0.8, 0.9, 0.6)
+
+[sub_resource type="BoxMesh" id="TerminalPedestalMesh"]
+size = Vector3(0.8, 0.9, 0.6)
+
+[sub_resource type="BoxMesh" id="TerminalPedestalMesh"]
+size = Vector3(0.8, 0.9, 0.6)
+
+[sub_resource type="BoxMesh" id="TerminalPedestalMesh"]
+size = Vector3(0.8, 0.9, 0.6)
+
+[sub_resource type="NavigationMesh" id="Navigation"]
+vertices = PackedVector3Array(-37,0,-31,-37,0,-29,-35,0,-29,-35,0,-31,-37,0,-27,-35,0,-27,-37,0,-25,-35,0,-25,-37,0,-23,-35,0,-23,-37,0,-21,-35,0,-21,-37,0,-19,-35,0,-19,-37,0,-17,-35,0,-17,-37,0,-15,-35,0,-15,-37,0,-13,-35,0,-13,-37,0,-11,-35,0,-11,-37,0,-9,-35,0,-9,-37,0,-7,-35,0,-7,-37,0,-5,-35,0,-5,-37,0,-3,-35,0,-3,-37,0,-1,-35,0,-1,-37,0,1,-35,0,1,-37,0,3,-35,0,3,-37,0,5,-35,0,5,-37,0,7,-35,0,7,-37,0,9,-35,0,9,-37,0,11,-35,0,11,-37,0,13,-35,0,13,-37,0,15,-35,0,15,-37,0,17,-35,0,17,-37,0,19,-35,0,19,-37,0,21,-35,0,21,-37,0,23,-35,0,23,-37,0,25,-35,0,25,-37,0,27,-35,0,27,-37,0,29,-35,0,29,-37,0,31,-35,0,31,-33,0,-23,-33,0,-25,-33,0,-21,-33,0,-19,-33,0,-17,-33,0,-15,-33,0,-13,-33,0,-11,-33,0,-9,-33,0,-7,-33,0,-5,-33,0,-3,-33,0,-1,-33,0,1,-33,0,3,-33,0,5,-33,0,7,-33,0,9,-33,0,23,-33,0,21,-33,0,25,-33,0,27,-33,0,29,-33,0,31,-31,0,-23,-31,0,-25,-31,0,-21,-31,0,-19,-31,0,-17,-31,0,-15,-31,0,-13,-31,0,-11,-31,0,-9,-31,0,-7,-31,0,-5,-31,0,-3,-31,0,-1,-31,0,1,-31,0,3,-31,0,5,-31,0,7,-31,0,9,-33,0,11,-33,0,13,-31,0,13,-31,0,11,-33,0,15,-31,0,15,-33,0,17,-31,0,17,-33,0,19,-31,0,19,-31,0,21,-31,0,23,-31,0,25,-31,0,27,-31,0,29,-31,0,31,-29,0,-23,-29,0,-25,-29,0,-21,-29,0,-19,-29,0,-17,-29,0,-15,-29,0,-13,-29,0,-11,-29,0,-9,-29,0,-7,-29,0,-5,-29,0,-3,-29,0,-1,-29,0,1,-29,0,3,-29,0,5,-29,0,7,-29,0,9,-29,0,13,-29,0,11,-29,0,15,-29,0,17,-29,0,19,-29,0,21,-29,0,23,-29,0,25,-29,0,27,-29,0,29,-29,0,31,-27,0,-23,-27,0,-25,-27,0,-21,-27,0,-19,-27,0,-17,-27,0,-15,-27,0,-13,-27,0,9,-27,0,7,-27,0,13,-27,0,11,-27,0,15,-27,0,17,-27,0,19,-27,0,21,-27,0,23,-27,0,25,-27,0,27,-27,0,29,-27,0,31,-25,0,-23,-25,0,-25,-25,0,-21,-25,0,-19,-25,0,-17,-25,0,-15,-25,0,-13,-25,0,9,-25,0,7,-25,0,13,-25,0,11,-25,0,15,-25,0,17,-25,0,19,-25,0,21,-25,0,23,-25,0,25,-25,0,27,-25,0,29,-25,0,31,-23,0,-23,-23,0,-25,-23,0,-21,-23,0,-19,-23,0,-17,-23,0,-15,-23,0,-13,-25,0,-11,-23,0,-11,-23,0,9,-23,0,7,-23,0,13,-23,0,11,-23,0,15,-23,0,17,-23,0,19,-23,0,21,-23,0,23,-23,0,25,-23,0,27,-23,0,29,-23,0,31,-21,0,-23,-21,0,-25,-21,0,-21,-21,0,-19,-21,0,-17,-21,0,-15,-21,0,-13,-21,0,-11,-21,0,9,-21,0,7,-21,0,13,-21,0,11,-21,0,15,-21,0,17,-21,0,19,-21,0,21,-21,0,23,-21,0,25,-21,0,27,-21,0,29,-21,0,31,-19,0,-23,-19,0,-25,-19,0,-21,-19,0,-19,-19,0,-17,-19,0,-15,-19,0,-13,-19,0,-11,-19,0,9,-19,0,7,-19,0,13,-19,0,11,-19,0,15,-19,0,17,-19,0,19,-19,0,21,-19,0,23,-19,0,25,-19,0,27,-19,0,29,-19,0,31,-17,0,-23,-17,0,-25,-17,0,-21,-17,0,-19,-17,0,-17,-17,0,-15,-17,0,-13,-17,0,-11,-17,0,9,-17,0,7,-17,0,23,-17,0,21,-17,0,25,-17,0,27,-17,0,29,-17,0,31,-15,0,-23,-15,0,-25,-15,0,-21,-15,0,-19,-15,0,-17,-15,0,-15,-15,0,-13,-15,0,-11,-15,0,9,-15,0,7,-17,0,11,-15,0,11,-17,0,13,-15,0,13,-17,0,15,-15,0,15,-17,0,17,-15,0,17,-17,0,19,-15,0,19,-15,0,21,-15,0,23,-15,0,25,-15,0,27,-15,0,29,-15,0,31,-13,0,-23,-13,0,-25,-13,0,-21,-13,0,-19,-13,0,-17,-13,0,-15,-13,0,-13,-13,0,-11,-13,0,9,-13,0,7,-13,0,11,-13,0,13,-13,0,15,-13,0,17,-13,0,19,-13,0,21,-13,0,23,-13,0,25,-13,0,27,-13,0,29,-13,0,31,-11,0,-23,-11,0,-25,-11,0,-21,-11,0,-19,-11,0,-17,-11,0,-15,-11,0,-13,-11,0,-11,-11,0,9,-11,0,7,-11,0,11,-11,0,13,-11,0,15,-11,0,17,-11,0,19,-11,0,21,-11,0,23,-11,0,25,-11,0,31,-11,0,29,-11,0,-31,-11,0,-29,-9,0,-29,-9,0,-31,-11,0,-27,-9,0,-27,-9,0,-25,-9,0,-23,-9,0,-21,-9,0,-19,-9,0,-17,-9,0,-15,-9,0,-13,-9,0,-11,-9,0,9,-9,0,7,-9,0,11,-9,0,13,-9,0,15,-9,0,17,-9,0,19,-9,0,21,-9,0,23,-9,0,25,-9,0,31,-9,0,29,-7,0,-29,-7,0,-31,-7,0,-27,-7,0,-25,-7,0,-23,-7,0,-21,-7,0,-19,-7,0,-17,-7,0,-15,-7,0,-13,-7,0,-11,-9,0,-9,-7,0,-9,-9,0,-7,-7,0,-7,-9,0,-5,-7,0,-5,-9,0,-3,-7,0,-3,-9,0,-1,-7,0,-1,-9,0,1,-7,0,1,-9,0,3,-7,0,3,-9,0,5,-7,0,5,-7,0,7,-7,0,9,-7,0,11,-7,0,13,-7,0,15,-7,0,17,-7,0,19,-7,0,21,-7,0,23,-7,0,25,-7,0,31,-7,0,29,-5,0,-29,-5,0,-31,-5,0,-27,-5,0,-25,-5,0,-23,-5,0,-21,-5,0,-19,-5,0,-17,-5,0,-15,-5,0,-13,-5,0,-11,-5,0,-9,-5,0,-7,-5,0,-5,-5,0,-3,-5,0,-1,-5,0,1,-5,0,3,-5,0,5,-5,0,7,-5,0,9,-5,0,11,-5,0,13,-5,0,19,-5,0,17,-5,0,21,-5,0,23,-5,0,25,-7,0,27,-5,0,27,-5,0,29,-5,0,31,-3,0,-29,-3,0,-31,-3,0,-27,-3,0,-25,-3,0,-23,-3,0,-21,-3,0,-19,-3,0,-17,-3,0,-15,-3,0,-13,-3,0,-11,-3,0,-9,-3,0,-3,-3,0,-5,-3,0,-1,-3,0,1,-3,0,3,-3,0,5,-3,0,7,-3,0,9,-3,0,11,-3,0,13,-3,0,19,-3,0,17,-3,0,21,-3,0,23,-3,0,25,-3,0,27,-3,0,29,-3,0,31,-1,0,-29,-1,0,-31,-1,0,-27,-1,0,-25,-1,0,-23,-1,0,-21,-1,0,-19,-1,0,-17,-1,0,-15,-1,0,-13,-1,0,-11,-1,0,-9,-1,0,-3,-1,0,-5,-1,0,-1,-1,0,1,-1,0,3,-1,0,5,-1,0,7,-1,0,9,-1,0,11,-1,0,13,-3,0,15,-1,0,15,-1,0,17,-1,0,19,-1,0,21,-1,0,23,-1,0,25,-1,0,27,-1,0,29,-1,0,31,1,0,-29,1,0,-31,1,0,-27,1,0,-25,1,0,-23,1,0,-21,1,0,-19,1,0,-17,1,0,-15,1,0,-13,1,0,-11,1,0,-9,-1,0,-7,1,0,-7,1,0,-5,1,0,-3,1,0,-1,1,0,1,1,0,3,1,0,5,1,0,7,1,0,9,1,0,11,1,0,13,1,0,15,1,0,17,1,0,19,1,0,21,1,0,23,1,0,25,1,0,27,1,0,29,1,0,31,3,0,-29,3,0,-31,3,0,-27,3,0,-25,3,0,-23,3,0,-21,3,0,-19,3,0,-17,3,0,-15,3,0,-13,3,0,-11,3,0,-9,3,0,-7,3,0,-5,3,0,-3,3,0,-1,3,0,1,3,0,3,3,0,5,3,0,7,3,0,9,3,0,11,3,0,13,3,0,15,3,0,17,3,0,19,3,0,21,3,0,23,3,0,25,3,0,27,3,0,29,3,0,31,5,0,-29,5,0,-31,5,0,-27,5,0,-25,5,0,-23,5,0,-21,5,0,-19,5,0,-17,5,0,-15,5,0,-13,5,0,-11,5,0,-9,5,0,-7,5,0,-5,5,0,-3,5,0,-1,5,0,3,5,0,1,5,0,5,5,0,7,5,0,9,5,0,11,5,0,13,5,0,15,5,0,17,5,0,19,5,0,21,5,0,23,5,0,25,5,0,27,5,0,29,5,0,31,7,0,-29,7,0,-31,7,0,-27,7,0,-25,7,0,-23,7,0,-21,7,0,-19,7,0,-17,7,0,-15,7,0,-13,7,0,-11,7,0,-9,7,0,-7,7,0,-5,7,0,-3,7,0,-1,7,0,3,7,0,1,7,0,5,7,0,7,7,0,9,7,0,11,7,0,13,7,0,15,7,0,17,7,0,19,7,0,21,7,0,23,7,0,25,7,0,27,7,0,29,7,0,31,9,0,-29,9,0,-31,9,0,-27,9,0,-25,9,0,-23,9,0,-21,9,0,-19,9,0,-17,9,0,-15,9,0,-13,9,0,-11,9,0,-9,9,0,-7,9,0,-5,9,0,-3,9,0,-1,9,0,3,9,0,1,9,0,5,9,0,7,9,0,9,9,0,11,9,0,13,9,0,15,9,0,17,9,0,19,9,0,21,9,0,23,9,0,25,9,0,27,9,0,29,9,0,31,11,0,-29,11,0,-31,11,0,-27,11,0,-25,11,0,-23,11,0,-21,11,0,-19,11,0,-17,11,0,-15,11,0,-13,11,0,-11,11,0,-9,11,0,-7,11,0,-5,11,0,-3,11,0,-1,11,0,1,11,0,3,11,0,5,11,0,7,11,0,9,11,0,11,11,0,13,11,0,15,11,0,17,11,0,19,11,0,21,11,0,23,11,0,25,11,0,27,11,0,29,11,0,31,13,0,-29,13,0,-31,13,0,-27,13,0,-25,13,0,-23,13,0,-21,13,0,-19,13,0,-17,13,0,-15,13,0,-7,13,0,-9,13,0,-5,13,0,-3,13,0,-1,13,0,1,13,0,3,13,0,5,13,0,7,13,0,9,13,0,11,13,0,13,13,0,15,13,0,17,13,0,19,13,0,21,13,0,23,13,0,25,13,0,27,13,0,29,13,0,31,15,0,-29,15,0,-31,15,0,-27,15,0,-25,15,0,-23,15,0,-21,15,0,-19,15,0,-17,15,0,-15,13,0,-13,15,0,-13,13,0,-11,15,0,-11,15,0,-9,15,0,-7,15,0,-5,15,0,-3,15,0,-1,15,0,1,15,0,3,15,0,5,15,0,7,15,0,9,15,0,11,15,0,13,15,0,15,15,0,17,15,0,19,15,0,21,15,0,23,15,0,25,15,0,27,15,0,29,15,0,31,17,0,-29,17,0,-31,17,0,-27,17,0,-25,17,0,-23,17,0,-21,17,0,-19,17,0,-17,17,0,-15,17,0,-13,17,0,-11,17,0,-9,17,0,-7,17,0,-5,17,0,-3,17,0,-1,17,0,1,17,0,19,17,0,17,17,0,21,17,0,23,17,0,25,17,0,27,17,0,29,17,0,31,19,0,-29,19,0,-31,19,0,-27,19,0,-25,19,0,-23,19,0,-19,19,0,-21,19,0,-17,19,0,-15,19,0,-13,19,0,-11,19,0,-9,19,0,-7,19,0,-5,19,0,-3,19,0,-1,19,0,1,19,0,19,19,0,17,19,0,21,19,0,23,19,0,25,19,0,27,19,0,29,19,0,31,21,0,-29,21,0,-31,21,0,-27,21,0,-25,21,0,-23,21,0,-19,21,0,-21,21,0,-17,21,0,-15,21,0,-13,21,0,-11,21,0,-9,21,0,-7,21,0,-5,21,0,-3,21,0,-1,21,0,1,21,0,19,21,0,17,21,0,21,21,0,23,21,0,25,21,0,27,21,0,29,21,0,31,23,0,-29,23,0,-31,23,0,-27,23,0,-25,23,0,-23,23,0,-19,23,0,-21,23,0,-13,23,0,-15,23,0,-11,23,0,-9,23,0,-3,23,0,-5,23,0,-1,23,0,1,23,0,19,23,0,17,23,0,21,23,0,23,23,0,25,23,0,27,23,0,29,23,0,31,25,0,-29,25,0,-31,25,0,-27,25,0,-25,25,0,-23,25,0,-21,25,0,-19,23,0,-17,25,0,-17,25,0,-15,25,0,-9,25,0,-11,23,0,-7,25,0,-7,25,0,-5,25,0,-3,25,0,-1,25,0,1,25,0,19,25,0,17,25,0,21,25,0,23,25,0,25,25,0,27,25,0,29,25,0,31,27,0,-29,27,0,-31,27,0,-27,27,0,-25,27,0,-23,27,0,-21,27,0,-19,27,0,-17,27,0,-15,25,0,-13,27,0,-13,27,0,-11,27,0,-9,27,0,-7,27,0,-5,27,0,-3,27,0,-1,27,0,1,27,0,19,27,0,17,27,0,21,27,0,23,27,0,25,27,0,27,27,0,29,27,0,31,29,0,-29,29,0,-31,29,0,-27,29,0,-25,29,0,-23,29,0,-21,29,0,-19,29,0,-17,29,0,-15,29,0,-13,29,0,-11,29,0,-9,29,0,-7,29,0,-5,29,0,-3,29,0,-1,29,0,1,29,0,19,29,0,17,29,0,21,29,0,23,29,0,25,29,0,27,29,0,29,29,0,31,31,0,-29,31,0,-31,31,0,-27,31,0,-25,31,0,-23,31,0,-21,31,0,-19,31,0,-17,31,0,-15,31,0,-13,31,0,-11,31,0,-9,31,0,-7,31,0,-5,31,0,-3,31,0,-1,31,0,1,31,0,19,31,0,17,31,0,21,31,0,23,31,0,25,31,0,27,31,0,29,31,0,31,33,0,-29,33,0,-31,33,0,-19,33,0,-21,33,0,-13,33,0,-15,33,0,-11,33,0,-9,33,0,-3,33,0,-5,33,0,-1,33,0,1,33,0,19,33,0,17,33,0,21,33,0,23,33,0,25,33,0,27,33,0,29,33,0,31,35,0,-29,35,0,-31,35,0,-19,35,0,-21,33,0,-17,35,0,-17,35,0,-15,35,0,-13,35,0,-11,35,0,-9,33,0,-7,35,0,-7,35,0,-5,35,0,-3,35,0,-1,35,0,1,35,0,19,35,0,17,35,0,21,35,0,23,35,0,25,35,0,27,35,0,29,35,0,31,37,0,-29,37,0,-31,37,0,-19,37,0,-21,37,0,-17,37,0,-15,37,0,-13,37,0,-11,37,0,-9,37,0,-7,37,0,-5,37,0,-3,37,0,-1,37,0,1,35,0,3,37,0,3,35,0,5,37,0,5,35,0,7,37,0,7,35,0,9,37,0,9,35,0,11,37,0,11,35,0,13,37,0,13,35,0,15,37,0,15,37,0,17,37,0,19,37,0,21,37,0,23,37,0,25,37,0,27,37,0,29,37,0,31)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0,1,2,3),PackedInt32Array(1,4,5,2),PackedInt32Array(4,6,7,5),PackedInt32Array(6,8,9,7),PackedInt32Array(8,10,11,9),PackedInt32Array(10,12,13,11),PackedInt32Array(12,14,15,13),PackedInt32Array(14,16,17,15),PackedInt32Array(16,18,19,17),PackedInt32Array(18,20,21,19),PackedInt32Array(20,22,23,21),PackedInt32Array(22,24,25,23),PackedInt32Array(24,26,27,25),PackedInt32Array(26,28,29,27),PackedInt32Array(28,30,31,29),PackedInt32Array(30,32,33,31),PackedInt32Array(32,34,35,33),PackedInt32Array(34,36,37,35),PackedInt32Array(36,38,39,37),PackedInt32Array(38,40,41,39),PackedInt32Array(40,42,43,41),PackedInt32Array(42,44,45,43),PackedInt32Array(44,46,47,45),PackedInt32Array(46,48,49,47),PackedInt32Array(48,50,51,49),PackedInt32Array(50,52,53,51),PackedInt32Array(52,54,55,53),PackedInt32Array(54,56,57,55),PackedInt32Array(56,58,59,57),PackedInt32Array(58,60,61,59),PackedInt32Array(60,62,63,61),PackedInt32Array(7,9,64,65),PackedInt32Array(9,11,66,64),PackedInt32Array(11,13,67,66),PackedInt32Array(13,15,68,67),PackedInt32Array(15,17,69,68),PackedInt32Array(17,19,70,69),PackedInt32Array(19,21,71,70),PackedInt32Array(21,23,72,71),PackedInt32Array(23,25,73,72),PackedInt32Array(25,27,74,73),PackedInt32Array(27,29,75,74),PackedInt32Array(29,31,76,75),PackedInt32Array(31,33,77,76),PackedInt32Array(33,35,78,77),PackedInt32Array(35,37,79,78),PackedInt32Array(37,39,80,79),PackedInt32Array(39,41,81,80),PackedInt32Array(53,55,82,83),PackedInt32Array(55,57,84,82),PackedInt32Array(57,59,85,84),PackedInt32Array(59,61,86,85),PackedInt32Array(61,63,87,86),PackedInt32Array(65,64,88,89),PackedInt32Array(64,66,90,88),PackedInt32Array(66,67,91,90),PackedInt32Array(67,68,92,91),PackedInt32Array(68,69,93,92),PackedInt32Array(69,70,94,93),PackedInt32Array(70,71,95,94),PackedInt32Array(71,72,96,95),PackedInt32Array(72,73,97,96),PackedInt32Array(73,74,98,97),PackedInt32Array(74,75,99,98),PackedInt32Array(75,76,100,99),PackedInt32Array(76,77,101,100),PackedInt32Array(77,78,102,101),PackedInt32Array(78,79,103,102),PackedInt32Array(79,80,104,103),PackedInt32Array(80,81,105,104),PackedInt32Array(106,107,108,109),PackedInt32Array(107,110,111,108),PackedInt32Array(110,112,113,111),PackedInt32Array(112,114,115,113),PackedInt32Array(114,83,116,115),PackedInt32Array(83,82,117,116),PackedInt32Array(82,84,118,117),PackedInt32Array(84,85,119,118),PackedInt32Array(85,86,120,119),PackedInt32Array(86,87,121,120),PackedInt32Array(89,88,122,123),PackedInt32Array(88,90,124,122),PackedInt32Array(90,91,125,124),PackedInt32Array(91,92,126,125),PackedInt32Array(92,93,127,126),PackedInt32Array(93,94,128,127),PackedInt32Array(94,95,129,128),PackedInt32Array(95,96,130,129),PackedInt32Array(96,97,131,130),PackedInt32Array(97,98,132,131),PackedInt32Array(98,99,133,132),PackedInt32Array(99,100,134,133),PackedInt32Array(100,101,135,134),PackedInt32Array(101,102,136,135),PackedInt32Array(102,103,137,136),PackedInt32Array(103,104,138,137),PackedInt32Array(104,105,139,138),PackedInt32Array(109,108,140,141),PackedInt32Array(108,111,142,140),PackedInt32Array(111,113,143,142),PackedInt32Array(113,115,144,143),PackedInt32Array(115,116,145,144),PackedInt32Array(116,117,146,145),PackedInt32Array(117,118,147,146),PackedInt32Array(118,119,148,147),PackedInt32Array(119,120,149,148),PackedInt32Array(120,121,150,149),PackedInt32Array(123,122,151,152),PackedInt32Array(122,124,153,151),PackedInt32Array(124,125,154,153),PackedInt32Array(125,126,155,154),PackedInt32Array(126,127,156,155),PackedInt32Array(127,128,157,156),PackedInt32Array(138,139,158,159),PackedInt32Array(141,140,160,161),PackedInt32Array(140,142,162,160),PackedInt32Array(142,143,163,162),PackedInt32Array(143,144,164,163),PackedInt32Array(144,145,165,164),PackedInt32Array(145,146,166,165),PackedInt32Array(146,147,167,166),PackedInt32Array(147,148,168,167),PackedInt32Array(148,149,169,168),PackedInt32Array(149,150,170,169),PackedInt32Array(152,151,171,172),PackedInt32Array(151,153,173,171),PackedInt32Array(153,154,174,173),PackedInt32Array(154,155,175,174),PackedInt32Array(155,156,176,175),PackedInt32Array(156,157,177,176),PackedInt32Array(159,158,178,179),PackedInt32Array(161,160,180,181),PackedInt32Array(160,162,182,180),PackedInt32Array(162,163,183,182),PackedInt32Array(163,164,184,183),PackedInt32Array(164,165,185,184),PackedInt32Array(165,166,186,185),PackedInt32Array(166,167,187,186),PackedInt32Array(167,168,188,187),PackedInt32Array(168,169,189,188),PackedInt32Array(169,170,190,189),PackedInt32Array(172,171,191,192),PackedInt32Array(171,173,193,191),PackedInt32Array(173,174,194,193),PackedInt32Array(174,175,195,194),PackedInt32Array(175,176,196,195),PackedInt32Array(176,177,197,196),PackedInt32Array(177,198,199,197),PackedInt32Array(179,178,200,201),PackedInt32Array(181,180,202,203),PackedInt32Array(180,182,204,202),PackedInt32Array(182,183,205,204),PackedInt32Array(183,184,206,205),PackedInt32Array(184,185,207,206),PackedInt32Array(185,186,208,207),PackedInt32Array(186,187,209,208),PackedInt32Array(187,188,210,209),PackedInt32Array(188,189,211,210),PackedInt32Array(189,190,212,211),PackedInt32Array(192,191,213,214),PackedInt32Array(191,193,215,213),PackedInt32Array(193,194,216,215),PackedInt32Array(194,195,217,216),PackedInt32Array(195,196,218,217),PackedInt32Array(196,197,219,218),PackedInt32Array(197,199,220,219),PackedInt32Array(201,200,221,222),PackedInt32Array(203,202,223,224),PackedInt32Array(202,204,225,223),PackedInt32Array(204,205,226,225),PackedInt32Array(205,206,227,226),PackedInt32Array(206,207,228,227),PackedInt32Array(207,208,229,228),PackedInt32Array(208,209,230,229),PackedInt32Array(209,210,231,230),PackedInt32Array(210,211,232,231),PackedInt32Array(211,212,233,232),PackedInt32Array(214,213,234,235),PackedInt32Array(213,215,236,234),PackedInt32Array(215,216,237,236),PackedInt32Array(216,217,238,237),PackedInt32Array(217,218,239,238),PackedInt32Array(218,219,240,239),PackedInt32Array(219,220,241,240),PackedInt32Array(222,221,242,243),PackedInt32Array(224,223,244,245),PackedInt32Array(223,225,246,244),PackedInt32Array(225,226,247,246),PackedInt32Array(226,227,248,247),PackedInt32Array(227,228,249,248),PackedInt32Array(228,229,250,249),PackedInt32Array(229,230,251,250),PackedInt32Array(230,231,252,251),PackedInt32Array(231,232,253,252),PackedInt32Array(232,233,254,253),PackedInt32Array(235,234,255,256),PackedInt32Array(234,236,257,255),PackedInt32Array(236,237,258,257),PackedInt32Array(237,238,259,258),PackedInt32Array(238,239,260,259),PackedInt32Array(239,240,261,260),PackedInt32Array(240,241,262,261),PackedInt32Array(243,242,263,264),PackedInt32Array(249,250,265,266),PackedInt32Array(250,251,267,265),PackedInt32Array(251,252,268,267),PackedInt32Array(252,253,269,268),PackedInt32Array(253,254,270,269),PackedInt32Array(256,255,271,272),PackedInt32Array(255,257,273,271),PackedInt32Array(257,258,274,273),PackedInt32Array(258,259,275,274),PackedInt32Array(259,260,276,275),PackedInt32Array(260,261,277,276),PackedInt32Array(261,262,278,277),PackedInt32Array(264,263,279,280),PackedInt32Array(263,281,282,279),PackedInt32Array(281,283,284,282),PackedInt32Array(283,285,286,284),PackedInt32Array(285,287,288,286),PackedInt32Array(287,289,290,288),PackedInt32Array(289,266,291,290),PackedInt32Array(266,265,292,291),PackedInt32Array(265,267,293,292),PackedInt32Array(267,268,294,293),PackedInt32Array(268,269,295,294),PackedInt32Array(269,270,296,295),PackedInt32Array(272,271,297,298),PackedInt32Array(271,273,299,297),PackedInt32Array(273,274,300,299),PackedInt32Array(274,275,301,300),PackedInt32Array(275,276,302,301),PackedInt32Array(276,277,303,302),PackedInt32Array(277,278,304,303),PackedInt32Array(280,279,305,306),PackedInt32Array(279,282,307,305),PackedInt32Array(282,284,308,307),PackedInt32Array(284,286,309,308),PackedInt32Array(286,288,310,309),PackedInt32Array(288,290,311,310),PackedInt32Array(290,291,312,311),PackedInt32Array(291,292,313,312),PackedInt32Array(292,293,314,313),PackedInt32Array(293,294,315,314),PackedInt32Array(294,295,316,315),PackedInt32Array(295,296,317,316),PackedInt32Array(298,297,318,319),PackedInt32Array(297,299,320,318),PackedInt32Array(299,300,321,320),PackedInt32Array(300,301,322,321),PackedInt32Array(301,302,323,322),PackedInt32Array(302,303,324,323),PackedInt32Array(303,304,325,324),PackedInt32Array(306,305,326,327),PackedInt32Array(305,307,328,326),PackedInt32Array(307,308,329,328),PackedInt32Array(308,309,330,329),PackedInt32Array(309,310,331,330),PackedInt32Array(310,311,332,331),PackedInt32Array(311,312,333,332),PackedInt32Array(312,313,334,333),PackedInt32Array(313,314,335,334),PackedInt32Array(316,317,336,337),PackedInt32Array(338,339,340,341),PackedInt32Array(339,342,343,340),PackedInt32Array(342,319,344,343),PackedInt32Array(319,318,345,344),PackedInt32Array(318,320,346,345),PackedInt32Array(320,321,347,346),PackedInt32Array(321,322,348,347),PackedInt32Array(322,323,349,348),PackedInt32Array(323,324,350,349),PackedInt32Array(324,325,351,350),PackedInt32Array(327,326,352,353),PackedInt32Array(326,328,354,352),PackedInt32Array(328,329,355,354),PackedInt32Array(329,330,356,355),PackedInt32Array(330,331,357,356),PackedInt32Array(331,332,358,357),PackedInt32Array(332,333,359,358),PackedInt32Array(333,334,360,359),PackedInt32Array(334,335,361,360),PackedInt32Array(337,336,362,363),PackedInt32Array(341,340,364,365),PackedInt32Array(340,343,366,364),PackedInt32Array(343,344,367,366),PackedInt32Array(344,345,368,367),PackedInt32Array(345,346,369,368),PackedInt32Array(346,347,370,369),PackedInt32Array(347,348,371,370),PackedInt32Array(348,349,372,371),PackedInt32Array(349,350,373,372),PackedInt32Array(350,351,374,373),PackedInt32Array(351,375,376,374),PackedInt32Array(375,377,378,376),PackedInt32Array(377,379,380,378),PackedInt32Array(379,381,382,380),PackedInt32Array(381,383,384,382),PackedInt32Array(383,385,386,384),PackedInt32Array(385,387,388,386),PackedInt32Array(387,389,390,388),PackedInt32Array(389,353,391,390),PackedInt32Array(353,352,392,391),PackedInt32Array(352,354,393,392),PackedInt32Array(354,355,394,393),PackedInt32Array(355,356,395,394),PackedInt32Array(356,357,396,395),PackedInt32Array(357,358,397,396),PackedInt32Array(358,359,398,397),PackedInt32Array(359,360,399,398),PackedInt32Array(360,361,400,399),PackedInt32Array(363,362,401,402),PackedInt32Array(365,364,403,404),PackedInt32Array(364,366,405,403),PackedInt32Array(366,367,406,405),PackedInt32Array(367,368,407,406),PackedInt32Array(368,369,408,407),PackedInt32Array(369,370,409,408),PackedInt32Array(370,371,410,409),PackedInt32Array(371,372,411,410),PackedInt32Array(372,373,412,411),PackedInt32Array(373,374,413,412),PackedInt32Array(374,376,414,413),PackedInt32Array(376,378,415,414),PackedInt32Array(378,380,416,415),PackedInt32Array(380,382,417,416),PackedInt32Array(382,384,418,417),PackedInt32Array(384,386,419,418),PackedInt32Array(386,388,420,419),PackedInt32Array(388,390,421,420),PackedInt32Array(390,391,422,421),PackedInt32Array(391,392,423,422),PackedInt32Array(392,393,424,423),PackedInt32Array(393,394,425,424),PackedInt32Array(396,397,426,427),PackedInt32Array(397,398,428,426),PackedInt32Array(398,399,429,428),PackedInt32Array(399,400,430,429),PackedInt32Array(400,431,432,430),PackedInt32Array(431,402,433,432),PackedInt32Array(402,401,434,433),PackedInt32Array(404,403,435,436),PackedInt32Array(403,405,437,435),PackedInt32Array(405,406,438,437),PackedInt32Array(406,407,439,438),PackedInt32Array(407,408,440,439),PackedInt32Array(408,409,441,440),PackedInt32Array(409,410,442,441),PackedInt32Array(410,411,443,442),PackedInt32Array(411,412,444,443),PackedInt32Array(412,413,445,444),PackedInt32Array(413,414,446,445),PackedInt32Array(416,417,447,448),PackedInt32Array(417,418,449,447),PackedInt32Array(418,419,450,449),PackedInt32Array(419,420,451,450),PackedInt32Array(420,421,452,451),PackedInt32Array(421,422,453,452),PackedInt32Array(422,423,454,453),PackedInt32Array(423,424,455,454),PackedInt32Array(424,425,456,455),PackedInt32Array(427,426,457,458),PackedInt32Array(426,428,459,457),PackedInt32Array(428,429,460,459),PackedInt32Array(429,430,461,460),PackedInt32Array(430,432,462,461),PackedInt32Array(432,433,463,462),PackedInt32Array(433,434,464,463),PackedInt32Array(436,435,465,466),PackedInt32Array(435,437,467,465),PackedInt32Array(437,438,468,467),PackedInt32Array(438,439,469,468),PackedInt32Array(439,440,470,469),PackedInt32Array(440,441,471,470),PackedInt32Array(441,442,472,471),PackedInt32Array(442,443,473,472),PackedInt32Array(443,444,474,473),PackedInt32Array(444,445,475,474),PackedInt32Array(445,446,476,475),PackedInt32Array(448,447,477,478),PackedInt32Array(447,449,479,477),PackedInt32Array(449,450,480,479),PackedInt32Array(450,451,481,480),PackedInt32Array(451,452,482,481),PackedInt32Array(452,453,483,482),PackedInt32Array(453,454,484,483),PackedInt32Array(454,455,485,484),PackedInt32Array(455,456,486,485),PackedInt32Array(456,487,488,486),PackedInt32Array(487,458,489,488),PackedInt32Array(458,457,490,489),PackedInt32Array(457,459,491,490),PackedInt32Array(459,460,492,491),PackedInt32Array(460,461,493,492),PackedInt32Array(461,462,494,493),PackedInt32Array(462,463,495,494),PackedInt32Array(463,464,496,495),PackedInt32Array(466,465,497,498),PackedInt32Array(465,467,499,497),PackedInt32Array(467,468,500,499),PackedInt32Array(468,469,501,500),PackedInt32Array(469,470,502,501),PackedInt32Array(470,471,503,502),PackedInt32Array(471,472,504,503),PackedInt32Array(472,473,505,504),PackedInt32Array(473,474,506,505),PackedInt32Array(474,475,507,506),PackedInt32Array(475,476,508,507),PackedInt32Array(476,509,510,508),PackedInt32Array(509,478,511,510),PackedInt32Array(478,477,512,511),PackedInt32Array(477,479,513,512),PackedInt32Array(479,480,514,513),PackedInt32Array(480,481,515,514),PackedInt32Array(481,482,516,515),PackedInt32Array(482,483,517,516),PackedInt32Array(483,484,518,517),PackedInt32Array(484,485,519,518),PackedInt32Array(485,486,520,519),PackedInt32Array(486,488,521,520),PackedInt32Array(488,489,522,521),PackedInt32Array(489,490,523,522),PackedInt32Array(490,491,524,523),PackedInt32Array(491,492,525,524),PackedInt32Array(492,493,526,525),PackedInt32Array(493,494,527,526),PackedInt32Array(494,495,528,527),PackedInt32Array(495,496,529,528),PackedInt32Array(498,497,530,531),PackedInt32Array(497,499,532,530),PackedInt32Array(499,500,533,532),PackedInt32Array(500,501,534,533),PackedInt32Array(501,502,535,534),PackedInt32Array(502,503,536,535),PackedInt32Array(503,504,537,536),PackedInt32Array(504,505,538,537),PackedInt32Array(505,506,539,538),PackedInt32Array(506,507,540,539),PackedInt32Array(507,508,541,540),PackedInt32Array(508,510,542,541),PackedInt32Array(510,511,543,542),PackedInt32Array(511,512,544,543),PackedInt32Array(512,513,545,544),PackedInt32Array(513,514,546,545),PackedInt32Array(514,515,547,546),PackedInt32Array(515,516,548,547),PackedInt32Array(516,517,549,548),PackedInt32Array(517,518,550,549),PackedInt32Array(518,519,551,550),PackedInt32Array(519,520,552,551),PackedInt32Array(520,521,553,552),PackedInt32Array(521,522,554,553),PackedInt32Array(522,523,555,554),PackedInt32Array(523,524,556,555),PackedInt32Array(524,525,557,556),PackedInt32Array(525,526,558,557),PackedInt32Array(526,527,559,558),PackedInt32Array(527,528,560,559),PackedInt32Array(528,529,561,560),PackedInt32Array(531,530,562,563),PackedInt32Array(530,532,564,562),PackedInt32Array(532,533,565,564),PackedInt32Array(533,534,566,565),PackedInt32Array(534,535,567,566),PackedInt32Array(535,536,568,567),PackedInt32Array(536,537,569,568),PackedInt32Array(537,538,570,569),PackedInt32Array(538,539,571,570),PackedInt32Array(539,540,572,571),PackedInt32Array(540,541,573,572),PackedInt32Array(541,542,574,573),PackedInt32Array(542,543,575,574),PackedInt32Array(543,544,576,575),PackedInt32Array(544,545,577,576),PackedInt32Array(546,547,578,579),PackedInt32Array(547,548,580,578),PackedInt32Array(548,549,581,580),PackedInt32Array(549,550,582,581),PackedInt32Array(550,551,583,582),PackedInt32Array(551,552,584,583),PackedInt32Array(552,553,585,584),PackedInt32Array(553,554,586,585),PackedInt32Array(554,555,587,586),PackedInt32Array(555,556,588,587),PackedInt32Array(556,557,589,588),PackedInt32Array(557,558,590,589),PackedInt32Array(558,559,591,590),PackedInt32Array(559,560,592,591),PackedInt32Array(560,561,593,592),PackedInt32Array(563,562,594,595),PackedInt32Array(562,564,596,594),PackedInt32Array(564,565,597,596),PackedInt32Array(565,566,598,597),PackedInt32Array(566,567,599,598),PackedInt32Array(567,568,600,599),PackedInt32Array(568,569,601,600),PackedInt32Array(569,570,602,601),PackedInt32Array(570,571,603,602),PackedInt32Array(571,572,604,603),PackedInt32Array(572,573,605,604),PackedInt32Array(573,574,606,605),PackedInt32Array(574,575,607,606),PackedInt32Array(575,576,608,607),PackedInt32Array(576,577,609,608),PackedInt32Array(579,578,610,611),PackedInt32Array(578,580,612,610),PackedInt32Array(580,581,613,612),PackedInt32Array(581,582,614,613),PackedInt32Array(582,583,615,614),PackedInt32Array(583,584,616,615),PackedInt32Array(584,585,617,616),PackedInt32Array(585,586,618,617),PackedInt32Array(586,587,619,618),PackedInt32Array(587,588,620,619),PackedInt32Array(588,589,621,620),PackedInt32Array(589,590,622,621),PackedInt32Array(590,591,623,622),PackedInt32Array(591,592,624,623),PackedInt32Array(592,593,625,624),PackedInt32Array(595,594,626,627),PackedInt32Array(594,596,628,626),PackedInt32Array(596,597,629,628),PackedInt32Array(597,598,630,629),PackedInt32Array(598,599,631,630),PackedInt32Array(599,600,632,631),PackedInt32Array(600,601,633,632),PackedInt32Array(601,602,634,633),PackedInt32Array(602,603,635,634),PackedInt32Array(603,604,636,635),PackedInt32Array(604,605,637,636),PackedInt32Array(605,606,638,637),PackedInt32Array(606,607,639,638),PackedInt32Array(607,608,640,639),PackedInt32Array(608,609,641,640),PackedInt32Array(611,610,642,643),PackedInt32Array(610,612,644,642),PackedInt32Array(612,613,645,644),PackedInt32Array(613,614,646,645),PackedInt32Array(614,615,647,646),PackedInt32Array(615,616,648,647),PackedInt32Array(616,617,649,648),PackedInt32Array(617,618,650,649),PackedInt32Array(618,619,651,650),PackedInt32Array(619,620,652,651),PackedInt32Array(620,621,653,652),PackedInt32Array(621,622,654,653),PackedInt32Array(622,623,655,654),PackedInt32Array(623,624,656,655),PackedInt32Array(624,625,657,656),PackedInt32Array(627,626,658,659),PackedInt32Array(626,628,660,658),PackedInt32Array(628,629,661,660),PackedInt32Array(629,630,662,661),PackedInt32Array(630,631,663,662),PackedInt32Array(631,632,664,663),PackedInt32Array(632,633,665,664),PackedInt32Array(633,634,666,665),PackedInt32Array(634,635,667,666),PackedInt32Array(635,636,668,667),PackedInt32Array(636,637,669,668),PackedInt32Array(637,638,670,669),PackedInt32Array(638,639,671,670),PackedInt32Array(639,640,672,671),PackedInt32Array(640,641,673,672),PackedInt32Array(641,643,674,673),PackedInt32Array(643,642,675,674),PackedInt32Array(642,644,676,675),PackedInt32Array(644,645,677,676),PackedInt32Array(645,646,678,677),PackedInt32Array(646,647,679,678),PackedInt32Array(647,648,680,679),PackedInt32Array(648,649,681,680),PackedInt32Array(649,650,682,681),PackedInt32Array(650,651,683,682),PackedInt32Array(651,652,684,683),PackedInt32Array(652,653,685,684),PackedInt32Array(653,654,686,685),PackedInt32Array(654,655,687,686),PackedInt32Array(655,656,688,687),PackedInt32Array(656,657,689,688),PackedInt32Array(659,658,690,691),PackedInt32Array(658,660,692,690),PackedInt32Array(660,661,693,692),PackedInt32Array(661,662,694,693),PackedInt32Array(662,663,695,694),PackedInt32Array(663,664,696,695),PackedInt32Array(664,665,697,696),PackedInt32Array(665,666,698,697),PackedInt32Array(669,670,699,700),PackedInt32Array(670,671,701,699),PackedInt32Array(671,672,702,701),PackedInt32Array(672,673,703,702),PackedInt32Array(673,674,704,703),PackedInt32Array(674,675,705,704),PackedInt32Array(675,676,706,705),PackedInt32Array(676,677,707,706),PackedInt32Array(677,678,708,707),PackedInt32Array(678,679,709,708),PackedInt32Array(679,680,710,709),PackedInt32Array(680,681,711,710),PackedInt32Array(681,682,712,711),PackedInt32Array(682,683,713,712),PackedInt32Array(683,684,714,713),PackedInt32Array(684,685,715,714),PackedInt32Array(685,686,716,715),PackedInt32Array(686,687,717,716),PackedInt32Array(687,688,718,717),PackedInt32Array(688,689,719,718),PackedInt32Array(691,690,720,721),PackedInt32Array(690,692,722,720),PackedInt32Array(692,693,723,722),PackedInt32Array(693,694,724,723),PackedInt32Array(694,695,725,724),PackedInt32Array(695,696,726,725),PackedInt32Array(696,697,727,726),PackedInt32Array(697,698,728,727),PackedInt32Array(698,729,730,728),PackedInt32Array(729,731,732,730),PackedInt32Array(731,700,733,732),PackedInt32Array(700,699,734,733),PackedInt32Array(699,701,735,734),PackedInt32Array(701,702,736,735),PackedInt32Array(702,703,737,736),PackedInt32Array(703,704,738,737),PackedInt32Array(704,705,739,738),PackedInt32Array(705,706,740,739),PackedInt32Array(706,707,741,740),PackedInt32Array(707,708,742,741),PackedInt32Array(708,709,743,742),PackedInt32Array(709,710,744,743),PackedInt32Array(710,711,745,744),PackedInt32Array(711,712,746,745),PackedInt32Array(712,713,747,746),PackedInt32Array(713,714,748,747),PackedInt32Array(714,715,749,748),PackedInt32Array(715,716,750,749),PackedInt32Array(716,717,751,750),PackedInt32Array(717,718,752,751),PackedInt32Array(718,719,753,752),PackedInt32Array(721,720,754,755),PackedInt32Array(720,722,756,754),PackedInt32Array(722,723,757,756),PackedInt32Array(723,724,758,757),PackedInt32Array(724,725,759,758),PackedInt32Array(725,726,760,759),PackedInt32Array(726,727,761,760),PackedInt32Array(727,728,762,761),PackedInt32Array(728,730,763,762),PackedInt32Array(730,732,764,763),PackedInt32Array(732,733,765,764),PackedInt32Array(733,734,766,765),PackedInt32Array(734,735,767,766),PackedInt32Array(735,736,768,767),PackedInt32Array(736,737,769,768),PackedInt32Array(737,738,770,769),PackedInt32Array(746,747,771,772),PackedInt32Array(747,748,773,771),PackedInt32Array(748,749,774,773),PackedInt32Array(749,750,775,774),PackedInt32Array(750,751,776,775),PackedInt32Array(751,752,777,776),PackedInt32Array(752,753,778,777),PackedInt32Array(755,754,779,780),PackedInt32Array(754,756,781,779),PackedInt32Array(756,757,782,781),PackedInt32Array(757,758,783,782),PackedInt32Array(759,760,784,785),PackedInt32Array(760,761,786,784),PackedInt32Array(761,762,787,786),PackedInt32Array(762,763,788,787),PackedInt32Array(763,764,789,788),PackedInt32Array(764,765,790,789),PackedInt32Array(765,766,791,790),PackedInt32Array(766,767,792,791),PackedInt32Array(767,768,793,792),PackedInt32Array(768,769,794,793),PackedInt32Array(769,770,795,794),PackedInt32Array(772,771,796,797),PackedInt32Array(771,773,798,796),PackedInt32Array(773,774,799,798),PackedInt32Array(774,775,800,799),PackedInt32Array(775,776,801,800),PackedInt32Array(776,777,802,801),PackedInt32Array(777,778,803,802),PackedInt32Array(780,779,804,805),PackedInt32Array(779,781,806,804),PackedInt32Array(781,782,807,806),PackedInt32Array(782,783,808,807),PackedInt32Array(785,784,809,810),PackedInt32Array(784,786,811,809),PackedInt32Array(786,787,812,811),PackedInt32Array(787,788,813,812),PackedInt32Array(788,789,814,813),PackedInt32Array(789,790,815,814),PackedInt32Array(790,791,816,815),PackedInt32Array(791,792,817,816),PackedInt32Array(792,793,818,817),PackedInt32Array(793,794,819,818),PackedInt32Array(794,795,820,819),PackedInt32Array(797,796,821,822),PackedInt32Array(796,798,823,821),PackedInt32Array(798,799,824,823),PackedInt32Array(799,800,825,824),PackedInt32Array(800,801,826,825),PackedInt32Array(801,802,827,826),PackedInt32Array(802,803,828,827),PackedInt32Array(805,804,829,830),PackedInt32Array(804,806,831,829),PackedInt32Array(806,807,832,831),PackedInt32Array(807,808,833,832),PackedInt32Array(810,809,834,835),PackedInt32Array(812,813,836,837),PackedInt32Array(813,814,838,836),PackedInt32Array(814,815,839,838),PackedInt32Array(817,818,840,841),PackedInt32Array(818,819,842,840),PackedInt32Array(819,820,843,842),PackedInt32Array(822,821,844,845),PackedInt32Array(821,823,846,844),PackedInt32Array(823,824,847,846),PackedInt32Array(824,825,848,847),PackedInt32Array(825,826,849,848),PackedInt32Array(826,827,850,849),PackedInt32Array(827,828,851,850),PackedInt32Array(830,829,852,853),PackedInt32Array(829,831,854,852),PackedInt32Array(831,832,855,854),PackedInt32Array(832,833,856,855),PackedInt32Array(833,835,857,856),PackedInt32Array(835,834,858,857),PackedInt32Array(834,859,860,858),PackedInt32Array(859,837,861,860),PackedInt32Array(838,839,862,863),PackedInt32Array(839,864,865,862),PackedInt32Array(864,841,866,865),PackedInt32Array(841,840,867,866),PackedInt32Array(840,842,868,867),PackedInt32Array(842,843,869,868),PackedInt32Array(845,844,870,871),PackedInt32Array(844,846,872,870),PackedInt32Array(846,847,873,872),PackedInt32Array(847,848,874,873),PackedInt32Array(848,849,875,874),PackedInt32Array(849,850,876,875),PackedInt32Array(850,851,877,876),PackedInt32Array(853,852,878,879),PackedInt32Array(852,854,880,878),PackedInt32Array(854,855,881,880),PackedInt32Array(855,856,882,881),PackedInt32Array(856,857,883,882),PackedInt32Array(857,858,884,883),PackedInt32Array(858,860,885,884),PackedInt32Array(860,861,886,885),PackedInt32Array(861,887,888,886),PackedInt32Array(887,863,889,888),PackedInt32Array(863,862,890,889),PackedInt32Array(862,865,891,890),PackedInt32Array(865,866,892,891),PackedInt32Array(866,867,893,892),PackedInt32Array(867,868,894,893),PackedInt32Array(868,869,895,894),PackedInt32Array(871,870,896,897),PackedInt32Array(870,872,898,896),PackedInt32Array(872,873,899,898),PackedInt32Array(873,874,900,899),PackedInt32Array(874,875,901,900),PackedInt32Array(875,876,902,901),PackedInt32Array(876,877,903,902),PackedInt32Array(879,878,904,905),PackedInt32Array(878,880,906,904),PackedInt32Array(880,881,907,906),PackedInt32Array(881,882,908,907),PackedInt32Array(882,883,909,908),PackedInt32Array(883,884,910,909),PackedInt32Array(884,885,911,910),PackedInt32Array(885,886,912,911),PackedInt32Array(886,888,913,912),PackedInt32Array(888,889,914,913),PackedInt32Array(889,890,915,914),PackedInt32Array(890,891,916,915),PackedInt32Array(891,892,917,916),PackedInt32Array(892,893,918,917),PackedInt32Array(893,894,919,918),PackedInt32Array(894,895,920,919),PackedInt32Array(897,896,921,922),PackedInt32Array(896,898,923,921),PackedInt32Array(898,899,924,923),PackedInt32Array(899,900,925,924),PackedInt32Array(900,901,926,925),PackedInt32Array(901,902,927,926),PackedInt32Array(902,903,928,927),PackedInt32Array(905,904,929,930),PackedInt32Array(904,906,931,929),PackedInt32Array(906,907,932,931),PackedInt32Array(907,908,933,932),PackedInt32Array(908,909,934,933),PackedInt32Array(909,910,935,934),PackedInt32Array(910,911,936,935),PackedInt32Array(911,912,937,936),PackedInt32Array(912,913,938,937),PackedInt32Array(913,914,939,938),PackedInt32Array(914,915,940,939),PackedInt32Array(915,916,941,940),PackedInt32Array(916,917,942,941),PackedInt32Array(917,918,943,942),PackedInt32Array(918,919,944,943),PackedInt32Array(919,920,945,944),PackedInt32Array(922,921,946,947),PackedInt32Array(921,923,948,946),PackedInt32Array(923,924,949,948),PackedInt32Array(924,925,950,949),PackedInt32Array(925,926,951,950),PackedInt32Array(926,927,952,951),PackedInt32Array(927,928,953,952),PackedInt32Array(930,929,954,955),PackedInt32Array(934,935,956,957),PackedInt32Array(937,938,958,959),PackedInt32Array(938,939,960,958),PackedInt32Array(939,940,961,960),PackedInt32Array(942,943,962,963),PackedInt32Array(943,944,964,962),PackedInt32Array(944,945,965,964),PackedInt32Array(947,946,966,967),PackedInt32Array(946,948,968,966),PackedInt32Array(948,949,969,968),PackedInt32Array(949,950,970,969),PackedInt32Array(950,951,971,970),PackedInt32Array(951,952,972,971),PackedInt32Array(952,953,973,972),PackedInt32Array(955,954,974,975),PackedInt32Array(957,956,976,977),PackedInt32Array(956,978,979,976),PackedInt32Array(978,959,980,979),PackedInt32Array(959,958,981,980),PackedInt32Array(958,960,982,981),PackedInt32Array(960,961,983,982),PackedInt32Array(961,984,985,983),PackedInt32Array(984,963,986,985),PackedInt32Array(963,962,987,986),PackedInt32Array(962,964,988,987),PackedInt32Array(964,965,989,988),PackedInt32Array(967,966,990,991),PackedInt32Array(966,968,992,990),PackedInt32Array(968,969,993,992),PackedInt32Array(969,970,994,993),PackedInt32Array(970,971,995,994),PackedInt32Array(971,972,996,995),PackedInt32Array(972,973,997,996),PackedInt32Array(975,974,998,999),PackedInt32Array(977,976,1000,1001),PackedInt32Array(976,979,1002,1000),PackedInt32Array(979,980,1003,1002),PackedInt32Array(980,981,1004,1003),PackedInt32Array(981,982,1005,1004),PackedInt32Array(982,983,1006,1005),PackedInt32Array(983,985,1007,1006),PackedInt32Array(985,986,1008,1007),PackedInt32Array(986,987,1009,1008),PackedInt32Array(987,988,1010,1009),PackedInt32Array(988,989,1011,1010),PackedInt32Array(989,1012,1013,1011),PackedInt32Array(1012,1014,1015,1013),PackedInt32Array(1014,1016,1017,1015),PackedInt32Array(1016,1018,1019,1017),PackedInt32Array(1018,1020,1021,1019),PackedInt32Array(1020,1022,1023,1021),PackedInt32Array(1022,1024,1025,1023),PackedInt32Array(1024,991,1026,1025),PackedInt32Array(991,990,1027,1026),PackedInt32Array(990,992,1028,1027),PackedInt32Array(992,993,1029,1028),PackedInt32Array(993,994,1030,1029),PackedInt32Array(994,995,1031,1030),PackedInt32Array(995,996,1032,1031),PackedInt32Array(996,997,1033,1032)])
+agent_radius = 0.6
+
+[sub_resource type="Environment" id="Dawn"]
+background_mode = 1
+background_color = Color(0.31,0.41,0.44,1)
+ambient_light_source = 2
+ambient_light_color = Color(0.77,0.83,0.87,1)
+ambient_light_energy = 0.7
+tonemap_mode = 4
+
+[node name="WaterworksDistrict" type="Node3D"]
+script = ExtResource("district")
+metadata/map_revision = 1
+
+[node name="Ground" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, -0.25, 0)
+mesh = SubResource("GroundMesh")
+material_override = SubResource("ground")
+
+[node name="GroundBody" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.25, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundBody"]
+shape = SubResource("GroundShape")
+
+[node name="MainStreet" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.015, 0)
+mesh = SubResource("MainStreetMesh")
+material_override = SubResource("road")
+
+[node name="WestAlley" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-32, 0.02, 0)
+mesh = SubResource("WestAlleyMesh")
+material_override = SubResource("road")
+
+[node name="NorthCrossing" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.02, -25)
+mesh = SubResource("NorthCrossingMesh")
+material_override = SubResource("road")
+
+[node name="SouthCrossing" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.02, 24)
+mesh = SubResource("SouthCrossingMesh")
+material_override = SubResource("road")
+
+[node name="LaneMarkN27" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.045, -27)
+mesh = SubResource("LaneMarkN27Mesh")
+material_override = SubResource("cream")
+
+[node name="LaneMarkN21" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.045, -21)
+mesh = SubResource("LaneMarkN21Mesh")
+material_override = SubResource("cream")
+
+[node name="LaneMarkN15" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.045, -15)
+mesh = SubResource("LaneMarkN15Mesh")
+material_override = SubResource("cream")
+
+[node name="LaneMarkN9" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.045, -9)
+mesh = SubResource("LaneMarkN9Mesh")
+material_override = SubResource("cream")
+
+[node name="LaneMarkN3" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.045, -3)
+mesh = SubResource("LaneMarkN3Mesh")
+material_override = SubResource("cream")
+
+[node name="LaneMark3" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.045, 3)
+mesh = SubResource("LaneMark3Mesh")
+material_override = SubResource("cream")
+
+[node name="LaneMark9" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.045, 9)
+mesh = SubResource("LaneMark9Mesh")
+material_override = SubResource("cream")
+
+[node name="LaneMark15" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.045, 15)
+mesh = SubResource("LaneMark15Mesh")
+material_override = SubResource("cream")
+
+[node name="LaneMark21" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.045, 21)
+mesh = SubResource("LaneMark21Mesh")
+material_override = SubResource("cream")
+
+[node name="LaneMark27" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 0.045, 27)
+mesh = SubResource("LaneMark27Mesh")
+material_override = SubResource("cream")
+
+[node name="WestTenements" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-19, 3.4, -2)
+mesh = SubResource("WestTenementsMesh")
+material_override = SubResource("brick")
+
+[node name="WestTenementsBody" type="StaticBody3D" parent="."]
+position = Vector3(-19, 3.4, -2)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WestTenementsBody"]
+shape = SubResource("WestTenementsShape")
+
+[node name="WestTenementsWindow0" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-25.0, 3.5, 5.52)
+mesh = SubResource("WestTenementsWindow0Mesh")
+material_override = SubResource("steel")
+
+[node name="WestTenementsWindow1" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-21.0, 3.5, 5.52)
+mesh = SubResource("WestTenementsWindow1Mesh")
+material_override = SubResource("steel")
+
+[node name="WestTenementsWindow2" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-17.0, 3.5, 5.52)
+mesh = SubResource("WestTenementsWindow2Mesh")
+material_override = SubResource("steel")
+
+[node name="WestTenementsWindow3" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-13.0, 3.5, 5.52)
+mesh = SubResource("WestTenementsWindow3Mesh")
+material_override = SubResource("steel")
+
+[node name="EastWarehouse" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(25, 3, 9)
+mesh = SubResource("EastWarehouseMesh")
+material_override = SubResource("brick")
+
+[node name="EastWarehouseBody" type="StaticBody3D" parent="."]
+position = Vector3(25, 3, 9)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EastWarehouseBody"]
+shape = SubResource("EastWarehouseShape")
+
+[node name="EastWarehouseWindow0" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(18.0, 3.5, 15.52)
+mesh = SubResource("EastWarehouseWindow0Mesh")
+material_override = SubResource("steel")
+
+[node name="EastWarehouseWindow1" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(22.0, 3.5, 15.52)
+mesh = SubResource("EastWarehouseWindow1Mesh")
+material_override = SubResource("steel")
+
+[node name="EastWarehouseWindow2" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(26.0, 3.5, 15.52)
+mesh = SubResource("EastWarehouseWindow2Mesh")
+material_override = SubResource("steel")
+
+[node name="EastWarehouseWindow3" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(30.0, 3.5, 15.52)
+mesh = SubResource("EastWarehouseWindow3Mesh")
+material_override = SubResource("steel")
+
+[node name="NorthHomes" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-23, 3.1, -29)
+mesh = SubResource("NorthHomesMesh")
+material_override = SubResource("brick")
+
+[node name="NorthHomesBody" type="StaticBody3D" parent="."]
+position = Vector3(-23, 3.1, -29)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NorthHomesBody"]
+shape = SubResource("NorthHomesShape")
+
+[node name="NorthHomesWindow0" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-32.0, 3.5, -24.98)
+mesh = SubResource("NorthHomesWindow0Mesh")
+material_override = SubResource("steel")
+
+[node name="NorthHomesWindow1" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-28.0, 3.5, -24.98)
+mesh = SubResource("NorthHomesWindow1Mesh")
+material_override = SubResource("steel")
+
+[node name="NorthHomesWindow2" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-24.0, 3.5, -24.98)
+mesh = SubResource("NorthHomesWindow2Mesh")
+material_override = SubResource("steel")
+
+[node name="NorthHomesWindow3" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-20.0, 3.5, -24.98)
+mesh = SubResource("NorthHomesWindow3Mesh")
+material_override = SubResource("steel")
+
+[node name="GarageBack" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-26, 2, 10)
+mesh = SubResource("GarageBackMesh")
+material_override = SubResource("brick")
+
+[node name="GarageBackBody" type="StaticBody3D" parent="."]
+position = Vector3(-26, 2, 10)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GarageBackBody"]
+shape = SubResource("GarageBackShape")
+
+[node name="GarageLeft" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-34, 2, 15)
+mesh = SubResource("GarageLeftMesh")
+material_override = SubResource("brick")
+
+[node name="GarageLeftBody" type="StaticBody3D" parent="."]
+position = Vector3(-34, 2, 15)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GarageLeftBody"]
+shape = SubResource("GarageLeftShape")
+
+[node name="GarageRight" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-18, 2, 15)
+mesh = SubResource("GarageRightMesh")
+material_override = SubResource("brick")
+
+[node name="GarageRightBody" type="StaticBody3D" parent="."]
+position = Vector3(-18, 2, 15)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GarageRightBody"]
+shape = SubResource("GarageRightShape")
+
+[node name="GarageFloor" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-26, 0.025, 15)
+mesh = SubResource("GarageFloorMesh")
+material_override = SubResource("cream")
+
+[node name="GarageSign" type="Label3D" parent="."]
+position = Vector3(-26, 4.4, 10)
+text = "REPAIR / BATTERY"
+font = ExtResource("font")
+font_size = 32
+pixel_size = 0.008
+billboard = 1
+no_depth_test = false
+outline_size = 3
+
+[node name="Cover0" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-5, 0.65, 15)
+mesh = SubResource("Cover0Mesh")
+material_override = SubResource("cream")
+
+[node name="Cover0Body" type="StaticBody3D" parent="."]
+position = Vector3(-5, 0.65, 15)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cover0Body"]
+shape = SubResource("Cover0Shape")
+
+[node name="Cover1" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(6, 0.65, 0)
+mesh = SubResource("Cover1Mesh")
+material_override = SubResource("cream")
+
+[node name="Cover1Body" type="StaticBody3D" parent="."]
+position = Vector3(6, 0.65, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cover1Body"]
+shape = SubResource("Cover1Shape")
+
+[node name="Cover2" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(12, 0.65, -12)
+mesh = SubResource("Cover2Mesh")
+material_override = SubResource("cream")
+
+[node name="Cover2Body" type="StaticBody3D" parent="."]
+position = Vector3(12, 0.65, -12)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cover2Body"]
+shape = SubResource("Cover2Shape")
+
+[node name="Cover3" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-27, 0.65, -12)
+mesh = SubResource("Cover3Mesh")
+material_override = SubResource("cream")
+
+[node name="Cover3Body" type="StaticBody3D" parent="."]
+position = Vector3(-27, 0.65, -12)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cover3Body"]
+shape = SubResource("Cover3Shape")
+
+[node name="Cover4" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(20, 0.65, -22)
+mesh = SubResource("Cover4Mesh")
+material_override = SubResource("cream")
+
+[node name="Cover4Body" type="StaticBody3D" parent="."]
+position = Vector3(20, 0.65, -22)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cover4Body"]
+shape = SubResource("Cover4Shape")
+
+[node name="Cover5" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-10, 0.65, 27)
+mesh = SubResource("Cover5Mesh")
+material_override = SubResource("cream")
+
+[node name="Cover5Body" type="StaticBody3D" parent="."]
+position = Vector3(-10, 0.65, 27)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cover5Body"]
+shape = SubResource("Cover5Shape")
+
+[node name="TowerLeg0" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(22, 3.6, -7)
+mesh = SubResource("TowerLeg0Mesh")
+material_override = SubResource("steel")
+
+[node name="TowerLeg0Body" type="StaticBody3D" parent="."]
+position = Vector3(22, 3.6, -7)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TowerLeg0Body"]
+shape = SubResource("TowerLeg0Shape")
+
+[node name="TowerLeg1" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(32, 3.6, -7)
+mesh = SubResource("TowerLeg1Mesh")
+material_override = SubResource("steel")
+
+[node name="TowerLeg1Body" type="StaticBody3D" parent="."]
+position = Vector3(32, 3.6, -7)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TowerLeg1Body"]
+shape = SubResource("TowerLeg1Shape")
+
+[node name="TowerLeg2" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(22, 3.6, -17)
+mesh = SubResource("TowerLeg2Mesh")
+material_override = SubResource("steel")
+
+[node name="TowerLeg2Body" type="StaticBody3D" parent="."]
+position = Vector3(22, 3.6, -17)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TowerLeg2Body"]
+shape = SubResource("TowerLeg2Shape")
+
+[node name="TowerLeg3" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(32, 3.6, -17)
+mesh = SubResource("TowerLeg3Mesh")
+material_override = SubResource("steel")
+
+[node name="TowerLeg3Body" type="StaticBody3D" parent="."]
+position = Vector3(32, 3.6, -17)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TowerLeg3Body"]
+shape = SubResource("TowerLeg3Shape")
+
+[node name="WaterTank" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(27, 8, -12)
+mesh = SubResource("WaterTankMesh")
+material_override = SubResource("rust")
+
+[node name="TowerRim" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(27, 10.1, -12)
+mesh = SubResource("TowerRimMesh")
+material_override = SubResource("steel")
+
+[node name="TowerPipe" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(20, 2, -12)
+mesh = SubResource("TowerPipeMesh")
+material_override = SubResource("steel")
+
+[node name="TowerSign" type="Label3D" parent="."]
+position = Vector3(27, 11.2, -12)
+text = "WATER / 07"
+font = ExtResource("font")
+font_size = 48
+pixel_size = 0.008
+billboard = 1
+no_depth_test = false
+outline_size = 3
+
+[node name="WaterFlow" type="Node3D" parent="."]
+
+
+[node name="RunningWater" type="MeshInstance3D" groups=["camera_occluder"] parent="WaterFlow"]
+position = Vector3(20, 0.8, -12)
+mesh = SubResource("RunningWaterMesh")
+material_override = SubResource("water")
+
+[node name="PumpMotor" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(24, 0.65, -13)
+mesh = SubResource("PumpMotorMesh")
+material_override = SubResource("rust")
+
+[node name="PumpMotorBody" type="StaticBody3D" parent="."]
+position = Vector3(24, 0.65, -13)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PumpMotorBody"]
+shape = SubResource("PumpMotorShape")
+
+[node name="PumpHousing" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(24, 1.4, -13)
+mesh = SubResource("PumpHousingMesh")
+material_override = SubResource("steel")
+
+[node name="PublicWater" type="Node3D" parent="."]
+
+
+[node name="TapStream" type="MeshInstance3D" groups=["camera_occluder"] parent="PublicWater"]
+position = Vector3(-20, 0.8, -18)
+mesh = SubResource("TapStreamMesh")
+material_override = SubResource("water")
+
+[node name="TankerWater" type="Node3D" parent="."]
+
+
+[node name="LoadingStream" type="MeshInstance3D" groups=["camera_occluder"] parent="TankerWater"]
+position = Vector3(35, 2, -24)
+mesh = SubResource("LoadingStreamMesh")
+material_override = SubResource("water")
+
+[node name="Bucket0" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-24.0, 0.25, -18.5)
+mesh = SubResource("Bucket0Mesh")
+material_override = SubResource("cream")
+
+[node name="BucketRim0" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-24.0, 0.52, -18.5)
+mesh = SubResource("BucketRim0Mesh")
+material_override = SubResource("steel")
+
+[node name="Bucket1" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-22.9, 0.25, -18.5)
+mesh = SubResource("Bucket1Mesh")
+material_override = SubResource("cream")
+
+[node name="BucketRim1" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-22.9, 0.52, -18.5)
+mesh = SubResource("BucketRim1Mesh")
+material_override = SubResource("steel")
+
+[node name="Bucket2" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-21.8, 0.25, -18.5)
+mesh = SubResource("Bucket2Mesh")
+material_override = SubResource("cream")
+
+[node name="BucketRim2" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-21.8, 0.52, -18.5)
+mesh = SubResource("BucketRim2Mesh")
+material_override = SubResource("steel")
+
+[node name="Bucket3" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-20.7, 0.25, -18.5)
+mesh = SubResource("Bucket3Mesh")
+material_override = SubResource("cream")
+
+[node name="BucketRim3" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-20.7, 0.52, -18.5)
+mesh = SubResource("BucketRim3Mesh")
+material_override = SubResource("steel")
+
+[node name="Bucket4" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-19.6, 0.25, -18.5)
+mesh = SubResource("Bucket4Mesh")
+material_override = SubResource("cream")
+
+[node name="BucketRim4" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-19.6, 0.52, -18.5)
+mesh = SubResource("BucketRim4Mesh")
+material_override = SubResource("steel")
+
+[node name="TruckChassis" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(34, 1, -25)
+mesh = SubResource("TruckChassisMesh")
+material_override = SubResource("steel")
+
+[node name="TruckChassisBody" type="StaticBody3D" parent="."]
+position = Vector3(34, 1, -25)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TruckChassisBody"]
+shape = SubResource("TruckChassisShape")
+
+[node name="TruckCab" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(34, 2, -28)
+mesh = SubResource("TruckCabMesh")
+material_override = SubResource("rust")
+
+[node name="TruckCabBody" type="StaticBody3D" parent="."]
+position = Vector3(34, 2, -28)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TruckCabBody"]
+shape = SubResource("TruckCabShape")
+
+[node name="TruckWindscreen" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(34, 2.5, -29.05)
+mesh = SubResource("TruckWindscreenMesh")
+material_override = SubResource("steel")
+
+[node name="TruckTank" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(34, 2.7, -24)
+rotation_degrees = Vector3(90,0,0)
+mesh = SubResource("TruckTankMesh")
+material_override = SubResource("cream")
+
+[node name="TruckWheel0" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(32.4, 0.65, -27)
+rotation_degrees = Vector3(0,0,90)
+mesh = SubResource("TruckWheel0Mesh")
+material_override = SubResource("steel")
+
+[node name="TruckWheel1" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(35.6, 0.65, -27)
+rotation_degrees = Vector3(0,0,90)
+mesh = SubResource("TruckWheel1Mesh")
+material_override = SubResource("steel")
+
+[node name="TruckWheel2" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(32.4, 0.65, -22)
+rotation_degrees = Vector3(0,0,90)
+mesh = SubResource("TruckWheel2Mesh")
+material_override = SubResource("steel")
+
+[node name="TruckWheel3" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(35.6, 0.65, -22)
+rotation_degrees = Vector3(0,0,90)
+mesh = SubResource("TruckWheel3Mesh")
+material_override = SubResource("steel")
+
+[node name="Boundary0" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-38, 2, 0)
+mesh = SubResource("Boundary0Mesh")
+material_override = SubResource("brick")
+
+[node name="Boundary0Body" type="StaticBody3D" parent="."]
+position = Vector3(-38, 2, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundary0Body"]
+shape = SubResource("Boundary0Shape")
+
+[node name="Boundary1" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(38, 2, 0)
+mesh = SubResource("Boundary1Mesh")
+material_override = SubResource("brick")
+
+[node name="Boundary1Body" type="StaticBody3D" parent="."]
+position = Vector3(38, 2, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundary1Body"]
+shape = SubResource("Boundary1Shape")
+
+[node name="Boundary2" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 2, -33)
+mesh = SubResource("Boundary2Mesh")
+material_override = SubResource("brick")
+
+[node name="Boundary2Body" type="StaticBody3D" parent="."]
+position = Vector3(0, 2, -33)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundary2Body"]
+shape = SubResource("Boundary2Shape")
+
+[node name="Boundary3" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(0, 2, 33)
+mesh = SubResource("Boundary3Mesh")
+material_override = SubResource("brick")
+
+[node name="Boundary3Body" type="StaticBody3D" parent="."]
+position = Vector3(0, 2, 33)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundary3Body"]
+shape = SubResource("Boundary3Shape")
+
+[node name="Loudspeaker" type="Node3D" parent="."]
+position = Vector3(-3,0,-7)
+
+[node name="SpeakerPole" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-3, 2.2, -7)
+mesh = SubResource("SpeakerPoleMesh")
+material_override = SubResource("steel")
+
+[node name="SpeakerPoleBody" type="StaticBody3D" parent="."]
+position = Vector3(-3, 2.2, -7)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpeakerPoleBody"]
+shape = SubResource("SpeakerPoleShape")
+
+[node name="SpeakerBox" type="MeshInstance3D" groups=["camera_occluder"] parent="."]
+position = Vector3(-3, 4.5, -7)
+mesh = SubResource("SpeakerBoxMesh")
+material_override = SubResource("cream")
+
+[node name="RadioSign" type="Label3D" parent="."]
+position = Vector3(-3, 5.4, -7)
+text = "PLEASE WAIT PATIENTLY"
+font = ExtResource("font")
+font_size = 22
+pixel_size = 0.008
+billboard = 1
+no_depth_test = false
+outline_size = 3
+
+[node name="PlayerSpawn" type="Marker3D" parent="." groups=["player_spawn_point"]]
+position = Vector3(0,0.1,29)
+
+[node name="Radio" type="Node3D" parent="."]
+position = Vector3(0, 0, 24)
+script = ExtResource("action")
+kind = "radio"
+objective_id = &"water_briefing"
+interaction_prompt = "RADIO / TANG KUI"
+
+[node name="TerminalPedestal" type="MeshInstance3D" groups=["camera_occluder"] parent="Radio"]
+position = Vector3(0, 0.45, 0)
+mesh = SubResource("TerminalPedestalMesh")
+material_override = SubResource("steel")
+
+[node name="WorldLabel" type="Label3D" parent="Radio"]
+position = Vector3(0, 1.8, 0)
+text = "RADIO / TANG KUI"
+font = ExtResource("font")
+font_size = 25
+pixel_size = 0.008
+billboard = 1
+no_depth_test = false
+outline_size = 3
+
+[node name="Battery" type="Node3D" parent="."]
+position = Vector3(-26, 0, 15)
+script = ExtResource("action")
+kind = "battery"
+objective_id = &"water_battery"
+interaction_prompt = "TAKE PUMP BATTERY / 8kg"
+
+[node name="TerminalPedestal" type="MeshInstance3D" groups=["camera_occluder"] parent="Battery"]
+position = Vector3(0, 0.45, 0)
+mesh = SubResource("TerminalPedestalMesh")
+material_override = SubResource("steel")
+
+[node name="WorldLabel" type="Label3D" parent="Battery"]
+position = Vector3(0, 1.8, 0)
+text = "TAKE PUMP BATTERY / 8kg"
+font = ExtResource("font")
+font_size = 25
+pixel_size = 0.008
+billboard = 1
+no_depth_test = false
+outline_size = 3
+
+[node name="Cargo" type="Node3D" parent="Battery"]
+
+
+[node name="BatteryCase" type="MeshInstance3D" groups=["camera_occluder"] parent="Battery/Cargo"]
+position = Vector3(0, 0.85, 0)
+mesh = SubResource("BatteryCaseMesh")
+material_override = SubResource("rust")
+
+[node name="Terminal0" type="MeshInstance3D" groups=["camera_occluder"] parent="Battery/Cargo"]
+position = Vector3(-0.2, 1.15, 0)
+mesh = SubResource("Terminal0Mesh")
+material_override = SubResource("cream")
+
+[node name="Terminal1" type="MeshInstance3D" groups=["camera_occluder"] parent="Battery/Cargo"]
+position = Vector3(0.2, 1.15, 0)
+mesh = SubResource("Terminal1Mesh")
+material_override = SubResource("cream")
+
+[node name="Pump" type="Node3D" parent="."]
+position = Vector3(25, 0, -13)
+script = ExtResource("action")
+kind = "pump"
+objective_id = &"water_pump"
+interaction_prompt = "INSTALL PUMP BATTERY / 8s"
+
+[node name="TerminalPedestal" type="MeshInstance3D" groups=["camera_occluder"] parent="Pump"]
+position = Vector3(0, 0.45, 0)
+mesh = SubResource("TerminalPedestalMesh")
+material_override = SubResource("steel")
+
+[node name="WorldLabel" type="Label3D" parent="Pump"]
+position = Vector3(0, 1.8, 0)
+text = "INSTALL PUMP BATTERY / 8s"
+font = ExtResource("font")
+font_size = 25
+pixel_size = 0.008
+billboard = 1
+no_depth_test = false
+outline_size = 3
+
+[node name="Decoy" type="Node3D" parent="."]
+position = Vector3(-28, 0, 3)
+script = ExtResource("action")
+kind = "decoy"
+objective_id = &"water_decoy"
+interaction_prompt = "SOUND THE SQUARE LOUDSPEAKER / ONCE"
+
+[node name="TerminalPedestal" type="MeshInstance3D" groups=["camera_occluder"] parent="Decoy"]
+position = Vector3(0, 0.45, 0)
+mesh = SubResource("TerminalPedestalMesh")
+material_override = SubResource("steel")
+
+[node name="WorldLabel" type="Label3D" parent="Decoy"]
+position = Vector3(0, 1.8, 0)
+text = "SOUND THE SQUARE LOUDSPEAKER / ONCE"
+font = ExtResource("font")
+font_size = 25
+pixel_size = 0.008
+billboard = 1
+no_depth_test = false
+outline_size = 3
+
+[node name="PublicValve" type="Node3D" parent="."]
+position = Vector3(-20, 0, -17)
+script = ExtResource("action")
+kind = "public"
+objective_id = &"water_public"
+interaction_prompt = "INSPECT COURTYARD DELIVERY"
+
+[node name="TerminalPedestal" type="MeshInstance3D" groups=["camera_occluder"] parent="PublicValve"]
+position = Vector3(0, 0.45, 0)
+mesh = SubResource("TerminalPedestalMesh")
+material_override = SubResource("steel")
+
+[node name="WorldLabel" type="Label3D" parent="PublicValve"]
+position = Vector3(0, 1.8, 0)
+text = "INSPECT COURTYARD DELIVERY"
+font = ExtResource("font")
+font_size = 25
+pixel_size = 0.008
+billboard = 1
+no_depth_test = false
+outline_size = 3
+
+[node name="TankerValve" type="Node3D" parent="."]
+position = Vector3(26, 0, -26)
+script = ExtResource("action")
+kind = "tanker"
+objective_id = &"water_tanker"
+interaction_prompt = "INSPECT TANKER DELIVERY"
+
+[node name="TerminalPedestal" type="MeshInstance3D" groups=["camera_occluder"] parent="TankerValve"]
+position = Vector3(0, 0.45, 0)
+mesh = SubResource("TerminalPedestalMesh")
+material_override = SubResource("steel")
+
+[node name="WorldLabel" type="Label3D" parent="TankerValve"]
+position = Vector3(0, 1.8, 0)
+text = "INSPECT TANKER DELIVERY"
+font = ExtResource("font")
+font_size = 25
+pixel_size = 0.008
+billboard = 1
+no_depth_test = false
+outline_size = 3
+
+[node name="Retreat" type="Node3D" parent="."]
+position = Vector3(0, 0, 30)
+script = ExtResource("exit")
+extraction_id = &"water_Retreat"
+required_objective_id = &""
+
+[node name="PublicExit" type="Node3D" parent="."]
+position = Vector3(-32, 0, -21)
+script = ExtResource("exit")
+extraction_id = &"water_PublicExit"
+required_objective_id = &"water_public"
+
+[node name="TankerExit" type="Node3D" parent="."]
+position = Vector3(31, 0, -28)
+script = ExtResource("exit")
+extraction_id = &"water_TankerExit"
+required_objective_id = &"water_tanker"
+
+[node name="PublicReward" type="Node3D" parent="."]
+position = Vector3(-21, 0, -18)
+script = ExtResource("loot")
+loot_table_id = &"water_public_reward"
+enabled = false
+roll_count = 2
+metadata/campus_storage = 1
+
+[node name="Art" instance=ExtResource("supply") parent="PublicReward"]
+scale = Vector3(0.7,0.7,0.7)
+
+[node name="TankerReward" type="Node3D" parent="."]
+position = Vector3(28, 0, -26)
+script = ExtResource("loot")
+loot_table_id = &"water_tanker_reward"
+enabled = false
+roll_count = 1
+metadata/campus_storage = 1
+
+[node name="Art" instance=ExtResource("supply") parent="TankerReward"]
+scale = Vector3(0.7,0.7,0.7)
+
+[node name="GarageLoot" type="Node3D" parent="."]
+position = Vector3(-29, 0, 13)
+script = ExtResource("loot")
+loot_table_id = &"street_repair_loot"
+enabled = true
+roll_count = 2
+metadata/campus_storage = 1
+
+[node name="Art" instance=ExtResource("supply") parent="GarageLoot"]
+scale = Vector3(0.7,0.7,0.7)
+
+[node name="AlleyMedicine" type="Node3D" parent="."]
+position = Vector3(-34, 0, -14)
+script = ExtResource("loot")
+loot_table_id = &"street_pharmacy_loot"
+enabled = true
+roll_count = 2
+metadata/campus_storage = 1
+
+[node name="Art" instance=ExtResource("supply") parent="AlleyMedicine"]
+scale = Vector3(0.7,0.7,0.7)
+
+[node name="StreetSalvage" type="Node3D" parent="."]
+position = Vector3(9, 0, 6)
+script = ExtResource("loot")
+loot_table_id = &"street_supply_loot"
+enabled = true
+roll_count = 2
+metadata/campus_storage = 1
+
+[node name="Art" instance=ExtResource("supply") parent="StreetSalvage"]
+scale = Vector3(0.7,0.7,0.7)
+
+[node name="Enemy0" type="Marker3D" parent="."]
+position = Vector3(2, 0, 9)
+rotation = Vector3(0,0,0)
+script = ExtResource("enemy")
+enemy_definition_id = &"prototype_basic_enemy"
+tactical_role = 0
+
+[node name="Enemy1" type="Marker3D" parent="."]
+position = Vector3(5, 0, -10)
+rotation = Vector3(0,3.141592653589793,0)
+script = ExtResource("enemy")
+enemy_definition_id = &"prototype_basic_enemy"
+tactical_role = 1
+
+[node name="Enemy2" type="Marker3D" parent="."]
+position = Vector3(-24, 0, -18)
+rotation = Vector3(0,0,0)
+script = ExtResource("enemy")
+enemy_definition_id = &"prototype_basic_enemy"
+tactical_role = 1
+
+[node name="Enemy3" type="Marker3D" parent="."]
+position = Vector3(18, 0, -24)
+rotation = Vector3(0,3.141592653589793,0)
+script = ExtResource("enemy")
+enemy_definition_id = &"prototype_basic_enemy"
+tactical_role = 2
+
+[node name="Enemy4" type="Marker3D" parent="."]
+position = Vector3(28, 0, -16)
+rotation = Vector3(0,3.141592653589793,0)
+script = ExtResource("enemy")
+enemy_definition_id = &"prototype_heavy_enemy"
+tactical_role = 3
+
+[node name="Enemy5" type="Marker3D" parent="."]
+position = Vector3(-8, 0, -18)
+rotation = Vector3(0,0,0)
+script = ExtResource("enemy")
+enemy_definition_id = &"campus_infected"
+tactical_role = 3
+
+[node name="Enemy6" type="Marker3D" parent="."]
+position = Vector3(-33, 0, -3)
+rotation = Vector3(0,3.141592653589793,0)
+script = ExtResource("enemy")
+enemy_definition_id = &"campus_infected"
+tactical_role = 3
+
+[node name="Enemy7" type="Marker3D" parent="."]
+position = Vector3(10, 0, 18)
+rotation = Vector3(0,0,0)
+script = ExtResource("enemy")
+enemy_definition_id = &"campus_infected"
+tactical_role = 3
+
+[node name="StreetNavigation" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("Navigation")
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Dawn")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-58,-25,0)
+light_color = Color(1,0.85,0.67,1)
+light_energy = 1.2
+shadow_enabled = true

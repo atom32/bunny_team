@@ -47,6 +47,8 @@ func _draw() -> void:
 		extent *= minf(area.x / extent.x, area.y / extent.y)
 		draw_texture_rect(definition.icon, Rect2(Vector2(8, 25) + (area - extent) * 0.5, extent), false)
 	draw_string(UIFactory.FONT, Vector2(10, size.y - 5), "%.1f kg" % item.total_weight(), HORIZONTAL_ALIGNMENT_LEFT, size.x - 20, 11, FieldManualStyle.MUTED)
+	if not item.fitting.is_empty():
+		draw_string(UIFactory.FONT, Vector2(80, size.y - 5), WeaponFitting.badge(item.fitting), HORIZONTAL_ALIGNMENT_RIGHT, size.x - 90, 11, FieldManualStyle.ACCENT)
 
 
 func _get_drag_data(_at_position: Vector2) -> Variant:

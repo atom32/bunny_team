@@ -326,6 +326,6 @@ func _read_cross_process() -> void:
 	var profile := ProfileRuntime.get_profile()
 	var state = session.get_weapon_runtime_state(_gun(profile))
 	check(state.ammo_definition_id == AP and state.magazine_ammo == 25 and _rounds(session, AP) == 32, "second process retains twenty-five loaded plus seven loose AP rounds")
-	check(SaveService.SCHEMA_VERSION == 8 and SortieCheckpoint.VERSION == 6, "profile and checkpoint schema versions unchanged")
+	check(SaveService.SCHEMA_VERSION == 11 and SortieCheckpoint.VERSION == 6, "schema 11 profile and unchanged schema 6 checkpoint")
 	check(session.complete_extraction() and SortieRuntime.finalize_sortie(CROSS) == OK, "resumed AP sortie extracts through the normal transaction")
 	check(SupplyService.count(profile, AP) == 75, "cross-process extraction conserves original eighty minus five fired rounds")

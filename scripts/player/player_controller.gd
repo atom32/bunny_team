@@ -6,6 +6,7 @@ signal died
 signal weapon_fired(recoil_strength: float)
 signal ammo_changed(magazine: int, magazine_capacity: int, reserve: int)
 signal weapon_switched(slot_id: StringName)
+signal damage_received(packet: DamagePacket, applied_damage: float)
 
 const ROCKET_SCENE := preload("res://scenes/weapons/rocket_projectile.tscn")
 const CORPSE_SCRIPT := preload("res://scripts/presentation/skinned_corpse.gd")
@@ -91,7 +92,7 @@ var _dodge_direction := Vector3.ZERO
 var _visual_time := 0.0
 var _recoil_tween: Tween
 var _fire_queued := false
-# A live interaction panel owns aiming/fire input, not movement or combat timers.
+# A live interaction panel owns aiming/fire and confirm keys, not walking or timers.
 var aim_input_captured := false
 var _move_direction := Vector3.ZERO
 var _initial_inventory: InventoryState
@@ -358,6 +359,7 @@ func receive_damage(packet: DamagePacket) -> float:
 	velocity += packet.knockback_impulse
 	AudioDirector.play_sfx(&"player_hurt", 0.0, 0.04)
 	health_changed.emit(health, max_health)
+	if applied_damage > 0.0: damage_received.emit(packet, applied_damage)
 	CombatEffects.hit(get_tree().current_scene, global_position + Vector3.UP * 1.25, Color("ff5568"))
 	var tween := create_tween()
 	tween.tween_property(body_visual, "rotation:z", 0.13, 0.06)
@@ -803,7 +805,7 @@ func _update_movement(delta: float) -> void:
 	var move_direction := (right.normalized() * input_vector.x + forward.normalized() * -input_vector.y).normalized()
 	_move_direction = move_direction
 
-	if Input.is_action_just_pressed("dodge") and _dodge_cooldown_time <= 0.0:
+	if not aim_input_captured and Input.is_action_just_pressed("dodge") and _dodge_cooldown_time <= 0.0:
 		_dodge_direction = move_direction if move_direction != Vector3.ZERO else aim_direction
 		_dodge_time = dodge_duration
 		_dodge_cooldown_time = dodge_cooldown
@@ -821,7 +823,7 @@ func _update_movement(delta: float) -> void:
 		var movement_speed := get_movement_speed()
 		if Input.is_action_pressed("precision_walk"):
 			movement_speed *= 0.5
-		var target_velocity := move_direction * movement_speed
+		var target_velocity := move_direction * movement_speed * input_vector.length()
 		var rate := acceleration if move_direction != Vector3.ZERO else deceleration
 		var horizontal := Vector3(velocity.x, 0.0, velocity.z).move_toward(target_velocity, rate * delta)
 		velocity.x = horizontal.x

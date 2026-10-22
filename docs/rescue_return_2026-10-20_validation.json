@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-20",
+  "status": "included_in_verified_south_market_local_package",
+  "source": {
+    "directory": "D:\\tmp\\bunny_water_market_20261020_final04",
+    "test_scenes": 117,
+    "categories": 208,
+    "all_pass": true,
+    "results_sha256": "054aa51b475fd01b4e9dfc83914a5093d780250e891aaf189a7dc353d110a407"
+  },
+  "build": {
+    "created": true,
+    "directory": "D:\\tmp\\bunny_water_market_20261020_build03",
+    "categories": 100,
+    "all_pass": true,
+    "results_sha256": "626a6ff40dd11225acc5483612a6e680f1b901b7f251e8276f6bf4dcd2bad6cb"
+  },
+  "independent_zip": {
+    "categories": 33,
+    "launcher_cases": 14,
+    "compiled_campus_seed_prefix_cases": 4,
+    "all_pass": true,
+    "native_serial": true,
+    "system_only_PATH": true,
+    "reused_unchanged_runtime_and_unaffected_input_cases": 20,
+    "new_preview_revision_cases": 13,
+    "scope": "Only two preview layout files changed; exact EXE/PCK/all other static files unchanged. First20 unaffected-input records retained; remaining13 run from new independent Chinese extraction."
+  },
+  "archive": {
+    "archive": "D:\\tmp\\bunny_water_market_20261020_build03\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64_r2.zip",
+    "bytes": 245607262,
+    "sha256": "b51c4c546a371c27036ae6ba8f1559d6f1e8ee918dd5155a38534c9e02c14839",
+    "extracted_to": "D:\\tmp\\小兔试玩 南市搜刮 20261020 07\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false,
+    "packaging_only_revision": 2,
+    "previous_failed_revision": "D:\\tmp\\bunny_water_market_20261020_build03\\portable_archive_r1.json",
+    "only_two_preview_layout_files_changed": true,
+    "fresh_delivery_extracted_to": "D:\\tmp\\小兔试玩 南市搜刮 20261020 08\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "fresh_static_files_match": true,
+    "fresh_preview_userdata_not_preplayed": true
+  },
+  "actual_earned_routes": {
+    "rescue_earned_forward": {
+      "evidence": "D:\\tmp\\bunny_water_market_20261020_build03\\portable_rescue_earned_forward\\rescue_return_earned.json",
+      "sha256": "30c86da342e9326bbb0c1949e78cd4957a796f044242825a462ee2072d940e39",
+      "checks": 43,
+      "shots": 19,
+      "kills": 6,
+      "health": 260.0,
+      "before_returns": 6,
+      "after_returns": 7
+    },
+    "rescue_earned_compat_en": {
+      "evidence": "D:\\tmp\\bunny_water_market_20261020_build03\\portable_rescue_earned_compat_en\\rescue_return_earned.json",
+      "sha256": "b40486d591c959b7025b2bd353caf2d2d0559cda4722047ba0fa03c0d9dcb4d0",
+      "checks": 47,
+      "shots": 19,
+      "kills": 6,
+      "health": 254.6,
+      "before_returns": 6,
+      "after_returns": 7
+    }
+  },
+  "profile_schema": 11,
+  "checkpoint_schema": 6,
+  "no_rewards_or_seen_flags": true,
+  "public_release_approved": false,
+  "goal_achieved": false
+}

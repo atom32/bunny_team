@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="LootTableDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/data/loot_table_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/data/loot_table_entry.gd" id="2"]
+[sub_resource type="Resource" id="Quick"]
+script = ExtResource("2")
+definition_id = &"material.quickloader_kit"
+weight = 1.0
+[sub_resource type="Resource" id="Quiet"]
+script = ExtResource("2")
+definition_id = &"material.suppressor_kit"
+weight = 1.0
+[sub_resource type="Resource" id="Optic"]
+script = ExtResource("2")
+definition_id = &"material.observation_optic_kit"
+weight = 1.0
+[resource]
+script = ExtResource("1")
+table_id = &"maintenance_saved_tools"
+entries = Array[ExtResource("2")]([SubResource("Quick"),SubResource("Quiet"),SubResource("Optic")])

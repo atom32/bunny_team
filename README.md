@@ -1,4 +1,85 @@
+
+可玩优先版已准备：双击 `D:/tmp/bunny_backup_only_20261021_dev01/开始游戏.cmd`；想跳过首战可用同目录 `快速进入校园.cmd`。含16动作与孤立备份恢复修正，独立存档，不覆盖旧进度。按用户要求停止额外完整回归（87项已过，未宣称251完成），只保留必要首战／撤离返营／读档检查；非关键打磨后置。这是需本机已有Godot的本地版，不是新的独立Windows或公开发行版。
+
+本地源码修正版已就绪：结算正文有不透明底板和18px字，北门近景采用400字重。源码127场景／251类全过（4092非文档输入匹配），修正版双渲染器近景／原失败checkpoint恢复及读档六项通过，亲看8图接受局部目标；俯视世界字仍偏灰，不是全游戏画面验收。新入口 `D:/tmp/bunny_readability_20261021_dev01/运行可读性与十六动作本地版.cmd`；独立校园预览为同目录 `预览修正版校园北门.cmd`。两入口分离存档、不覆盖旧试装或个人进度，沿用本机16动作；需现有Godot，不是独立Windows包。新Windows内部候选已实际导出149类通过；独立ZIP无界面37／96、实际CMD30次／16隔离组及备份保护30次版本调用已过，余59项原生或依赖检查待验。此Windows为默认动作、不含付费16库，尚未新交付；不增加游玩时长或宣称五小时完成。
+
+源码／本地试装：校园北门可以沿墙绕到外侧按E拔门栓（不耗弹、不触发门口增援），或打断红链（消耗实弹、一次触发两名守卫）。开门不自动查看铭牌/结算、不发额外奖励；另一条无条件撤离路线保留，旧中途档不补门。修正版双渲染器原生普通路线／返营／读档八项与当前源码127场景／250类通过，4091个Root非文档输入匹配；两轮旧Q01单位用例失败保留，修为实际拔栓后重跑全量。新“北门＋十六动作”入口在 `D:/tmp/bunny_campus_exit_gate_20261021_dev01`，有独立新档和真实首战返营档的校园预览，不覆盖上一十六动作入口或个人进度。世界小字、斜近景链字局部遮挡、未贴栓动作及灰盒仍待打磨，只作本地试装。**没有新Windows包，不代表五小时游玩或可公开发行。**
+
+候选WIP：[减少档案室连续空跑](docs/RECOVERED_ARMS_2026-10-21.md)。当前没有改装枪时，新档案室箱保证有一把；已有则保持35%。完整源码126场景／242类、新候选02实际导出140项通过；原六连空档副本也在新EXE及独立解压中实际找枪、带回、装备再战与读回过。内部ZIP无界面32项、累计40／87、CMD28次／15组通过；原生及其依赖检查仍缺，未交付新试玩包。
+
+本轮动作优先：[最新内容十六动作本地版](docs/COMBAT12_2026-10-20.md)。原十二段已迁到最新内容并加四个斜向瞄准步态，两种渲染器普通首战／读回通过，使用独立新档；默认Windows旧包尚未换动作。付费数据在仓库外，仅干净可选适配代码入源码。维护区修正版近景与独立ZIP互助路线也已复查，当前40／87，余47项；不是新交付或五小时证明。
+
+源码WIP：[维护区互助开箱](docs/MAINTENANCE_SHARED_2026-10-21.md)。许棠实际走到另一侧帮忙，带回现有改装工具包；手部贴合与标签源码修正已通过11项隔离检查，修正版基本接触与标签原生目标复查通过，整体画面仍待完善。本次新全量126场景／242类已覆盖它与空跑修正；此前126场景／242类是修正前基线，不在下方Windows包中。
+
+当前本地 Windows 试玩：[维修仓背架与二选一改装](docs/CARRIER_WINDOWS_2026-10-21.md)。实际带回后选择轻便27kg或重载47kg，带同一配置再出击搜取并返营；编译133、独立ZIP72、CMD26次／14组通过，提供未预玩目录。仍LOCAL_ONLY，不代表五小时或公开发行完成。
+
+上一版 Windows 试玩：[改装收获与主次结算](docs/RECOVERED_WINDOWS_2026-10-21.md)。档案室有机会带回消音AR、快装SMG或观察镜R7，收益/代价与仓库配件标识可见；实际“找到→带回→装备→再战→返回”及读回已通过。新包独立ZIP 60项、CMD 22次成功启动与十二组隔离档验收完成，未预玩目录和入口见说明。仍LOCAL_ONLY，不代表五小时或公开发行完成。
+
+源码详情：[可带回的改装武器](docs/RECOVERED_ARMS_2026-10-21.md)与[主线/可选结算分离](docs/DEBRIEF_GUIDANCE_2026-10-21.md)，两者均已进入本批 Windows。玩家反馈“搜刮和成长缺乏惊喜”，本批是第一步，不将测试数量或刷取次数当成长内容/游玩时长。
+
+上一版本地 Windows：[校园广播与战备引导](docs/CAMPUS_WINDOWS_2026-10-20.md)。原交付目录与ZIP保留不覆盖；其120/50/20项为历史包证明，不冒充本批验收。
+
+本包保留此前药房、宿舍、南市、救援和尾声。个人存档未改，玩家35/60存档只作外置隔离测试输入，未随包提供；未换主角，未加入Arcana或付费动作。试玩入口与未预玩目录见上方说明。
+
+上一版本地试玩：[药房白袋截取](docs/MEDICAL_INTERCEPTION_2026-10-20.md)。原药房包与交付目录保留，不被新包覆盖。
+
+上一批本地试玩：[校园宿舍南窗接应](docs/CAMPUS_HANDOFF_2026-10-20.md)。前院交战、已备装备交接与实际撤离已进入新Windows包，另含全部既有南市、救援短场和尾声。118场景／213类源码、105类编译、19类独立ZIP与16次CMD通过；仍LOCAL_ONLY，未证明五小时或公开发行条件。
+
+上一批本地试玩：[水塔街南市与可选维修仓](docs/WATER_MARKET_2026-10-20.md)。两条市场通路、断铃或响铃开仓、重物搜刮和仓内北门近路已进入新的独立包，另含 [门先别关](docs/RESCUE_RETURN_2026-10-20.md) 返营短场。仍LOCAL_ONLY，未证明五小时首通或公开发行条件。
+
+上一批内容更新：[维护区场景与蒸汽表现](docs/MAINTENANCE_PRESENTATION_2026-10-20.md)。新增检修区地坪、病房细节、管线、阀轮、地面路标与透明喷雾；碰撞、导航和旧蒸汽档签名保持。仍仅本地测试，未达五小时发行验收。
+
 # Neon Bastion
+
+> **2026-10-20 新增返营人物短场《最大的那只桶》。** 送水后可选带桶上楼，原主角真实双手搬桶、往门口走又被叫回、落桶再坐下。两种反应、提前退出和休息室重看不发奖励或改主线；三位联系人仍为电台字幕。见 [内容与本地体验](docs/BUCKET_RETURN_2026-10-20.md)。默认主角和付费动作状态不变，五小时和发行目标继续制作。
+
+> **2026-10-20 水塔街现场送水。** 院子线可绕西侧旁通轮或用实弹释放卡死锁扣，供水后住户实际走向水龙头；水车线需升门、松手刹，让实体车抵达北院。选线不再直接赠完成与奖励，旧水塔街中途档仍走原地图。见 [玩法、保存与本地包](docs/WATER_DELIVERY_2026-10-20.md)。这是区域内容扩展，不是50分钟章节或五小时达标；默认主角与动作不换。
+
+> **2026-10-20 新增终局行动与回家尾声。** 总览“继续主线”串起水塔街、哨卡、救援与备用动力室；避开预警电弧，保住安置点供电、停机并撤离后，原主角和许棠实际回到桌边，有让位坐起、捧杯与结束卡，再回到自由行动。主线灰盒可到结尾，但五小时内容、正式美术和发行条件仍未完成。见 [新Windows本地包、后半程与尾声预览](docs/FINALE_2026-10-20.md)。仍LOCAL_ONLY，十二付费动作未混入默认包。
+
+> **2026-10-20 新增封闭维护区救援灰盒《别挂电话》。** 校园六请求完成后从作战室可选进入；实际泄压开门、释放许棠、带她穿过北门并安全返营。同行者可等候／跟随，不瞬移、不设可被枪击的护送血条；原主角未换，CC0同行者仅占位。见 [本地独立包、快速预览与范围](docs/MAINTENANCE_2026-10-20.md)。这是首段救援，不是70分钟章节或五小时全篇；新Windows包仍LOCAL_ONLY，付费十二动作仍在独立试装。
+
+> **2026-10-20 新增返营人物短场《给你留的位置》。** 校园出口侦察返营后，从休息室可选进入。原主角走到长凳、坐下；也可起身帮忙后被叫住，再坐下捧起温水。可跳过／重看，不加奖励或新存档字段；三位联系人仍是电台字幕。见 [本地独立包、快速预览与范围](docs/SEAT_MOMENT_2026-10-20.md)。本批已生成新的Windows本地包，无须Godot；仍LOCAL_ONLY，未公开上传，五小时全篇继续制作。
+
+> **2026-10-20 十二段持枪动作本地接入。** 原主角本地试装扩到待机、慢走、跑动、精确站走／后退、射击、换弹、受击、闪避和收放枪；通过正常开局与原AI实际战斗，修正冲刺穿脸、收枪末端T姿势及全速收枪错误步态。见 [本地入口、动图与范围](docs/COMBAT12_2026-10-20.md)。默认动作仍未直接替换，付费数据在仓库外，没有新独立包；五小时内容与人物切片继续按 [发行规划](docs/FIVE_HOUR_RELEASE_PLAN.md) 推进。
+
+> **2026-10-20 上一批三动作本地接入。** CombatGirls 的待机、持枪行走和换弹已在原主角的隔离试装中驱动正常开局／首战，两渲染器完成首胜、升级和工坊返营，并独立读回。移动换弹另查上身覆盖与腿部步态；修正短臂握持、胸段压缩和视线朝向。见 [试装入口、动图和范围](docs/RIFLE_MOTION_2026-10-20.md)。只有3段，不是12段全部完成；默认仓库动作和正式模型未换，付费动作数据留在仓库外，没有新EXE/PCK或公开上传。
+
+> **2026-10-20 五小时发行目标与动作资源使用。** 制作范围收束为约五小时首次通关的完整小体量游戏，四个正式作战区加序章、三位核心联系人和完整收尾，不同时兑现旧十二章大纲。规划形成时CombatGirls 的39个动画FBX只有隔离审查，其后十二动作本地接入见上方；下一制作重点是人物行动切片与维护区／终局。见 [缺口、时长预算与分阶段规划](docs/FIVE_HOUR_RELEASE_PLAN.md)。当时校园接续候选因Q02随机搜齐的QA假设失败，现已修正并在103场景／149类无图形回归中通过校园连续链；该规划初稿时尚未交付新独立包，当时最新为下方工坊版；当前以顶部最新批次为准，仍LOCAL_ONLY。
+
+> **2026-10-19 工坊归来：多出来的一颗。** 首次升级保存后，原主角走到工作台，收起／敲敲备用螺丝，继续装配，听三人的拌嘴和催饭；不再突然跳回商店。可跳过、重看、查看下一委托或去休息；旧档不强制播放，不赠奖励或另加存档字段。见 [新短场与本地包](docs/WORKSHOP_HOMECOMING_2026-10-19.md)。仍LOCAL_ONLY，不把自动测试当作真人口碑。
+
+> **2026-10-19 首战两路线真实输入闭环。** 从正常BOOT跑到首战交战、拿取核心、终端、撤离、返营与第一次升级，不再从Hanger跳过教学。修复早先瞄准/开枪/换弹抢跑后续提示；满弹匣或无兼容备用弹也不被不可能的换弹锁死，不赠弹药或胜利。两条路线在Forward+与Compatibility完成，保留原资产和存档格式；见 [范围与最新本地包](docs/FIRST_SORTIE_2026-10-19.md)。101场景/164源码类、32构建类、43解压类通过，不冒充真人首小时或80%好评，仍LOCAL_ONLY。
+
+> **2026-10-19 新玩家开场与首战入口。** 三张设定说明改为唐葵、沈砚霜、苏弥的三段拌嘴与牵挂；首次开场仍可跳过，旧的已看偏好不重置。首战未开放的撤离信标不再盖住角色或抢先提示后续步骤，真正解锁后恢复；战斗、8秒撤离与存档结构不改。见 [实际正常入口证据与最新本地包](docs/FIRST_IMPRESSION_2026-10-19.md)。100场景／156源码类、28构建类、37解压类通过，不是真人首小时或80%好评；仍LOCAL_ONLY，未上传。
+
+> **2026-10-19 水塔街的选择带回基地。** 院子放水／支援运水车各有唐葵、沈砚霜、苏弥的返营回想，共6段51句双语对白；按真实安全撤离结算，不挤掉原校园剧情，不加好感条或强制弹窗。原模型与训练室保留，profile9／checkpoint6，旧档不猜分支。见 [新剧情与最新本地包](docs/WATERWORKS_RETURN_2026-10-19.md)。99场景／150类源码、25类构建、32类独立解压运行通过；仍LOCAL_ONLY，未上传，未取得新模型许可。
+
+> **2026-10-19 修复兼容模式室内视野。** 宿舍屋顶不再盖住角色；不支持实例透明度的渲染器使用视觉剖面，碰撞、敌人观察和相机角度不改。警铃地图标识也明确区分已响状态。新增真实像素回归，两渲染器各83项；最终98场景／147类源码、23类构建及27类独立解压运行通过。原角色、训练室和前版存档保留。见 [画面与最新本地包](docs/CAMERA_CUTAWAY_2026-10-19.md)。仍LOCAL_ONLY，未公开发布。
+
+> **2026-10-19 新增校园拆铃路线。** 档案点附近有实体接线箱：先花4秒拆铃线，再快速传档；也能在慢拷贝的报警倒数里绕过去抢时间。受伤／离开会中断，响过的警铃不能让守卫失忆。附苏弥和沈砚霜的短拌嘴；角色和训练室未改。见 [玩法、截图与最新本地包](docs/RECORDS_ISOLATION_2026-10-19.md)。97场景／144类源码、22类构建、24类解压运行通过；旧校园挂起布局保留。仍LOCAL_ONLY，未公开发布。
+
+> **2026-10-19 本地包依赖清理。** 不改玩法、角色或原始资产；排除未用审查模型及缓存，PCK 减少26.31%，ZIP 从278 MB降到239 MB。新清单工具15项、构建19类、中文路径解压独立运行16类通过；含两渲染器训练室／广播车与实际旧挂起档读回。附带依赖 hash 和既有许可原文，仍不是发行授权。见 [最新本地包与范围](docs/RUNTIME_EXPORT_2026-10-19.md)。Arcana 私信本轮因浏览器失败未发送，等待用户联系状态；未换模型、未公开发布。
+
+> **2026-10-19 广播车可读性与实物闸口。** 加入可观察状态卡、真实散热倒计时、落点环、命中差异、广播断电杆／线灯和实际抬起碰撞的车行闸；修复打车误报掩体及广播／机件声被标成移动声。原模型、服装、训练室保留。见 [玩法、原生画面与最新Windows本地包](docs/BLOCKADE_POLISH_2026-10-19.md)。最终95/95场景、140类源码、15类构建及15类解压验证通过；仍LOCAL_ONLY，公开授权和真实80%好评未达成。
+
+> **2026-10-19 新增封街广播车遭遇。** 作战室可选「哨卡／请保持冷静」：红线锁定四连射、蓝色散热窗口反击、西巷切广播、感染者声源调查和北门撤离都已接入；不是只加血量。原主角及训练室保留，车辆仍为固定可编辑简模。见 [进入方法和新版 Windows 本地包](docs/BLOCKADE_2026-10-19.md)。94/94 场景、138 类源码验证、14 类构建和12类解压包验证通过；仍 LOCAL_ONLY，未提交／推送或公开发布，真实80%好评目标继续。
+
+> **2026-10-19 新增休勤训练室。** 基地「休息室→进入训练室」可做举臂体侧伸展、跑步机快走、训练凳坐站或坐着休息；角色会走到器材旁再开始动作。全身/环绕镜头、暂停、倍速与Tab隐藏界面已接入，不消耗物资或改变存档。沿用原模型与服装，未换Arcana。见 [操作、动图与新版本地包](docs/TRAINING_ROOM_2026-10-19.md)。本地WIP，未提交/推送，包不可公开上传；公开发布及真实80%好评目标继续。
+
+> **2026-10-19 上一批内容：水塔街「谁先接这一桶」。** 新增独立地图：修理铺搬八公斤电池、广播广场引敌、泵房交战和两种放水路线。居民水桶开放西院出口/两份敷料；运水车开放北口/九十发普通弹，实物需要拾取并撤离。唐葵与沈砚霜的争执、局内选择和不同收尾已接入。首任务后在「作战室→出击行动」选水塔街；不必先打完校园。见 [玩法、本地包和边界](docs/WATERWORKS_2026-10-19.md)。本地WIP，未提交/推送；模型未换，包不可公开上传，完整发布及真实80%好评目标继续。
+
+> **2026-10-19 上一批：校园感染者近战可读性，本地WIP，未提交/推送。** 抬手后刹住追击并锁定瞄准点，90度地面扇区对应原攻击距离，半径内侧移也能躲开；站着不动仍受伤。提示按观察/掩体裁剪，暂停与挂起恢复保留原计时。新版LOCAL_ONLY独立包已包含此改动；39项专项及实际包间的一份旧挂起档读回通过。最终 **89/89场景、127/127结果通过，0 ERROR，仅2条冷导入FBX警告**；首轮对白原生输入失败记录保留，夹具加强后1245项通过，不冒充生产漏点根因已明。见 [玩法与本地包](docs/CAMPUS_MELEE_2026-10-19.md)。未换模型、未公开发布；授权与真实玩家首小时/80%好评目标仍在进行。
+
+> **2026-10-19 上一批：Windows x64 本地独立试玩包与正式音频退出修复，本地WIP，未提交/推送。** 匹配4.7.2官方模板已校验安装；Release EXE/PCK实际通过启动、跨进程挂起恢复、旧档夹具、中文路径复制/ZIP解压及原生校园交战撤离。包明确为 **LOCAL_ONLY，不可上传**，QA只在构建副本中注入，原型使用独立存档名。退出音频停止请求增加混音排空，模型安全校验移出编辑器插件依赖。最终 **89/89场景、126/126结果通过，0 ERROR**，仅两条既有冷导入FBX警告。当前源清单36个定义，未改内容数据；旧节31不可沿用。见 [本机包与验证范围](docs/LOCAL_WINDOWS_BUILD_2026-10-19.md) 和 [机器记录](docs/local_windows_2026-10-19_validation.json)。授权、首小时陌生玩家体验、跨版本升级/最低硬件、正式发布和真实80%好评仍未完成。
+
+> **2026-10-19 上一批：交战命中与来袭方向反馈，本地WIP，未提交/推送。** 实际可见伤害才确认命中，击倒使用独立提示；受击方向不追踪隐藏敌人，开箱也能看到警告。保持伤害、AI、地图、经济与存档规则。最终隔离 **89/89场景、123/123结果通过，0 ERROR**；保留2条FBX及1条Main强退ObjectDB warning。新套件55逻辑/55 Forward+检查，Compatibility同套件55检查通过；正常AI校园自动交战路线改动前后均9发/3击杀并撤离。见 [本批实现](docs/COMBAT_FEEDBACK_2026-10-19.md) 与 [机器记录](docs/combat_feedback_2026-10-19_validation.json)。不代表陌生玩家六委托通关、真实听感或已发布获评。
+
+> **2026-10-19 上一批：补给箱键盘与手柄操作改善，本地WIP，未提交/推送。** 开箱自动选中、连续拿取保留焦点、长列表随焦点滚动，逐堆预告负重差额；补菜单 A/B/十字键事件，修复 A 确认误触翻滚，战斗与走动仍继续。最终隔离 **88/88场景、121/121 runner结果通过，0 ERROR**；仅2条既有冷导入FBX警告。补给箱97逻辑/98原生窗口检查、Compatibility同套件98检查通过（非全量回退验收）。见 [本批实现](docs/CACHE_INPUT_2026-10-19.md) 与 [验证记录](docs/cache_input_2026-10-19_validation.json)。未换模型、未发布；真人完整路线、资产许可和真实80%好评仍未完成。
+
+> **2026-10-19 上一批：校园出击指引已接入，本地WIP，未提交/推送。** 当前委托成为主目标，基地/作战室/地图同步下一步，作战室可直达负责人；可选行动和撤退规则不变。修复英文简报溢出和初始空提示纸条。最终隔离 **88/88场景、121/121 runner结果通过，0 ERROR**；保留冷导入2个FBX警告及Main强退1条ObjectDB警告。见 [本批实现](docs/SORTIE_GUIDANCE_2026-10-19.md) 与 [验证记录](docs/sortie_guidance_2026-10-19_validation.json)。上一批23段人物对白保留；公开发布、真人体验和80%好评目标仍未完成。下方87/119等为此前批次。
+
+> **2026-10-19：校园人物对白批已接入，本地WIP，未提交/推送。** 联系人委托页新增23段、113句双语短对话，按实际任务进度变化，可跳过/重听；六任务简报与机械条件分离，现场录音/无线电重写。最终隔离 **87/87场景、119/119 runner结果通过，0 ERROR**，仅冷导入2个原有FBX警告。详见 [本批实现](docs/CAMPUS_VOICE_2026-10-19.md) 与 [验证记录](docs/campus_voice_2026-10-19_validation.json)。新长期方向为 [公开试玩与真实80%好评](docs/PUBLIC_PLAYTEST_TARGET.md)，不是已发布或已获好评；Arcana仍仅本地预览，用户明确暂不换模型，公开资产许可和真人体验尚未验收。下方10-17等数量为历史基线。
 
 > **2026-10-17 自动化测试收口：86/86 场景、117/117 runner结果项通过，0 ERROR；Compatibility补充4项图形检查通过。** 已修复测试库存漂移，并将888条现行中文译文同步回JSON源，补入可重复构建回归。仅冷导入保留2个既有FBX警告；英文委托页仍有中英混排、真人长期体验/听感/最低硬件/发行许可仍未验收。本轮未提交推送。见 [本轮报告](docs/TEST_CLOSEOUT_2026-10-17.md) 和 [验证数据](docs/test_closeout_2026-10-17_validation.json)。
 
@@ -18,7 +99,7 @@ Adult male/female reference profiles each include seven playable clips; new infe
 
 Three physical fitting kits can be found/bought, installed on an owned gun, removed, lost with carried equipment and saved: quickloader, suppressor and observation optic. See [actual item rules](docs/FITTING_KITS_IMPLEMENTATION.md). The fixed story recorder is the fourth new item, not an extra loot/trade system.
 
-Current profile schema **8**, checkpoint **6**; old profiles and suspended contracts retain their old facts/assets. **79/79 scenes, 102/102 result rows PASS**, zero errors, two existing cold-import FBX warnings; cross-process/crash recovery, Main and Forward+ route regression pass. See [exact verification](docs/campus_batch2_2026-10-15_validation.json). This checkpoint is delivered through Git; validation records retain their original pre-commit WIP status. Human pacing/audio/minimum-hardware and character release clearance are not implied.
+2026-10-15 verification baseline: profile schema **8**, checkpoint **6**; old profiles and suspended contracts retain their old facts/assets. **79/79 scenes, 102/102 result rows PASS**, zero errors, two existing cold-import FBX warnings; cross-process/crash recovery, Main and Forward+ route regression pass. See [exact verification](docs/campus_batch2_2026-10-15_validation.json). This checkpoint is delivered through Git; validation records retain their original pre-commit WIP status. Human pacing/audio/minimum-hardware and character release clearance are not implied.
 
 The [tool research](docs/CONTENT_PIPELINE_ROADMAP.md) and [earlier project audit](docs/PROJECT_STATUS_2026-10-14.md) preserve historical selection and counts; they do not override this checkpoint.
 
@@ -44,7 +125,7 @@ The playable prototype now uses the imported Artoria Bunny Suit with its scarf h
 
 The [original narrative production package](docs/narrative/README.md) contains twelve chapters, eight bosses, eight important adult women, eighteen key scenes, five relationship scenes, five endings and a complete first-chapter script. This is a design deliverable; those campaign chapters are not implemented in the current demo.
 
-Recovery includes safe save replacement with backups, corrupt-save recovery and a shared pause/abandon/return/quit flow. Magazines consume carried ammunition and count toward weight. **Suspend** saves the current sortie; **Resume Sortie** restores its ammo, loot, enemies and mission state after restarting. Automatic checkpoints occur every two simulation seconds; the current profile envelope is schema **8**, with legacy migration and narrative compatibility data. See [recovery behavior and historical validation](docs/alpha_0_1/SUSPEND.md) and [current status](docs/PROJECT_STATUS_2026-10-14.md).
+Recovery includes safe save replacement with backups, corrupt-save recovery and a shared pause/abandon/return/quit flow. Magazines consume carried ammunition and count toward weight. **Suspend** saves the current sortie; **Resume Sortie** restores its ammo, loot, enemies and mission state after restarting. Automatic checkpoints occur every two simulation seconds; the current profile envelope is schema **9**, with legacy migration and narrative compatibility data. See [recovery behavior and historical validation](docs/alpha_0_1/SUSPEND.md) and [current status](docs/PROJECT_STATUS_2026-10-14.md).
 
 Medical supplies are actual carried items: buy dressings/medkits in Workshop or find them in Streets containers, then choose how many to pack in Operations. `H` uses a dressing (up to 40 HP / 2.5s); `J` uses a medkit (up to 100 HP / 5s). Remain still: movement, combat, damage or interaction interrupts treatment without consuming the dose. Completion spends one item and releases its carry weight. Pending treatment survives suspend/resume. See [medical rules and evidence](docs/alpha_0_1/MEDICAL.md).
 

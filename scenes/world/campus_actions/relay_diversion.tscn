@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3]
+[ext_resource type="Script" path="res://scripts/world/streets/relay_diversion.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/environment/compact_hideout/furniture/radio.glb" id="2"]
+[sub_resource type="StandardMaterial3D" id="metal"]
+albedo_color = Color(0.22, 0.3, 0.29, 1)
+[sub_resource type="StandardMaterial3D" id="orange"]
+albedo_color = Color(0.9, 0.45, 0.12, 1)
+[sub_resource type="BoxMesh" id="box"]
+size = Vector3(0.9, 1.25, 0.5)
+[sub_resource type="BoxMesh" id="pole"]
+size = Vector3(0.15, 3.4, 0.15)
+[sub_resource type="BoxMesh" id="horn"]
+size = Vector3(1.1, 0.6, 0.7)
+[sub_resource type="BoxMesh" id="handle"]
+size = Vector3(0.09, 0.4, 0.12)
+[node name="CampusRelayDiversion" type="Node3D"]
+position = Vector3(-49, 0, -12)
+script = ExtResource("1")
+[node name="Box" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.625, 0)
+mesh = SubResource("box")
+material_override = SubResource("metal")
+[node name="Radio" parent="." instance=ExtResource("2")]
+position = Vector3(0, 1.25, 0)
+scale = Vector3(1.5, 1.5, 1.5)
+[node name="Switch" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.9, 0.3)
+mesh = SubResource("handle")
+material_override = SubResource("orange")
+[node name="WorldLabel" type="Label3D" parent="."]
+position = Vector3(0, 2.2, 0)
+text = "WEST PA / ONE USE"
+font_size = 24
+pixel_size = 0.009
+billboard = 1
+outline_size = 4
+[node name="Speaker" type="Node3D" parent="."]
+position = Vector3(-1, 0, -31)
+[node name="Pole" type="MeshInstance3D" parent="Speaker"]
+position = Vector3(0, 1.7, 0)
+mesh = SubResource("pole")
+material_override = SubResource("metal")
+[node name="Horn" type="MeshInstance3D" parent="Speaker"]
+position = Vector3(0, 3.1, 0)
+mesh = SubResource("horn")
+material_override = SubResource("metal")
+[node name="Lamp" type="MeshInstance3D" parent="Speaker"]
+position = Vector3(0, 3.1, 0.36)
+scale = Vector3(0.2, 0.2, 0.2)
+mesh = SubResource("horn")
+material_override = SubResource("orange")

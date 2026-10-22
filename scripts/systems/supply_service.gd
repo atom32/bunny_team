@@ -15,7 +15,8 @@ const FACILITY_RECIPES := {
 }
 
 static func recipes(profile: ProfileState) -> Dictionary:
-	var result := RECIPES.duplicate()
+	var result := RecoveredCarrier.RECIPES.duplicate() if count(profile, RecoveredCarrier.FRAME) > 0 else {}
+	result.merge(RECIPES)
 	for id in FACILITY_RECIPES:
 		if CampaignService.unlocked(profile, FACILITY_RECIPES[id].facility): result[id] = FACILITY_RECIPES[id]
 	return result
@@ -27,6 +28,7 @@ static func buy_price(definition: ItemDefinition, profile: ProfileState) -> int:
 static func stock(profile: ProfileState) -> Array[ItemDefinition]:
 	var result: Array[ItemDefinition] = []
 	for definition in ContentDB.get_items():
+		if definition.has_tag(&"recovered_only"): continue
 		if not (definition.has_tag(&"weapon") or definition.has_tag(&"armor") or definition.has_tag(&"backpack") or definition.has_tag(&"ammo") or definition.has_tag(&"fitting_kit") or definition.has_tag(&"food") or definition.has_tag(&"drink") or definition is MedicalDefinition): continue
 		if definition.has_tag(&"fitting_kit") and not profile.first_mission_completed: continue
 		if not profile.first_mission_completed and definition.id in [&"weapon.sniper_01", &"weapon.lmg_01", &"weapon.rocket_launcher_01", &"ammo.556_ap", &"ammo.rocket_standard", &"equipment.thruster_pack_01"]: continue

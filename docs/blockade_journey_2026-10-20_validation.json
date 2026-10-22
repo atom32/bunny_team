@@ -1,0 +1,168 @@
+{
+  "date": "2026-10-20",
+  "scope": "Blockade v2 searchlight approach and north-yard counterweight breakout; not five-hour/human/release acceptance.",
+  "goal_status": "active",
+  "source": {
+    "snapshot": "D:\\tmp\\bunny_blockade_v2_20261020_final01",
+    "test_scenes": 112,
+    "categories": 189,
+    "all_pass": true,
+    "results_sha256": "36b80a2656a41c19c200ef3d25ee685b9bab987a6d05cbe5aab9fe7bc691eb83",
+    "original_fbx_import_warnings": 2
+  },
+  "build": {
+    "folder": "D:\\tmp\\bunny_blockade_v2_20261020_build01",
+    "categories": 81,
+    "all_pass": true
+  },
+  "independent_zip": {
+    "categories": 10,
+    "launcher_cases": 10,
+    "compiled_campus_seed_prefix_cases": 4,
+    "all_pass": true,
+    "native_serial": true,
+    "system_only_PATH": true
+  },
+  "archive": {
+    "archive": "D:\\tmp\\bunny_blockade_v2_20261020_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 245279401,
+    "sha256": "9bb8de183b506262e0ef4ae9e0763b052863377e8ed54caf4c4dfbbba9fa70b6",
+    "extracted_to": "D:\\tmp\\小兔试玩 哨卡突围 20261020 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false,
+    "fresh_delivery_extracted_to": "D:\\tmp\\小兔试玩 哨卡突围 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "fresh_static_files_match": true,
+    "fresh_preview_userdata_not_preplayed": true
+  },
+  "pack_audit": {
+    "entries": 1476,
+    "all_byte_ranges_and_md5": true,
+    "forbidden_original": [],
+    "forbidden_cache": [],
+    "arcana": [],
+    "combatgirls": [],
+    "legacy_and_v2_maps": true,
+    "bucket_scene_and_script_present": true
+  },
+  "all_non_document_root_frozen_build_sources_match": true,
+  "actual_earned_routes": {
+    "earned_forward": {
+      "evidence": "D:\\tmp\\bunny_blockade_v2_20261020_build01\\portable_earned_forward\\blockade_earned.json",
+      "sha256": "108dbf3d3072737fa247e9d53e836b10a3a96abcc223290b0d389a9792968eed",
+      "checks": 18,
+      "route": {
+        "blockade": {
+          "alarm": false,
+          "escape_open": true,
+          "van_down": true,
+          "version": 2
+        },
+        "damage": 0,
+        "health": 260.0,
+        "kills": 5,
+        "mission": "blockade_run",
+        "shots_total": 38
+      },
+      "before_returns": 8,
+      "after_returns": 9
+    },
+    "earned_compat_en": {
+      "evidence": "D:\\tmp\\bunny_blockade_v2_20261020_build01\\portable_earned_compat_en\\blockade_earned.json",
+      "sha256": "6c38219bee2fab1180811cbe26d4fcc64c3892d50fc8c26df3310d26b0a3e83d",
+      "checks": 18,
+      "route": {
+        "blockade": {
+          "alarm": true,
+          "escape_open": true,
+          "van_down": true,
+          "version": 2
+        },
+        "damage": 26,
+        "health": 234.8,
+        "kills": 7,
+        "mission": "blockade_run",
+        "shots_total": 51
+      },
+      "before_returns": 8,
+      "after_returns": 9
+    }
+  },
+  "legacy_v1_producer": {
+    "producer_project": "D:\\tmp\\bunny_campus_ram_20261020_final04\\project",
+    "source_manifest": "D:\\tmp\\bunny_campus_ram_20261020_final04\\source_manifest.json",
+    "source_manifest_sha256": "c077fa8a492f0ccbaaaca7a414be4727a97bfa9347428742fd68e6dada4e25ad",
+    "source_input": "D:\\tmp\\bunny_campus_ram_20261020_build01\\bucket_earned_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+    "source_input_sha256": "c614eaa310821e2cf69bcc2e8ecb657bc4369ddf2fc1210ff9b8d49bc9fef00a",
+    "produced": "D:\\tmp\\bunny_blockade_v2_20261020_dev01\\old_producer_userdata\\Godot\\app_userdata\\Bunny Verification bunny_campus_ram_20261020_final04\\blockade_journey_test.json",
+    "sha256": "c839ff4274d0d18b099cb267925ba752d2b514ce6cd435783f679ec4987a8de0",
+    "reader_input": "D:\\tmp\\bunny_blockade_v2_20261020_dev01\\legacy_userdata\\Godot\\app_userdata\\Bunny Verification bunny_blockade_v2_20261020_dev01\\blockade_journey_test.json"
+  },
+  "preserved": {
+    "assets/": {
+      "old_count": 881,
+      "all_unchanged": true
+    },
+    "scenes/": {
+      "old_count": 101,
+      "all_unchanged": true
+    },
+    "translations": {
+      "old": 1567,
+      "current": 1594,
+      "old_unchanged": true
+    }
+  },
+  "originals_preserved": {
+    "assets/": {
+      "old_count": 881,
+      "all_original_bytes_preserved": true
+    },
+    "scenes/": {
+      "old_count": 97,
+      "all_original_bytes_preserved": true
+    },
+    "personal_saves": {
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455246252200
+      },
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455253759300
+      }
+    },
+    "paid_archive": {
+      "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+      "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec"
+    },
+    "arcana": {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd"
+    },
+    "translations": {
+      "old_preserved": 1495,
+      "current": 1525
+    }
+  },
+  "blockade_facts_version": 2,
+  "blockade_facts_fields": [
+    "version",
+    "alarm",
+    "van_down",
+    "escape_open"
+  ],
+  "profile_schema": 11,
+  "checkpoint_schema": 6,
+  "paid_motion_data_in_default_package": false,
+  "public_release_approved": false,
+  "not_claimed": [
+    "human time, difficulty, enjoyment or 80 percent reviews",
+    "minimum hardware or clean VM",
+    "audio listening acceptance",
+    "final vehicle/environment art or future melee pack",
+    "three new modeled or voiced contacts"
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "scope": "Current-source normally playable local16 trial, not independent Windows distribution or public release. No new measured gameplay minutes.",
+  "headless_cases": 7,
+  "native_and_reads": 6,
+  "backward_library_cases": 2,
+  "source_clips": 16,
+  "mapped_bones": 52,
+  "controlled_combinations": 20,
+  "reviewed_images": [
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_forward01\\WalkFL_side.png",
+      "sha256": "baf446ee4139542d16238f7ac48b187335805fd01d020306a2f94e7fdcf103a6"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_forward01\\WalkBR_front.png",
+      "sha256": "92f336162a3ab8857e940cb3c349113ee00c294e83a927cf16d7154a4d133bd8"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_forward01\\Run_side.png",
+      "sha256": "cdc9dd426d9ffe933f647de712425fe54b896e2805b418db9747db711e4917b7"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_forward01\\Reload_side.png",
+      "sha256": "9c1bd6de06067a3c0889fcba9b81697ca0816f1bbfba85458b0176bf33c38f57"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_forward01\\PutGun_side.png",
+      "sha256": "a1c8633bcc1f517f6c944bbc0aafded462a3c719f240cdd137e3f93a06f899b6"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_forward01\\Holstered_front.png",
+      "sha256": "193ce0789277bcc6f7d7ca65456f3129bd67518ddeacfb8bb85b65a6301b0c50"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_compat01\\WalkFR_side.png",
+      "sha256": "520704b0061f9df6054f5332f4108005f6f3ca5df82e14675782f79361f75e4b"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_compat01\\WalkBL_front.png",
+      "sha256": "7f8dbb094797179cf5dc9ff833723f3a8c2f0ee89c30a3881688b8af7995f998"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_compat01\\WalkReload_side.png",
+      "sha256": "59137438af737a95082622bbdeccae2ef24a54f69bd646daec253312c0422cb2"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_compat01\\HolsteredRun_side.png",
+      "sha256": "8668cda0f247d03dc967d9f99ad5cde0b151436125ceb1eda26ef472930d25cd"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_compat01\\Dodge_front.png",
+      "sha256": "7402cb45540e5e64991b74db4809548ca2b9647c5da0c91fe4c4f3168fba52e7"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\controlled16_compat01\\AimIdle_side.png",
+      "sha256": "8fd376a56f83fd4ee92b44ac029b121611b6a6536bbfefcdb763492efdb1ab06"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\actual16_forward01\\10b_mobility_and_interrupt.png",
+      "sha256": "3aa85270413a2786c05fdaea56fd17aabe70b40190657abdb43bc869d558b7e6"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\actual16_forward01\\16_loop_complete.png",
+      "sha256": "168e0216cdcb8aea5b8ce8ead3f86b57f3a1e41db01314fdd817aedc212fcb69"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\actual16_compat01\\10a_source_put_gun.png",
+      "sha256": "50af947c6581af9f0df8223978367b135d6f7ef33e610d78aab057886ca2a5d7"
+    },
+    {
+      "path": "D:\\tmp\\bunny_combat16_20261021_dev01\\actual16_compat01\\16_loop_complete.png",
+      "sha256": "02faa73f3ff82471cbda3097dec1b9de701319dcaa1c414d195f4aa4fb4441cf"
+    }
+  ],
+  "routes": [
+    {
+      "name": "actual16_01",
+      "checks": 96,
+      "shots": 14,
+      "health": 257.12,
+      "usage": {
+        "AimIdle": 649,
+        "Dodge": 9,
+        "Hit": 32,
+        "Idle": 818,
+        "PutGun": 156,
+        "Reload": 194,
+        "Run": 101,
+        "Shoot": 175,
+        "TakeGun": 206,
+        "Walk": 1144,
+        "WalkBL": 25,
+        "WalkBR": 25,
+        "WalkBack": 18,
+        "WalkFL": 34,
+        "WalkFR": 35,
+        "WalkRelaxed": 102
+      },
+      "events": {
+        "damage": 1,
+        "dodge": 1,
+        "fire": 14,
+        "interrupt": 2,
+        "put": 3,
+        "take": 2
+      }
+    },
+    {
+      "name": "actual16_forward01",
+      "checks": 96,
+      "shots": 14,
+      "health": 257.12,
+      "usage": {
+        "AimIdle": 701,
+        "Dodge": 9,
+        "Hit": 32,
+        "Idle": 832,
+        "PutGun": 156,
+        "Reload": 194,
+        "Run": 102,
+        "Shoot": 175,
+        "TakeGun": 206,
+        "Walk": 1153,
+        "WalkBL": 25,
+        "WalkBR": 25,
+        "WalkBack": 18,
+        "WalkFL": 37,
+        "WalkFR": 35,
+        "WalkRelaxed": 102
+      },
+      "events": {
+        "damage": 1,
+        "dodge": 1,
+        "fire": 14,
+        "interrupt": 2,
+        "put": 3,
+        "take": 2
+      }
+    },
+    {
+      "name": "actual16_compat01",
+      "checks": 96,
+      "shots": 8,
+      "health": 257.12,
+      "usage": {
+        "AimIdle": 615,
+        "Dodge": 9,
+        "Hit": 32,
+        "Idle": 811,
+        "PutGun": 150,
+        "Reload": 194,
+        "Run": 99,
+        "Shoot": 107,
+        "TakeGun": 206,
+        "Walk": 1140,
+        "WalkBL": 25,
+        "WalkBR": 25,
+        "WalkBack": 18,
+        "WalkFL": 34,
+        "WalkFR": 36,
+        "WalkRelaxed": 102
+      },
+      "events": {
+        "damage": 1,
+        "dodge": 1,
+        "fire": 8,
+        "interrupt": 2,
+        "put": 3,
+        "take": 2
+      }
+    }
+  ],
+  "targeted_visual_review_accepted_for_local_trial": true,
+  "remaining_visual_limits": [
+    "No full-frame foot-plant/cloth clearance guarantee; some visible foot lift remains.",
+    "PutGun contains an outstretched-arm source transition; final recovery is relaxed, not a claim every transition is polished.",
+    "Six authored aim-relative directions choose nearest clip, not a new eight-way blendspace.",
+    "Only AR556 fully native-reviewed; SMG/R7 and complete checkpoint/death/rapid-swap matrix remain.",
+    "Normal overhead actor is small; no new close-up gameplay camera."
+  ],
+  "interaction_scope": "Pack does not supply a general furniture/gym action in the examined39 rifle clips. Existing dedicated furniture/contact actions retained, not relabeled as purchased animation.",
+  "default_repo_motion_data_unchanged": true,
+  "optional_adapter_only_in_repo": "D:\\bunny_team\\tools\\local_rifle_trial_player.gd",
+  "paid_library_external": "D:\\tmp\\bunny_combat16_20261021_dev01\\project\\local_motion\\library.tres",
+  "source_library_sha256": "a747a05bb010083d413ce7e8aa36a114c22ef3dd7339251493fc034a22069ec4",
+  "launcher": "D:\\tmp\\bunny_combat16_20261021_dev01\\运行最新游戏_十六动作本地版.cmd",
+  "launcher_automatically_started": false,
+  "fresh_play_profile_absent": true,
+  "independent_windows_exe_or_zip_created": false,
+  "public_release_approved": false,
+  "five_hour_playtime_proven": false,
+  "protected_unchanged": [
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+      "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+      "mtime_ns": 1792485868281761900
+    },
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+      "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+      "mtime_ns": 1792485868289265500
+    },
+    {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+      "mtime_ns": 1792376341839829300
+    },
+    {
+      "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+      "mtime_ns": 1792510165593990200
+    },
+    {
+      "path": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+      "mtime_ns": 1792542556303376100
+    },
+    {
+      "path": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "sha256": "b20b04ee1a281e7d51d555c82b878b73a3e894ea5a88cef5efaa59723197ccd5",
+      "mtime_ns": 1792553093529563600
+    }
+  ],
+  "purchased_archive_unchanged": {
+    "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+    "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec",
+    "mtime_ns": 1790951818552782600
+  }
+}

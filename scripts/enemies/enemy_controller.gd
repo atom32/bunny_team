@@ -2,6 +2,7 @@ class_name EnemyController
 extends CharacterBody3D
 
 signal died(enemy: EnemyController)
+signal damage_received(enemy: EnemyController, packet: DamagePacket, applied_damage: float)
 
 const RAGDOLL_SCENE := preload("res://scenes/player/ragdoll_proxy.tscn")
 const BASE_VISUAL_SCALE := Vector3.ONE * 1.1
@@ -43,6 +44,7 @@ var _engaged := false
 var _movement_direction := Vector3.ZERO
 var _shot_aim_point := Vector3.ZERO
 var _shot_timer: SceneTreeTimer
+var movement_duty := Callable() # Authored route only when no contact is being pursued.
 
 
 func configure_from_definition(definition: EnemyDefinition) -> bool:
@@ -135,6 +137,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _movement_goal(delta: float) -> Vector3:
+	if movement_duty.is_valid() and awareness.state in [EnemyAwareness.State.PATROL, EnemyAwareness.State.RETURN]:
+		return movement_duty.call()
 	return tactics.destination(self, delta)
 
 
@@ -180,6 +184,7 @@ func receive_damage(packet: DamagePacket) -> float:
 		hear_noise(global_position - packet.knockback_impulse.normalized() * 5.0, &"impact")
 	CombatEffects.hit(get_tree().current_scene, global_position + Vector3.UP * 1.25, Color("fff1cf"), clampf(applied_damage / 18.0, 0.65, 1.35))
 	_flash_hit(packet.knockback_impulse)
+	damage_received.emit(self, packet, applied_damage)
 	if health <= 0.0:
 		_die(packet.knockback_impulse)
 	return applied_damage

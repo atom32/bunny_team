@@ -1,0 +1,829 @@
+{
+  "date": "2026-10-20T02:03:09.972147+08:00",
+  "status": "verified_local_story_and_portable_build",
+  "previous_goal_turn": "progress: twelve source motions integrated into separate local trial; this turn adds actual story content to default game.",
+  "goal_achieved": false,
+  "five_hour_complete": false,
+  "public_release_approved": false,
+  "content": {
+    "title": "给你留的位置",
+    "gate": "actual first mission and settled Q01",
+    "entry": "Rest / optional OpenSeatMoment",
+    "branches": [
+      "stay: pick up warm cup",
+      "rise: stand, get called back, re-seat and pick up cup"
+    ],
+    "state_policy": "No rewards, stats, seen flag or save schema; skip and replay allowed. Existing normal-base stash layout reconciliation happens before the scene boundary.",
+    "actor_policy": "Original heroine animated in 3D; three contacts remain offscreen radio subtitles, no new 3D NPC actor or voice dubbing.",
+    "new_translation_entries": 23,
+    "playtime": "A short optional scene, not a measured hour or completion of the thirty-minute/five-hour milestones."
+  },
+  "source": {
+    "current": "D:\\tmp\\bunny_seat_20261020_final03",
+    "default_full_suite": "D:\\tmp\\bunny_seat_20261020_final03",
+    "source_cases": 150,
+    "test_scenes": 104,
+    "story_matrix": [
+      {
+        "name": "unit_headless",
+        "command": [
+          "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_seat_20261020_final03\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tests/seat_moment_test.tscn",
+          "--quit-after",
+          "600000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "83473c6c20c58537f12aae65064c72ea8105d9d3d34dbc8807470c51966a72c8"
+      },
+      {
+        "name": "unit_forward",
+        "command": [
+          "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_seat_20261020_final03\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/seat_moment_test.tscn",
+          "--quit-after",
+          "600000",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "09a97a8a1f1a34758d38e10d6ae0ddce67a6dbf8f644e1a839730c53a6cc32f7"
+      },
+      {
+        "name": "unit_forward_en",
+        "command": [
+          "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_seat_20261020_final03\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/seat_moment_test.tscn",
+          "--quit-after",
+          "600000",
+          "--",
+          "--capture",
+          "--english"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "09a97a8a1f1a34758d38e10d6ae0ddce67a6dbf8f644e1a839730c53a6cc32f7"
+      },
+      {
+        "name": "unit_compat",
+        "command": [
+          "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_seat_20261020_final03\\project",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/seat_moment_test.tscn",
+          "--quit-after",
+          "600000",
+          "--",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "8749df334b7bb5640323cf16c670f2df4e47425e615a107d75bde03b57457bd5"
+      },
+      {
+        "name": "unit_compat_en",
+        "command": [
+          "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_seat_20261020_final03\\project",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tests/seat_moment_test.tscn",
+          "--quit-after",
+          "600000",
+          "--",
+          "--capture",
+          "--english"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "8749df334b7bb5640323cf16c670f2df4e47425e615a107d75bde03b57457bd5"
+      },
+      {
+        "name": "earned_forward",
+        "command": [
+          "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_seat_20261020_final03\\project",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tools/seat_return_run.tscn",
+          "--quit-after",
+          "600000"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "188f2c6b874f46411102ae2c41a2a141502424d108df2a08310223b20054afb0"
+      },
+      {
+        "name": "forward_read",
+        "command": [
+          "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_seat_20261020_final03\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tools/seat_return_run.tscn",
+          "--quit-after",
+          "600000",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "8d6d6617320f65620b3d04ae61941a16def3ecb50ea2db13d62038216e0dbe1f"
+      },
+      {
+        "name": "earned_compat",
+        "command": [
+          "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_seat_20261020_final03\\project",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "res://tools/seat_return_run.tscn",
+          "--quit-after",
+          "600000",
+          "--",
+          "--stay",
+          "--english"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "49d1083fda9adde759f03dafb5b608a785fff5380d674669f377b82183217798"
+      },
+      {
+        "name": "compat_read",
+        "command": [
+          "E:/Godot/Godot_v4.7.2-stable_win64_console.exe",
+          "--path",
+          "D:\\tmp\\bunny_seat_20261020_final03\\project",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "res://tools/seat_return_run.tscn",
+          "--quit-after",
+          "600000",
+          "--",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "8d6d6617320f65620b3d04ae61941a16def3ecb50ea2db13d62038216e0dbe1f"
+      }
+    ],
+    "copy_audit": [
+      {
+        "copy": "current_full_suite_and_story",
+        "directory": "D:\\tmp\\bunny_seat_20261020_final03",
+        "non_document_files": 3769,
+        "all_bytes_match_manifest_except_declared_isolated_config": true
+      },
+      {
+        "copy": "release_build",
+        "directory": "D:\\tmp\\bunny_seat_20261020_build02",
+        "non_document_files": 3769,
+        "all_bytes_match_manifest_except_declared_isolated_config": true
+      }
+    ],
+    "non_document_files": 3769,
+    "runtime_files": 1428,
+    "full_suite_exception": null,
+    "cold_import_warnings": "Two pre-existing FBX UTF8 metadata warnings; no other warning/error.",
+    "full_previous_native_route_matrix_rerun": false
+  },
+  "build": {
+    "directory": "D:\\tmp\\bunny_seat_20261020_build02",
+    "cases": 40,
+    "pass": true,
+    "portable_cases": [
+      {
+        "name": "zip_inventory",
+        "command": [
+          "D:\\tmp\\小兔试玩 给你留的位置 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "inventory"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "a47c88a825ff4b7f0317609bb009cffe94674448211f89a46e86e0bf57319ae1"
+      },
+      {
+        "name": "zip_write",
+        "command": [
+          "D:\\tmp\\小兔试玩 给你留的位置 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "d158db50383ff1637f5d716b55a7c5893a1704598c66b994dbe1f54cf10444cc"
+      },
+      {
+        "name": "zip_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 给你留的位置 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "bb13e2754bd53c5e6ef690825899cd42a86df68b5c74b29d533c4f824f3a326b"
+      },
+      {
+        "name": "native_seat",
+        "command": [
+          "D:\\tmp\\小兔试玩 给你留的位置 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "seat",
+          "--capture"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "09a97a8a1f1a34758d38e10d6ae0ddce67a6dbf8f644e1a839730c53a6cc32f7"
+      },
+      {
+        "name": "compat_seat_en",
+        "command": [
+          "D:\\tmp\\小兔试玩 给你留的位置 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "seat",
+          "--capture",
+          "--english"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "8749df334b7bb5640323cf16c670f2df4e47425e615a107d75bde03b57457bd5"
+      },
+      {
+        "name": "earned_forward",
+        "command": [
+          "D:\\tmp\\小兔试玩 给你留的位置 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "forward_plus",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "seat_return"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "188f2c6b874f46411102ae2c41a2a141502424d108df2a08310223b20054afb0"
+      },
+      {
+        "name": "earned_forward_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 给你留的位置 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "seat_return",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "8d6d6617320f65620b3d04ae61941a16def3ecb50ea2db13d62038216e0dbe1f"
+      },
+      {
+        "name": "earned_compat",
+        "command": [
+          "D:\\tmp\\小兔试玩 给你留的位置 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--rendering-method",
+          "gl_compatibility",
+          "--audio-driver",
+          "Dummy",
+          "--resolution",
+          "1280x720",
+          "--",
+          "--local-qa",
+          "seat_return",
+          "--stay",
+          "--english"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "49d1083fda9adde759f03dafb5b608a785fff5380d674669f377b82183217798"
+      },
+      {
+        "name": "earned_compat_read",
+        "command": [
+          "D:\\tmp\\小兔试玩 给你留的位置 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "seat_return",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "log_sha256": "8d6d6617320f65620b3d04ae61941a16def3ecb50ea2db13d62038216e0dbe1f"
+      }
+    ],
+    "launcher_checks": 3,
+    "archive": {
+      "archive": "D:\\tmp\\bunny_seat_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "bytes": 239404893,
+      "sha256": "9f59d2036d0c9905af8a50dea02a43e5877078f3429d29d1c51dff85bea1932e",
+      "extracted_to": "D:\\tmp\\小兔试玩 给你留的位置 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+      "all_files_match": true,
+      "matches_official_release_template": true,
+      "public_release_approved": false
+    },
+    "pck": {
+      "exported_file_entries": 1327,
+      "all_entry_checksums_verified": true,
+      "forbidden_original_entries": [],
+      "forbidden_imported_cache_entries": [],
+      "arcana_name_entries": [],
+      "combatgirls_name_entries": [],
+      "local_qa_entries": [
+        "local_qa/blockade.gd.remap",
+        "local_qa/blockade.gdc",
+        "local_qa/blockade.tscn.remap",
+        "local_qa/blockade_readability.gd.remap",
+        "local_qa/blockade_readability.gdc",
+        "local_qa/blockade_readability.tscn.remap",
+        "local_qa/blockade_route.gd.remap",
+        "local_qa/blockade_route.gdc",
+        "local_qa/blockade_route.tscn.remap",
+        "local_qa/campus_chapter.gd.remap",
+        "local_qa/campus_chapter.gdc",
+        "local_qa/campus_chapter.tscn.remap",
+        "local_qa/campus_q01.gd.remap",
+        "local_qa/campus_q01.gdc",
+        "local_qa/campus_q01.tscn.remap",
+        "local_qa/campus_q02.gd.remap",
+        "local_qa/campus_q02.gdc",
+        "local_qa/campus_q02.tscn.remap",
+        "local_qa/campus_route.gd.remap",
+        "local_qa/campus_route.gdc",
+        "local_qa/campus_route.tscn.remap",
+        "local_qa/cutaway.gd.remap",
+        "local_qa/cutaway.gdc",
+        "local_qa/cutaway.tscn.remap",
+        "local_qa/expected.json",
+        "local_qa/first_sortie.gd.remap",
+        "local_qa/first_sortie.gdc",
+        "local_qa/first_sortie.tscn.remap",
+        "local_qa/fitting.gd.remap",
+        "local_qa/fitting.gdc",
+        "local_qa/fitting.tscn.remap",
+        "local_qa/isolation.gd.remap",
+        "local_qa/isolation.gdc",
+        "local_qa/isolation.tscn.remap",
+        "local_qa/isolation_route.gd.remap",
+        "local_qa/isolation_route.gdc",
+        "local_qa/isolation_route.tscn.remap",
+        "local_qa/melee.gd.remap",
+        "local_qa/melee.gdc",
+        "local_qa/melee.tscn.remap",
+        "local_qa/normal_start.gd.remap",
+        "local_qa/normal_start.gdc",
+        "local_qa/normal_start.tscn.remap",
+        "local_qa/probe.gd.remap",
+        "local_qa/probe.gdc",
+        "local_qa/seat.gd.remap",
+        "local_qa/seat.gdc",
+        "local_qa/seat.tscn.remap",
+        "local_qa/seat_return.gd.remap",
+        "local_qa/seat_return.gdc",
+        "local_qa/seat_return.tscn.remap",
+        "local_qa/training.gd.remap",
+        "local_qa/training.gdc",
+        "local_qa/training.tscn.remap",
+        "local_qa/water_return.gd.remap",
+        "local_qa/water_return.gdc",
+        "local_qa/water_return.tscn.remap",
+        "local_qa/water_route.gd.remap",
+        "local_qa/water_route.gdc",
+        "local_qa/water_route.tscn.remap",
+        "local_qa/waterworks.gd.remap",
+        "local_qa/waterworks.gdc",
+        "local_qa/waterworks.tscn.remap"
+      ],
+      "authoring_copies_of_canonical_runtime_import_metadata": [
+        {
+          "metadata": "art_source/unitychan_battle_derivative/battle_presentation.glb.import",
+          "declared_source": "assets/characters/unitychan_battle/battle_presentation.glb",
+          "packaged_caches": []
+        },
+        {
+          "metadata": "art_source/unitychan_battle_legacy/unitychan_battle.fbx.import",
+          "declared_source": "assets/characters/unitychan_battle/unitychan_battle.fbx",
+          "packaged_caches": []
+        },
+        {
+          "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/jpg/Dark_Silhouette.jpg.import",
+          "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Dark_Silhouette.jpg",
+          "packaged_caches": []
+        },
+        {
+          "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/jpg/Light_Silhouette.jpg.import",
+          "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/jpg/Light_Silhouette.jpg",
+          "packaged_caches": []
+        },
+        {
+          "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Dark_Silhouette.png.import",
+          "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Dark_Silhouette.png",
+          "packaged_caches": []
+        },
+        {
+          "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Light_Frame.png.import",
+          "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Frame.png",
+          "packaged_caches": []
+        },
+        {
+          "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/png/Light_Silhouette.png.import",
+          "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/png/Light_Silhouette.png",
+          "packaged_caches": []
+        },
+        {
+          "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Dark_Silhouette.svg.import",
+          "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Dark_Silhouette.svg",
+          "packaged_caches": []
+        },
+        {
+          "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Light_Frame.svg.import",
+          "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Frame.svg",
+          "packaged_caches": []
+        },
+        {
+          "metadata": "art_source/unitychan_battle_derivative/License/License Logo/Others/svg/Light_Silhouette.svg.import",
+          "declared_source": "assets/characters/unitychan_battle/license/License Logo/Others/svg/Light_Silhouette.svg",
+          "packaged_caches": []
+        }
+      ]
+    },
+    "runtime_inventory": {
+      "selected_resources": 682,
+      "plain_files": 23
+    },
+    "paid_combat12_included": false,
+    "native_scope": "Only this NVIDIA Windows host, F+ and Compatibility. PATH system-only for extracted binary and launchers; not a clean-machine/minimum-hardware or real audio claim."
+  },
+  "units": [
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_final03\\unit_headless\\seat_moment.json",
+      "sha256": "8d65a922c5bffa2b8fd5287a00f932971994c6858db6308457e6e10ad6e5651d",
+      "data": {
+        "checks": 95,
+        "contacts": [
+          {
+            "branch": "stay",
+            "left_palm_error": 1.99920052068592e-07,
+            "max_bone_length_error": 1.19209289550781e-07,
+            "right_palm_error": 3.01357346188524e-07
+          },
+          {
+            "branch": "rise",
+            "left_palm_error": 2.98023223876953e-07,
+            "max_bone_length_error": 1.49011611938477e-07,
+            "right_palm_error": 3.01357346188524e-07
+          }
+        ],
+        "failures": [],
+        "scope": "Controlled scene fixture and viewport inputs, not earned progress or human acceptance"
+      }
+    },
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_final03\\unit_forward\\seat_moment.json",
+      "sha256": "2787cb62f25be36e8f6955c4f826cd0485f783dbcff88c1da951742e7315ec9e",
+      "data": {
+        "checks": 134,
+        "contacts": [
+          {
+            "branch": "stay",
+            "left_palm_error": 1.99920052068592e-07,
+            "max_bone_length_error": 1.19209289550781e-07,
+            "right_palm_error": 3.01357346188524e-07
+          },
+          {
+            "branch": "rise",
+            "left_palm_error": 2.98023223876953e-07,
+            "max_bone_length_error": 1.49011611938477e-07,
+            "right_palm_error": 3.01357346188524e-07
+          }
+        ],
+        "failures": [],
+        "scope": "Controlled scene fixture and viewport inputs, not earned progress or human acceptance"
+      }
+    },
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_final03\\unit_forward_en\\seat_moment.json",
+      "sha256": "2787cb62f25be36e8f6955c4f826cd0485f783dbcff88c1da951742e7315ec9e",
+      "data": {
+        "checks": 134,
+        "contacts": [
+          {
+            "branch": "stay",
+            "left_palm_error": 1.99920052068592e-07,
+            "max_bone_length_error": 1.19209289550781e-07,
+            "right_palm_error": 3.01357346188524e-07
+          },
+          {
+            "branch": "rise",
+            "left_palm_error": 2.98023223876953e-07,
+            "max_bone_length_error": 1.49011611938477e-07,
+            "right_palm_error": 3.01357346188524e-07
+          }
+        ],
+        "failures": [],
+        "scope": "Controlled scene fixture and viewport inputs, not earned progress or human acceptance"
+      }
+    },
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_final03\\unit_compat\\seat_moment.json",
+      "sha256": "2787cb62f25be36e8f6955c4f826cd0485f783dbcff88c1da951742e7315ec9e",
+      "data": {
+        "checks": 134,
+        "contacts": [
+          {
+            "branch": "stay",
+            "left_palm_error": 1.99920052068592e-07,
+            "max_bone_length_error": 1.19209289550781e-07,
+            "right_palm_error": 3.01357346188524e-07
+          },
+          {
+            "branch": "rise",
+            "left_palm_error": 2.98023223876953e-07,
+            "max_bone_length_error": 1.49011611938477e-07,
+            "right_palm_error": 3.01357346188524e-07
+          }
+        ],
+        "failures": [],
+        "scope": "Controlled scene fixture and viewport inputs, not earned progress or human acceptance"
+      }
+    },
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_final03\\unit_compat_en\\seat_moment.json",
+      "sha256": "2787cb62f25be36e8f6955c4f826cd0485f783dbcff88c1da951742e7315ec9e",
+      "data": {
+        "checks": 134,
+        "contacts": [
+          {
+            "branch": "stay",
+            "left_palm_error": 1.99920052068592e-07,
+            "max_bone_length_error": 1.19209289550781e-07,
+            "right_palm_error": 3.01357346188524e-07
+          },
+          {
+            "branch": "rise",
+            "left_palm_error": 2.98023223876953e-07,
+            "max_bone_length_error": 1.49011611938477e-07,
+            "right_palm_error": 3.01357346188524e-07
+          }
+        ],
+        "failures": [],
+        "scope": "Controlled scene fixture and viewport inputs, not earned progress or human acceptance"
+      }
+    },
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\seat_moment.json",
+      "sha256": "2787cb62f25be36e8f6955c4f826cd0485f783dbcff88c1da951742e7315ec9e",
+      "data": {
+        "checks": 134,
+        "contacts": [
+          {
+            "branch": "stay",
+            "left_palm_error": 1.99920052068592e-07,
+            "max_bone_length_error": 1.19209289550781e-07,
+            "right_palm_error": 3.01357346188524e-07
+          },
+          {
+            "branch": "rise",
+            "left_palm_error": 2.98023223876953e-07,
+            "max_bone_length_error": 1.49011611938477e-07,
+            "right_palm_error": 3.01357346188524e-07
+          }
+        ],
+        "failures": [],
+        "scope": "Controlled scene fixture and viewport inputs, not earned progress or human acceptance"
+      }
+    },
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_compat_seat_en\\seat_moment.json",
+      "sha256": "2787cb62f25be36e8f6955c4f826cd0485f783dbcff88c1da951742e7315ec9e",
+      "data": {
+        "checks": 134,
+        "contacts": [
+          {
+            "branch": "stay",
+            "left_palm_error": 1.99920052068592e-07,
+            "max_bone_length_error": 1.19209289550781e-07,
+            "right_palm_error": 3.01357346188524e-07
+          },
+          {
+            "branch": "rise",
+            "left_palm_error": 2.98023223876953e-07,
+            "max_bone_length_error": 1.49011611938477e-07,
+            "right_palm_error": 3.01357346188524e-07
+          }
+        ],
+        "failures": [],
+        "scope": "Controlled scene fixture and viewport inputs, not earned progress or human acceptance"
+      }
+    }
+  ],
+  "preservation": {
+    "assets_unchanged": 881,
+    "prior_scene_files_unchanged": 93,
+    "new_scene_files": 1,
+    "prior_1321_translations_unchanged": true,
+    "personal_saves": {
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455246252200
+      },
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455253759300
+      }
+    },
+    "original_Q01_inputs_hash_and_mtime_unchanged": true,
+    "arcana_archive_unchanged": true,
+    "paid_generated_data_in_repo": false
+  },
+  "diagnostics": {
+    "seat01": "Cup on lower/farther surface was out of reach by about 6.3cm; common global-pose contact helper also changed local positions. Moved the real table/cup into reach and used a rotation-only analytic arm solve, same strict length/contact thresholds.",
+    "replay01": "Old seated height offset caused an initial replay jump. Reset presentation offset and speed at the explicit staging boundary.",
+    "earned01": "QA compared profile before BOOT against after story. Existing base entry legitimately reconciled two warehouse layout cells. New helper asserts all non-layout fields identical through base, then exact profile/file equality from Rest through skip/full scene/return. No production inventory or persistence change.",
+    "older_candidates": "final01/02 and build01 were superseded. Earlier broad tests passed but manual ending review found phase entry reset the subtitle to line zero. Explicit last-invitation assertions failed on both old branches; done now preserves the final line. Current final03 default suite and build02 plus both native matrices are fresh. Old logs and ZIP retained, not delivered."
+  },
+  "reviewed_captures": [
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_earned_forward\\05_warm_cup.png",
+      "sha256": "111309a2f9f166d1cb55bc27d3bfdc3966a7b056362054ccd5243fa456288a3d"
+    },
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_earned_forward\\04_wait.png",
+      "sha256": "4f19222069d1b26466b76ab88ef83159eb5bc177bbc9a24fe1c6fd7f5c2c1a2c"
+    },
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_earned_compat\\05_warm_cup.png",
+      "sha256": "cd076f49eacac4bf4152dcb4c91fd07a23ec74167288fab5466738176b242497"
+    },
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_060.png",
+      "sha256": "d1b790f14355e99ac0f75cfe226fcc5e0bd385400010d7fb435e9a452b31f338"
+    },
+    {
+      "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_compat_seat_en\\04_ending_rise.png",
+      "sha256": "ca73c53105926a1424c0da130316c6b40fd47203df6d81e88456256c9752c91c"
+    }
+  ],
+  "preview": {
+    "path": "D:\\tmp\\bunny_seat_20261020_build02\\seat_cup_action.gif",
+    "sha256": "afddd26ab6c7ef962eb25ef9eaff76898b833bc551ff246bf1a495a930ab96ed",
+    "bytes": 1433957,
+    "source_frames": [
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_000.png",
+        "sha256": "7a9357919f4b9ee6bd99f22dbbc1c1c49a62c9bb3b0a8776b8a630ede6a19632"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_015.png",
+        "sha256": "0294daa34d9a5c2e4c0a56329fc56e1791788e807481c95871b7ce775ed237e6"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_030.png",
+        "sha256": "cbac3551dd0becbe0652b0f4f03eb56e6f1a25c94534a869ba29327d7042aa52"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_045.png",
+        "sha256": "0de590f945311043c98a04b193552e43172f982794410941fe0e492e97799015"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_060.png",
+        "sha256": "d1b790f14355e99ac0f75cfe226fcc5e0bd385400010d7fb435e9a452b31f338"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_075.png",
+        "sha256": "009a2bd0257a393932bb21f628de03ccc3ae6a82294de28e986de4945532423d"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_090.png",
+        "sha256": "710f6ddbedcec642763cd04d8680125037dec2884ad8c01eda74c3fe77c62eb7"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_105.png",
+        "sha256": "34348f052fb4e60eb7b99ef61d34dc2b8753dcb3f3d0b8c108fc125cdc74bd42"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_120.png",
+        "sha256": "12e77ed2672bd579ce4f4c4fd6e7382f11a43ce5e1c9863c50cb58dd73581a18"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_135.png",
+        "sha256": "0949c830a6acabe22a8caf945e8b94b22e840508283f2190f99a26f5010f7f44"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_150.png",
+        "sha256": "449fb0bcc21fb4d059762b23fa18033f5e98b8244dea4b82886381a86cf03aa8"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_165.png",
+        "sha256": "e46bac1c5b37d1e93c6d926750fb4589b38b45bd995c2abc2632c904c18f6df9"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_180.png",
+        "sha256": "68fd414671c5d77419d4c41343febd7f7c3dc56ac397fb866b66d1220feb37aa"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_195.png",
+        "sha256": "24e5220944a367cf9cf2683faf1d96d0472392f750fb09ca931c95cc87a6b85d"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_210.png",
+        "sha256": "329c8bd8db0a2b6e8967e3431a76c36a300f52eda0c29901860934cf8a0d3b92"
+      },
+      {
+        "path": "D:\\tmp\\bunny_seat_20261020_build02\\portable_native_seat\\path_stay_225.png",
+        "sha256": "4acdae1cc390bb553a7775fed00817338cf9a9e3565c85eebc77ffe0bc5d9cd4"
+      }
+    ],
+    "processing": "Real extracted-release controlled pose PNGs resized/quantized/encoded. Not synthesized frames or real-time human gameplay."
+  },
+  "limitations": [
+    "Five-hour maintenance zone, finale, more character scenes and real stranger playtime remain incomplete.",
+    "No public publication, review score or new asset permission. User handles author contact; no messages/pages/login/polling by assistant.",
+    "Arcana and CombatGirls source/generated data remain absent from this ZIP; twelve-motion trial is still separate.",
+    "No complete game-wide native regression, human playtest, audio/low-end or full character cloth/finger-intersection certification.",
+    "No commit, push, model replacement or upload."
+  ]
+}

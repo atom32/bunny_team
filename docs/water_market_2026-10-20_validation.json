@@ -1,0 +1,461 @@
+{
+  "recorded_at": "2026-10-20T11:08:53.476728+08:00",
+  "status": "local_build_and_independent_zip_verified_not_public_release",
+  "scope": "South-market routes, optional quiet/noisy depot, genuine weighted salvage, actual doors/shortcut, safe incomplete retreat; existing water delivery unchanged. Not a new 20-minute sortie or five-hour completion proof.",
+  "source": "D:\\bunny_team",
+  "dev_project": "D:\\tmp\\bunny_water_market_20261020_dev01\\project",
+  "targeted": [
+    {
+      "name": "component06",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\component06_captures\\process.json",
+      "log_sha256": "75f6fbc8aa4df38de4851b23cc7ad078659f14aa0b35aa52e736cbf25c5a3671",
+      "pass": true,
+      "checks": 44
+    },
+    {
+      "name": "write01",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\write01_captures\\process.json",
+      "log_sha256": "6a38665d3768ecb24bdec35e077ca21694180ad8a96be17bd6fed134fa577e63",
+      "pass": true,
+      "checks": 17
+    },
+    {
+      "name": "read01",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\read01_captures\\process.json",
+      "log_sha256": "85a560713f5ffe4988d1ddb10bba8e1bd832326dd76ced8121e69d378a9a7975",
+      "pass": true,
+      "checks": 6
+    },
+    {
+      "name": "legacy_v2_read01",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\legacy_v2_read01_captures\\process.json",
+      "log_sha256": "696ad761222221e27e4c72c196c4091210d65947b18ef869a4856bc5fbb41546",
+      "pass": true,
+      "checks": 4
+    },
+    {
+      "name": "waterworks02",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\waterworks02_captures\\process.json",
+      "log_sha256": "aa1696566719b2d92bdb7372de10632bd95a3880cb0c6fc976efd75db68f2da3",
+      "pass": true,
+      "checks": 100
+    },
+    {
+      "name": "delivery01",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\delivery01_captures\\process.json",
+      "log_sha256": "2bb0d72da0b78c294bf00f9e10d3d8e2d1e38b27372581763e736eb6bd70e3a2",
+      "pass": true,
+      "checks": 21
+    },
+    {
+      "name": "quiet02",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\quiet02_captures\\process.json",
+      "log_sha256": "a43d92070a2c1eb99c09a60a12bf78f686f93cb28580fd4ea43b992909ab41ff",
+      "pass": true,
+      "checks": 25
+    },
+    {
+      "name": "quiet02_read",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\quiet02_read_captures\\process.json",
+      "log_sha256": "e6266651de5f968142e4e21932bab2785a7fbac7c2cc627c3688c370f2ee6750",
+      "pass": true,
+      "checks": 1
+    },
+    {
+      "name": "loud01",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\loud01_captures\\process.json",
+      "log_sha256": "b2045eff6839220a1f753c47401c6c2ea2f3844e491dc4730d723353e1e8539d",
+      "pass": true,
+      "checks": 24
+    },
+    {
+      "name": "loud01_read",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\loud01_read_captures\\process.json",
+      "log_sha256": "e6266651de5f968142e4e21932bab2785a7fbac7c2cc627c3688c370f2ee6750",
+      "pass": true,
+      "checks": 1
+    },
+    {
+      "name": "skip01",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\skip01_captures\\process.json",
+      "log_sha256": "ce560460308a75e1fcd40a515c01277ea477e872f033d7404fe5e84b3ba7aacd",
+      "pass": true,
+      "checks": 19
+    },
+    {
+      "name": "skip01_read",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\skip01_read_captures\\process.json",
+      "log_sha256": "e6266651de5f968142e4e21932bab2785a7fbac7c2cc627c3688c370f2ee6750",
+      "pass": true,
+      "checks": 1
+    },
+    {
+      "name": "quiet_gui02",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\quiet_gui02_captures\\process.json",
+      "log_sha256": "a5d6fdf740fdce162df5d289881f9927502265ff2c8334ce28c38c400348138e",
+      "pass": true,
+      "checks": 24
+    },
+    {
+      "name": "quiet_gui02_read",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\quiet_gui02_read_captures\\process.json",
+      "log_sha256": "e6266651de5f968142e4e21932bab2785a7fbac7c2cc627c3688c370f2ee6750",
+      "pass": true,
+      "checks": 1
+    },
+    {
+      "name": "loud_gui02",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\loud_gui02_captures\\process.json",
+      "log_sha256": "3a8ec62ca4390ad1bd445d37ed4ccf2c17cdb5c7ae31453d4706b573cc6d615c",
+      "pass": true,
+      "checks": 24
+    },
+    {
+      "name": "loud_gui02_read",
+      "process": "D:\\tmp\\bunny_water_market_20261020_dev01\\loud_gui02_read_captures\\process.json",
+      "log_sha256": "e6266651de5f968142e4e21932bab2785a7fbac7c2cc627c3688c370f2ee6750",
+      "pass": true,
+      "checks": 1
+    }
+  ],
+  "runtime_sha256": {
+    "scripts/data/waterworks_journey.gd": "5cfbd98fdbdc1c8ac1eda1795458852a8c1acdc11f92e970082387c6d3e90a88",
+    "scripts/systems/area_loader.gd": "c3d0d492d2056b18e266901c3ca6173c5631741a55aae79f1c29903b978be30d",
+    "scripts/systems/sortie_checkpoint.gd": "89745050e6682acc6d2fbaf6a75223ccf889198ee2227036cc608c25953ca6d8",
+    "scripts/world/waterworks/market.gd": "3a2b2fde779573321a085e261b389c99ddf9b1c1ca2035ee0bc1003c4e6bdff5",
+    "scripts/world/waterworks/market_control.gd": "2389474093e2054c7c05030d3daf3520cf191b3a58d72bf2ba3b9ed68457ecb9",
+    "scripts/world/waterworks/market_district.gd": "a14d983f9ca56584ed63aa4b853c7e4a1dea7607368ec16ab695b7768c5520fb",
+    "scripts/world/waterworks/route_map.gd": "0b642c8e245a91234b025b23afbbaf7af113e3a958aeaa20711341a83c46b0d2",
+    "resources/areas/waterworks_district.tres": "502c5d264aec5e2712af0c0d8a637e1dcd73d649cbb150692d93654e583a154c",
+    "scenes/areas/waterworks_district_v3.tscn": "448357a076951aafb816098c0bc806c57bfff8435922174d4a86bd6dac793aaf",
+    "localization/zh_CN.json": "c9a2cac02ecadef8f9ff226c29c979c4b16fd3b5abda56cce4bbacffaf61b966",
+    "localization/zh_CN.tres": "df92683d4ed884bb5f3252d03d0dbdf5e97d7f1439b38423be48790bb1a94efc"
+  },
+  "native": {
+    "quiet_forward_plus_zh": "D:\\tmp\\bunny_water_market_20261020_dev01\\quiet_gui02_captures\\water_market_earned.json",
+    "loud_compatibility_en": "D:\\tmp\\bunny_water_market_20261020_dev01\\loud_gui02_captures\\water_market_earned.json",
+    "scope": "Actual earned seven-to-eight returns, ordinary menu/controller/ammo/AI/physical delivery; precise synthetic controller, not human playtime. Final QA subsequently strengthens shortcut path-length check; component06 proves the actual input/capsule crossing."
+  },
+  "preservation": "D:\\tmp\\bunny_water_market_20261020_dev01\\preservation.json",
+  "previous_rescue_snapshot": {
+    "directory": "D:/tmp/bunny_rescue_return_20261020_final02",
+    "all_pass_categories": 199,
+    "test_scenes": 116,
+    "new_package_created": false,
+    "reason": "Old waiting build helper deliberately stopped before build so new playable content supersedes it. Do not restart the old hash-guarded pipeline."
+  },
+  "full_source_snapshot": {
+    "directory": "D:\\tmp\\bunny_water_market_20261020_final04",
+    "test_scenes": 117,
+    "categories": 208,
+    "all_pass": true,
+    "results_sha256": "054aa51b475fd01b4e9dfc83914a5093d780250e891aaf189a7dc353d110a407"
+  },
+  "new_build": {
+    "created": true,
+    "directory": "D:\\tmp\\bunny_water_market_20261020_build03",
+    "categories": 100,
+    "all_pass": true,
+    "results_sha256": "626a6ff40dd11225acc5483612a6e680f1b901b7f251e8276f6bf4dcd2bad6cb"
+  },
+  "latest_delivered_package": "D:/tmp/bunny_maintenance_art_20261020_build01/LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+  "failed_attempts": [
+    {
+      "case": "component01",
+      "reason": "QA untyped capacity variable failed to parse; exact owned failing processes stopped and retained."
+    },
+    {
+      "case": "component02",
+      "reason": "QA queried asynchronous navigation after only four frames; now waits for genuinely reachable endpoints."
+    },
+    {
+      "case": "waterworks01",
+      "reason": "Old fixture still expected ten enemies after adding five authored market enemies; corrected exact expected population to fifteen after the same finite two-guard response."
+    },
+    {
+      "case": "loud_gui01",
+      "reason": "Actual normal deployment paused on focus loss; test ended FAIL. No force-focus/unpause/pause-policy change. Fresh independent loud_gui02 completes normally."
+    },
+    {
+      "case": "full_source_final01",
+      "reason": "Cold import passed, but reviewed inventory guard remained 116 after adding the one water_market_test.tscn scene. Audited exact +1/no removals; corrected guard to117. No full test pass claimed."
+    },
+    {
+      "case": "build01_portable_rescue_earned_forward",
+      "reason": "Actual native rest-replay button at y642 overlapped NavOverview; scene itself and safe rescue completed, but replay click switched tabs. Not delivered. Production layout moved above navigation with distinct solo/paired replay row and geometry/text-fit tests."
+    },
+    {
+      "case": "build02_portable_rescue_earned_forward",
+      "reason": "Native driver stalled near the ward; same-binary independent attempt later stalled near the far valve. Old failure record omitted focus/pause/contact state. No production navigation/HP/pause change made. Failed checkpoint resumes in an isolated diagnostic and survivor physically crosses the open ward door. Root QA now records pause/focus/contacts and a failure screenshot; do not classify the stall until observed."
+    },
+    {
+      "case": "build03_r2_market_v2_read_source_fixture",
+      "reason": "Wrong environment fixture: old exported v2 also rejects the editor-produced layout signature. Replaced test input with an actual unchanged old-EXE-produced v2 checkpoint; old/new EXE and existing source/source compatibility are tested separately. No layout validator relaxation or game-code change."
+    },
+    {
+      "case": "build03_r1_rescue_replay",
+      "reason": "Before-Boot file-hash baseline included legitimate first-Continue initialization of two stash-grid placements. Structured diff proves all envelope/gameplay fields unchanged. Preview revision2 uses actual normal-Boot output, no direct JSON edits; no test or game-rule relaxation."
+    },
+    {
+      "case": "build01_portable_rescue_earned_forward",
+      "reason": "Real native replay click hit NavOverview because OpenRescueMoment at y642 overlapped the bottom navigation. Candidate retained and not delivered. Fixed production Rest replay row at y590; solo full width, both unlocked separate 168px buttons with 14px text; added true hit-area/text-fit/native replay regression."
+    }
+  ],
+  "limits": [
+    "Local-only distribution, unresolved publication permissions.",
+    "Graybox environments and placeholder actors, not final art.",
+    "No human first-playthrough duration, enjoyment or 80-percent reviews.",
+    "No real-audio listening (Dummy driver), minimum-spec or clean-machine acceptance.",
+    "No commit, push, upload, model replacement, author contact or subagents."
+  ],
+  "goal_achieved": false,
+  "independent_zip": {
+    "categories": 33,
+    "launcher_cases": 14,
+    "compiled_campus_seed_prefix_cases": 4,
+    "all_pass": true,
+    "native_serial": true,
+    "system_only_PATH": true,
+    "reused_unchanged_runtime_and_unaffected_input_cases": 20,
+    "new_preview_revision_cases": 13,
+    "scope": "Only two preview layout files changed; exact EXE/PCK/all other static files unchanged. First20 unaffected-input records retained; remaining13 run from new independent Chinese extraction."
+  },
+  "repaired_native_checks": {
+    "zh_result_layout_checks": 54,
+    "en_result_layout_checks": 54,
+    "earned_rescue_checks": 43,
+    "evidence_directory": "D:/tmp/bunny_water_market_20261020_dev01/rescue_repaired_f01_captures",
+    "note": "Current production UI fixed; this is source-native evidence, not new EXE delivery proof."
+  },
+  "prezip_native_gate": {
+    "evidence": "D:\\tmp\\bunny_water_market_20261020_build03\\prezip_rescue_gate\\process.json",
+    "pass": true,
+    "scope": "Same newly compiled binary, real six-to-seven return and optional scene, no forced focus/unpause or gameplay changes."
+  },
+  "archive": {
+    "archive": "D:\\tmp\\bunny_water_market_20261020_build03\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64_r2.zip",
+    "bytes": 245607262,
+    "sha256": "b51c4c546a371c27036ae6ba8f1559d6f1e8ee918dd5155a38534c9e02c14839",
+    "extracted_to": "D:\\tmp\\小兔试玩 南市搜刮 20261020 07\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false,
+    "packaging_only_revision": 2,
+    "previous_failed_revision": "D:\\tmp\\bunny_water_market_20261020_build03\\portable_archive_r1.json",
+    "only_two_preview_layout_files_changed": true,
+    "fresh_delivery_extracted_to": "D:\\tmp\\小兔试玩 南市搜刮 20261020 08\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "fresh_static_files_match": true,
+    "fresh_preview_userdata_not_preplayed": true
+  },
+  "preview_bootstrap_normalization": {
+    "raw_input": "D:\\tmp\\bunny_water_market_20261020_build03\\LOCAL_ONLY_DO_NOT_UPLOAD\\preview_save\\rescue\\profile.json",
+    "raw_input_sha256": "4b79c1ee77fc329b58f57403edc8f1bab6d31f22be8610c1d95663af83379516",
+    "actual_boot_and_continue_output": "D:\\tmp\\bunny_water_market_20261020_build03\\portable_rescue_replay\\userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+    "output_sha256": "ec7531766c9850af462aac799815746e34e9fc453869b7bf2050a6f6a6a5e962",
+    "output_log": "D:\\tmp\\bunny_water_market_20261020_build03\\portable_rescue_replay\\run.log",
+    "first_replay_assertion_failed_because_baseline_preceded_normal_boot": true,
+    "all_envelope_and_gameplay_fields_equal": true,
+    "only_two_presentation_placements_added": {
+      "24af7109ba2096494b98cfb4e3da341d": [
+        2,
+        0,
+        false
+      ],
+      "5179dbc2d6370b68e9592eee11ebaf03": [
+        4,
+        0,
+        false
+      ]
+    },
+    "no_direct_json_state_edits": true,
+    "canonical_seed": "D:\\tmp\\bunny_water_market_20261020_build03\\preview_bootstrap_rescue_seed\\profile.json"
+  },
+  "legacy_v2_exported_checkpoint": {
+    "command": [
+      "D:\\tmp\\小兔试玩 南市搜刮 20261020 07\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--",
+      "--local-qa",
+      "water_market",
+      "--v2-read"
+    ],
+    "exit": 0,
+    "pass": true,
+    "source_old_exe": "D:\\tmp\\bunny_maintenance_art_20261020_build01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+    "old_exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "seed": "D:\\tmp\\bunny_water_market_20261020_build03\\legacy_v2_compiled_writer\\userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\waterworks_test.json",
+    "seed_sha256": "742147e1323cb18332065604675cd955ae7203131dbe96016b5ceb13b7cbd43b",
+    "source_editor_layout": "91beb90b5e468535cd2a4069454abf27b22d07bcfbcd34128db061b59db9478e",
+    "old_exported_layout": "c048de1662d77b80908deadcee873bdb6df1b81641a5300b5f5f7385a3c2fb2c"
+  },
+  "legacy_v2_preexisting_source_export_boundary": {
+    "command": [
+      "D:\\tmp\\bunny_maintenance_art_20261020_build01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--",
+      "--local-qa",
+      "water_delivery",
+      "--read"
+    ],
+    "exit": 1,
+    "expected_negative": true,
+    "scope": "Old exported v2 also rejects this editor-world fixture; not an introduced export-save regression. Actual old EXE-produced v2 is accepted by current EXE.",
+    "input_sha256": "687dd8646c91af21f6438a2e1514e2c79dd841de75d6761349445d67e4de7f49"
+  },
+  "compiled_native_visual_review": {
+    "reviewed_images": [
+      "portable_r3_market_quiet_forward/market_depot_loot.png",
+      "portable_r3_market_quiet_forward/market_north_shortcut.png",
+      "portable_r3_market_loud_compat_en/market_depot_loot.png",
+      "portable_rescue_earned_forward/rescue_holding_door.png",
+      "portable_rescue_earned_forward/rescue_back_beside_her.png",
+      "portable_r3_rescue_result_forward/rescue_and_bucket_replay_layout.png",
+      "portable_r3_rescue_result_compat_en/rescue_and_bucket_replay_layout.png"
+    ],
+    "method": "Assistant inspected actual compiled independent-runtime PNG pixels, not only log markers.",
+    "scope": "Market crate/shortcut and rescue door staging visible. Rest replay row in Chinese and English no longer overlaps bottom navigation. Graybox art and low-contrast world labels remain; not final visual quality or full-frame cloth validation.",
+    "image_sha256": {
+      "portable_r3_market_quiet_forward/market_depot_loot.png": "c44836289760ba347b9b010087511aafad3be184817244912a662818cc56d4c6",
+      "portable_r3_market_quiet_forward/market_north_shortcut.png": "0201dafeb77dee4c8aa82b45d4c7119ee91fc4cba70a1f0505079de9e6769300",
+      "portable_r3_market_loud_compat_en/market_depot_loot.png": "577053974a80c7055acd50fc55cc218828eeab702d7ebe192d9cff9b5987a4dc",
+      "portable_rescue_earned_forward/rescue_holding_door.png": "d461cd61688f1279bdf7db74d8196edfa3619207a2269759d9d5b8bb5de59977",
+      "portable_rescue_earned_forward/rescue_back_beside_her.png": "ed32ee599c3602df79e89d2f4e47060a5056090fdc6f0f1421bff5e9abe92c6b",
+      "portable_r3_rescue_result_forward/rescue_and_bucket_replay_layout.png": "39996b160c7677e761e02d2f9f7f237e34ae98363b74396a201fa5b0931457da",
+      "portable_r3_rescue_result_compat_en/rescue_and_bucket_replay_layout.png": "3ac9a2fb02b0d377e55e64027940c81a1db11ac661b6ff1069a57ef75774d049"
+    }
+  },
+  "pack_audit": {
+    "entries": 1533,
+    "all_byte_ranges_and_md5": true,
+    "forbidden_original": [],
+    "forbidden_cache": [],
+    "arcana": [],
+    "combatgirls": [],
+    "legacy_and_v2_maps": true,
+    "bucket_scene_and_script_present": true,
+    "water_v1_v2_v3_maps": true,
+    "market_scripts_present": true,
+    "rescue_scene_and_script_present": true
+  },
+  "actual_compiled_earned_routes": {
+    "market_quiet_forward": {
+      "evidence": "D:\\tmp\\bunny_water_market_20261020_build03\\portable_r3_market_quiet_forward\\water_market_earned.json",
+      "sha256": "ed810ef397acfc7952b6c6ce061816baf32be28b55fd7d7ff37c7c45e1a978ff",
+      "checks": 25,
+      "route": "quiet",
+      "combat": [
+        {
+          "blockade": {},
+          "damage": 3,
+          "health": 257.12,
+          "kills": 15,
+          "mission": "waterworks_run",
+          "shots_total": 53
+        }
+      ],
+      "core_id": "bbf8133a577def9b2de092fb4e522a0f",
+      "before_returns": 7,
+      "after_returns": 8
+    },
+    "market_loud_compat_en": {
+      "evidence": "D:\\tmp\\bunny_water_market_20261020_build03\\portable_r3_market_loud_compat_en\\water_market_earned.json",
+      "sha256": "e071559765cb416736abca74b0926c2fb740b1492a0e7c38611fd619f978b82f",
+      "checks": 25,
+      "route": "loud",
+      "combat": [
+        {
+          "blockade": {},
+          "damage": 8,
+          "health": 252.17,
+          "kills": 16,
+          "mission": "waterworks_run",
+          "shots_total": 58
+        }
+      ],
+      "core_id": "ac09857a34c3fdd66fd237189365e9ce",
+      "before_returns": 7,
+      "after_returns": 8
+    },
+    "market_skip": {
+      "evidence": "D:\\tmp\\bunny_water_market_20261020_build03\\portable_r3_market_skip\\water_market_earned.json",
+      "sha256": "a0e2b4d7732e6f93e66fc1ab6f5d369856c13e7c2e94c550ef66df329b43b820",
+      "checks": 19,
+      "route": "skip",
+      "combat": [
+        {
+          "blockade": {},
+          "damage": 0,
+          "health": 260.0,
+          "kills": 14,
+          "mission": "waterworks_run",
+          "shots_total": 50
+        }
+      ],
+      "core_id": "",
+      "before_returns": 7,
+      "after_returns": 8
+    },
+    "rescue_earned_forward": {
+      "evidence": "D:\\tmp\\bunny_water_market_20261020_build03\\portable_rescue_earned_forward\\rescue_return_earned.json",
+      "sha256": "30c86da342e9326bbb0c1949e78cd4957a796f044242825a462ee2072d940e39",
+      "checks": 43,
+      "shots": 19,
+      "kills": 6,
+      "health": 260.0,
+      "before_returns": 6,
+      "after_returns": 7
+    },
+    "rescue_earned_compat_en": {
+      "evidence": "D:\\tmp\\bunny_water_market_20261020_build03\\portable_rescue_earned_compat_en\\rescue_return_earned.json",
+      "sha256": "b40486d591c959b7025b2bd353caf2d2d0559cda4722047ba0fa03c0d9dcb4d0",
+      "checks": 47,
+      "shots": 19,
+      "kills": 6,
+      "health": 254.6,
+      "before_returns": 6,
+      "after_returns": 7
+    }
+  },
+  "all_non_document_root_frozen_build_source_inputs_match": true,
+  "preserved_at_delivery": {
+    "assets/": {
+      "count": 881,
+      "all_unchanged": true
+    },
+    "scenes/": {
+      "count": 104,
+      "all_unchanged": true
+    },
+    "translations": {
+      "old": 1652,
+      "current": 1686,
+      "old_unchanged": true
+    }
+  },
+  "originals_preserved_at_delivery": [
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+      "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+      "mtime_ns": 1792216455246252200
+    },
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+      "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+      "mtime_ns": 1792216455253759300
+    },
+    {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+      "mtime_ns": 1792376341839829300
+    },
+    {
+      "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+      "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec",
+      "mtime_ns": 1790951818552782600
+    }
+  ]
+}

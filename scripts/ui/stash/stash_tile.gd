@@ -11,6 +11,7 @@ func _ready() -> void:
 	var item := grid.model.profile.inventory.get_item(instance_id)
 	var definition := ContentDB.get_item(item.definition_id)
 	tooltip_text = GameLanguage.item_name(definition.display_name) + "\n" + tr(definition.description)
+	if not item.fitting.is_empty(): tooltip_text += "\n" + WeaponFitting.discovery_text(item)
 
 func _draw() -> void:
 	var item := grid.model.profile.inventory.get_item(instance_id)
@@ -37,6 +38,8 @@ func _draw() -> void:
 	draw_string(UIFactory.FONT, Vector2(6, 15), name_text, HORIZONTAL_ALIGNMENT_LEFT, size.x - 12, 11, FieldManualStyle.INK)
 	var count := str(item.quantity) if definition.stackable else ("%.0f%%" % item.durability if definition.has_tag(&"equipment") and item.durability < 100.0 else "")
 	draw_string(UIFactory.FONT, Vector2(5, size.y - 5), count, HORIZONTAL_ALIGNMENT_RIGHT, size.x - 10, 11, FieldManualStyle.INK)
+	if not item.fitting.is_empty():
+		draw_string(UIFactory.FONT, Vector2(5, size.y - 5), WeaponFitting.badge(item.fitting), HORIZONTAL_ALIGNMENT_LEFT, size.x - 10, 11, FieldManualStyle.ACCENT)
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:

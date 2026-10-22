@@ -1,0 +1,236 @@
+{
+  "water_public_tang_kui": {
+    "title": "Water tower memory / Half a bucket",
+    "lines": [
+      {
+        "speaker": "tang_kui",
+        "text": "About the water tower. I was too sharp with you."
+      },
+      {
+        "speaker": "player",
+        "text": "Which part?"
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "...Was there that much?"
+      },
+      {
+        "speaker": "player",
+        "text": "Start with counting me as half a bucket."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "That one stays. You are more useful than a bucket."
+      },
+      {
+        "speaker": "player",
+        "text": "What a compliment."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "And... I was glad you stopped to listen to me yell."
+      },
+      {
+        "speaker": "player",
+        "text": "The water was so loud, I actually--"
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "Shut up."
+      }
+    ]
+  },
+  "water_public_su_mi": {
+    "title": "Water tower memory / Nobody heard",
+    "lines": [
+      {
+        "speaker": "su_mi",
+        "text": "When you opened the courtyard tap, Tang Kui rattled my headset."
+      },
+      {
+        "speaker": "player",
+        "text": "Shouting?"
+      },
+      {
+        "speaker": "su_mi",
+        "text": "She said she was not crying."
+      },
+      {
+        "speaker": "player",
+        "text": "I did not ask."
+      },
+      {
+        "speaker": "su_mi",
+        "text": "Neither did I."
+      },
+      {
+        "speaker": "player",
+        "text": "Then we both--"
+      },
+      {
+        "speaker": "su_mi",
+        "text": "Heard nothing."
+      }
+    ]
+  },
+  "water_public_shen_yanshuang": {
+    "title": "Water tower memory / At the gate",
+    "lines": [
+      {
+        "speaker": "shen_yanshuang",
+        "text": "You made it back."
+      },
+      {
+        "speaker": "player",
+        "text": "How long were you standing at the gate?"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Not long."
+      },
+      {
+        "speaker": "player",
+        "text": "Tang Kui says you never moved after we left."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Still has the strength to tell on me. She got her water, then."
+      },
+      {
+        "speaker": "player",
+        "text": "About opening the courtyard tap first--"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "I remember."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Next time, do not make me guess over the radio whether you can still stand."
+      }
+    ]
+  },
+  "water_tanker_tang_kui": {
+    "title": "Water tower memory / Wet sleeves",
+    "lines": [
+      {
+        "speaker": "tang_kui",
+        "text": "Do not look at me. I am still angry."
+      },
+      {
+        "speaker": "player",
+        "text": "Should I go, then?"
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "Stay there."
+      },
+      {
+        "speaker": "player",
+        "text": "More shouting?"
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "Your sleeve. Hold it out."
+      },
+      {
+        "speaker": "player",
+        "text": "I thought you were angry."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "Does that mean I cannot dry you off?"
+      },
+      {
+        "speaker": "player",
+        "text": "...Your hands are shaking."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "The water is cold."
+      },
+      {
+        "speaker": "tang_kui",
+        "text": "Do not tell Shen Yanshuang."
+      }
+    ]
+  },
+  "water_tanker_shen_yanshuang": {
+    "title": "Water tower memory / The biggest bucket",
+    "lines": [
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Tang Kui saved me a bucket."
+      },
+      {
+        "speaker": "player",
+        "text": "The biggest one?"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Yes. My name is bigger than the number plate."
+      },
+      {
+        "speaker": "player",
+        "text": "Why are you smiling?"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "I am not."
+      },
+      {
+        "speaker": "player",
+        "text": "You just--"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "You saw wrong."
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Next time she yells at me, do not join in."
+      },
+      {
+        "speaker": "player",
+        "text": "Scared of her?"
+      },
+      {
+        "speaker": "shen_yanshuang",
+        "text": "Scared she might stop."
+      }
+    ]
+  },
+  "water_tanker_su_mi": {
+    "title": "Water tower memory / Permanent ink",
+    "lines": [
+      {
+        "speaker": "su_mi",
+        "text": "Shen Yanshuang asked if the writing on the bucket would wash off."
+      },
+      {
+        "speaker": "player",
+        "text": "What did you say?"
+      },
+      {
+        "speaker": "su_mi",
+        "text": "I said yes."
+      },
+      {
+        "speaker": "player",
+        "text": "And then?"
+      },
+      {
+        "speaker": "su_mi",
+        "text": "She stopped asking."
+      },
+      {
+        "speaker": "player",
+        "text": "But can you actually--"
+      },
+      {
+        "speaker": "su_mi",
+        "text": "She never asked me to wash it."
+      }
+    ]
+  }
+}

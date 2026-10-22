@@ -15,6 +15,8 @@ func _ready() -> void:
 
 func can_extract(session: SortieSession) -> bool:
 	if not available or not session or session.status != SortieSession.Status.ACTIVE: return false
+	var gate:=physical_gate()
+	if gate and not gate.is_open():return false
 	if required_objective_id.is_empty(): return true
 	var state := session.get_objective_state(required_objective_id)
 	return state != null and state.status == ObjectiveState.Status.COMPLETED
@@ -28,6 +30,8 @@ func extract(session: SortieSession) -> bool:
 
 
 func interact(_actor: Node3D, session: SortieSession) -> Dictionary:
+	var gate:=physical_gate()
+	if gate and not gate.is_open():return {"success":false,"message":gate.closed_message()}
 	if available and not required_objective_id.is_empty() and not can_extract(session):
 		return {"success":false,"message":"Recover this sortie's records to unlock this exit. The other assigned exit remains open."}
 	if extract(session):
@@ -36,10 +40,14 @@ func interact(_actor: Node3D, session: SortieSession) -> Dictionary:
 
 
 func get_interaction_prompt(_actor: Node3D, session: SortieSession) -> String:
+	var gate:=physical_gate()
+	if available and gate and not gate.is_open():return tr("BOLTED / OUTSIDE LATCH OR RED CHAIN")
 	if can_extract(session): return tr("%s  EXTRACT") % ControlBindings.label("interact")
 	if available and session and session.status == SortieSession.Status.ACTIVE and not required_objective_id.is_empty(): return "LOCKED / RECOVER RECORDS FIRST"
 	return ""
 
+
+func physical_gate() -> CampusExitGate:return get_meta("physical_gate") as CampusExitGate if has_meta("physical_gate") else null
 
 func _build_visual() -> void:
 	var pad := VisualFactory.cylinder(self, 2.1, 0.12, Vector3(0.0, 0.06, 0.0), Color("263846"), "ExtractionPad")

@@ -14,6 +14,10 @@ static func roll(
 	for entry in table.entries:
 		if not ContentDB.has_item(entry.definition_id):
 			return []
+		if not entry.fitting.is_empty():
+			var probe := ItemInstance.new(entry.definition_id)
+			probe.fitting = entry.fitting
+			if not WeaponFitting.valid(probe): return []
 		total_weight += entry.weight
 	if total_weight <= 0.0:
 		return results
@@ -24,7 +28,9 @@ static func roll(
 		var quantity := entry.min_quantity
 		if entry.max_quantity > entry.min_quantity:
 			quantity = rng.randi_range(entry.min_quantity, entry.max_quantity)
-		results.append(ItemInstance.new(entry.definition_id, quantity))
+		var item := ItemInstance.new(entry.definition_id, quantity)
+		item.fitting = entry.fitting
+		results.append(item)
 	return results
 
 

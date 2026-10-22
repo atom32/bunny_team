@@ -1,0 +1,922 @@
+{
+  "date": "2026-10-20",
+  "scope": "Playable main-story greybox now reaches a local-crisis ending and free play; NOT five-hour content completion or a public release",
+  "goal_achieved": false,
+  "public_release_approved": false,
+  "profile_schema": 11,
+  "checkpoint_schema": 6,
+  "hero_model_replaced": false,
+  "paid_motions_in_default_build": false,
+  "source": {
+    "frozen": "D:\\tmp\\bunny_finale_20261020_final02",
+    "test_scenes": 107,
+    "categories": 162,
+    "all_pass": true,
+    "results_sha256": "6147d1276cb149f2982ab992591b8b895c228ab2e4b7d42b040abfe38fa02f8f"
+  },
+  "build": {
+    "directory": "D:\\tmp\\bunny_finale_20261020_build02",
+    "categories": 54,
+    "all_pass": true
+  },
+  "independent_zip": {
+    "categories": 12,
+    "all_pass": true,
+    "native_cases_serial": true,
+    "system_only_path": true,
+    "normal_boot_locale_asserted": true
+  },
+  "launchers": {
+    "categories": 4,
+    "all_pass": true,
+    "data_directories": 3
+  },
+  "archive": {
+    "archive": "D:\\tmp\\bunny_finale_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 245029772,
+    "sha256": "48dc363ac20d6f3c243fc225d379dbde537b140457239a57efedc9463db18a34",
+    "extracted_to": "D:\\tmp\\小兔试玩 终局与回家 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false
+  },
+  "preview_inputs": {
+    "act2": {
+      "path": "D:\\tmp\\bunny_maintenance_20261020_build02\\portable_earned_forward\\userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+      "sha256": "2b83e035081dc8b02ca301b33547ae5255820cde327a33d2f1ce363b8838feb9",
+      "mtime_ns": 1792435238744208000
+    },
+    "ending": {
+      "path": "D:\\tmp\\bunny_finale_20261020_build02\\first_sortie_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+      "sha256": "ddb25745279c33664780afd499ce7a2b404ba6f3a158f4d8775d82e47651a236",
+      "mtime_ns": 1792436971399615500
+    }
+  },
+  "actual_exported_story_routes": {
+    "portable_story_forward": {
+      "checks": 67,
+      "failures": [],
+      "input_sha256": "2b83e035081dc8b02ca301b33547ae5255820cde327a33d2f1ce363b8838feb9",
+      "method": "Actual earned schema10 rescue return; normal BOOT/continue/main-story buttons; real water battery/delivery, live truck fight, moving-arc core, physical extraction, automatic ending/skip/replay/credits/free play; not human acceptance",
+      "routes": [
+        {
+          "damage": 3,
+          "health": 257.12,
+          "kills": 8,
+          "mission": "waterworks_run",
+          "shots_total": 31
+        },
+        {
+          "damage": 0,
+          "health": 260.0,
+          "kills": 3,
+          "mission": "blockade_run",
+          "shots_total": 57
+        },
+        {
+          "damage": 0,
+          "health": 260.0,
+          "kills": 6,
+          "mission": "maintenance_shutdown",
+          "shots_total": 86
+        }
+      ],
+      "shots": 86,
+      "steps": [
+        {
+          "name": "waterworks_run_brief",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "作战室",
+            "水塔街 / 谁先接这一桶\n\n西边修理铺：八公斤电池。\n东边泵房：安装八秒。\n居民水桶＋敷料，或运水车＋弹药。\n南口始终可撤。M：街区地图。",
+            "CONFIRM DEPLOYMENT",
+            "MAIN STORY / NEXT OPERATION",
+            "水塔街 / 谁先接这一桶",
+            "水塔街 · 黎明",
+            "出击负重  13.7 / 35 kg\n5.56 毫米普通弹 x90 / 5.56 毫米穿甲弹 x0（无弹药） / 9 毫米普通弹 x108 / 野战敷料 x0（未携行） / 野战医疗包 x0（未携行）\n多余弹药留在基地仓库。",
+            "CHARACTER / STASH",
+            "死亡或放弃出击，会损失本次携行的装备和物资。\n留在基地仓库的物品不受影响。",
+            "01  总览",
+            "02  装备区",
+            "03  作战室",
+            "04  工坊",
+            "05  休息室",
+            "MENU"
+          ]
+        },
+        {
+          "name": "waterworks_run_debrief",
+          "scene": "res://scenes/result/result.tscn",
+          "visible_text": [
+            "EXTRACTION SUCCESSFUL",
+            "任务 / 水塔街 / 谁先接这一桶",
+            "MISSION COMPLETE",
+            "OBJECTIVES",
+            "已完成  西边修理铺 / 搬走八公斤电池    1 / 1",
+            "已完成  东边泵房 / 安装电池，守住八秒    1 / 1",
+            "已完成  选择先给哪边放水，随后撤离    1 / 1",
+            "已完成  可选 / 拉响广场喇叭引开敌人    1 / 1",
+            "已完成  居民水桶 / 西口撤离，两份敷料    1 / 1",
+            "未完成  运水车 / 北口撤离，九十发普通弹    0 / 1",
+            "SURVIVAL",
+            "EXTRACTED",
+            "RECOVERED CARGO",
+            "13.4 / 35.0 kg",
+            "NEW SUPPLIES",
+            "0",
+            "LOOT / CREDIT REWARD",
+            "450",
+            "ENEMIES DEFEATED",
+            "8",
+            "DAMAGE TAKEN",
+            "3",
+            "PRIMARY WEAPON",
+            "AR-556 突击步枪",
+            "RETURN TO HIDEOUT",
+            "FIELD RECORDER\nDEBRIEF",
+            "BASTION 07 / RETURN CHANNEL",
+            "出击与委托",
+            "[水漫过院门前的排水沟。]\n唐葵：一个一个来！那是锅，不是桶——行吧，拿来。\n沈砚霜：西边院门开了。趁她还没替你答应别的活，回家。",
+            "基地建设进度（待结算）\n\n01 / 打通出入路线\n\n回基地结算后：0 / 2"
+          ]
+        },
+        {
+          "name": "blockade_run_brief",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "作战室",
+            "哨卡／请保持冷静\n\n红线锁定就躲，四连射后蓝色散热口开启再反击。西巷断电只停广播，不停枪。南侧随时能撤。",
+            "CONFIRM DEPLOYMENT",
+            "MAIN STORY / NEXT OPERATION",
+            "哨卡／请保持冷静",
+            "水塔街 · 黎明",
+            "出击负重  13.7 / 35 kg\n5.56 毫米普通弹 x90 / 5.56 毫米穿甲弹 x0（无弹药） / 9 毫米普通弹 x108 / 野战敷料 x0（未携行） / 野战医疗包 x0（未携行）\n多余弹药留在基地仓库。",
+            "CHARACTER / STASH",
+            "死亡或放弃出击，会损失本次携行的装备和物资。\n留在基地仓库的物品不受影响。",
+            "01  总览",
+            "02  装备区",
+            "03  作战室",
+            "04  工坊",
+            "05  休息室",
+            "MENU"
+          ]
+        },
+        {
+          "name": "blockade_run_debrief",
+          "scene": "res://scenes/result/result.tscn",
+          "visible_text": [
+            "EXTRACTION SUCCESSFUL",
+            "任务 / 哨卡／请保持冷静",
+            "MISSION COMPLETE",
+            "OBJECTIVES",
+            "已完成  瘫痪装甲广播车，随后撤离    1 / 1",
+            "已完成  可选／切断西侧小巷广播电源    1 / 1",
+            "SURVIVAL",
+            "EXTRACTED",
+            "RECOVERED CARGO",
+            "13.4 / 35.0 kg",
+            "NEW SUPPLIES",
+            "0",
+            "LOOT / CREDIT REWARD",
+            "450",
+            "ENEMIES DEFEATED",
+            "3",
+            "DAMAGE TAKEN",
+            "0",
+            "PRIMARY WEAPON",
+            "AR-556 突击步枪",
+            "RETURN TO HIDEOUT",
+            "FIELD RECORDER\nDEBRIEF",
+            "BASTION 07 / RETURN CHANNEL",
+            "出击与委托",
+            "【铁皮哐当一声。街上只剩空桶相互碰响。】\n唐葵：它死了吗？\n苏弥：那是辆车。\n唐葵：我客气一下。\n沈砚霜：北门通了。回来。你俩都回来。",
+            "基地建设进度（待结算）\n\n01 / 打通出入路线\n\n回基地结算后：0 / 2"
+          ]
+        },
+        {
+          "name": "maintenance_shutdown_brief",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "作战室",
+            "备用动力室／最后一声咔哒\n\n先接好安置点跨接供电。橙色通道先避开；白色横条是正在扫过的电弧。蓝灯检修窗口内切断两侧备用馈线，再拉北侧总停机。南侧始终可以撤退。",
+            "CONFIRM DEPLOYMENT",
+            "MAIN STORY / NEXT OPERATION",
+            "备用动力室／最后一声咔哒",
+            "检修照明／维护区",
+            "出击负重  13.7 / 35 kg\n5.56 毫米普通弹 x90 / 5.56 毫米穿甲弹 x0（无弹药） / 9 毫米普通弹 x108 / 野战敷料 x0（未携行） / 野战医疗包 x0（未携行）\n多余弹药留在基地仓库。",
+            "CHARACTER / STASH",
+            "死亡或放弃出击，会损失本次携行的装备和物资。\n留在基地仓库的物品不受影响。",
+            "01  总览",
+            "02  装备区",
+            "03  作战室",
+            "04  工坊",
+            "05  休息室",
+            "MENU"
+          ]
+        },
+        {
+          "name": "core_Radio",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "备用动力室／最后一声咔哒",
+            "先去南侧跨接开关／保住L-02A安置点供电，再动两侧备用馈线。",
+            "可选行动 4 ▾",
+            "生命  260 / 260",
+            "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+            "负重  13.7 / 35.0 kg",
+            "H / 敷料 0   J / 医疗包 0",
+            "当前  主武器",
+            "主武器  AR-556 突击步枪 伤害 +10%",
+            "26 / 30 · 备用 60",
+            "Q / SMG-9 冲锋枪",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "E  听电台／最后一声咔哒",
+            "许棠：灯一灭，它就重新开。我以前会数那个咔哒声。\n苏弥：电池室。校园支路已经断了，这东西自己还带着电。\n唐葵：绿色那根别动，那是我们的厨房。\n沈砚霜：我们在北门外。这回没人一个人在里面等。",
+            "Backup power / radio",
+            "目标击倒"
+          ]
+        },
+        {
+          "name": "core_Bridge",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "备用动力室／最后一声咔哒",
+            "蓝灯检修窗口内切断两侧馈线。橙色通道先避开；白色横条是正在扫过的电弧。",
+            "可选行动 4 ▾",
+            "生命  260 / 260",
+            "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+            "负重  13.7 / 35.0 kg",
+            "H / 敷料 0   J / 医疗包 0",
+            "当前  主武器",
+            "主武器  AR-556 突击步枪 伤害 +10%",
+            "24 / 30 · 备用 60",
+            "Q / SMG-9 冲锋枪",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "这路已经处理过了。",
+            "［安置点的绿灯仍然亮着。］\n唐葵：还在煮。\n苏弥：你就这么检查供电？\n唐葵：挺准的。",
+            "Circuit changed / L-02A shelter supply remains on."
+          ]
+        },
+        {
+          "name": "core_LeftFeed",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "备用动力室／最后一声咔哒",
+            "蓝灯检修窗口内切断两侧馈线。橙色通道先避开；白色横条是正在扫过的电弧。",
+            "可选行动 4 ▾",
+            "生命  260 / 260",
+            "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+            "负重  13.6 / 35.0 kg",
+            "H / 敷料 0   J / 医疗包 0",
+            "当前  主武器",
+            "主武器  AR-556 突击步枪 伤害 +10%",
+            "21 / 30 · 备用 60",
+            "Q / SMG-9 冲锋枪",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "这路已经处理过了。",
+            "许棠：少了一声。\n沈砚霜：看脚下。我们听见东西在动。",
+            "Circuit changed / L-02A shelter supply remains on."
+          ]
+        },
+        {
+          "name": "core_RightFeed",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "备用动力室／最后一声咔哒",
+            "两侧馈线已断／等蓝灯检修窗口，拉下北侧总停机。",
+            "可选行动 4 ▾",
+            "生命  260 / 260",
+            "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+            "负重  13.5 / 35.0 kg",
+            "H / 敷料 0   J / 医疗包 0",
+            "当前  主武器",
+            "主武器  AR-556 突击步枪 伤害 +10%",
+            "8 / 30 · 备用 60",
+            "Q / SMG-9 冲锋枪",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "这路已经处理过了。",
+            "苏弥：两侧电池都隔开了。中间那道还会放电。\n唐葵：那就把它的牙拔了。我不想再热第三遍。",
+            "Circuit changed / L-02A shelter supply remains on."
+          ]
+        },
+        {
+          "name": "core_MasterStop",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "备用动力室／最后一声咔哒",
+            "备用机组停了。北门已开，撤离回家。",
+            "可选行动 4 ▾",
+            "生命  260 / 260",
+            "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+            "负重  13.5 / 35.0 kg",
+            "H / 敷料 0   J / 医疗包 0",
+            "当前  主武器",
+            "主武器  AR-556 突击步枪 伤害 +10%",
+            "8 / 30 · 备用 60",
+            "Q / SMG-9 冲锋枪",
+            "FIELD OPERATION COMPLETE / EXTRACT WHEN READY",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "这路已经处理过了。",
+            "［转子慢下来。没有下一声咔哒。］\n许棠：……这就好了？\n苏弥：好了。\n沈砚霜：北门开了。回家。",
+            "Circuit changed / L-02A shelter supply remains on."
+          ]
+        },
+        {
+          "name": "core_map",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "备用动力室／最后一声咔哒",
+            "备用机组停了。北门已开，撤离回家。",
+            "可选行动 4 ▾",
+            "生命  260 / 260",
+            "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+            "负重  13.5 / 35.0 kg",
+            "H / 敷料 0   J / 医疗包 0",
+            "当前  主武器",
+            "主武器  AR-556 突击步枪 伤害 +10%",
+            "8 / 30 · 备用 60",
+            "Q / SMG-9 冲锋枪",
+            "FIELD OPERATION COMPLETE / EXTRACT WHEN READY",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "这路已经处理过了。",
+            "［转子慢下来。没有下一声咔哒。］\n许棠：……这就好了？\n苏弥：好了。\n沈砚霜：北门开了。回家。",
+            "Circuit changed / L-02A shelter supply remains on."
+          ]
+        },
+        {
+          "name": "maintenance_shutdown_debrief",
+          "scene": "res://scenes/result/result.tscn",
+          "visible_text": [
+            "EXTRACTION SUCCESSFUL",
+            "任务 / 备用动力室／最后一声咔哒",
+            "MISSION COMPLETE",
+            "OBJECTIVES",
+            "已完成  保住L-02A安置点供电    1 / 1",
+            "已完成  切断左侧备用馈线    1 / 1",
+            "已完成  切断右侧备用馈线    1 / 1",
+            "已完成  停止备用机组    1 / 1",
+            "SURVIVAL",
+            "EXTRACTED",
+            "RECOVERED CARGO",
+            "13.4 / 35.0 kg",
+            "NEW SUPPLIES",
+            "0",
+            "LOOT / CREDIT REWARD",
+            "450",
+            "ENEMIES DEFEATED",
+            "6",
+            "DAMAGE TAKEN",
+            "0",
+            "PRIMARY WEAPON",
+            "AR-556 突击步枪",
+            "RETURN TO HIDEOUT",
+            "FIELD RECORDER\nDEBRIEF",
+            "BASTION 07 / RETURN CHANNEL",
+            "出击与委托",
+            "［L-02A还亮着，实验设备没有再启动。］\n苏弥：没有重启信号，也没有备用馈线了。\n唐葵：我又听得见锅里的声音了。\n许棠：我想听那个。\n沈砚霜：那就别站门口了。都进来。"
+          ]
+        },
+        {
+          "name": "ending_two_actors",
+          "scene": "res://scenes/presentation/slice/homecoming_finale.tscn",
+          "visible_text": [
+            "都回家了／尾声",
+            "返回休息室",
+            "唐葵在电台里：敲两下，我说的是两下。\n苏弥：她敲了三下。\n沈砚霜：有一下是你踹的门。",
+            "接着说"
+          ]
+        },
+        {
+          "name": "ending_table",
+          "scene": "res://scenes/presentation/slice/homecoming_finale.tscn",
+          "visible_text": [
+            "都回家了／尾声",
+            "返回休息室",
+            "沈砚霜：留着吧。\n许棠：让她们吵。挺好的。\n［桌边还有位置。汤还热着。］",
+            "自由行动／返回基地",
+            "重看这个尾声",
+            "结尾／制作署名"
+          ]
+        },
+        {
+          "name": "ending_end_card",
+          "scene": "res://scenes/presentation/slice/homecoming_finale.tscn",
+          "visible_text": [
+            "都回家了／尾声",
+            "返回休息室",
+            "今晚，没有人在门外等了。可以回到桌边，也可以回基地自由行动。",
+            "自由行动／返回基地",
+            "重看这个尾声",
+            "回到桌边",
+            "全篇终／都回家了",
+            "Neon Bastion／本地原型\n使用Godot引擎\n第三方资产署名见随包附带说明\n\n谢谢你把大家带回来。"
+          ]
+        },
+        {
+          "name": "free_play",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "休息室",
+            "家／都回来了\n\n饭还热着。电台先放一放。\n\n仍可整备后自由出击。",
+            "进入训练室",
+            "REPLAY / EVERYONE IS HOME",
+            "SAVED YOU A SEAT",
+            "01  总览",
+            "02  装备区",
+            "03  作战室",
+            "04  工坊",
+            "05  休息室",
+            "MENU"
+          ]
+        }
+      ]
+    },
+    "portable_story_compat_en": {
+      "checks": 67,
+      "failures": [],
+      "input_sha256": "2b83e035081dc8b02ca301b33547ae5255820cde327a33d2f1ce363b8838feb9",
+      "method": "Actual earned schema10 rescue return; normal BOOT/continue/main-story buttons; real water battery/delivery, live truck fight, moving-arc core, physical extraction, automatic ending/skip/replay/credits/free play; not human acceptance",
+      "routes": [
+        {
+          "damage": 0,
+          "health": 260.0,
+          "kills": 8,
+          "mission": "waterworks_run",
+          "shots_total": 33
+        },
+        {
+          "damage": 0,
+          "health": 260.0,
+          "kills": 3,
+          "mission": "blockade_run",
+          "shots_total": 59
+        },
+        {
+          "damage": 0,
+          "health": 260.0,
+          "kills": 6,
+          "mission": "maintenance_shutdown",
+          "shots_total": 88
+        }
+      ],
+      "shots": 88,
+      "steps": [
+        {
+          "name": "waterworks_run_brief",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "OPERATIONS",
+            "Water Tower Street / Who Gets the First Bucket\n\nWest garage: 8kg battery. East pump: 8s installation.\nChoose courtyard water + dressings, or tanker water + ammunition.\nSouth retreat stays open. M: street map.",
+            "CONFIRM DEPLOYMENT",
+            "MAIN STORY / NEXT OPERATION",
+            "Water Tower Street / Who Gets the First Bucket",
+            "DAWN / WATER TOWER",
+            "SORTIE  13.7 / 35 kg\n5.56 Standard x90 / 5.56 AP x0 (EMPTY) / 9mm Ball x108 / Field Dressing x0 (NOT PACKED) / Field Medkit x0 (NOT PACKED)\nExtra warehouse ammunition stays at base.",
+            "CHARACTER / STASH",
+            "AT RISK: all deployed equipment and supplies.\nDeath or abandonment loses carried items. Base storage is safe.",
+            "01  OVERVIEW",
+            "02  HANGER",
+            "03  OPERATIONS",
+            "04  WORKSHOP",
+            "05  REST",
+            "MENU"
+          ]
+        },
+        {
+          "name": "waterworks_run_debrief",
+          "scene": "res://scenes/result/result.tscn",
+          "visible_text": [
+            "EXTRACTION SUCCESSFUL",
+            "MISSION  /  Water Tower Street / Who Gets the First Bucket",
+            "MISSION COMPLETE",
+            "OBJECTIVES",
+            "COMPLETE  West garage / carry the 8kg battery    1 / 1",
+            "COMPLETE  East pump / install battery for 8s    1 / 1",
+            "COMPLETE  Choose the first water delivery, then extract    1 / 1",
+            "COMPLETE  Optional / sound the square loudspeaker    1 / 1",
+            "COMPLETE  Courtyard delivery / west exit and two dressings    1 / 1",
+            "INCOMPLETE  Tanker delivery / north exit and ninety rounds    0 / 1",
+            "SURVIVAL",
+            "EXTRACTED",
+            "RECOVERED CARGO",
+            "13.3 / 35.0 kg",
+            "NEW SUPPLIES",
+            "0",
+            "LOOT / CREDIT REWARD",
+            "450",
+            "ENEMIES DEFEATED",
+            "8",
+            "DAMAGE TAKEN",
+            "0",
+            "PRIMARY WEAPON",
+            "AR-556 Carbine",
+            "RETURN TO HIDEOUT",
+            "FIELD RECORDER\nDEBRIEF",
+            "BASTION 07 / RETURN CHANNEL",
+            "出击与委托",
+            "[Water splashes over the courtyard gutter.]\nTang Kui: One at a time! That is a cooking pot, not a bucket-- fine, give it here.\nShen Yanshuang: West courtyard gate is open. Get home before she volunteers you again.",
+            "ON RETURN / BASTION CONTRACT\n\n01 / ESTABLISH THE ROUTES\n\nPROJECTED ON RETURN / 0 / 2"
+          ]
+        },
+        {
+          "name": "blockade_run_brief",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "OPERATIONS",
+            "Checkpoint / Please Remain Calm\n\nRed line: move or take cover. Four shots, then blue vents: fire. West alley cuts PA only; south retreat stays open.",
+            "CONFIRM DEPLOYMENT",
+            "MAIN STORY / NEXT OPERATION",
+            "Checkpoint / Please Remain Calm",
+            "DAWN / WATER TOWER",
+            "SORTIE  13.7 / 35 kg\n5.56 Standard x90 / 5.56 AP x0 (EMPTY) / 9mm Ball x108 / Field Dressing x0 (NOT PACKED) / Field Medkit x0 (NOT PACKED)\nExtra warehouse ammunition stays at base.",
+            "CHARACTER / STASH",
+            "AT RISK: all deployed equipment and supplies.\nDeath or abandonment loses carried items. Base storage is safe.",
+            "01  OVERVIEW",
+            "02  HANGER",
+            "03  OPERATIONS",
+            "04  WORKSHOP",
+            "05  REST",
+            "MENU"
+          ]
+        },
+        {
+          "name": "blockade_run_debrief",
+          "scene": "res://scenes/result/result.tscn",
+          "visible_text": [
+            "EXTRACTION SUCCESSFUL",
+            "MISSION  /  Checkpoint / Please Remain Calm",
+            "MISSION COMPLETE",
+            "OBJECTIVES",
+            "COMPLETE  Disable the armored PA van, then extract    1 / 1",
+            "COMPLETE  Optional / cut the west alley PA supply    1 / 1",
+            "SURVIVAL",
+            "EXTRACTED",
+            "RECOVERED CARGO",
+            "13.4 / 35.0 kg",
+            "NEW SUPPLIES",
+            "0",
+            "LOOT / CREDIT REWARD",
+            "450",
+            "ENEMIES DEFEATED",
+            "3",
+            "DAMAGE TAKEN",
+            "0",
+            "PRIMARY WEAPON",
+            "AR-556 Carbine",
+            "RETURN TO HIDEOUT",
+            "FIELD RECORDER\nDEBRIEF",
+            "BASTION 07 / RETURN CHANNEL",
+            "出击与委托",
+            "[Metal clatters. For a moment, only the empty buckets rattle.]\nTang Kui: Is it dead?\nSu Mi: It is a truck.\nTang Kui: I was asking politely.\nShen Yanshuang: North gate is clear. Come back. Both of you.",
+            "ON RETURN / BASTION CONTRACT\n\n01 / ESTABLISH THE ROUTES\n\nPROJECTED ON RETURN / 0 / 2"
+          ]
+        },
+        {
+          "name": "maintenance_shutdown_brief",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "OPERATIONS",
+            "Backup Power / The Last Click\n\nKeep the shelter bridge on. Move out of amber lanes; the white bar is a live discharge. Use blue cooling windows to isolate both side feeds, then the north master stop. South retreat stays open.",
+            "CONFIRM DEPLOYMENT",
+            "MAIN STORY / NEXT OPERATION",
+            "Backup Power / The Last Click",
+            "WORK LIGHTS / MAINTENANCE",
+            "SORTIE  13.7 / 35 kg\n5.56 Standard x90 / 5.56 AP x0 (EMPTY) / 9mm Ball x108 / Field Dressing x0 (NOT PACKED) / Field Medkit x0 (NOT PACKED)\nExtra warehouse ammunition stays at base.",
+            "CHARACTER / STASH",
+            "AT RISK: all deployed equipment and supplies.\nDeath or abandonment loses carried items. Base storage is safe.",
+            "01  OVERVIEW",
+            "02  HANGER",
+            "03  OPERATIONS",
+            "04  WORKSHOP",
+            "05  REST",
+            "MENU"
+          ]
+        },
+        {
+          "name": "core_Radio",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "BACKUP POWER / THE LAST CLICK",
+            "South bridge / keep L-02A shelter power before touching either battery feed.",
+            "OPTIONAL OBJECTIVES 4",
+            "HP  260 / 260",
+            "8.2 m/s  ·  10% protection  ·  3.0 kg armor",
+            "CARGO  13.7 / 35.0 kg",
+            "H / DRESSING 0   J / MEDKIT 0",
+            "ACTIVE  PRIMARY",
+            "PRIMARY  AR-556 CARBINE +10% DMG",
+            "26 / 30   ·   60 RESERVE",
+            "Q / SMG-9 COMPACT",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "E  LISTEN / THE LAST CLICK",
+            "Xu Tang: It starts again when the lights go out. I used to count the clicks.\nSu Mi: The battery room. The campus branch is already off; this thing has its own supply.\nTang Kui: Do not touch the green cable. That is our kitchen.\nShen: We are outside the north door. This time, nobody waits in there alone.",
+            "Backup power / radio",
+            "TARGET DOWN"
+          ]
+        },
+        {
+          "name": "core_Bridge",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "BACKUP POWER / THE LAST CLICK",
+            "Cut both side feeds during blue cooling windows. Amber lane: move aside. The white bar is the live discharge.",
+            "OPTIONAL OBJECTIVES 4",
+            "HP  260 / 260",
+            "8.2 m/s  ·  10% protection  ·  3.0 kg armor",
+            "CARGO  13.7 / 35.0 kg",
+            "H / DRESSING 0   J / MEDKIT 0",
+            "ACTIVE  PRIMARY",
+            "PRIMARY  AR-556 CARBINE +10% DMG",
+            "24 / 30   ·   60 RESERVE",
+            "Q / SMG-9 COMPACT",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "This circuit is already isolated.",
+            "[The green shelter lamp stays on.]\nTang Kui: Still cooking.\nSu Mi: That is how you check the power?\nTang Kui: It is a very good test.",
+            "Circuit changed / L-02A shelter supply remains on."
+          ]
+        },
+        {
+          "name": "core_LeftFeed",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "BACKUP POWER / THE LAST CLICK",
+            "Cut both side feeds during blue cooling windows. Amber lane: move aside. The white bar is the live discharge.",
+            "OPTIONAL OBJECTIVES 4",
+            "HP  260 / 260",
+            "8.2 m/s  ·  10% protection  ·  3.0 kg armor",
+            "CARGO  13.6 / 35.0 kg",
+            "H / DRESSING 0   J / MEDKIT 0",
+            "ACTIVE  PRIMARY",
+            "PRIMARY  AR-556 CARBINE +10% DMG",
+            "21 / 30   ·   60 RESERVE",
+            "Q / SMG-9 COMPACT",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "This circuit is already isolated.",
+            "Xu Tang: One less click.\nShen: Keep your eyes on the floor. We heard something moving.",
+            "Circuit changed / L-02A shelter supply remains on."
+          ]
+        },
+        {
+          "name": "core_RightFeed",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "BACKUP POWER / THE LAST CLICK",
+            "Both feeds isolated / use the north master stop during a blue cooling window.",
+            "OPTIONAL OBJECTIVES 4",
+            "HP  260 / 260",
+            "8.2 m/s  ·  10% protection  ·  3.0 kg armor",
+            "CARGO  13.5 / 35.0 kg",
+            "H / DRESSING 0   J / MEDKIT 0",
+            "ACTIVE  PRIMARY",
+            "PRIMARY  AR-556 CARBINE +10% DMG",
+            "8 / 30   ·   60 RESERVE",
+            "Q / SMG-9 COMPACT",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "This circuit is already isolated.",
+            "Su Mi: Both battery feeds are isolated. The middle lane will discharge once more.\nTang Kui: Then pull its teeth out. I am not reheating this a third time.",
+            "Circuit changed / L-02A shelter supply remains on."
+          ]
+        },
+        {
+          "name": "core_MasterStop",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "BACKUP POWER / THE LAST CLICK",
+            "The backup core is stopped. North door open; extract and go home.",
+            "OPTIONAL OBJECTIVES 4",
+            "HP  260 / 260",
+            "8.2 m/s  ·  10% protection  ·  3.0 kg armor",
+            "CARGO  13.5 / 35.0 kg",
+            "H / DRESSING 0   J / MEDKIT 0",
+            "ACTIVE  PRIMARY",
+            "PRIMARY  AR-556 CARBINE +10% DMG",
+            "8 / 30   ·   60 RESERVE",
+            "Q / SMG-9 COMPACT",
+            "FIELD OPERATION COMPLETE / EXTRACT WHEN READY",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "This circuit is already isolated.",
+            "[The rotor slows. No new click follows.]\nXu Tang: ...Is that it?\nSu Mi: That is it.\nShen: The north door is open. Come home.",
+            "Circuit changed / L-02A shelter supply remains on."
+          ]
+        },
+        {
+          "name": "core_map",
+          "scene": "res://scenes/battle/battle.tscn",
+          "visible_text": [
+            "",
+            "ESC / PAUSE",
+            "BACKUP POWER / THE LAST CLICK",
+            "The backup core is stopped. North door open; extract and go home.",
+            "OPTIONAL OBJECTIVES 4",
+            "HP  260 / 260",
+            "8.2 m/s  ·  10% protection  ·  3.0 kg armor",
+            "CARGO  13.5 / 35.0 kg",
+            "H / DRESSING 0   J / MEDKIT 0",
+            "ACTIVE  PRIMARY",
+            "PRIMARY  AR-556 CARBINE +10% DMG",
+            "8 / 30   ·   60 RESERVE",
+            "Q / SMG-9 COMPACT",
+            "FIELD OPERATION COMPLETE / EXTRACT WHEN READY",
+            "+",
+            "MUZZLE / COVER",
+            "×",
+            "This circuit is already isolated.",
+            "[The rotor slows. No new click follows.]\nXu Tang: ...Is that it?\nSu Mi: That is it.\nShen: The north door is open. Come home.",
+            "Circuit changed / L-02A shelter supply remains on."
+          ]
+        },
+        {
+          "name": "maintenance_shutdown_debrief",
+          "scene": "res://scenes/result/result.tscn",
+          "visible_text": [
+            "EXTRACTION SUCCESSFUL",
+            "MISSION  /  Backup Power / The Last Click",
+            "MISSION COMPLETE",
+            "OBJECTIVES",
+            "COMPLETE  Keep L-02A shelter power    1 / 1",
+            "COMPLETE  Isolate left battery feed    1 / 1",
+            "COMPLETE  Isolate right battery feed    1 / 1",
+            "COMPLETE  Stop the backup core    1 / 1",
+            "SURVIVAL",
+            "EXTRACTED",
+            "RECOVERED CARGO",
+            "13.4 / 35.0 kg",
+            "NEW SUPPLIES",
+            "0",
+            "LOOT / CREDIT REWARD",
+            "450",
+            "ENEMIES DEFEATED",
+            "6",
+            "DAMAGE TAKEN",
+            "0",
+            "PRIMARY WEAPON",
+            "AR-556 Carbine",
+            "RETURN TO HIDEOUT",
+            "FIELD RECORDER\nDEBRIEF",
+            "BASTION 07 / RETURN CHANNEL",
+            "出击与委托",
+            "[L-02A is still lit. The test equipment stays dark.]\nSu Mi: No restart signal. No backup feed.\nTang Kui: I can hear the pot boiling again.\nXu Tang: I want to hear that.\nShen: Then stop standing in the doorway. All of you."
+          ]
+        },
+        {
+          "name": "ending_two_actors",
+          "scene": "res://scenes/presentation/slice/homecoming_finale.tscn",
+          "visible_text": [
+            "EVERYONE IS HOME / THE END",
+            "RETURN TO QUARTERS",
+            "Tang Kui, on the radio: Two knocks. I said two.\nSu Mi: She knocked three times.\nShen: One was you kicking the door.",
+            "NEXT LINE"
+          ]
+        },
+        {
+          "name": "ending_table",
+          "scene": "res://scenes/presentation/slice/homecoming_finale.tscn",
+          "visible_text": [
+            "EVERYONE IS HOME / THE END",
+            "RETURN TO QUARTERS",
+            "Shen: Leave it.\nXu Tang: Let them argue. It is nice.\n[There is room at the table. The soup is still warm.]",
+            "FREE PLAY / BACK TO BASE",
+            "REPLAY THIS ENDING",
+            "END CARD / CREDITS"
+          ]
+        },
+        {
+          "name": "ending_end_card",
+          "scene": "res://scenes/presentation/slice/homecoming_finale.tscn",
+          "visible_text": [
+            "EVERYONE IS HOME / THE END",
+            "RETURN TO QUARTERS",
+            "Tonight, nobody is waiting outside. Return to the table, or head back to base.",
+            "FREE PLAY / BACK TO BASE",
+            "REPLAY THIS ENDING",
+            "BACK TO THE TABLE",
+            "THE END / EVERYONE IS HOME",
+            "Neon Bastion / Local prototype\nGodot Engine\nThird-party asset credits: bundled notices\n\nThank you for bringing everyone home."
+          ]
+        },
+        {
+          "name": "free_play",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "REST",
+            "HOME / EVERYONE IS BACK\n\nThe food is still warm. The radio can wait.\n\nFree sorties remain available.",
+            "OPEN TRAINING ROOM",
+            "REPLAY / EVERYONE IS HOME",
+            "SAVED YOU A SEAT",
+            "01  OVERVIEW",
+            "02  HANGER",
+            "03  OPERATIONS",
+            "04  WORKSHOP",
+            "05  REST",
+            "MENU"
+          ]
+        }
+      ]
+    }
+  },
+  "moving_arc_visual_fixture": [
+    {
+      "name": "visual_forward",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "00f6f44e61872636aee6f825742bc867962882b1886a51a6586af93a892f3a79"
+    },
+    {
+      "name": "visual_compat_en",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "337c876c4db1b851b9e642a792420a6a500c4fe4aea2b0e4a634cc448ade265c"
+    }
+  ],
+  "preservation": {
+    "public_release_approved": false,
+    "prior_asset_files_unchanged": 881,
+    "prior_scene_files_unchanged": 95,
+    "old_translation_entries_preserved": 1400,
+    "current_translation_entries": 1495,
+    "reviewed_non_document_sources_match_frozen_and_build": 3987,
+    "personal_saves_unchanged": {
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455246252200
+      },
+      "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak": {
+        "bytes": 8574,
+        "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+        "mtime_ns": 1792216455253759300
+      }
+    },
+    "arcana_original_sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+    "paid_archive_original_sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec",
+    "preview_input_sha_and_mtime_unchanged": true
+  },
+  "pck_entry_count": 1404,
+  "pck_all_checksums_verified": true,
+  "missing_acceptance": [
+    "Measured 4-6h first human completion and content density",
+    "Formal consistent character/level art, actual listening and minimum-hardware checks",
+    "Final asset distribution clearance, clean-machine/update acceptance",
+    "Public itch page/download, genuine review sample and 80% positive feedback"
+  ]
+}

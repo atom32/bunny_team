@@ -51,6 +51,7 @@ func _ready() -> void:
 	hud.set_threat_level(session.threat_level)
 	player.health_changed.connect(hud.set_health)
 	player.health_changed.connect(_on_player_health_changed)
+	player.damage_received.connect(_on_player_damage_received)
 	player.weapon_fired.connect(_on_player_weapon_fired)
 	player.ammo_changed.connect(_on_player_ammo_changed)
 	player.weapon_switched.connect(_on_player_weapon_switched)
@@ -83,6 +84,7 @@ func _ready() -> void:
 	checkpoint_layout_signature = SortieCheckpoint.layout_signature(area_root)
 	if not SortieRuntime.attach_battle(self):
 		FlowMenu.show_checkpoint_error(SortieRuntime.last_error)
+	_sync_request_hud()
 
 
 func _process(delta: float) -> void:
@@ -90,10 +92,7 @@ func _process(delta: float) -> void:
 		return
 	if hud:
 		hud.set_reload_remaining(player.get_reload_remaining())
-		if not session.campus.is_empty():hud.slice_label.text=CampusChapter.status_text(ProfileRuntime.get_profile(),session)
-		elif not session.slice_context.is_empty(): hud.slice_label.text = NarrativeSlice.status_text(ProfileRuntime.get_profile(), session)
-		elif session.q02_active: hud.slice_label.text = NarrativeSlice.q02_status(ProfileRuntime.get_profile(), session)
-		elif session.q04_active: hud.slice_label.text = NarrativeSlice.q04_status(ProfileRuntime.get_profile(), session)
+		_sync_request_hud()
 		if player.medical:
 			hud.set_medical(player.medical)
 			hud.set_inventory_capacity(session.inventory.get_used_capacity(), session.inventory.capacity)
@@ -113,6 +112,7 @@ func _process(delta: float) -> void:
 	if _camera_occlusion:
 		_camera_occlusion.update_occlusion(camera, player, delta)
 	if hud and player_visibility:
+		hud.combat_feedback.camera = camera
 		hud.set_perception(player_visibility, camera)
 
 
@@ -121,7 +121,7 @@ func _load_area() -> bool:
 	if not definition:
 		push_error("Battle could not resolve area ID: %s" % session.area_id)
 		return false
-	area_root = AreaLoader.instantiate_area(definition)
+	area_root = AreaLoader.instantiate_area(definition,session)
 	if not area_root:
 		push_error("Battle could not instantiate area ID: %s" % session.area_id)
 		return false
@@ -198,6 +198,7 @@ func _refresh_language() -> void:
 	if not hud or not is_instance_valid(player): return
 	_sync_weapon_hud()
 	_sync_objective_hud()
+	_sync_request_hud()
 	hud.set_health(player.health, player.max_health)
 	hud.set_inventory_capacity(session.inventory.get_used_capacity(), session.inventory.capacity)
 	hud.set_threat_level(session.threat_level)
@@ -210,6 +211,18 @@ func _on_player_health_changed(current: float, maximum: float) -> void:
 		var damage_ratio := damage_amount / maximum
 		_camera_trauma = maxf(_camera_trauma, 0.16 + damage_ratio * 1.8)
 	_last_health = current
+
+
+func _on_player_damage_received(packet: DamagePacket, applied_damage: float) -> void:
+	if ending or not hud or applied_damage <= 0.0: return
+	# Snapshot only the impact direction, never track a hidden attacker's position.
+	hud.combat_feedback.receive_hit(-packet.knockback_impulse)
+
+
+func _on_enemy_damage_received(enemy: EnemyController, packet: DamagePacket, applied_damage: float) -> void:
+	if ending or not hud or packet.source_actor != player or applied_damage <= 0.0: return
+	if not player_visibility.can_see_enemy(enemy): return
+	hud.combat_feedback.confirm_hit(enemy.global_position+Vector3.UP*1.25, enemy.health <= 0.0)
 
 
 func _spawn_enemies() -> bool:
@@ -280,10 +293,12 @@ func _spawn_enemy_at_point(spawn_point: EnemySpawnPoint) -> EnemyController:
 		enemy.queue_free()
 		return null
 	enemy.died.connect(_on_enemy_died)
+	enemy.damage_received.connect(_on_enemy_damage_received)
 	enemy.set_meta("spawn_key", String(area_root.get_path_to(spawn_point)))
 	if spawn_point.tactical_role >= 0:
 		enemy.tactics.role = spawn_point.tactical_role
 	player_visibility.track_enemy(enemy)
+	if area_root.has_method("bind_enemy_duty"):area_root.bind_enemy_duty(enemy)
 	enemies_remaining += 1
 	return enemy
 
@@ -317,6 +332,8 @@ func _on_threat_event_activated(event: ThreatEvent, group_id: StringName) -> voi
 
 
 func _configure_objective_world() -> void:
+	for van in area_root.find_children("*", "BlockadeVan", true, false):
+		van.objective_interacted.connect(_on_world_objective_recorded)
 	for terminal in area_root.find_children("*", "ObjectiveInteractable", true, false):
 		if not terminal.objective_interacted.is_connected(_on_world_objective_recorded):
 			terminal.objective_interacted.connect(_on_world_objective_recorded)
@@ -345,9 +362,14 @@ func _on_enemy_died(_enemy: EnemyController) -> void:
 	hud.set_enemy_count(enemies_remaining)
 	_sync_objective_hud()
 	if not mission_was_completed and session.is_mission_completed():
-		hud.show_banner("MISSION OBJECTIVE COMPLETE  /  EXTRACT WHEN READY", Color("79f1e7"))
+		hud.show_banner("FIELD OPERATION COMPLETE / EXTRACT WHEN READY" if not SortieGuidance.field(ProfileRuntime.get_profile(), session).is_empty() else "MISSION OBJECTIVE COMPLETE  /  EXTRACT WHEN READY", Color("79f1e7"))
 	elif enemies_remaining <= 0:
-		hud.show_banner("AREA SECURE  /  EXTRACT WHEN READY", Color("79f1e7"))
+		if session.area_id==BlockadeStory.AREA and not session.blockade.is_empty() and session.blockade.van_down and not session.blockade.escape_open:
+			hud.show_banner("INFECTED CLEARED / NORTH SHUTTER STILL CLOSED",Color("ffbc77"))
+		elif session.area_id == BlockadeStory.AREA and not area_root.get_node("Van").destroyed:
+			hud.show_banner("INFECTED CLEARED / VAN STILL ACTIVE", Color("ffbc77"))
+		else:
+			hud.show_banner("AREA SECURE  /  EXTRACT WHEN READY", Color("79f1e7"))
 	SortieRuntime.request_checkpoint()
 
 
@@ -367,6 +389,15 @@ func _sync_objective_hud() -> void:
 			"completed": int(summary.get("status", ObjectiveState.Status.PENDING)) == ObjectiveState.Status.COMPLETED,
 		})
 	hud.set_objectives(hud_objectives)
+	_sync_request_hud()
+
+func _sync_request_hud() -> void:
+	var guide := SortieGuidance.field(ProfileRuntime.get_profile(), session)
+	var detail := ""
+	if not guide.is_empty(): detail = guide[1]
+	elif not session.campus.is_empty(): detail = CampusChapter.status_text(ProfileRuntime.get_profile(), session)
+	elif session.q04_active: detail = NarrativeSlice.q04_status(ProfileRuntime.get_profile(), session)
+	hud.set_request(guide[0] if not guide.is_empty() else "", detail)
 
 
 func _on_player_died() -> void:
@@ -391,13 +422,14 @@ func _on_world_objective_recorded(_objective_id: StringName) -> void:
 
 func _show_mission_complete_if_ready() -> void:
 	if session.is_mission_completed():
-		hud.show_banner("MISSION OBJECTIVES COMPLETE  /  EXTRACT WHEN READY", Color("79f1e7"))
+		hud.show_banner("FIELD OPERATION COMPLETE / EXTRACT WHEN READY" if not SortieGuidance.field(ProfileRuntime.get_profile(), session).is_empty() else "MISSION OBJECTIVES COMPLETE  /  EXTRACT WHEN READY", Color("79f1e7"))
 
 
 func _on_extraction_completed(_session: SortieSession, _extraction_id: StringName) -> void:
 	if ending:
 		return
 	ending = true
+	hud.combat_feedback.clear()
 	player.set_physics_process(false)
 	if player.interaction_component:
 		player.interaction_component.set_enabled(false)
@@ -410,6 +442,7 @@ func _fail_battle() -> void:
 	if ending or not session.fail():
 		return
 	ending = true
+	hud.combat_feedback.clear()
 	player.set_physics_process(false)
 	if player.interaction_component:
 		player.interaction_component.set_enabled(false)

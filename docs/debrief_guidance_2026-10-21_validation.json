@@ -1,0 +1,162 @@
+{
+  "status": "source_verified_not_new_windows",
+  "full_source": {
+    "pass": true,
+    "scene_count": 123,
+    "categories": 229,
+    "results_sha256": "3af259c159a57e9a2612e86b3951948c48f25f3f25cc4399dc2d355fe7961851",
+    "current_root_non_document_inputs_match": 4040,
+    "protected_files_unchanged": true,
+    "not_new_windows_packet": true
+  },
+  "evidence_directory": "D:\\tmp\\bunny_debrief_guidance_20261021_dev01",
+  "targeted": [
+    {
+      "name": "component_forward04",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_debrief_guidance_20261021_dev01\\run.py",
+        "debrief_guidance_test",
+        "--case",
+        "component_forward04",
+        "--group",
+        "component_forward04",
+        "--gui",
+        "--capture"
+      ],
+      "log_sha256": "491d497424c1b6b5773fbd6c38e32bce0696f2aef8a6eb93efb4f70e00827070"
+    },
+    {
+      "name": "component_compat04",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_debrief_guidance_20261021_dev01\\run.py",
+        "debrief_guidance_test",
+        "--case",
+        "component_compat04",
+        "--group",
+        "component_compat04",
+        "--gui",
+        "--compat",
+        "--capture"
+      ],
+      "log_sha256": "faa39d8bdf5d1a7f6c6f0e5662e9df32cab582ffb8742e4d247376aad4c2ffaa"
+    },
+    {
+      "name": "earned_forward04",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_debrief_guidance_20261021_dev01\\run.py",
+        "relay_pa",
+        "--case",
+        "earned_forward04",
+        "--group",
+        "earned_forward04",
+        "--gui"
+      ],
+      "log_sha256": "f93d655472a2a64d28d3a20a06640cab6ad354f54eedd607dc1dae93213337c0"
+    },
+    {
+      "name": "earned_forward_read04",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_debrief_guidance_20261021_dev01\\run.py",
+        "relay_pa",
+        "--case",
+        "earned_forward_read04",
+        "--group",
+        "earned_forward04",
+        "--read-relay"
+      ],
+      "log_sha256": "4a990a30d983d8ad72974b7331fb1f47c6fa007b177a6a389ca4d4fc2e1c7e92"
+    },
+    {
+      "name": "earned_compat_en04",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_debrief_guidance_20261021_dev01\\run.py",
+        "relay_pa",
+        "--case",
+        "earned_compat_en04",
+        "--group",
+        "earned_compat_en04",
+        "--gui",
+        "--compat",
+        "--english"
+      ],
+      "log_sha256": "75281c11871731caf1b33e544b7c82c6ac5dcccebc14b49105969d695bef8510"
+    },
+    {
+      "name": "earned_compat_en_read04",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_debrief_guidance_20261021_dev01\\run.py",
+        "relay_pa",
+        "--case",
+        "earned_compat_en_read04",
+        "--group",
+        "earned_compat_en04",
+        "--read-relay",
+        "--english"
+      ],
+      "log_sha256": "b972007450d129d1c2efe2bbb61830e63310e266dcbe96945f9d829504ad8aae"
+    }
+  ],
+  "visual_review": {
+    "reviewed": true,
+    "images": {
+      "component_forward04_captures/debrief_relay_recorder_zh_CN.png": "2d2831bc7aec80e4471a5692ed3b5f2e3b981d7612e95c0bc65ae220eed0b718",
+      "component_compat04_captures/debrief_relay_recorder_en.png": "4acf96d7340023151206204ec14866ea851a6f109728880e0f50d8d49ca2d9bd",
+      "component_compat04_captures/debrief_relay_failed_en.png": "3a1f259c35f0097107a85fb017d190d3643527763624f5f0e09442261f0be538",
+      "earned_forward04_captures/05_relay_debrief.png": "9196f8f2c52af2dc743f3d67ab640a0bd55c5cbc520ab46c603b995ab82767ab",
+      "earned_compat_en04_captures/05_relay_debrief.png": "337371b8ce8c8ad096a1ef0b750cbadf9928eccf3c7457b4e7e4de65374f8a45"
+    },
+    "scope": "3 current controlled-UI native screenshots plus2 current ordinary earned debriefs, not earlier wide-label images. Chinese Forward+ and English Compatibility.",
+    "notes": [
+      "Story relays/recorder and optional records verdict are separate.",
+      "Actual left360px column wraps before the character preview; return button remains within panel.",
+      "Actual normal outings still wait for Return to Base before settling; no optional objectives fabricated.",
+      "Failure layouts shown by controlled outcome fixtures, not claimed as actual deaths."
+    ]
+  },
+  "fixture_scope": "21 controlled outcome cases in both languages, 614 headless / 622 native checks; not earned victories",
+  "earned_scope": "Two ordinary BOOT/Continue relay outings, Chinese Forward+ and English Compatibility, actual work/pickup/extraction and independent BOOT reads, successful_sorties 3 to 4. No grants, forced focus/unpause, disabled AI or teleport.",
+  "retained_rejections": [
+    "component_forward01: null battle capture emitted script errors despite exit0",
+    "targeted02: functional passes superseded after English width inspection",
+    "component_forward03/layout_diagnose01: cached unwrapped width failed unchanged assertion"
+  ],
+  "protected_files_unchanged": true,
+  "latest_windows_unchanged": true,
+  "human_playtime_or_fun_claim": false
+}

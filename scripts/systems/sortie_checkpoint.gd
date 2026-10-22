@@ -37,7 +37,7 @@ static func session_data(session: SortieSession) -> Dictionary:
 	for id in session._weapon_runtime_states:
 		var weapon = session._weapon_runtime_states[id]
 		rounds[id] = {"ammo": String(weapon.ammo_definition_id), "capacity": weapon.magazine_capacity, "rounds": weapon.magazine_ammo}
-	return {"campus":session.campus.duplicate(true),"lighting": session.lighting_variant, "q04_active": session.q04_active, "delivery_receipt": session.delivery_receipt, "q02_active": session.q02_active, "pharmacy_batch": session.pharmacy_batch, "slice_context": session.slice_context.duplicate(true), "exit_observations": session.exit_observations.duplicate(), "id": session.session_id, "status": session.status, "area": String(session.area_id), "mission": String(session.mission_id), "inventory": session.inventory.to_dict(), "loadout": session.loadout.to_dict(), "initial_ids": session.get_initial_carried_instance_ids(), "objectives": session.get_objective_summary(), "mission_completed": session.mission_completed, "kills": session.enemies_defeated, "damage": session.damage_taken, "upgrade": session.ar_damage_upgraded, "threat": session.threat_level, "weapons": rounds}
+	return {"maintenance":session.maintenance.duplicate(true),"blockade":session.blockade.duplicate(true),"waterworks":session.waterworks.duplicate(true),"campus":session.campus.duplicate(true),"lighting": session.lighting_variant, "q04_active": session.q04_active, "delivery_receipt": session.delivery_receipt, "q02_active": session.q02_active, "pharmacy_batch": session.pharmacy_batch, "slice_context": session.slice_context.duplicate(true), "exit_observations": session.exit_observations.duplicate(), "id": session.session_id, "status": session.status, "area": String(session.area_id), "mission": String(session.mission_id), "inventory": session.inventory.to_dict(), "loadout": session.loadout.to_dict(), "initial_ids": session.get_initial_carried_instance_ids(), "objectives": session.get_objective_summary(), "mission_completed": session.mission_completed, "kills": session.enemies_defeated, "damage": session.damage_taken, "upgrade": session.ar_damage_upgraded, "threat": session.threat_level, "weapons": rounds}
 
 static func restore_session(data: Dictionary) -> SortieSession:
 	for key in ["id", "area", "mission"]:
@@ -66,6 +66,15 @@ static func restore_session(data: Dictionary) -> SortieSession:
 	var campus_data: Variant=data.get("campus",{})
 	if not CampusChapter.valid_facts(campus_data,session.area_id):return null
 	session.campus=campus_data.duplicate(true)
+	var water_data: Variant=data.get("waterworks",{})
+	if typeof(water_data)!=TYPE_DICTIONARY:return null
+	session.waterworks=water_data.duplicate(true)
+	var blockade_data: Variant=data.get("blockade",{})
+	if typeof(blockade_data)!=TYPE_DICTIONARY:return null
+	session.blockade=blockade_data.duplicate(true)
+	var maintenance_data: Variant=data.get("maintenance",{})
+	if typeof(maintenance_data)!=TYPE_DICTIONARY:return null
+	session.maintenance=maintenance_data.duplicate(true)
 	if typeof(data.get("q02_active", false)) != TYPE_BOOL: return null
 	if not NarrativeSlice.valid_pharmacy(data.get("q02_active", false) or session.q04_active, data.get("pharmacy_batch", ""), session.area_id): return null
 	session.q02_active = data.get("q02_active", false)
@@ -151,11 +160,27 @@ static func _transform(value: Array) -> Transform3D:
 static func _world_nodes(battle: Node) -> Dictionary:
 	var nodes := {}
 	for node in battle.area_root.find_children("*", "", true, false):
-		if node is Door or node is DestructibleWorldObject or node is ThreatEvent or node is LootSpawnPoint or node is EnemySpawnPoint or node is ExtractionPoint or node is RelayStation or node is CampusAction or node.get_script() == TERMINAL_SCRIPT:
+		if node is CampusExitGate or node is Door or node is DestructibleWorldObject or node is ThreatEvent or node is LootSpawnPoint or node is EnemySpawnPoint or node is ExtractionPoint or node is RelayStation or node is MaintenanceSteam or node is BlockadePassage or node is BlockadeSearchlight or node is CampusPowerEncounter or node is CampusSupplyHandoff or node is CampusMedicalRunners or node is CampusRelayDiversion or node is CampusAction or node is WaterworksAction or node is WaterMarket or node is MaintenanceAction or node is MaintenanceSurvivor or node is FinaleSweep or node is WaterTanker or node is WaterResident or node.get_script() == TERMINAL_SCRIPT:
 			nodes[String(battle.area_root.get_path_to(node))] = node
 	return nodes
 
 static func _node_fields(node: Node) -> Array:
+	if node is CampusExitGate:return ["mode","introduced"]
+	if node is MaintenanceSteam:return ["cycle_time","hit_cooldown","warned","followed"]
+	if node is BlockadePassage:return ["service_open","escape_started","escape_progress"]
+	if node is BlockadeSearchlight:return ["sweep_time","exposure"]
+	if node is CampusPowerEncounter:return ["phase"]
+	if node is CampusSupplyHandoff:return ["phase","progress"]
+	if node is CampusMedicalRunners:return ["phase","route_index","introduced","drop_position"]
+	if node is CampusRelayDiversion:return ["phase","remaining","pulse_remaining","introduced"]
+	if node is WaterMarket:return ["isolated","mode","progress","back_open"]
+	if node is WaterTanker:return ["progress","moving"]
+	if node is WaterResident:return ["position","rotation","velocity","arrived"]
+	if node is FinaleSweep:return ["phase","remaining","lane","cycle","hit_cooldown"]
+	if node is BlockadeVan: return ["current_structure_health", "destroyed", "phase", "phase_remaining", "burst_shots", "aim_point", "speaker_enabled", "speaker_remaining"]
+	if node is MaintenanceAction:return ["remaining"]
+	if node is MaintenanceSurvivor:return ["position","rotation","velocity","waiting","traversing_link","link_goal"]
+	if node is WaterworksAction: return ["remaining"]
 	if node is CampusAction:return ["remaining"]
 	if node is RelayStation: return ["remaining", "start_damage"]
 	if node is Door: return ["state"]
@@ -272,6 +297,7 @@ static func capture_world(battle: Node) -> Dictionary:
 		enemy.ensure_awareness()
 		entry["awareness"] = fields(enemy.awareness, AWARENESS_FIELDS)
 		entry["tactics"] = fields(enemy.tactics, TACTICS_FIELDS)
+		if enemy is CampusRammer:entry["ram"]=enemy.ram_snapshot()
 		enemies[enemy.get_meta("spawn_key")] = entry
 	var nodes := {}
 	var objects := _world_nodes(battle)
@@ -293,13 +319,13 @@ static func capture_world(battle: Node) -> Dictionary:
 	var director: Node = battle.get_node_or_null("FirstMissionDirector")
 	var alarm: RecordsAlarm = battle.area_root.get_node_or_null("StreetTerminal/RecordsAlarm")
 	var records: RecordsTerminal = battle.area_root.get_node_or_null("StreetTerminal")
-	return {"campus":battle.session.campus.duplicate(true),"lighting": battle.area_root.get_meta("lighting", "day"), "map_revision": int(battle.area_root.get_meta("map_revision",0)), "q04_active": battle.session.q04_active, "delivery_receipt": battle.session.delivery_receipt, "q02_active": battle.session.q02_active, "pharmacy_batch": battle.session.pharmacy_batch, "slice_context": battle.session.slice_context.duplicate(true), "exit_observations": battle.session.exit_observations.duplicate(), "records_work": records.snapshot() if records else {}, "records_alarm": alarm.snapshot() if alarm else {}, "layout": battle.checkpoint_layout_signature, "player": fields(battle.player, PLAYER_FIELDS), "footstep_distance": battle.player._footstep_distance, "medical": battle.player.medical.snapshot(), "weapon_slot": String(battle.player.active_weapon_slot), "reloads": battle.player._reload_remaining_by_weapon.duplicate(), "enemies": enemies, "nodes": nodes, "rockets": rockets, "director": fields(director, DIRECTOR_FIELDS) if director else {}}
+	return {"maintenance":battle.session.maintenance.duplicate(true),"blockade":battle.session.blockade.duplicate(true),"waterworks":battle.session.waterworks.duplicate(true),"campus":battle.session.campus.duplicate(true),"lighting": battle.area_root.get_meta("lighting", "day"), "map_revision": int(battle.area_root.get_meta("map_revision",0)), "q04_active": battle.session.q04_active, "delivery_receipt": battle.session.delivery_receipt, "q02_active": battle.session.q02_active, "pharmacy_batch": battle.session.pharmacy_batch, "slice_context": battle.session.slice_context.duplicate(true), "exit_observations": battle.session.exit_observations.duplicate(), "records_work": records.snapshot() if records else {}, "records_alarm": alarm.snapshot() if alarm else {}, "layout": battle.checkpoint_layout_signature, "player": fields(battle.player, PLAYER_FIELDS), "footstep_distance": battle.player._footstep_distance, "medical": battle.player.medical.snapshot(), "weapon_slot": String(battle.player.active_weapon_slot), "reloads": battle.player._reload_remaining_by_weapon.duplicate(), "enemies": enemies, "nodes": nodes, "rockets": rockets, "director": fields(director, DIRECTOR_FIELDS) if director else {}}
 
 static func validate_world(data: Dictionary, battle: Node) -> bool:
 	if not SortieRequest.valid_lighting(data.get("lighting", "day"), battle.session.area_id): return false
 	if data.get("lighting", "day") != battle.session.lighting_variant or data.get("lighting", "day") != battle.area_root.get_meta("lighting", "day"): return false
-	if not integer(data.get("map_revision",0),0,3) or int(data.get("map_revision",0)) != int(battle.area_root.get_meta("map_revision",0)): return false
-	if not NarrativeSlice.world_matches(data, battle.session) or data.get("campus",{})!=battle.session.campus: return false
+	if not integer(data.get("map_revision",0),0,8) or int(data.get("map_revision",0)) != int(battle.area_root.get_meta("map_revision",0)): return false
+	if not NarrativeSlice.world_matches(data, battle.session) or data.get("campus",{})!=battle.session.campus or data.get("waterworks",{})!=battle.session.waterworks or data.get("blockade",{})!=battle.session.blockade or data.get("maintenance",{})!=battle.session.maintenance: return false
 	if typeof(data.get("nodes")) != TYPE_DICTIONARY: return false
 	if not battle.session.slice_context.is_empty():
 		var assigned := {}
@@ -310,13 +336,14 @@ static func validate_world(data: Dictionary, battle: Node) -> bool:
 			if saved.get("available", false): assigned[String(exit.extraction_id)] = String(exit.required_objective_id)
 		if assigned != battle.session.slice_context.exit_conditions: return false
 	if not RecordsAlarm.valid_snapshot(data.get("records_alarm", {})): return false
+	if not battle.area_root.has_node("RecordsIsolator") and (data.get("records_alarm",{}).get("isolation_remaining",0)>0 or data.get("records_alarm",{}).get("phase")==RecordsAlarm.Phase.ISOLATED): return false
 	var work: Variant = data.get("records_work", {})
 	if not RecordsTerminal.valid_snapshot(work): return false
 	if not battle.area_root.has_node("StreetTerminal") and not work.is_empty(): return false
 	if not work.is_empty() and work.remaining > 0:
 		var objective: ObjectiveState = battle.session.get_objective_state(&"streets_terminal")
 		if not objective or objective.status == ObjectiveState.Status.COMPLETED: return false
-		if work.urgent and data.get("records_alarm",{}).get("phase") != RecordsAlarm.Phase.SOUNDED: return false
+		if work.urgent and int(data.get("records_alarm",{}).get("phase",-1)) not in [RecordsAlarm.Phase.SOUNDED,RecordsAlarm.Phase.ISOLATED]: return false
 	if not battle.area_root.has_node("StreetTerminal/RecordsAlarm") and not data.get("records_alarm", {}).is_empty(): return false
 	if typeof(data.get("layout")) != TYPE_STRING or data.layout != battle.checkpoint_layout_signature: return false
 	if not valid_fields(data.get("player"), battle.player, PLAYER_FIELDS): return false
@@ -339,6 +366,7 @@ static func validate_world(data: Dictionary, battle: Node) -> bool:
 		var entry: Dictionary = raw.duplicate(true)
 		if node is LootSpawnPoint:
 			if typeof(entry.get("items")) != TYPE_ARRAY or entry.items.size() > 64: return false
+			if node is MaintenanceSharedCache and not node.valid_pickup_snapshot(entry):return false
 			for pickup in entry.items:
 				if typeof(pickup) != TYPE_DICTIONARY or typeof(pickup.get("item")) != TYPE_DICTIONARY or typeof(pickup.get("interactable")) != TYPE_BOOL: return false
 				var item := ItemInstance.from_dict(pickup.item)
@@ -346,8 +374,31 @@ static func validate_world(data: Dictionary, battle: Node) -> bool:
 				item_ids[item.instance_id] = true
 			entry.erase("items")
 		if not valid_fields(entry, node, _node_fields(node)): return false
+		if node is CampusExitGate and not node.valid_checkpoint(entry,battle.session,data):return false
+		if node is MaintenanceAction:
+			if not battle.session.maintenance.is_empty() and entry.remaining!=0:return false
+			if entry.remaining<0 or entry.remaining>node.duration:return false
+			if entry.remaining>0 and not node.available(battle.session):return false
+		if node is MaintenanceSharedCache and not node.valid_checkpoint(entry,battle.session):return false
+		if node is MaintenanceSteam and not node.valid_checkpoint(entry,battle.session):return false
+		if node is BlockadePassage and not node.valid_checkpoint(entry,battle.session,data):return false
+		if node is BlockadeSearchlight and not node.valid_checkpoint(entry,battle.session):return false
+		if node is WaterMarket and not node.valid_checkpoint(entry,battle.session,data):return false
+		if node is CampusPowerEncounter and not node.valid_checkpoint(entry,battle.session,data):return false
+		if node is CampusSupplyHandoff and not node.valid_checkpoint(entry,battle.session,data):return false
+		if node is CampusMedicalRunners and not node.valid_checkpoint(entry,battle.session,data):return false
+		if node is CampusRelayDiversion and not node.valid_checkpoint(entry,battle.session,data):return false
+		if node is MaintenanceSurvivor and not node.valid_checkpoint(entry,battle.session):return false
+		if (node is WaterTanker or node is WaterResident or node is WaterPublicLatch) and not node.valid_checkpoint(entry,battle.session):return false
+		if node is EnemySpawnPoint and node.activation_group_id==&"water_choice" and entry.has_spawned!= (not battle.session.waterworks.branch.is_empty()):return false
+		if node is FinaleSweep and not node.valid_checkpoint(entry,battle.session):return false
 		if node is CampusAction:
 			if entry.remaining<0 or entry.remaining>node.work_seconds or (entry.remaining>0 and (node.kind==&"recorder" or not node._available(battle.session))):return false
+			if node.kind==&"power" and node._encounter() and entry.remaining!=0:return false
+		if node is BlockadeStreetChain and entry.destroyed and not battle.session.blockade.alarm:return false
+		if node is BlockadeVan and not node.valid_checkpoint(entry, battle.session): return false
+		if node is WaterworksAction:
+			if entry.remaining < 0 or entry.remaining > WaterworksAction.DURATION or (entry.remaining > 0 and (node.kind != "pump" or not node.available(battle.session) or not WaterworksStory.battery(battle.session))): return false
 		if node is RelayStation:
 			if entry.remaining < 0 or entry.remaining > RelayStation.DURATION or entry.start_damage < 0 or entry.start_damage > battle.session.damage_taken: return false
 			var state: ObjectiveState = battle.session.get_objective_state(node.objective_id)
@@ -367,7 +418,11 @@ static func validate_world(data: Dictionary, battle: Node) -> bool:
 		entry.erase("shot_remaining")
 		var template := EnemyController.new()
 		var definition := ContentDB.get_enemy_definition(point.enemy_definition_id, false)
-		var firing_valid := _valid_firing_pose(entry.get("firing"), definition.humanoid_presentation, definition, definition.id == &"campus_infected")
+		if definition.id==&"campus_rammer":
+			if not CampusRammer.valid_ram(entry.get("ram")) or entry._is_telegraphing or data.enemies[path].shot_remaining!=0:
+				template.free();return false
+			entry.erase("ram")
+		var firing_valid := _valid_firing_pose(entry.get("firing"), definition.humanoid_presentation, definition, definition.id in [&"campus_infected",&"campus_rammer"])
 		entry.erase("firing")
 		var awareness_valid := valid_awareness(entry.get("awareness", {}))
 		entry.erase("awareness")
@@ -396,8 +451,8 @@ static func restore_world(data: Dictionary, battle: Node) -> bool:
 	# Validate the entire snapshot against the instantiated layout BEFORE mutation.
 	if not validate_world(data, battle): return false
 	var alarm: RecordsAlarm = battle.area_root.get_node_or_null("StreetTerminal/RecordsAlarm")
-	if alarm: alarm.restore(data.get("records_alarm", {}),battle.session)
 	apply_fields(data.player, battle.player, PLAYER_FIELDS)
+	if alarm: alarm.restore(data.get("records_alarm", {}),battle.session,battle.player)
 	var records: RecordsTerminal = battle.area_root.get_node_or_null("StreetTerminal")
 	if records: records.restore(data.get("records_work", {}),battle.player,battle.session)
 	battle.player._footstep_distance = data.get("footstep_distance", 0.0)
@@ -412,6 +467,8 @@ static func restore_world(data: Dictionary, battle: Node) -> bool:
 		var entry: Dictionary = data.nodes[path]
 		apply_fields(entry, node, _node_fields(node))
 		if node is CampusAction:node.bind_actor(battle.player,battle.session)
+		if node is WaterworksAction:node.bind_actor(battle.player,battle.session)
+		if node is MaintenanceAction:node.bind_actor(battle.player,battle.session)
 		if node is RelayStation:
 			node.bind_actor(battle.player,battle.session)
 		if node is Door: node._apply_state()
@@ -462,8 +519,13 @@ static func restore_world(data: Dictionary, battle: Node) -> bool:
 		enemy.navigation_agent.target_position = enemy.tactics.current_destination(enemy)
 		enemy._update_awareness_indicator()
 		_restore_firing_pose(entry.firing, enemy)
+		if enemy is CampusRammer:enemy.restore_ram(entry.ram)
 		if entry.shot_remaining > 0: enemy._finish_telegraphed_shot(entry.shot_remaining)
 	if battle.area_root.has_method("refresh_campus_power"):battle.area_root.refresh_campus_power()
+	if battle.area_root.has_method("refresh_waterworks"):battle.area_root.refresh_waterworks()
+	if battle.area_root.has_method("refresh_blockade"):battle.area_root.refresh_blockade()
+	if battle.area_root.has_method("refresh_maintenance"):battle.area_root.refresh_maintenance()
+	if battle.area_root.has_method("refresh_core"):battle.area_root.refresh_core()
 	battle.enemies_remaining = data.enemies.size()
 	for saved in data.rockets:
 		var rocket := PlayerController.ROCKET_SCENE.instantiate()

@@ -1,0 +1,967 @@
+{
+  "date": "2026-10-20",
+  "scope": "The Biggest Bucket, optional physical water-return vignette. Not five-hour/human/release acceptance.",
+  "goal_status": "active",
+  "source": {
+    "snapshot": "D:\\tmp\\bunny_bucket_20261020_final01",
+    "scenes": 110,
+    "headless_categories": 172,
+    "all_pass": true,
+    "results_sha256": "ac83701e059620e3e37063a4e9ff4d98c118b6ec714c83f5ec17e8bb7204c061",
+    "old_fbx_import_warnings": 2
+  },
+  "build": {
+    "folder": "D:\\tmp\\bunny_bucket_20261020_build01",
+    "categories": 64,
+    "all_pass": true
+  },
+  "independent_zip": {
+    "categories": 10,
+    "all_pass": true,
+    "launcher_cases": 5,
+    "native_serial": true,
+    "system_only_path": true
+  },
+  "archive": {
+    "archive": "D:\\tmp\\bunny_bucket_20261020_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 245163558,
+    "sha256": "b3a817e5189fee6eda22d3ad83c4053f3c2cde60ce3b04f1a8c0ece104de5827",
+    "extracted_to": "D:\\tmp\\小兔试玩 最大的桶 20261020 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false,
+    "fresh_delivery_extracted_to": "D:\\tmp\\小兔试玩 最大的桶 20261020 02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "fresh_delivery_static_hashes_match": true,
+    "fresh_preview_userdata_not_preplayed": true
+  },
+  "pack_audit": {
+    "entries": 1438,
+    "all_byte_ranges_and_md5": true,
+    "forbidden_original": [],
+    "forbidden_cache": [],
+    "arcana": [],
+    "combatgirls": [],
+    "legacy_and_v2_maps": true,
+    "bucket_scene_and_script_present": true
+  },
+  "all_non_document_root_frozen_build_sources_match": true,
+  "originals_preserved": {
+    "assets/": {
+      "old_count": 881,
+      "unchanged": true
+    },
+    "scenes/": {
+      "old_count": 98,
+      "unchanged": true
+    },
+    "translations": {
+      "old": 1525,
+      "current": 1555
+    },
+    "prior_preservation": {
+      "assets/": {
+        "old_count": 881,
+        "all_original_bytes_preserved": true
+      },
+      "scenes/": {
+        "old_count": 97,
+        "all_original_bytes_preserved": true
+      },
+      "personal_saves": {
+        "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json": {
+          "bytes": 8574,
+          "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+          "mtime_ns": 1792216455246252200
+        },
+        "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak": {
+          "bytes": 8574,
+          "sha256": "d2e70def2f1ae623af95c4236e3ab40e0f0faa348ce0b521a8921fead3d9e2e1",
+          "mtime_ns": 1792216455253759300
+        }
+      },
+      "paid_archive": {
+        "path": "C:\\Users\\admin\\Downloads\\Unity 持枪少女战士带动画 CombatGirls_Ri_爱给网_aigei_com\\CombatGirls_RifleCharacterPack v1.2.unitypackage",
+        "sha256": "75d0e175d25450f9c15890dbdff0d3b97bb5aa76ea3ba0dab8794069f8aabeec"
+      },
+      "arcana": {
+        "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+        "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd"
+      },
+      "translations": {
+        "old_preserved": 1495,
+        "current": 1525
+      }
+    }
+  },
+  "controlled_components": {
+    "bucket_forward": {
+      "checks": 326,
+      "failures": [],
+      "metrics": [
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.000154090812429786,
+          "phase": "intro"
+        },
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0255577526986599,
+          "palm_error": 0.0135725317522883,
+          "phase": "ending"
+        },
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.000154090812429786,
+          "phase": "intro"
+        },
+        {
+          "bone_length_error": 2.08616256713867e-07,
+          "max_position_step": 0.0257741212844849,
+          "palm_error": 0.000157002577907406,
+          "phase": "hesitate"
+        },
+        {
+          "bone_length_error": 1.9371509552002e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.0135725103318691,
+          "phase": "ending"
+        },
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.000154090812429786,
+          "phase": "intro"
+        },
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0255577526986599,
+          "palm_error": 0.0135725317522883,
+          "phase": "ending"
+        },
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.000154090812429786,
+          "phase": "intro"
+        },
+        {
+          "bone_length_error": 2.08616256713867e-07,
+          "max_position_step": 0.0257741212844849,
+          "palm_error": 0.000157002577907406,
+          "phase": "hesitate"
+        },
+        {
+          "bone_length_error": 1.9371509552002e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.0135725103318691,
+          "phase": "ending"
+        }
+      ],
+      "scope": "controlled fixture, original heroine, side-handle contact and normal viewport UI; not human acceptance"
+    },
+    "bucket_compat_en": {
+      "checks": 326,
+      "failures": [],
+      "metrics": [
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.000154090812429786,
+          "phase": "intro"
+        },
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0255577526986599,
+          "palm_error": 0.0135725317522883,
+          "phase": "ending"
+        },
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.000154090812429786,
+          "phase": "intro"
+        },
+        {
+          "bone_length_error": 2.08616256713867e-07,
+          "max_position_step": 0.0257741212844849,
+          "palm_error": 0.000157002577907406,
+          "phase": "hesitate"
+        },
+        {
+          "bone_length_error": 1.9371509552002e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.0135725103318691,
+          "phase": "ending"
+        },
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.000154090812429786,
+          "phase": "intro"
+        },
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0255577526986599,
+          "palm_error": 0.0135725317522883,
+          "phase": "ending"
+        },
+        {
+          "bone_length_error": 1.78813934326172e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.000154090812429786,
+          "phase": "intro"
+        },
+        {
+          "bone_length_error": 2.08616256713867e-07,
+          "max_position_step": 0.0257741212844849,
+          "palm_error": 0.000157002577907406,
+          "phase": "hesitate"
+        },
+        {
+          "bone_length_error": 1.9371509552002e-07,
+          "max_position_step": 0.0258723739534616,
+          "palm_error": 0.0135725103318691,
+          "phase": "ending"
+        }
+      ],
+      "scope": "controlled fixture, original heroine, side-handle contact and normal viewport UI; not human acceptance"
+    }
+  },
+  "actual_earned_routes": {
+    "earned_forward": {
+      "checks": 55,
+      "failures": [],
+      "input_sha256": "2b83e035081dc8b02ca301b33547ae5255820cde327a33d2f1ce363b8838feb9",
+      "method": "Actual earned seven-return profile, normal BOOT/Continue/Main Story, live water AI/ammo, physical bypass and extraction, optional debrief button, both carried-bucket choices, skip/replay/Rest; no progress or inventory grants",
+      "routes": [
+        {
+          "health": 260.0,
+          "kills": 10,
+          "mission": "waterworks_run",
+          "shots": 45
+        }
+      ],
+      "steps": [
+        {
+          "name": "waterworks_run_brief",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "作战室",
+            "水塔街 / 谁先接这一桶\n\n西边修理铺：八公斤电池。\n东边泵房：安装八秒。\n居民水桶＋敷料，或运水车＋弹药。\n南口始终可撤。M：街区地图。",
+            "CONFIRM DEPLOYMENT",
+            "MAIN STORY / NEXT OPERATION",
+            "水塔街 / 谁先接这一桶",
+            "水塔街 · 黎明",
+            "出击负重  13.7 / 35 kg\n5.56 毫米普通弹 x90 / 5.56 毫米穿甲弹 x0（无弹药） / 9 毫米普通弹 x108 / 野战敷料 x0（未携行） / 野战医疗包 x0（未携行）\n多余弹药留在基地仓库。",
+            "CHARACTER / STASH",
+            "死亡或放弃出击，会损失本次携行的装备和物资。\n留在基地仓库的物品不受影响。",
+            "01  总览",
+            "02  装备区",
+            "03  作战室",
+            "04  工坊",
+            "05  休息室",
+            "MENU"
+          ]
+        },
+        {
+          "name": "bucket_debrief_entry",
+          "scene": "res://scenes/result/result.tscn",
+          "visible_text": [
+            "EXTRACTION SUCCESSFUL",
+            "任务 / 水塔街 / 谁先接这一桶",
+            "MISSION COMPLETE",
+            "OBJECTIVES",
+            "已完成  西边修理铺 / 搬走八公斤电池    1 / 1",
+            "已完成  东边泵房 / 安装电池，守住八秒    1 / 1",
+            "已完成  选择先给哪边放水，随后撤离    1 / 1",
+            "已完成  可选 / 拉响广场喇叭引开敌人    1 / 1",
+            "已完成  居民水桶 / 西口撤离，两份敷料    1 / 1",
+            "未完成  运水车 / 北口撤离，九十发普通弹    0 / 1",
+            "SURVIVAL",
+            "EXTRACTED",
+            "RECOVERED CARGO",
+            "13.2 / 35.0 kg",
+            "NEW SUPPLIES",
+            "0",
+            "LOOT / CREDIT REWARD",
+            "450",
+            "ENEMIES DEFEATED",
+            "10",
+            "DAMAGE TAKEN",
+            "0",
+            "PRIMARY WEAPON",
+            "AR-556 突击步枪",
+            "RETURN TO HIDEOUT",
+            "FIELD RECORDER\nDEBRIEF",
+            "BASTION 07 / RETURN CHANNEL",
+            "出击与委托",
+            "[水漫过院门前的排水沟。]\n唐葵：一个一个来！那是锅，不是桶——行吧，拿来。\n沈砚霜：西边院门开了。趁她还没替你答应别的活，回家。",
+            "BRING THE BUCKET UPSTAIRS",
+            "基地建设进度（待结算）\n\n01 / 打通出入路线\n\n回基地结算后：0 / 2"
+          ]
+        },
+        {
+          "name": "bucket_carry_rest",
+          "scene": "res://scenes/presentation/slice/bucket_return.tscn",
+          "visible_text": [
+            "最大的那只桶／返营",
+            "返回休息室",
+            "唐葵：我说留一桶，没说把桶也抱上楼。\n沈砚霜：是我让她抱的。",
+            "接着说"
+          ]
+        },
+        {
+          "name": "bucket_seated_rest",
+          "scene": "res://scenes/presentation/slice/bucket_return.tscn",
+          "visible_text": [
+            "最大的那只桶／返营",
+            "返回休息室",
+            "唐葵：放这么轻。刚才拆门可不是这个动静。\n苏弥：她怕蹭掉那个名字。",
+            "接着说"
+          ]
+        },
+        {
+          "name": "bucket_carry_door",
+          "scene": "res://scenes/presentation/slice/bucket_return.tscn",
+          "visible_text": [
+            "最大的那只桶／返营",
+            "返回休息室",
+            "唐葵：我说留一桶，没说把桶也抱上楼。\n沈砚霜：是我让她抱的。",
+            "接着说"
+          ]
+        },
+        {
+          "name": "bucket_called_back",
+          "scene": "res://scenes/presentation/slice/bucket_return.tscn",
+          "visible_text": [
+            "最大的那只桶／返营",
+            "返回休息室",
+            "沈砚霜：回来。\n唐葵：叫名字呀！",
+            "接着说"
+          ]
+        },
+        {
+          "name": "bucket_seated_door",
+          "scene": "res://scenes/presentation/slice/bucket_return.tscn",
+          "visible_text": [
+            "最大的那只桶／返营",
+            "返回休息室",
+            "唐葵：放这么轻。刚才拆门可不是这个动静。\n苏弥：她怕蹭掉那个名字。",
+            "接着说"
+          ]
+        },
+        {
+          "name": "bucket_rest_replay",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "休息室",
+            "PERSONAL QUARTERS\n\nField operator quarters.\nThe city's security network is hostile.\nThis room is still yours.\n\nRecover. Re-equip. Come home.",
+            "进入训练室",
+            "SAVED YOU A SEAT",
+            "THE BIGGEST BUCKET",
+            "01  总览",
+            "02  装备区",
+            "03  作战室",
+            "04  工坊",
+            "05  休息室",
+            "MENU"
+          ]
+        }
+      ]
+    },
+    "earned_compat_en": {
+      "checks": 55,
+      "failures": [],
+      "input_sha256": "2b83e035081dc8b02ca301b33547ae5255820cde327a33d2f1ce363b8838feb9",
+      "method": "Actual earned seven-return profile, normal BOOT/Continue/Main Story, live water AI/ammo, physical bypass and extraction, optional debrief button, both carried-bucket choices, skip/replay/Rest; no progress or inventory grants",
+      "routes": [
+        {
+          "health": 260.0,
+          "kills": 10,
+          "mission": "waterworks_run",
+          "shots": 46
+        }
+      ],
+      "steps": [
+        {
+          "name": "waterworks_run_brief",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "OPERATIONS",
+            "Water Tower Street / Who Gets the First Bucket\n\nWest garage: 8kg battery. East pump: 8s installation.\nChoose courtyard water + dressings, or tanker water + ammunition.\nSouth retreat stays open. M: street map.",
+            "CONFIRM DEPLOYMENT",
+            "MAIN STORY / NEXT OPERATION",
+            "Water Tower Street / Who Gets the First Bucket",
+            "DAWN / WATER TOWER",
+            "SORTIE  13.7 / 35 kg\n5.56 Standard x90 / 5.56 AP x0 (EMPTY) / 9mm Ball x108 / Field Dressing x0 (NOT PACKED) / Field Medkit x0 (NOT PACKED)\nExtra warehouse ammunition stays at base.",
+            "CHARACTER / STASH",
+            "AT RISK: all deployed equipment and supplies.\nDeath or abandonment loses carried items. Base storage is safe.",
+            "01  OVERVIEW",
+            "02  HANGER",
+            "03  OPERATIONS",
+            "04  WORKSHOP",
+            "05  REST",
+            "MENU"
+          ]
+        },
+        {
+          "name": "bucket_debrief_entry",
+          "scene": "res://scenes/result/result.tscn",
+          "visible_text": [
+            "EXTRACTION SUCCESSFUL",
+            "MISSION  /  Water Tower Street / Who Gets the First Bucket",
+            "MISSION COMPLETE",
+            "OBJECTIVES",
+            "COMPLETE  West garage / carry the 8kg battery    1 / 1",
+            "COMPLETE  East pump / install battery for 8s    1 / 1",
+            "COMPLETE  Choose the first water delivery, then extract    1 / 1",
+            "COMPLETE  Optional / sound the square loudspeaker    1 / 1",
+            "COMPLETE  Courtyard delivery / west exit and two dressings    1 / 1",
+            "INCOMPLETE  Tanker delivery / north exit and ninety rounds    0 / 1",
+            "SURVIVAL",
+            "EXTRACTED",
+            "RECOVERED CARGO",
+            "13.2 / 35.0 kg",
+            "NEW SUPPLIES",
+            "0",
+            "LOOT / CREDIT REWARD",
+            "450",
+            "ENEMIES DEFEATED",
+            "10",
+            "DAMAGE TAKEN",
+            "0",
+            "PRIMARY WEAPON",
+            "AR-556 Carbine",
+            "RETURN TO HIDEOUT",
+            "FIELD RECORDER\nDEBRIEF",
+            "BASTION 07 / RETURN CHANNEL",
+            "出击与委托",
+            "[Water splashes over the courtyard gutter.]\nTang Kui: One at a time! That is a cooking pot, not a bucket-- fine, give it here.\nShen Yanshuang: West courtyard gate is open. Get home before she volunteers you again.",
+            "BRING THE BUCKET UPSTAIRS",
+            "ON RETURN / BASTION CONTRACT\n\n01 / ESTABLISH THE ROUTES\n\nPROJECTED ON RETURN / 0 / 2"
+          ]
+        },
+        {
+          "name": "bucket_carry_rest",
+          "scene": "res://scenes/presentation/slice/bucket_return.tscn",
+          "visible_text": [
+            "THE BIGGEST BUCKET / BACK AT HOME",
+            "RETURN TO QUARTERS",
+            "Tang Kui: I said save a bucket. Not bring the whole bucket upstairs.\nShen: I asked her to.",
+            "NEXT LINE"
+          ]
+        },
+        {
+          "name": "bucket_seated_rest",
+          "scene": "res://scenes/presentation/slice/bucket_return.tscn",
+          "visible_text": [
+            "THE BIGGEST BUCKET / BACK AT HOME",
+            "RETURN TO QUARTERS",
+            "Tang Kui: You put that down gently. You were not so gentle with the gate.\nSu Mi: She did not want to scratch the name.",
+            "NEXT LINE"
+          ]
+        },
+        {
+          "name": "bucket_carry_door",
+          "scene": "res://scenes/presentation/slice/bucket_return.tscn",
+          "visible_text": [
+            "THE BIGGEST BUCKET / BACK AT HOME",
+            "RETURN TO QUARTERS",
+            "Tang Kui: I said save a bucket. Not bring the whole bucket upstairs.\nShen: I asked her to.",
+            "NEXT LINE"
+          ]
+        },
+        {
+          "name": "bucket_called_back",
+          "scene": "res://scenes/presentation/slice/bucket_return.tscn",
+          "visible_text": [
+            "THE BIGGEST BUCKET / BACK AT HOME",
+            "RETURN TO QUARTERS",
+            "Shen: Come back.\nTang Kui: Use her name!",
+            "NEXT LINE"
+          ]
+        },
+        {
+          "name": "bucket_seated_door",
+          "scene": "res://scenes/presentation/slice/bucket_return.tscn",
+          "visible_text": [
+            "THE BIGGEST BUCKET / BACK AT HOME",
+            "RETURN TO QUARTERS",
+            "Tang Kui: You put that down gently. You were not so gentle with the gate.\nSu Mi: She did not want to scratch the name.",
+            "NEXT LINE"
+          ]
+        },
+        {
+          "name": "bucket_rest_replay",
+          "scene": "res://scenes/presentation/slice/hideout.tscn",
+          "visible_text": [
+            "BASTION 07  /  HIDEOUT",
+            "HOME SIGNAL STABLE    •    ESC / PAUSE",
+            "REST",
+            "PERSONAL QUARTERS\n\nField operator quarters.\nThe city's security network is hostile.\nThis room is still yours.\n\nRecover. Re-equip. Come home.",
+            "OPEN TRAINING ROOM",
+            "SAVED YOU A SEAT",
+            "THE BIGGEST BUCKET",
+            "01  OVERVIEW",
+            "02  HANGER",
+            "03  OPERATIONS",
+            "04  WORKSHOP",
+            "05  REST",
+            "MENU"
+          ]
+        }
+      ]
+    }
+  },
+  "actual_main_story": {
+    "checks": 69,
+    "failures": [],
+    "input_sha256": "2b83e035081dc8b02ca301b33547ae5255820cde327a33d2f1ce363b8838feb9",
+    "method": "Actual earned schema10 rescue return; normal BOOT/continue/main-story buttons; real water battery/delivery, live truck fight, moving-arc core, physical extraction, automatic ending/skip/replay/credits/free play; not human acceptance",
+    "routes": [
+      {
+        "damage": 0,
+        "health": 260.0,
+        "kills": 10,
+        "mission": "waterworks_run",
+        "shots_total": 43
+      },
+      {
+        "damage": 0,
+        "health": 260.0,
+        "kills": 3,
+        "mission": "blockade_run",
+        "shots_total": 69
+      },
+      {
+        "damage": 0,
+        "health": 260.0,
+        "kills": 6,
+        "mission": "maintenance_shutdown",
+        "shots_total": 99
+      }
+    ],
+    "shots": 99,
+    "steps": [
+      {
+        "name": "waterworks_run_brief",
+        "scene": "res://scenes/presentation/slice/hideout.tscn",
+        "visible_text": [
+          "BASTION 07  /  HIDEOUT",
+          "HOME SIGNAL STABLE    •    ESC / PAUSE",
+          "作战室",
+          "水塔街 / 谁先接这一桶\n\n西边修理铺：八公斤电池。\n东边泵房：安装八秒。\n居民水桶＋敷料，或运水车＋弹药。\n南口始终可撤。M：街区地图。",
+          "CONFIRM DEPLOYMENT",
+          "MAIN STORY / NEXT OPERATION",
+          "水塔街 / 谁先接这一桶",
+          "水塔街 · 黎明",
+          "出击负重  13.7 / 35 kg\n5.56 毫米普通弹 x90 / 5.56 毫米穿甲弹 x0（无弹药） / 9 毫米普通弹 x108 / 野战敷料 x0（未携行） / 野战医疗包 x0（未携行）\n多余弹药留在基地仓库。",
+          "CHARACTER / STASH",
+          "死亡或放弃出击，会损失本次携行的装备和物资。\n留在基地仓库的物品不受影响。",
+          "01  总览",
+          "02  装备区",
+          "03  作战室",
+          "04  工坊",
+          "05  休息室",
+          "MENU"
+        ]
+      },
+      {
+        "name": "waterworks_run_debrief",
+        "scene": "res://scenes/result/result.tscn",
+        "visible_text": [
+          "EXTRACTION SUCCESSFUL",
+          "任务 / 水塔街 / 谁先接这一桶",
+          "MISSION COMPLETE",
+          "OBJECTIVES",
+          "已完成  西边修理铺 / 搬走八公斤电池    1 / 1",
+          "已完成  东边泵房 / 安装电池，守住八秒    1 / 1",
+          "已完成  选择先给哪边放水，随后撤离    1 / 1",
+          "已完成  可选 / 拉响广场喇叭引开敌人    1 / 1",
+          "已完成  居民水桶 / 西口撤离，两份敷料    1 / 1",
+          "未完成  运水车 / 北口撤离，九十发普通弹    0 / 1",
+          "SURVIVAL",
+          "EXTRACTED",
+          "RECOVERED CARGO",
+          "13.2 / 35.0 kg",
+          "NEW SUPPLIES",
+          "0",
+          "LOOT / CREDIT REWARD",
+          "450",
+          "ENEMIES DEFEATED",
+          "10",
+          "DAMAGE TAKEN",
+          "0",
+          "PRIMARY WEAPON",
+          "AR-556 突击步枪",
+          "RETURN TO HIDEOUT",
+          "FIELD RECORDER\nDEBRIEF",
+          "BASTION 07 / RETURN CHANNEL",
+          "出击与委托",
+          "[水漫过院门前的排水沟。]\n唐葵：一个一个来！那是锅，不是桶——行吧，拿来。\n沈砚霜：西边院门开了。趁她还没替你答应别的活，回家。",
+          "BRING THE BUCKET UPSTAIRS",
+          "基地建设进度（待结算）\n\n01 / 打通出入路线\n\n回基地结算后：0 / 2"
+        ]
+      },
+      {
+        "name": "blockade_run_brief",
+        "scene": "res://scenes/presentation/slice/hideout.tscn",
+        "visible_text": [
+          "BASTION 07  /  HIDEOUT",
+          "HOME SIGNAL STABLE    •    ESC / PAUSE",
+          "作战室",
+          "哨卡／请保持冷静\n\n红线锁定就躲，四连射后蓝色散热口开启再反击。西巷断电只停广播，不停枪。南侧随时能撤。",
+          "CONFIRM DEPLOYMENT",
+          "MAIN STORY / NEXT OPERATION",
+          "哨卡／请保持冷静",
+          "水塔街 · 黎明",
+          "出击负重  13.7 / 35 kg\n5.56 毫米普通弹 x90 / 5.56 毫米穿甲弹 x0（无弹药） / 9 毫米普通弹 x108 / 野战敷料 x0（未携行） / 野战医疗包 x0（未携行）\n多余弹药留在基地仓库。",
+          "CHARACTER / STASH",
+          "死亡或放弃出击，会损失本次携行的装备和物资。\n留在基地仓库的物品不受影响。",
+          "01  总览",
+          "02  装备区",
+          "03  作战室",
+          "04  工坊",
+          "05  休息室",
+          "MENU"
+        ]
+      },
+      {
+        "name": "blockade_run_debrief",
+        "scene": "res://scenes/result/result.tscn",
+        "visible_text": [
+          "EXTRACTION SUCCESSFUL",
+          "任务 / 哨卡／请保持冷静",
+          "MISSION COMPLETE",
+          "OBJECTIVES",
+          "已完成  瘫痪装甲广播车，随后撤离    1 / 1",
+          "已完成  可选／切断西侧小巷广播电源    1 / 1",
+          "SURVIVAL",
+          "EXTRACTED",
+          "RECOVERED CARGO",
+          "13.4 / 35.0 kg",
+          "NEW SUPPLIES",
+          "0",
+          "LOOT / CREDIT REWARD",
+          "450",
+          "ENEMIES DEFEATED",
+          "3",
+          "DAMAGE TAKEN",
+          "0",
+          "PRIMARY WEAPON",
+          "AR-556 突击步枪",
+          "RETURN TO HIDEOUT",
+          "FIELD RECORDER\nDEBRIEF",
+          "BASTION 07 / RETURN CHANNEL",
+          "出击与委托",
+          "【铁皮哐当一声。街上只剩空桶相互碰响。】\n唐葵：它死了吗？\n苏弥：那是辆车。\n唐葵：我客气一下。\n沈砚霜：北门通了。回来。你俩都回来。",
+          "基地建设进度（待结算）\n\n01 / 打通出入路线\n\n回基地结算后：0 / 2"
+        ]
+      },
+      {
+        "name": "maintenance_shutdown_brief",
+        "scene": "res://scenes/presentation/slice/hideout.tscn",
+        "visible_text": [
+          "BASTION 07  /  HIDEOUT",
+          "HOME SIGNAL STABLE    •    ESC / PAUSE",
+          "作战室",
+          "备用动力室／最后一声咔哒\n\n先接好安置点跨接供电。橙色通道先避开；白色横条是正在扫过的电弧。蓝灯检修窗口内切断两侧备用馈线，再拉北侧总停机。南侧始终可以撤退。",
+          "CONFIRM DEPLOYMENT",
+          "MAIN STORY / NEXT OPERATION",
+          "备用动力室／最后一声咔哒",
+          "检修照明／维护区",
+          "出击负重  13.7 / 35 kg\n5.56 毫米普通弹 x90 / 5.56 毫米穿甲弹 x0（无弹药） / 9 毫米普通弹 x108 / 野战敷料 x0（未携行） / 野战医疗包 x0（未携行）\n多余弹药留在基地仓库。",
+          "CHARACTER / STASH",
+          "死亡或放弃出击，会损失本次携行的装备和物资。\n留在基地仓库的物品不受影响。",
+          "01  总览",
+          "02  装备区",
+          "03  作战室",
+          "04  工坊",
+          "05  休息室",
+          "MENU"
+        ]
+      },
+      {
+        "name": "core_Radio",
+        "scene": "res://scenes/battle/battle.tscn",
+        "visible_text": [
+          "",
+          "ESC / PAUSE",
+          "备用动力室／最后一声咔哒",
+          "先去南侧跨接开关／保住L-02A安置点供电，再动两侧备用馈线。",
+          "可选行动 4 ▾",
+          "生命  260 / 260",
+          "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+          "负重  13.7 / 35.0 kg",
+          "H / 敷料 0   J / 医疗包 0",
+          "当前  主武器",
+          "主武器  AR-556 突击步枪 伤害 +10%",
+          "26 / 30 · 备用 60",
+          "Q / SMG-9 冲锋枪",
+          "+",
+          "MUZZLE / COVER",
+          "×",
+          "E  听电台／最后一声咔哒",
+          "许棠：灯一灭，它就重新开。我以前会数那个咔哒声。\n苏弥：电池室。校园支路已经断了，这东西自己还带着电。\n唐葵：绿色那根别动，那是我们的厨房。\n沈砚霜：我们在北门外。这回没人一个人在里面等。",
+          "Backup power / radio",
+          "目标击倒"
+        ]
+      },
+      {
+        "name": "core_Bridge",
+        "scene": "res://scenes/battle/battle.tscn",
+        "visible_text": [
+          "",
+          "ESC / PAUSE",
+          "备用动力室／最后一声咔哒",
+          "蓝灯检修窗口内切断两侧馈线。橙色通道先避开；白色横条是正在扫过的电弧。",
+          "可选行动 4 ▾",
+          "生命  260 / 260",
+          "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+          "负重  13.7 / 35.0 kg",
+          "H / 敷料 0   J / 医疗包 0",
+          "当前  主武器",
+          "主武器  AR-556 突击步枪 伤害 +10%",
+          "24 / 30 · 备用 60",
+          "Q / SMG-9 冲锋枪",
+          "+",
+          "MUZZLE / COVER",
+          "×",
+          "这路已经处理过了。",
+          "［安置点的绿灯仍然亮着。］\n唐葵：还在煮。\n苏弥：你就这么检查供电？\n唐葵：挺准的。",
+          "Circuit changed / L-02A shelter supply remains on."
+        ]
+      },
+      {
+        "name": "core_LeftFeed",
+        "scene": "res://scenes/battle/battle.tscn",
+        "visible_text": [
+          "",
+          "ESC / PAUSE",
+          "备用动力室／最后一声咔哒",
+          "蓝灯检修窗口内切断两侧馈线。橙色通道先避开；白色横条是正在扫过的电弧。",
+          "可选行动 4 ▾",
+          "生命  260 / 260",
+          "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+          "负重  13.6 / 35.0 kg",
+          "H / 敷料 0   J / 医疗包 0",
+          "当前  主武器",
+          "主武器  AR-556 突击步枪 伤害 +10%",
+          "21 / 30 · 备用 60",
+          "Q / SMG-9 冲锋枪",
+          "+",
+          "MUZZLE / COVER",
+          "×",
+          "这路已经处理过了。",
+          "许棠：少了一声。\n沈砚霜：看脚下。我们听见东西在动。",
+          "Circuit changed / L-02A shelter supply remains on."
+        ]
+      },
+      {
+        "name": "core_RightFeed",
+        "scene": "res://scenes/battle/battle.tscn",
+        "visible_text": [
+          "",
+          "ESC / PAUSE",
+          "备用动力室／最后一声咔哒",
+          "两侧馈线已断／等蓝灯检修窗口，拉下北侧总停机。",
+          "可选行动 4 ▾",
+          "生命  260 / 260",
+          "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+          "负重  13.5 / 35.0 kg",
+          "H / 敷料 0   J / 医疗包 0",
+          "当前  主武器",
+          "主武器  AR-556 突击步枪 伤害 +10%",
+          "7 / 30 · 备用 60",
+          "Q / SMG-9 冲锋枪",
+          "+",
+          "MUZZLE / COVER",
+          "×",
+          "这路已经处理过了。",
+          "苏弥：两侧电池都隔开了。中间那道还会放电。\n唐葵：那就把它的牙拔了。我不想再热第三遍。",
+          "Circuit changed / L-02A shelter supply remains on."
+        ]
+      },
+      {
+        "name": "core_MasterStop",
+        "scene": "res://scenes/battle/battle.tscn",
+        "visible_text": [
+          "",
+          "ESC / PAUSE",
+          "备用动力室／最后一声咔哒",
+          "备用机组停了。北门已开，撤离回家。",
+          "可选行动 4 ▾",
+          "生命  260 / 260",
+          "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+          "负重  13.5 / 35.0 kg",
+          "H / 敷料 0   J / 医疗包 0",
+          "当前  主武器",
+          "主武器  AR-556 突击步枪 伤害 +10%",
+          "7 / 30 · 备用 60",
+          "Q / SMG-9 冲锋枪",
+          "FIELD OPERATION COMPLETE / EXTRACT WHEN READY",
+          "+",
+          "MUZZLE / COVER",
+          "×",
+          "这路已经处理过了。",
+          "［转子慢下来。没有下一声咔哒。］\n许棠：……这就好了？\n苏弥：好了。\n沈砚霜：北门开了。回家。",
+          "Circuit changed / L-02A shelter supply remains on."
+        ]
+      },
+      {
+        "name": "core_map",
+        "scene": "res://scenes/battle/battle.tscn",
+        "visible_text": [
+          "",
+          "ESC / PAUSE",
+          "备用动力室／最后一声咔哒",
+          "备用机组停了。北门已开，撤离回家。",
+          "可选行动 4 ▾",
+          "生命  260 / 260",
+          "8.2 米/秒 · 防护 10% · 护甲 3.0 kg",
+          "负重  13.5 / 35.0 kg",
+          "H / 敷料 0   J / 医疗包 0",
+          "当前  主武器",
+          "主武器  AR-556 突击步枪 伤害 +10%",
+          "7 / 30 · 备用 60",
+          "Q / SMG-9 冲锋枪",
+          "FIELD OPERATION COMPLETE / EXTRACT WHEN READY",
+          "+",
+          "MUZZLE / COVER",
+          "×",
+          "这路已经处理过了。",
+          "［转子慢下来。没有下一声咔哒。］\n许棠：……这就好了？\n苏弥：好了。\n沈砚霜：北门开了。回家。",
+          "Circuit changed / L-02A shelter supply remains on."
+        ]
+      },
+      {
+        "name": "maintenance_shutdown_debrief",
+        "scene": "res://scenes/result/result.tscn",
+        "visible_text": [
+          "EXTRACTION SUCCESSFUL",
+          "任务 / 备用动力室／最后一声咔哒",
+          "MISSION COMPLETE",
+          "OBJECTIVES",
+          "已完成  保住L-02A安置点供电    1 / 1",
+          "已完成  切断左侧备用馈线    1 / 1",
+          "已完成  切断右侧备用馈线    1 / 1",
+          "已完成  停止备用机组    1 / 1",
+          "SURVIVAL",
+          "EXTRACTED",
+          "RECOVERED CARGO",
+          "13.4 / 35.0 kg",
+          "NEW SUPPLIES",
+          "0",
+          "LOOT / CREDIT REWARD",
+          "450",
+          "ENEMIES DEFEATED",
+          "6",
+          "DAMAGE TAKEN",
+          "0",
+          "PRIMARY WEAPON",
+          "AR-556 突击步枪",
+          "RETURN TO HIDEOUT",
+          "FIELD RECORDER\nDEBRIEF",
+          "BASTION 07 / RETURN CHANNEL",
+          "出击与委托",
+          "［L-02A还亮着，实验设备没有再启动。］\n苏弥：没有重启信号，也没有备用馈线了。\n唐葵：我又听得见锅里的声音了。\n许棠：我想听那个。\n沈砚霜：那就别站门口了。都进来。"
+        ]
+      },
+      {
+        "name": "ending_two_actors",
+        "scene": "res://scenes/presentation/slice/homecoming_finale.tscn",
+        "visible_text": [
+          "都回家了／尾声",
+          "返回休息室",
+          "唐葵在电台里：敲两下，我说的是两下。\n苏弥：她敲了三下。\n沈砚霜：有一下是你踹的门。",
+          "接着说"
+        ]
+      },
+      {
+        "name": "ending_table",
+        "scene": "res://scenes/presentation/slice/homecoming_finale.tscn",
+        "visible_text": [
+          "都回家了／尾声",
+          "返回休息室",
+          "沈砚霜：留着吧。\n许棠：让她们吵。挺好的。\n［桌边还有位置。汤还热着。］",
+          "自由行动／返回基地",
+          "重看这个尾声",
+          "结尾／制作署名"
+        ]
+      },
+      {
+        "name": "ending_end_card",
+        "scene": "res://scenes/presentation/slice/homecoming_finale.tscn",
+        "visible_text": [
+          "都回家了／尾声",
+          "返回休息室",
+          "今晚，没有人在门外等了。可以回到桌边，也可以回基地自由行动。",
+          "自由行动／返回基地",
+          "重看这个尾声",
+          "回到桌边",
+          "全篇终／都回家了",
+          "Neon Bastion／本地原型\n使用Godot引擎\n第三方资产署名见随包附带说明\n\n谢谢你把大家带回来。"
+        ]
+      },
+      {
+        "name": "free_play",
+        "scene": "res://scenes/presentation/slice/hideout.tscn",
+        "visible_text": [
+          "BASTION 07  /  HIDEOUT",
+          "HOME SIGNAL STABLE    •    ESC / PAUSE",
+          "休息室",
+          "家／都回来了\n\n饭还热着。电台先放一放。\n\n仍可整备后自由出击。",
+          "进入训练室",
+          "REPLAY / EVERYONE IS HOME",
+          "SAVED YOU A SEAT",
+          "THE BIGGEST BUCKET",
+          "01  总览",
+          "02  装备区",
+          "03  作战室",
+          "04  工坊",
+          "05  休息室",
+          "MENU"
+        ]
+      }
+    ]
+  },
+  "profile_schema": 11,
+  "checkpoint_schema": 6,
+  "paid_motion_data_in_default_package": false,
+  "public_release_approved": false,
+  "not_claimed": [
+    "human duration or enjoyment",
+    "80 percent positive reviews",
+    "minimum hardware or clean VM",
+    "audio listening acceptance",
+    "complete finger/cloth collision acceptance"
+  ],
+  "visually_reviewed_release_images": [
+    {
+      "path": "D:\\tmp\\bunny_bucket_20261020_build01\\portable_earned_forward\\bucket_carry_rest.png",
+      "sha256": "518c5e549318e76cd3ac93146e4112ed6ef572ab85c8e1764f7e41c8f02a5efb"
+    },
+    {
+      "path": "D:\\tmp\\bunny_bucket_20261020_build01\\portable_earned_forward\\bucket_seated_door.png",
+      "sha256": "506c365c3ae0774df74f240632407f5f8901740aa81bf448a7e000d46288582b"
+    },
+    {
+      "path": "D:\\tmp\\bunny_bucket_20261020_build01\\portable_bucket_compat_en\\bucket_water_tanker_door_wait.png",
+      "sha256": "40c507d402671abe267c1df450762bad1ed5becf60c577fb3effcdf19c523696"
+    }
+  ],
+  "development_repair": {
+    "first_fixture_log": "D:/tmp/bunny_bucket_20261020_dev01/unit01.log",
+    "issue": "side-handle targets initially beyond natural arm reach; up to 6.9cm contact error",
+    "repair": "bring bucket closer/higher without bone stretch; separate supported height by 8cm so placing is visible",
+    "final_controlled_max_palm_error": 0.0135725317522883
+  }
+}

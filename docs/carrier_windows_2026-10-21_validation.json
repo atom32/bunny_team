@@ -1,0 +1,155 @@
+{
+  "pass": true,
+  "status": "local_windows_packet_verified_fresh_delivery_ready",
+  "visibility": "LOCAL_ONLY_DO_NOT_UPLOAD",
+  "public_release_approved": false,
+  "goal_complete": false,
+  "delivery": "D:\\tmp\\小兔试玩 背架改装 20261021 01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+  "never_launched_delivery": true,
+  "all_static_files_match": true,
+  "static_files": 38,
+  "archive": {
+    "archive": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+    "bytes": 246309576,
+    "sha256": "b20b04ee1a281e7d51d555c82b878b73a3e894ea5a88cef5efaa59723197ccd5",
+    "extracted_to": "D:\\tmp\\小兔试玩 背架改装 20261021 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "all_files_match": true,
+    "matches_official_release_template": true,
+    "public_release_approved": false
+  },
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "current_root_non_document_inputs_match": 4064,
+  "source_manifest_sha256": "8c0ec84e7f75f0a8d243bc126239e43801608b5c287194c561a68129d4fccbe4",
+  "compiled_categories": 133,
+  "compiled_results_sha256": "202dba8b83581b94572eb3a9007137684f9e0a6006aacefae04bba0fc4e7fe7d",
+  "independent_zip_cases": 72,
+  "independent_results_sha256": "4d8dc49be0d26eb7710f05eab80a3ef1bafda10b16ae1339eb872457c025f244",
+  "semantic_acceptance_sha256": "42fe43fa0b255b378feef5dd1bf5bf77a118c251646a30e9a0070512e39f9735",
+  "cmd_successful_launches": 26,
+  "cmd_isolated_groups": 14,
+  "cmd_expected_negative_exit": 1,
+  "cmd_results_sha256": "2052d06d28e755ee901f4d8abb84cf7892413768ce0358e5f5003511e07d1bcf",
+  "preview_sources": 13,
+  "pck": {
+    "pass": true,
+    "pck_sha256": "d6585cfb09a65892f4289a5d6fe072a1852b9a211694f2b5f2fb3ef74745a5c7",
+    "entries": 1639,
+    "all_byte_ranges_and_md5_verified": true,
+    "all_previous_content_gates_preserved": true,
+    "carrier_frame_both_packs_and_private_earn_use_qa_present": true,
+    "external_diagnostic_not_shipped": true,
+    "no_profile_backup_userdata": true,
+    "public_release_approved": false
+  },
+  "earned_carriers": [
+    {
+      "name": "carrier_earned_forward",
+      "before_returns": 7,
+      "after_returns": 9,
+      "carrier": {
+        "definition_id": "material.market_carrier_frame",
+        "durability": 100.0,
+        "fitting": "",
+        "instance_id": "503f7c46c22a399e15667a7d3882e799",
+        "quantity": 1
+      },
+      "rebuilt_id": "4fadce4279c3e379c1a64d89933a306a",
+      "trial": {
+        "capacity": 27.0,
+        "cargo_id": "99190d9882aee0c5fa1c25113bc0b0f0",
+        "expected_speed": 8.75,
+        "health": 260.0,
+        "kills": 2,
+        "pack_id": "4fadce4279c3e379c1a64d89933a306a",
+        "peak_observed_speed": 8.75000095367432,
+        "shots": 6
+      },
+      "evidence_sha256": "5a0a100cb614890f35031f88418657428c7f82eeac658e31d50068dd0baaaf87"
+    },
+    {
+      "name": "carrier_earned_compat_en",
+      "before_returns": 7,
+      "after_returns": 9,
+      "carrier": {
+        "definition_id": "material.market_carrier_frame",
+        "durability": 100.0,
+        "fitting": "",
+        "instance_id": "8f1d6852c49da7bd7805cbb436e482c9",
+        "quantity": 1
+      },
+      "rebuilt_id": "b0e12d655403041dbf1724dcebde482c",
+      "trial": {
+        "capacity": 47.0,
+        "cargo_id": "e4bb2a5ee3ecec7bead5a63d1527a22b",
+        "expected_speed": 7.3,
+        "health": 260.0,
+        "kills": 1,
+        "pack_id": "b0e12d655403041dbf1724dcebde482c",
+        "peak_observed_speed": 7.30000066757202,
+        "shots": 3
+      },
+      "evidence_sha256": "db0f23e1d533514f3c96ad1f1ee61b16c1b15b099ee554dce67f90caf3e7354e"
+    }
+  ],
+  "visual_review": {
+    "count": 12,
+    "path": "D:\\tmp\\bunny_recovered_carrier_20261021_build01\\visual_review_complete.json",
+    "sha256": "4089ffc960b5e4ed838ff76abdefb95a8f4d0abce925e5986d0fdfd6ca467430"
+  },
+  "protected_files_unchanged": [
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json",
+      "sha256": "6979a9f2a52fee0fa9617937eaaa869276e3861ce45ced87d158535afc0da161",
+      "mtime_ns": 1792485868281761900
+    },
+    {
+      "path": "C:\\Users\\admin\\AppData\\Roaming\\Godot\\app_userdata\\Neon Bastion\\profile.json.bak",
+      "sha256": "c88406cd3c6ffd3d8485b53deea0c99fdddec6de0a1ae0a604167ba8a71cc7d0",
+      "mtime_ns": 1792485868289265500
+    },
+    {
+      "path": "C:\\Users\\admin\\Downloads\\Arcana.vrm",
+      "sha256": "7b05637cee422bf9966ab9a670060f85aa581fd672958c2ec4ea705b43aa72cd",
+      "mtime_ns": 1792376341839829300
+    },
+    {
+      "path": "D:\\tmp\\bunny_campus_pa_packing_20261020_build02\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "sha256": "5c6f31094b82ae4aa184eeeaaa90a2e1596895f72de2c677e7b06cc52a46bc6d",
+      "mtime_ns": 1792510165593990200
+    },
+    {
+      "path": "D:\\tmp\\bunny_recovered_arms_20261021_build01\\LOCAL_ONLY_DO_NOT_UPLOAD_windows_x64.zip",
+      "sha256": "65640f6ac95943c35dbe61c0b4cd187b3a5b787a356b1e03cce6a73639e8e682",
+      "mtime_ns": 1792542556303376100
+    }
+  ],
+  "source_failures_retained": true,
+  "source_baseline": {
+    "scene_count": 125,
+    "categories": 235,
+    "post_baseline_delta": {
+      "full_source_baseline": "D:/tmp/bunny_recovered_carrier_20261021_final03",
+      "changed": [
+        "scripts/world/waterworks/market.gd",
+        "scripts/world/waterworks/market_control.gd",
+        "tests/recovered_carrier_test.gd",
+        "tools/build_local_windows.py",
+        "tools/local_build_probe.gd"
+      ],
+      "added": [
+        "tools/recovered_carrier_use_run.gd",
+        "tools/recovered_carrier_use_run.tscn"
+      ],
+      "scope": "QA further live sortie, local-only compiled QA mappings, and legacy open-depot hint suppression + explicit tests. Baseline full235 predates these reviewed changes."
+    }
+  },
+  "scope_limits": [
+    "Synthetic native controls and Dummy audio, not human playtime/difficulty/sound/fun or minspec.",
+    "235-category source baseline predates explicitly recorded5changed+2added; current compiled133 and independentZIP72 cover current packet.",
+    "Extra optional pack trial makes9returns, not9story missions or five-hour proof.",
+    "Existing heroine unchanged. Arcana/Aigei-paid CombatGirls excluded.",
+    "Public rights, clean machine, actual listening, five-hour first play and real80percent reviews remain pending.",
+    "Shared pack/frame inventory icon, clipped English backpack slot, English credit suffix, graybox/cutaway and debrief contrast remain.",
+    "Isolated optional companion-toolbox prototype is not integrated or included in this packet."
+  ]
+}
