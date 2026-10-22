@@ -75,6 +75,19 @@ class RuntimeExportTest(unittest.TestCase):
         self.write('scripts/main.gd','const MISSING="res://assets/missing.glb"\n')
         with self.assertRaisesRegex(ValueError,'Missing referenced'):self.trace()
 
+    def test_runtime_motion_library_and_notice_are_exported(self):
+        self.write('scripts/main.gd','const PLAYER="res://local_motion/player.gd"\n')
+        self.write('local_motion/player.gd','const LIBRARY="res://local_motion/library.tres"\n')
+        self.write('local_motion/library.tres','[gd_resource type="AnimationLibrary"]\n')
+        self.write('local_motion/NOTICE.md','Fixture third-party notice, not a license grant.')
+        self.catalog['dependencies'].update({'res://local_motion/player.gd':[],
+                                            'res://local_motion/library.tres':[]})
+        data=self.trace()
+        self.assertIn('res://local_motion/library.tres',data['resources'])
+        self.assertIn('res://local_motion/NOTICE.md',data['plain_files'])
+        self.assertIn('res://local_motion/NOTICE.md',data['companion_license_files'])
+        self.assertFalse(data['public_release_approved'])
+
     def test_paths_cannot_escape_the_build_copy(self):
         self.write('scripts/main.gd','const BAD="res://../outside.txt"\n')
         with self.assertRaisesRegex(ValueError,'escapes project'):self.trace()

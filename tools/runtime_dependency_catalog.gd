@@ -16,7 +16,7 @@ func scan(path: String) -> void:
 func _initialize() -> void:
 	var destination := OS.get_environment("BUNNY_EXPORT_CATALOG")
 	if destination.is_empty(): push_error("BUNNY_EXPORT_CATALOG is required");quit(1);return
-	for folder in ["assets","resources","scripts","scenes","local_qa","localization"]: scan("res://"+folder)
+	for folder in ["assets","resources","scripts","scenes","local_qa","local_motion","localization"]: scan("res://"+folder)
 	files.sort()
 	var dependencies := {}
 	var plain_types := ["gd","tres","tscn","gdshader","gdshaderinc","res"]

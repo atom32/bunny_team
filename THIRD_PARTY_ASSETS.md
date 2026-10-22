@@ -156,3 +156,15 @@ The optional PA reuses the already-vendored compact-hideout radio under its exis
 ## Carrier candidate companion integrity 2026 10 21
 
 The current local candidate contains all 30 selected companion-license files with exact member and SHA256 matches to its runtime inventory, plus engine notices matching its static-file manifest. This proves companion integrity, not rights clearance. The Artoria prototype permission, SciFi exact-source match and M4 reference-model scope remain open; neither open-source intent nor a local-only label resolves them. No candidate, asset, license file, heroine or private profile was changed by this check. Machine evidence: `docs/runtime_rights_2026-10-21_validation.json`.
+
+
+## CombatGirls v1.2 motion inclusion — 2026-10-22
+
+The repository owner confirmed additional authorization for public redistribution
+of the motion data and explicitly requested inclusion. The actual 16-clip baked
+AnimationLibrary and tested runtime adapters are now included in `local_motion/`
+and connected to the default player. See `local_motion/NOTICE.md` for provenance,
+exact hashes, clip names and the scope of this owner-confirmed authorization.
+This later motion-specific record supersedes historical statements that these
+paid motions are excluded; it does not relicense them to CC0/MIT or clear the
+other unresolved asset scopes. The original Unity package is not uploaded.

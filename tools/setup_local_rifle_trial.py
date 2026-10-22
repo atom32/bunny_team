@@ -1,7 +1,8 @@
 """Install the optional local animation trial into an isolated source snapshot.
 
-No animation data is bundled here. Supply the library produced by
-bake_rifle_trial.gd. Refuses the repository, Git checkouts, non-isolated names,
+Legacy installer for snapshots without motion integration. Current checkout already
+includes the authorized 16-clip library in local_motion/; it needs no installation.
+For legacy snapshots, supply the library produced by bake_rifle_trial.gd. Refuses the repository, Git checkouts, non-isolated names,
 changed base files, and existing outputs. Never modifies the source checkout.
 """
 import argparse

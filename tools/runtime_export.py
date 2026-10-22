@@ -99,9 +99,10 @@ def trace(project, catalog):
     if set(VERIFY_ABSENT) & selected: raise ValueError('Unexpected review/rollback dependency: '+repr(sorted(set(VERIFY_ABSENT) & selected)))
     license_docs = set()
     for resource in sorted(selected):
-        if not resource.startswith('res://assets/'): continue
+        if not resource.startswith(('res://assets/', 'res://local_motion/')): continue
+        scope = project / ('local_motion' if resource.startswith('res://local_motion/') else 'assets')
         folder = local(resource).parent
-        while folder.is_relative_to(project/'assets') and folder != project/'assets':
+        while folder.is_relative_to(scope) and folder != project/'assets':
             for child in folder.iterdir():
                 if child.is_file() and child.name.upper().startswith(('LICENSE','LICENCE','COPYING','COPYRIGHT','OFL','NOTICE')) and child.stat().st_size < 262144:
                     if child.suffix.lower() in ('', '.txt', '.md'): license_docs.add('res://'+child.relative_to(project).as_posix())

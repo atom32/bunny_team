@@ -502,7 +502,7 @@ func _build_character() -> void:
 	weapon_root.name = "WeaponRoot"
 	body_visual.add_child(weapon_root)
 	if character_skeleton:
-		combat_rig = preload("res://scripts/presentation/artoria_bunny/pose_adapter.gd").new()
+		combat_rig = preload("res://local_motion/rig.gd").new()
 		combat_rig.name = "UpperBodyAim"
 		body_visual.add_child(combat_rig)
 		combat_rig.setup(animation_source_skeleton, character_skeleton, retarget_modifier)
