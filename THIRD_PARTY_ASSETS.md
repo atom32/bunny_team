@@ -1,5 +1,13 @@
 # Third-Party Assets
 
+## Current local runtime status 2026-10-22
+
+The current default player uses the 16 baked CombatGirls clips in `local_motion/library.tres`. The project owner has confirmed additional public-redistribution permission for these baked motion data; do not treat the older “paid motions excluded” batch notes below as the current package state. The original Unity package and Arcana are not build inputs. This permission does not cover unrelated models or weapon meshes.
+
+The selected runtime inventory and 31 companion-file hashes were rechecked against the portable-alarm Windows bundle. Remaining concrete provenance/scope questions are listed in [the current asset handoff](docs/RELEASE_ASSET_BLOCKERS_2026-10-22.md): the user-supplied Artoria model, the MoCap M4 reference mesh/textures, exact SciFi source-package correspondence, and the retained Unity-chan animation usage terms. Existing CC0 records for other selected guns and survivor references are not relabeled as missing permission. This is a record of the local evidence, not new clearance or a legal determination.
+
+The sections below retain their historical, per-feature scope.
+
 ## Rescue door return moment
 
 The optional rescue-return scene keeps the current player and the existing Quaternius adult clothed survivor reference. Walking/idle poses reuse the repository's off-duty and survivor animation sources; the flat-hand door/catch contact is rotation-only project code, not a newly imported paid clip. Door, catch, room and bench are authored primitives, and the latch reuses the existing lock cue. No new asset download, paid motion data, model replacement or voice is introduced. Existing notices and LOCAL_ONLY restrictions remain.
@@ -168,3 +176,48 @@ exact hashes, clip names and the scope of this owner-confirmed authorization.
 This later motion-specific record supersedes historical statements that these
 paid motions are excluded; it does not relicense them to CC0/MIT or clear the
 other unresolved asset scopes. The original Unity package is not uploaded.
+
+
+## Saira UI typography — 2026-10-23
+
+- Asset: `assets/fonts/saira/Saira.ttf`, an unmodified variable font.
+- Copyright: 2020 The Saira Project Authors, https://github.com/Omnibus-Type/Saira.
+- License: SIL Open Font License 1.1, included in `assets/fonts/saira/OFL.txt`.
+- Retrieved from the font bundled in https://github.com/hhikr/endfield-ui-skill
+  (`templates/flutter/fonts/Saira.ttf`); no game assets or third-party implementation code copied.
+- SHA-256: `9d050fc5a01c85f74c4257c207d50b55d1e40c37308c642f974a2c5003231dde`.
+- Runtime typography uses Godot FontVariation with numeric OpenType tags for width/weight,
+  with the existing Noto Sans SC resource as a CJK fallback.
+
+## Whole-campus geographic data (2026-10-23)
+
+- © OpenStreetMap contributors, ODbL 1.0: real road, building, lake and campus-boundary
+  coordinates; derivative database and raw source supplied with the project.
+- Mapzen Terrain Tiles / USGS regional elevation data, original HGT archive retained.
+- Full request URLs, SHA256, data licenses, attribution and accuracy/estimation limits:
+  `assets/geography/weijin/SOURCE.md`, `SOURCE.json` and `TERRAIN_ATTRIBUTION.md`.
+  ODbL text: `licenses/ODbL-1.0.txt`.
+- Public university map is a reference only; its image is not redistributed or used as a texture.
+- This data addition does not relicense the game's code, characters or other artwork.
+
+### Geographic art revision 2
+
+- Original procedural architectural modules and campus furniture; no downloaded building/vegetation pack.
+- Near foliage reuses the existing `scripts/world/streets/courtyard_tree.gd` branch and leaf geometry,
+  baked into four shared variants with separate far LOD; that source is unchanged.
+- Existing CC0 Poly Haven grass, paving, asphalt, soil, wall and tile maps are reused under their
+  existing source records; no new satellite textures or reference photos are redistributed.
+- Inferred facades, roof treatment, planting and furniture remain explicitly illustrative.
+  Scope and evidence: `docs/streets/WEIJIN_ART_2026-10-23.md`.
+
+## Campus designed interiors / fieldwork chapter (2026-10-23)
+
+- Reuses the already recorded `assets/environment/compact_hideout/` concrete maps,
+  Poly Haven office desks, arm lamps, stools, toolbox, vintage beds and military crates.
+  Their existing source/license records remain in force; no new downloads or permissions
+  are implied. New shelf geometry, fixtures, floor shader and task signs are authored code.
+- Three floorplans and all task apparatus are fictional game design, not OSM interior
+  data, surveyed rooms, live hydrology or university operating instructions.
+- Exterior source geometry and ODbL attribution are retained. Interior UI explicitly
+  distinguishes its designed floorplan from the geographic campus map.
+- Scope/evidence: `docs/streets/WEIJIN_INTERIORS_2026-10-23.md`.

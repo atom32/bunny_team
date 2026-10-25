@@ -9,7 +9,7 @@ func work(name: String) -> bool:
 	if name != "WardControl": return true
 	var cache: MaintenanceSharedCache=battle.area_root.get_node("SharedToolbox")
 	var companion: MaintenanceSurvivor=battle.area_root.get_node("Survivor")
-	check(int(battle.area_root.get_meta("map_revision"))==3 and not cache.has_rolled,"ordinary fresh sortie has optional v3 toolbox, not preopened reward")
+	check(int(battle.area_root.get_meta("map_revision"))==4 and not cache.has_rolled,"ordinary fresh sortie has optional v4 toolbox and entry threat, not preopened reward")
 	if not await walk(cache.player_position(),true):return false
 	var component: InteractionComponent=battle.player.interaction_component
 	component._physics_process(0)

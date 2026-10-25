@@ -176,6 +176,49 @@ func get_weapon_runtime_state(weapon_instance_id: String):
 	return _weapon_runtime_states.get(weapon_instance_id)
 
 
+func exchange_field_weapon(slot_id: StringName, incoming: ItemInstance) -> Dictionary:
+	# Replace one current gun, not a deployment or warehouse transaction. The old
+	# gun returns to the same cache; only its actual loaded rounds enter the bag.
+	if status != Status.ACTIVE or not validate() or slot_id not in LoadoutState.WEAPON_SLOT_IDS or not incoming or inventory.contains(incoming.instance_id):
+		return {"success":false,"message":"Weapon swap unavailable."}
+	var outgoing := loadout.get_item(slot_id, inventory)
+	var old_state: Variant = get_weapon_runtime_state(outgoing.instance_id) if outgoing else null
+	var definition := ContentDB.get_weapon(incoming.definition_id, false)
+	var ammo_id := definition.get_runtime_ammo_definition_id() if definition else &""
+	var old_ammo := ContentDB.get_ammo(old_state.ammo_definition_id, false) if old_state else null
+	if not outgoing or not old_state or not old_ammo or not definition or not ContentDB.get_ammo(ammo_id, false):
+		return {"success":false,"message":"Weapon swap unavailable."}
+	var candidate := InventoryState.from_dict(inventory.to_dict())
+	var weapon := ItemInstance.from_dict(incoming.to_dict())
+	var candidate_loadout := LoadoutState.from_dict(loadout.to_dict())
+	if not candidate or not weapon or definition.magazine_capacity <= 0:
+		return {"success":false,"message":"Weapon swap unavailable."}
+	candidate.remove_item(outgoing.instance_id)
+	candidate.reserved_weight = maxf(0.0, inventory.reserved_weight - old_state.magazine_ammo * old_ammo.weight)
+	# Unload before adding the new gun: a full bag may exchange equal-weight
+	# guns without briefly counting the old magazine both loaded and loose.
+	if old_state.magazine_ammo > 0 and not candidate.add_item(ItemInstance.new(old_state.ammo_definition_id, old_state.magazine_ammo)):
+		return {"success":false,"message":"Weapon swap would exceed carrying capacity. Nothing changed."}
+	if not candidate.add_item_preserving_instance(weapon) or not candidate_loadout.equip(slot_id, weapon.instance_id, candidate) or not candidate.validate() or not candidate_loadout.validate(candidate):
+		return {"success":false,"message":"Weapon swap would exceed carrying capacity. Nothing changed."}
+	var new_state = WEAPON_RUNTIME_STATE_SCRIPT.new(weapon.instance_id, ammo_id, definition.magazine_capacity, 0, definition.id)
+	if not new_state.validate(): return {"success":false,"message":"Weapon swap unavailable."}
+	# Publish once, preserving references to every other owned/equipped item.
+	var items: Array[ItemInstance] = []
+	for staged in candidate.get_items():
+		var existing := inventory.get_item(staged.instance_id)
+		if existing:
+			existing.quantity = staged.quantity
+			items.append(existing)
+		else: items.append(incoming if staged.instance_id == incoming.instance_id else staged)
+	inventory._items = items
+	loadout._slots = candidate_loadout._slots
+	_weapon_runtime_states.erase(outgoing.instance_id)
+	_weapon_runtime_states[incoming.instance_id] = new_state
+	_sync_loaded_weight()
+	return {"success":true,"outgoing":outgoing,"message":"Gun swapped. Previous gun left in this cache. Empty magazine / reload with compatible ammo."}
+
+
 func fire_weapon(weapon_instance_id: String) -> bool:
 	if status != Status.ACTIVE:
 		return false

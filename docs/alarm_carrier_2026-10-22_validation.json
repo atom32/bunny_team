@@ -1,0 +1,758 @@
+{
+  "feature": "maintenance_alarm_carrier_existing_enemy_local_call",
+  "date": "2026-10-22",
+  "scope": "New v4 sortie only, replace Enemy0; no extra actor, spawn point, summoned wave, loot, permanent statistic, tested minutes or chapter. Prior v1/v2/v3 world paths kept.",
+  "accepted_final_source_sha256": {
+    "scripts/enemies/maintenance_alarm_carrier.gd": "9e7abb12477c27a2e9f4d5565650452af11215af9476fe8212844ac1a3300d25",
+    "scripts/enemies/maintenance_alarm_carrier.gd.uid": "ba5d80f4fff02a4f111669193fe2e77c4bd6e9b27ca2205356419a5eb9e57059",
+    "scenes/enemies/maintenance_alarm_carrier.tscn": "710e99ac49e7e7627161d4a7b7891b776e2d1e53afee136fd576b26e638880a7",
+    "resources/enemies/maintenance_alarm_carrier.tres": "3275ff5e7f872f6092f86bb8cc738c8d369b6a8c260da1dfe5e4a10e27d57480",
+    "resources/content/content_manifest.tres": "0b60464f54b99ac21eed851efeb023aa7e6642f87d72835deeffc12639086029",
+    "resources/missions/maintenance_rescue.tres": "0d9ef975b02cfa91f2b2c664e9f48cdf854984bee5534c9d41c4154fd11fbaf3",
+    "scripts/data/maintenance_journey.gd": "90ea31ae47a419aca67f68a3337df6fd39ba88f6fad638c26167f637b7826149",
+    "scripts/world/maintenance/shared_zone.gd": "ccf2dca11eafc72cdd743156a87ecece94ad667a34f41356a02e22e4937d6aad",
+    "scripts/systems/sortie_checkpoint.gd": "02485225551d4c6ef7b716bbfa1221623eeeb4c9059742794fb6b563fdb5e0e7",
+    "scripts/combat/combat_noise.gd": "71fde1103c8e7dd316e2626d471d2029248569d8abb22e261ba1deeddd0ef2c5",
+    "tests/maintenance_journey_test.gd": "0314939701aba0a9f6bc9312001af76149e3d377f63e580224175e47a0f5600b",
+    "tests/maintenance_shared_test.gd": "018b42578305fa5e1a9980892124431df031c64d2ed21d43e4e3b1399a13eb0c",
+    "tools/maintenance_run.gd": "a0b866a23d8875bb523168aa10333e1ea945e287b328836a7a5f16445f4652f2",
+    "tools/maintenance_shared_run.gd": "dbfb3a631cdea0832337ecca12247275b3d2d3fcb2f2da56f83acbc2adab2a52",
+    "localization/zh_CN.json": "f031f3f2c38af9f31a45040ad0a58fa7615f8deb62ebede609074a080ea95de2",
+    "localization/zh_CN.tres": "267315ea296923a9ab5ecc0ae84f8f4dd1a745184424df6424b19195bd2ddca4"
+  },
+  "source_evidence_root": "D:\\tmp\\bunny_alarm_carrier_20261022_dev01",
+  "source_group_reports": {
+    "targeted_results.json": {
+      "path": "D:\\tmp\\bunny_alarm_carrier_20261022_dev01\\targeted_results.json",
+      "sha256": "8f420a75eb7087087d0e06cdf7a0af5501e85b074c1f2e8ea5f72aa2eb292e51",
+      "checks": [
+        {
+          "name": "caller",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "a1465b6d3a0f4b0d89c77ced14a4256ffa8bc1cfc9ce8ad9f0809ab241151668"
+        },
+        {
+          "name": "journey_v2",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "d906590fddc74e1674d01d375a5f20fbae1c1717f27c9671e065f909c44c8f1a"
+        },
+        {
+          "name": "shared_v4",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "111ff743dfd0103358fab7967a67683569737d8b04945577346c884f4d6f55be"
+        },
+        {
+          "name": "shared_v4_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "cd776d9a3e6c3cb260ab5de74a86b9319e63d4e535ba6cba4c741a81870f258d"
+        },
+        {
+          "name": "shared_pending_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "f5cd12bb008f8e624a56e1fe95d2cf412c8683222606dea9a19802922290569a"
+        },
+        {
+          "name": "legacy_v3_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "5d53baba5c8667e8803009122bc323bed0410be2756b6d8680a0f45745cbaf0a"
+        },
+        {
+          "name": "ordinary",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "b02ae03848eaf857dbf9b8c7c17f780211012a07b5d19439d21128ec4b49fdac"
+        },
+        {
+          "name": "ordinary_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "39a326f184d836f1c73a93b8c7899cc3cc9651df4f77d03923cbfb3fb6c696b9"
+        }
+      ]
+    },
+    "caller_disk_results.json": {
+      "path": "D:\\tmp\\bunny_alarm_carrier_20261022_dev01\\caller_disk_results.json",
+      "sha256": "a5f884aa58404b5c7d03432af8983cc62028fc17cfa21be93c9bd7d4466f3b8d",
+      "checks": [
+        {
+          "name": "caller_final",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "a1465b6d3a0f4b0d89c77ced14a4256ffa8bc1cfc9ce8ad9f0809ab241151668"
+        },
+        {
+          "name": "caller_write",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "9b5bbf7502d26a762ab6656f7bc673ae86c158d814a84ea276140494e0e9d135"
+        },
+        {
+          "name": "caller_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "c1a3e773a8bc7ff1c0cd0bdf32105173baeb771476c24e8f80c7bdb768e43291"
+        }
+      ]
+    },
+    "mutex_results.json": {
+      "path": "D:\\tmp\\bunny_alarm_carrier_20261022_dev01\\mutex_results.json",
+      "sha256": "6dbea915cae15ddbea7fca51e9800b8ce9c12d7c8c409a451ff8df22b6fc1787",
+      "checks": [
+        {
+          "name": "mutex_fixed",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "631f1f5fc507a3ef6629b6ab9f5989dc099912a91437c988a05a865221f9d681"
+        },
+        {
+          "name": "mutex_write",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "9b5bbf7502d26a762ab6656f7bc673ae86c158d814a84ea276140494e0e9d135"
+        },
+        {
+          "name": "mutex_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "c1a3e773a8bc7ff1c0cd0bdf32105173baeb771476c24e8f80c7bdb768e43291"
+        }
+      ]
+    },
+    "perception_results.json": {
+      "path": "D:\\tmp\\bunny_alarm_carrier_20261022_dev01\\perception_results.json",
+      "sha256": "7e4186c4a5ff28a30f36170efa0b6cb12275223d69c55c573a2fcf487cdbe644",
+      "checks": [
+        {
+          "name": "enemy_perception_test",
+          "pass": true,
+          "exit": 0,
+          "sha256": "a9f676a51f12af04c34209acbdf83f6d4848e3012b23ff5c32c434b44d9d594c"
+        },
+        {
+          "name": "enemy_tactics_test",
+          "pass": true,
+          "exit": 0,
+          "sha256": "3d5a4e1fdbdcf95e3d897d87b804467264eaf8dd3a39a7f106502e7916049af1"
+        }
+      ]
+    }
+  },
+  "regression": {
+    "review_finding": "WINDUP + _is_telegraphing + positive shot_remaining was accepted although impossible in runtime. Reject only that overlap; valid COOLDOWN may still melee.",
+    "expected_failure_log": "D:\\tmp\\bunny_alarm_carrier_20261022_dev01\\mutex_repro.log",
+    "expected_failure_sha256": "2de6c7a2dc4c65ec286f2bde87de18d6709fd052e35542f9f35e189c4b01c222",
+    "pre_fix_exit": 1,
+    "pre_fix_assertions": 34,
+    "final_caller_assertions": 34,
+    "durable_write_assertions": 11,
+    "durable_read_assertions": 8,
+    "logs_preserved": true
+  },
+  "ordinary_source_route": {
+    "alarm_carrier": {
+      "calls": 1,
+      "dead": true,
+      "interrupts": 0,
+      "spawn_key": "Enemy0"
+    },
+    "checks": 26,
+    "companion_position": "(0.01277, 0.000842, -34.04431)",
+    "credits_spent": 360,
+    "damage": 5,
+    "failures": [],
+    "health": 254.6,
+    "input_sha256": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f",
+    "kills": 6,
+    "method": "Earned completed-campus return copied to isolated userdata; ordinary BOOT/Continue/Operations; generated controls, live AI, real ammunition and physical escort; not a human playtest",
+    "route": "rescue_first",
+    "shots": 20,
+    "steam_facts": {
+      "steam_off": true,
+      "version": 4
+    },
+    "steam_followed": true,
+    "steam_warning": true,
+    "steps": []
+  },
+  "ordinary_zip_route": {
+    "alarm_carrier": {
+      "calls": 1,
+      "dead": true,
+      "interrupts": 0,
+      "spawn_key": "Enemy0"
+    },
+    "checks": 26,
+    "companion_position": "(0.01277, 0.000842, -34.04429)",
+    "credits_spent": 360,
+    "damage": 5,
+    "failures": [],
+    "health": 254.6,
+    "input_sha256": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f",
+    "kills": 6,
+    "method": "Earned completed-campus return copied to isolated userdata; ordinary BOOT/Continue/Operations; generated controls, live AI, real ammunition and physical escort; not a human playtest",
+    "route": "rescue_first",
+    "shots": 20,
+    "steam_facts": {
+      "steam_off": true,
+      "version": 4
+    },
+    "steam_followed": true,
+    "steam_warning": true,
+    "steps": []
+  },
+  "native": {
+    "native": {
+      "path": "D:\\tmp\\bunny_alarm_carrier_20261022_dev01\\native",
+      "log_sha256": "b6fee8ee6b69cf190d0e14aff745b970389ce82f654c571565ce36c82caff665",
+      "controlled_fixture": true,
+      "assertions": 9,
+      "renderer": "forward_plus",
+      "audio_driver": "Dummy",
+      "accepted_visual_evidence": false,
+      "images": {
+        "alarm_called.png": "7cd7133df94d3389fff8e184f12b3873c4952c298960742942882db037229394",
+        "alarm_interrupted.png": "717a2131b46b1e7f2ba37a83881c6a82d0b0c2b2e05454806c64c002327c2887",
+        "alarm_listener_approach.png": "96876a4f5adb5771b722e7e0ba57ebc013690752759b68d12bdeecbba6fb068f",
+        "alarm_warning.png": "ceec95fa1f3d1db1dcef45de04a7c7de5bf86e0a87f5522b5099c5f6a56eb683"
+      },
+      "limitation": "Warning behind the test player visibility cone. Passed behavior but not accepted for readability. No runtime changes; second fixture used normal aim input toward the enemy."
+    },
+    "native02": {
+      "path": "D:\\tmp\\bunny_alarm_carrier_20261022_dev01\\native02",
+      "log_sha256": "a5fb6b6fb331e599f27315f04acb62e5e5b78d726772ff65ee2fe72ad8fd174c",
+      "controlled_fixture": true,
+      "assertions": 9,
+      "renderer": "forward_plus",
+      "audio_driver": "Dummy",
+      "accepted_visual_evidence": true,
+      "images": {
+        "alarm_called.png": "05c8a1f4c901eeeb45edf92b904d371526de941a6adc27e52ca84e14effbdffc",
+        "alarm_interrupted.png": "55a7750b7e9514fe973efd406eb6ee8278c03c16f841a2fa2f4d1232a30aba8c",
+        "alarm_listener_approach.png": "df1a409215ba1b9128d77d2117388359e6336532cc64bd84328e6d4f3bde0dda",
+        "alarm_warning.png": "8373c17807c83861d913afc7c16edacbeb9aaad0724d05d70e4511c1d3e7fe78"
+      },
+      "method": "Only fixture player positioned at (-10,0,14), normal aim_down input and real physics; actual sight acquisition, controlled 1 DamagePacket interruption, 1 eventual call, existing listener approaches. All four screenshots viewed. No focus forcing or disabled focus-loss pause.",
+      "fixture_files": {
+        "alarm_native_view.gd": "85d4a85e56074ae0d3adf16c7d41c95c6c9689627c2fd962b842c5bac3aa3d10",
+        "alarm_native_view.tscn": "dee516d21f57e518a99a34b43ece0331dc544ae538032fdc015ea476a9eb3788"
+      }
+    }
+  },
+  "final_build": {
+    "directory": "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02",
+    "checks": [
+      {
+        "name": "cold_import",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--headless",
+          "--path",
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\project",
+          "--editor",
+          "--import"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+        ],
+        "log_sha256": "1999bafb459d17eca9e483c36eda34371af35187d2a44802d58eb185f4d750cc"
+      },
+      {
+        "name": "campaign_return_offsets_unit",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\project\\tests\\test_campaign_return_offsets.py",
+          "-v"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "e4bc30c1f236ec8de6730dbc4e8b5fa4354e54362f76132e8b7e9be3de4b28a9"
+      },
+      {
+        "name": "runtime_export_unit",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\project\\tests\\test_runtime_export.py",
+          "-v"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "0149a962e43a53822c0d3dba64264bdec61e85108f09b4aecf64bacc92b84fb5"
+      },
+      {
+        "name": "runtime_dependency_catalog",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--headless",
+          "--path",
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\project",
+          "--script",
+          "res://tools/runtime_dependency_catalog.gd"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "0cc10fb33b31279442adf2af245d2601f0c3e5a8bae26e39e9afa229b856911d"
+      },
+      {
+        "name": "runtime_export_inventory",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\project\\tools\\runtime_export.py",
+          "--project",
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\project",
+          "--catalog",
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\runtime_dependency_catalog.json",
+          "--output",
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\runtime_export_inventory.json",
+          "--preset",
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\project\\export_presets.cfg"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "18329332073260d8c5a6cf70b27014d2ade2b91156904625726cbdca836f8173"
+      },
+      {
+        "name": "export_release",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--headless",
+          "--path",
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\project",
+          "--export-release",
+          "Windows Local Prototype",
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "b6a73537a29aa8548864c202698b3673698821a4279f8bc71d864e307496420f"
+      },
+      {
+        "name": "quick_inventory",
+        "command": [
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "inventory"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "4192853e2fd4d033e7bef4778eea7b356e200820c817711a712024959ccba4ca"
+      },
+      {
+        "name": "quick_motion",
+        "command": [
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "motion"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "c2578f672ad7ee12cb35e22346e84c53a3b9bfba02a27896e823d877edc5ebf4"
+      },
+      {
+        "name": "quick_boot",
+        "command": [
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "boot"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "0a8791061ef0af360508aab49fcd7f9d7219e394e1dce4b7330249c24cca16f7"
+      },
+      {
+        "name": "quick_write",
+        "command": [
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "e7deea7531c76f14c5617cad1c2b4870824aa4de8790e11928617fb2082a7a12"
+      },
+      {
+        "name": "quick_read",
+        "command": [
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "3e2add096fc93db6fff51d50ebc8ccd1af736484ada13b3ca28892b69d98f530"
+      },
+      {
+        "name": "quick_legacy",
+        "command": [
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "legacy"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "970b8c6f6972fe800b355af7d4e7ba243a9b26c67e2338edd30074d75cd02726"
+      },
+      {
+        "name": "quick_recovery",
+        "command": [
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "recovery"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+      },
+      {
+        "name": "quick_first_sortie",
+        "command": [
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "first_sortie"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "688e502db16a5fae42806d3540f8fcdd6cbc4838d82da8e06996b9b9e4821ccd"
+      },
+      {
+        "name": "quick_first_sortie_read",
+        "command": [
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "first_sortie",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+      },
+      {
+        "name": "quick_fitting_kit",
+        "command": [
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "fitting_kit"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "40ac639dbf1efceb7919402d143006db6beab983398ed5054a8569ccfdc45ee4"
+      },
+      {
+        "name": "quick_fitting_kit_read",
+        "command": [
+          "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "fitting_kit",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "99d1ce0209e45952db3f24fafd756087c6b1d5ebf7a804ab1ead138e0a0b1ad0"
+      }
+    ],
+    "scope": "quick_playable",
+    "source_manifest_sha256": "7e08c070c55b97e1de34fcb64e21683818c23152c420ff856c9bf83dc27b7284",
+    "matching_root_non_document_inputs": 4113,
+    "matching_root_file_checks": true,
+    "pre_fix_01": "D:\\tmp\\bunny_alarm_carrier_windows_20261022_01 is superseded internal candidate, not delivered."
+  },
+  "independent_zip": {
+    "pass": true,
+    "archive": "D:\\tmp\\bunny_alarm_carrier_windows_20261022_02\\NeonBastion_20261022_alarm_carrier_LOCAL_ONLY_windows_x64.zip",
+    "bytes": 246926907,
+    "sha256": "8470d3f59b3b32d84acf498b2b91356a965e4c792e789a76111c8e817bd9daa4",
+    "extracted_to": "D:\\tmp\\小兔试玩 背铃感染者 20261022 验收02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "files": {
+      "ASSET_LICENSE_MATERIALS.zip": {
+        "bytes": 5988171,
+        "sha256": "f00fbcb4b7efb587c3be99a40ac2a9f0f612973c4c144f4187eb0133386eb112"
+      },
+      "ENGINE_LICENSES.txt": {
+        "bytes": 114181,
+        "sha256": "472c1fbefc38653aa0fe5eceb9d4c0c8cbb5c889e5c917bcc3728edfe4b1f2ad"
+      },
+      "LOCAL_ONLY.txt": {
+        "bytes": 542,
+        "sha256": "971c31ca46c922fb159f2fa3d5381496a096088884c1ba5a55810f9116f66f96"
+      },
+      "NeonBastion.exe": {
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      },
+      "NeonBastion.pck": {
+        "bytes": 260325880,
+        "sha256": "71c949b27c3fd9bb62abd35948281608d9a7007889fbcecd4cee6014b1cda084"
+      },
+      "runtime_inventory.json": {
+        "bytes": 170412,
+        "sha256": "e5ed188aed7e10746439a576e0165812ceaaa89e584ad69eb6fba1665908e54e"
+      },
+      "兼容模式.cmd": {
+        "bytes": 204,
+        "sha256": "6851d578daaf8628535af021be14b1088090c4f3ec257a685b810cfcde72586f"
+      },
+      "开始游戏.cmd": {
+        "bytes": 200,
+        "sha256": "f52079e040acb6369a9245c63b12a7639d8769bbd3c7007fa10b5e6aea4de583"
+      },
+      "试玩说明.txt": {
+        "bytes": 4625,
+        "sha256": "8759e99e0370ed51c4098424bdf2485331193221321c0bd8b3d5576f9371f6d4"
+      },
+      "预览蒸汽救援.cmd": {
+        "bytes": 893,
+        "sha256": "b76d679fe5a07fad89c81766a2d424c4f2498a506bbb2a5285c5c22a032db10b"
+      },
+      "preview_seed/profile.json": {
+        "bytes": 3676,
+        "sha256": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f"
+      }
+    },
+    "matching_original_release_template": true,
+    "all_extracted_files_match": true,
+    "companion_license_count": 31,
+    "motion_clips": 16,
+    "checks": [
+      {
+        "name": "zip_inventory",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "73c04da26ab1181b95fe1cfa324a0dec29f6bc6b574b11b2de122705425af4ba"
+      },
+      {
+        "name": "zip_motion",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "17f378b67aae3d9feb61b47732346b869cdbba400625a8d9646f1c73563692cb"
+      },
+      {
+        "name": "zip_caller",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "631f1f5fc507a3ef6629b6ab9f5989dc099912a91437c988a05a865221f9d681"
+      },
+      {
+        "name": "zip_caller_write",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "9b5bbf7502d26a762ab6656f7bc673ae86c158d814a84ea276140494e0e9d135"
+      },
+      {
+        "name": "zip_caller_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "c1a3e773a8bc7ff1c0cd0bdf32105173baeb771476c24e8f80c7bdb768e43291"
+      },
+      {
+        "name": "zip_legacy_v3_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5d53baba5c8667e8803009122bc323bed0410be2756b6d8680a0f45745cbaf0a"
+      },
+      {
+        "name": "zip_rescue_first",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "b02ae03848eaf857dbf9b8c7c17f780211012a07b5d19439d21128ec4b49fdac"
+      },
+      {
+        "name": "zip_rescue_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "39a326f184d836f1c73a93b8c7899cc3cc9651df4f77d03923cbfb3fb6c696b9"
+      },
+      {
+        "name": "zip_launcher_forward",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5532c127960ddcd392e3af5befeb904375e8b844728242dc3bcc0d417d6c7b98"
+      },
+      {
+        "name": "zip_launcher_compatibility",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5532c127960ddcd392e3af5befeb904375e8b844728242dc3bcc0d417d6c7b98"
+      },
+      {
+        "name": "zip_preview_boot",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5532c127960ddcd392e3af5befeb904375e8b844728242dc3bcc0d417d6c7b98"
+      },
+      {
+        "name": "zip_preview_backup_guard",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+      }
+    ],
+    "scope": "Minimal packaged/independent ZIP headless checks, including caller interruption/persistence, genuine v3 checkpoint read and ordinary rescue-first/live combat/return/readback; earlier feature-specific tests are not claimed rerun; this independent ZIP suite is headless; one prior short Forward+ controlled visual check is not ordinary-route, compatibility-renderer, real-audio, full-regression, low-spec, five-hour or public-release acceptance. No user profiles or original packages changed.",
+    "public_release_approved": false
+  },
+  "seed_provenance": {
+    "source": "D:\\tmp\\bunny_readability_20261021_build01\\maintenance_rescue_seed\\profile.json",
+    "sha256": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f",
+    "successful_sorties": 6,
+    "source_unchanged": true,
+    "no_profile_edits_or_item_grants": true
+  },
+  "legacy_v3_provenance": {
+    "maintenance_shared_test.json": {
+      "source": "D:\\tmp\\bunny_steam_pursuit_20261022_dev01\\fix04_shared_userdata\\Godot\\app_userdata\\Bunny Verification bunny_steam_pursuit_20261022_dev01\\maintenance_shared_test.json",
+      "sha256": "a74faf304155a2dfa80e677c67775cb5eebf1bc4923cb408bf0d511535e85a60",
+      "source_unchanged": true
+    },
+    "maintenance_shared_expected.json": {
+      "source": "D:\\tmp\\bunny_steam_pursuit_20261022_dev01\\fix04_shared_userdata\\Godot\\app_userdata\\Bunny Verification bunny_steam_pursuit_20261022_dev01\\maintenance_shared_expected.json",
+      "sha256": "6998496a90f3c102926e0498a6aa618dcd855f6a0f3e0ba5fad31785a98a876e",
+      "source_unchanged": true
+    }
+  },
+  "preview_provenance": {
+    "source": "D:\\tmp\\bunny_readability_20261021_build01\\maintenance_rescue_seed\\profile.json",
+    "source_sha256": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f",
+    "archive_member": "LOCAL_ONLY_DO_NOT_UPLOAD/preview_seed/profile.json",
+    "input_successful_sorties": 6,
+    "not_rescued_yet": true,
+    "source_unchanged": true,
+    "copy_is_atomic_no_overwrite": true,
+    "missing_primary_existing_backup_does_not_seed": true
+  },
+  "code_review": "Independent read-only review found the reproduced timer-overlap issue; after fix and final package audit no new blocker found.",
+  "limits": {
+    "full_regression_rerun": false,
+    "compatibility_renderer_visual": false,
+    "real_audio_qa": false,
+    "low_spec_qa": false,
+    "human_playtest": false,
+    "five_hour_first_completion_verified": false,
+    "public_release_approved": false,
+    "real_80_percent_positive_reviews": false,
+    "git_committed_or_pushed_this_iteration": false,
+    "user_profiles_or_raw_unity_package_modified": false
+  },
+  "motion": {
+    "clips": 16,
+    "library_bytes": 2421102,
+    "library_sha256": "a747a05bb010083d413ce7e8aa36a114c22ef3dd7339251493fc034a22069ec4",
+    "extra_public_redistribution_permission": "User attested; not extended to other assets.",
+    "original_unity_package_included": false,
+    "arcana_included": false
+  }
+}

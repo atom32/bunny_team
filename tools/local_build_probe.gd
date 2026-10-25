@@ -41,6 +41,23 @@ func _run() -> void:
 			if ResourceLoader.exists(path): check(load(path) != null,"selected resource decodes in actual release: "+path)
 		for path in inventory.get("plain_files",[]):check(FileAccess.file_exists(path),"plain data/notice is packaged: "+path)
 		for path in inventory.get("verification_absent_resources",[]):check(not ResourceLoader.exists(path),"unused review/rollback model is not packaged: "+path)
+	elif mode == "motion":
+		var library = load("res://local_motion/library.tres") as AnimationLibrary
+		var clips := ["AimIdle","Dodge","Hit","Idle","PutGun","Reload","Run","Shoot","TakeGun","Walk","WalkBL","WalkBR","WalkBack","WalkFL","WalkFR","WalkRelaxed"]
+		check(library != null and library.get_animation_list().size() == 16,"actual 16-clip library decodes in release")
+		if library:
+			for clip in clips:
+				check(library.has_animation(clip) and library.get_animation(clip).get_track_count() > 0,"authored motion tracks: " + clip)
+		var player_scene = load("res://scenes/player/player.tscn") as PackedScene
+		check(player_scene.get_state().get_node_property_value(0,0) == load("res://local_motion/player.gd"),"default player uses the motion adapter")
+		check(FileAccess.file_exists("res://local_motion/NOTICE.md"),"motion provenance notice ships with the runtime")
+	elif mode in ["recovery","fitting_kit","alarm_bindings","alarm_packing","alarm_find","portable_alarm","alarm_earned","build_identity","playtest_report","playtest_feedback","feedback_entry","first_sortie_readiness"]:
+		if is_instance_valid(tree.current_scene): tree.current_scene.free()
+		tree.current_scene = null
+		var route = load("res://local_qa/" + mode + ".tscn").instantiate()
+		tree.root.add_child(route)
+		tree.current_scene = route
+		return
 	elif mode == "boot":
 		await tree.create_timer(3.0).timeout
 		check(is_instance_valid(tree.current_scene) and tree.current_scene.scene_file_path == "res://scenes/presentation/slice/boot.tscn", "actual default BOOT loads")

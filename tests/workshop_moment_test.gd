@@ -43,6 +43,7 @@ func _wait_scene(path: String) -> bool:
 func _run() -> void:
 	capture = "--capture" in OS.get_cmdline_user_args()
 	if capture: GameLanguage.set_language("en" if "--english" in OS.get_cmdline_user_args() else "zh_CN",false)
+	var presentation_language := TranslationServer.get_locale()
 	get_tree().current_scene = null
 	var profile := ProfileRuntime.new_profile()
 	var before := JSON.stringify(profile.to_dict())
@@ -86,8 +87,14 @@ func _run() -> void:
 	check(room.actor.preview_mode and not room.actor.is_physics_processing() and not room.actor.animation_tree.active and not room.actor.combat_rig.visible,"fitting skeleton never runs gameplay controls or fires")
 	await shot("01_arrival")
 	for branch in ["tidy","tap"]:
+		await step(15)
+		check(room.phase == "intro" and room.line_index == 0 and room.next_button.has_focus(),"intro waits on the first line with a keyboard-accessible next button")
+		check(room.knock_count == 0,"initial entry and replay start without remembered knocks")
 		for i in room.INTRO.size():
-			check(room.dialogue.get_combined_minimum_size().y<=room.dialogue.size.y,"intro text fits actual label")
+			for language in ["en", "zh_CN"]:
+				GameLanguage.set_language(language,false)
+				check(room.dialogue.get_combined_minimum_size().y<=room.dialogue.size.y,"intro text fits actual label in "+language)
+			GameLanguage.set_language(presentation_language,false)
 			await click(room.next_button)
 		check(room.phase == "choice" and room.choices.visible,"intro reaches explicit spare-screw choice")
 		await step(15)
@@ -95,8 +102,16 @@ func _run() -> void:
 		await shot("02_choice_"+branch)
 		await click(room.choices.get_node("Choice"+branch.capitalize()))
 		var gesture_error := 0.0
+		var actual_knocks := 0
 		for tick in 220:
+			var previous_knocks: int = room.knock_count
+			var voice: int = AudioDirector._next_sfx_player
 			room._process(1.0/60.0)
+			if room.knock_count > previous_knocks:
+				actual_knocks += 1
+				check(room.phase == "gesture" and room.bolt.position.is_equal_approx(room.SPARE),"each tap physically lands the spare back on the bench")
+				check(room.right_target.is_equal_approx(room.SPARE+Vector3(0,0.19,0)),"wrist and spare share each exact contact")
+				check(AudioDirector.last_cue == &"workshop_knock" and AudioDirector._next_sfx_player == (voice+1)%AudioDirector._sfx_players.size(),"each landing dispatches exactly one existing metal-impact voice")
 			if room.phase == "gesture" and room.reach_weight>0.999:
 				var actual := sk.to_global(sk.get_bone_global_pose(sk.find_bone("Character1_RightHand")).origin)
 				gesture_error = maxf(gesture_error,actual.distance_to(room.right_target))
@@ -106,6 +121,11 @@ func _run() -> void:
 		print("WORKSHOP_GESTURE max hand error ",branch," ",gesture_error)
 		check(gesture_error<0.035,"spare-screw gesture stays within real arm reach across the whole path")
 		check(room.phase == "fit" and room.tool.visible,"gesture leads into physical driver/bench action")
+		check(room.knock_count == (2 if branch == "tap" else 0) and actual_knocks == room.knock_count,"tap has exactly two landings; tidying does not count as knocking")
+		check(room.bolt.position.is_equal_approx(room.SPARE if branch == "tap" else room.TRAY),"each branch leaves the physical spare in its own final location")
+		var voice_after_gesture: int = AudioDirector._next_sfx_player
+		room._refresh_language(); room._refresh_language()
+		check(AudioDirector._next_sfx_player == voice_after_gesture,"refreshing subtitles does not replay the knocks")
 		await step(1)
 		var hand := sk.to_global(sk.get_bone_global_pose(sk.find_bone("Character1_RightHand")).origin)
 		print("WORKSHOP_CONTACT ",branch," ",hand," goal ",room.WORK_HAND," error ",hand.distance_to(room.WORK_HAND))
@@ -130,8 +150,18 @@ func _run() -> void:
 		check(room.phase_elapsed>frozen,"unpausing resumes actual scene processing")
 		room.set_process(false)
 		await step(8)
-		check(room.phase == "done" and room.exits.visible and not room.tool.visible,"fitting finishes with character response and explicit next actions")
-		check(room.dialogue.get_combined_minimum_size().y<=room.dialogue.size.y,"four ending lines fit actual subtitle panel")
+		check(room.phase == "ending" and room.next_button.visible and not room.tool.visible,"physical fitting leads into player-paced character response")
+		await step(15)
+		check(room.phase == "ending" and room.line_index == 0 and room.next_button.has_focus(),"ending does not race past unread dialogue")
+		check(room.knock_count == actual_knocks and AudioDirector._next_sfx_player == voice_after_gesture,"waiting through the ending does not repeat a knock")
+		for i in room._ending_lines().size():
+			check(room.dialogue.text == tr(room._ending_lines()[i]),"ending uses the selected branch, not a shared claimed response")
+			for language in ["en", "zh_CN"]:
+				GameLanguage.set_language(language,false)
+				check(room.dialogue.get_combined_minimum_size().y<=room.dialogue.size.y,"ending line fits actual subtitle panel in "+language)
+			GameLanguage.set_language(presentation_language,false)
+			await click(room.next_button)
+		check(room.phase == "done" and room.exits.visible and not room.next_button.visible,"read ending exposes explicit next actions")
 		await shot("05_homecoming_"+branch)
 		check(JSON.stringify(profile.to_dict())==before and FileAccess.get_sha256(SaveService.DEFAULT_SAVE_PATH)==saved,"branch/replay does not re-charge, reward, save or alter profile")
 		if branch == "tidy": await click(room.exits.get_node("ReplayFitting"))

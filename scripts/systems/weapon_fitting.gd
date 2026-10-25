@@ -70,6 +70,34 @@ static func install_kit(weapon_id: String, kit_id: String, path := SaveService.D
 	profile.replace_with(result.candidate)
 	return result
 
+static func prepare_recovery(profile: ProfileState, weapon_id: String) -> Dictionary:
+	if not profile or not profile.validate(): return {"error":ERR_INVALID_DATA,"message":"Invalid fitting state."}
+	if not profile.first_mission_completed: return {"error":ERR_UNAVAILABLE,"message":"Complete First Mission before recovering fittings."}
+	var weapon := profile.inventory.get_item(weapon_id)
+	if not eligible(weapon) or weapon.fitting.is_empty() or not valid(weapon):
+		return {"error":ERR_UNAVAILABLE,"message":"Choose an owned firearm with an installed fitting."}
+	var kit_id: StringName = KITS.find_key(weapon.fitting)
+	var candidate := ProfileState.from_dict(profile.to_dict())
+	# Release the fitted mass first: the physical kit has exactly the same mass.
+	# This also permits recovery in a full warehouse, without losing the gun.
+	candidate.inventory.get_item(weapon_id).fitting = ""
+	if not candidate.inventory.add_item(ItemInstance.new(kit_id)):
+		return {"error":ERR_UNAVAILABLE,"message":"Recovered kit would exceed warehouse capacity."}
+	StashLayout.new(candidate).reconcile()
+	if not candidate.validate(): return {"error":ERR_INVALID_DATA,"message":"Invalid fitting transaction."}
+	return {"error":OK,"candidate":candidate,"message":"KIT RECOVERED / Gun retained. Install the kit on another compatible firearm."}
+
+static func recover_kit(weapon_id: String, path := SaveService.DEFAULT_SAVE_PATH) -> Dictionary:
+	var profile := ProfileRuntime.get_profile()
+	if SortieRuntime.get_current_session() or ProfileRuntime.recovery_required or not profile.sortie_checkpoint.is_empty():
+		return {"error":ERR_BUSY,"message":"Fittings are only available at base."}
+	var result := prepare_recovery(profile,weapon_id)
+	if result.error != OK: return result
+	var error := SaveService.save_profile(result.candidate,path)
+	if error != OK: return {"error":error,"message":"Could not save. Credits and items are unchanged."}
+	profile.replace_with(result.candidate)
+	return result
+
 static func prepare(profile: ProfileState, instance_id: String, id: String) -> Dictionary:
 	if not profile or not profile.validate() or not OPTIONS.has(id): return {"error":ERR_INVALID_PARAMETER,"message":"Invalid fitting."}
 	if not id.is_empty() and not CampaignService.unlocked(profile, "workbench"): return {"error":ERR_UNAVAILABLE,"message":"Restore the workbench first."}

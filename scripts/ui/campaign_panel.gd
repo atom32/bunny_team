@@ -5,6 +5,7 @@ signal campus_supplies_requested
 var save_path := SaveService.DEFAULT_SAVE_PATH
 var contact_id := ""
 var selected := -1
+var _scroll_position := 0
 var feedback := "Only the active contract advances. Claim it at base to begin the next."
 
 func _ready() -> void:
@@ -14,6 +15,8 @@ func _ready() -> void:
 	_refresh()
 
 func _refresh() -> void:
+	if get_child_count() > 0 and get_child(0) is ScrollContainer:
+		_scroll_position = (get_child(0) as ScrollContainer).scroll_vertical
 	for child in get_children(): remove_child(child); child.queue_free()
 	var profile := ProfileRuntime.get_profile()
 	if selected < 0: selected = mini(int(profile.campaign.stage), CampaignService.QUESTS.size() - 1)
@@ -22,6 +25,8 @@ func _refresh() -> void:
 	var scroll := ScrollContainer.new()
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	add_child(scroll)
+	scroll.follow_focus = true
+	scroll.set_deferred("scroll_vertical",_scroll_position)
 	body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	scroll.add_child(body)
 	# Keep the active delivery and its buttons above conversations and archives.
@@ -63,6 +68,7 @@ func _refresh() -> void:
 			submit.text = tr("DELIVER MATERIALS / PARTIAL DELIVERY OK")
 			submit.disabled = NarrativeSlice.prepare_q02_delivery(profile).error != OK
 			body.add_child(submit)
+			FieldManualStyle.primary(submit)
 			submit.pressed.connect(_submit_q02)
 		if profile.narrative_slice.settled.Q02: _label(body, NarrativeSlice.Q02_RESPONSE, 14)
 	if ContactDefinition.owns_quest(contact_id, "Q02") and profile.narrative_slice.settled.Q02:
@@ -120,6 +126,7 @@ func _refresh() -> void:
 	claim_button.custom_minimum_size.y = 44
 	claim_button.disabled = not available or not CampaignService.ready(profile)
 	detail.add_child(claim_button)
+	FieldManualStyle.primary(claim_button)
 	claim_button.pressed.connect(func(): _claim(quest.id))
 	_label(body, feedback, 14)
 	_label(body, tr("FACILITIES / Clinic %s / Ammunition bench %s / Supplier %s") % [tr("ONLINE" if CampaignService.unlocked(profile, "clinic") else "LOCKED"), tr("ONLINE" if CampaignService.unlocked(profile, "workbench") else "LOCKED"), tr("ONLINE" if CampaignService.unlocked(profile, "supplier") else "LOCKED")], 13)
@@ -218,6 +225,7 @@ func _campus_supply(body: Node,profile: ProfileState) -> void:
 	var submit:=Button.new();submit.name="SubmitCampusEquipment"
 	submit.text=tr("PACKED / NEXT: DORMITORY WINDOW" if packed else "PACK AVAILABLE EQUIPMENT FROM WAREHOUSE")
 	submit.disabled=CampusChapter.prepare_delivery(profile).error!=OK;card.add_child(submit)
+	FieldManualStyle.primary(submit)
 	submit.tooltip_text=tr("Partial packing is saved. Packing is not the field handoff; extract after the dormitory receives it.")
 	submit.pressed.connect(func():
 		var result:=CampusChapter.submit_delivery(save_path);feedback=result.message

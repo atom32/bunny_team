@@ -72,20 +72,42 @@ func show_menu() -> void:
 	preferences.set_value("opening", "seen", true)
 	preferences.save("user://presentation.cfg")
 	_clear()
-	_panel(screen, Vector2(24,24), Vector2(412,672))
-	SliceUI.divider(screen, Vector2(46,316), 342).color = FieldManualStyle.LINE
-	SliceUI.divider(screen, Vector2(46,634), 342).color = FieldManualStyle.LINE
-	_label(screen, "BASTION 07  /  FIELD OPERATIONS", Vector2(46,66), 15, FieldManualStyle.ACCENT)
-	_label(screen, "NEON\nBASTION", Vector2(42,116), 58)
-	_label(screen, "GO OUT. RECOVER. COME HOME.", Vector2(46,280), 15, FieldManualStyle.MUTED)
+	# Frame the room instead of burying it under a full-screen dashboard.
+	OperationUI.block(screen, Vector2.ZERO, Vector2(444,720))
+	OperationUI.block(screen, Vector2.ZERO, Vector2(8,720), OperationUI.DARK)
+	OperationUI.eyebrow(screen, "BASTION / FIELD OPERATIONS", Vector2(40,32))
+	OperationUI.rule(screen, Vector2(40,68), 364)
+	var wordmark := OperationUI.text(screen, "NEON", Vector2(36,94), 76, FieldManualStyle.INK, true)
+	wordmark.add_theme_font_override("font", OperationUI.typeface(800))
+	var second := OperationUI.text(screen, "BASTION", Vector2(38,180), 54, FieldManualStyle.INK, true)
+	second.add_theme_font_override("font", OperationUI.typeface(800,112))
+	OperationUI.text(screen, "GO OUT. RECOVER. COME HOME.", Vector2(42,266), 12, FieldManualStyle.MUTED, true)
+	OperationUI.rule(screen, Vector2(40,306), 364)
+	OperationUI.eyebrow(screen, "NEXT / CONTINUE", Vector2(42,326))
 	var resume_pending := not ProfileRuntime.get_profile().sortie_checkpoint.is_empty()
-	var primary := SliceUI.button(screen, "RESUME SORTIE" if resume_pending else ("CONTINUE / BASE" if SaveService.save_exists() and not ProfileRuntime.recovery_required else "START"), Vector2(46,352), Vector2(342,60), _enter)
-	FieldManualStyle.primary(primary)
-	SliceUI.button(screen, "SETTINGS", Vector2(46,426), Vector2(342,50), _settings)
-	SliceUI.button(screen, "QUIT", Vector2(46,490), Vector2(342,50), func(): FlowMenu.request_leave("quit"))
-	_label(screen, "ALPHA  /  BASTION 07", Vector2(46,658), 13, FieldManualStyle.MUTED)
-	var status := _panel(screen, Vector2(886,626), Vector2(352,70))
-	_label(status, "FIELD OPERATOR\nREADY / HOME SIGNAL ONLINE", Vector2(18,12), 15, FieldManualStyle.MUTED)
+	var entry_text := "RESUME SORTIE" if resume_pending else ("CONTINUE / BASE" if SaveService.save_exists() and not ProfileRuntime.recovery_required else "START")
+	var primary := OperationUI.action(screen, entry_text, Vector2(40,360), Vector2(364,64), _enter, true)
+	primary.name = "EnterGame"
+	OperationUI.text(screen, tr("Your suspended operation is waiting." if resume_pending else "Prepare at base. What you bring home stays yours."), Vector2(42,436), 13, FieldManualStyle.MUTED)
+	OperationUI.action(screen, "SETTINGS", Vector2(40,492), Vector2(222,48), _settings)
+	OperationUI.action(screen, "QUIT", Vector2(274,492), Vector2(130,48), func(): FlowMenu.request_leave("quit"))
+	OperationUI.rule(screen, Vector2(40,570), 364)
+	var feedback := OperationUI.action(screen, "PLAYTEST FEEDBACK / LOCAL ONLY", Vector2(40,590), Vector2(364,44), func(): FlowMenu.show_feedback(false))
+	feedback.name = "PlaytestFeedbackButton"
+	feedback.add_theme_font_size_override("font_size",13)
+	OperationUI.text(screen, tr("LOCAL PREVIEW / %s") % BuildIdentity.current().id, Vector2(40,666), 11, FieldManualStyle.MUTED)
+	OperationUI.block(screen, Vector2(476,32), Vector2(162,28), OperationUI.DARK)
+	OperationUI.text(screen, "// HOME BASE", Vector2(488,34), 12, Color.WHITE, true)
+	var geography := OperationUI.action(screen,"整校园 1:1 / 室内任务",Vector2(914,82),Vector2(326,48),func():
+		GameState.set_meta("campus_geography_return","res://scenes/presentation/slice/boot.tscn")
+		GameState.present_scene("res://scenes/presentation/campus_survey.tscn","WEIJIN CAMPUS / 1:1"))
+	geography.name="OpenRealCampus"
+	geography.tooltip_text="真实比例路网与四湖；12栋/21空间，O目录、J雨前接力。实走到东门按N接取断电夜线：战斗、破坏与带出loot；独立保存，不改旧主线或装备。"
+	var status := OperationUI.block(screen, Vector2(914,580), Vector2(326,108), OperationUI.DARK)
+	OperationUI.eyebrow(status, "OPERATOR / BUNNY", Vector2(20,12), true)
+	OperationUI.text(status, "GO OUT. COME HOME.", Vector2(20,38), 18, Color.WHITE, true)
+	OperationUI.text(status, tr("Recover. Re-equip. Return."), Vector2(20,72), 13, Color("b4bbb6"))
+	primary.grab_focus()
 
 func _enter() -> void:
 	if ProfileRuntime.recovery_required:
@@ -101,29 +123,37 @@ func _refresh_language() -> void:
 func _settings() -> void:
 	settings_open = true
 	_clear()
-	var panel := _panel(screen, Vector2(50,80), Vector2(470,550))
-	_label(panel, "SIGNAL / SETTINGS", Vector2(28,26), 28, FieldManualStyle.ACCENT)
+	OperationUI.block(screen, Vector2.ZERO, Vector2(566,720))
+	OperationUI.heading(screen, "PREFERENCES", tr("SETTINGS"), Vector2(40,32))
+	OperationUI.rule(screen, Vector2(40,112),486)
+	var panel := _panel(screen, Vector2(24,128), Vector2(518,554))
 	var index := 0
 	for bus in ["Music", "SFX"]:
-		_label(panel, bus.to_upper(), Vector2(28,108+index*100), 17)
+		OperationUI.eyebrow(panel, "0%d / AUDIO" % (index+1), Vector2(20,12+index*100))
+		_label(panel, tr(bus.to_upper()), Vector2(20,38+index*100), 18)
 		var slider := HSlider.new()
-		slider.position = Vector2(28,146+index*100)
-		slider.size = Vector2(405,28)
+		slider.name = bus + "Volume"
+		slider.position = Vector2(20,72+index*100)
+		slider.size = Vector2(390,24)
 		slider.min_value = 0.0
 		slider.max_value = 1.0
 		slider.step = 0.01
 		slider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(bus)))
 		panel.add_child(slider)
+		var value_label := _label(panel, "%d%%" % roundi(slider.value*100), Vector2(430,70+index*100), 14)
 		slider.value_changed.connect(func(value: float):
+			value_label.text = "%d%%" % roundi(value*100)
 			AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), linear_to_db(value))
 			preferences.set_value("audio", bus, value)
 			preferences.save("user://presentation.cfg")
 		)
 		index += 1
-	SliceUI.button(panel, "DISPLAY / FULLSCREEN & RESOLUTION", Vector2(28,318), Vector2(405,48), func(): FlowMenu.show_display_settings(false))
-	SliceUI.button(panel, "LANGUAGE / 中文 & ENGLISH", Vector2(28,370), Vector2(405,40), func(): FlowMenu.show_language_settings(false))
-	SliceUI.button(panel, "CONTROLS / KEY BINDINGS", Vector2(28,414), Vector2(405,40), func(): FlowMenu.show_control_settings(false))
-	SliceUI.button(panel, "BACK", Vector2(28,466), Vector2(405,46), show_menu)
+	OperationUI.rule(panel, Vector2(20,224),478)
+	OperationUI.action(panel, "DISPLAY / FULLSCREEN & RESOLUTION", Vector2(20,248), Vector2(478,48), func(): FlowMenu.show_display_settings(false))
+	OperationUI.action(panel, "LANGUAGE / 中文 & ENGLISH", Vector2(20,310), Vector2(478,48), func(): FlowMenu.show_language_settings(false))
+	OperationUI.action(panel, "CONTROLS / KEY BINDINGS", Vector2(20,372), Vector2(478,48), func(): FlowMenu.show_control_settings(false))
+	var back := OperationUI.action(panel, "BACK", Vector2(20,470), Vector2(478,52), show_menu, true)
+	back.grab_focus()
 
 
 # Presentation-only adapters; callbacks and data ownership remain unchanged.

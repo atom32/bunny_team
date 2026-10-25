@@ -1,0 +1,18 @@
+{
+  "checks": 31,
+  "failures": [],
+  "stats": {
+    "building_footprints": 467,
+    "illustrative_and_mapped_trees": 1872,
+    "lakes": 4,
+    "mesh_chunks": 913,
+    "road_ways": 242,
+    "terrain_cells": 12784
+  },
+  "walked_m": 18.614501953125,
+  "source_unit_tests": 5,
+  "native_entry_checks": 18,
+  "ui_regression_checks": 26,
+  "legacy_layout_pass": true,
+  "scope": "Geographic base and independent survey only; not quest migration or final architectural reconstruction"
+}

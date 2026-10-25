@@ -1,0 +1,349 @@
+{
+  "date": "2026-10-22",
+  "source_base_commit": "ff5fd8c1b3293600b61e3888ad3b78a0cf9da886",
+  "source_delta_sha256": {
+    "tools/build_local_windows.py": "d6a7bd2c5f520ca12f3cec5da93071b2a6741e4f3e293dbab5189a2ed785708c",
+    "tools/local_build_probe.gd": "6df16d33196644bae154fa6f71d48be15afe41e76fc570d7fe3316748a9314e8"
+  },
+  "matching_non_document_source_files": 4108,
+  "archive": {
+    "archive": "D:\\tmp\\bunny_motion16_windows_20261022_01\\NeonBastion_20261022_motion16_LOCAL_ONLY_windows_x64.zip",
+    "bytes": 246860309,
+    "sha256": "d4c9cd4f5d2b27bf96d377b89a0f6e1878443cbbdb7dff40d8f988067bb2671f",
+    "motion_clips": 16,
+    "companion_license_count": 31
+  },
+  "compiled_checks": [
+    {
+      "name": "cold_import",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\project",
+        "--editor",
+        "--import"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+      ],
+      "log_sha256": "1a061f3b10780056db22c563c11be886a9f2bcce0ee494fb2ec4323ae1c6b440"
+    },
+    {
+      "name": "campaign_return_offsets_unit",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\project\\tests\\test_campaign_return_offsets.py",
+        "-v"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "e4bc30c1f236ec8de6730dbc4e8b5fa4354e54362f76132e8b7e9be3de4b28a9"
+    },
+    {
+      "name": "runtime_export_unit",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\project\\tests\\test_runtime_export.py",
+        "-v"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "df5a5ef2b3e2e43f5afa95e6ca9d74e0e635f2288142a7ad3503e147c384fe1e"
+    },
+    {
+      "name": "runtime_dependency_catalog",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\project",
+        "--script",
+        "res://tools/runtime_dependency_catalog.gd"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "e5d0ce5701f2ba11648b46d5692e43f0203e12ffcdaea6efb1ca1f7f4754153a"
+    },
+    {
+      "name": "runtime_export_inventory",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\project\\tools\\runtime_export.py",
+        "--project",
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\project",
+        "--catalog",
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\runtime_dependency_catalog.json",
+        "--output",
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\runtime_export_inventory.json",
+        "--preset",
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\project\\export_presets.cfg"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "073e3443c86a6701677eaa7d2c8099ded2ced1f87f7a05456175a3709dfc297d"
+    },
+    {
+      "name": "export_release",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\project",
+        "--export-release",
+        "Windows Local Prototype",
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "780c08c33289140306ca77e5d3bbc7a6f7729439825ce8e859f95ee57af08acd"
+    },
+    {
+      "name": "quick_inventory",
+      "command": [
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "inventory"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "f411e67a162dc04a7eca15c9662ad421023273e9e7400f768452c304feed7ec2"
+    },
+    {
+      "name": "quick_motion",
+      "command": [
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "motion"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "d09960b93aa3f5ed7d4e2974e23a746b2bf13214c1ff5b681000ecfcec6680d0"
+    },
+    {
+      "name": "quick_boot",
+      "command": [
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "boot"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "7c4d8f7cc86306c63ecfc836487fd1bdc196e03d025409ca8d8370a4b05af7d6"
+    },
+    {
+      "name": "quick_write",
+      "command": [
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "write"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "8bcbb8bcaab4f06a6a4d3cc3df3b78d6997feb93698eaec625f8b208a15f679d"
+    },
+    {
+      "name": "quick_read",
+      "command": [
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "aa1922e61b4958bddcbefefeefb7e7c600407ccdccc72e03bd8db4bec5593b63"
+    },
+    {
+      "name": "quick_legacy",
+      "command": [
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "legacy"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "6e6e8bf27e30bb8246f1d191176709a11dde92afd12ff9791f99947231550a53"
+    },
+    {
+      "name": "quick_recovery",
+      "command": [
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "recovery"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+    },
+    {
+      "name": "quick_first_sortie",
+      "command": [
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "first_sortie"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "e9d7fed6a9e74539df5c39927bc8cc5bf42bd98dc94103416d779a2d6ae3b2b5"
+    },
+    {
+      "name": "quick_first_sortie_read",
+      "command": [
+        "D:\\tmp\\bunny_motion16_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "first_sortie",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    }
+  ],
+  "independent_zip_checks": [
+    {
+      "name": "zip_inventory",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "83f6d15922253012d08a7f2ba04332716f9d43f2bc8a205154b63fbcc0c6971a"
+    },
+    {
+      "name": "zip_motion",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "75f51e1bfa2d54a6ba0d931235e218a9131c38ccb59287cbfd8f0bcb28f899e8"
+    },
+    {
+      "name": "zip_recovery",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+    },
+    {
+      "name": "zip_first_sortie",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "e9d7fed6a9e74539df5c39927bc8cc5bf42bd98dc94103416d779a2d6ae3b2b5"
+    },
+    {
+      "name": "zip_first_sortie_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    },
+    {
+      "name": "zip_launcher_forward",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "11cca70393cae1070ec52d2564ec714e6dfee243f06ba4fc796815fff2586e7b"
+    },
+    {
+      "name": "zip_launcher_compatibility",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "11cca70393cae1070ec52d2564ec714e6dfee243f06ba4fc796815fff2586e7b"
+    }
+  ],
+  "scope": "Minimal packaged/independent ZIP headless checks only; no native rendering, full regression, low-spec, five-hour or public-release acceptance. No user profiles or original packages changed.",
+  "all_extracted_files_match": true,
+  "native_window_tested": false,
+  "public_release_approved": false,
+  "five_hour_playtime_verified": false,
+  "eighty_percent_positive_reviews_verified": false,
+  "prior_goal_turn": "progress: committed and pushed actual 16-clip library plus player integration; current turn adds standalone Windows delivery",
+  "full_external_evidence": "D:\\tmp\\bunny_motion16_windows_20261022_01\\portable_motion16_acceptance.json"
+}

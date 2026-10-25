@@ -1,0 +1,92 @@
+[
+  {
+    "distance": 1550.0,
+    "name": "overview",
+    "pitch": 1.05,
+    "point": [
+      0.0,
+      0.0
+    ],
+    "yaw": 0.0
+  },
+  {
+    "distance": 84.0,
+    "name": "main_hall",
+    "pitch": 0.6,
+    "point": [
+      332.0,
+      82.0
+    ],
+    "yaw": -0.27
+  },
+  {
+    "distance": 88.0,
+    "name": "library",
+    "pitch": 0.64,
+    "point": [
+      141.0,
+      111.0
+    ],
+    "yaw": 0.5
+  },
+  {
+    "distance": 100.0,
+    "name": "youth_lake",
+    "pitch": 0.72,
+    "point": [
+      258.0,
+      -150.0
+    ],
+    "yaw": 0.7
+  },
+  {
+    "distance": 100.0,
+    "name": "jingye_lake",
+    "pitch": 0.75,
+    "point": [
+      95.0,
+      235.0
+    ],
+    "yaw": -0.3
+  },
+  {
+    "distance": 76.0,
+    "name": "dormitory",
+    "pitch": 0.65,
+    "point": [
+      -101.0,
+      -343.0
+    ],
+    "yaw": 0.25
+  },
+  {
+    "distance": 65.0,
+    "name": "east_gate",
+    "pitch": 0.64,
+    "point": [
+      652.0,
+      230.0
+    ],
+    "yaw": -0.3
+  },
+  {
+    "distance": 27.0,
+    "name": "street_gameplay",
+    "pitch": 1.0,
+    "point": [
+      290.0,
+      94.0
+    ],
+    "yaw": 0.0
+  },
+  {
+    "distance": 32.0,
+    "name": "foliage_detail",
+    "pitch": 0.6,
+    "point": [
+      304.0,
+      -180.0
+    ],
+    "yaw": -0.65
+  }
+]

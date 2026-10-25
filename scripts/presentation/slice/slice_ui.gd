@@ -1,8 +1,8 @@
 class_name SliceUI
 extends RefCounted
 ## Small composition helpers; game data and actions stay with their existing owners.
-const CYAN := Color("c4b68a")
-const MUTED := Color("96988b")
+const CYAN := FieldManualStyle.SIGNAL
+const MUTED := Color("adb4af")
 
 static func root(layer: CanvasLayer) -> Control:
 	var control := Control.new()
@@ -37,7 +37,7 @@ static func panel(parent: Node, at: Vector2, size: Vector2) -> Panel:
 	var item := Panel.new()
 	item.position = at
 	item.size = size
-	item.add_theme_stylebox_override("panel", menu_style(Color("171914f2"), Color("555749")))
+	item.add_theme_stylebox_override("panel", menu_style(Color("191d1ef5"), Color("4e5858")))
 	parent.add_child(item)
 	return item
 
@@ -69,31 +69,7 @@ static func menu_style(fill: Color, border: Color) -> StyleBoxFlat:
 	return style
 
 static func menu_theme() -> Theme:
-	var result := UIFactory.theme()
-	result.set_color("font_color", "Label", Color("ddd9ca"))
-	for type in ["Button", "OptionButton"]:
-		result.set_color("font_color", type, Color("ddd9ca"))
-		result.set_color("font_hover_color", type, Color("f5ead0"))
-		result.set_color("font_pressed_color", type, Color("f5ead0"))
-		result.set_color("font_disabled_color", type, Color("73766a"))
-		result.set_stylebox("normal", type, menu_style(Color("22251eea"), Color("555749")))
-		result.set_stylebox("hover", type, menu_style(Color("383b2f"), CYAN))
-		result.set_stylebox("pressed", type, menu_style(Color("151811"), CYAN))
-		result.set_stylebox("disabled", type, menu_style(Color("1b1e18"), Color("33362d")))
-		result.set_stylebox("focus", type, menu_style(Color.TRANSPARENT, CYAN))
-	var rule := menu_style(Color("555749"), Color("555749"))
-	rule.content_margin_left = 0
-	rule.content_margin_right = 0
-	rule.content_margin_top = 0
-	rule.content_margin_bottom = 0
-	result.set_stylebox("separator", "HSeparator", rule)
-	for type in ["TabContainer", "TabBar"]:
-		result.set_stylebox("tab_selected", type, menu_style(Color("383b2f"), CYAN))
-		result.set_stylebox("tab_unselected", type, menu_style(Color("22251e"), Color("555749")))
-		result.set_stylebox("panel", type, menu_style(Color("171914"), Color("555749")))
-		result.set_color("font_selected_color", type, Color("ddd9ca"))
-		result.set_color("font_unselected_color", type, MUTED)
-	return result
+	return FieldManualStyle.dark_theme()
 
 static func divider(parent: Node, at: Vector2, width: float) -> ColorRect:
 	var line := ColorRect.new()

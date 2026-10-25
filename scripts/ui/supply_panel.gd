@@ -10,6 +10,7 @@ var _scrolls: Dictionary = {}
 var _scroll_positions: Dictionary = {}
 var _tab_initialized := false
 var campus_delivery_mode := false
+var _feedback_ok := true
 
 func _ready() -> void:
 	theme = FieldManualStyle.theme()
@@ -34,7 +35,7 @@ func _refresh() -> void:
 	body.add_theme_constant_override("separation", 8)
 	add_child(body)
 	var heading := Label.new()
-	heading.text = tr("QUARTERMASTER  /  %d CREDITS") % profile.credits if contact_id.is_empty() else "%s / %d 信用点" % [ContactDefinition.get_contact(contact_id).display_name, profile.credits]
+	heading.text = tr("QUARTERMASTER  /  %d CREDITS") % profile.credits if contact_id.is_empty() else tr("%s / %d CREDITS") % [ContactDefinition.get_contact(contact_id).display_name, profile.credits]
 	heading.add_theme_font_size_override("font_size", 23 if contact_id.is_empty() else 18)
 	body.add_child(heading)
 	if campus_delivery_mode:
@@ -101,7 +102,11 @@ func _refresh() -> void:
 	_tab_initialized = true
 	tabs.tab_changed.connect(func(index: int): selected_tab = index)
 	var info := Label.new()
+	info.name = "TradeFeedback"
 	info.text = tr(feedback)
+	if not _feedback_ok:
+		info.add_theme_stylebox_override("normal",FieldManualStyle.button_style(FieldManualStyle.SIGNAL,Color.TRANSPARENT))
+		info.add_theme_color_override("font_color",FieldManualStyle.INK)
 	info.custom_minimum_size = Vector2(0, 44 if contact_id.is_empty() else 32)
 	info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	info.add_theme_font_size_override("font_size", 13)
@@ -149,6 +154,7 @@ func _item_row(parent: VBoxContainer, definition: ItemDefinition, item: ItemInst
 	var label := Label.new()
 	label.add_theme_font_size_override("font_size",15)
 	label.text = GameLanguage.item_name(definition.display_name)
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	label.tooltip_text = tr(definition.description)
 	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(label)
@@ -166,7 +172,12 @@ func _item_row(parent: VBoxContainer, definition: ItemDefinition, item: ItemInst
 	var id := item.instance_id if item else String(definition.id)
 	var button := _button(row, "", func(): _trade(action,id,int(amount.value)))
 	button.name = "Supply_" + action + "_" + id.replace(".", "_")
-	var update := func(_value: float): button.text = tr("SELL / %d" if item else "BUY / %d") % (unit*int(amount.value))
+	var update := func(_value: float):
+		var total := unit*int(amount.value)
+		button.text = tr("SELL / %d" if item else "BUY / %d") % total
+		var equipped := item != null and ProfileRuntime.get_profile().loadout.is_equipped(item.instance_id)
+		button.disabled = equipped or (item == null and ProfileRuntime.get_profile().credits < total)
+		button.tooltip_text = tr("Unequip this item before selling it.") if equipped else (tr("Not enough credits. Required: %d") % total if button.disabled else tr("TOTAL / %d credits") % total)
 	amount.value_changed.connect(update)
 	update.call(amount.value)
 	if item and ProfileRuntime.get_profile().loadout.is_equipped(item.instance_id):
@@ -185,6 +196,7 @@ func _button(parent: Node, caption: String, action: Callable) -> Button:
 func _trade(action: String, id: String, amount: int) -> void:
 	var result := SupplyService.transact(action,id,amount,save_path)
 	feedback = result.message
+	_feedback_ok = result.error == OK
 	if result.error == OK:
 		AudioDirector.play_sfx(&"ui_confirm")
 		supplies_changed.emit()
@@ -192,7 +204,7 @@ func _trade(action: String, id: String, amount: int) -> void:
 
 func _fittings(parent: VBoxContainer, profile: ProfileState) -> void:
 	var note := Label.new()
-	note.text = tr("One utility slot per weapon. Replacement consumes materials; removal gives no refund.")
+	note.text = tr("One utility slot per weapon. Replacement discards the old fitting; recover it first to keep the kit.")
 	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	parent.add_child(note)
 	_kit_fittings(parent,profile)
@@ -203,6 +215,7 @@ func _fittings(parent: VBoxContainer, profile: ProfileState) -> void:
 			var row := HBoxContainer.new(); parent.add_child(row)
 			var label := Label.new(); label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 			label.text="%s / %s" % [GameLanguage.item_name(ContentDB.get_item(item.definition_id).display_name),tr(WeaponFitting.caption(item.fitting))]; row.add_child(label)
+			_recover_fitting_button(row,item,profile)
 			var button := _button(row,"REMOVE FITTING / NO REFUND",func():
 				var result := WeaponFitting.install(item.instance_id,"",save_path)
 				feedback=result.message
@@ -236,6 +249,7 @@ func _fittings(parent: VBoxContainer, profile: ProfileState) -> void:
 				supplies_changed.emit()
 			_refresh.call_deferred())
 		button.name = "Fit_" + item.instance_id
+		if not item.fitting.is_empty(): _recover_fitting_button(row,item,profile)
 		var update := func(index: int):
 			var id: String = ids[index]
 			var spec: Dictionary = WeaponFitting.OPTIONS[id]
@@ -248,6 +262,17 @@ func _fittings(parent: VBoxContainer, profile: ProfileState) -> void:
 			button.disabled = WeaponFitting.prepare(profile,item.instance_id,id).error != OK
 		choice.item_selected.connect(update)
 		update.call(choice.selected)
+
+func _recover_fitting_button(parent: HBoxContainer, item: ItemInstance, profile: ProfileState) -> void:
+	var button := _button(parent,"RECOVER KIT",func():
+		var result := WeaponFitting.recover_kit(item.instance_id,save_path)
+		feedback = result.message
+		if result.error == OK:
+			AudioDirector.play_sfx(&"ui_confirm"); supplies_changed.emit()
+		_refresh.call_deferred())
+	button.name = "RecoverFit_" + item.instance_id
+	button.tooltip_text = tr("Recover one kit; keep the standard gun. No charge.")
+	button.disabled = WeaponFitting.prepare_recovery(profile,item.instance_id).error != OK
 
 func _kit_fittings(parent: VBoxContainer, profile: ProfileState) -> void:
 	var kits := profile.inventory.get_items().filter(func(item: ItemInstance):return WeaponFitting.KITS.has(item.definition_id))

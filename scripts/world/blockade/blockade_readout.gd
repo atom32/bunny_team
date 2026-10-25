@@ -43,7 +43,10 @@ func _bar(parent: Node, height: int) -> ProgressBar:
 func _hit(applied: float, exposed: bool) -> void:
 	if not van.observed(): return
 	hit_remaining = .65
-	hit_label.text = tr("VENT HIT / -%d" if exposed else "ARMOR HIT / -%d / WAIT FOR BLUE VENTS") % ceili(applied)
+	hit_label.size.x=maxf(1.0,card.size.x-card.get_theme_stylebox("panel").get_minimum_size().x)
+	var key := "VENT HIT / -%d" if van.phase==BlockadeVan.Phase.VENT else "REAR RADIATOR HIT / -%d"
+	if not exposed:key="ARMOR HIT / -%d / BLUE VENTS OR REAR RADIATOR" if van.has_rear_radiator() else "ARMOR HIT / -%d / WAIT FOR BLUE VENTS"
+	hit_label.text = tr(key) % ceili(applied)
 	hit_label.add_theme_color_override("font_color",FieldManualStyle.SUCCESS if exposed else FieldManualStyle.ACCENT)
 
 func _process(delta: float) -> void: update_readout(delta)

@@ -20,6 +20,10 @@ var stash_grid: WarehouseGrid
 var warehouse_panel: Panel
 var deployment_summary: Label
 var packing: MedicalPacking
+var inspector: LoadoutInspector
+var packing_tab: Button
+var inspect_tab: Button
+var right_mode := "packing"
 
 
 func configure(p_inventory: InventoryState, p_loadout: LoadoutState) -> void:
@@ -40,26 +44,16 @@ func _ready() -> void:
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.theme = FieldManualStyle.theme()
 	var backdrop := ColorRect.new()
-	backdrop.color = Color("e1ded4")
+	backdrop.color = FieldManualStyle.PAPER
 	backdrop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	backdrop.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(backdrop)
 	add_child(root)
 
-	var title := Label.new()
-	title.position = Vector2(42, 28)
-	title.size = Vector2(680, 50)
-	title.text = "CHARACTER / STASH"
-	title.add_theme_font_size_override("font_size", 26)
-	title.add_theme_color_override("font_color", Color("28323b"))
-	root.add_child(title)
-	var subtitle := Label.new()
-	subtitle.position = Vector2(44, 70)
-	subtitle.size = Vector2(620, 40)
-	subtitle.text = "EQUIP / ORGANIZE / PREPARE FOR SORTIE"
-	subtitle.add_theme_font_size_override("font_size", 13)
-	subtitle.add_theme_color_override("font_color", Color("626b70"))
-	root.add_child(subtitle)
+	OperationUI.block(root, Vector2(24,16), Vector2(1232,80), OperationUI.DARK)
+	OperationUI.eyebrow(root, "LOADOUT / FIELD PREPARATION", Vector2(42,24), true)
+	OperationUI.text(root, tr("CHARACTER / STASH"), Vector2(42,44), 28, Color.WHITE)
+	OperationUI.eyebrow(root, "ACTUAL LOAD / CAPACITY", Vector2(774,24), true)
 	_build_warehouse_summary(root)
 
 	var panel := Panel.new()
@@ -68,13 +62,10 @@ func _ready() -> void:
 	panel.size = Vector2(300, 504)
 	panel.add_theme_stylebox_override("panel", FieldManualStyle.panel(FieldManualStyle.SURFACE))
 	root.add_child(panel)
-	var heading := Label.new()
-	heading.text = "EQUIPMENT"
-	heading.position = Vector2(12, 10)
-	heading.add_theme_font_size_override("font_size", 20)
-	panel.add_child(heading)
-	weapon_option = _add_inventory_option(panel, "PRIMARY WEAPON", &"weapon", LoadoutState.SLOT_WEAPON_PRIMARY, Vector2(12, 40), Vector2(276, 92))
-	secondary_weapon_option = _add_inventory_option(panel, "SECONDARY WEAPON", &"weapon", LoadoutState.SLOT_WEAPON_SECONDARY, Vector2(12, 184), Vector2(276, 92))
+	OperationUI.eyebrow(panel, "01 / EQUIPPED", Vector2(12,10))
+	OperationUI.text(panel, tr("EQUIPMENT"), Vector2(12,28), 22)
+	weapon_option = _add_inventory_option(panel, "PRIMARY WEAPON", &"weapon", LoadoutState.SLOT_WEAPON_PRIMARY, Vector2(12, 68), Vector2(276, 76))
+	secondary_weapon_option = _add_inventory_option(panel, "SECONDARY WEAPON", &"weapon", LoadoutState.SLOT_WEAPON_SECONDARY, Vector2(12, 198), Vector2(276, 76))
 	armor_option = _add_inventory_option(panel, "ARMOR", &"armor", LoadoutState.SLOT_ARMOR, Vector2(12, 328), Vector2(132, 92))
 	backpack_option = _add_inventory_option(panel, "BACKPACK", &"backpack", LoadoutState.SLOT_BACKPACK, Vector2(156, 328), Vector2(132, 92))
 	armor_detail = Label.new()
@@ -99,10 +90,30 @@ func _ready() -> void:
 	packing = MedicalPacking.new()
 	packing.name = "MedicalPacking"
 	packing.compact = true
-	packing.position = Vector2(978, 110)
-	packing.size = Vector2(260, 440)
+	packing.position = Vector2(978, 164)
+	packing.size = Vector2(260, 386)
 	root.add_child(packing)
 	packing.packing_changed.connect(_refresh_warehouse_summary)
+	inspector = LoadoutInspector.new()
+	inspector.name = "LoadoutInspector"
+	inspector.grid = stash_grid
+	inspector.position = Vector2(978,164)
+	inspector.size = Vector2(260,386)
+	root.add_child(inspector)
+	inspector.hide()
+	packing_tab = OperationUI.action(root, "SORTIE SUPPLIES", Vector2(978,110), Vector2(126,44), func(): _show_right("packing"))
+	inspect_tab = OperationUI.action(root, "ITEM DETAILS", Vector2(1112,110), Vector2(126,44), func(): _show_right("inspect"))
+	for tab in [packing_tab,inspect_tab]:
+		tab.toggle_mode = true
+		tab.add_theme_color_override("font_hover_pressed_color",FieldManualStyle.INK)
+		tab.add_theme_font_size_override("font_size",13)
+		FieldManualStyle.primary(tab)
+	stash_grid.item_selected.connect(func(id: String):
+		inspector.refresh()
+		if not id.is_empty(): _show_right("inspect"))
+	inspector.packing_requested.connect(_open_selected_packing)
+	_show_right("packing")
+
 
 	sync_loadout_selection()
 	GameLanguage.language_changed.connect(sync_loadout_selection)
@@ -149,7 +160,11 @@ func sync_loadout_selection() -> void:
 	_refresh_armor_details()
 	armor_option.tooltip_text = armor_detail.tooltip_text
 	_refresh_warehouse_summary()
+	var previous_mode := right_mode
 	if stash_grid: stash_grid.refresh()
+	if inspector:
+		inspector.refresh()
+		_show_right(previous_mode)
 	for option in [weapon_option, secondary_weapon_option, armor_option, backpack_option]:
 		option.queue_redraw()
 		(option as StashSlot).drag_handle.tooltip_text = option.tooltip_text + "\n" + tr("Drag equipped item back to the warehouse.")
@@ -184,30 +199,27 @@ func _build_warehouse_summary(root: Control) -> void:
 	panel.size = Vector2(612, 504)
 	panel.add_theme_stylebox_override("panel", FieldManualStyle.panel(FieldManualStyle.SURFACE))
 	root.add_child(panel)
-	var heading := Label.new()
-	heading.text = "WAREHOUSE"
-	heading.position = Vector2(16, 10)
-	heading.add_theme_font_size_override("font_size", 20)
-	panel.add_child(heading)
+	OperationUI.eyebrow(panel, "02 / BASE STORAGE", Vector2(16,10))
+	OperationUI.text(panel, tr("WAREHOUSE"), Vector2(16,28), 22)
 	stash_grid = WarehouseGrid.new()
 	var profile := ProfileRuntime.get_profile()
 	if profile.inventory != inventory or profile.loadout != loadout:
 		profile = ProfileState.new(inventory, loadout)
 	stash_grid.model = StashLayout.new(profile)
 	var scroll := ScrollContainer.new()
-	scroll.position = Vector2(10, 54)
-	scroll.size = Vector2(592, 384)
+	scroll.position = Vector2(10, 80)
+	scroll.size = Vector2(592, 336)
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	panel.add_child(scroll)
 	scroll.add_child(stash_grid)
 	var count_label := Label.new()
-	count_label.position = Vector2(170, 17)
+	count_label.position = Vector2(170, 37)
 	count_label.add_theme_font_size_override("font_size", 13)
 	panel.add_child(count_label)
 	stash_grid.count_label = count_label
 	var sort_button := Button.new()
 	sort_button.text = "SORT"
-	sort_button.position = Vector2(506, 9)
+	sort_button.position = Vector2(506, 20)
 	sort_button.size = Vector2(94, 34)
 	_compact_button(sort_button)
 	sort_button.add_theme_font_size_override("font_size", 14)
@@ -225,9 +237,9 @@ func _build_warehouse_summary(root: Control) -> void:
 	stash_grid.detail = detail
 	deployment_summary = Label.new()
 	deployment_summary.name = "CarriedSummary"
-	deployment_summary.position = Vector2(978, 70)
+	deployment_summary.position = Vector2(774, 44)
 	deployment_summary.size = Vector2(260, 36)
-	deployment_summary.add_theme_font_size_override("font_size", 14)
+	deployment_summary.add_theme_font_size_override("font_size", 24)
 	deployment_summary.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	deployment_summary.max_lines_visible = 1
 	deployment_summary.clip_text = true
@@ -243,7 +255,7 @@ func _build_warehouse_summary(root: Control) -> void:
 	var hint := Label.new()
 	hint.position = Vector2(12, 484)
 	hint.size = Vector2(598, 18)
-	hint.text = "DRAG TO ORGANIZE / DROP ON EQUIPMENT TO EQUIP"
+	hint.text = "Click to compare / Drag to organize / R to rotate"
 	hint.add_theme_font_size_override("font_size", 11)
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	panel.add_child(hint)
@@ -301,9 +313,9 @@ func _refresh_warehouse_summary() -> void:
 	var plan := DeploymentPlan.build(profile if profile.inventory == inventory else ProfileState.new(inventory, loadout))
 	warehouse_summary.text = plan.message + "\n" + tr(plan.error) + "\n\n" + "\n".join(lines)
 	if deployment_summary:
-		deployment_summary.text = plan.message if plan.error.is_empty() else tr(plan.error)
-		deployment_summary.tooltip_text = deployment_summary.text
-		deployment_summary.add_theme_color_override("font_color", FieldManualStyle.MUTED if plan.error.is_empty() else Color("a94821"))
+		deployment_summary.text = "%.1f / %.0f kg" % [plan.weight,plan.capacity]
+		deployment_summary.tooltip_text = plan.message + ("\n" + tr(plan.error) if not plan.error.is_empty() else "")
+		deployment_summary.add_theme_color_override("font_color", Color.WHITE)
 
 
 func _add_inventory_option(parent: Control, label_text: String, required_tag: StringName, slot_id: StringName, at: Vector2, extent: Vector2) -> OptionButton:
@@ -415,3 +427,31 @@ func _refresh_armor_details() -> void:
 	armor_detail.tooltip_text = tr("MOBILITY  %.1f m/s (primary equipped)\nPROTECTION  %.0f%% incoming damage reduction\nCARRY WEIGHT  %.1f kg (armor)") % [PlayerController.movement_speed_for(weapon, armor, pack), clampf(armor.damage_reduction, 0.0, 0.8) * 100.0 if armor else 0.0, armor.weight if armor else 0.0]
 
 	armor_detail.text = tr("MOBILITY / PROTECTION / ARMOR") + "\n" + "%.1f m/s  /  %.0f%%  /  %.1f kg" % [PlayerController.movement_speed_for(weapon, armor, pack), clampf(armor.damage_reduction, 0.0, 0.8) * 100.0 if armor else 0.0, armor.weight if armor else 0.0]
+
+
+func _show_right(mode: String) -> void:
+	right_mode = mode
+	packing.visible = mode == "packing"
+	inspector.visible = mode == "inspect"
+	for entry in [[packing_tab,"packing"],[inspect_tab,"inspect"]]:
+		var tab: Button = entry[0]
+		if not tab: continue
+		tab.add_theme_stylebox_override("normal",FieldManualStyle.cut_style(FieldManualStyle.SIGNAL if mode == entry[1] else FieldManualStyle.SURFACE))
+		tab.set_pressed_no_signal(mode == entry[1])
+		# Explicit selection metadata supports keyboard/accessibility clients.
+		tab.tooltip_text = tr("SORTIE SUPPLIES" if entry[1] == "packing" else "Inspect and compare the selected item")
+
+
+func _open_selected_packing() -> void:
+	_show_right("packing")
+	var item := inventory.get_item(stash_grid.selected_id)
+	if not item: return
+	var id := String(item.definition_id)
+	var control_name := "PackAmmo_" + id.replace(".","_")
+	if id in MedicalTreatment.IDS: control_name = "PackDressing" if id == MedicalTreatment.IDS[0] else "PackMedkit"
+	if id == "tool.portable_alarm": control_name = "PackAlarm"
+	var control := packing.find_child(control_name,true,false) as Control
+	if control:
+		(packing.get_child(0) as ScrollContainer).ensure_control_visible(control)
+		if control is SpinBox: control.get_line_edit().grab_focus()
+		else: control.grab_focus()

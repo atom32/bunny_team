@@ -25,12 +25,22 @@ def q02_extra_returns(profile, evidence):
     return len(outings)-1
 
 
+def build_identity(manifest):
+    # Docs-only edits must not relabel the same playable source. HEAD is not
+    # enough: uncommitted runtime edits are deliberately included in this digest.
+    inputs = [(path, digest) for path, digest in sorted(manifest.items()) if not path.startswith("docs/")]
+    digest = hashlib.sha256(json.dumps(inputs, separators=(",", ":")).encode("utf-8")).hexdigest()
+    return {"format":1, "id":"nb-" + digest[:16], "source_sha256":digest, "packaged":True}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--godot", required=True, type=Path)
     parser.add_argument("--templates", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
-    parser.add_argument("--smoke", action="store_true", help="run the exported runtime, never the editor")
+    checks = parser.add_mutually_exclusive_group()
+    checks.add_argument("--smoke", action="store_true", help="run the full exported-runtime regression")
+    checks.add_argument("--quick-smoke", action="store_true", help="only check boot, motion data, save recovery and the first playable loop")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     out = args.output.resolve()
@@ -58,6 +68,8 @@ def main():
         shutil.copy2(src, dest)
         manifest[name] = hashlib.sha256(src.read_bytes()).hexdigest()
     (out / "source_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    identity = build_identity(manifest)
+    (project / "resources/runtime_build.json").write_text(json.dumps(identity, indent=2), encoding="utf-8")
     config = project / "project.godot"
     settings = re.sub(r'^config/name=.*$', 'config/name="Neon Bastion Local Prototype"',
                       config.read_text(encoding="utf-8"), flags=re.M)
@@ -177,15 +189,35 @@ def main():
     for name in ["campus_exit_gate", "campus_exit_gate_earned", "maintenance_shared", "shared_earned", "recovered_carrier", "carrier_earned", "carrier_use", "recovered_arms", "recovered_earned", "debrief_guidance", "relay_diversion", "relay_earned", "campus_packing", "packing_earned", "normal_start_wait", "medical_runners", "medical_intercept", "campus_handoff", "water_market", "market_earned", "rescue_moment", "rescue_result", "rescue_earned", "maintenance_art", "maintenance_journey", "finale", "homecoming", "story_finish", "maintenance", "maintenance_route", "seat", "seat_return", "campus_q01", "campus_q02", "campus_chapter", "fitting", "first_sortie", "normal_start", "waterworks", "water_delivery", "bucket_moment", "bucket_result", "bucket_route", "campus_power", "water_return", "water_route", "training", "blockade_journey", "blockade_earned", "blockade", "blockade_route", "blockade_readability", "isolation", "isolation_route", "cutaway"]:
         node_type = "Node3D" if name in ["campus_exit_gate", "campus_exit_gate_earned", "maintenance_shared", "recovered_carrier", "recovered_arms", "relay_diversion", "medical_runners", "campus_handoff", "maintenance_art", "maintenance_journey", "campus_power", "isolation", "cutaway", "maintenance", "finale", "homecoming"] else "Node"
         (qa / (name + ".tscn")).write_text('[gd_scene load_steps=2 format=3]\n[ext_resource type="Script" path="res://local_qa/'+name+'.gd" id="1"]\n[node name="PackagedWaterworks" type="'+node_type+'"]\nscript = ExtResource("1")\n', encoding="utf-8")
-    # Runtime references currently stay within assets/, scenes/, scripts/,
-    # resources/ and localization/. Raw authoring material is never a build input.
+    shutil.copy2(root / "tests/p0_recovery_test.gd", qa / "recovery.gd")
+    (qa / "recovery.tscn").write_text('[gd_scene load_steps=2 format=3]\n[ext_resource type="Script" path="res://local_qa/recovery.gd" id="1"]\n[node name="PackagedRecovery" type="Node"]\nscript = ExtResource("1")\n', encoding="utf-8")
+    shutil.copy2(root / "tests/fitting_kit_test.gd", qa / "fitting_kit.gd")
+    (qa / "fitting_kit.tscn").write_text('[gd_scene load_steps=2 format=3]\n[ext_resource type="Script" path="res://local_qa/fitting_kit.gd" id="1"]\n[node name="PackagedFittingKits" type="Node3D"]\nscript = ExtResource("1")\n', encoding="utf-8")
+    for source, name, parent, packaged_parent, node_type in [
+        ("tests/alarm_bindings_test.gd", "alarm_bindings", "", "", "Node"),
+        ("tests/portable_alarm_packing_test.gd", "alarm_packing", "", "", "Node"),
+        ("tests/portable_alarm_find_test.gd", "alarm_find", "tests/water_market_test.gd", "water_market.gd", "Node3D"),
+        ("tests/portable_alarm_test.gd", "portable_alarm", "", "", "Node3D"),
+        ("tools/portable_alarm_run.gd", "alarm_earned", "tools/water_market_run.gd", "market_earned.gd", "Node"),
+        ("tests/build_identity_test.gd", "build_identity", "", "", "Node"),
+        ("tests/playtest_report_test.gd", "playtest_report", "", "", "Node"),
+        ("tests/playtest_feedback_test.gd", "playtest_feedback", "", "", "Node"),
+        ("tests/feedback_entry_test.gd", "feedback_entry", "", "", "Node"),
+        ("tests/first_sortie_readiness_test.gd", "first_sortie_readiness", "", "", "Node"),
+    ]:
+        data = (root / source).read_text(encoding="utf-8")
+        if parent: data = data.replace("res://" + parent, "res://local_qa/" + packaged_parent)
+        (qa / (name + ".gd")).write_text(data, encoding="utf-8")
+        (qa / (name + ".tscn")).write_text('[gd_scene load_steps=2 format=3]\n[ext_resource type="Script" path="res://local_qa/'+name+'.gd" id="1"]\n[node name="AlarmCheck" type="'+node_type+'"]\nscript = ExtResource("1")\n', encoding="utf-8")
+    # Runtime includes the authorized local_motion/ library; raw Unity authoring
+    # packages are not build inputs. Resource closure is selected below.
     quote = lambda value: json.dumps(str(value).replace("\\", "/"))
     (project / "export_presets.cfg").write_text('''[preset.0]
 name="Windows Local Prototype"
 platform="Windows Desktop"
 runnable=true
 export_filter="all_resources"
-include_filter="resources/narrative/*.json,localization/*.json,local_qa/*.json"
+include_filter="resources/narrative/*.json,resources/runtime_build.json,localization/*.json,local_qa/*.json"
 exclude_filter="art_source/*,docs/*,tests/*,tools/*,addons/*,scripts/debug/*,scenes/debug/*,scenes/tools/*,scenes/art_showcase/*,resources/editor_catalogs/*"
 script_export_mode=2
 [preset.0.options]
@@ -198,6 +230,7 @@ codesign/enable=false
 ''', encoding="utf-8")
     bundle = out / "LOCAL_ONLY_DO_NOT_UPLOAD"
     bundle.mkdir()
+    (bundle / "build_identity.json").write_text(json.dumps(identity, indent=2), encoding="utf-8")
     executable = bundle / "NeonBastion.exe"
     env = dict(os.environ, APPDATA=str(out / "export_userdata"), LOCALAPPDATA=str(out / "export_localdata"))
     results = []
@@ -257,7 +290,23 @@ codesign/enable=false
         archive.writestr("READ_ME.txt", "Candidate license documents and existing companion license packages only. This is NOT permission to publish all game assets. Public redistribution is not approved.\n")
     run("export_release", engine + ["--export-release", "Windows Local Prototype", str(executable)])
     assert executable.is_file() and executable.with_suffix(".pck").is_file()
-    (bundle / "LOCAL_ONLY.txt").write_text("LOCAL PROTOTYPE ONLY - DO NOT UPLOAD OR REDISTRIBUTE.\nAsset permissions are unresolved; this is not an approved public release.\nThe inventory and license materials are NOT legal clearance.\nArcana and CombatGirls are not included. QA scripts are included only in this local build.\nThis build uses a separate local-prototype save directory.\n", encoding="utf-8")
+    (bundle / "LOCAL_ONLY.txt").write_text("LOCAL PROTOTYPE ONLY - DO NOT UPLOAD OR REDISTRIBUTE.\nOther asset permissions remain unresolved; this is not an approved public release.\nThe inventory and license materials are NOT legal clearance.\nCombatGirls v1.2: 16 baked motions are included under owner-confirmed additional public redistribution authorization; see local_motion/NOTICE.md in ASSET_LICENSE_MATERIALS.zip. Original Unity package and Arcana are not included.\nQA scripts are included only in this local build.\nThis build uses a separate local-prototype save directory.\n", encoding="utf-8")
+    if args.quick_smoke:
+        binary = [str(executable), "--headless", "--audio-driver", "Dummy", "--fixed-fps", "60"]
+        for mode in ["inventory", "motion", "boot", "write", "read", "legacy", "recovery"]:
+            group = "checkpoint" if mode in ["write", "read"] else mode
+            child_env = dict(os.environ, APPDATA=str(out / (group + "_userdata")), LOCALAPPDATA=str(out / (group + "_localdata")))
+            run("quick_" + mode, binary + ["--", "--local-qa", mode], child_env, 180,
+                "P0_RECOVERY_TEST: PASS" if mode == "recovery" else "LOCAL_BUILD_PROBE: PASS")
+        for name, flags in [("first_sortie", []), ("first_sortie_read", ["--read"])]:
+            capture = out / name; capture.mkdir()
+            child_env = dict(os.environ, APPDATA=str(out / "quick_sortie_userdata"), LOCALAPPDATA=str(out / "quick_sortie_localdata"), BUNNY_EVIDENCE=str(capture))
+            run("quick_" + name, binary + ["--", "--local-qa", "first_sortie"] + flags,
+                child_env, 180, "FIRST_SORTIE_RUN: PASS")
+        for name, flags in [("fitting_kit", []), ("fitting_kit_read", ["--read"])]:
+            child_env = dict(os.environ, APPDATA=str(out / "quick_kit_userdata"), LOCALAPPDATA=str(out / "quick_kit_localdata"))
+            run("quick_" + name, binary + ["--", "--local-qa", "fitting_kit"] + flags,
+                child_env, 180, "FITTING_KIT_TEST: PASS")
     if args.smoke:
         smoke_env = dict(os.environ, APPDATA=str(out / "smoke_userdata"), LOCALAPPDATA=str(out / "smoke_localdata"))
         binary = [str(executable), "--headless", "--audio-driver", "Dummy"]
@@ -474,7 +523,9 @@ codesign/enable=false
                 dict(smoke_env, APPDATA=str(out / (mode + "_userdata"))), 180, marker)
     files = {p.name:{"bytes":p.stat().st_size,"sha256":hashlib.sha256(p.read_bytes()).hexdigest()} for p in bundle.iterdir() if p.is_file()}
     (out / "local_build_manifest.json").write_text(json.dumps({"visibility":"LOCAL_ONLY_DO_NOT_UPLOAD", "public_release_approved":False,
-        "engine":version, "template_version":template_version, "files":files, "results":results}, indent=2), encoding="utf-8")
+        "engine":version, "template_version":template_version,
+        "check_scope":"quick_playable" if args.quick_smoke else ("full_regression" if args.smoke else "export_only"),
+        "files":files, "results":results}, indent=2), encoding="utf-8")
     print("LOCAL ONLY BUILD READY:", executable, flush=True)
 
 

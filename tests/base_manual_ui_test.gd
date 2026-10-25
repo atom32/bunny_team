@@ -74,7 +74,7 @@ func _run() -> void:
 		check(boot.screen.theme.get_color("font_color","Label") == FieldManualStyle.INK,"menu uses ink on paper")
 		var before := ProfileRuntime.get_profile().to_dict()
 		check(_button(boot.screen,"LOADOUT") == null,"equipment configuration belongs to the base, not the main menu")
-		check(boot.screen.get_children().filter(func(child): return child is Button).size() == 3,"main menu has only game entry, settings and quit")
+		check(boot.screen.get_children().filter(func(child): return child is Button).size() == 4,"main menu has game entry, settings, quit and optional local feedback")
 		check(_button(boot.screen,"SETTINGS") != null and _button(boot.screen,"QUIT") != null,"menu retains settings and quit")
 		check(_button(boot.screen,"START") != null or _button(boot.screen,"CONTINUE / BASE") != null or _button(boot.screen,"RESUME SORTIE") != null,"menu retains the existing game entry")
 		await _capture("base_menu_"+language)

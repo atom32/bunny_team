@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CAMPUS_ROUTE_INPUT: Q02 fixture; AI disabled; normal input/controller/collision, no player teleport or invulnerability
+LOCAL_RIFLE_ACTUAL_STATE TakeGun
+LOCAL_RIFLE_ACTUAL_STATE Run
+LOCAL_RIFLE_ACTUAL_STATE WalkRelaxed
+LOCAL_RIFLE_ACTUAL_STATE Idle
+LOCAL_RIFLE_ACTUAL_STATE WalkBL
+LOCAL_RIFLE_ACTUAL_STATE WalkBack
+LOCAL_RIFLE_ACTUAL_STATE WalkBR
+LOCAL_RIFLE_ACTUAL_STATE TakeGun
+LOCAL_RIFLE_ACTUAL_STATE Run
+LOCAL_RIFLE_ACTUAL_STATE WalkRelaxed
+LOCAL_RIFLE_ACTUAL_STATE Idle
+CAMPUS_ROUTE_INPUT walked_meters=504.469048405997 motion_states={ "TakeGun": true, "Run": true, "Idle": true, "WalkRelaxed": true, "WalkBL": true, "WalkBack": true, "WalkBR": true } precision_states={ "WalkBL": true, "WalkBack": true, "WalkBR": true }
+CAMPUS_ROUTE_INPUT_TEST: PASS

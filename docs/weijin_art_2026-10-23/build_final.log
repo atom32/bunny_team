@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.14 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5090
+
+WEIJIN BUILD 0 { &"terrain_cells": 12784, &"lakes": 4, &"water_interior_tessellation_m": 6, &"road_ways": 242, &"building_footprints": 467, &"window_modules": 47794, &"air_conditioners": 2791, &"closed_facade_entries": 229, &"pitched_roofs": 119, &"flat_roofs": 348, &"landmark_facades": 4, &"garden_shrubs": 383, &"foliage_variants": 4, &"foliage_near_cutoff_m": 160, &"tree_style_source": "courtyard_tree.gd / branch + geometric leaf; illustrative positions", &"illustrative_and_mapped_trees": 1651, &"street_lamps": 367, &"lakeside_benches": 62, &"waste_bins": 59, &"parked_bicycles": 117, &"road_drains": 757, &"lake_wayfinding_signs": 4, &"mesh_chunks": 1478 }

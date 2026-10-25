@@ -56,6 +56,8 @@ func _build_ui() -> void:
 		var id: String = ids[index]
 		var button := SliceUI.button(panel, tr(TITLES[id]), Vector2(16, 60 + index * 56), Vector2(272, 48), func(): select_station(id))
 		button.name = "Station" + id.capitalize()
+		button.add_theme_stylebox_override("disabled",FieldManualStyle.button_style(FieldManualStyle.SIGNAL,Color.TRANSPARENT))
+		button.add_theme_color_override("font_disabled_color",FieldManualStyle.INK)
 		button.add_theme_font_size_override("font_size", 15)
 		station_buttons[id] = button
 	pause_button = SliceUI.button(panel, tr("PAUSE MOTION"), Vector2(16, 294), Vector2(132, 42), toggle_pause)

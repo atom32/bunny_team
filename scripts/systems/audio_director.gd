@@ -2,6 +2,7 @@ extends Node
 
 const MUSIC_LOOP := preload("res://assets/audio/neon_bastion_loop.wav")
 const SFX_STREAMS := {
+	&"workshop_knock": preload("res://assets/audio/kenney_impact/impactMetal_light_000.ogg"),
 	&"campus_pa": preload("res://assets/audio/campus_pa.wav"),
 	&"blockade_lock": preload("res://assets/audio/blockade_lock.wav"),
 	&"blockade_vent": preload("res://assets/audio/blockade_vent.wav"),

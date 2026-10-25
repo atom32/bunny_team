@@ -20,6 +20,7 @@ func _ready() -> void:
 		button.name = "Contact_" + id
 		button.text = ContactDefinition.get_contact(id).display_name
 		button.add_theme_font_size_override("font_size", 16)
+		button.custom_minimum_size.y = 40
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		contacts.add_child(button)
 		button.pressed.connect(func(): open_contact(id, selected_tab))
@@ -46,6 +47,12 @@ func _refresh_language() -> void:
 func open_contact(id: String, tab: String = "trade") -> void:
 	contact_id = id
 	selected_tab = tab
+	for key: String in ContactDefinition.CONTACTS:
+		var selector := find_child("Contact_"+key,true,false) as Button
+		selector.toggle_mode = true
+		selector.set_pressed_no_signal(key == id)
+		selector.add_theme_color_override("font_hover_pressed_color",FieldManualStyle.INK)
+		selector.add_theme_stylebox_override("normal",FieldManualStyle.cut_style(FieldManualStyle.SIGNAL if key == id else FieldManualStyle.PAPER))
 	var identity := find_child("Identity", true, false)
 	for child in identity.get_children(): identity.remove_child(child); child.queue_free()
 	for child in content.get_children(): content.remove_child(child); child.queue_free()
@@ -70,7 +77,11 @@ func open_contact(id: String, tab: String = "trade") -> void:
 		button.text = tr("TRADE" if key == "trade" else "REQUESTS")
 		button.add_theme_font_size_override("font_size", 16)
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		button.disabled = key == tab
+		button.toggle_mode = true
+		button.set_pressed_no_signal(key == tab)
+		button.custom_minimum_size.y = 40
+		button.add_theme_color_override("font_hover_pressed_color",FieldManualStyle.INK)
+		button.add_theme_stylebox_override("normal",FieldManualStyle.cut_style(FieldManualStyle.SIGNAL if key == tab else FieldManualStyle.PAPER))
 		tabs.add_child(button)
 		button.pressed.connect(func(): open_contact(contact_id, key))
 	if tab == "trade":

@@ -65,6 +65,7 @@ func _ready() -> void:
 	_spawn_world_interactions()
 	_configure_objective_world()
 	hud.set_inventory_capacity(session.inventory.get_used_capacity(), session.inventory.capacity)
+	_sync_alarm_hud()
 	_last_health = player.health
 	GameLanguage.language_changed.connect(_refresh_language)
 	if area_root.has_method("create_route_map"):
@@ -92,6 +93,7 @@ func _process(delta: float) -> void:
 		return
 	if hud:
 		hud.set_reload_remaining(player.get_reload_remaining())
+		_sync_alarm_hud()
 		_sync_request_hud()
 		if player.medical:
 			hud.set_medical(player.medical)
@@ -194,6 +196,14 @@ func _sync_weapon_hud() -> void:
 		player.active_weapon_slot
 	)
 
+
+func _sync_alarm_hud() -> void:
+	var count := 0
+	for item in session.inventory.get_items():
+		if item.definition_id == PortableAlarm.ITEM_ID: count += item.quantity
+	hud.set_alarm_count(count)
+
+
 func _refresh_language() -> void:
 	if not hud or not is_instance_valid(player): return
 	_sync_weapon_hud()
@@ -201,6 +211,7 @@ func _refresh_language() -> void:
 	_sync_request_hud()
 	hud.set_health(player.health, player.max_health)
 	hud.set_inventory_capacity(session.inventory.get_used_capacity(), session.inventory.capacity)
+	_sync_alarm_hud()
 	hud.set_threat_level(session.threat_level)
 
 
@@ -408,6 +419,7 @@ func _on_player_died() -> void:
 func _on_interaction_finished(message: String, success: bool) -> void:
 	hud.show_interaction_feedback(message, success)
 	hud.set_inventory_capacity(session.inventory.get_used_capacity(), session.inventory.capacity)
+	_sync_alarm_hud()
 	if success:
 		_sync_objective_hud()
 		_show_mission_complete_if_ready()

@@ -27,8 +27,18 @@ func _physics_process(delta: float) -> void:
 		var gain:=sensor.hear(Vector3(0,1,-13),18,&"steam") if sensor else 0.0
 		if gain>0:AudioDirector.play_sfx(&"blockade_vent",linear_to_db(gain)-8)
 	var actor:=get_tree().get_first_node_in_group("player") as PlayerController
-	if actor and not actor.is_dead and phase()==2 and hit_cooldown==0 and MaintenanceJourney.ZONE.has_point(Vector2(actor.global_position.x,actor.global_position.z)):
-		actor.receive_damage(DamagePacket.new(6,0,0,self,&"maintenance_steam",&"world",actor.global_position));hit_cooldown=.5
+	if phase()==2 and hit_cooldown==0:
+		# One shared pressure pulse, persisted by the existing checkpoint cooldown.
+		# Pursuers face the same hot corridor; closing the valve sacrifices the trap
+		# but lets Xu Tang cross. She remains outside the live line, without a HP bar.
+		var exposed:=false
+		if actor and not actor.is_dead and MaintenanceJourney.ZONE.has_point(Vector2(actor.global_position.x,actor.global_position.z)):
+			actor.receive_damage(DamagePacket.new(6,0,0,self,&"maintenance_steam",&"world",actor.global_position));exposed=true
+		for enemy in get_tree().get_nodes_in_group("enemies"):
+			if not enemy is EnemyController or enemy.is_dead or enemy.get_world_3d()!=get_world_3d():continue
+			if not MaintenanceJourney.ZONE.has_point(Vector2(enemy.global_position.x,enemy.global_position.z)):continue
+			enemy.receive_damage(DamagePacket.new(6,0,0,self,&"maintenance_steam",&"world",enemy.global_position));exposed=true
+		if exposed:hit_cooldown=.5
 	refresh()
 
 func close_valve(actor: PlayerController) -> bool:

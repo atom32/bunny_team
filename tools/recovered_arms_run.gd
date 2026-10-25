@@ -31,6 +31,8 @@ func _run() -> void:
 		found=expected_item.to_dict()
 		check(profile.inventory.contains(found.instance_id) and profile.inventory.get_item(found.instance_id).to_dict()==found,"ordinary independent BOOT retains exact recovered gun")
 		check(profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)==found.instance_id and profile.successful_sorties==expected.successful_sorties and profile.failed_sorties==expected.failed_sorties,"independent BOOT retains equipped find and actual return counts")
+		if expected.has("field_outgoing"):
+			check(not profile.inventory.contains(expected.field_outgoing),"independent BOOT does not duplicate the original gun left in the field cache")
 		var before: Dictionary=evidence.profile_before.duplicate(true)
 		var after:=profile.to_dict()
 		# Normal BOOT initializes missing display cells for returned loose rounds.
@@ -40,6 +42,13 @@ func _run() -> void:
 		check(before==after,"reading from ordinary base changes no gameplay field; only stash display initialization allowed")
 		evidence["read_completed"]=true;evidence["profile_after"]=profile.to_dict();_finish();return
 	evidence["outings"]=[]
+	if "--field-swap" in OS.get_cmdline_user_args():
+		evidence["method"]="Unedited earned base save; ordinary BOOT, unseeded campus, real E and field-swap UI, existing compatible finite ammo, normal R, live combat and retreat. Unusable-caliber finds may be left behind after a real sortie, never seed-filtered or reset. Synthetic input, not human fun/playtime proof."
+		for outing in 6:
+			if not await _search_outing(outing+1):_finish();return
+			if not found.is_empty():break
+		check(not found.is_empty(),"natural archive search found a gun with genuinely carried compatible ammunition")
+		_finish();return
 	if "--retry-owned-find" in OS.get_cmdline_user_args():
 		var prior: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("user://recovered_run_expected.json"))
 		var prior_item:=ItemInstance.from_dict(prior.get("find",{}))
@@ -89,7 +98,7 @@ func _run() -> void:
 func _try_recovered_outing() -> void:
 	var profile:=ProfileRuntime.get_profile()
 	trial=true
-	check(battle.player.weapon_instance.instance_id==found.instance_id and battle.player.weapon_instance.fitting==found.fitting,"next actual player carries exact recovered conversion")
+	check(battle.player.weapon_instance.instance_id==found.instance_id and battle.player.weapon_instance.fitting==found.fitting,"actual player carries exact recovered conversion for the combat trial")
 	trial_initial_kills=battle.session.enemies_defeated
 	var destinations: Array[Vector3]=[_archive().global_position]
 	# An unseeded room can legitimately be quiet. Follow public supply landmarks,
@@ -113,11 +122,13 @@ func _try_recovered_outing() -> void:
 	_release()
 	if not await _return_to_base():return
 	var observed: Dictionary=evidence.get("trial",{})
-	check(observed.get("shots",0)>0 and observed.get("kills",0)>0,"recovered gun fired and ordinary live combat defeated an enemy on next outing")
+	check(observed.get("shots",0)>0 and observed.get("kills",0)>0,"recovered gun fired and ordinary live combat defeated an enemy")
 	check(not observed.get("reload",{}).is_empty() and is_equal_approx(observed.reload.observed,observed.reload.expected),"normal reload input uses recovered conversion duration")
 	check(profile.inventory.get_item(found.instance_id).fitting==found.fitting and profile.loadout.get_equipped_instance_id(LoadoutState.SLOT_WEAPON_PRIMARY)==found.instance_id,"second actual return keeps recovered configuration")
 	evidence["trial_returned"]=true;evidence["find"]=found;evidence["profile_after"]=profile.to_dict()
-	var f:=FileAccess.open("user://recovered_run_expected.json",FileAccess.WRITE);f.store_string(JSON.stringify({"find":found,"successful_sorties":profile.successful_sorties,"failed_sorties":profile.failed_sorties}));f.close()
+	var expected:={"find":found,"successful_sorties":profile.successful_sorties,"failed_sorties":profile.failed_sorties}
+	if evidence.has("field_swap"):expected["field_outgoing"]=evidence.field_swap.outgoing.instance_id
+	var f:=FileAccess.open("user://recovered_run_expected.json",FileAccess.WRITE);f.store_string(JSON.stringify(expected));f.close()
 	await _capture("06_recovered_returned")
 
 func _archive() -> LootSpawnPoint:
@@ -178,6 +189,9 @@ func _search_outing(number:int) -> bool:
 	for row in ui._cache_rows:
 		rows.append(row.pickup.item_instance.to_dict())
 		if row.pickup.item_instance.fitting.is_empty():continue
+		if "--field-swap" in OS.get_cmdline_user_args():
+			if battle.player.compatible_field_ammo(row.pickup.item_instance)<=0:continue
+			return await _field_find(row,rows,number,count)
 		found=row.pickup.item_instance.to_dict()
 		var base:=profile.inventory.to_dict()
 		await _scroll(row.take);await _click(row.take)
@@ -189,6 +203,37 @@ func _search_outing(number:int) -> bool:
 	if not await _return_to_base():return false
 	check(profile.successful_sorties==count+1,"each searched case is followed by one real safe return")
 	await _capture("02_search_%d_returned"%number)
+	return failures.is_empty()
+
+func _field_find(row: Dictionary, contents: Array, number: int, returns: int) -> bool:
+	var profile:=ProfileRuntime.get_profile()
+	var player: PlayerController=battle.player
+	var ui: Node=battle.get_node("SlicePresentation")
+	found=row.pickup.item_instance.to_dict()
+	var original:=player.weapon_instance.to_dict()
+	var base:=profile.inventory.to_dict()
+	var initial_ids: Array=battle.session.get_initial_carried_instance_ids()
+	check(row.field!=null and row.field_hint.text.contains(str(player.compatible_field_ammo(row.pickup.item_instance))),"actual cache offers field swap with real compatible-round hint")
+	await _scroll(row.field);await _capture("01_field_swap_offer");await _click(row.field)
+	check(player.weapon_instance.instance_id==found.instance_id and player.weapon_instance.fitting==found.fitting,"real field-swap button equips the exact discovered gun in this outing")
+	check(not battle.session.inventory.contains(original.instance_id) and row.pickup.item_instance.to_dict()==original,"original gun remains a concrete pickup in the same archive")
+	check(battle.session.get_initial_carried_instance_ids()==initial_ids and profile.inventory.to_dict()==base,"field swap leaves deployed-risk IDs and warehouse untouched")
+	var state: Variant=battle.session.get_weapon_runtime_state(found.instance_id)
+	check(state!=null and state.magazine_ammo==0,"discovered gun starts with an empty magazine")
+	evidence["field_swap"]={"outgoing":original,"incoming":found.duplicate(true),"initial_ids":initial_ids,"compatible_rounds":player.compatible_field_ammo(player.weapon_instance)}
+	evidence.outings.append({"number":number,"actual_contents":contents,"found":true,"field_swap":true,"shots_before_find":shots,"health":player.health})
+	if not failures.is_empty():return false
+	await _click(ui.panel.find_child("CloseCache",true,false))
+	await _tap("reload")
+	check(player.get_reload_remaining()>0,"ordinary R input starts a real empty-magazine reload")
+	trial_reload={"observed":player.combat_rig.reload_duration,"expected":player.weapon_data.reload_seconds*WeaponFitting.reload_factor(player.weapon_instance),"remaining":player.get_reload_remaining()}
+	for tick in 600:
+		await tree.physics_frame
+		if player.get_reload_remaining()<=0:break
+	check(state.magazine_ammo>0 and player.get_reload_remaining()<=0,"finite compatible reserves actually load the discovered gun")
+	if not failures.is_empty():return false
+	await _try_recovered_outing()
+	check(profile.successful_sorties==returns+1 and not profile.inventory.contains(original.instance_id),"same-outing return retains new gun, never banks the old gun left behind")
 	return failures.is_empty()
 
 func _return_to_base() -> bool:

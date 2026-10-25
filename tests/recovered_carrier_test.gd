@@ -65,7 +65,7 @@ func _depot(write_world: bool) -> void:
 	var contents: Array[ItemInstance]=[]
 	for child in point.get_children():
 		if child is LootPickup:contents.append(child.item_instance)
-	check(contents.size()==3 and contents[0].definition_id==baseline[0].definition_id and contents[0].quantity==baseline[0].quantity and contents[1].definition_id==baseline[1].definition_id and contents[1].quantity==baseline[1].quantity,"frame appends without replacing repair supplies or changing their roll")
+	check(contents.size()==4 and contents[0].definition_id==baseline[0].definition_id and contents[0].quantity==baseline[0].quantity and contents[1].definition_id==baseline[1].definition_id and contents[1].quantity==baseline[1].quantity and contents[2].definition_id==RecoveredCarrier.FRAME and contents[3].definition_id==&"tool.portable_alarm","frame and alarm append without replacing repair supplies or changing their roll")
 	market.apply_progress();market.apply_progress()
 	check(_frame_in_world()==raw,"refresh cannot reroll frame identity")
 	var before:=SortieCheckpoint.capture_world(battle)

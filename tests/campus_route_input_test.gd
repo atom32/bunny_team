@@ -7,6 +7,7 @@ const MOVEMENT := ["move_left","move_right","move_forward","move_back"]
 var battle: Node3D
 var failures: Array[String]=[]
 var states: Dictionary={}
+var precision_states: Dictionary={}
 var walked:=0.0
 func check(ok: bool,message: String) -> bool:
 	if not ok:failures.append(message);push_error(message)
@@ -41,6 +42,8 @@ func walk_to(target: Vector3,precision:=false) -> bool:
 			await get_tree().physics_frame
 			walked+=before.distance_to(battle.player.global_position)
 			states[String(battle.player.locomotion_playback.get_current_node())]=true
+			if precision and Input.is_action_pressed("precision_walk"):
+				precision_states[String(battle.player.locomotion_playback.get_current_node())]=true
 			var nearest: Node3D=battle.player.interaction_component._find_nearest_interactable()
 			if nearest is Door and not nearest.is_open():await tap("interact")
 		if not reached:
@@ -86,7 +89,9 @@ func run() -> void:
 	check(battle.player.interaction_component._find_nearest_interactable()==recorder,"Correct archive desk can be selected rather than nearby ordinary terminal")
 	await tap("interact")
 	if not check(battle.session.campus.recorder_revealed,"Real interaction input acquires actual recorder"):await finish();return
-	check(states.has("Run") and states.has("Walk") and battle.player.locomotion_playback.get_current_node()==&"Idle","Actual run, precision walk and stop enter their production motion states")
+	# Current sixteen-direction player selects its aim-relative stride, not only legacy Walk.
+	var precision_stride := ["Walk","WalkBack","WalkFL","WalkFR","WalkBL","WalkBR"].any(func(state):return precision_states.has(state))
+	check(states.has("Run") and precision_stride and battle.player.locomotion_playback.get_current_node()==&"Idle","Actual run, input-held precision stride and stop enter production motion states")
 	if not await extract():await finish();return
 	check(profile.campus_chapter.recorder_returned,"Walking relay/recorder route settles real milestones")
 	await start_world()
@@ -113,6 +118,6 @@ func finish() -> void:
 	release_movement();Input.action_release("precision_walk")
 	if is_instance_valid(battle):battle.free()
 	SortieRuntime.clear_session();AudioDirector.shutdown_for_test()
-	print("CAMPUS_ROUTE_INPUT walked_meters=",walked," motion_states=",states)
+	print("CAMPUS_ROUTE_INPUT walked_meters=",walked," motion_states=",states," precision_states=",precision_states)
 	print("CAMPUS_ROUTE_INPUT_TEST: ","PASS" if failures.is_empty() else "FAIL")
 	get_tree().quit(0 if failures.is_empty() else 1)

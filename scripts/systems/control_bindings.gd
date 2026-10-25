@@ -5,13 +5,15 @@ const PATH := "user://controls.cfg"
 const LABELS := {
 	"move_forward":"MOVE FORWARD", "move_back":"MOVE BACK", "move_left":"MOVE LEFT", "move_right":"MOVE RIGHT",
 	"fire":"FIRE", "dodge":"DODGE", "precision_walk":"QUIET WALK", "reload":"RELOAD", "switch_weapon":"SWITCH WEAPON",
-	"interact":"INTERACT", "use_dressing":"FIELD DRESSING", "use_medkit":"MEDKIT", "route_map":"ROUTE MAP"}
+	"interact":"INTERACT", "use_dressing":"FIELD DRESSING", "use_medkit":"MEDKIT", "route_map":"ROUTE MAP", "place_alarm":"PLACE NOISE DECOY"}
+const ALARM_KEYS := [KEY_G,KEY_K,KEY_L,KEY_T,KEY_Y,KEY_U,KEY_O,KEY_P,KEY_B,KEY_C,KEY_F,KEY_N,KEY_X,KEY_Z]
 static var defaults: Dictionary = {}
 static var current: Dictionary = {}
 static var revision := 0
 
 static func initialize(path := PATH) -> void:
 	_install_ui_gamepad()
+	install_input_actions()
 	if defaults.is_empty():
 		MedicalTreatment.install_input_actions()
 		if not InputMap.has_action("route_map"):
@@ -28,7 +30,31 @@ static func initialize(path := PATH) -> void:
 	var config := ConfigFile.new()
 	var saved: Variant = {}
 	if config.load(path) == OK: saved = config.get_value("controls","bindings",{})
-	_publish(saved if valid(saved) else defaults)
+	if valid(saved):
+		_publish(saved)
+		return
+	var migrated := _legacy_with_alarm(saved)
+	_publish(migrated if not migrated.is_empty() else defaults)
+
+static func install_input_actions() -> void:
+	# Player setup may call this too. Never overwrite a saved/remapped action.
+	if InputMap.has_action("place_alarm"): return
+	InputMap.add_action("place_alarm")
+	var event := InputEventKey.new()
+	event.physical_keycode = KEY_G
+	InputMap.action_add_event("place_alarm",event)
+
+static func _legacy_with_alarm(raw: Variant) -> Dictionary:
+	# initialize remains read-only. Apply persists the complete upgraded map.
+	# Only the exact previous schema is eligible; valid() checks every old field
+	# as well as the new key, rejecting unknown, missing, invalid or duplicate data.
+	if not raw is Dictionary or raw.size() != LABELS.size()-1 or raw.has("place_alarm"): return {}
+	for candidate in ALARM_KEYS:
+		if candidate in raw.values(): continue
+		var migrated: Dictionary = raw.duplicate()
+		migrated.place_alarm = candidate
+		return migrated if valid(migrated) else {}
+	return {}
 
 
 static func _install_ui_gamepad() -> void:

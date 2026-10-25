@@ -17,10 +17,12 @@ func _ready() -> void:
 	status_panel.position = Vector2(-360,64)
 	status_panel.size = Vector2(342,0)
 	status_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	status_panel.add_theme_stylebox_override("panel",FieldManualStyle.panel())
+	var style := FieldManualStyle.panel()
+	style.set_content_margin_all(8)
+	status_panel.add_theme_stylebox_override("panel",style)
 	add_child(status_panel)
 	var margin := MarginContainer.new()
-	for side in ["left","right","top","bottom"]: margin.add_theme_constant_override("margin_"+side,10)
+	for side in ["left","right","top","bottom"]: margin.add_theme_constant_override("margin_"+side,0)
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	status_panel.add_child(margin)
 	var lines := VBoxContainer.new()
@@ -50,6 +52,7 @@ func _process(_delta: float) -> void:
 		map_hint.text = tr("OLD CAMPUS / %s : ROUTE MAP") % ControlBindings.label("route_map")
 		var alarm := district.get_node("StreetTerminal/RecordsAlarm") as RecordsAlarm
 		var guide := SortieGuidance.field(ProfileRuntime.get_profile(), SortieRuntime.get_current_session())
+		alarm_hint.visible = alarm.phase != RecordsAlarm.Phase.IDLE
 		alarm_hint.text = guide[1] if alarm.phase == RecordsAlarm.Phase.IDLE and not guide.is_empty() else alarm.caption()
 	queue_redraw()
 
@@ -81,18 +84,18 @@ func _campus_map_points() -> Array:
 		if not point:continue
 		if point.kind==&"recorder" and not session.campus.recorder_instance.is_empty():continue
 		var label: String={"CampusRelayOffice":"L-02A RELAY","CampusRelayRepair":"L-02B RELAY","ExperimentRecorder":"EXPERIMENT RECORDER","L02BranchControl":"L-02 CONTROL"}[name]
-		var color:=Color("85d5cf")
+		var color:=Color("e8f34a")
 		if point.kind==&"recorder" and not point._available(session):
 			label="RECORDER / REPAIR BOTH RELAYS FIRST";color=Color("465146")
 		elif point.kind==&"relay" and String(point.action_id) in session.campus.relays:
-			label="RELAY ONLINE";color=Color("8ce3ad")
+			label="RELAY ONLINE";color=Color("e8f34a")
 		elif point.kind==&"power" and session.campus.power_cut:
-			label="L-02B OFF / L-02A ON";color=Color("8ce3ad")
+			label="L-02B OFF / L-02A ON";color=Color("e8f34a")
 		points.append({"point":point,"label":label,"color":color})
 	var handoff:=district.get_node_or_null("CampusSupplyHandoff") as CampusSupplyHandoff
-	if handoff:points.append({"point":handoff,"label":"DORMITORY / SUPPLIES RECEIVED" if session.campus.supply_received else "DORMITORY SOUTH / HANDOFF WINDOW","color":Color("8ce3ad") if session.campus.supply_received else Color("f0c276")})
+	if handoff:points.append({"point":handoff,"label":"DORMITORY / SUPPLIES RECEIVED" if session.campus.supply_received else "DORMITORY SOUTH / HANDOFF WINDOW","color":Color("e8f34a") if session.campus.supply_received else Color("e8f34a")})
 	var pa:=district.get_node_or_null("CampusRelayDiversion") as CampusRelayDiversion
-	if pa:points.append({"point":pa,"label":"WEST PA / ONE USE" if pa.phase==CampusRelayDiversion.Phase.READY else ("WEST PA / ACTIVE" if pa.phase==CampusRelayDiversion.Phase.PLAYING else "WEST PA / SPENT"),"color":Color("85d5cf") if pa.phase!=CampusRelayDiversion.Phase.SPENT else Color("465146")})
+	if pa:points.append({"point":pa,"label":"WEST PA / ONE USE" if pa.phase==CampusRelayDiversion.Phase.READY else ("WEST PA / ACTIVE" if pa.phase==CampusRelayDiversion.Phase.PLAYING else "WEST PA / SPENT"),"color":Color("e8f34a") if pa.phase!=CampusRelayDiversion.Phase.SPENT else Color("465146")})
 	return points
 
 func _draw() -> void:
@@ -123,55 +126,55 @@ func _draw() -> void:
 		_text(Vector2(width-480,398+index*26), ["ARCHIVE / Electronics, wiring, data", "PHARMACY / Dressings, medkits, fabric", "DORMITORY / Fabric, household salvage", "MAINTENANCE YARD / Parts, wiring, propellant"][index], FieldManualStyle.MUTED, 14)
 	draw_style_box(FieldManualStyle.panel(),Rect2(12,42,528,626))
 	_text(Vector2(26,74), tr("OLD CAMPUS  /  N ↑    %s : CLOSE") % ControlBindings.label("route_map"), FieldManualStyle.INK, 20)
-	draw_rect(MAP_RECT, Color("50534a"))
+	draw_rect(MAP_RECT, Color("dce0d7"))
 	for lake in district.campus_lakes:
 		var outline:=PackedVector2Array()
 		for p in lake: outline.append(_point(Vector3(p.x,0,p.y)))
-		draw_colored_polygon(outline,Color("3d6f6b"))
+		draw_colored_polygon(outline,Color("b4c1b6"))
 	for road in district.campus_roads:
 		var line:=PackedVector2Array()
 		for p in road[0]: line.append(_point(Vector3(p.x,0,p.y)))
-		draw_polyline(line,Color("a3a28b"),(road[1]+1.8)*500.0/116.0,true)
-		draw_polyline(line,Color("686f68"),road[1]*500.0/116.0,true)
-	_text(_point(Vector3(4,0,-22))+Vector2(-18,0),"YOUTH LAKE",Color("c5d8c4"),12)
-	_text(_point(Vector3(8,0,39))+Vector2(-18,2),"JINGYE LAKES",Color("c5d8c4"),10)
-	_text(_point(Vector3(2,0,4))+Vector2(0,-6),"MINGDE AVENUE",Color("ddd4b6"),10)
-	_text(_point(Vector3(8,0,47))+Vector2(-15,4),"BEIYANG AVENUE",Color("ddd4b6"),10)
+		draw_polyline(line,Color("f2f3ed"),(road[1]+1.8)*500.0/116.0,true)
+		draw_polyline(line,Color("c4cbbf"),road[1]*500.0/116.0,true)
+	_text(_point(Vector3(4,0,-22))+Vector2(-18,0),"YOUTH LAKE",Color("333e39"),12)
+	_text(_point(Vector3(8,0,39))+Vector2(-18,2),"JINGYE LAKES",Color("333e39"),10)
+	_text(_point(Vector3(2,0,4))+Vector2(0,-6),"MINGDE AVENUE",Color("333e39"),10)
+	_text(_point(Vector3(8,0,47))+Vector2(-15,4),"BEIYANG AVENUE",Color("333e39"),10)
 	for entry in district.campus_buildings:
 		var at:=_point(Vector3(entry[0].x,0,entry[0].y))
 		var extent: Vector2=entry[1]*500.0/116.0
-		draw_rect(Rect2(at-extent*.5,extent),Color("96917a"))
+		draw_rect(Rect2(at-extent*.5,extent),Color("a7afa4"))
 	for index in district.ROOMS.size():
 		var at: Vector2 = _point(district.ROOMS[index])
-		draw_rect(Rect2(at-Vector2(34,30),Vector2(68,60)), Color("a09983"))
-		_text(at+Vector2(-48,4), district.district_names[index], Color("222b25"), 11)
+		draw_rect(Rect2(at-Vector2(34,30),Vector2(68,60)), Color("bbc2b4"))
+		_text(at+Vector2(-48,4), district.district_names[index], Color("1b2021"), 11)
 	for exit in district.find_children("*", "ExtractionPoint",true,false):
 		if not exit.available: continue
 		var at := _point(exit.position)
-		draw_rect(Rect2(at-Vector2(6,6),Vector2(12,12)),Color("8ce3ad") if exit.can_extract(SortieRuntime.get_current_session()) else Color("e5b47a"))
+		draw_rect(Rect2(at-Vector2(6,6),Vector2(12,12)),Color("e8f34a") if exit.can_extract(SortieRuntime.get_current_session()) else Color("b4bcae"))
 		var names := ["EAST GATE","SOUTH GATE","NORTH GATE","WEST SERVICE"]
 		var index: int = district.EXITS.find(exit.position)
-		_text(at+Vector2(-35, -12 if exit.position.z>0 else 24),names[index],Color("a1e6b7"),11)
-	draw_circle(_point(terminal.position),6,Color("f0c276"))
+		_text(at+Vector2(-35, -12 if exit.position.z>0 else 24),names[index],Color("333e39"),11)
+	draw_circle(_point(terminal.position),6,Color("e8f34a"))
 	var bell := _bell_map_marker()
 	if not bell.is_empty():
 		var box_at := _point(bell.point)
 		draw_rect(Rect2(box_at-Vector2(4,4),Vector2(8,8)),bell.color)
-		_text(box_at+Vector2(-24,18),bell.label,Color("24302a"),10)
+		_text(box_at+Vector2(-24,18),bell.label,Color("1b2021"),10)
 	if repair:
 		for name in ["RelayOffice","RelayRepair"]:
 			var relay: RelayStation = district.get_node(name)
 			var state := SortieRuntime.get_current_session().get_objective_state(relay.objective_id)
-			var color := Color("8ce3ad") if state.status == ObjectiveState.Status.COMPLETED else Color("f0c276")
+			var color := Color("e8f34a") if state.status == ObjectiveState.Status.COMPLETED else Color("e8f34a")
 			draw_arc(_point(relay.position),8,0,TAU,24,color,2,true)
-			_text(_point(relay.position)+Vector2(-24,24 if name=="RelayOffice" else -13),"RELAY ONLINE" if state.status == ObjectiveState.Status.COMPLETED else "RELAY / 12s",Color("24302a"),11)
-	else: draw_arc(_point(survey.position),7,0,TAU,24,Color("f0c276"),2,true)
+			_text(_point(relay.position)+Vector2(-24,24 if name=="RelayOffice" else -13),"RELAY ONLINE" if state.status == ObjectiveState.Status.COMPLETED else "RELAY / 12s",Color("1b2021"),11)
+	else: draw_arc(_point(survey.position),7,0,TAU,24,Color("e8f34a"),2,true)
 	for entry in _campus_map_points():
 		var point: Node3D=entry.point
 		draw_circle(_point(point.position),6,entry.color)
-		_text(_point(point.position)+Vector2(-35,24 if point.name=="CampusRelayOffice" else -16),entry.label,Color("24302a"),11)
-	draw_circle(_point(actor.global_position),5,Color("a6e3ef"))
+		_text(_point(point.position)+Vector2(-35,24 if point.name=="CampusRelayOffice" else -16),entry.label,Color("1b2021"),11)
+	draw_circle(_point(actor.global_position),5,Color("1b2021"))
 	var aim: Vector3 = actor.aim_direction
-	draw_line(_point(actor.global_position),_point(actor.global_position+aim*4),Color("a6e3ef"),2,true)
+	draw_line(_point(actor.global_position),_point(actor.global_position+aim*4),Color("1b2021"),2,true)
 	_text(Vector2(26,626), "● YOU    ● RECORDS    ○ RELAY    ■ ASSIGNED EXITS" if repair else "● YOU    ● RECORDS    ○ SURVEY    ■ ASSIGNED EXITS",FieldManualStyle.INK,14)
 	_text(Vector2(26,650), "Lakeside avenues connect courts and service lanes. Raid continues while map is open.",FieldManualStyle.MUTED,12)

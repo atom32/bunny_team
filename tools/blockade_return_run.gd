@@ -1,6 +1,49 @@
 extends "res://tools/story_finish_run.gd"
 ## Genuine preceding eight-return profile; ordinary menus, weapons and extraction.
 ## No progress assignments, actor relocation, damage calls, free items or focus repair.
+var rear_closed_hits := 0
+
+func controls(destination: Vector3) -> void:
+	super.controls(destination)
+	if "--rear-flank" not in OS.get_cmdline_user_args() or not is_instance_valid(battle):return
+	var van:=battle.area_root.get_node_or_null("Van") as BlockadeVan
+	if not van or van.destroyed:return
+	for enemy in battle.enemy_container.get_children():
+		if enemy is EnemyController and not enemy.is_dead and battle.player_visibility.can_see_enemy(enemy) and enemy.global_position.distance_to(battle.player.global_position)<9:return
+	var point:=van.to_global(BlockadeVan.REAR_CENTER)
+	var query:=PhysicsRayQueryParameters3D.create(battle.player.global_position+Vector3.UP*1.25,point,6);query.exclude=[battle.player.get_rid()]
+	var hit: Dictionary=battle.player.get_world_3d().direct_space_state.intersect_ray(query)
+	if hit.is_empty() or hit.collider!=van or not van.rear_hit(DamagePacket.new(0,0,0,null,&"",&"player",hit.position,hit.normal)):return
+	for action in ["aim_left","aim_right","aim_up","aim_down"]:Input.action_release(action)
+	var aim: Vector3=battle.player.global_position.direction_to(point)
+	_axis("aim_left","aim_right",aim.x);_axis("aim_up","aim_down",aim.z);Input.action_press("fire")
+
+func checkpoint() -> bool:
+	if "--rear-flank" not in OS.get_cmdline_user_args():return await super.checkpoint()
+	if not await deploy_next(BlockadeStory.MISSION):return false
+	var world: Node3D=battle.area_root
+	var van: BlockadeVan=world.get_node("Van")
+	check(van.has_rear_radiator() and battle.session.blockade.version==3,"normal fresh deployment enables the actual rear radiator")
+	van.damage_observed.connect(func(_damage: float,exposed: bool):
+		if exposed and van.phase!=BlockadeVan.Phase.VENT:rear_closed_hits+=1)
+	if not await approach_checkpoint(world):return false
+	for target in [world.get_node("PASwitch").position,Vector3(-15,0,-16),Vector3(0,0,-18)]:
+		if not await walk(target):return false
+		if target==world.get_node("PASwitch").position:check(use_point(world.get_node("PASwitch")).success,"normal PA switch does not disable the gun during a rear flank")
+	await _capture("rear_flank")
+	for tick in 7200:
+		await tree.physics_frame
+		if van.destroyed or battle.player.is_dead:break
+		var goal:=Vector3(0,0,-18)
+		if van.phase in [BlockadeVan.Phase.WARNING,BlockadeVan.Phase.BURST]:goal.x=-3 if van.aim_point.x>=0 else 3
+		controls(goal)
+	release()
+	evidence["rear_flank"]={"closed_radiator_hits":rear_closed_hits,"van_shots":van.shots_fired,"health":battle.player.health,"player_position":str(battle.player.position)}
+	check(rear_closed_hits>0 and van.destroyed and not battle.player.is_dead,"live rifle fire hits the actual rear panel outside blue windows and disables the van")
+	if not failures.is_empty() or not await leave_yard(world) or not await walk(world.get_node("NorthExit").position):return false
+	if not await return_home(world.get_node("NorthExit")):return false
+	return failures.is_empty()
+
 func _ready() -> void:
 	get_tree().create_timer(480,true).timeout.connect(func():check(false,"earned checkpoint route deadline");finish())
 	_run.call_deferred()

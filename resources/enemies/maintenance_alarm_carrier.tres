@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/data/enemy_definition.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/maintenance_alarm_carrier.tscn" id="2"]
+[ext_resource type="Resource" path="res://resources/presentation/subjects/campus_subject_profile.tres" id="3"]
+[resource]
+script = ExtResource("1")
+id = &"maintenance_alarm_carrier"
+display_name = "Maintenance / Alarm Carrier"
+scene = ExtResource("2")
+presentation_profile = ExtResource("3")
+humanoid_presentation = true
+tactical_role = 3
+max_health = 45.0
+move_speed = 2.7
+approach_speed = 0.75
+attack_damage = 8.0
+attack_range = 1.65
+attack_cooldown_min = 1.8
+attack_cooldown_max = 1.8
+detection_range = 22.0
+view_angle = 140.0
+acquire_seconds = 0.2
+search_duration = 18.0
+patrol_radius = 2.0

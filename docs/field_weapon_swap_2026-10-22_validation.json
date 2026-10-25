@@ -1,0 +1,688 @@
+{
+  "feature": "field_weapon_exchange_in_existing_cache",
+  "date": "2026-10-22",
+  "accepted_final_source_sha256": {
+    "scripts/data/sortie_session.gd": "a56ae1f528ae2d2cab6e2900db81253ac4be44c70bb9bd892c4c43c5787d7c3d",
+    "scripts/world/loot_pickup.gd": "294c956cb7e7d8090e266f5167c0fb6c0d0da6633d11003dd510a90c260b3732",
+    "scripts/player/player_controller.gd": "b20464f5bfa64e4c72ff67d41fbf4f218fa103985df6cf00864b5b57b46766a1",
+    "scripts/presentation/slice/battle_presentation.gd": "7c54ea21b6c0934662168c6a1fc69151d260b7721572c78543cd17f29456df81",
+    "tests/recovered_arms_test.gd": "2cc6716306ad0d7961f75c38af440e9da77dcdd6221be15f756d7c603dc5cab8",
+    "tools/recovered_arms_run.gd": "d15ffa1ac63b60477ee54aa208948cc2e0cf756e79c2fab4299f9942fe7bec3c",
+    "localization/zh_CN.json": "d348868c592df2ca26e71f8cdc54493bd6ab5f5253416d9429d06b33868436fe",
+    "localization/zh_CN.tres": "960f26a6b9d468475578f366d4be89fd2dd762869283acd3e047bc67fedef22e"
+  },
+  "source_accepted_checks": [
+    {
+      "name": "final_field",
+      "exit": 0,
+      "pass_": true,
+      "log_sha256": "48b70a68984a4779b6b71f078e34b70874a21882532d501a37ab84a373d6df88"
+    },
+    {
+      "name": "field_world_write",
+      "exit": 0,
+      "pass_": true,
+      "log_sha256": "9081c65bb355bdd772aa80fe799b0f84798556356962ea1474a0fe2fc8afb0b6"
+    },
+    {
+      "name": "field_world_read",
+      "exit": 0,
+      "pass_": true,
+      "log_sha256": "6a054a6361baa25e72c63c768ddada2f40ed92a029d4efa14bc45c63fd661837"
+    },
+    {
+      "name": "ui_caption_fix_original",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "1de0c71d593bf796be95fe1bf283788b665232020b143225f56df03ed45d646d"
+    },
+    {
+      "name": "ui_caption_fix_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "76fc2e2ff3d9180f3a16f2eb3211929d8b727d7349a9d8bc57fa087eab95fd83"
+    },
+    {
+      "name": "field_route",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_field_swap_20261022_dev01\\project",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "res://tools/recovered_arms_run.tscn",
+        "--",
+        "--field-swap"
+      ],
+      "log_sha256": "cbf50d3825ee0633f1904b65ac8fd468e42ca83733620e3b1986c03b65684e1a",
+      "observation_correction": "The actual inherited completion marker is CAMPUS_ENTRY_RUN, not NORMAL_START_TEST. Original zero-exit gameplay/log/evidence preserved; no rerun, reset or source change."
+    },
+    {
+      "name": "field_route_read",
+      "pass": true,
+      "exit": 0,
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--path",
+        "D:\\tmp\\bunny_field_swap_20261022_dev01\\project",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "res://tools/recovered_arms_run.tscn",
+        "--",
+        "--read-find"
+      ],
+      "log_sha256": "de30ff9263af32ed6a3bba467a0d72627c3ef262e3b168bbe32c820f31371977"
+    }
+  ],
+  "source_component_assertions": 206,
+  "source_existing_checks_with_new_bilingual_ui_assertions": 1141,
+  "source_world_write_checks": 11,
+  "source_world_read_checks": 13,
+  "ordinary_source_route": {
+    "evidence": "D:\\tmp\\bunny_field_swap_20261022_dev01\\field_route\\campus_entry.json",
+    "sha256": "0da2d4ed6b923f729897d0ae8e6224966839bc795597074e9bef81d7371ba814",
+    "outings": [
+      {
+        "actual_contents": [
+          {
+            "definition_id": "loot.salvage_core_01",
+            "durability": 100.0,
+            "fitting": "",
+            "instance_id": "b085a3ad4b84cdbc13d4121c87cd92ae",
+            "quantity": 1
+          },
+          {
+            "definition_id": "weapon.assault_rifle_01",
+            "durability": 100.0,
+            "fitting": "suppressor",
+            "instance_id": "d4a41a8a77915bc92d87a7a6d86a1af4",
+            "quantity": 1
+          }
+        ],
+        "field_swap": true,
+        "found": true,
+        "health": 260.0,
+        "number": 1,
+        "shots_before_find": 3
+      }
+    ],
+    "trial": {
+      "find": {
+        "definition_id": "weapon.assault_rifle_01",
+        "durability": 100.0,
+        "fitting": "suppressor",
+        "instance_id": "d4a41a8a77915bc92d87a7a6d86a1af4",
+        "quantity": 1
+      },
+      "health": 260.0,
+      "kills": 2,
+      "reload": {
+        "expected": 1.84,
+        "observed": 1.84,
+        "remaining": 1.77333333333333
+      },
+      "shots": 6
+    },
+    "independent_boot_read": true
+  },
+  "ordinary_zip_route": {
+    "evidence": "D:\\tmp\\bunny_field_swap_windows_20261022_01\\zip_field_route_evidence\\campus_entry.json",
+    "sha256": "ce39ce771761c64f93bacd7affd18bda9b7432032d4282edd5b493aa1734f32e",
+    "outings": [
+      {
+        "actual_contents": [
+          {
+            "definition_id": "loot.salvage_core_01",
+            "durability": 100.0,
+            "fitting": "",
+            "instance_id": "f45ea1506d71f97be605c8cce42f5b67",
+            "quantity": 1
+          },
+          {
+            "definition_id": "weapon.sniper_01",
+            "durability": 100.0,
+            "fitting": "observation_optic",
+            "instance_id": "5d0af4c8e1b9b2f96c03d46e662a4e3d",
+            "quantity": 1
+          }
+        ],
+        "found": false,
+        "health": 260.0,
+        "number": 1,
+        "shots": 7
+      },
+      {
+        "actual_contents": [
+          {
+            "definition_id": "loot.salvage_core_01",
+            "durability": 100.0,
+            "fitting": "",
+            "instance_id": "0655c60ab67e75978e3dce02cc8e2cc2",
+            "quantity": 1
+          },
+          {
+            "definition_id": "weapon.assault_rifle_01",
+            "durability": 100.0,
+            "fitting": "suppressor",
+            "instance_id": "1297781836c244c1ce21a8701d5d326b",
+            "quantity": 1
+          }
+        ],
+        "field_swap": true,
+        "found": true,
+        "health": 260.0,
+        "number": 2,
+        "shots_before_find": 16
+      }
+    ],
+    "trial": {
+      "find": {
+        "definition_id": "weapon.assault_rifle_01",
+        "durability": 100.0,
+        "fitting": "suppressor",
+        "instance_id": "1297781836c244c1ce21a8701d5d326b",
+        "quantity": 1
+      },
+      "health": 260.0,
+      "kills": 2,
+      "reload": {
+        "expected": 1.84,
+        "observed": 1.84,
+        "remaining": 1.77333333333333
+      },
+      "shots": 6
+    },
+    "checks": 36,
+    "read_checks": 8,
+    "independent_boot_read": true
+  },
+  "build_checks": [
+    {
+      "name": "cold_import",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\project",
+        "--editor",
+        "--import"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+      ],
+      "log_sha256": "961d5978f747e61628b797822886a43eac7b094a9189c259a5fa3c2e57e0525a"
+    },
+    {
+      "name": "campaign_return_offsets_unit",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\project\\tests\\test_campaign_return_offsets.py",
+        "-v"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "cec512b84cd6bdb5d10a10c55b8fbe3d2f996073ea1a3a152c69fb03ed0a2056"
+    },
+    {
+      "name": "runtime_export_unit",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\project\\tests\\test_runtime_export.py",
+        "-v"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "c948210252b6d4a567879dcaf446df1fbc78878d2bf4b00e0cf39a47720d33f5"
+    },
+    {
+      "name": "runtime_dependency_catalog",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\project",
+        "--script",
+        "res://tools/runtime_dependency_catalog.gd"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "6b5fc1a4ae8b28c7e3f63a242d3b5ccdef863f6d9e1e2be5d9c2cff278b9ec03"
+    },
+    {
+      "name": "runtime_export_inventory",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\project\\tools\\runtime_export.py",
+        "--project",
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\project",
+        "--catalog",
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\runtime_dependency_catalog.json",
+        "--output",
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\runtime_export_inventory.json",
+        "--preset",
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\project\\export_presets.cfg"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "4a4e3749d3edb0e9509c53154f16039d05af94e87e2329dd510d2159a055e168"
+    },
+    {
+      "name": "export_release",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\project",
+        "--export-release",
+        "Windows Local Prototype",
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "46e1c6c5563b6f4db1402611712794e7387d07d88e1114693b82d8c0b1dcebc5"
+    },
+    {
+      "name": "quick_inventory",
+      "command": [
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "inventory"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "7680d0548af08f797c5566f99353e6bd5e783f7cbf38482ed46f080f30550268"
+    },
+    {
+      "name": "quick_motion",
+      "command": [
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "motion"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "e5e446c94fab2a5597765ede7395bff3f141c25eb9564e83c1fd83105beea706"
+    },
+    {
+      "name": "quick_boot",
+      "command": [
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "boot"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "c37e082b7a60de30aa93cca2a7499c3d94dee5afbbfe30997e3c53c739a670bf"
+    },
+    {
+      "name": "quick_write",
+      "command": [
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "write"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "d7417d34584b8ce1f1e75757df3d7d9068fa882eeb0423d3ebb02a92834ad00c"
+    },
+    {
+      "name": "quick_read",
+      "command": [
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "ef95b249436976398b92069dc4d6fd8f9efae4fa2f1355ba7198e67e21f76baf"
+    },
+    {
+      "name": "quick_legacy",
+      "command": [
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "legacy"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "7e43298603569aedd029167d48bf3116cfd72d674d5ff1c0316b21b7ae0ddfbb"
+    },
+    {
+      "name": "quick_recovery",
+      "command": [
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "recovery"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+    },
+    {
+      "name": "quick_first_sortie",
+      "command": [
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "first_sortie"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "688e502db16a5fae42806d3540f8fcdd6cbc4838d82da8e06996b9b9e4821ccd"
+    },
+    {
+      "name": "quick_first_sortie_read",
+      "command": [
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "first_sortie",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    },
+    {
+      "name": "quick_fitting_kit",
+      "command": [
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "fitting_kit"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "40ac639dbf1efceb7919402d143006db6beab983398ed5054a8569ccfdc45ee4"
+    },
+    {
+      "name": "quick_fitting_kit_read",
+      "command": [
+        "D:\\tmp\\bunny_field_swap_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "fitting_kit",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "99d1ce0209e45952db3f24fafd756087c6b1d5ebf7a804ab1ead138e0a0b1ad0"
+    }
+  ],
+  "independent_zip": {
+    "pass": true,
+    "archive": "D:\\tmp\\bunny_field_swap_windows_20261022_01\\NeonBastion_20261022_field_swap_LOCAL_ONLY_windows_x64.zip",
+    "bytes": 246911252,
+    "sha256": "7c197e635b0d9743ee1d0af99f496426b874061213fe5f6b0279e67e996a0692",
+    "extracted_to": "D:\\tmp\\小兔试玩 战地换枪 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "files": {
+      "ASSET_LICENSE_MATERIALS.zip": {
+        "bytes": 5988171,
+        "sha256": "8b2ea56f64465f2ff5a511ee6342aa97ccd20f3a2170c1f7014cab9f00c9a4d2"
+      },
+      "ENGINE_LICENSES.txt": {
+        "bytes": 114181,
+        "sha256": "472c1fbefc38653aa0fe5eceb9d4c0c8cbb5c889e5c917bcc3728edfe4b1f2ad"
+      },
+      "LOCAL_ONLY.txt": {
+        "bytes": 542,
+        "sha256": "971c31ca46c922fb159f2fa3d5381496a096088884c1ba5a55810f9116f66f96"
+      },
+      "NeonBastion.exe": {
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      },
+      "NeonBastion.pck": {
+        "bytes": 260307688,
+        "sha256": "7b5a85ddfa359fb16a8aef39e56bcc9b12e172efdeb103101225f9338151e12f"
+      },
+      "runtime_inventory.json": {
+        "bytes": 169844,
+        "sha256": "ed8f65170c94a15605aefc6680ce2b124104f955572f101f6393c654fe452cdf"
+      },
+      "兼容模式.cmd": {
+        "bytes": 204,
+        "sha256": "6851d578daaf8628535af021be14b1088090c4f3ec257a685b810cfcde72586f"
+      },
+      "开始游戏.cmd": {
+        "bytes": 200,
+        "sha256": "f52079e040acb6369a9245c63b12a7639d8769bbd3c7007fa10b5e6aea4de583"
+      },
+      "试玩说明.txt": {
+        "bytes": 3766,
+        "sha256": "69a937917732b48de985a7a7b9c3e4e4939303855c6188b1caa6083dab7a52fc"
+      },
+      "预览蒸汽救援.cmd": {
+        "bytes": 634,
+        "sha256": "7d50a7add4a61f9d4078aa790887d210e2969f8bc6ba6d6e02c5b37d2c1d4a5e"
+      },
+      "preview_seed/profile.json": {
+        "bytes": 3676,
+        "sha256": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f"
+      }
+    },
+    "matching_original_release_template": true,
+    "all_extracted_files_match": true,
+    "companion_license_count": 31,
+    "motion_clips": 16,
+    "checks": [
+      {
+        "name": "zip_inventory",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "4fd0f6881c78d422e87c589a52613b2480eae0a6be1691d473c7c067dcf2eb88"
+      },
+      {
+        "name": "zip_motion",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "6a5235e4cf01811f65c7339f2ea3dd2fc674e7417a6407751b1f7b0dec204bac"
+      },
+      {
+        "name": "zip_field_unit",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "48b70a68984a4779b6b71f078e34b70874a21882532d501a37ab84a373d6df88"
+      },
+      {
+        "name": "zip_field_world_write",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "ebe5fbf6bdb0bbefb2e7fd1d1b7962caa1f05e4f608c1bc3ba8e4df6cc334c82"
+      },
+      {
+        "name": "zip_field_world_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "678b5f9f7eee6d5c041ef7d8a5cda760894bae4bbba170188b10c20e9bfe6238"
+      },
+      {
+        "name": "zip_field_route",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "f473d80d2f0a04e67a4fc3f2fa675363febde6104392a5ad61988e31a33b713d"
+      },
+      {
+        "name": "zip_field_route_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "de30ff9263af32ed6a3bba467a0d72627c3ef262e3b168bbe32c820f31371977"
+      },
+      {
+        "name": "zip_launcher_forward",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "2ec4cb4d62ac4dcfa3abb21ddc94449847e45f88b95b8e09d3ca2f06410c2bd3"
+      },
+      {
+        "name": "zip_launcher_compatibility",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "2ec4cb4d62ac4dcfa3abb21ddc94449847e45f88b95b8e09d3ca2f06410c2bd3"
+      },
+      {
+        "name": "zip_preview_boot",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "2ec4cb4d62ac4dcfa3abb21ddc94449847e45f88b95b8e09d3ca2f06410c2bd3"
+      },
+      {
+        "name": "zip_preview_backup_guard",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+      }
+    ],
+    "scope": "Minimal packaged/independent ZIP headless checks, including controlled field exchanges, world checkpoint write/read and ordinary unseeded archive field-swap/live combat/return/readback; no native rendering, full regression, low-spec, five-hour or public-release acceptance. No user profiles or original packages changed.",
+    "public_release_approved": false
+  },
+  "retained_failures": [
+    {
+      "path": "D:\\tmp\\bunny_field_swap_20261022_dev01\\original_marker_observation.json",
+      "cause": "The ordinary route exited 0 and reached CAMPUS_ENTRY_RUN PASS; the external observer expected the wrong inherited marker. Corrected observation from original logs/evidence, without rerunning or resetting gameplay."
+    },
+    {
+      "path": "D:\\tmp\\bunny_field_swap_20261022_dev01\\final_original.log",
+      "cause": "Three new Chinese caption-property assertions exposed the untranslated source key. Added explicit tr for the field-swap button; original assertions retained and the updated 1141-check run/read both passed."
+    }
+  ],
+  "scope": {
+    "no_new_chapter_or_progression_currency": true,
+    "initial_deployed_ids_unchanged": true,
+    "no_gift_ammunition_or_weapon": true,
+    "old_gun_stays_in_original_world_slot": true,
+    "new_gun_requires_real_reload": true,
+    "same_checkpoint_schema": true,
+    "no_ordinary_seed_selection_or_teleport_or_ai_disabling": true,
+    "controlled_unit_world_fixture_pauses_ai": true,
+    "personal_saves_or_previous_deliveries_modified": false,
+    "source_seed_files_unchanged": true,
+    "motion_clips_included": 16
+  },
+  "not_verified": [
+    "Native rendering and actual audibility in this batch",
+    "Human enjoyment/replay intent or five-hour first playthrough",
+    "Complete long regression/low-spec/clean Windows VM",
+    "Public release rights for other assets or actual 80% positive reviews"
+  ],
+  "public_release_approved": false,
+  "evidence_directories": [
+    "D:\\tmp\\bunny_field_swap_20261022_dev01",
+    "D:\\tmp\\bunny_field_swap_windows_20261022_01"
+  ]
+}

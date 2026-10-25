@@ -18,5 +18,5 @@ required = false
 script = ExtResource("1")
 mission_id = &"blockade_run"
 display_name = "Checkpoint / Please Remain Calm"
-description = "Pass the sweeping searchlight using delivery-van cover. Open the west service shutter quietly, or shoot the street chain and face a finite alarm response. Disable the armored PA van during its blue cooling vents, enter the north yard and release the east-booth counterweight. Reach the raised north exit, or retreat south at any time."
+description = "Pass the sweeping searchlight using delivery-van cover. Open the west service shutter quietly, or shoot the street chain and face a finite alarm response. Fight the armored PA van from cover during its blue cooling vents, or risk the northern flank to hit its rear radiator without waiting. Its gun still fires behind itself. Once disabled, enter the north yard and release the east-booth counterweight. Reach the raised north exit, or retreat south at any time."
 objective_definitions = Array[ExtResource("2")]([SubResource("Van"),SubResource("Speaker")])

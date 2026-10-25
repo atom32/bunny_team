@@ -14,6 +14,7 @@ static func area_for_mission(mission: StringName) -> StringName:
 var ammo_ids: Array[String] = []
 var ammo_quantities: Dictionary = {} # Source stack ID -> exact quantity to carry.
 var medical_ids: Array[String] = []
+var tool_ids: Array[String] = []
 var cargo_ids: Array[String] = []
 var weight := 0.0
 var capacity := 0.0
@@ -79,6 +80,19 @@ static func build(profile: ProfileState, mission: StringName = &"") -> Deploymen
 			plan.weight += definition.weight
 			packed += 1
 		lines.append(TranslationServer.translate("%s x%d%s") % [GameLanguage.item_name(definition.display_name), packed, TranslationServer.translate(" (NOT PACKED)") if packed == 0 else ""])
+	if profile.pack_alarm:
+		for item in profile.inventory.get_items():
+			if item.definition_id != &"tool.portable_alarm": continue
+			if plan.weight + item.total_weight() <= carried_capacity + .0001:
+				plan.tool_ids.append(item.instance_id)
+				plan.weight += item.total_weight()
+			break
+		lines.append(TranslationServer.translate("Portable alarm / PACKED %d OF 1") % plan.tool_ids.size())
+	# The authored first sortie cannot open its patrol or return link before a
+	# real shot. Check the materialized load, not requested counts or spare stock.
+	# Later sorties may deliberately leave with empty guns and retreat instead.
+	if plan.error.is_empty() and chosen == &"first_mission" and plan.ammo_quantities.is_empty():
+		plan.error = "First Mission needs packed ammunition for an equipped weapon. Buy compatible rounds from Shen, then check SORTIE SUPPLIES."
 	plan.message = TranslationServer.translate("SORTIE  %.1f / %.0f kg\n%s\nExtra warehouse ammunition stays at base.") % [plan.weight, carried_capacity, " / ".join(lines)]
 	return plan
 
@@ -87,8 +101,19 @@ static func build(profile: ProfileState, mission: StringName = &"") -> Deploymen
 func carried_ids() -> Array[String]:
 	var ids := ammo_ids.duplicate()
 	ids.append_array(medical_ids)
+	ids.append_array(tool_ids)
 	ids.append_array(cargo_ids)
 	return ids
+
+static func set_alarm_packed(value: bool, path := SaveService.DEFAULT_SAVE_PATH) -> Error:
+	var profile := ProfileRuntime.get_profile()
+	if not profile or not profile.validate(): return ERR_INVALID_DATA
+	if SortieRuntime.get_current_session() or not profile.sortie_checkpoint.is_empty() or ProfileRuntime.recovery_required: return ERR_BUSY
+	var candidate := ProfileState.from_dict(profile.to_dict())
+	candidate.pack_alarm = value
+	var error := SaveService.save_profile(candidate, path)
+	if error == OK: profile.pack_alarm = value
+	return error
 
 static func set_medical_count(id: String, quantity: int, path := SaveService.DEFAULT_SAVE_PATH) -> Error:
 	var profile := ProfileRuntime.get_profile()
@@ -135,6 +160,7 @@ static func prepare(profile: ProfileState, area: StringName, mission: StringName
 	if not plan.error.is_empty(): return {"error":ERR_INVALID_DATA,"message":plan.error}
 	var candidate := ProfileState.from_dict(profile.to_dict())
 	var ids: Array[String] = plan.medical_ids.duplicate()
+	ids.append_array(plan.tool_ids)
 	ids.append_array(plan.cargo_ids)
 	for id in plan.ammo_quantities:
 		var source := candidate.inventory.get_item(id)

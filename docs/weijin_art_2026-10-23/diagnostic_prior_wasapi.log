@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.351 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 5090
+
+LOCAL_RIFLE_ACTUAL_STATE Idle
+LOCAL_RIFLE_ACTUAL_STATE WalkRelaxed
+LOCAL_RIFLE_ACTUAL_STATE Run
+CAMPUS WALK STOP main_hall / 430.6 m / (328.4896, -0.200586, 132.3969)
+CAMPUS WALK STOP youth_shore / 816.9 m / (306.6992, -2.618395, -202.3448)
+ERROR: WASAPI: GetBufferSize error
+   at: thread_func (drivers/wasapi/audio_driver_wasapi.cpp:778)
+WARNING: WASAPI: Current output_device invalidated, closing output_device
+   at: thread_func (drivers/wasapi/audio_driver_wasapi.cpp:849)
+CAMPUS WALK STOP north_dormitory / 1435.0 m / (-81.37851, -0.090981, -310.3488)
+CAMPUS WALK STOP northwest_courts / 1880.9 m / (-330.3093, -0.945942, -114.2787)
+CAMPUS WALK STOP west_services / 2611.8 m / (-609.0543, 0.966459, 269.5851)
+CAMPUS WALK STOP west_gate / 3008.9 m / (-272.4128, -0.866092, 202.3154)
+CAMPUS WALK STOP jingye_shore / 3371.0 m / (70.64054, -1.253844, 268.3166)
+CAMPUS WALK STOP east_gate / 4005.8 m / (671.2702, 1.18626, 230.0211)
+CAMPUS ART WALK: 0 failures / 4005.8 m / 8 stops
+WARNING: 4272 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 4 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

@@ -1,0 +1,538 @@
+{
+  "date": "2026-10-22",
+  "previous_goal_turn": "progress: fitting recovery/transfer implemented, validated and delivered as an independent ZIP",
+  "feature": "Live steam damages pursuing enemies as well as the player; closing the existing valve sacrifices the trap and allows the survivor through.",
+  "changed_input_sha256": {
+    "scripts/world/maintenance/steam.gd": "0822cdd5b71e43ab8675fec62f9783b81a80cab77311375bbd1e5b4256d8652a",
+    "scripts/data/maintenance_journey.gd": "0f6a49767ae63e5a2c9886d14884e580c6681b244863af06bca359139a57a7f7",
+    "resources/missions/maintenance_rescue.tres": "ccc99b5d78505a6eafc6306bda824b3907df3263986ecc3d7eee3e11cda30a2a",
+    "tests/maintenance_journey_test.gd": "07706fcfdd90857521060a5ea4888329a1a747ae9a81f5ae0537c92e53e94969",
+    "tests/maintenance_shared_test.gd": "ef8b206a8c1f6e539749f0169acecbcd4454486590473ea8ed7fae9c08509b45",
+    "localization/zh_CN.json": "612308e79529187e53f37a8508c19196a32818702e6371df1854c8aa8f68719a",
+    "localization/zh_CN.tres": "e045b8e24155d7df905c9248db9a9a969240e09f6c477b98937fd455cf414b68"
+  },
+  "source_checks": [
+    {
+      "name": "component",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "d906590fddc74e1674d01d375a5f20fbae1c1717f27c9671e065f909c44c8f1a"
+    },
+    {
+      "name": "trap",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "d902da98df8080f4379268f122f2b515cfb92378863238c2beb4ebb31a3a3ed3"
+    },
+    {
+      "name": "trap_write",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "2848501932827275eb26fda36de4ba3c3e9ed2c517ee9e15c84d03027ab70295"
+    },
+    {
+      "name": "trap_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "ef1f8cb3bc097e26c76c0c9c8b7a3750813db3d246c903730f4e33a1a8339853"
+    },
+    {
+      "name": "pursuit",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "100086e789311f7a445b61ed1da55be74f78c8d72ebb29d90ba509d85d75532b"
+    },
+    {
+      "name": "shared",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "68f6bbec7ed91e17f8ce99f6d8946ca29e85247999f6792c4abe56ea8627fdcb"
+    },
+    {
+      "name": "legacy_base",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "011f059d6646d76b32f970c60cf1d7b9d31f76c3c6cb15d911a49d8dc6368444"
+    },
+    {
+      "name": "route",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "d6fa7d10cc8cbfbd123c3ed611b8015b58d91adcc1f1de193e7f5bd1b43c6f0c"
+    },
+    {
+      "name": "route_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "39a326f184d836f1c73a93b8c7899cc3cc9651df4f77d03923cbfb3fb6c696b9"
+    }
+  ],
+  "compiled_checks": [
+    {
+      "name": "cold_import",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\project",
+        "--editor",
+        "--import"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+      ],
+      "log_sha256": "961d5978f747e61628b797822886a43eac7b094a9189c259a5fa3c2e57e0525a"
+    },
+    {
+      "name": "campaign_return_offsets_unit",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\project\\tests\\test_campaign_return_offsets.py",
+        "-v"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "e4bc30c1f236ec8de6730dbc4e8b5fa4354e54362f76132e8b7e9be3de4b28a9"
+    },
+    {
+      "name": "runtime_export_unit",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\project\\tests\\test_runtime_export.py",
+        "-v"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "aab96148895502ece6f9ff39bb694e15b42fa6fbc7cc1b8a09dd6bd82a149bf0"
+    },
+    {
+      "name": "runtime_dependency_catalog",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\project",
+        "--script",
+        "res://tools/runtime_dependency_catalog.gd"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "6b5fc1a4ae8b28c7e3f63a242d3b5ccdef863f6d9e1e2be5d9c2cff278b9ec03"
+    },
+    {
+      "name": "runtime_export_inventory",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\project\\tools\\runtime_export.py",
+        "--project",
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\project",
+        "--catalog",
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\runtime_dependency_catalog.json",
+        "--output",
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\runtime_export_inventory.json",
+        "--preset",
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\project\\export_presets.cfg"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "4a4e3749d3edb0e9509c53154f16039d05af94e87e2329dd510d2159a055e168"
+    },
+    {
+      "name": "export_release",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\project",
+        "--export-release",
+        "Windows Local Prototype",
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "46e1c6c5563b6f4db1402611712794e7387d07d88e1114693b82d8c0b1dcebc5"
+    },
+    {
+      "name": "quick_inventory",
+      "command": [
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "inventory"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "8aa544add88410c96ee6997f429e5b1d19734054ad47cafb777c89b996e7b5b2"
+    },
+    {
+      "name": "quick_motion",
+      "command": [
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "motion"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "a87afb097dd6385ffaa845ccfcdb9593b0995694e7c0b94b68ba4e0de84dc4a3"
+    },
+    {
+      "name": "quick_boot",
+      "command": [
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "boot"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "31194a767840ddbe8dbe2c3111e693162a4866d20cc8d1fac341433aeb70d17c"
+    },
+    {
+      "name": "quick_write",
+      "command": [
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "write"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "37e2854bcd675af07ad63aaa8edbd58665e9d04d28bc9b67601cf9dbb82d1d8e"
+    },
+    {
+      "name": "quick_read",
+      "command": [
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "4a7b6ae9fc9516c0364b8094a3e8efed26e0d9732a6f6f60adaf4b43506034b3"
+    },
+    {
+      "name": "quick_legacy",
+      "command": [
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "legacy"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "c616c0fe8845510e8139c26c1c348aa223e2e2b98e18e0d5524a3d296dd9bbaa"
+    },
+    {
+      "name": "quick_recovery",
+      "command": [
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "recovery"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+    },
+    {
+      "name": "quick_first_sortie",
+      "command": [
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "first_sortie"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "e9d7fed6a9e74539df5c39927bc8cc5bf42bd98dc94103416d779a2d6ae3b2b5"
+    },
+    {
+      "name": "quick_first_sortie_read",
+      "command": [
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "first_sortie",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    },
+    {
+      "name": "quick_fitting_kit",
+      "command": [
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "fitting_kit"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "40ac639dbf1efceb7919402d143006db6beab983398ed5054a8569ccfdc45ee4"
+    },
+    {
+      "name": "quick_fitting_kit_read",
+      "command": [
+        "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "fitting_kit",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "99d1ce0209e45952db3f24fafd756087c6b1d5ebf7a804ab1ead138e0a0b1ad0"
+    }
+  ],
+  "independent_zip_checks": [
+    {
+      "name": "zip_inventory",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "8457ea913dca31e092f4892749758235d3722d9393353eee0c2371711f9bbb21"
+    },
+    {
+      "name": "zip_motion",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "31cb4fe456fd6bb40e849102beec62594e0e29b93d43828583dedea69e74ff46"
+    },
+    {
+      "name": "zip_recovery",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+    },
+    {
+      "name": "zip_fitting_transfer",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "40ac639dbf1efceb7919402d143006db6beab983398ed5054a8569ccfdc45ee4"
+    },
+    {
+      "name": "zip_fitting_transfer_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "99d1ce0209e45952db3f24fafd756087c6b1d5ebf7a804ab1ead138e0a0b1ad0"
+    },
+    {
+      "name": "zip_steam_targets",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "d902da98df8080f4379268f122f2b515cfb92378863238c2beb4ebb31a3a3ed3"
+    },
+    {
+      "name": "zip_steam_write",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "2848501932827275eb26fda36de4ba3c3e9ed2c517ee9e15c84d03027ab70295"
+    },
+    {
+      "name": "zip_steam_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "ef1f8cb3bc097e26c76c0c9c8b7a3750813db3d246c903730f4e33a1a8339853"
+    },
+    {
+      "name": "zip_steam_pursuit",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "653e0bc8a2eb52d353bb1d2b29a3ac75d4e506c54ad8621aa62950b7a28d6d5c"
+    },
+    {
+      "name": "zip_rescue",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "592afd226ca8880c7eae9f449481d325507b71758eab0b3ac946168925ab2a88"
+    },
+    {
+      "name": "zip_rescue_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "39a326f184d836f1c73a93b8c7899cc3cc9651df4f77d03923cbfb3fb6c696b9"
+    },
+    {
+      "name": "zip_first_sortie",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "e9d7fed6a9e74539df5c39927bc8cc5bf42bd98dc94103416d779a2d6ae3b2b5"
+    },
+    {
+      "name": "zip_first_sortie_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    },
+    {
+      "name": "zip_launcher_forward",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "def9ec9b0f038ad32e0af5687484021300f207e26a568ac8756ffe4ebe778bc3"
+    },
+    {
+      "name": "zip_launcher_compatibility",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "def9ec9b0f038ad32e0af5687484021300f207e26a568ac8756ffe4ebe778bc3"
+    },
+    {
+      "name": "zip_preview_boot",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "def9ec9b0f038ad32e0af5687484021300f207e26a568ac8756ffe4ebe778bc3"
+    },
+    {
+      "name": "zip_preview_backup_guard",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+    }
+  ],
+  "archive": {
+    "archive": "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01\\NeonBastion_20261022_steam_pursuit_LOCAL_ONLY_windows_x64.zip",
+    "bytes": 246883782,
+    "sha256": "37b2da12fc004615598a57614f4c1259ff70ae655b7f6940a97ab665b9c3c6b3"
+  },
+  "preview_seed": {
+    "source": "D:\\tmp\\bunny_readability_20261021_build01\\maintenance_rescue_seed\\profile.json",
+    "source_sha256": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f",
+    "archive_member": "LOCAL_ONLY_DO_NOT_UPLOAD/preview_seed/profile.json",
+    "input_successful_sorties": 6,
+    "not_rescued_yet": true,
+    "source_unchanged": true,
+    "copy_is_atomic_no_overwrite": true,
+    "missing_primary_existing_backup_does_not_seed": true
+  },
+  "pursuit_scope": "Controlled player start at(0,0,-5); Enemy2 remains at authored(0,0,-18), navigates using original live hearing/AI to the hot corridor, receives a real6-base environmental damage packet. Not a human/ordinary-BOOT lure acceptance test.",
+  "ordinary_route": "Original maintenance_run controller with exact earned six-return campus input, normal BOOT/menu/paid ammunition/live AI/valve/escort/extraction/return, then independent read; current ZIP completed7 returns and real rescue. Not a human playtime or difficulty test.",
+  "preserved": [
+    "Existing synchronized hit_cooldown checkpoint field; no new schema, map collision, enemy count or inventory rewards.",
+    "Survivor still cannot enter live steam; no escort HP bar.",
+    "Old v1 base and v2 hazard fixtures retained; ordinary current v3 rescue still completes."
+  ],
+  "failed_attempts_preserved": [
+    {
+      "path": "D:\\tmp\\bunny_steam_pursuit_20261022_dev01\\component\\run.log",
+      "reason": "New test variable inferred from dynamic battle property; explicit Array[Node] type repaired."
+    },
+    {
+      "path": "D:\\tmp\\bunny_steam_pursuit_20261022_dev01\\fix02_component\\run.log",
+      "reason": "New damage fixture left a frozen infected after a nonlooping Hit_Chest finished; legal snapshot guard correctly rejected empty clip. New fixture isolated into explicit branch; production validator unchanged."
+    },
+    {
+      "path": "D:\\tmp\\bunny_steam_pursuit_20261022_dev01\\fix03_shared\\run.log",
+      "reason": "Old random-parts fixture merged its new outgoing ID into an existing stack, so strict exchange correctly refused an unowned ID. Fixture now adds an exact separate stack; SUCCESS and both identity assertions retained."
+    }
+  ],
+  "validation_scope": "All runs headless. No fresh native rendering/input, actual sound, minimum-spec, clean VM, human fun/five-hour or public review acceptance. Windows ZIP and previously delivered ZIPs are distinct. Only owned QA profiles/preview copies used.",
+  "public_release_approved": false,
+  "five_hour_playtime_verified": false,
+  "eighty_percent_reviews_verified": false,
+  "evidence": [
+    "D:\\tmp\\bunny_steam_pursuit_20261022_dev01",
+    "D:\\tmp\\bunny_steam_pursuit_windows_20261022_01"
+  ]
+}

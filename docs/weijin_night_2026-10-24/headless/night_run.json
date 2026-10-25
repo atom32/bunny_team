@@ -1,0 +1,18 @@
+{
+  "bank": {
+    "drive": 2,
+    "parts": 3,
+    "scrap": 0
+  },
+  "bullets": 35,
+  "checks": 43,
+  "climbs": 6,
+  "combat_frames": 212,
+  "encounters": 9,
+  "extractions": 1,
+  "failures": [],
+  "method": "Normal movement, aiming/fire/reload/E/H inputs and actual directory buttons; no placements, damage packets or mission flags injected",
+  "native": false,
+  "ticks": 34197,
+  "walked_m": 4077.48643622454
+}

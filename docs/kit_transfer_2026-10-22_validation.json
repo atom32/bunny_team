@@ -1,0 +1,442 @@
+{
+  "date": "2026-10-22",
+  "status": "playable local Windows ZIP; not public release or human fun acceptance",
+  "previous_goal_turn": "progress: actual16 standalone Windows ZIP built and verified; current turn adds playable kit recovery/transfer",
+  "feature": "Recover one existing installed fitting into its corresponding existing physical kit, keeping the gun, then install it on a preferred compatible weapon at base.",
+  "changed_input_sha256": {
+    "scripts/systems/weapon_fitting.gd": "4f891919afe3fb06c734df1d017fef5184fbed6e407193c6125371334640fbd6",
+    "scripts/ui/supply_panel.gd": "c1d568f547911e71d0e8a6eab5da9ab837563a3a86f18aee543d18b696504ddb",
+    "tests/fitting_kit_test.gd": "fbf01a90462aa82ddb26c01a2202dc321332c3d3e0ea517f21d315802b02c795",
+    "localization/zh_CN.json": "c12e0b2f5e65a71b0313e84b26825af3743edc634d2e4d09965c478683ce07fe",
+    "localization/zh_CN.tres": "94696e0e069eda3b146e4eea40d6717e6595c0ac3c35b20dad1bdd11d069ee0b",
+    "tools/build_local_windows.py": "eba5cc724cf2ce35ee61e9162c69e6837c0e559055d602c93f45a8489114e98b",
+    "tools/local_build_probe.gd": "a1d9e6f288156a18a5bf19e07c445c75116b686e2617e766711a2f15f82d5fbd"
+  },
+  "targeted_source_checks": [
+    {
+      "name": "kit",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "40ac639dbf1efceb7919402d143006db6beab983398ed5054a8569ccfdc45ee4"
+    },
+    {
+      "name": "kit_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "99d1ce0209e45952db3f24fafd756087c6b1d5ebf7a804ab1ead138e0a0b1ad0"
+    },
+    {
+      "name": "fittings",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "d56503e0bc915f8fd17db5e8898b64c93b284883bce1dcd92a3a163281c6fb30"
+    },
+    {
+      "name": "fittings_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "87cee6bedffe7450f71562f63eaf97be45632dd82557f6d52f30f6c00751abb4"
+    },
+    {
+      "name": "recovered_arms",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "b778ada720e75cb1017682db75c1f4211bacb72daf2efb7658f7876ac15fc307"
+    }
+  ],
+  "compiled_checks": [
+    {
+      "name": "cold_import",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\project",
+        "--editor",
+        "--import"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+      ],
+      "log_sha256": "2f76712ad52412c4c172ea436f14e227cf3f457967353f3b118c12e4871f53af"
+    },
+    {
+      "name": "campaign_return_offsets_unit",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\project\\tests\\test_campaign_return_offsets.py",
+        "-v"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "e4bc30c1f236ec8de6730dbc4e8b5fa4354e54362f76132e8b7e9be3de4b28a9"
+    },
+    {
+      "name": "runtime_export_unit",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\project\\tests\\test_runtime_export.py",
+        "-v"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "5d3bc5a463bf4693a2440808d908161411668987b7e64b664321a0aaa9934673"
+    },
+    {
+      "name": "runtime_dependency_catalog",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\project",
+        "--script",
+        "res://tools/runtime_dependency_catalog.gd"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "6b5fc1a4ae8b28c7e3f63a242d3b5ccdef863f6d9e1e2be5d9c2cff278b9ec03"
+    },
+    {
+      "name": "runtime_export_inventory",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\project\\tools\\runtime_export.py",
+        "--project",
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\project",
+        "--catalog",
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\runtime_dependency_catalog.json",
+        "--output",
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\runtime_export_inventory.json",
+        "--preset",
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\project\\export_presets.cfg"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "4a4e3749d3edb0e9509c53154f16039d05af94e87e2329dd510d2159a055e168"
+    },
+    {
+      "name": "export_release",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\project",
+        "--export-release",
+        "Windows Local Prototype",
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "46e1c6c5563b6f4db1402611712794e7387d07d88e1114693b82d8c0b1dcebc5"
+    },
+    {
+      "name": "quick_inventory",
+      "command": [
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "inventory"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "15ac6a92a6f8aebe74f7cabf4dd5efc380409e68b4d1416930fd5178ed8d4c29"
+    },
+    {
+      "name": "quick_motion",
+      "command": [
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "motion"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "51c11448adf4d6dd2712d7424fc8c01ab2d11ba7e7879b46c5babaeb05b93426"
+    },
+    {
+      "name": "quick_boot",
+      "command": [
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "boot"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "7f9f8fe277d4b1daafca542f5d5a9cc141d60e97edcaa01db4b88ffab5aa13db"
+    },
+    {
+      "name": "quick_write",
+      "command": [
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "write"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "7658257b334634c196e7662b4830339ff6b8e49e6ab262e16c10dfb19166a24e"
+    },
+    {
+      "name": "quick_read",
+      "command": [
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "33e0d23b4bd2d6fc215fb402033fcec83becc25e11a2dfa87f48d8959e19710b"
+    },
+    {
+      "name": "quick_legacy",
+      "command": [
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "legacy"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "dcec2bfe2020a94ba9630c90e90178a71156d981c9562745396873b0c7d30edd"
+    },
+    {
+      "name": "quick_recovery",
+      "command": [
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "recovery"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+    },
+    {
+      "name": "quick_first_sortie",
+      "command": [
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "first_sortie"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "e9d7fed6a9e74539df5c39927bc8cc5bf42bd98dc94103416d779a2d6ae3b2b5"
+    },
+    {
+      "name": "quick_first_sortie_read",
+      "command": [
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "first_sortie",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    },
+    {
+      "name": "quick_fitting_kit",
+      "command": [
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "fitting_kit"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "40ac639dbf1efceb7919402d143006db6beab983398ed5054a8569ccfdc45ee4"
+    },
+    {
+      "name": "quick_fitting_kit_read",
+      "command": [
+        "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "fitting_kit",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "99d1ce0209e45952db3f24fafd756087c6b1d5ebf7a804ab1ead138e0a0b1ad0"
+    }
+  ],
+  "independent_zip_checks": [
+    {
+      "name": "zip_inventory",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "5779d85da8ff464e3469290fbe0520d2b6644c0d2f16ba771c2a084998bc197b"
+    },
+    {
+      "name": "zip_motion",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "179733e2d0a376c46e4aa87748510b847f766cbe13198ce479b731ef03bf22b6"
+    },
+    {
+      "name": "zip_recovery",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+    },
+    {
+      "name": "zip_fitting_transfer",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "40ac639dbf1efceb7919402d143006db6beab983398ed5054a8569ccfdc45ee4"
+    },
+    {
+      "name": "zip_fitting_transfer_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "99d1ce0209e45952db3f24fafd756087c6b1d5ebf7a804ab1ead138e0a0b1ad0"
+    },
+    {
+      "name": "zip_first_sortie",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "e9d7fed6a9e74539df5c39927bc8cc5bf42bd98dc94103416d779a2d6ae3b2b5"
+    },
+    {
+      "name": "zip_first_sortie_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    },
+    {
+      "name": "zip_launcher_forward",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "110973bc5edb74008ace8dc195f2dbe825902615f112719ef955cd8c6a255274"
+    },
+    {
+      "name": "zip_launcher_compatibility",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "110973bc5edb74008ace8dc195f2dbe825902615f112719ef955cd8c6a255274"
+    }
+  ],
+  "archive": {
+    "archive": "D:\\tmp\\bunny_kit_transfer_windows_20261022_01\\NeonBastion_20261022_kit_transfer_LOCAL_ONLY_windows_x64.zip",
+    "bytes": 246877719,
+    "sha256": "2b65254fbcfedb210587884d399be69742a293b1f578d98ed05241d9d3853e25"
+  },
+  "preserved_rules": [
+    "No new item IDs, save schema, progression flag or currency.",
+    "Old destructive removal/replacement still gives no refund.",
+    "Archive support still checks installed modified guns, not loose kits; recovery of last fitting restores support, transfer onto another gun restores35%."
+  ],
+  "validation_scope": "Controlled transaction fixtures and actual UI signal chains in English/Chinese, then independent real release binary/ZIP and read processes. UI tests do not prove mouse/gamepad operation or rendered layout; no native window/full matrix/low-spec/five-hour or80%review acceptance.",
+  "prior_delivery_unchanged": "D:/tmp/bunny_motion16_windows_20261022_01",
+  "public_release_approved": false,
+  "human_playtime_verified": false,
+  "eighty_percent_positive_reviews_verified": false,
+  "evidence": [
+    "D:\\tmp\\bunny_fitting_recovery_20261022_dev01",
+    "D:\\tmp\\bunny_kit_transfer_windows_20261022_01"
+  ]
+}

@@ -40,7 +40,8 @@ func _setup() -> void:
 	GameLanguage.language_changed.connect(func():
 		if is_instance_valid(panel): _show_loot()
 	)
-	notice = SliceUI.label(screen,"",Vector2.ZERO,15,SliceUI.CYAN)
+	notice = SliceUI.label(screen,"",Vector2.ZERO,15,Color.WHITE)
+	notice.add_theme_stylebox_override("normal",FieldManualStyle.panel(OperationUI.DARK,Color.TRANSPARENT))
 	notice.set_anchors_preset(Control.PRESET_CENTER_TOP)
 	notice.offset_left = -240
 	notice.offset_right = 240
@@ -71,6 +72,7 @@ func register_loot_cache(point: LootSpawnPoint) -> SliceLootContainer:
 
 func _process(delta: float) -> void:
 	if not is_instance_valid(battle) or not is_instance_valid(battle.get("player")) or not screen: return
+	notice.visible = not notice.text.is_empty() and not is_instance_valid(panel)
 	_update_world_label_focus()
 	if arrival_time > 0:
 		arrival_time = maxf(0,arrival_time-delta)
@@ -162,20 +164,24 @@ func _show_loot(feedback: String = "Inspect contents. Combat remains live.", foc
 	var extent := Vector2(minf(1152,screen.size.x-48),minf(568,screen.size.y-64))
 	panel = SliceUI.panel(screen,(screen.size-extent)*.5,extent)
 	panel.add_theme_stylebox_override("panel",FieldManualStyle.panel())
+	panel.clip_contents = true
+	var command := OperationUI.block(panel,Vector2.ZERO,Vector2(extent.x,38),OperationUI.DARK)
+	command.name = "LootCommandBar"
+	OperationUI.text(panel,tr("LOOT INSPECTION / COMBAT IS LIVE"),Vector2(24,8),13,Color.WHITE,true)
 	var column := (extent.x-80)*.5
 	var right := 56+column
-	SliceUI.label(panel,tr("CARRIED / BACKPACK"),Vector2(24,18),22,FieldManualStyle.INK)
-	SliceUI.label(panel,"SUPPLY CACHE / CONTENTS",Vector2(right,18),22,FieldManualStyle.INK)
-	var close := SliceUI.button(panel,"ESC",Vector2(extent.x-88,16),Vector2(64,34),_close_loot)
+	SliceUI.label(panel,tr("CARRIED / BACKPACK"),Vector2(24,50),22,FieldManualStyle.INK)
+	SliceUI.label(panel,"SUPPLY CACHE / CONTENTS",Vector2(right,50),22,FieldManualStyle.INK)
+	var close := SliceUI.button(panel,"ESC",Vector2(extent.x-88,48),Vector2(64,34),_close_loot)
 	close.name = "CloseCache"
 	close.tooltip_text = tr("CLOSE / %s or ESC") % ControlBindings.label("interact")
 	close.add_theme_font_size_override("font_size",14)
-	carried_capacity = SliceUI.label(panel,"",Vector2(24,61),14,FieldManualStyle.MUTED)
+	carried_capacity = SliceUI.label(panel,"",Vector2(24,95),14,FieldManualStyle.MUTED)
 	carried_capacity.tooltip_text = tr("Equipment and loaded rounds count toward weight.\nOnly unequipped loot can be exchanged; no free discard.")
 	carried_bar = ProgressBar.new()
 	carried_bar.step = 0.0
 	carried_bar.name = "CarriedWeight"
-	carried_bar.position = Vector2(24,91)
+	carried_bar.position = Vector2(24,125)
 	carried_bar.size = Vector2(column,5)
 	carried_bar.show_percentage = false
 	carried_bar.add_theme_stylebox_override("background",FieldManualStyle.bar(FieldManualStyle.LINE))
@@ -184,14 +190,14 @@ func _show_loot(feedback: String = "Inspect contents. Combat remains live.", foc
 	carried_bar.set_deferred("size",Vector2(column,5))
 	carried_list = RichTextLabel.new()
 	carried_list.name = "CarriedList"
-	carried_list.position = Vector2(24,138)
-	carried_list.size = Vector2(column,extent.y-208)
+	carried_list.position = Vector2(24,170)
+	carried_list.size = Vector2(column,extent.y-240)
 	carried_list.bbcode_enabled = true
 	carried_list.add_theme_font_size_override("normal_font_size",15)
 	panel.add_child(carried_list)
 	var choice := OptionButton.new()
 	choice.name = "ExchangeCargo"
-	choice.position = Vector2(right,58)
+	choice.position = Vector2(right,92)
 	choice.size = Vector2(column,36)
 	choice.add_theme_font_size_override("font_size",14)
 	choice.add_item(tr("EXCHANGE / Select carried salvage"))
@@ -212,14 +218,14 @@ func _show_loot(feedback: String = "Inspect contents. Combat remains live.", foc
 	var weight_x := row_width-228
 	var quantity_x := weight_x-40
 	for x in [24.0,right]:
-		SliceUI.label(panel,tr("ITEM"),Vector2(x,111),12,FieldManualStyle.MUTED)
-		var qty_header := SliceUI.label(panel,tr("QTY"),Vector2(x+(column-114 if x == 24.0 else quantity_x),111),12,FieldManualStyle.MUTED)
+		SliceUI.label(panel,tr("ITEM"),Vector2(x,143),12,FieldManualStyle.MUTED)
+		var qty_header := SliceUI.label(panel,tr("QTY"),Vector2(x+(column-114 if x == 24.0 else quantity_x),143),12,FieldManualStyle.MUTED)
 		qty_header.size.x = 32
 		if x == 24.0: qty_header.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-		var kg_header := SliceUI.label(panel,tr("WEIGHT (kg)"),Vector2(x+(column-70 if x == 24.0 else weight_x),111),12,FieldManualStyle.MUTED)
+		var kg_header := SliceUI.label(panel,tr("WEIGHT (kg)"),Vector2(x+(column-70 if x == 24.0 else weight_x),143),12,FieldManualStyle.MUTED)
 		kg_header.size.x = 54
 		var header_rule := ColorRect.new()
-		header_rule.position = Vector2(x,131)
+		header_rule.position = Vector2(x,163)
 		header_rule.size = Vector2(column,1)
 		header_rule.color = FieldManualStyle.LINE
 		header_rule.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -232,8 +238,8 @@ func _show_loot(feedback: String = "Inspect contents. Combat remains live.", foc
 	panel.add_child(divider)
 	var scroll := ScrollContainer.new()
 	scroll.name = "CacheScroll"
-	scroll.position = Vector2(right,138)
-	scroll.size = Vector2(column,extent.y-248)
+	scroll.position = Vector2(right,170)
+	scroll.size = Vector2(column,extent.y-280)
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	scroll.follow_focus = true
 	panel.add_child(scroll)
@@ -273,6 +279,11 @@ func _show_loot(feedback: String = "Inspect contents. Combat remains live.", foc
 		take.set_meta("cache_row", index)
 		take.add_theme_font_size_override("font_size",14)
 		FieldManualStyle.primary(take)
+		for state in ["normal","hover","pressed"]:
+			var style := take.get_theme_stylebox(state).duplicate()
+			style.content_margin_left = 6
+			style.content_margin_right = 14
+			take.add_theme_stylebox_override(state,style)
 		take.set_deferred("size",Vector2(60,36))
 		var swap := SliceUI.button(rows,"EXCHANGE",Vector2(row_width-88,y+2),Vector2(88,36),func(): _exchange(pickup))
 		swap.name = "Swap%d" % index
@@ -280,7 +291,8 @@ func _show_loot(feedback: String = "Inspect contents. Combat remains live.", foc
 		swap.add_theme_font_size_override("font_size",13)
 		swap.set_deferred("size",Vector2(88,36))
 		swap.disabled = exchange_id.is_empty()
-		_cache_rows.append({"pickup":pickup, "hint":capacity_hint, "take":take, "swap":swap})
+		var row := {"pickup":pickup, "hint":capacity_hint, "take":take, "swap":swap, "field":null, "field_hint":null}
+		_cache_rows.append(row)
 		if not modified.is_empty():
 			var find_note := SliceUI.label(rows,"",Vector2(52,y+47),12,FieldManualStyle.ACCENT)
 			find_note.name = "ModifiedFind%d" % index
@@ -288,6 +300,18 @@ func _show_loot(feedback: String = "Inspect contents. Combat remains live.", foc
 			find_note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 			find_note.text = modified
 			y += 68
+		if definition is WeaponDefinition:
+			var field := SliceUI.button(rows,tr("SWAP CURRENT GUN"),Vector2(52,y+44),Vector2(260,38),func(): _field_swap(pickup))
+			field.name = "FieldSwap%d" % index
+			field.set_meta("cache_row",index)
+			field.add_theme_font_size_override("font_size",14)
+			field.tooltip_text = tr("Switch weapons first to choose the slot. Finish reloading before swapping.")
+			var field_hint := SliceUI.label(rows,"",Vector2(52,y+88),12,FieldManualStyle.ACCENT)
+			field_hint.name = "FieldSwapHint%d" % index
+			field_hint.size = Vector2(row_width-60,64)
+			field_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			row.field = field; row.field_hint = field_hint
+			y += 120
 		var stock := contract_stock(ProfileRuntime.get_profile(),battle.session,definition.id)
 		if not stock.is_empty():
 			var need := SliceUI.label(rows,tr("CONTRACT: base %d + cargo %d / %d; need %d") % [stock.base,stock.cargo,stock.required,stock.missing],Vector2(0,y+49),12,FieldManualStyle.SUCCESS if stock.missing == 0 else FieldManualStyle.ACCENT)
@@ -332,6 +356,7 @@ func _restore_cache_focus(expected: Panel, focus_name: String, focus_row: int, s
 	for row in _cache_rows:
 		controls.append(row.take)
 		if not row.swap.disabled: controls.append(row.swap)
+		if row.field: controls.append(row.field)
 	var focus_style := FieldManualStyle.button_style(Color.TRANSPARENT, FieldManualStyle.INK)
 	focus_style.set_border_width_all(2)
 	for index in controls.size():
@@ -351,6 +376,13 @@ func _restore_cache_focus(expected: Panel, focus_name: String, focus_row: int, s
 			var across: Control = row.take if key == "swap" else (row.swap if not row.swap.disabled else choice)
 			action.focus_neighbor_left = action.get_path_to(across)
 			action.focus_neighbor_right = action.get_path_to(across)
+		if row.field:
+			row.take.focus_neighbor_bottom = row.take.get_path_to(row.field)
+			if not row.swap.disabled: row.swap.focus_neighbor_bottom = row.swap.get_path_to(row.field)
+			row.field.focus_neighbor_top = row.field.get_path_to(row.take)
+			row.field.focus_neighbor_bottom = row.field.get_path_to(_cache_rows[index+1].take if index+1 < _cache_rows.size() else close)
+			row.field.focus_neighbor_left = row.field.get_path_to(row.take)
+			row.field.focus_neighbor_right = row.field.get_path_to(row.swap if not row.swap.disabled else choice)
 	var target := panel.find_child(focus_name, true, false) as Control
 	if not target and focus_row >= 0 and not _cache_rows.is_empty():
 		target = _cache_rows[mini(focus_row, _cache_rows.size()-1)].take
@@ -386,10 +418,14 @@ func _refresh_carried() -> void:
 		row.hint.text = tr("SHORT BY %.2f kg") % shortfall if shortfall > .0001 else tr("VALUE %d") % (SupplyService.sell_price(item)*item.quantity)
 		row.hint.add_theme_color_override("font_color", FieldManualStyle.ACCENT if shortfall > .0001 else FieldManualStyle.MUTED)
 		row.take.tooltip_text = tr("Whole stack: %.2f kg / free %.2f kg.") % [item.total_weight(), session.inventory.get_remaining_capacity()]
+		if row.field:
+			var slot := tr("PRIMARY") if battle.player.active_weapon_slot == LoadoutState.SLOT_WEAPON_PRIMARY else tr("SECONDARY")
+			row.field_hint.text = tr("Replace current %s. Empty magazine / compatible rounds: %d.\nOld gun stays here; loaded rounds return to your bag.") % [slot,battle.player.compatible_field_ammo(item)]
+			row.field.disabled = battle.player.get_reload_remaining() > 0.0
 
 func _set_inspection_visibility(opened: bool) -> void:
 	if is_instance_valid(inspection_shade): inspection_shade.visible = opened
-	if is_instance_valid(notice): notice.visible = not opened
+	if is_instance_valid(notice): notice.visible = not opened and not notice.text.is_empty()
 	if not is_instance_valid(battle): return
 	if is_instance_valid(battle.get("hud")): battle.hud.set_inspection_open(opened)
 	var director := battle.get_node_or_null("FirstMissionDirector")
@@ -407,6 +443,15 @@ func _exchange(pickup: LootPickup) -> void:
 	var message := tr("Cargo exchanged. Previous salvage left in cache.") if success else tr("Exchange failed / Check capacity and selected cargo.")
 	battle.player.interaction_component.interaction_finished.emit(message,success)
 	AudioDirector.play_sfx(&"ui_confirm" if success else &"ui_click",-3)
+	_show_loot(message)
+
+func _field_swap(pickup: LootPickup) -> void:
+	if not is_instance_valid(pickup) or battle.ending: return
+	var result: Dictionary = battle.player.equip_cached_weapon(pickup)
+	var message := tr(result.message)
+	battle.player.interaction_component.interaction_finished.emit(message,result.success)
+	AudioDirector.play_sfx(&"ui_confirm" if result.success else &"ui_click",-3)
+	if result.success: SortieRuntime.request_checkpoint()
 	_show_loot(message)
 
 func _take(pickup: LootPickup) -> void:

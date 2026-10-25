@@ -1,4 +1,6 @@
 # Preserve original publisher notices and raw validation logs byte-for-byte.
 assets/animations/mocap_online_rifle/READ_ME!_Rifle_Position_NOTES.txt -text whitespace=-trailing-space
 assets/fonts/noto_sans_sc/OFL.txt -text whitespace=-trailing-space
-*.log -text whitespace=-blank-at-eof
+*.log -text whitespace=-blank-at-eof,-trailing-space
+assets/fonts/saira/OFL.txt -text whitespace=-trailing-space
+licenses/ODbL-1.0.txt -text whitespace=-trailing-space

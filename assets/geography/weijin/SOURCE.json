@@ -1,0 +1,34 @@
+{
+  "osm_url": "https://api.openstreetmap.org/api/0.6/map?bbox=117.155,39.100,117.181,39.120",
+  "osm_copyright": "© OpenStreetMap contributors",
+  "database_license": "ODbL-1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "osm_sha256": "e15f452dda0a80cac6360a1d1bd57750076cb7ff2489bd5cb1dcc36f31d08da1",
+  "hgt_url": "https://s3.amazonaws.com/elevation-tiles-prod/skadi/N39/N39E117.hgt.gz",
+  "hgt_sha256": "9a35af2495b43ff5bbd38e4f4980164a5d3f78978b0fc853f68b4f233f41bc07",
+  "derived_sha256": "0a19682fe6f172fd56146bd98225e53a0fac2ab790f05c380606afbd424509c8",
+  "counts": {
+    "buildings": 467,
+    "roads": 242,
+    "water": 4,
+    "landcover": 54,
+    "pitches": 43,
+    "points": 109
+  },
+  "campus_buildings": 428,
+  "estimated_heights": 455,
+  "dem_range_m": [
+    1.222,
+    12.556
+  ],
+  "horizontal_extent_m": [
+    1395.66,
+    905.17
+  ],
+  "limitations": [
+    "OSM is incomplete and not a cadastral survey",
+    "Most building heights and road widths are estimates, each marked in campus.json",
+    "DEM is regional ~30m data, filtered for urban artefacts; not surveyed kerbs, steps, lake depth or engineering grades",
+    "Unmapped interiors, trees and facade details cannot be claimed as surveyed reconstruction"
+  ]
+}

@@ -113,6 +113,7 @@ func configure_sortie(session: SortieSession) -> void:
 
 func _ready() -> void:
 	MedicalTreatment.install_input_actions()
+	ControlBindings.install_input_actions()
 	name = "Player"
 	add_to_group("player")
 	_build_collision()
@@ -161,6 +162,12 @@ func clear_buffered_input() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not preview_mode and not event.is_echo() and event.is_action_pressed("place_alarm"):
+		var response := PortableAlarm.place_for(self)
+		if interaction_component:
+			interaction_component.interaction_finished.emit(tr(str(response.get("message", ""))), bool(response.get("success", false)))
+		get_viewport().set_input_as_handled()
+		return
 	if medical and not event.is_echo():
 		for index in MedicalTreatment.ACTIONS.size():
 			if event.is_action_pressed(MedicalTreatment.ACTIONS[index]):
@@ -247,6 +254,36 @@ func switch_weapon(slot_id: StringName) -> bool:
 		return false
 	weapon_switched.emit(active_weapon_slot)
 	return true
+
+
+func compatible_field_ammo(item: ItemInstance) -> int:
+	var definition := ContentDB.get_weapon(item.definition_id, false) if item else null
+	if not definition or not _initial_session: return 0
+	var rounds := 0
+	for stack in _initial_session.inventory.get_items():
+		if String(stack.definition_id) in definition.compatible_ammo_ids: rounds += stack.quantity
+	var held := get_weapon_instance()
+	var state: Variant = _initial_session.get_weapon_runtime_state(held.instance_id) if held else null
+	if state and String(state.ammo_definition_id) in definition.compatible_ammo_ids: rounds += state.magazine_ammo
+	return rounds
+
+
+func equip_cached_weapon(pickup: LootPickup) -> Dictionary:
+	if preview_mode or is_dead or not _initial_session or _initial_session.status != SortieSession.Status.ACTIVE or not is_instance_valid(pickup) or not pickup.is_inside_tree() or pickup.get_world_3d() != get_world_3d() or global_position.distance_to(pickup.global_position) > interaction_component.interaction_radius:
+		return {"success":false,"message":"Move closer to the cache to swap your current gun."}
+	if get_reload_remaining() > 0.0:
+		return {"success":false,"message":"Finish reloading before swapping your current gun."}
+	var previous := get_weapon_instance()
+	if not previous: return {"success":false,"message":"Weapon swap unavailable."}
+	var result := pickup.exchange_weapon(_initial_session, active_weapon_slot)
+	if not result.success: return result
+	_reload_remaining_by_weapon.erase(previous.instance_id)
+	_weapon_instances_by_slot[active_weapon_slot] = _initial_loadout.get_item(active_weapon_slot, _initial_inventory)
+	_activate_weapon_slot(active_weapon_slot)
+	clear_buffered_input()
+	if medical: medical.cancel()
+	weapon_switched.emit(active_weapon_slot)
+	return result
 
 
 func toggle_weapon() -> bool:

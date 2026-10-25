@@ -91,6 +91,8 @@ func _cache_ui() -> void:
 	check(paper_luminance/(FieldManualStyle.INK.srgb_to_linear().get_luminance()+.05) >= 4.5,"body text has readable contrast on paper")
 	check(paper_luminance/(FieldManualStyle.ACCENT.srgb_to_linear().get_luminance()+.05) >= 4.5,"task accent has readable contrast on paper")
 	check(1.05/(FieldManualStyle.ACCENT.srgb_to_linear().get_luminance()+.05) >= 4.5,"primary action text has readable contrast")
+	var command := ui.panel.get_node("LootCommandBar") as Control
+	check(ui.panel.get_global_rect().encloses(command.get_global_rect()),"live-combat command bar stays inside the inspection panel")
 	check(ui.carried_list.bbcode_enabled and ui.carried_list.text.contains("[table=4]"),"carried view uses aligned icon/name/quantity/weight columns")
 	check(ui.carried_bar.size.y <= 6 and is_equal_approx(ui.carried_bar.value,session.inventory.current_weight),"thin weight bar reads existing actual weight")
 	for icon in ui.panel.find_children("*","TextureRect",true,false):
@@ -124,6 +126,7 @@ func _cache_ui() -> void:
 	ui._take(pickup)
 	check(session.inventory.to_dict() == full_before and not pickup.consumed,"full-capacity UI TAKE preserves inventory and world pickup")
 	var feedback := ui.panel.find_child("PickupFeedback",true,false) as Label
+	await _remake_capture("cache_overweight")
 	check(feedback.text.contains("Overweight:") and feedback.text.contains("Whole stacks only"),"real cache displays actionable capacity rejection")
 	session.inventory.capacity = capacity
 	ui._take(pickup)
@@ -354,6 +357,7 @@ func _keyboard_cache() -> void:
 		check(battle.player._dodge_cooldown_time <= 0.0 and Vector2(before_position.x-battle.player.global_position.x,before_position.z-battle.player.global_position.z).length() < .15, "live-physics controller A confirms without triggering the overlapping dodge binding")
 	for pickup in ui.container.contents(): ui._take(pickup)
 	await _ui_frames()
+	await _remake_capture("cache_empty")
 	check(get_viewport().gui_get_focus_owner() != null and get_viewport().gui_get_focus_owner().name == &"CloseCache", "empty cache focuses close instead of a freed item")
 	check(profile.to_dict() == before_profile, "keyboard cache leaves warehouse and rewards untouched")
 	check(session.get_weapon_runtime_state(weapon_id).magazine_ammo == rounds and not get_tree().paused, "keyboard cache neither fires weapon nor pauses combat")
@@ -364,3 +368,8 @@ func _keyboard_cache() -> void:
 	check(battle.player._dodge_cooldown_time > 0.0, "normal controller dodge remains available after cache closes")
 	battle.free()
 	SortieRuntime.clear_session()
+
+func _remake_capture(caption: String) -> void:
+	if DisplayServer.get_name() == "headless" or "--capture" not in OS.get_cmdline_user_args(): return
+	await RenderingServer.frame_post_draw
+	check(get_viewport().get_texture().get_image().save_png(OS.get_environment("BUNNY_EVIDENCE").path_join(caption+".png")) == OK,"rendered cache state saved")

@@ -1,0 +1,69 @@
+{
+  "objective": "继续做地图细化，并加入室内和任务相关内容",
+  "requirements": "docs/streets/WEIJIN_INTERIORS_DIRECTION.md",
+  "native_unit_checks": 74,
+  "compatibility_unit_checks": 74,
+  "headless_unit_checks": 74,
+  "native_chapter_checks": 48,
+  "headless_chapter_checks": 48,
+  "native_walk_m": 2931.21536756214,
+  "headless_walk_m": 2931.21901111212,
+  "completed_actions": [
+    "dispatch",
+    "catalogue",
+    "archive_power",
+    "archive",
+    "diagram",
+    "relay",
+    "blackout",
+    "restore",
+    "isolate",
+    "youth_sample",
+    "deliver",
+    "jingye_sample",
+    "report"
+  ],
+  "flags": {
+    "accepted": true,
+    "archive": true,
+    "archive_power": true,
+    "catalogue": true,
+    "delivered": true,
+    "diagram": true,
+    "jingye_sample": true,
+    "relay": true,
+    "reported": true,
+    "shelter_power": true,
+    "youth_sample": true
+  },
+  "designed_interiors": 3,
+  "optional_lake_investigations": 2,
+  "source_building_ids": [
+    "way/891012679",
+    "way/891012808",
+    "way/925596040"
+  ],
+  "native_art_regression": 41,
+  "headless_art_regression": 39,
+  "native_geography_regression": 31,
+  "native_entry_regression": 18,
+  "legacy_ui_regression": 26,
+  "legacy_layout_failures": 0,
+  "source_tests": 5,
+  "geography_legacy_invariants_unchanged": true,
+  "profile_unchanged": true,
+  "save_path": "user://campus_fieldwork_v1.json",
+  "renderers": [
+    "Forward+ Vulkan / RTX 5090",
+    "Compatibility OpenGL / RTX 5090"
+  ],
+  "audio": "Dummy; not audio certification",
+  "verification_limits": [
+    "Synthetic normal input, not a human playtest",
+    "Only actual E doorway transitions relocate between campus and designed rooms",
+    "Compatibility has room/state/input fixtures, not a complete chapter walk",
+    "No minimum hardware benchmark",
+    "No new EXE or old battle-mainline migration",
+    "Designed floorplans, not surveyed interiors"
+  ]
+}

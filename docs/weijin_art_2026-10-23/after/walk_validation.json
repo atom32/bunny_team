@@ -1,0 +1,58 @@
+{
+  "failures": [],
+  "method": "Normal controller input on source-road graph; no teleports or speed/collision changes",
+  "native": true,
+  "source_road_graph_nodes": 522,
+  "stops": [
+    {
+      "name": "main_hall",
+      "position": "(328.4897, -0.199824, 132.3972)",
+      "source_road_stop": "(328.492, 132.166)",
+      "walked_m": 430.579447052442
+    },
+    {
+      "name": "youth_shore",
+      "position": "(306.6991, -2.61839, -202.3447)",
+      "source_road_stop": "(306.912, -202.396)",
+      "walked_m": 816.867499005049
+    },
+    {
+      "name": "north_dormitory",
+      "position": "(-81.37844, -0.090973, -310.3488)",
+      "source_road_stop": "(-81.528, -310.35)",
+      "walked_m": 1435.03070164938
+    },
+    {
+      "name": "northwest_courts",
+      "position": "(-330.3099, -0.945939, -114.2787)",
+      "source_road_stop": "(-330.49, -114.281)",
+      "walked_m": 1880.92040245701
+    },
+    {
+      "name": "west_services",
+      "position": "(-609.0537, 0.966423, 269.5851)",
+      "source_road_stop": "(-609.318, 269.584)",
+      "walked_m": 2611.77784555312
+    },
+    {
+      "name": "west_gate",
+      "position": "(-272.4129, -0.866196, 202.3155)",
+      "source_road_stop": "(-272.151, 202.318)",
+      "walked_m": 3008.8824390946
+    },
+    {
+      "name": "jingye_shore",
+      "position": "(70.6394, -1.253792, 268.3166)",
+      "source_road_stop": "(70.864, 268.318)",
+      "walked_m": 3370.96544727404
+    },
+    {
+      "name": "east_gate",
+      "position": "(671.2701, 1.187038, 230.0211)",
+      "source_road_stop": "(671.481, 230.028)",
+      "walked_m": 4005.82271152362
+    }
+  ],
+  "ticks": 31325,
+  "walked_m": 4005.82271152362
+}

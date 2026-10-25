@@ -1,0 +1,23 @@
+{
+  "scripts/world/geography/campus_builder.gd": "3841b830749335e5090296cfd68d539625d8ddd2b210b9b50b6618e49be1a4e0",
+  "scripts/world/geography/campus_geodata.gd": "91925e4018732a124509807d78467ab940e6ea96fa3b7ec005f5033bdffbdf3a",
+  "scripts/world/geography/campus_survey.gd": "f6c95a86f7591872e571934cbfe78a4abaf2742656d5969ef8f162f4a2d0cce3",
+  "scripts/world/geography/campus_survey_map.gd": "02f6f0dd4bfd9843572843a2cee293cda93de44138a18b7fb49f6765cfc8ff5a",
+  "scripts/world/geography/survey_player.gd": "ddf5b668e8d3f465792f4520ea64a91f471e4630ac40ba1ab9c86a3209f78b7b",
+  "resources/materials/streets/geographic_facade.gdshader": "54e57078cb3ef12d4529ebfdfe295a0d83a1813daa3ef1769ddecf926156d0b8",
+  "resources/materials/streets/geographic_ground.gdshader": "a4eac0423329eea8f05f1eb7ae8cc165f49cf100788ff3a2b0348f0aa9feeac8",
+  "resources/materials/streets/geographic_water.gdshader": "9335b91524480e8c8c414068a5e2d7725689d5503fad674bbaea9b04a353e698",
+  "tests/campus_geography_entry_test.gd": "0e79888a4d10cbf929f2f308eda544825bad03794f268299b50aab2f5709cd76",
+  "tests/campus_geography_entry_test.gd.uid": "a476ad0b8ddfc1c45a78565b37ff5382a1a32280aba460db257e822d0c5a7786",
+  "tests/campus_geography_entry_test.tscn": "313e0becfef617b07a9699b337d2a52e1f7b22040f974186af367f73442b9240",
+  "tests/campus_geography_test.gd": "15346cc085ccb14a460f0c57e42c7979b94bf758a5e88e6e54700c2bfae85638",
+  "tests/campus_geography_test.gd.uid": "d91cf0eee02d853d39c5ffbf7a54c9d33b7bedfd938f4eda63520e201f4662e2",
+  "tests/campus_geography_test.tscn": "2fb3bcbecc9a609350649929066b7d342cd64140782517db80bda94c30b8d5cd",
+  "assets/geography/weijin/campus.json": "0a19682fe6f172fd56146bd98225e53a0fac2ab790f05c380606afbd424509c8",
+  "assets/geography/weijin/SOURCE.json": "f900acb889b57bcf088a2866aa73d391e3bf759e9aaf666de18ed47d2dfdea61",
+  "scenes/areas/campus_geography/world.tscn": "21da422aefcd306b937abc3cff5dc20e8401fcb5f63d36c89925bdc2897fbe2f",
+  "scenes/presentation/campus_survey.tscn": "8060e0dfd4bf1588226f8ba00bfd05a83991fb100b093066397d5be4479778f1",
+  "tools/import_weijin_geography.py": "4a3331a674ae0ca7f657fd5582055962df673e761ba75edc71f9230b758c61ef",
+  "tools/build_weijin_campus.gd": "9708c4c6676997132f1b6a5a418b7bcf17e954ba80c57ec56be24ed59f18c574",
+  "tests/test_weijin_geography.py": "8bf29c5a069580754985cc5f6f4069688c92a92950923d6bfa3a1897dc4b2785"
+}

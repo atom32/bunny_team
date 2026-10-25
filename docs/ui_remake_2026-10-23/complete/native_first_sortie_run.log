@@ -1,0 +1,31 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+Vulkan 1.4.351 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 5090
+
+FIRST_SORTIE_RUN reached 01_opening
+FIRST_SORTIE_RUN reached 02_opening
+FIRST_SORTIE_RUN reached 03_opening
+FIRST_SORTIE_RUN reached 04_menu
+FIRST_SORTIE_RUN reached 05_base
+FIRST_SORTIE_RUN reached 06_operation
+LOCAL_RIFLE_ACTUAL_STATE TakeGun
+LOCAL_RIFLE_ACTUAL_STATE Idle
+FIRST_SORTIE_RUN reached 07_first_mission
+LOCAL_RIFLE_ACTUAL_STATE AimIdle
+LOCAL_RIFLE_ACTUAL_STATE Shoot
+LOCAL_RIFLE_ACTUAL_STATE Reload
+LOCAL_RIFLE_ACTUAL_STATE WalkRelaxed
+LOCAL_RIFLE_ACTUAL_STATE Run
+FIRST_SORTIE_RUN reached 08_held_aim_no_new_fire health=260.0 shots=2 kills=0
+FIRST_SORTIE_RUN reached 09_wait_for_fresh_shot health=260.0 shots=2 kills=0
+FIRST_SORTIE_RUN reached 10_patrol_defeated health=260.0 shots=6 kills=1
+FIRST_SORTIE_RUN reached 11_patrol_cache health=260.0 shots=6 kills=1
+FIRST_SORTIE_RUN reached 12_real_choice health=260.0 shots=6 kills=1
+FIRST_SORTIE_RUN reached 13_defend_return health=260.0 shots=6 kills=1
+LOCAL_RIFLE_ACTUAL_STATE TakeGun
+FIRST_SORTIE_RUN reached 14_debrief
+FIRST_SORTIE_RUN reached 15_first_upgrade_offer
+FIRST_SORTIE_RUN reached 15b_spare_screw_choice
+FIRST_SORTIE_RUN reached 15c_fitting_complete
+FIRST_SORTIE_RUN reached 16_loop_complete
+FIRST_SORTIE_RUN: PASS (84 checks; shots=6)
+NORMAL_START_TEST: PASS (84 checks)

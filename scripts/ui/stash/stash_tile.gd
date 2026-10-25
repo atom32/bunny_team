@@ -17,7 +17,7 @@ func _draw() -> void:
 	var item := grid.model.profile.inventory.get_item(instance_id)
 	if not item: return
 	var definition := ContentDB.get_item(item.definition_id)
-	var color := Color("d9e1e4") if definition.has_tag(&"weapon") else (Color("e5dcc7") if definition.has_tag(&"ammo") else Color("e4e2d9"))
+	var color := FieldManualStyle.SIGNAL if grid.selected_id == instance_id else FieldManualStyle.SURFACE
 	draw_rect(Rect2(Vector2.ONE, size - Vector2(2, 2)), color)
 	draw_rect(Rect2(Vector2.ONE, size - Vector2(2, 2)), FieldManualStyle.ACCENT if grid.selected_id == instance_id else FieldManualStyle.LINE, false, 1)
 	if definition.icon:

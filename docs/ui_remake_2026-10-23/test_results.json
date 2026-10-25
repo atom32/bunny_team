@@ -1,0 +1,66 @@
+[
+  {
+    "test": "base_manual_ui_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "BASE_MANUAL_UI_TEST: PASS (77 checks; native mouse input: false)"
+    ]
+  },
+  {
+    "test": "ui_remake_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "UI_REMAKE_TEST: PASS (26 checks; native input: false)"
+    ]
+  },
+  {
+    "test": "first_sortie_readiness_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "FIRST_SORTIE_READINESS_TEST: PASS (28 checks; controlled fixtures)"
+    ]
+  },
+  {
+    "test": "feedback_entry_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "FEEDBACK_ENTRY_TEST: PASS (17 checks; controlled UI callbacks, not native input)"
+    ]
+  },
+  {
+    "test": "sortie_guidance_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "SORTIE_GUIDANCE_TEST: PASS (240 checks; native mouse: false)"
+    ]
+  },
+  {
+    "test": "debrief_guidance_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "DEBRIEF_GUIDANCE_TEST: PASS (778 checks; controlled outcomes, not earned play)"
+    ]
+  },
+  {
+    "test": "control_settings_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "CONTROL_SETTINGS_TEST: PASS (50 checks)"
+    ]
+  },
+  {
+    "test": "normal_start_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "NORMAL_START_TEST: PASS (41 checks)"
+    ]
+  }
+]

@@ -6,7 +6,7 @@ var compact := false
 
 func _ready() -> void:
 	var contact := ContactDefinition.get_contact(contact_id)
-	var style := SliceUI.menu_style(Color("24271f"), Color("555749"))
+	var style := SliceUI.menu_style(OperationUI.DARK, FieldManualStyle.LINE)
 	if contact.portrait:
 		style.content_margin_left = 4
 		style.content_margin_right = 4

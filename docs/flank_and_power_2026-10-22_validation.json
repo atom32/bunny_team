@@ -1,0 +1,1129 @@
+{
+  "feature": "rear_radiator_flank_and_campus_branch_hardware",
+  "date": "2026-10-22",
+  "accepted_final_source_sha256": {
+    "scripts/data/blockade_journey.gd": "947e93a06969d2242c211dda44569274f1b1d6c501abf31c1f1a1993f49f9a28",
+    "scripts/world/blockade/blockade_van.gd": "85b1d907991abba1ed6e819a047a0ba90db549ba55918997a0a171ad6f40a8fe",
+    "scripts/world/blockade/blockade_readout.gd": "1200933190a70bad464bed5419daf8c7bf1e956b1a426332ce9d6dfd8088c742",
+    "resources/missions/blockade_run.tres": "42d50bc9def5a3ce70777ec0acec25fcdbf14f1f14c4fdd399530325e1730cba",
+    "scripts/world/streets/power_encounter.gd": "411d1734d3aa05aaded8ec57f425e58df7d1a9822ae435f99afecaff1b4a2a96",
+    "scripts/world/streets/campus_action.gd": "a1a6a4bbeece86eaf9edba7c1196ca46bae611731458d95f6401c7a22599ce07",
+    "tests/campus_power_test.gd": "d1acba07d916865a756489bf56e8a33fb2230e601b8573fc0f7fafdd150d8970",
+    "tests/blockade_journey_test.gd": "4658ac54c4c8d389c48cf3019f0ccc4b0a10b376eda50b125d2c42ba8b855dd9",
+    "tests/blockade_readability_test.gd": "4b6db05cf1d2f5f979ec7d7386d295b15ae6b4971e90e8bc690e886dd69719ae",
+    "tools/blockade_return_run.gd": "e674269eaf96f1af4324c286890df05bab8c93e6aa19631460ab6e5a61131f74",
+    "localization/zh_CN.json": "63ac6c32de25a0a94ecf7a82c42c55f4a98cc3bf5c988d6994b34b5eb7c52709",
+    "localization/zh_CN.tres": "1683a8927457b3b3a50a02b19b10c0f980527d6e8fdf6efc17b55499dc61e1da"
+  },
+  "source_accepted_cases": [
+    {
+      "name": "rear",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "f55db038b15272d5e4951e5712aa875625b591734af888b7b48dacc511432cec"
+    },
+    {
+      "name": "rear_write",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "ab9717d22755ec450b878679ac8a1aa8b6e24ae7d0331ff3ebaec2869a67a839"
+    },
+    {
+      "name": "rear_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "dbf997b5d33ff1ab186284388aadd4ed0ab095a2f61e145f76a75d6229985acb"
+    },
+    {
+      "name": "power",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "0e7468667b3d65dc520e70e9cb86d10462a20cb68abc6ab58a813cf74884c092"
+    },
+    {
+      "name": "power_write",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "39cf59a417b0f223149e16d295ac699e1d1726581325a95d67cccaec2e7eefc1"
+    },
+    {
+      "name": "power_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "bd85b475adc8bb5e1a78621faa7eb40a241c796262a6a0277816e55206ea8198"
+    },
+    {
+      "name": "original_blockade",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "981f8d17e5d652950c2f84218196de418401464a0cee2acb81ea4df5b2ffe445"
+    },
+    {
+      "name": "journey",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "51fbf1bc40c241e45ebb75cbcaec6128f851c4a954cc51a8f104273096006fae"
+    },
+    {
+      "name": "old_blockade_journey_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "31ac069a5664f9a8b482eb6c136558d0688cd5f09ad1442b68c90ee64bf5245d"
+    },
+    {
+      "name": "old_campus_power_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "bd85b475adc8bb5e1a78621faa7eb40a241c796262a6a0277816e55206ea8198"
+    },
+    {
+      "name": "rear_route_fixed",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "df0701f5d510171e3590a64e10789adb053b1dac65c65def49b59d1bee84577c"
+    },
+    {
+      "name": "rear_route_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "c77dbf08c41ef74157958a5cf5bd3f0fedd00d75900f75a9a04c6c6440a1ca38"
+    },
+    {
+      "name": "power_route_wrapper_fixed",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "65ac82d684887e5a4f8b271f28c2eb92b5d70a91132a886c42a7898c18730f58"
+    },
+    {
+      "name": "power_route_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "bd525cd6a6d329ee293a49f74983554efcc85a3e5d0b1eff3598cd57df5fbd96"
+    },
+    {
+      "name": "final_power",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "7d91a553328c3c1b80e085cec0d78d34ca7a59b4f94d36674ff02bce2d6e9cdd"
+    },
+    {
+      "name": "final_readability",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "83ca63c2d66e6af5b3561d1ce667bb10cbb0810dab917df72d7db08e2cecfd9e"
+    }
+  ],
+  "source_failed_cases_preserved": [
+    {
+      "name": "rear_route",
+      "pass": false,
+      "exit": 4294967295,
+      "log_sha256": "6f0715cdd922ee920d7d336b84193257a55d9c91c49a00060ba8be4021e79956"
+    },
+    {
+      "name": "power_route",
+      "pass": false,
+      "exit": 1,
+      "log_sha256": "9eeebaa44b1d5d9183b3f4217a6a5ca56867f2b251f3a55284366969cfa131ba"
+    }
+  ],
+  "source_group_reports": {
+    "targeted_results.json": {
+      "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\targeted_results.json",
+      "sha256": "9b79898f7af4dae780df2e4197396d49538cc2dcaebd87a22a52dabbc743460d",
+      "results": [
+        {
+          "name": "rear",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "f55db038b15272d5e4951e5712aa875625b591734af888b7b48dacc511432cec"
+        },
+        {
+          "name": "rear_write",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "ab9717d22755ec450b878679ac8a1aa8b6e24ae7d0331ff3ebaec2869a67a839"
+        },
+        {
+          "name": "rear_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "dbf997b5d33ff1ab186284388aadd4ed0ab095a2f61e145f76a75d6229985acb"
+        },
+        {
+          "name": "power",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "0e7468667b3d65dc520e70e9cb86d10462a20cb68abc6ab58a813cf74884c092"
+        },
+        {
+          "name": "power_write",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "39cf59a417b0f223149e16d295ac699e1d1726581325a95d67cccaec2e7eefc1"
+        },
+        {
+          "name": "power_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "bd85b475adc8bb5e1a78621faa7eb40a241c796262a6a0277816e55206ea8198"
+        },
+        {
+          "name": "original_blockade",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "981f8d17e5d652950c2f84218196de418401464a0cee2acb81ea4df5b2ffe445"
+        },
+        {
+          "name": "journey",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "51fbf1bc40c241e45ebb75cbcaec6128f851c4a954cc51a8f104273096006fae"
+        },
+        {
+          "name": "old_blockade_journey_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "31ac069a5664f9a8b482eb6c136558d0688cd5f09ad1442b68c90ee64bf5245d"
+        },
+        {
+          "name": "old_campus_power_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "bd85b475adc8bb5e1a78621faa7eb40a241c796262a6a0277816e55206ea8198"
+        },
+        {
+          "name": "rear_route",
+          "pass": false,
+          "exit": 4294967295,
+          "log_sha256": "6f0715cdd922ee920d7d336b84193257a55d9c91c49a00060ba8be4021e79956"
+        }
+      ]
+    },
+    "route_fix_results.json": {
+      "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\route_fix_results.json",
+      "sha256": "792bfed592247ee5de25f1520ab7d1d2677753988b8ef198288acd468f1e1903",
+      "results": [
+        {
+          "name": "rear_route_fixed",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "df0701f5d510171e3590a64e10789adb053b1dac65c65def49b59d1bee84577c"
+        },
+        {
+          "name": "rear_route_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "c77dbf08c41ef74157958a5cf5bd3f0fedd00d75900f75a9a04c6c6440a1ca38"
+        },
+        {
+          "name": "power_route",
+          "pass": false,
+          "exit": 1,
+          "log_sha256": "9eeebaa44b1d5d9183b3f4217a6a5ca56867f2b251f3a55284366969cfa131ba"
+        }
+      ]
+    },
+    "power_wrapper_results.json": {
+      "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\power_wrapper_results.json",
+      "sha256": "9a56f9ebc1f47bda75ff491095a132876a1168ea6e8158570f81c5ab1cbd4c34",
+      "results": [
+        {
+          "name": "power_route_wrapper_fixed",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "65ac82d684887e5a4f8b271f28c2eb92b5d70a91132a886c42a7898c18730f58"
+        },
+        {
+          "name": "power_route_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "bd525cd6a6d329ee293a49f74983554efcc85a3e5d0b1eff3598cd57df5fbd96"
+        }
+      ]
+    },
+    "final_ui_results.json": {
+      "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\final_ui_results.json",
+      "sha256": "f028fa21049d346795b1c496ac557a558c872c552169350bd2a8c8e4c4e8be9b",
+      "results": [
+        {
+          "name": "final_power",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "7d91a553328c3c1b80e085cec0d78d34ca7a59b4f94d36674ff02bce2d6e9cdd"
+        },
+        {
+          "name": "final_readability",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "83ca63c2d66e6af5b3561d1ce667bb10cbb0810dab917df72d7db08e2cecfd9e"
+        }
+      ]
+    },
+    "native_results.json": {
+      "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\native_results.json",
+      "sha256": "3f0d393a18d0c7eec0eba0d1cfe7c922eb698259e6b293a4a897306cc16cbe3f",
+      "results": [
+        {
+          "name": "rear",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "f0018b6159e829609011ccf68dc0b26738ee6939bdfacce2da448d0b29a65bdf"
+        },
+        {
+          "name": "power",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "9b0420f2321eb9f984a4a766f4bee97c17e3b7552736f9a45a25d42bf41f4655"
+        }
+      ]
+    },
+    "native02_results.json": {
+      "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\native02_results.json",
+      "sha256": "3f0d393a18d0c7eec0eba0d1cfe7c922eb698259e6b293a4a897306cc16cbe3f",
+      "results": [
+        {
+          "name": "rear",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "f0018b6159e829609011ccf68dc0b26738ee6939bdfacce2da448d0b29a65bdf"
+        },
+        {
+          "name": "power",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "9b0420f2321eb9f984a4a766f4bee97c17e3b7552736f9a45a25d42bf41f4655"
+        }
+      ]
+    }
+  },
+  "failure_notes": {
+    "rear_route": "QA tool parser could not infer hit/aim Variants. Explicit Dictionary/Vector3 annotations fixed it. Only the failed headless process was stopped after confirmed parse errors. Same original eight-return input retained; no reset/reseed.",
+    "power_route": "External QA scene wrapper was missing; corrected the wrapper and actual inherited marker CAMPUS_ENTRY_RUN before replay on the same original four-return input. No runtime progress failure or new seed."
+  },
+  "retained_input_records": {
+    "rear_failed_input_retained.json": {
+      "source": "Failed route input kept in place; no profile reset or reseed. Parser failure had no playable route.",
+      "sha256": "0b58fea4442a82ad0fdbc51dbbf8c7d278e8663b96823ecab2dffc3b2f91ceab"
+    },
+    "power_failed_input_retained.json": {
+      "reason": "missing external QA wrapper corrected, original input kept in place, no reset/reseed",
+      "sha256": "da4be246492ee2fb5eaed21c950c8d579d0dcc4c339d1c73a89bb334be51e5e8"
+    }
+  },
+  "controlled_assertions": {
+    "rear": 32,
+    "rear_write": 30,
+    "rear_read": 8,
+    "campus_power_final": 81,
+    "power_write_final_zip": 50,
+    "power_read": 17,
+    "old_v2_blockade_read": 5,
+    "old_v5_campus_read": 17,
+    "readability_final": 68
+  },
+  "ordinary_routes": {
+    "source_flank": {
+      "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\rear_route_fixed\\blockade_earned.json",
+      "sha256": "8e37ad188700fe03dc34da83465a27515ceac234d144366626559ec63133b6e2",
+      "summary": {
+        "checks": 18,
+        "shots": 43,
+        "kills": null,
+        "health": null,
+        "rear_flank": {
+          "closed_radiator_hits": 9,
+          "health": 260.0,
+          "player_position": "(3.002807, -0.004163, -17.99331)",
+          "van_shots": 8
+        },
+        "power_encounter": null,
+        "routes": [
+          {
+            "blockade": {
+              "alarm": false,
+              "escape_open": true,
+              "van_down": true,
+              "version": 3
+            },
+            "damage": 0,
+            "health": 260.0,
+            "kills": 5,
+            "mission": "blockade_run",
+            "shots_total": 43
+          }
+        ],
+        "stage_before": null,
+        "stage_after": null
+      },
+      "before_returns": 8,
+      "after_returns": 9,
+      "checkpoint_empty": true
+    },
+    "source_power": {
+      "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\power_route_wrapper_fixed\\campus_entry.json",
+      "sha256": "7e45f545dee8723cac3f30e10dcbcf734fa3d45cfc328719ac90423459e6a57d",
+      "summary": {
+        "checks": 16,
+        "shots": 11,
+        "kills": 4,
+        "health": 260.0,
+        "rear_flank": null,
+        "power_encounter": {
+          "committed_direction": [
+            -0.362129867076874,
+            0.0,
+            0.93212765455246
+          ],
+          "frames": 220,
+          "ordinary_shots_after": 8,
+          "ordinary_shots_before": 3,
+          "player_impacts": 0,
+          "wall_impacts": 1,
+          "windup_seen": true
+        },
+        "routes": null,
+        "stage_before": "power",
+        "stage_after": "supply"
+      },
+      "before_returns": 4,
+      "after_returns": 5,
+      "checkpoint_empty": true
+    },
+    "zip_flank": {
+      "path": "D:\\tmp\\bunny_flank_power_windows_20261022_02\\zip_ordinary_flank_evidence\\blockade_earned.json",
+      "sha256": "0df10d28def3eff91b3511c546d062c1f8d8dd93cf594f8d14e6a78fc2a151a5",
+      "summary": {
+        "checks": 18,
+        "shots": 42,
+        "kills": null,
+        "health": null,
+        "rear_flank": {
+          "closed_radiator_hits": 9,
+          "health": 260.0,
+          "player_position": "(-0.164294, -0.004161, -17.84464)",
+          "van_shots": 4
+        },
+        "power_encounter": null,
+        "routes": [
+          {
+            "blockade": {
+              "alarm": false,
+              "escape_open": true,
+              "van_down": true,
+              "version": 3
+            },
+            "damage": 0,
+            "health": 260.0,
+            "kills": 5,
+            "mission": "blockade_run",
+            "shots_total": 42
+          }
+        ],
+        "stage_before": null,
+        "stage_after": null
+      },
+      "before_returns": 8,
+      "after_returns": 9,
+      "checkpoint_empty": true
+    },
+    "zip_power": {
+      "path": "D:\\tmp\\bunny_flank_power_windows_20261022_02\\zip_ordinary_power_evidence\\campus_entry.json",
+      "sha256": "681125a65954214dc682060662a2c928032620ff37ac8ab0c171eb55ae38ad03",
+      "summary": {
+        "checks": 16,
+        "shots": 19,
+        "kills": 6,
+        "health": 260.0,
+        "rear_flank": null,
+        "power_encounter": {
+          "committed_direction": [
+            -0.446608424186707,
+            0.0,
+            0.894729495048523
+          ],
+          "frames": 225,
+          "ordinary_shots_after": 8,
+          "ordinary_shots_before": 3,
+          "player_impacts": 0,
+          "wall_impacts": 1,
+          "windup_seen": true
+        },
+        "routes": null,
+        "stage_before": "power",
+        "stage_after": "supply"
+      },
+      "before_returns": 4,
+      "after_returns": 5,
+      "checkpoint_empty": true
+    }
+  },
+  "native": {
+    "native": {
+      "rear": {
+        "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\rear_native",
+        "log_sha256": "f0018b6159e829609011ccf68dc0b26738ee6939bdfacce2da448d0b29a65bdf",
+        "screenshots": {
+          "rear_close_diagnostic.png": "38a1830717032925797dd6f829b1355cd08552a7707ce8e16b899f2793d56814",
+          "rear_hit.png": "8a419197c3ded1909807ccb10a56bf8f14f305cb8a1ba91076a716a997d79084",
+          "rear_normal.png": "2f03a8fc0b2a36efc095ac3c14fd2bca39cdc0ff65a9f0a3425bcb7e57cac8ef"
+        }
+      },
+      "power": {
+        "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\power_native",
+        "log_sha256": "9b0420f2321eb9f984a4a766f4bee97c17e3b7552736f9a45a25d42bf41f4655",
+        "screenshots": {
+          "power_choice.png": "daf5a16a1244eec05d2b0593eff5419918407e3deda4f37dcf6ec20083fe4ffd",
+          "power_cut_close_diagnostic.png": "bbd78b1688869fd40872c012bba03e9daf0c7ed278c8ff5e37dacd56792fdb86",
+          "power_guarded_close_diagnostic.png": "184eb6321907048f7470df5786b020bab108fee27b49299328833408160bd114",
+          "power_guarded_normal.png": "60d65406c7bc701844f1f67a456001447ffc847fced7c491d66475482e74afb3"
+        }
+      }
+    },
+    "native02": {
+      "rear": {
+        "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\rear_native02",
+        "log_sha256": "f0018b6159e829609011ccf68dc0b26738ee6939bdfacce2da448d0b29a65bdf",
+        "screenshots": {
+          "rear_close_diagnostic.png": "38a1830717032925797dd6f829b1355cd08552a7707ce8e16b899f2793d56814",
+          "rear_hit.png": "640e8665891ffba3aea2380dbc115b95dec543388bdf2cd31e691fb4e0c55a4c",
+          "rear_normal.png": "c632851128aa3a42371924283402d358604a64134964fd8001978e13157202a8"
+        }
+      },
+      "power": {
+        "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\power_native02",
+        "log_sha256": "9b0420f2321eb9f984a4a766f4bee97c17e3b7552736f9a45a25d42bf41f4655",
+        "screenshots": {
+          "power_choice.png": "ff7acf792a78000cc808369b45872fb0472ad1d67c7a95143902b44af3425340",
+          "power_cut_close_diagnostic.png": "68e4229f1e3a2bf5ca4c2fb39745506b846333dc130fb985b874d612d906c970",
+          "power_guarded_close_diagnostic.png": "9776cf871e25591974528dc651cd7982b0461804b9794001b87d2e949f632887",
+          "power_guarded_normal.png": "93ee405b8a8f4dd90c5059599c12d21476341688905a54633b7e9a84c4c700a3"
+        }
+      }
+    },
+    "method": "Fresh user foreground approval for one short batch, normal camera and separate diagnostic close camera. Controlled profile/position and direct test DamagePacket/enemy defeat; not ordinary-route or human acceptance. Forward+,1280x720,Dummy audio; no focus forcing or disabling focus-loss pause.",
+    "first_visual_rejected": [
+      "Transparent power-choice panel shows world labels behind text.",
+      "First-hit wrap label briefly inflates vehicle readout."
+    ],
+    "final_target_images_viewed": [
+      "rear_native02/rear_hit.png",
+      "power_native02/power_choice.png"
+    ],
+    "other_first_images_viewed": [
+      "rear_native/rear_normal.png",
+      "rear_native/rear_hit.png",
+      "rear_native/rear_close_diagnostic.png",
+      "power_native/power_choice.png",
+      "power_native/power_guarded_normal.png",
+      "power_native/power_guarded_close_diagnostic.png",
+      "power_native/power_cut_close_diagnostic.png"
+    ],
+    "scope": "Two UI regressions fixed, same short batch target images accepted. No claim that all second-batch images were viewed, or that large diagnostic world labels match normal gameplay scale. Foreground batch ended."
+  },
+  "old_exe_writer": {
+    "directory": "D:\\tmp\\bunny_rear_power_legacy_20261022_01",
+    "results": [
+      {
+        "name": "blockade_journey",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "2ec8e0866209804eca26c80f7a9318952660e04bc402601113098739508d7503"
+      },
+      {
+        "name": "campus_power",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "8769afa954882a8937f7bfb05d4d1dcd2adb4d5ec19d7963fdc7602860f0ee77"
+      }
+    ],
+    "blockade_version": 2,
+    "campus_version": 5,
+    "checkpoint_jsons_unedited": true
+  },
+  "independent_legacy_v2_provenance": {
+    "source": "D:\\tmp\\bunny_rear_power_legacy_20261022_01\\blockade_journey_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\blockade_journey_test.json",
+    "sha256": "afbc68c299d1af3587890af18df8fe89e6220433785eaa1e32b90587fa3dfdcc",
+    "source_unchanged": true,
+    "method": "checkpoint genuinely written by the preceding alarm02 release EXE, copied without edits"
+  },
+  "preview_seed_provenance": {
+    "steam": {
+      "source": "D:\\tmp\\bunny_readability_20261021_build01\\maintenance_rescue_seed\\profile.json",
+      "sha256": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f",
+      "input_successful_sorties": 6,
+      "archive_member": "LOCAL_ONLY_DO_NOT_UPLOAD/preview_seed/steam/profile.json",
+      "source_unchanged": true,
+      "copy_is_atomic_no_overwrite": true,
+      "missing_primary_existing_backup_does_not_seed": true
+    },
+    "power": {
+      "source": "D:\\tmp\\bunny_readability_20261021_build01\\campus_power_seed\\profile.json",
+      "sha256": "da4be246492ee2fb5eaed21c950c8d579d0dcc4c339d1c73a89bb334be51e5e8",
+      "input_successful_sorties": 4,
+      "archive_member": "LOCAL_ONLY_DO_NOT_UPLOAD/preview_seed/power/profile.json",
+      "source_unchanged": true,
+      "copy_is_atomic_no_overwrite": true,
+      "missing_primary_existing_backup_does_not_seed": true
+    },
+    "blockade": {
+      "source": "D:\\tmp\\bunny_readability_20261021_build01\\bucket_earned_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+      "sha256": "0b58fea4442a82ad0fdbc51dbbf8c7d278e8663b96823ecab2dffc3b2f91ceab",
+      "input_successful_sorties": 8,
+      "archive_member": "LOCAL_ONLY_DO_NOT_UPLOAD/preview_seed/blockade/profile.json",
+      "source_unchanged": true,
+      "copy_is_atomic_no_overwrite": true,
+      "missing_primary_existing_backup_does_not_seed": true
+    }
+  },
+  "final_build": {
+    "directory": "D:\\tmp\\bunny_flank_power_windows_20261022_02",
+    "results": [
+      {
+        "name": "cold_import",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--headless",
+          "--path",
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\project",
+          "--editor",
+          "--import"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+          "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+        ],
+        "log_sha256": "1999bafb459d17eca9e483c36eda34371af35187d2a44802d58eb185f4d750cc"
+      },
+      {
+        "name": "campaign_return_offsets_unit",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\project\\tests\\test_campaign_return_offsets.py",
+          "-v"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "e4bc30c1f236ec8de6730dbc4e8b5fa4354e54362f76132e8b7e9be3de4b28a9"
+      },
+      {
+        "name": "runtime_export_unit",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\project\\tests\\test_runtime_export.py",
+          "-v"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "2681a2e8b6fe68b101018758e9686de066b4d36a745a9d63acf6a71f7a265822"
+      },
+      {
+        "name": "runtime_dependency_catalog",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--headless",
+          "--path",
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\project",
+          "--script",
+          "res://tools/runtime_dependency_catalog.gd"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "0cc10fb33b31279442adf2af245d2601f0c3e5a8bae26e39e9afa229b856911d"
+      },
+      {
+        "name": "runtime_export_inventory",
+        "command": [
+          "C:\\Python314\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\project\\tools\\runtime_export.py",
+          "--project",
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\project",
+          "--catalog",
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\runtime_dependency_catalog.json",
+          "--output",
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\runtime_export_inventory.json",
+          "--preset",
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\project\\export_presets.cfg"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "18329332073260d8c5a6cf70b27014d2ade2b91156904625726cbdca836f8173"
+      },
+      {
+        "name": "export_release",
+        "command": [
+          "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+          "--headless",
+          "--path",
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\project",
+          "--export-release",
+          "Windows Local Prototype",
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "b6a73537a29aa8548864c202698b3673698821a4279f8bc71d864e307496420f"
+      },
+      {
+        "name": "quick_inventory",
+        "command": [
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "inventory"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "283c7cc02264ac30a52a51d33c4ded04c31c1f87bae9cf01909a6b3d2ddb838a"
+      },
+      {
+        "name": "quick_motion",
+        "command": [
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "motion"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "9a0fcb7f16799b3c828c7eaf4a7edcf806da02f35338b823ccc5205c863ee270"
+      },
+      {
+        "name": "quick_boot",
+        "command": [
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "boot"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "390580cd5d323261c1f8ac498ced8a35868c5be4b162e57a8f0138393c3387ca"
+      },
+      {
+        "name": "quick_write",
+        "command": [
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "write"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "346cefbc1bd2fb6760c68ebdce647651d0a0ef7a5bfba60eaa13114347a3c336"
+      },
+      {
+        "name": "quick_read",
+        "command": [
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "42265144755696b897a13bbcf863d35ef2a7fcb9e3b1f059de0caed781608ba6"
+      },
+      {
+        "name": "quick_legacy",
+        "command": [
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "legacy"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "4d2d96069e874d6f4dcd2f4f1eabf29d8011c889d5f9400841b13e19197ba090"
+      },
+      {
+        "name": "quick_recovery",
+        "command": [
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "recovery"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+      },
+      {
+        "name": "quick_first_sortie",
+        "command": [
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "first_sortie"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "688e502db16a5fae42806d3540f8fcdd6cbc4838d82da8e06996b9b9e4821ccd"
+      },
+      {
+        "name": "quick_first_sortie_read",
+        "command": [
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "first_sortie",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+      },
+      {
+        "name": "quick_fitting_kit",
+        "command": [
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "fitting_kit"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "40ac639dbf1efceb7919402d143006db6beab983398ed5054a8569ccfdc45ee4"
+      },
+      {
+        "name": "quick_fitting_kit_read",
+        "command": [
+          "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+          "--headless",
+          "--audio-driver",
+          "Dummy",
+          "--fixed-fps",
+          "60",
+          "--",
+          "--local-qa",
+          "fitting_kit",
+          "--read"
+        ],
+        "exit": 0,
+        "pass": true,
+        "errors": [],
+        "warnings": [],
+        "log_sha256": "99d1ce0209e45952db3f24fafd756087c6b1d5ebf7a804ab1ead138e0a0b1ad0"
+      }
+    ],
+    "scope": "quick_playable",
+    "matching_root_non_document_inputs": 4113,
+    "source_manifest_sha256": "2fbb8de20a48a941b10c57b3cdd753122eefb086cce84533ef95a861ca2623c6",
+    "pre_visual_fix_01": "Superseded internal candidate, not delivered."
+  },
+  "independent_zip": {
+    "pass": true,
+    "archive": "D:\\tmp\\bunny_flank_power_windows_20261022_02\\NeonBastion_20261022_flank_and_power_LOCAL_ONLY_windows_x64.zip",
+    "bytes": 246947607,
+    "sha256": "a9f638479b3965fae410d5a55e2d115e774c12567f7b79609d60443083f1eaaf",
+    "extracted_to": "D:\\tmp\\小兔试玩 绕后与校园断电 20261022 验收02\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "files": {
+      "ASSET_LICENSE_MATERIALS.zip": {
+        "bytes": 5988171,
+        "sha256": "c20824942254f388a96434ae7ce5d7e250c51322d4e9dfeea3a803be5ea5bd32"
+      },
+      "ENGINE_LICENSES.txt": {
+        "bytes": 114181,
+        "sha256": "472c1fbefc38653aa0fe5eceb9d4c0c8cbb5c889e5c917bcc3728edfe4b1f2ad"
+      },
+      "LOCAL_ONLY.txt": {
+        "bytes": 542,
+        "sha256": "971c31ca46c922fb159f2fa3d5381496a096088884c1ba5a55810f9116f66f96"
+      },
+      "NeonBastion.exe": {
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      },
+      "NeonBastion.pck": {
+        "bytes": 260347288,
+        "sha256": "1a289e45636005cbeb45584ccfb689415a0af04f71241132b3d6ecb612894a25"
+      },
+      "runtime_inventory.json": {
+        "bytes": 170412,
+        "sha256": "9c5b8ea7a7e9e5f1fb18e371f2b0aeb27a8fd65b4f43c680a60d3582dcc82fe6"
+      },
+      "兼容模式.cmd": {
+        "bytes": 204,
+        "sha256": "6851d578daaf8628535af021be14b1088090c4f3ec257a685b810cfcde72586f"
+      },
+      "开始游戏.cmd": {
+        "bytes": 200,
+        "sha256": "f52079e040acb6369a9245c63b12a7639d8769bbd3c7007fa10b5e6aea4de583"
+      },
+      "试玩说明.txt": {
+        "bytes": 3934,
+        "sha256": "1862a6a129e342649fe0f404ffc72721246d67e0c5f11535b83859089b5a586e"
+      },
+      "预览哨卡绕后.cmd": {
+        "bytes": 920,
+        "sha256": "292593c1fcfc8642718f05f06950c12c1986c306a4a1c737c1a8609e996d63cf"
+      },
+      "预览校园断电.cmd": {
+        "bytes": 911,
+        "sha256": "a08462118b21476d15c65a0000813afd6a6adcc42f04e6f7e54019b7a27213ce"
+      },
+      "预览蒸汽救援.cmd": {
+        "bytes": 899,
+        "sha256": "c41f94032d091b4542ea6213bb5622f867fe534f801e4faaeb3d1dad8569e031"
+      },
+      "preview_seed/blockade/profile.json": {
+        "bytes": 4122,
+        "sha256": "0b58fea4442a82ad0fdbc51dbbf8c7d278e8663b96823ecab2dffc3b2f91ceab"
+      },
+      "preview_seed/power/profile.json": {
+        "bytes": 3211,
+        "sha256": "da4be246492ee2fb5eaed21c950c8d579d0dcc4c339d1c73a89bb334be51e5e8"
+      },
+      "preview_seed/steam/profile.json": {
+        "bytes": 3676,
+        "sha256": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f"
+      }
+    },
+    "matching_original_release_template": true,
+    "all_extracted_files_match": true,
+    "companion_license_count": 31,
+    "motion_clips": 16,
+    "checks": [
+      {
+        "name": "zip_inventory",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "fb6795cdfde6a06240caf6496d8d08b0b489beb100844c2b1cf2f095c3fc8e82"
+      },
+      {
+        "name": "zip_motion",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5cf17c4ae151c7ab36cb64c5a9ee0ea20214b4db495cc0335368e225e080125e"
+      },
+      {
+        "name": "zip_rear",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "f55db038b15272d5e4951e5712aa875625b591734af888b7b48dacc511432cec"
+      },
+      {
+        "name": "zip_rear_write",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "ab9717d22755ec450b878679ac8a1aa8b6e24ae7d0331ff3ebaec2869a67a839"
+      },
+      {
+        "name": "zip_rear_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "dbf997b5d33ff1ab186284388aadd4ed0ab095a2f61e145f76a75d6229985acb"
+      },
+      {
+        "name": "zip_power_component",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "7d91a553328c3c1b80e085cec0d78d34ca7a59b4f94d36674ff02bce2d6e9cdd"
+      },
+      {
+        "name": "zip_power_write",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "309f60af6ca390d8e026072bc6250d1a1ea2c5298a189ce66ef4dcde41c7989c"
+      },
+      {
+        "name": "zip_power_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bd85b475adc8bb5e1a78621faa7eb40a241c796262a6a0277816e55206ea8198"
+      },
+      {
+        "name": "zip_legacy_v2_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "31ac069a5664f9a8b482eb6c136558d0688cd5f09ad1442b68c90ee64bf5245d"
+      },
+      {
+        "name": "zip_ordinary_flank",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "55ad4e75691aaa42096d837ff880e41accab314b12bbe1d206a40318ca98f18e"
+      },
+      {
+        "name": "zip_ordinary_flank_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "c77dbf08c41ef74157958a5cf5bd3f0fedd00d75900f75a9a04c6c6440a1ca38"
+      },
+      {
+        "name": "zip_ordinary_power",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "65ac82d684887e5a4f8b271f28c2eb92b5d70a91132a886c42a7898c18730f58"
+      },
+      {
+        "name": "zip_ordinary_power_bootstrap",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bd525cd6a6d329ee293a49f74983554efcc85a3e5d0b1eff3598cd57df5fbd96"
+      },
+      {
+        "name": "zip_launcher_forward",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "0f4ddcda43d189f7ecb55a0c99a5a0bf6faec267af929cb3544c1345378ff501"
+      },
+      {
+        "name": "zip_launcher_compatibility",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "0f4ddcda43d189f7ecb55a0c99a5a0bf6faec267af929cb3544c1345378ff501"
+      },
+      {
+        "name": "zip_preview_steam_boot",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "0f4ddcda43d189f7ecb55a0c99a5a0bf6faec267af929cb3544c1345378ff501"
+      },
+      {
+        "name": "zip_preview_steam_backup_guard",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+      },
+      {
+        "name": "zip_preview_power_boot",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "0f4ddcda43d189f7ecb55a0c99a5a0bf6faec267af929cb3544c1345378ff501"
+      },
+      {
+        "name": "zip_preview_power_backup_guard",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+      },
+      {
+        "name": "zip_preview_blockade_boot",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "0f4ddcda43d189f7ecb55a0c99a5a0bf6faec267af929cb3544c1345378ff501"
+      },
+      {
+        "name": "zip_preview_blockade_backup_guard",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+      }
+    ],
+    "scope": "Bounded independent ZIP headless checks: rear-face surface/persistence, real old v2 continuation, campus covers/lever/persistence, ordinary flank and power routes/readbacks, launcher isolation and three preview backup guards. Two short Forward+ controlled visual batches inspected the rear panel/feedback and campus choice/cover/B-cut closeups; initial transparent-choice text bleed and first-frame hit-panel height were minimally fixed, with two target images accepted in the same bounded recheck. Dummy audio only: not ordinary native-route, human-experience, real-audio, compatibility-renderer visual, full-regression, low-spec, five-hour or public-release acceptance. Earlier features are retained, not all revalidated here. No user profiles or original packages changed.",
+    "public_release_approved": false
+  },
+  "review": "Independent read-only damage/compatibility/derived-hardware review and independent package-script review found no remaining blocker.",
+  "limits": {
+    "full_regression_rerun": false,
+    "normal_native_route": false,
+    "compatibility_renderer_visual": false,
+    "real_audio": false,
+    "low_spec": false,
+    "human_first_completion": false,
+    "five_hour_verified": false,
+    "public_release_approved": false,
+    "real_80_percent_positive_reviews": false,
+    "git_committed_or_pushed_this_iteration": false,
+    "user_profiles_or_original_packages_modified": false
+  },
+  "motion": {
+    "clips": 16,
+    "library_sha256": "a747a05bb010083d413ce7e8aa36a114c22ef3dd7339251493fc034a22069ec4",
+    "new_paid_motion_clips_this_iteration": 0,
+    "original_unity_package_or_arcana_included": false
+  }
+}

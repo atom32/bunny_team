@@ -88,12 +88,19 @@ func _open_choice() -> void:
 	previous_mouse_mode=Input.mouse_mode;Input.mouse_mode=Input.MOUSE_MODE_VISIBLE;actor.aim_input_captured=true
 	choice_layer=CanvasLayer.new();choice_layer.name="L02BranchChoice";add_child(choice_layer)
 	var panel:=PanelContainer.new();panel.name="PowerChoice";panel.position=Vector2(300,190);panel.custom_minimum_size=Vector2(620,240)
+	if _encounter():panel.position.y=150;panel.custom_minimum_size.y=320
 	panel.theme=SliceUI.menu_theme();choice_layer.add_child(panel)
+	if _encounter():
+		var backing:=StyleBoxFlat.new();backing.bg_color=Color("1b2426")
+		for side in [SIDE_LEFT,SIDE_TOP,SIDE_RIGHT,SIDE_BOTTOM]:backing.set_content_margin(side,14)
+		panel.add_theme_stylebox_override("panel",backing)
 	var body:=VBoxContainer.new();panel.add_child(body)
 	var text:=Label.new();text.text=tr(CampusPowerEncounter.CHOICE if _encounter() else "L-02A / Shelter communications and lighting: ON\nL-02B / Experimental equipment: ON\nDisconnect only L-02B. Shelter power will remain ON. Work takes 6s and can be interrupted.")
 	text.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;body.add_child(text)
+	if _encounter():
+		var operation:=Label.new();operation.name="PowerOperation";operation.text=tr(CampusPowerEncounter.OPERATION);operation.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;operation.add_theme_font_size_override("font_size",16);body.add_child(operation)
 	var confirm:=Button.new();confirm.name="ConfirmBranch";confirm.text=tr("DISCONNECT L-02B / KEEP L-02A")
-	if _encounter():confirm.text=tr("START ISOLATION / KEEP L-02A")
+	if _encounter():confirm.text=tr(CampusPowerEncounter.CONFIRM)
 	confirm.pressed.connect(confirm_power);body.add_child(confirm)
 	var cancel:=Button.new();cancel.name="CancelBranch";cancel.text=tr("NOT NOW / NO CHANGE");cancel.pressed.connect(_close_choice);body.add_child(cancel)
 	confirm.grab_focus()
@@ -160,3 +167,4 @@ func _refresh_visual() -> void:
 		screen.emission_enabled=not cut;screen.albedo_color=Color("101820") if cut else Color("2e6678")
 		display.material_override=screen
 		get_node("Art").visible=true # Keep the physical chassis; switch off its display.
+		if _encounter():_encounter().refresh_hardware(self)

@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-24",
+  "scope": "Optional night operation in the current full-scale campus; peaceful exploration and prior rain relay retained",
+  "native": {
+    "bank": {
+      "drive": 2,
+      "parts": 3,
+      "scrap": 0
+    },
+    "bullets": 34,
+    "checks": 43,
+    "climbs": 6,
+    "combat_frames": 221,
+    "encounters": 9,
+    "extractions": 1,
+    "failures": [],
+    "method": "Normal movement, aiming/fire/reload/E/H inputs and actual directory buttons; no placements, damage packets or mission flags injected",
+    "native": true,
+    "ticks": 34195,
+    "walked_m": 4077.14692958724
+  },
+  "headless": {
+    "bank": {
+      "drive": 2,
+      "parts": 3,
+      "scrap": 0
+    },
+    "bullets": 35,
+    "checks": 43,
+    "climbs": 6,
+    "combat_frames": 212,
+    "encounters": 9,
+    "extractions": 1,
+    "failures": [],
+    "method": "Normal movement, aiming/fire/reload/E/H inputs and actual directory buttons; no placements, damage packets or mission flags injected",
+    "native": false,
+    "ticks": 34197,
+    "walked_m": 4077.48643622454
+  },
+  "component_checks": {
+    "headless": 71,
+    "forward_plus": 71,
+    "compatibility": 71
+  },
+  "finite_enemies": 9,
+  "breakables": 6,
+  "mandatory_stages": 4,
+  "optional_cache": "swim_plant",
+  "legacy_regressions": {
+    "rain_relay_full": 48,
+    "rain_relay_unit": 83,
+    "space_state": 44,
+    "art_headless": 39,
+    "entry_headless": 18,
+    "ui_headless": 26,
+    "layout_failures": 0,
+    "source_offline": 5,
+    "original_night_test": "PASS"
+  },
+  "physics_signature": "e61abd5d0c1ef235520b5b5b6429cd8220a8b13163d72d62d275f0b480daefe0",
+  "limitations": [
+    "Fictional inspection robots, not a real campus incident",
+    "Designed interiors, not surveyed floor plans",
+    "Finite authored encounters, not unlimited or whole-campus dynamic spawning",
+    "Only marked crates/wood barricade are destructible",
+    "Independent extraction ledger; no legacy rewards, trading, crafting or permanent upgrades",
+    "Mid-sortie progress does not resume across process exits",
+    "Compatibility verified component/render suite only, not full 4km tour",
+    "Fixed-60-Hz automated input, not human playtime or minimum-spec certification",
+    "Dummy audio; no audio certification",
+    "No new Windows export"
+  ],
+  "component_scene": "res://tests/campus_night_operation_test.tscn"
+}

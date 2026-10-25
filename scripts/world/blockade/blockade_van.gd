@@ -9,6 +9,8 @@ enum Phase { IDLE, WARNING, BURST, VENT, WRECK }
 const DURATIONS := [1.0, 1.5, 0.22, 2.3, 0.0]
 const RANGE := 27.0
 const DAMAGE := 14.0
+const REAR_CENTER := Vector3(0,1.25,-3.5)
+const REAR_HALF := Vector2(1.3,.7)
 
 var phase := Phase.IDLE
 var phase_remaining := 1.0
@@ -22,6 +24,7 @@ var broadcasts := 0
 func _ready() -> void:
 	super._ready()
 	add_to_group("hostile_emplacements")
+	if has_rear_radiator(): _build_rear_radiator()
 	GameLanguage.language_changed.connect(refresh)
 	refresh()
 
@@ -101,15 +104,36 @@ func _fire_locked_shot() -> void:
 	var gain := sensor.hear(origin, 26, &"gunshot") if sensor else 0.0
 	if gain > 0: AudioDirector.play_sfx(&"enemy_fire", linear_to_db(gain))
 
+func has_rear_radiator() -> bool:
+	var session := _session()
+	return session != null and session.blockade.get("version",0)>=3
+
+func _build_rear_radiator() -> void:
+	# Render-only hardware matches the existing chassis's rear collision face.
+	# No new hitbox, map signature, activation flag or saved node state.
+	VisualFactory.box(self,Vector3(REAR_HALF.x*2,REAR_HALF.y*2,.03),REAR_CENTER+Vector3(0,0,-.015),Color("3f7982"),"RearRadiator")
+	for i in 9:
+		VisualFactory.box(self,Vector3(2.5,.055,.035),Vector3(0,.65+i*.15,-3.54),Color("83cbd0"),"RearFin%d"%i)
+	var label := Label3D.new();label.name="RearLabel";label.position=Vector3(0,2.25,-3.65)
+	label.font=load("res://assets/fonts/noto_sans_sc/NotoSansSC.ttf");label.font_size=28;label.pixel_size=.014
+	label.billboard=BaseMaterial3D.BILLBOARD_ENABLED;label.outline_size=4;add_child(label)
+
+func rear_hit(packet: DamagePacket) -> bool:
+	if not has_rear_radiator():return false
+	var at := to_local(packet.hit_position)
+	var normal := global_basis.inverse()*packet.hit_normal
+	return normal.z<-.95 and absf(at.z-REAR_CENTER.z)<.035 and absf(at.x)<=REAR_HALF.x and absf(at.y-REAR_CENTER.y)<=REAR_HALF.y
+
 func receive_damage(packet: DamagePacket) -> float:
 	if destroyed or packet.source_faction != &"player": return 0.0
 	# Armor is not invulnerability; spending ammunition blindly is possible but costly.
 	var damage := maxf(packet.base_damage, packet.structure_damage)
-	if phase != Phase.VENT: damage *= .18
+	var exposed := phase == Phase.VENT or rear_hit(packet)
+	if not exposed: damage *= .18
 	if damage <= 0: return 0.0
 	var applied := minf(current_structure_health, damage)
 	current_structure_health = maxf(0, current_structure_health - applied)
-	damage_observed.emit(applied,phase == Phase.VENT)
+	damage_observed.emit(applied,exposed)
 	if current_structure_health == 0: _destroy()
 	refresh()
 	return applied
@@ -142,6 +166,9 @@ func _destroy() -> void:
 
 func refresh() -> void:
 	if not is_node_ready(): return
+	if has_node("RearLabel"):
+		get_node("RearLabel").text=tr("REAR RADIATOR")
+		get_node("RearLabel").visible=not destroyed
 	# The disabled vehicle remains physical cover. No disappearing chassis or new kill credit.
 	visual.visible = true
 	collision_shape.set_deferred("disabled", false)

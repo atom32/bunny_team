@@ -3,11 +3,25 @@ extends Node3D
 ## Props, gestures and dialogue are presentation only: no rewards or new save fields.
 const IDLE := preload("res://scripts/presentation/slice/hideout_idle.gd")
 const INTRO := [
-	"Tang Kui, on the radio: Not the big wrench. Put it down. The little one.",
-	"Shen, outside: She just got home. Let her have some water first.",
-	"Tang Kui: It is one screw.\nSu Mi: Then why are there two on the bench?",
+	"Tang Kui, on the radio: When you get home, make a noise.\nPlayer: Squeak.",
+	"Tang Kui: Not funny.\nPlayer: I am back. Can you stop ordering me around?",
+	"Su Mi: She has counted those screws four times.\nTang Kui: Three.",
+	"Tang Kui: All I heard was shooting. Then nothing.\nPlayer: ...\nTang Kui: The little screwdriver is by your hand.",
 ]
-const ENDING := "Shen: If it is fixed, come and eat.\nTang Kui: Give her another minute.\nSu Mi: You have packed the tools away twice.\nTang Kui: ...She came back. Let me fuss a little."
+const TAP_ENDING := [
+	"Tang Kui: Heard you. Do not wear a hole in the bench.",
+	"Player: Next time I knock twice, you open the door.",
+	"Tang Kui: I was already at the door.",
+	"Shen: I will set another place.",
+	"Tang Kui: Two. I have not eaten either.",
+]
+const TIDY_ENDING := [
+	"Player: The spare is back in its tray.",
+	"Tang Kui: I was not talking to the screw.",
+	"Shen: Dinner. Both of you.",
+	"Tang Kui: Leave her door open.\nSu Mi: It never closed.",
+]
+const KNOCK_TIMES := [1.2, 2.2]
 const BENCH := Vector3(-1.38, 0, -0.6)
 const WORK_HAND := Vector3(-1.29, 1.08, -0.94)
 const BRACE_HAND := Vector3(-1.62, 1.03, -0.95)
@@ -29,6 +43,7 @@ var phase := "approach"
 var phase_elapsed := 0.0
 var line_index := 0
 var branch := ""
+var knock_count := 0
 var leaving := false
 var eligible := false
 var right_target := WORK_HAND
@@ -131,7 +146,7 @@ func _build_ui() -> void:
 	choices.add_theme_constant_override("separation",12)
 	screen.add_child(choices)
 	for id in ["tidy", "tap"]:
-		var button := SliceUI.button(choices, "PUT THE SPARE BACK" if id == "tidy" else "TAP THE EXTRA SCREW", Vector2.ZERO, Vector2(350,52), func(): choose_spare(id))
+		var button := SliceUI.button(choices, "PUT THE SPARE BACK" if id == "tidy" else "KNOCK TWICE WITH THE SPARE", Vector2.ZERO, Vector2(350,52), func(): choose_spare(id))
 		button.name = "Choice" + id.capitalize()
 		button.custom_minimum_size = Vector2(350,52)
 	exits = HBoxContainer.new()
@@ -148,16 +163,17 @@ func _refresh_language() -> void:
 	status.text = tr("ONE SPARE SCREW / BACK AT HOME") if eligible else tr("FIRST UPGRADE NOT INSTALLED")
 	choices.visible = phase == "choice"
 	exits.visible = phase == "done"
-	next_button.visible = phase == "intro"
+	next_button.visible = phase in ["intro", "ending"]
 	if phase == "locked": dialogue.text = tr("Bring a core home and install the first upgrade at the workshop. This scene gives no materials or upgrade.")
 	elif phase == "approach": dialogue.text = tr("The radio has been calling since you reached the door.")
 	elif phase == "intro": dialogue.text = tr(INTRO[line_index])
 	elif phase == "choice": dialogue.text = tr("One spare screw. A very quiet radio.")
-	elif phase in ["gesture", "fit"]:
-		dialogue.text = tr("Tang Kui: Spare. It is a spare!\nSu Mi: You said that last time. Then the cupboard door fell off." if branch == "tap" else "Tang Kui: Thank you. At least somebody is helping.\nSu Mi: I have not even said anything yet.")
-	elif phase == "done": dialogue.text = tr(ENDING)
+	elif phase == "gesture": dialogue.text = tr("You lift the spare screw." if branch == "tap" else "You slide the spare into its tray.")
+	elif phase == "fit": dialogue.text = tr("Tang Kui: ...The little screwdriver.\nPlayer: I know.")
+	elif phase == "ending": dialogue.text = tr(_ending_lines()[line_index])
+	elif phase == "done": dialogue.text = tr(_ending_lines()[-1])
 	for button in screen.find_children("*", "Button", true, false):
-		var key: String = {"SkipWorkshopMoment":"RETURN TO WORKSHOP", "NextWorkshopLine":"NEXT LINE", "ChoiceTidy":"PUT THE SPARE BACK", "ChoiceTap":"TAP THE EXTRA SCREW", "NextRequest":"LOOK AT THE NEXT REQUEST", "RestAfterFitting":"TAKE A BREATHER", "ReplayFitting":"REPLAY THE FITTING"}.get(button.name, "")
+		var key: String = {"SkipWorkshopMoment":"RETURN TO WORKSHOP", "NextWorkshopLine":"NEXT LINE", "ChoiceTidy":"PUT THE SPARE BACK", "ChoiceTap":"KNOCK TWICE WITH THE SPARE", "NextRequest":"LOOK AT THE NEXT REQUEST", "RestAfterFitting":"TAKE A BREATHER", "ReplayFitting":"REPLAY THE FITTING"}.get(button.name, "")
 		if not key.is_empty(): button.text = tr(key)
 
 func _enter(value: String) -> void:
@@ -166,22 +182,29 @@ func _enter(value: String) -> void:
 	_refresh_language()
 	if phase == "choice": choices.get_child(0).grab_focus()
 	elif phase == "done": exits.get_child(0).grab_focus()
+	elif phase in ["intro", "ending"]: next_button.grab_focus()
+
+func _ending_lines() -> Array:
+	return TAP_ENDING if branch == "tap" else TIDY_ENDING
 
 func advance_line() -> void:
-	if phase != "intro" or leaving: return
+	if phase not in ["intro", "ending"] or leaving: return
 	line_index += 1
-	if line_index >= INTRO.size(): _enter("choice")
-	else: _enter("intro")
+	if phase == "intro" and line_index >= INTRO.size(): _enter("choice")
+	elif phase == "ending" and line_index >= _ending_lines().size(): _enter("done")
+	else: _refresh_language()
 
 func choose_spare(value: String) -> void:
 	if phase != "choice" or value not in ["tidy", "tap"] or leaving: return
 	branch = value
+	knock_count = 0
 	_enter("gesture")
 
 func replay() -> void:
 	if phase != "done" or leaving: return
 	line_index = 0
 	branch = ""
+	knock_count = 0
 	bolt.position = SPARE
 	lamp.material_override.albedo_color = Color("b65b2c")
 	_enter("intro")
@@ -195,12 +218,16 @@ func _process(delta: float) -> void:
 	if leaving: return
 	motion._process(delta)
 	phase_elapsed += delta
+	if phase == "gesture" and branch == "tap":
+		while knock_count < KNOCK_TIMES.size() and phase_elapsed >= KNOCK_TIMES[knock_count]:
+			AudioDirector.play_sfx(&"workshop_knock", -12.0)
+			knock_count += 1
 	if phase == "approach" and motion.phase == "idle": _enter("intro")
-	elif phase == "intro" and phase_elapsed >= 4.0: advance_line()
 	elif phase == "gesture" and phase_elapsed >= 3.6: _enter("fit")
 	elif phase == "fit" and phase_elapsed >= 7.0:
 		lamp.material_override.albedo_color = Color("64a98f")
-		_enter("done")
+		line_index = 0
+		_enter("ending")
 	tool.visible = phase == "fit"
 	if phase in ["choice", "gesture", "fit"]: _pose_hands()
 	_update_camera(delta)
@@ -212,7 +239,12 @@ func _pose_hands() -> void:
 		weight = smoothstep(0.0,0.5,phase_elapsed) * (1.0-smoothstep(3.0,3.6,phase_elapsed))
 		var travel := smoothstep(0.5,3.0,phase_elapsed)
 		right = SPARE.lerp(TRAY if branch == "tidy" else SPARE,travel) + Vector3(0,0.19,0)
-		right.y += sin(travel*PI) * (0.28 if branch == "tidy" else absf(sin(phase_elapsed*7.0))*0.05)
+		if branch == "tidy": right.y += sin(travel*PI) * 0.28
+		else:
+			# Two separate lifts, each landing exactly on the sound threshold.
+			for contact in KNOCK_TIMES:
+				var lift: float = (phase_elapsed - (contact - 0.5)) / 0.5
+				if lift > 0.0 and lift < 1.0: right.y += sin(lift*PI) * 0.06
 		if phase_elapsed >= 0.5: bolt.position = right - Vector3(0,0.19,0)
 	elif phase == "fit":
 		weight = smoothstep(0.0,0.6,phase_elapsed) * (1.0-smoothstep(6.2,7.0,phase_elapsed))

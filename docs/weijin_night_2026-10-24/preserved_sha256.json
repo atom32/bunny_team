@@ -1,0 +1,11 @@
+{
+  "assets/geography/weijin/campus.json": "0a19682fe6f172fd56146bd98225e53a0fac2ab790f05c380606afbd424509c8",
+  "assets/geography/weijin/SOURCE.json": "f900acb889b57bcf088a2866aa73d391e3bf759e9aaf666de18ed47d2dfdea61",
+  "scenes/areas/campus/static_world.tscn": "d894f1c59278d41b522ebcdbe04e7ce3cc942da59764c6bbf861f97a6a49bde7",
+  "scripts/world/streets/street_district.gd": "d9345d6938d2372456864a9df097461a325f1a27ceea9c2798c775fd849addc2",
+  "scripts/systems/sortie_checkpoint.gd": "9da9350634640bc615e89abcb2d5623a766a2cc5d97f497e9233c6946dce4101",
+  "scenes/areas/campus_geography/world.tscn": "de1cce3dd0f93a80eff7381b7a8565c3d81d6214aeed8eec55ba9575004674f7",
+  "assets/geography/weijin/PHYSICS_BASELINE.json": "929f6f53c058fc3213ef73fff6d9c6df16947246fbb9b81566300f14045ab539",
+  "tests/campus_night_test.gd": "781ab85f09fd5fda484268f2c4aa1ff22785f4f1085945f4ba4260d5bfa3501e",
+  "tests/campus_night_test.tscn": "8e23f1006281c5f3c8ec8988d6d1469ac7b7403f77bb2a19e75d6c88fe6f1a6c"
+}

@@ -1,0 +1,432 @@
+{
+  "scope": "Player-facing desktop UI remake; source verification, not a release package or human playtest",
+  "headless_suites": [
+    {
+      "test": "remake_completion_ui_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "REMAKE_COMPLETION_UI_TEST: PASS (119 checks; native input: false)"
+      ]
+    },
+    {
+      "test": "debrief_guidance_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "DEBRIEF_GUIDANCE_TEST: PASS (778 checks; controlled outcomes, not earned play)"
+      ]
+    },
+    {
+      "test": "carried_backpack_ui_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "CARRIED_BACKPACK_UI_TEST: PASS (98 checks)"
+      ]
+    },
+    {
+      "test": "base_manual_ui_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "BASE_MANUAL_UI_TEST: PASS (77 checks; native mouse input: false)"
+      ]
+    },
+    {
+      "test": "loadout_remake_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "LOADOUT_REMAKE_TEST: PASS (50 checks; native clicks: false)"
+      ]
+    },
+    {
+      "test": "ui_remake_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "UI_REMAKE_TEST: PASS (26 checks; native input: false)"
+      ]
+    },
+    {
+      "test": "ammo_packing_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "AMMO_PACKING_TEST: PASS (90 checks)"
+      ]
+    },
+    {
+      "test": "portable_alarm_packing_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "PORTABLE_ALARM_PACKING_TEST: PASS (78 checks; controlled fixtures)"
+      ]
+    },
+    {
+      "test": "campus_packing_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "CAMPUS_PACKING_TEST: PASS (44 checks; controlled fixtures, not earned gameplay)"
+      ]
+    },
+    {
+      "test": "campaign_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "CAMPAIGN_TEST: PASS (187 checks)"
+      ]
+    },
+    {
+      "test": "cargo_exchange_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "CARGO_EXCHANGE_TEST: PASS (23 checks)"
+      ]
+    },
+    {
+      "test": "weapon_switching_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "WEAPON_SWITCHING_TEST: PASS"
+      ]
+    },
+    {
+      "test": "result_return_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "RESULT_RETURN_TEST: PASS"
+      ]
+    },
+    {
+      "test": "p0_recovery_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "P0_RECOVERY_TEST: PASS"
+      ]
+    },
+    {
+      "test": "p0_flow_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "P0_FLOW_TEST: PASS"
+      ]
+    },
+    {
+      "test": "sortie_failure_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "SORTIE_FAILURE_TEST: PASS"
+      ]
+    },
+    {
+      "test": "sortie_checkpoint_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "SORTIE_CHECKPOINT_TEST: PASS (125 checks)"
+      ]
+    },
+    {
+      "test": "sortie_outcome_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "SORTIE_OUTCOME_TEST: PASS"
+      ]
+    },
+    {
+      "test": "feedback_entry_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "FEEDBACK_ENTRY_TEST: PASS (17 checks; controlled UI callbacks, not native input)"
+      ]
+    },
+    {
+      "test": "playtest_feedback_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "PLAYTEST_FEEDBACK_TEST: PASS (32 checks; actual controls, no clipboard write)"
+      ]
+    },
+    {
+      "test": "playtest_report_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "PLAYTEST_REPORT_TEST: PASS (124 checks; controlled local reporting)"
+      ]
+    },
+    {
+      "test": "control_settings_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "CONTROL_SETTINGS_TEST: PASS (50 checks)"
+      ]
+    },
+    {
+      "test": "combat_feedback_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "COMBAT_FEEDBACK_TEST: PASS (55 checks)"
+      ]
+    },
+    {
+      "test": "sortie_guidance_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "SORTIE_GUIDANCE_TEST: PASS (240 checks; native mouse: false)"
+      ]
+    },
+    {
+      "test": "campus_power_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "CAMPUS_POWER_TEST: PASS (81 checks)"
+      ]
+    },
+    {
+      "test": "rescue_result_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "RESCUE_RESULT_TEST: PASS (44 checks)"
+      ]
+    },
+    {
+      "test": "bucket_result_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "BUCKET_RESULT_TEST: PASS (16 checks)"
+      ]
+    },
+    {
+      "test": "training_room_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "TRAINING_ROOM_TEST: PASS / 170 checks"
+      ]
+    },
+    {
+      "test": "homecoming_finale_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "HOMECOMING_FINALE_TEST: PASS (13 checks)"
+      ]
+    },
+    {
+      "test": "workshop_moment_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "WORKSHOP_MOMENT_TEST: PASS (96 checks)"
+      ]
+    },
+    {
+      "test": "hud_layout_probe",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "HUD_LAYOUT_TEST failures=[]"
+      ]
+    },
+    {
+      "test": "medical_treatment_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "MEDICAL_TREATMENT_TEST: PASS (68 checks)"
+      ]
+    },
+    {
+      "test": "fresh_entry_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "FRESH_ENTRY_TEST PASS"
+      ]
+    },
+    {
+      "test": "first_mission_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "FIRST_MISSION_TEST PASS"
+      ]
+    },
+    {
+      "test": "campus_route_input_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "CAMPUS_ROUTE_INPUT: Q02 fixture; AI disabled; normal input/controller/collision, no player teleport or invulnerability",
+        "CAMPUS_ROUTE_INPUT walked_meters=504.469048405997 motion_states={ \"TakeGun\": true, \"Run\": true, \"Idle\": true, \"WalkRelaxed\": true, \"WalkBL\": true, \"WalkBack\": true, \"WalkBR\": true } precision_states={ \"WalkBL\": true, \"WalkBack\": true, \"WalkBR\": true }",
+        "CAMPUS_ROUTE_INPUT_TEST: PASS"
+      ]
+    }
+  ],
+  "native_runs": [
+    {
+      "test": "remake_completion_ui_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "REMAKE_COMPLETION_UI_TEST: PASS (137 checks; native input: true)"
+      ]
+    },
+    {
+      "test": "carried_backpack_ui_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "CARRIED_BACKPACK_UI_TEST: PASS (99 checks)"
+      ]
+    },
+    {
+      "test": "debrief_guidance_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "DEBRIEF_GUIDANCE_TEST: PASS (786 checks; controlled outcomes, not earned play)"
+      ]
+    },
+    {
+      "test": "training_room_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "TRAINING_ROOM_TEST: PASS / 182 checks"
+      ]
+    },
+    {
+      "test": "homecoming_finale_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "HOMECOMING_FINALE_TEST: PASS (15 checks)"
+      ]
+    },
+    {
+      "test": "workshop_moment_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "WORKSHOP_MOMENT_TEST: PASS (109 checks)"
+      ]
+    },
+    {
+      "test": "first_sortie_run",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "FIRST_SORTIE_RUN: PASS (84 checks; shots=6)",
+        "NORMAL_START_TEST: PASS (84 checks)"
+      ]
+    },
+    {
+      "test": "first_sortie_run_read",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "FIRST_SORTIE_RUN: PASS (3 checks; independent read)"
+      ]
+    },
+    {
+      "test": "remake_completion_ui_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "REMAKE_COMPLETION_UI_TEST: PASS (150 checks; native input: true)"
+      ]
+    },
+    {
+      "test": "carried_backpack_ui_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "CARRIED_BACKPACK_UI_TEST: PASS (101 checks)"
+      ]
+    },
+    {
+      "test": "training_room_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "TRAINING_ROOM_TEST: PASS / 182 checks"
+      ]
+    },
+    {
+      "test": "homecoming_finale_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "HOMECOMING_FINALE_TEST: PASS (15 checks)"
+      ]
+    },
+    {
+      "test": "workshop_moment_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "WORKSHOP_MOMENT_TEST: PASS (109 checks)"
+      ]
+    },
+    {
+      "test": "base_manual_ui_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "BASE_MANUAL_UI_TEST: PASS (77 checks; native mouse input: true)"
+      ]
+    },
+    {
+      "test": "loadout_remake_test",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "LOADOUT_REMAKE_TEST: PASS (50 checks; native clicks: true)"
+      ]
+    },
+    {
+      "test": "release_audit_native.log",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "REMAKE_COMPLETION_UI_TEST: PASS (154 checks; native input: true)"
+      ]
+    },
+    {
+      "test": "final_guidance_native.log",
+      "exit": 0,
+      "script_errors": false,
+      "summary": [
+        "SORTIE_GUIDANCE_TEST: PASS (264 checks; native mouse: true)"
+      ]
+    }
+  ],
+  "translation_build_tests": 3,
+  "external_full_logs": "D:\\tmp\\bunny_ui_remake_full_20261023",
+  "test_amendments": [
+    "The 65s supplemental route-run timeout was rerun with fixed FPS and a longer bound. A stale Walk-only assertion was replaced with observation of actual directional stride states during held precision input; no motion code changed.",
+    "Briefing geometry assertions now inspect the real ScrollContainer viewport and its global separation from the contact action, rather than assuming Label and Button have the same parent."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "checks": 121,
+  "climbs": 18,
+  "failures": [],
+  "method": "Normal movement, E door/landing transfers, actual O directory clicks and M maps; no actor fixture relocations",
+  "native": true,
+  "ticks": 66734,
+  "visited": [
+    "library",
+    "library_reading",
+    "main_hall",
+    "main_teaching",
+    "activity",
+    "activity_stage",
+    "lecture",
+    "teaching",
+    "teaching_lab",
+    "dorm_north",
+    "dorm_rooms",
+    "dorm_west",
+    "dorm_west_rooms",
+    "canteen_north",
+    "canteen_prep",
+    "canteen_west",
+    "swim",
+    "swim_plant",
+    "gym",
+    "network",
+    "network_control"
+  ],
+  "walked_m": 8314.13366903178
+}

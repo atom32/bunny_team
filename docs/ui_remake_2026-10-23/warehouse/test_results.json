@@ -1,0 +1,66 @@
+[
+  {
+    "test": "loadout_remake_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "LOADOUT_REMAKE_TEST: PASS (50 checks; native clicks: false)"
+    ]
+  },
+  {
+    "test": "ammo_packing_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "AMMO_PACKING_TEST: PASS (90 checks)"
+    ]
+  },
+  {
+    "test": "portable_alarm_packing_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "PORTABLE_ALARM_PACKING_TEST: PASS (78 checks; controlled fixtures)"
+    ]
+  },
+  {
+    "test": "stash_rotation_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "STASH_ROTATION_TEST: PASS (136 checks)"
+    ]
+  },
+  {
+    "test": "base_manual_ui_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "BASE_MANUAL_UI_TEST: PASS (77 checks; native mouse input: false)"
+    ]
+  },
+  {
+    "test": "first_sortie_readiness_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "FIRST_SORTIE_READINESS_TEST: PASS (28 checks; controlled fixtures)"
+    ]
+  },
+  {
+    "test": "loadout_decision_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "LOADOUT_DECISION_TEST: PASS"
+    ]
+  },
+  {
+    "test": "ui_remake_test",
+    "exit": 0,
+    "script_errors": false,
+    "summary": [
+      "UI_REMAKE_TEST: PASS (26 checks; native input: false)"
+    ]
+  }
+]

@@ -27,6 +27,7 @@ func controls(destination: Vector3) -> void:
 	var nearest: EnemyController
 	var distance:=24.0
 	for enemy in battle.enemy_container.get_children():
+		if enemy is MaintenanceAlarmCarrier: observe_caller(enemy)
 		if not enemy is EnemyController or enemy.is_dead or not battle.player_visibility.can_see_enemy(enemy):continue
 		var separation:=player.global_position.distance_to(enemy.global_position)
 		if separation>=distance:continue
@@ -37,6 +38,9 @@ func controls(destination: Vector3) -> void:
 		aim=player.global_position.direction_to(nearest.global_position);aim.y=0;aim=aim.normalized();Input.action_press("fire")
 	_axis("aim_left","aim_right",aim.x);_axis("aim_up","aim_down",aim.z)
 	if int(player.get_weapon_status(LoadoutState.SLOT_WEAPON_PRIMARY).get("magazine",0))==0 and player.can_reload():player.reload_weapon()
+
+func observe_caller(enemy: MaintenanceAlarmCarrier) -> void:
+	evidence["alarm_carrier"]={"spawn_key":enemy.get_meta("spawn_key"),"calls":enemy.calls_emitted,"interrupts":enemy.call_interrupts,"dead":enemy.is_dead}
 
 func walk(target: Vector3, escort:=false) -> bool:
 	var map: RID=battle.area_root.get_node("Navigation").get_navigation_map()
@@ -134,6 +138,10 @@ func _run() -> void:
 	await _click(_button("CONFIRM DEPLOYMENT"))
 	if not await _wait_scene("res://scenes/battle/battle.tscn"):check(false,"ordinary deployment reaches new map");finish();return
 	battle=tree.current_scene;battle.player.weapon_fired.connect(func(_recoil: float):fired+=1)
+	for enemy in battle.enemy_container.get_children():
+		if enemy is MaintenanceAlarmCarrier:
+			observe_caller(enemy)
+			enemy.died.connect(func(dead):observe_caller(dead))
 	for tick in 30:await tree.physics_frame
 	await _capture("02_arrival")
 	if not await work("Bypass"):finish();return

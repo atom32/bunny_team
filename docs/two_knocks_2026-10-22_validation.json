@@ -1,0 +1,534 @@
+{
+  "feature": "workshop_two_knocks_or_tidy",
+  "date": "2026-10-22",
+  "source_checks": [
+    {
+      "name": "workshop",
+      "pass_": true,
+      "exit": 0,
+      "log_sha256": "2edc4e91238c9e105d29bd301d91aa18248dd9c159df491ea5e4ea61e6cbd869"
+    },
+    {
+      "name": "first_sortie",
+      "pass_": true,
+      "exit": 0,
+      "log_sha256": "a23d0b1bba722bf2c4b028177bc263e6d0115d8a49700b8f5444d076f82230f0"
+    },
+    {
+      "name": "first_sortie_read",
+      "pass_": true,
+      "exit": 0,
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    },
+    {
+      "name": "salvage",
+      "pass_": true,
+      "exit": 0,
+      "log_sha256": "c7a75593a0db5f32defdf4247058f4ccac9161bc56f0cbab23db2335c457de62"
+    },
+    {
+      "name": "salvage_read",
+      "pass_": true,
+      "exit": 0,
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    }
+  ],
+  "accepted_final_source_sha256": {
+    "scripts/presentation/slice/workshop_moment.gd": "df3e59bbdd96d9b869cb029ebb2a25d4e73e84d64be77704b651bc09f5faf0cb",
+    "scripts/systems/audio_director.gd": "24f79009e23767e4ac91f1615a998b96ced28db9ae4466eef8a6c137d9da6a2d",
+    "localization/zh_CN.json": "5e5304e070cf34b5efc88d67cb52ceac833e1912d30da40c37e32c3e4aa2e3f9",
+    "localization/zh_CN.tres": "9bbf2cc76acfc4d1d0ab3b98a8802e07c3ad28cac0ba65430b3cc52e26fb5cf7",
+    "tests/workshop_moment_test.gd": "a88dff439e2e2fb27d1b9629ea7434f7fe38365e521fa19e66eef6c539d71938",
+    "tests/first_sortie_run.gd": "21036c2612e70ea65b5d663273c6287933b2f9a5d3dc10cfba3a60d768935c99"
+  },
+  "source_cold_import": {
+    "path": "D:\\tmp\\bunny_two_knocks_20261022_dev01\\results.json",
+    "localization_tests_passed": true,
+    "import_passed": true,
+    "known_fbx_utf8_warnings": 2
+  },
+  "build_checks": [
+    {
+      "name": "cold_import",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\project",
+        "--editor",
+        "--import"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x10)",
+        "WARNING: FBX: ufbx warning: Bad UTF-8 string (x9)"
+      ],
+      "log_sha256": "961d5978f747e61628b797822886a43eac7b094a9189c259a5fa3c2e57e0525a"
+    },
+    {
+      "name": "campaign_return_offsets_unit",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\project\\tests\\test_campaign_return_offsets.py",
+        "-v"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "e4bc30c1f236ec8de6730dbc4e8b5fa4354e54362f76132e8b7e9be3de4b28a9"
+    },
+    {
+      "name": "runtime_export_unit",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\project\\tests\\test_runtime_export.py",
+        "-v"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "85522b6d948cda8d51f8a2b44c8be4d96ae5113aa000777de501aa2544df43e6"
+    },
+    {
+      "name": "runtime_dependency_catalog",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\project",
+        "--script",
+        "res://tools/runtime_dependency_catalog.gd"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "6b5fc1a4ae8b28c7e3f63a242d3b5ccdef863f6d9e1e2be5d9c2cff278b9ec03"
+    },
+    {
+      "name": "runtime_export_inventory",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\project\\tools\\runtime_export.py",
+        "--project",
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\project",
+        "--catalog",
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\runtime_dependency_catalog.json",
+        "--output",
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\runtime_export_inventory.json",
+        "--preset",
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\project\\export_presets.cfg"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "4a4e3749d3edb0e9509c53154f16039d05af94e87e2329dd510d2159a055e168"
+    },
+    {
+      "name": "export_release",
+      "command": [
+        "E:\\Godot\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\project",
+        "--export-release",
+        "Windows Local Prototype",
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "46e1c6c5563b6f4db1402611712794e7387d07d88e1114693b82d8c0b1dcebc5"
+    },
+    {
+      "name": "quick_inventory",
+      "command": [
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "inventory"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "f8b52728c1cf6efd4cfa9ea0eafe32a947ab26f0fcecbd0b7b497a9ee4789c9f"
+    },
+    {
+      "name": "quick_motion",
+      "command": [
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "motion"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "9ef51dabe94647c24a0b26a20d217cea3369fda960a885b8fb3c76c991978c9b"
+    },
+    {
+      "name": "quick_boot",
+      "command": [
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "boot"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "02c382c4abc461584304bc1ea2ce1788b15fdb3b2af3b665f22e34868ec3f4ea"
+    },
+    {
+      "name": "quick_write",
+      "command": [
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "write"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "9de40044a796f6d1f98a6a62c0751119a57271c7c2ba2c1b3554e1d6cde94c19"
+    },
+    {
+      "name": "quick_read",
+      "command": [
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "733b56049f7f58d66de5db14da7d1be234336d77169f0a0c99a4e6d1bf4eec8e"
+    },
+    {
+      "name": "quick_legacy",
+      "command": [
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "legacy"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "623787b25307bdca10aea91f1d1ab27fca856a3fcd6c1d6750b202133c4fdba8"
+    },
+    {
+      "name": "quick_recovery",
+      "command": [
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "recovery"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "d052449fa6832ce38a1a702d02aef722438745468ed64b9df9308fe67eb117a8"
+    },
+    {
+      "name": "quick_first_sortie",
+      "command": [
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "first_sortie"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "688e502db16a5fae42806d3540f8fcdd6cbc4838d82da8e06996b9b9e4821ccd"
+    },
+    {
+      "name": "quick_first_sortie_read",
+      "command": [
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "first_sortie",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+    },
+    {
+      "name": "quick_fitting_kit",
+      "command": [
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "fitting_kit"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "40ac639dbf1efceb7919402d143006db6beab983398ed5054a8569ccfdc45ee4"
+    },
+    {
+      "name": "quick_fitting_kit_read",
+      "command": [
+        "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "--headless",
+        "--audio-driver",
+        "Dummy",
+        "--fixed-fps",
+        "60",
+        "--",
+        "--local-qa",
+        "fitting_kit",
+        "--read"
+      ],
+      "exit": 0,
+      "pass": true,
+      "errors": [],
+      "warnings": [],
+      "log_sha256": "99d1ce0209e45952db3f24fafd756087c6b1d5ebf7a804ab1ead138e0a0b1ad0"
+    }
+  ],
+  "independent_zip": {
+    "pass": true,
+    "archive": "D:\\tmp\\bunny_two_knocks_windows_20261022_01\\NeonBastion_20261022_two_knocks_LOCAL_ONLY_windows_x64.zip",
+    "bytes": 246884799,
+    "sha256": "b406484b33576dc6c32a183507f628ea3ce4b9f7919bc317428e0c818921fb36",
+    "extracted_to": "D:\\tmp\\小兔试玩 返营敲两下 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD",
+    "files": {
+      "ASSET_LICENSE_MATERIALS.zip": {
+        "bytes": 5988171,
+        "sha256": "2ce324f5cbe61eb93519b79d0274d7d40b57688f25c6198abb308170572bae33"
+      },
+      "ENGINE_LICENSES.txt": {
+        "bytes": 114181,
+        "sha256": "472c1fbefc38653aa0fe5eceb9d4c0c8cbb5c889e5c917bcc3728edfe4b1f2ad"
+      },
+      "LOCAL_ONLY.txt": {
+        "bytes": 542,
+        "sha256": "971c31ca46c922fb159f2fa3d5381496a096088884c1ba5a55810f9116f66f96"
+      },
+      "NeonBastion.exe": {
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      },
+      "NeonBastion.pck": {
+        "bytes": 260280536,
+        "sha256": "dd565c4f3608f0a123adec1bb9ba6e6ec830315deb0d01b323a81642731855ea"
+      },
+      "runtime_inventory.json": {
+        "bytes": 169844,
+        "sha256": "a4b066fc54b711065168377dde39d7c424068ce9c70b6775ea1df79ed8873b39"
+      },
+      "兼容模式.cmd": {
+        "bytes": 204,
+        "sha256": "6851d578daaf8628535af021be14b1088090c4f3ec257a685b810cfcde72586f"
+      },
+      "开始游戏.cmd": {
+        "bytes": 200,
+        "sha256": "f52079e040acb6369a9245c63b12a7639d8769bbd3c7007fa10b5e6aea4de583"
+      },
+      "试玩说明.txt": {
+        "bytes": 3067,
+        "sha256": "6a58ef3e627f3f422860fe77de4856bdb94e00ff53f8c0cfe6836ec1a05e277b"
+      },
+      "预览蒸汽救援.cmd": {
+        "bytes": 634,
+        "sha256": "7d50a7add4a61f9d4078aa790887d210e2969f8bc6ba6d6e02c5b37d2c1d4a5e"
+      },
+      "preview_seed/profile.json": {
+        "bytes": 3676,
+        "sha256": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f"
+      }
+    },
+    "matching_original_release_template": true,
+    "all_extracted_files_match": true,
+    "companion_license_count": 31,
+    "motion_clips": 16,
+    "checks": [
+      {
+        "name": "zip_inventory",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "94983c7382026dd4cfd8d1eadd53c5f4bc73303e29d04d8c57c9a685f5cca6b1"
+      },
+      {
+        "name": "zip_motion",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "9b526130ac4d4ad0f062656237a78afe1f7d376a8c0b04ec4ce6d4dc75325700"
+      },
+      {
+        "name": "zip_workshop",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "2edc4e91238c9e105d29bd301d91aa18248dd9c159df491ea5e4ea61e6cbd869"
+      },
+      {
+        "name": "zip_first_sortie",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "688e502db16a5fae42806d3540f8fcdd6cbc4838d82da8e06996b9b9e4821ccd"
+      },
+      {
+        "name": "zip_first_sortie_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+      },
+      {
+        "name": "zip_salvage",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "b68b6dac7853b33928b39e29b278ee7ff942c969fd13d94656e4163bba88c92e"
+      },
+      {
+        "name": "zip_salvage_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "cdfe756cff844f2e798eeac81f14bcb481786aa8aee6dd188713d9f1d8479922"
+      },
+      {
+        "name": "zip_launcher_forward",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "19d59642f3f9380b76ca3eee86d8b348fdc8d9c8e418a5bb631eb4c4f0907d06"
+      },
+      {
+        "name": "zip_launcher_compatibility",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "19d59642f3f9380b76ca3eee86d8b348fdc8d9c8e418a5bb631eb4c4f0907d06"
+      },
+      {
+        "name": "zip_preview_boot",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "19d59642f3f9380b76ca3eee86d8b348fdc8d9c8e418a5bb631eb4c4f0907d06"
+      },
+      {
+        "name": "zip_preview_backup_guard",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+      }
+    ],
+    "scope": "Minimal packaged/independent ZIP headless checks, including controlled workshop choices and both ordinary first-sortie branches/readbacks; no native rendering, full regression, low-spec, five-hour or public-release acceptance. No user profiles or original packages changed.",
+    "public_release_approved": false
+  },
+  "workshop_component_checks": 96,
+  "normal_first_sortie": {
+    "return": {
+      "checks": 83,
+      "shots": 9,
+      "branch": "tap",
+      "knocks": 2,
+      "independent_read": true
+    },
+    "north_salvage": {
+      "checks": 88,
+      "shots": 12,
+      "branch": "tidy",
+      "knocks": 0,
+      "independent_read": true
+    }
+  },
+  "evidence_directories": [
+    "D:\\tmp\\bunny_two_knocks_20261022_dev01",
+    "D:\\tmp\\bunny_two_knocks_windows_20261022_01"
+  ],
+  "current_feature_notes": [
+    "No new saved relationship, reward, inventory item or campaign chapter.",
+    "intro/ending require real Next button; tap has exactly two physical contacts and SFX dispatches; tidy is not a knock response.",
+    "Chinese/English label dimensions checked; capture locale restored after bilingual measurement.",
+    "Existing 16 baked clips, fitting-kit recovery, maintenance steam tactics and separate protected demo preview retained."
+  ],
+  "not_verified": [
+    "Native rendering/actual audibility in this batch",
+    "Human playtime, enjoyment or five-hour first completion",
+    "Low-end/clean Windows VM/full long regression",
+    "Public asset rights or actual 80% positive reviews"
+  ],
+  "public_release_approved": false,
+  "personal_saves_modified": false,
+  "old_deliveries_modified": false,
+  "original_unity_package_included": false
+}

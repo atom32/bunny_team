@@ -84,7 +84,9 @@ func _run() -> void:
 	check(AudioDirector.last_cue == &"blockade_vent" and readout.state_label.text.contains(tr("VENT OPEN / FIRE")),"coolant cue and readable firing window agree")
 	check(not van.get_node("WarningTarget").visible and van.get_node("VentLight").visible,"warning marker clears when cyan cooling panels open")
 	var packet:=DamagePacket.new(20,0,5,battle.player,&"weapon.assault_rifle_01",&"player")
+	readout.hit_label.size.x=0 # A newly revealed wrap label has no layout width yet.
 	van.receive_damage(packet);readout.update_readout(0)
+	check(readout.hit_label.size.x>0,"first hit assigns wrap width before the hidden label can inflate its panel")
 	check(readout.hit_label.text == tr("VENT HIT / -%d") % 20 and readout.health.value==340,"real vent hit reports full damage and updates health")
 	check(van.receive_damage(DamagePacket.new(0,0,0,battle.player,&"",&"player"))==0,"zero damage cannot fabricate a confirmation")
 	for dimensions in [Vector2i(1280,720),Vector2i(960,540),Vector2i(1600,900)]:

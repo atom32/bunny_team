@@ -16,6 +16,13 @@ func _ready() -> void:
 	_refresh()
 
 func _refresh() -> void:
+	var previous_scroll := 0
+	var focused_field := ""
+	if compact and get_child_count() > 0 and get_child(0) is ScrollContainer:
+		previous_scroll = (get_child(0) as ScrollContainer).scroll_vertical
+		var focused := get_viewport().gui_get_focus_owner()
+		if focused and is_ancestor_of(focused):
+			if focused.get_parent() is SpinBox: focused_field = focused.get_parent().name
 	for child in get_children():
 		remove_child(child)
 		child.queue_free()
@@ -38,12 +45,18 @@ func _refresh() -> void:
 		hint.text = tr("INCLUDES LOADED MAGAZINES")
 		hint.add_theme_font_size_override("font_size", 10)
 		hint.add_theme_color_override("font_color", FieldManualStyle.MUTED)
+		var eyebrow := Label.new()
+		eyebrow.text = "// 03 / ACTUAL CARRY"
+		eyebrow.add_theme_font_override("font",OperationUI.typeface())
+		eyebrow.add_theme_font_size_override("font_size",11)
+		eyebrow.add_theme_color_override("font_color",FieldManualStyle.MUTED)
+		body.add_child(eyebrow)
 		body.add_child(heading)
 		body.add_child(hint)
 		var rule := HSeparator.new()
 		body.add_child(rule)
 	if not compact: body.add_child(heading)
-	var plan := DeploymentPlan.build(profile)
+	var plan := DeploymentPlan.build(profile, &"first_mission" if not profile.first_mission_completed else DeploymentPlan.selected_street_mission)
 	var columns := HBoxContainer.new()
 	body.add_child(columns)
 	var supply_heading := Label.new()
@@ -133,8 +146,10 @@ func _refresh() -> void:
 			packing_changed.emit()
 			_refresh.call_deferred()
 		)
+	_add_alarm(body, profile, plan)
 	var info := Label.new()
 	info.text = tr("Unpacked supplies stay at base.") if compact else tr("ACTUAL LOAD %.1f / %.0f kg. Extra supplies stay at base.") % [plan.weight, plan.capacity]
+	if compact and message == "PACKING SAVED / limited to owned supplies and carry capacity.": info.text += "\n" + tr("Request saved. Only the actual packed amount leaves base.")
 	if message == "Could not save. Packing preference unchanged.": info.text += "\n" + tr("Save failed. Request unchanged." if compact else message)
 	if not plan.error.is_empty(): info.text += "\n" + tr(plan.error)
 	info.custom_minimum_size.x = 224 if compact else 495
@@ -142,6 +157,45 @@ func _refresh() -> void:
 	info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	info.add_theme_font_size_override("font_size", 13)
 	body.add_child(info)
+	if compact:
+		(get_child(0) as ScrollContainer).set_deferred("scroll_vertical",previous_scroll)
+		var field := find_child(focused_field,true,false) as SpinBox if not focused_field.is_empty() else null
+		if field: field.get_line_edit().grab_focus()
+
+func _add_alarm(body: Control, profile: ProfileState, plan: DeploymentPlan) -> void:
+	var owned := SupplyService.count(profile, &"tool.portable_alarm")
+	if owned == 0 and not profile.pack_alarm: return
+	var group := VBoxContainer.new()
+	group.add_theme_constant_override("separation", 2)
+	body.add_child(group)
+	var row := HBoxContainer.new()
+	group.add_child(row)
+	var label := Label.new()
+	label.text = tr("PORTABLE ALARM BOX")
+	label.add_theme_font_size_override("font_size", 14)
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	row.add_child(label)
+	var choice := CheckBox.new()
+	choice.name = "PackAlarm"
+	choice.text = tr("PACK ONE")
+	choice.button_pressed = profile.pack_alarm
+	choice.disabled = SortieRuntime.get_current_session() != null or not profile.sortie_checkpoint.is_empty() or ProfileRuntime.recovery_required
+	choice.tooltip_text = tr("Pack at most one owned alarm box. Unused warehouse boxes stay at base.")
+	choice.add_theme_font_size_override("font_size", 12 if compact else 14)
+	row.add_child(choice)
+	_add_status(group, "tool.portable_alarm", 1 if profile.pack_alarm else 0, plan.tool_ids.size(), owned)
+	var weight := Label.new()
+	weight.name = "AlarmPackingWeight"
+	weight.text = tr("1.0 kg each / only packed boxes leave base.")
+	weight.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	weight.add_theme_font_size_override("font_size", 12 if compact else 14)
+	group.add_child(weight)
+	choice.toggled.connect(func(value: bool):
+		var error := DeploymentPlan.set_alarm_packed(value, FlowMenu.save_path)
+		message = "PACKING SAVED / limited to owned supplies and carry capacity." if error == OK else "Could not save. Packing preference unchanged."
+		packing_changed.emit()
+		_refresh.call_deferred())
 
 # Read the real deployment plan; never infer loaded amounts from requested values.
 func _packed_count(profile: ProfileState, plan: DeploymentPlan, id: String) -> int:
@@ -168,5 +222,8 @@ func _add_status(parent: Control, id: String, requested: int, packed: int, owned
 		status.add_theme_color_override("font_color", FieldManualStyle.MUTED if compact else Color("80dfde"))
 	if compact:
 		status.text = tr("PACKED %d / OWNED %d") % [packed, owned] if requested > 0 else tr("NOT PACKED / OWNED %d") % owned
-		if packed < requested: status.text += "\n" + tr("SHORT %d") % (requested - packed)
+		if packed < requested:
+			status.text += "\n" + tr("SHORT %d") % (requested - packed)
+			status.add_theme_stylebox_override("normal",FieldManualStyle.button_style(FieldManualStyle.SIGNAL,Color.TRANSPARENT))
+			status.add_theme_color_override("font_color",FieldManualStyle.INK)
 	parent.add_child(status)

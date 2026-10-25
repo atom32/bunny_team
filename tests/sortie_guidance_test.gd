@@ -207,12 +207,13 @@ func _run() -> void:
 			var mission := DeploymentPlan.selected_street_mission
 			var detail := hub.screen.find_child("MissionBriefing", true, false) as Label
 			check(detail.size.y >= detail.get_minimum_size().y, "Base briefing fits its actual text height")
-			check(detail.get_rect().end.x <= detail.get_parent().size.x - 16, "Base briefing stays inside panel horizontally")
+			var brief_scroll := detail.get_parent() as ScrollContainer
+			check(brief_scroll != null and detail.size.x <= brief_scroll.size.x and brief_scroll.get_parent().get_global_rect().encloses(brief_scroll.get_global_rect()), "Scrollable briefing text and viewport stay inside panel horizontally")
 			var shortcut := hub.screen.find_child("RequestDetails", true, false) as Button
 			check((shortcut == null) == (phase == "complete"), "Only an active resident request gets a contact shortcut")
 			if shortcut:
 				check(detail.text.contains(SortieGuidance.at_base(profile)[0]), "Base and field use the same request heading")
-				check(not detail.get_rect().intersects(shortcut.get_rect()), "Mission text clears contact action")
+				check(not brief_scroll.get_global_rect().intersects(shortcut.get_global_rect()), "Scrollable mission viewport clears contact action")
 				await capture("base_" + phase + "_" + language, hub)
 				await click(shortcut)
 				var contact := hub.screen.get_node("ContactPanel") as ContactPanel

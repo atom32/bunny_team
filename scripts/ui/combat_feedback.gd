@@ -21,7 +21,7 @@ func _ready() -> void:
 	hit_label = _label(14, Vector2(130, 28))
 	danger_label = _label(16, Vector2(240, 30))
 	danger_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	danger_label.add_theme_color_override("font_color", Color("ff9c82"))
+	danger_label.add_theme_color_override("font_color", FieldManualStyle.SIGNAL)
 	GameLanguage.language_changed.connect(_refresh_text)
 	_refresh_text()
 
@@ -81,7 +81,7 @@ static func screen_bearing(world_direction: Vector3, basis: Basis) -> Vector2:
 
 func _refresh_text() -> void:
 	hit_label.text = tr("TARGET DOWN" if hit_defeated else "CONFIRMED HIT")
-	hit_label.add_theme_color_override("font_color", Color("ffd28a") if hit_defeated else Color.WHITE)
+	hit_label.add_theme_color_override("font_color", FieldManualStyle.SIGNAL if hit_defeated else Color.WHITE)
 	danger_label.text = tr("UNDER ATTACK")
 
 
@@ -104,7 +104,7 @@ func _process(delta: float) -> void:
 
 func _draw() -> void:
 	if hit_label and hit_label.visible:
-		var color := Color("ffd28a") if hit_defeated else Color.WHITE
+		var color := FieldManualStyle.SIGNAL if hit_defeated else Color.WHITE
 		color.a = hit_label.modulate.a
 		var radius := 14.0 if hit_defeated else 10.0
 		for direction in [Vector2(-1,-1),Vector2(1,-1),Vector2(-1,1),Vector2(1,1)]:
@@ -121,4 +121,4 @@ func _draw() -> void:
 		var points := PackedVector2Array([center+direction*8,center-direction*10+side,center-direction*10-side])
 		var alpha := minf(1.0, float(event.remaining)/.25)
 		draw_polyline(PackedVector2Array([points[0],points[1],points[2],points[0]]), Color(0.05,0.07,0.08,alpha), 5, true)
-		draw_colored_polygon(points, Color(1.0,.35,.23,alpha))
+		draw_colored_polygon(points, Color(FieldManualStyle.SIGNAL,alpha))

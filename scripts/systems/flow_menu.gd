@@ -8,6 +8,7 @@ var waiting_for_transition := false
 var save_path := SaveService.DEFAULT_SAVE_PATH
 var display_return_to_pause := true
 var controls_panel: ControlSettings
+var feedback_return_to_pause := true
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -42,6 +43,9 @@ func _input(event: InputEvent) -> void:
 			show_pause()
 		elif mode in ["display", "language", "controls"]:
 			if display_return_to_pause: show_pause()
+			else: close()
+		elif mode == "feedback":
+			if feedback_return_to_pause: show_pause()
 			else: close()
 		get_viewport().set_input_as_handled()
 
@@ -83,29 +87,43 @@ func _panel(title: String, message: String, new_mode: String) -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	screen = Control.new()
 	screen.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	screen.theme = UIFactory.theme()
+	screen.theme = FieldManualStyle.theme()
 	add_child(screen)
 	var dim := ColorRect.new()
-	dim.color = Color(0.015, 0.025, 0.045, 0.91)
+	dim.color = Color(0.035,0.045,0.045,0.82)
 	dim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	screen.add_child(dim)
 	var center := CenterContainer.new()
 	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	screen.add_child(center)
 	var panel := PanelContainer.new()
-	panel.custom_minimum_size = Vector2(560, 0)
-	panel.add_theme_stylebox_override("panel", UIFactory.panel_style(Color("0f1824"), Color("557895")))
+	panel.name = "SystemMenu"
+	panel.custom_minimum_size = Vector2(620,minf(640,get_viewport().get_visible_rect().size.y-48))
+	panel.add_theme_stylebox_override("panel", FieldManualStyle.panel())
 	center.add_child(panel)
+	var scroll := ScrollContainer.new()
+	scroll.name = "MenuScroll"
+	scroll.follow_focus = true
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	panel.add_child(scroll)
 	content = VBoxContainer.new()
+	content.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	content.add_theme_constant_override("separation", 14)
-	panel.add_child(content)
+	scroll.add_child(content)
+	var eyebrow := Label.new()
+	eyebrow.text = "// BASTION / " + new_mode.to_upper()
+	eyebrow.add_theme_font_override("font",OperationUI.typeface())
+	eyebrow.add_theme_font_size_override("font_size",12)
+	eyebrow.add_theme_color_override("font_color",FieldManualStyle.MUTED)
+	content.add_child(eyebrow)
 	var heading := Label.new()
 	heading.text = title
-	heading.add_theme_font_size_override("font_size", 27)
+	heading.add_theme_font_size_override("font_size", 30)
+	heading.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	content.add_child(heading)
 	var detail := Label.new()
 	detail.text = message
-	detail.custom_minimum_size.x = 530
+	detail.custom_minimum_size.x = 550
 	detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	detail.add_theme_font_size_override("font_size", 16)
 	content.add_child(detail)
@@ -116,6 +134,10 @@ func _button(caption: String, action: Callable, focus := false) -> void:
 	button.custom_minimum_size.y = 46
 	button.pressed.connect(action)
 	content.add_child(button)
+	button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	for state in ["normal","hover","pressed","focus"]:
+		button.add_theme_stylebox_override(state,FieldManualStyle.cut_style(FieldManualStyle.SIGNAL if state in ["hover","pressed"] else (Color.TRANSPARENT if state == "focus" else FieldManualStyle.SURFACE)))
+	if focus: FieldManualStyle.primary(button)
 	if focus:
 		button.grab_focus()
 
@@ -130,6 +152,7 @@ func show_pause() -> void:
 	_button("DISPLAY / FULLSCREEN & RESOLUTION", show_display_settings)
 	_button("LANGUAGE / 中文 & ENGLISH", show_language_settings)
 	_button("CONTROLS / KEY BINDINGS", show_control_settings)
+	_button("PLAYTEST FEEDBACK / LOCAL ONLY", show_feedback)
 	_button("ABANDON MISSION / RETURN TO BASE" if active else "RETURN TO BASE", func(): request_leave("base"))
 	if active and not SortieRuntime.checkpoint_path.is_empty():
 		_button("SUSPEND / MAIN MENU", func(): suspend_sortie("menu"))
@@ -137,6 +160,23 @@ func show_pause() -> void:
 	else:
 		_button("MAIN MENU", func(): request_leave("menu"))
 		_button("SAVE & QUIT" if not active else "ABANDON & QUIT", func(): request_leave("quit"))
+
+func show_feedback(return_to_pause := true) -> void:
+	if GameState.is_transitioning(): return
+	feedback_return_to_pause = return_to_pause
+	var context := PlaytestReport.build_context(get_tree())
+	_panel("PLAYTEST FEEDBACK", "Optional. Nothing is uploaded. Preview the included context before saving a local report. Do not include personal or account details.", "feedback")
+	content.add_theme_constant_override("separation", 8)
+	var scroll := ScrollContainer.new()
+	scroll.custom_minimum_size = Vector2(530,420)
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	content.add_child(scroll)
+	var form := PlaytestFeedback.new()
+	form.name = "PlaytestFeedback"
+	form.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	form.configure(context)
+	scroll.add_child(form)
+	_button("BACK / NO AUTOMATIC SAVE", show_pause if return_to_pause else close)
 
 func show_control_settings(return_to_pause := true) -> void:
 	display_return_to_pause = return_to_pause

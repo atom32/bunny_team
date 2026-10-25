@@ -1,0 +1,33 @@
+{
+  "checks": 39,
+  "failures": [],
+  "native": false,
+  "physics_signature": "e61abd5d0c1ef235520b5b5b6429cd8220a8b13163d72d62d275f0b480daefe0",
+  "stats": {
+    "air_conditioners": 2791,
+    "building_footprints": 467,
+    "closed_facade_entries": 229,
+    "flat_roofs": 348,
+    "foliage_near_cutoff_m": 160,
+    "foliage_variants": 4,
+    "garden_shrubs": 383,
+    "illustrative_and_mapped_trees": 1651,
+    "lake_wayfinding_signs": 4,
+    "lakes": 4,
+    "lakeside_benches": 62,
+    "landmark_facades": 4,
+    "mesh_chunks": 1478,
+    "parked_bicycles": 117,
+    "pitched_roofs": 119,
+    "road_drains": 757,
+    "road_ways": 242,
+    "street_lamps": 367,
+    "terrain_cells": 12784,
+    "tree_style_source": "courtyard_tree.gd / branch + geometric leaf; illustrative positions",
+    "waste_bins": 59,
+    "water_interior_tessellation_m": 6,
+    "window_modules": 47794
+  },
+  "terrain_max_error_m": 0.0000442339344592924,
+  "terrain_samples": 91
+}

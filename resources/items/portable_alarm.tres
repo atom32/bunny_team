@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/item_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/stash/supply_art_v1/electronics.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+icon = ExtResource("2")
+id = &"tool.portable_alarm"
+display_name = "Portable Alarm Box"
+description = "A complete 1kg alarm box with its battery fitted. Place it on clear ground: it starts ringing after 3 seconds, pulses three times, then goes quiet. Consumed when placed. Use it this sortie, or bring it home and pack one next time."
+weight = 1.0
+base_value = 40
+item_tags = PackedStringArray("field_tool", "recovered_only", "loot")
+stackable = false
+max_stack = 1

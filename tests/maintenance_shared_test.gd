@@ -23,8 +23,9 @@ func _run() -> void:
 	GameLanguage.set_language("en" if "--english" in args else "zh_CN",false)
 	check(TranslationServer.get_locale()==("en" if "--english" in args else "zh_CN"),"actual requested locale is active, not inferred from flag")
 	check(MaintenanceJourney.valid({"version":3.0,"steam_off":false},MaintenanceStory.AREA,MaintenanceStory.MISSION,[]),"JSON numeric v3 accepted without strict Array membership")
-	for version in [1,3.5,4,"3"]:
-		check(not MaintenanceJourney.valid({"version":version,"steam_off":false},MaintenanceStory.AREA,MaintenanceStory.MISSION,[]),"invalid non-v2/v3 version refused: "+str(version))
+	check(MaintenanceJourney.valid({"version":4.0,"steam_off":false},MaintenanceStory.AREA,MaintenanceStory.MISSION,[]),"JSON numeric v4 supports the new entry threat")
+	for version in [1,3.5,5,"3"]:
+		check(not MaintenanceJourney.valid({"version":version,"steam_off":false},MaintenanceStory.AREA,MaintenanceStory.MISSION,[]),"invalid non-v2/v3/v4 version refused: "+str(version))
 	if "--read" in args or "--pending-read" in args or "--legacy-v2" in args or "--legacy-v1" in args:
 		var read_path:=PENDING_PATH if "--pending-read" in args else CACHE_PATH
 		var loaded_ok := ProfileRuntime.load_profile(read_path) and SortieRuntime.resume_saved(read_path)==OK
@@ -50,7 +51,9 @@ func _run() -> void:
 			await finish_shared();return
 		var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(IDS_PATH))
 		var cache: MaintenanceSharedCache=battle.area_root.get_node("SharedToolbox")
-		check(int(battle.area_root.get_meta("map_revision"))==3 and cache.has_rolled and cache.enabled,"actual unlocked v3 toolbox restores")
+		check(int(battle.area_root.get_meta("map_revision"))==int(expected.get("revision",3)) and cache.has_rolled and cache.enabled,"actual unlocked toolbox restores in its saved revision")
+		if battle.session.maintenance.version==3:
+			for enemy in battle.enemy_container.get_children():check(enemy.definition_id!=&"maintenance_alarm_carrier","genuine old v3 enemies are not replaced by the new alarm carrier")
 		check(not cache.closed_case.visible,"restore refreshes unlocked furniture even while paused")
 		check(battle.session.inventory.contains(expected.taken),"actual taken item survives signed disk roundtrip")
 		var remaining: Array[String]=[]
@@ -66,7 +69,7 @@ func _run() -> void:
 	var cache: MaintenanceSharedCache=world.get_node("SharedToolbox")
 	var helper: MaintenanceSurvivor=world.get_node("Survivor")
 	helper.set_physics_process(false);world.get_node("Steam").set_physics_process(false)
-	check(session.maintenance.version==3 and int(world.get_meta("map_revision"))==3 and session.validate(),"fresh session chooses typed v3, not old geometry")
+	check(session.maintenance.version==4 and int(world.get_meta("map_revision"))==4 and session.validate(),"fresh session chooses typed v4 while keeping the optional toolbox")
 	check(not cache.enabled and not cache.has_rolled,"toolbox starts latched and unrolled")
 	check(world.get_node("Supplies").has_rolled and world.get_node("WardSupplies").has_rolled,"both original ordinary caches remain untouched")
 	var original_loot := []
@@ -197,7 +200,7 @@ func _run() -> void:
 	check(pickups[0].try_pickup(session)==LootPickup.PickupResult.SUCCESS,"normal pickup path transfers actual instance")
 	await frames()
 	var exchange_source:=ItemInstance.new(&"material.parts",1)
-	check(session.inventory.add_item(exchange_source),"explicit controlled cargo fixture supplies a legal loot-tagged exchange stack")
+	check(session.inventory.add_item_preserving_instance(exchange_source),"explicit controlled cargo fixture supplies an exact separate loot-tagged exchange stack")
 	var incoming_id := pickups[1].item_instance.instance_id
 	check(pickups[1].exchange_cargo(session,exchange_source.instance_id)==LootPickup.PickupResult.SUCCESS,"legitimate whole-stack cargo exchange stays in same world slot")
 	check(session.inventory.contains(incoming_id) and not session.inventory.contains(exchange_source.instance_id) and pickups[1].item_instance.instance_id==exchange_source.instance_id,"exchange conserves both actual instance IDs")
@@ -213,5 +216,5 @@ func _run() -> void:
 	check(not SortieCheckpoint.validate_world(forged,battle),"inconsistent relocked but rolled toolbox is refused")
 	check(SortieRuntime.save_checkpoint()==OK,"normal signed checkpoint persists helper, taken cargo and remaining items")
 	var expected_file:=FileAccess.open(IDS_PATH,FileAccess.WRITE)
-	expected_file.store_string(JSON.stringify({"taken":taken,"remaining":[before_ids[1]]}));expected_file.close()
+	expected_file.store_string(JSON.stringify({"taken":taken,"remaining":[before_ids[1]],"revision":int(battle.area_root.get_meta("map_revision"))}));expected_file.close()
 	await finish_shared()

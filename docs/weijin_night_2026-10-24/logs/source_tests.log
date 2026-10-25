@@ -1,0 +1,10 @@
+test_all_feature_corners_are_source_coordinates (test_weijin_geography.GeographySourceTest.test_all_feature_corners_are_source_coordinates) ... ok
+test_estimates_are_explicit_not_survey_claims (test_weijin_geography.GeographySourceTest.test_estimates_are_explicit_not_survey_claims) ... ok
+test_hashes_and_license (test_weijin_geography.GeographySourceTest.test_hashes_and_license) ... ok
+test_rebuild_is_offline_and_reproducible (test_weijin_geography.GeographySourceTest.test_rebuild_is_offline_and_reproducible) ... ok
+test_whole_campus_scale_and_source_lakes (test_weijin_geography.GeographySourceTest.test_whole_campus_scale_and_source_lakes) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.335s
+
+OK

@@ -154,7 +154,8 @@ func _ui() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	check(p.ammo_pack[str(AMMO)] == 37 and SaveService.load_profile(PATH,false).ammo_pack[str(AMMO)] == 37, "integrated page saves and reloads exact packing request")
-	check(ui.deployment_summary.text == DeploymentPlan.build(p).message, "packing change refreshes actual deployment summary")
+	var updated_plan := DeploymentPlan.build(p)
+	check(ui.deployment_summary.text == "%.1f / %.0f kg" % [updated_plan.weight,updated_plan.capacity] and ui.deployment_summary.tooltip_text.begins_with(updated_plan.message), "packing change refreshes actual weight and full deployment summary")
 	var before_failed := p.to_dict()
 	FlowMenu.save_path = "user://missing_equipment_directory/profile.json"
 	(ui.packing.find_child("PackAmmo_ammo_556_standard",true,false) as SpinBox).value = 80
@@ -171,7 +172,10 @@ func _ui() -> void:
 		check(ui.packing.get_global_rect().end.x <= 1240 and ui.packing.get_global_rect().end.y < 644, "packing clears viewport and navigation: "+locale)
 		check(not ui.packing.get_global_rect().intersects(ui.warehouse_panel.get_global_rect()), "packing does not cover stash: "+locale)
 		for input in ui.packing.find_children("*", "SpinBox", true, false):
-			check(ui.packing.get_global_rect().encloses(input.get_global_rect()), "all quantity controls fit inside unified packing: "+locale)
+			(ui.packing.get_child(0) as ScrollContainer).ensure_control_visible(input)
+			await get_tree().process_frame
+			await get_tree().process_frame
+			check(ui.packing.get_global_rect().encloses(input.get_global_rect()), "all quantity controls are scroll-accessible inside unified packing: "+locale)
 		if "--capture" in OS.get_cmdline_user_args():
 			await RenderingServer.frame_post_draw
 			get_viewport().get_texture().get_image().save_png(OS.get_environment("BUNNY_EVIDENCE").path_join("equipment_"+locale+".png"))

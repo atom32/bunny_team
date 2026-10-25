@@ -186,6 +186,8 @@ func _continue() -> void:
 	var after_upgrade := JSON.stringify(profile.to_dict())
 	for tick in 1800:
 		await tree.physics_frame
+		if fitting.phase == "intro" and fitting.next_button.is_visible_in_tree() and tick%30 == 0:
+			await _click(fitting.next_button)
 		if fitting.phase == "choice": break
 	check(fitting.phase == "choice", "Actual approach and radio exchange reach spare-screw choice")
 	await _capture("15b_spare_screw_choice")
@@ -193,10 +195,14 @@ func _continue() -> void:
 	await _click(fitting.choices.get_node("ChoiceTidy" if salvage else "ChoiceTap"))
 	for tick in 1200:
 		await tree.physics_frame
+		if fitting.phase == "ending" and fitting.next_button.is_visible_in_tree() and tick%30 == 0:
+			await _click(fitting.next_button)
 		if fitting.phase == "done": break
 	check(fitting.phase == "done" and fitting.branch == ("tidy" if salvage else "tap"), "Selected gesture and real workbench fitting reach homecoming ending")
+	check(fitting.knock_count == (0 if salvage else 2), "Normal route performs exactly the selected physical response")
 	check(JSON.stringify(profile.to_dict()) == after_upgrade, "Homecoming choice grants no inventory, flags or rewards")
 	evidence["fitting_branch"] = fitting.branch
+	evidence["fitting_knocks"] = fitting.knock_count
 	evidence["profile_unchanged_by_fitting"] = JSON.stringify(profile.to_dict()) == after_upgrade
 	await _capture("15c_fitting_complete")
 	await _click(fitting.exits.get_node("NextRequest"))

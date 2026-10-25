@@ -298,6 +298,7 @@ static func capture_world(battle: Node) -> Dictionary:
 		entry["awareness"] = fields(enemy.awareness, AWARENESS_FIELDS)
 		entry["tactics"] = fields(enemy.tactics, TACTICS_FIELDS)
 		if enemy is CampusRammer:entry["ram"]=enemy.ram_snapshot()
+		if enemy is MaintenanceAlarmCarrier:entry["call"]=enemy.call_snapshot()
 		enemies[enemy.get_meta("spawn_key")] = entry
 	var nodes := {}
 	var objects := _world_nodes(battle)
@@ -316,10 +317,13 @@ static func capture_world(battle: Node) -> Dictionary:
 		var entry := fields(node, ROCKET_FIELDS)
 		entry["weapon"] = String(node.source_weapon)
 		rockets.append(entry)
+	var alarms: Array = []
+	for node in battle.get_children():
+		if node is PortableAlarm and not node.is_queued_for_deletion(): alarms.append(node.snapshot())
 	var director: Node = battle.get_node_or_null("FirstMissionDirector")
 	var alarm: RecordsAlarm = battle.area_root.get_node_or_null("StreetTerminal/RecordsAlarm")
 	var records: RecordsTerminal = battle.area_root.get_node_or_null("StreetTerminal")
-	return {"maintenance":battle.session.maintenance.duplicate(true),"blockade":battle.session.blockade.duplicate(true),"waterworks":battle.session.waterworks.duplicate(true),"campus":battle.session.campus.duplicate(true),"lighting": battle.area_root.get_meta("lighting", "day"), "map_revision": int(battle.area_root.get_meta("map_revision",0)), "q04_active": battle.session.q04_active, "delivery_receipt": battle.session.delivery_receipt, "q02_active": battle.session.q02_active, "pharmacy_batch": battle.session.pharmacy_batch, "slice_context": battle.session.slice_context.duplicate(true), "exit_observations": battle.session.exit_observations.duplicate(), "records_work": records.snapshot() if records else {}, "records_alarm": alarm.snapshot() if alarm else {}, "layout": battle.checkpoint_layout_signature, "player": fields(battle.player, PLAYER_FIELDS), "footstep_distance": battle.player._footstep_distance, "medical": battle.player.medical.snapshot(), "weapon_slot": String(battle.player.active_weapon_slot), "reloads": battle.player._reload_remaining_by_weapon.duplicate(), "enemies": enemies, "nodes": nodes, "rockets": rockets, "director": fields(director, DIRECTOR_FIELDS) if director else {}}
+	return {"maintenance":battle.session.maintenance.duplicate(true),"blockade":battle.session.blockade.duplicate(true),"waterworks":battle.session.waterworks.duplicate(true),"campus":battle.session.campus.duplicate(true),"lighting": battle.area_root.get_meta("lighting", "day"), "map_revision": int(battle.area_root.get_meta("map_revision",0)), "q04_active": battle.session.q04_active, "delivery_receipt": battle.session.delivery_receipt, "q02_active": battle.session.q02_active, "pharmacy_batch": battle.session.pharmacy_batch, "slice_context": battle.session.slice_context.duplicate(true), "exit_observations": battle.session.exit_observations.duplicate(), "records_work": records.snapshot() if records else {}, "records_alarm": alarm.snapshot() if alarm else {}, "layout": battle.checkpoint_layout_signature, "player": fields(battle.player, PLAYER_FIELDS), "footstep_distance": battle.player._footstep_distance, "medical": battle.player.medical.snapshot(), "weapon_slot": String(battle.player.active_weapon_slot), "reloads": battle.player._reload_remaining_by_weapon.duplicate(), "enemies": enemies, "nodes": nodes, "rockets": rockets, "alarms": alarms, "director": fields(director, DIRECTOR_FIELDS) if director else {}}
 
 static func validate_world(data: Dictionary, battle: Node) -> bool:
 	if not SortieRequest.valid_lighting(data.get("lighting", "day"), battle.session.area_id): return false
@@ -422,7 +426,16 @@ static func validate_world(data: Dictionary, battle: Node) -> bool:
 			if not CampusRammer.valid_ram(entry.get("ram")) or entry._is_telegraphing or data.enemies[path].shot_remaining!=0:
 				template.free();return false
 			entry.erase("ram")
-		var firing_valid := _valid_firing_pose(entry.get("firing"), definition.humanoid_presentation, definition, definition.id in [&"campus_infected",&"campus_rammer"])
+		if definition.id==&"maintenance_alarm_carrier":
+			if not MaintenanceAlarmCarrier.valid_call(entry.get("call")):
+				template.free();return false
+			if entry.call.phase==MaintenanceAlarmCarrier.CallPhase.WINDUP and (entry._is_telegraphing or data.enemies[path].shot_remaining>0):
+				template.free();return false
+			entry.erase("call")
+		var firing_valid := _valid_firing_pose(entry.get("firing"), definition.humanoid_presentation, definition, definition.id in [&"campus_infected",&"campus_rammer",&"maintenance_alarm_carrier"])
+		if firing_valid and definition.id==&"maintenance_alarm_carrier":
+			var names := PackedStringArray(entry.firing.bones.keys()); names.sort()
+			firing_valid = names == model_bone_names(definition.presentation_profile.model)
 		entry.erase("firing")
 		var awareness_valid := valid_awareness(entry.get("awareness", {}))
 		entry.erase("awareness")
@@ -432,6 +445,12 @@ static func validate_world(data: Dictionary, battle: Node) -> bool:
 		var valid: bool = valid_fields(entry, template, ENEMY_FIELDS) and entry.health > 0 and entry.health <= definition.max_health
 		template.free()
 		if not valid or not firing_valid or not awareness_valid or not tactics_valid: return false
+	var alarms: Variant = data.get("alarms", []) # Pre-tool version-6 worlds have none.
+	if typeof(alarms) != TYPE_ARRAY or alarms.size() > PortableAlarm.MAX_LIVE: return false
+	for entry in alarms:
+		if not PortableAlarm.valid_snapshot(entry, battle): return false
+		if item_ids.has(entry.id) or battle.session.inventory.contains(entry.id): return false
+		item_ids[entry.id] = true
 	for raw in data.rockets:
 		if typeof(raw) != TYPE_DICTIONARY or typeof(raw.get("weapon")) != TYPE_STRING or not ContentDB.get_weapon(StringName(raw.weapon), false): return false
 		var entry: Dictionary = raw.duplicate()
@@ -520,6 +539,7 @@ static func restore_world(data: Dictionary, battle: Node) -> bool:
 		enemy._update_awareness_indicator()
 		_restore_firing_pose(entry.firing, enemy)
 		if enemy is CampusRammer:enemy.restore_ram(entry.ram)
+		if enemy is MaintenanceAlarmCarrier:enemy.restore_call(entry.call)
 		if entry.shot_remaining > 0: enemy._finish_telegraphed_shot(entry.shot_remaining)
 	if battle.area_root.has_method("refresh_campus_power"):battle.area_root.refresh_campus_power()
 	if battle.area_root.has_method("refresh_waterworks"):battle.area_root.refresh_waterworks()
@@ -527,6 +547,9 @@ static func restore_world(data: Dictionary, battle: Node) -> bool:
 	if battle.area_root.has_method("refresh_maintenance"):battle.area_root.refresh_maintenance()
 	if battle.area_root.has_method("refresh_core"):battle.area_root.refresh_core()
 	battle.enemies_remaining = data.enemies.size()
+	for node in battle.get_children():
+		if node is PortableAlarm: node.free()
+	for entry in data.get("alarms", []): PortableAlarm.restore_node(entry, battle)
 	for saved in data.rockets:
 		var rocket := PlayerController.ROCKET_SCENE.instantiate()
 		apply_fields(saved, rocket, ROCKET_FIELDS)

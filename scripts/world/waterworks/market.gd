@@ -10,20 +10,29 @@ const INTRO := "Tang Kui: The repair shop. The little shutter.\nShen: We came fo
 const QUIET := "[The shutter climbs. No bell.]\nTang Kui: See? I can be quiet.\nSu Mi: You are on the radio.\nTang Kui: ...Right."
 const LOUD := "[The shutter rattles. A bell answers from the north street.]\nShen: Two coming down the loading lane.\nTang Kui: Put it down if you have to. Not you. The thing in your bag!"
 const FRAME_NOTICE := "Tang Kui: Wait. On that workbench. The old carrier straps.\nSu Mi: Do not climb back in for a buckle.\nTang Kui: I said straps!\n\nInside the depot: one 3kg carrier frame. Bring it home to Su Mi for a light fast pack OR a heavy cargo frame. No extra materials needed; choose at base. Leave room for the pump battery."
+const PORTABLE_ALARM := &"tool.portable_alarm"
+const ALARM_NOTICE := "Su Mi: A spare bell box. Battery still in. Leave the wall bell alone.\nTang Kui: You told me to be quiet. Now she gets a portable bell?\nSu Mi: Hers waits three seconds.\n\nRecovered field tool / 1kg. Press %s to place the alarm box on clear ground. It rings three times after a 3-second delay, then stops. Placement consumes the box. Use it today, or bring it home to pack one next time."
 
 func _ready() -> void:
 	get_parent().refresh_waterworks_labels()
 
 func carrier_hint() -> String:
 	var cache:=get_parent().get_node("DepotParts") as LootSpawnPoint
-	if not cache.has_rolled:return tr(FRAME_NOTICE)
+	var has_frame:=not cache.has_rolled
+	var has_alarm:=false
 	for child in cache.get_children():
-		if child is LootPickup and not child.consumed and child.item_instance.definition_id==RecoveredCarrier.FRAME:return tr(FRAME_NOTICE)
+		if not child is LootPickup or child.consumed or child.is_queued_for_deletion():continue
+		if child.item_instance.definition_id==RecoveredCarrier.FRAME:has_frame=true
+		if child.item_instance.definition_id==PORTABLE_ALARM:has_alarm=true
 	var current:=SortieRuntime.get_current_session()
 	if current:
 		for item in current.inventory.get_items():
-			if item.definition_id==RecoveredCarrier.FRAME:return tr(FRAME_NOTICE)
-	return "" # A previously opened legacy depot is never promised new cargo.
+			if item.definition_id==RecoveredCarrier.FRAME:has_frame=true
+			if item.definition_id==PORTABLE_ALARM:has_alarm=true
+	var notices:PackedStringArray=[]
+	if has_frame:notices.append(tr(FRAME_NOTICE))
+	if has_alarm:notices.append(tr(ALARM_NOTICE)%ControlBindings.label("place_alarm"))
+	return "\n\n".join(notices) # Old opened depots only promise cargo that really exists.
 
 func _physics_process(delta: float) -> void:
 	if mode>0 and progress<1:
@@ -73,6 +82,12 @@ func apply_progress() -> void:
 		if cache.enabled and not cache.has_rolled:
 			var rng:=RandomNumberGenerator.new();rng.seed=4603 if name=="DepotCore" else 4604
 			cache.spawn(rng)
+			# Append only to a newly successful roll, never to an opened/restored box.
+			# No RNG call: repair supplies, the carrier frame and core stay unchanged.
+			if name=="DepotParts" and cache.has_rolled:
+				var alarm:=LootSpawnPoint.LOOT_PICKUP_SCENE.instantiate() as LootPickup
+				alarm.setup(ItemInstance.new(PORTABLE_ALARM))
+				cache.add_child(alarm)
 	get_parent().refresh_waterworks_labels()
 
 func valid_checkpoint(entry: Dictionary,current: SortieSession,world: Dictionary) -> bool:

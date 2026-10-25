@@ -1,0 +1,4 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://tests/alarm_bindings_test.gd" id="1"]
+[node name="AlarmBindingsTest" type="Node"]
+script = ExtResource("1")

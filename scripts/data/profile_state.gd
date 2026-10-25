@@ -32,6 +32,7 @@ var settled_outcomes: Array[String] = []
 var sortie_checkpoint: Dictionary = {}
 var ammo_pack: Dictionary = {} # Missing caliber means three magazines, not free ammunition.
 var medical_pack: Dictionary = {"medical.field_dressing": 2, "medical.medkit": 1}
+var pack_alarm := false # Explicitly carry one owned tool; never an ownership unlock.
 var narrative_slice: Dictionary = NarrativeSlice.initial_state()
 var campus_chapter: Dictionary = CampusChapter.initial_state()
 # Last waterworks delivery actually brought home. Unknown in legacy profiles.
@@ -119,6 +120,7 @@ func to_dict() -> Dictionary:
 		"sortie_checkpoint": sortie_checkpoint.duplicate(true),
 		"medical_pack": medical_pack.duplicate(),
 		"ammo_pack": ammo_pack.duplicate(),
+		"pack_alarm": pack_alarm,
 		"campaign": campaign.duplicate(),
 		"narrative_slice": narrative_slice.duplicate(true),
 		"campus_chapter":campus_chapter.duplicate(true),
@@ -161,6 +163,8 @@ static func from_dict(data: Dictionary) -> ProfileState:
 	profile.campaign = {"version": int(campaign_data.version), "stage": int(campaign_data.stage), "progress": int(campaign_data.progress)}
 	if typeof(data.get("sortie_checkpoint", {})) != TYPE_DICTIONARY: return null
 	profile.sortie_checkpoint = data.get("sortie_checkpoint", {}).duplicate(true)
+	if typeof(data.get("pack_alarm", false)) != TYPE_BOOL: return null
+	profile.pack_alarm = data.get("pack_alarm", false)
 	var ammo_packed: Variant = data.get("ammo_pack", {})
 	if not DeploymentPlan.valid_ammo_pack(ammo_packed): return null
 	for id in ammo_packed: profile.ammo_pack[id] = int(ammo_packed[id])
@@ -214,6 +218,7 @@ func replace_with(candidate: ProfileState) -> void:
 	sortie_checkpoint = candidate.sortie_checkpoint.duplicate(true)
 	medical_pack = candidate.medical_pack.duplicate()
 	ammo_pack = candidate.ammo_pack.duplicate()
+	pack_alarm = candidate.pack_alarm
 	campaign = candidate.campaign.duplicate()
 	narrative_slice = candidate.narrative_slice.duplicate(true)
 	campus_chapter=candidate.campus_chapter.duplicate(true)

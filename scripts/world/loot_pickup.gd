@@ -89,6 +89,18 @@ func exchange_cargo(session: SortieSession, outgoing_id: String) -> PickupResult
 	return PickupResult.SUCCESS
 
 
+func exchange_weapon(session: SortieSession, slot_id: StringName) -> Dictionary:
+	if consumed or not session or not _item_is_valid():
+		return {"success":false,"message":"Weapon swap unavailable."}
+	var incoming := item_instance
+	var result := session.exchange_field_weapon(slot_id, incoming)
+	if not result.success: return result
+	item_instance = result.outgoing
+	_update_label()
+	picked_up.emit(incoming)
+	return result
+
+
 func get_interaction_prompt(_actor: Node3D, session: SortieSession) -> String:
 	var definition := ContentDB.get_item(item_instance.definition_id, false) if item_instance else null
 	return tr("%s  PICK UP  %s") % [ControlBindings.label("interact"), GameLanguage.item_name(definition.display_name).to_upper()] if definition and not consumed and session and session.status == SortieSession.Status.ACTIVE else ""

@@ -1,0 +1,687 @@
+{
+  "feature": "portable_alarm_earned_carried_tool",
+  "date": "2026-10-22",
+  "status": "LOCAL_ONLY; bounded headless acceptance complete, new alarm visual/audio unverified",
+  "archive": "D:\\tmp\\bunny_portable_alarm_windows_20261022_01\\NeonBastion_20261022_portable_alarm_LOCAL_ONLY_windows_x64.zip",
+  "bytes": 247019487,
+  "sha256": "e8ce83d6210ac68a4018035eaa96b973561790da0fc13768c7d4c866c479c0d3",
+  "build_checks": 17,
+  "independent_zip_checks": 24,
+  "static_archive_files": 17,
+  "motion_clips": 16,
+  "license_companions": 31,
+  "source_inputs_checked": 4124,
+  "non_document_source_inputs_match_final_build": true,
+  "source_manifest": {
+    "path": "D:\\tmp\\bunny_portable_alarm_windows_20261022_01\\source_manifest.json",
+    "sha256": "440520745f9786e0630637eb01fc7d1a1c8e3c8bac2f5b5c2edcffabb9c03425"
+  },
+  "final_package_acceptance": {
+    "path": "D:\\tmp\\bunny_portable_alarm_windows_20261022_01\\portable_alarm_acceptance.json",
+    "sha256": "4bd1eb126db58504d673ba0bc4eb9b70811f046e35ed48062f2bb2441d49a6e7",
+    "checks": [
+      {
+        "name": "zip_inventory",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "6912973927143900b1f9f87cea9f1bff823d38f9c0a38cfc7f82a1a6bfe0b856",
+        "mode": "inventory",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_qa"
+      },
+      {
+        "name": "zip_motion",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "019febdd0f03a2620908a04bce9bb62fda06395c824055f337f35c54319ad485",
+        "mode": "motion",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_qa"
+      },
+      {
+        "name": "zip_alarm_bindings",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "4763aae8462c0c1f56815fd6bf3c8209d0ca68085670b50153a12175f9d6b9d0",
+        "mode": "alarm_bindings",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_bindings"
+      },
+      {
+        "name": "zip_alarm_bindings_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "55f1fe50c2155b407a446822becba3fdcae20e382c4484a828c420b55f05f806",
+        "mode": "alarm_bindings",
+        "flags": [
+          "--read"
+        ],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_bindings"
+      },
+      {
+        "name": "zip_alarm_packing",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "adfeffa1d059a14d5df0f649dc626b8b689382e964f95a73acfe88d32f754be2",
+        "mode": "alarm_packing",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_packing"
+      },
+      {
+        "name": "zip_alarm_packing_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "6ad91652afd7443232160f94847d8c13c6e87fe8eabf5e7cf8f7fd8578fde13c",
+        "mode": "alarm_packing",
+        "flags": [
+          "--read"
+        ],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_packing"
+      },
+      {
+        "name": "zip_alarm_find",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "2ef4e1c4754d27b47d9bcb53cd4a90d63f817714437d08519919ea78049de072",
+        "mode": "alarm_find",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_find"
+      },
+      {
+        "name": "zip_portable_alarm",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "0c0807ef1f0f63aa2c1c6d9d82958fd8343ac6c489ae64f6f200f9a35f0500a9",
+        "mode": "portable_alarm",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_runtime"
+      },
+      {
+        "name": "zip_portable_alarm_write",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "1dd7e16875cc81ac19b165aefbb8b789a410034ee7e9f2a949c443b3fbc87c29",
+        "mode": "portable_alarm",
+        "flags": [
+          "--write"
+        ],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_runtime_disk"
+      },
+      {
+        "name": "zip_portable_alarm_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5054ec79e6e90a395827f172b9091532502cff393c89397ba0907fe14f880a09",
+        "mode": "portable_alarm",
+        "flags": [
+          "--read"
+        ],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_runtime_disk"
+      },
+      {
+        "name": "zip_genuine_old_write",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "346cefbc1bd2fb6760c68ebdce647651d0a0ef7a5bfba60eaa13114347a3c336",
+        "mode": "write",
+        "flags": [],
+        "executable": "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_genuine_old_writer"
+      },
+      {
+        "name": "zip_genuine_old_new_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "1251c6e5ba38b8348a2ffa9c916eaa360a339e8342adefc1e159ebb30a89e73f",
+        "mode": "read",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_genuine_old_reader"
+      },
+      {
+        "name": "zip_ordinary_alarm",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "673f6f9ea21726470e2fb526c18708b5b7cfbb81e20fa23a1810aed6c2c9fa35",
+        "mode": "alarm_earned",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_alarm_earned"
+      },
+      {
+        "name": "zip_ordinary_alarm_read",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "db52fbd4ed8db5bc05db13f4a469cf7573c90bf53f81230b3807692f5c2d2100",
+        "mode": "alarm_earned",
+        "flags": [
+          "--read"
+        ],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": null,
+        "userdata_group": "zip_alarm_earned"
+      },
+      {
+        "name": "zip_launcher_forward",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5820be5454ba4f48555f4e02d7af61ebc4d09d522646f92e5d4f9b6a82154573",
+        "mode": "boot",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": "开始游戏.cmd",
+        "userdata_group": "qa"
+      },
+      {
+        "name": "zip_launcher_compatibility",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5820be5454ba4f48555f4e02d7af61ebc4d09d522646f92e5d4f9b6a82154573",
+        "mode": "boot",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": "兼容模式.cmd",
+        "userdata_group": "qa"
+      },
+      {
+        "name": "zip_preview_market_boot",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5820be5454ba4f48555f4e02d7af61ebc4d09d522646f92e5d4f9b6a82154573",
+        "mode": "boot",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": "预览市场警铃.cmd",
+        "userdata_group": "qa"
+      },
+      {
+        "name": "zip_preview_market_backup_guard",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+      },
+      {
+        "name": "zip_preview_steam_boot",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5820be5454ba4f48555f4e02d7af61ebc4d09d522646f92e5d4f9b6a82154573",
+        "mode": "boot",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": "预览蒸汽救援.cmd",
+        "userdata_group": "qa"
+      },
+      {
+        "name": "zip_preview_steam_backup_guard",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+      },
+      {
+        "name": "zip_preview_power_boot",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5820be5454ba4f48555f4e02d7af61ebc4d09d522646f92e5d4f9b6a82154573",
+        "mode": "boot",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": "预览校园断电.cmd",
+        "userdata_group": "qa"
+      },
+      {
+        "name": "zip_preview_power_backup_guard",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+      },
+      {
+        "name": "zip_preview_blockade_boot",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "5820be5454ba4f48555f4e02d7af61ebc4d09d522646f92e5d4f9b6a82154573",
+        "mode": "boot",
+        "flags": [],
+        "executable": "D:\\tmp\\小兔试玩 便携警铃 20261022 验收01\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+        "launcher": "预览哨卡绕后.cmd",
+        "userdata_group": "qa"
+      },
+      {
+        "name": "zip_preview_blockade_backup_guard",
+        "pass": true,
+        "exit": 0,
+        "log_sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+      }
+    ]
+  },
+  "source_accepted_cases": [
+    {
+      "name": "bindings",
+      "pass": true,
+      "exit": 0,
+      "marker": "ALARM_BINDINGS_TEST: PASS",
+      "log_sha256": "4763aae8462c0c1f56815fd6bf3c8209d0ca68085670b50153a12175f9d6b9d0"
+    },
+    {
+      "name": "bindings_read",
+      "pass": true,
+      "exit": 0,
+      "marker": "ALARM_BINDINGS_TEST: PASS",
+      "log_sha256": "55f1fe50c2155b407a446822becba3fdcae20e382c4484a828c420b55f05f806"
+    },
+    {
+      "name": "packing",
+      "pass": true,
+      "exit": 0,
+      "marker": "PORTABLE_ALARM_PACKING_TEST: PASS",
+      "log_sha256": "adfeffa1d059a14d5df0f649dc626b8b689382e964f95a73acfe88d32f754be2"
+    },
+    {
+      "name": "packing_read",
+      "pass": true,
+      "exit": 0,
+      "marker": "PORTABLE_ALARM_PACKING_TEST: PASS",
+      "log_sha256": "6ad91652afd7443232160f94847d8c13c6e87fe8eabf5e7cf8f7fd8578fde13c"
+    },
+    {
+      "name": "find",
+      "pass": true,
+      "exit": 0,
+      "marker": "PORTABLE_ALARM_FIND_TEST: PASS",
+      "log_sha256": "2ef4e1c4754d27b47d9bcb53cd4a90d63f817714437d08519919ea78049de072"
+    },
+    {
+      "name": "carrier",
+      "pass": true,
+      "exit": 0,
+      "marker": "RECOVERED_CARRIER_TEST: PASS",
+      "log_sha256": "08e1309ea95f7cc923374280c2b3f8ff4eaadc70e27be1e29c04c8a5ccc6c10b"
+    },
+    {
+      "name": "existing_controls",
+      "pass": true,
+      "exit": 0,
+      "marker": "CONTROL_SETTINGS_TEST: PASS",
+      "log_sha256": "ed09ebd361cac62fc824f23b73ef7b2d4247346bcc2db0d80568c7b9e49dce1e"
+    },
+    {
+      "name": "runtime_fixed",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "0c0807ef1f0f63aa2c1c6d9d82958fd8343ac6c489ae64f6f200f9a35f0500a9"
+    },
+    {
+      "name": "runtime_write",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "7d9397401363a5947959a1330bab9ec55b8e7543fdaa1b507c18c12a161e5a29"
+    },
+    {
+      "name": "runtime_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "5054ec79e6e90a395827f172b9091532502cff393c89397ba0907fe14f880a09"
+    },
+    {
+      "name": "earned_owned",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "fa63a7f8e45418ee90e2996eeb69c60de9f4206df92d2dc4b2770809a9d9bf73"
+    },
+    {
+      "name": "earned_owned_read",
+      "pass": true,
+      "exit": 0,
+      "log_sha256": "db52fbd4ed8db5bc05db13f4a469cf7573c90bf53f81230b3807692f5c2d2100"
+    }
+  ],
+  "source_accepted_group_reports": [
+    {
+      "path": "D:\\tmp\\bunny_portable_alarm_20261022_dev01\\targeted_results.json",
+      "sha256": "881a86945319227ca96f587d777637fdf34c1b6db1da9d022fb942d85947df02",
+      "results": [
+        {
+          "name": "bindings",
+          "pass": true,
+          "exit": 0,
+          "marker": "ALARM_BINDINGS_TEST: PASS",
+          "log_sha256": "4763aae8462c0c1f56815fd6bf3c8209d0ca68085670b50153a12175f9d6b9d0"
+        },
+        {
+          "name": "bindings_read",
+          "pass": true,
+          "exit": 0,
+          "marker": "ALARM_BINDINGS_TEST: PASS",
+          "log_sha256": "55f1fe50c2155b407a446822becba3fdcae20e382c4484a828c420b55f05f806"
+        },
+        {
+          "name": "packing",
+          "pass": true,
+          "exit": 0,
+          "marker": "PORTABLE_ALARM_PACKING_TEST: PASS",
+          "log_sha256": "adfeffa1d059a14d5df0f649dc626b8b689382e964f95a73acfe88d32f754be2"
+        },
+        {
+          "name": "packing_read",
+          "pass": true,
+          "exit": 0,
+          "marker": "PORTABLE_ALARM_PACKING_TEST: PASS",
+          "log_sha256": "6ad91652afd7443232160f94847d8c13c6e87fe8eabf5e7cf8f7fd8578fde13c"
+        },
+        {
+          "name": "find",
+          "pass": true,
+          "exit": 0,
+          "marker": "PORTABLE_ALARM_FIND_TEST: PASS",
+          "log_sha256": "2ef4e1c4754d27b47d9bcb53cd4a90d63f817714437d08519919ea78049de072"
+        },
+        {
+          "name": "carrier",
+          "pass": true,
+          "exit": 0,
+          "marker": "RECOVERED_CARRIER_TEST: PASS",
+          "log_sha256": "08e1309ea95f7cc923374280c2b3f8ff4eaadc70e27be1e29c04c8a5ccc6c10b"
+        },
+        {
+          "name": "existing_controls",
+          "pass": true,
+          "exit": 0,
+          "marker": "CONTROL_SETTINGS_TEST: PASS",
+          "log_sha256": "ed09ebd361cac62fc824f23b73ef7b2d4247346bcc2db0d80568c7b9e49dce1e"
+        }
+      ]
+    },
+    {
+      "path": "D:\\tmp\\bunny_portable_alarm_20261022_dev01\\runtime_fixed_results.json",
+      "sha256": "4ae9e72f7d6324f73a4275b955a5babc33e9496479748de49953f696b2835762",
+      "results": [
+        {
+          "name": "runtime_fixed",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "0c0807ef1f0f63aa2c1c6d9d82958fd8343ac6c489ae64f6f200f9a35f0500a9"
+        },
+        {
+          "name": "runtime_write",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "7d9397401363a5947959a1330bab9ec55b8e7543fdaa1b507c18c12a161e5a29"
+        },
+        {
+          "name": "runtime_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "5054ec79e6e90a395827f172b9091532502cff393c89397ba0907fe14f880a09"
+        }
+      ]
+    },
+    {
+      "path": "D:\\tmp\\bunny_portable_alarm_20261022_dev01\\earned_owned_results.json",
+      "sha256": "6c716a690f136f2287ac13e3b7a6ad76768f76fd6141d9c026b46454cca6cb3b",
+      "results": [
+        {
+          "name": "earned_owned",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "fa63a7f8e45418ee90e2996eeb69c60de9f4206df92d2dc4b2770809a9d9bf73"
+        },
+        {
+          "name": "earned_owned_read",
+          "pass": true,
+          "exit": 0,
+          "log_sha256": "db52fbd4ed8db5bc05db13f4a469cf7573c90bf53f81230b3807692f5c2d2100"
+        }
+      ]
+    }
+  ],
+  "source_failures_preserved": [
+    {
+      "path": "D:\\tmp\\bunny_portable_alarm_20261022_dev01\\runtime_results.json",
+      "sha256": "5ddb0f3753b6be2401d90f3fd1a8149ef7f956e8fb6a002a1f693d10c728f072",
+      "results": [
+        {
+          "name": "runtime",
+          "pass": false,
+          "exit": 4294967295,
+          "log_sha256": "deafdade8e8943afd51e40f5d937968cab152cc604bd587419ddce0ce13499ab"
+        }
+      ]
+    },
+    {
+      "path": "D:\\tmp\\bunny_portable_alarm_20261022_dev01\\earned_results.json",
+      "sha256": "216303cdd52f55f3c5c710d0eb579b9513e3d2e347ad38d00d0106fbc7097a3e",
+      "results": [
+        {
+          "name": "earned",
+          "pass": false,
+          "exit": 4294967295,
+          "log_sha256": "a958708a236e15085b44cf666db3c00e8109d2312e272cd9591c655706f61eea"
+        }
+      ]
+    },
+    {
+      "path": "D:\\tmp\\bunny_portable_alarm_20261022_dev01\\earned_fixed_results.json",
+      "sha256": "2a2a7e1271128bab439acf268ecdd74e55b05d0231051f159a54d784b760be9f",
+      "results": [
+        {
+          "name": "earned_fixed",
+          "pass": false,
+          "exit": 1,
+          "log_sha256": "8cf09f4677cde69707fdeaa0e782f24a0dd1ba5c362cf0e8947a08b176a3010c"
+        }
+      ]
+    },
+    {
+      "path": "D:\\tmp\\bunny_portable_alarm_20261022_dev01\\earned_continue_results.json",
+      "sha256": "0d7fdacf425c522cdaec487ac698a5b0790cc66070875b6f60819303a88ca550",
+      "results": [
+        {
+          "name": "earned_continue",
+          "pass": false,
+          "exit": 1,
+          "log_sha256": "bc9ae7a470ba3c6419887608fdf2b918b79ce2c480d1ad93794cc98c8c37e409"
+        }
+      ]
+    }
+  ],
+  "retained_input_records": [
+    {
+      "path": "D:\\tmp\\bunny_portable_alarm_20261022_dev01\\earned_input_provenance.json",
+      "sha256": "85f3daf8cdf5c1c80e07fce88b21d3d866bde9556c51755bb9d5969093acdedd",
+      "contents": {
+        "path": "D:\\tmp\\bunny_alarm_carrier_20261022_dev01\\ordinary_userdata\\Godot\\app_userdata\\Bunny Verification bunny_alarm_carrier_20261022_dev01\\profile.json",
+        "sha256": "6bfc54063db5bf2311cc3a01b34a5a7d6a8266e603be1e1aa584309b3ed9f567",
+        "returns": 7,
+        "method": "genuine prior ordinary rescue output; copied original bytes without progression/items edits"
+      }
+    },
+    {
+      "path": "D:\\tmp\\bunny_portable_alarm_20261022_dev01\\earned_parse_failed_input_retained.json",
+      "sha256": "df442657a41669502b8efda82c310a92c294abb467aea71a4d1155846d1e009a",
+      "contents": {
+        "sha256": "6bfc54063db5bf2311cc3a01b34a5a7d6a8266e603be1e1aa584309b3ed9f567",
+        "same_profile_unmodified": true,
+        "reason": "QA harness two Variant inference errors; owned headless process stopped after confirmed parse failure; no input reset"
+      }
+    },
+    {
+      "path": "D:\\tmp\\bunny_portable_alarm_20261022_dev01\\earned_toggle_failed_checkpoint_retained.json",
+      "sha256": "6edd7f34ff4398c5e5fd146cebbf19b172163e15f58ac0e88ec3f87ff3cdb2d1",
+      "contents": {
+        "sha256": "1866f90063c87fe13c338dd4cdab4fd971275d0dcaa0c227580d7a1ae374f054",
+        "returns": 8,
+        "phase": "battle",
+        "method": "keep original failed harness checkpoint; continuation will BOOT/RESUME and physically retreat south, not reset/reseed"
+      }
+    },
+    {
+      "path": "D:\\tmp\\bunny_portable_alarm_20261022_dev01\\earned_viewport_failed_base_retained.json",
+      "sha256": "d91ba875ee7a50d507c26123042829ada963d72a67a7f51df4be8ec65ac90e7b",
+      "contents": {
+        "sha256": "fd96118774fbebb2e288ec2974039d2d38a41959b5cf6b0884f3e41d43a72114",
+        "returns": 9,
+        "method": "headless viewport checkbox not activated; actual retreat/base retained, next continue uses production toggled callback, not save edits"
+      }
+    }
+  ],
+  "source_failure_explanation": "Three harness issues, not concealed passes: Variant inference caused parse failures in runtime unit and ordinary tool; headless Button.pressed.emit did not toggle CheckBox; headless viewport checkbox also did not activate. Kept actual eight-return active checkpoint, resumed and physically retreated south to actual ninth return; kept that base and continued production toggled callback. No failed checkpoint reset/reseed, free replacement items or save-field edits. Final independent ZIP separately passes the complete chain from original genuine seven-return bytes to eight returns.",
+  "zip_ordinary_route": {
+    "checks": 42,
+    "routes": [
+      {
+        "blockade": {},
+        "damage": 5,
+        "health": 255.05,
+        "kills": 14,
+        "mission": "waterworks_run",
+        "shots_total": 58
+      }
+    ],
+    "earned_id": "cc8dc4d3e2bfe65e198765e33131e7d6",
+    "arming_snapshot": {
+      "elapsed": 0.583333333333333,
+      "id": "cc8dc4d3e2bfe65e198765e33131e7d6",
+      "position": [
+        -0.728292107582092,
+        0.0,
+        47.0462760925293
+      ],
+      "pulses": 0
+    },
+    "after_returns": 8,
+    "pack_requested": true,
+    "pending_next_sortie": "battle",
+    "independent_read_checks": 7,
+    "resume_start_age": 1.45,
+    "pulse_peak": 3,
+    "expired": true
+  },
+  "genuine_legacy": {
+    "writer_executable": "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe",
+    "writer_executable_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "writer_output": "D:\\tmp\\bunny_portable_alarm_windows_20261022_01\\zip_genuine_old_writer_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\local_build_checkpoint.json",
+    "writer_output_sha256": "ce9c3cd9ecf75bd286764bb1ac09090bc19abdd3c0e0a0a3f0a6212085ab9c0d",
+    "writer_output_unchanged": true,
+    "reader_input": "D:\\tmp\\bunny_portable_alarm_windows_20261022_01\\zip_genuine_old_reader_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\local_build_checkpoint.json",
+    "reader_input_sha256": "ce9c3cd9ecf75bd286764bb1ac09090bc19abdd3c0e0a0a3f0a6212085ab9c0d",
+    "old_profile_has_no_pack_alarm": true,
+    "old_world_has_no_alarms": true,
+    "legacy_original_files": {
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\ASSET_LICENSE_MATERIALS.zip": "c20824942254f388a96434ae7ce5d7e250c51322d4e9dfeea3a803be5ea5bd32",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\ENGINE_LICENSES.txt": "472c1fbefc38653aa0fe5eceb9d4c0c8cbb5c889e5c917bcc3728edfe4b1f2ad",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\LOCAL_ONLY.txt": "971c31ca46c922fb159f2fa3d5381496a096088884c1ba5a55810f9116f66f96",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.exe": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\NeonBastion.pck": "1a289e45636005cbeb45584ccfb689415a0af04f71241132b3d6ecb612894a25",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\runtime_inventory.json": "9c5b8ea7a7e9e5f1fb18e371f2b0aeb27a8fd65b4f43c680a60d3582dcc82fe6",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\兼容模式.cmd": "6851d578daaf8628535af021be14b1088090c4f3ec257a685b810cfcde72586f",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\开始游戏.cmd": "f52079e040acb6369a9245c63b12a7639d8769bbd3c7007fa10b5e6aea4de583",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\试玩说明.txt": "1862a6a129e342649fe0f404ffc72721246d67e0c5f11535b83859089b5a586e",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览哨卡绕后.cmd": "292593c1fcfc8642718f05f06950c12c1986c306a4a1c737c1a8609e996d63cf",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览校园断电.cmd": "a08462118b21476d15c65a0000813afd6a6adcc42f04e6f7e54019b7a27213ce",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\预览蒸汽救援.cmd": "c41f94032d091b4542ea6213bb5622f867fe534f801e4faaeb3d1dad8569e031",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\preview_seed\\blockade\\profile.json": "0b58fea4442a82ad0fdbc51dbbf8c7d278e8663b96823ecab2dffc3b2f91ceab",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\preview_seed\\power\\profile.json": "da4be246492ee2fb5eaed21c950c8d579d0dcc4c339d1c73a89bb334be51e5e8",
+      "D:\\tmp\\bunny_flank_power_windows_20261022_02\\LOCAL_ONLY_DO_NOT_UPLOAD\\preview_seed\\steam\\profile.json": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f"
+    },
+    "legacy_originals_unchanged": true,
+    "method": "Unmodified preceding flank/power release EXE --local-qa write under new isolated userdata; new ZIP EXE --local-qa read from those exact bytes. No fixture field edits or overwriting old source files."
+  },
+  "preview_inputs": {
+    "path": "D:\\tmp\\bunny_portable_alarm_windows_20261022_01\\preview_seed_provenance.json",
+    "sha256": "3eb3246c248ca74beaca9deb68d33a488af5aa8db8b25ce56ffafebd88c645b3",
+    "contents": {
+      "market": {
+        "source": "D:\\tmp\\bunny_alarm_carrier_20261022_dev01\\ordinary_userdata\\Godot\\app_userdata\\Bunny Verification bunny_alarm_carrier_20261022_dev01\\profile.json",
+        "sha256": "6bfc54063db5bf2311cc3a01b34a5a7d6a8266e603be1e1aa584309b3ed9f567",
+        "input_successful_sorties": 7,
+        "archive_member": "LOCAL_ONLY_DO_NOT_UPLOAD/preview_seed/market/profile.json",
+        "source_unchanged": true,
+        "copy_is_atomic_no_overwrite": true,
+        "missing_primary_existing_backup_does_not_seed": true
+      },
+      "steam": {
+        "source": "D:\\tmp\\bunny_readability_20261021_build01\\maintenance_rescue_seed\\profile.json",
+        "sha256": "35a59330f5d616f3ba33206dd4ed6abf7d4893a9b119fdc1baca547b389d3c8f",
+        "input_successful_sorties": 6,
+        "archive_member": "LOCAL_ONLY_DO_NOT_UPLOAD/preview_seed/steam/profile.json",
+        "source_unchanged": true,
+        "copy_is_atomic_no_overwrite": true,
+        "missing_primary_existing_backup_does_not_seed": true
+      },
+      "power": {
+        "source": "D:\\tmp\\bunny_readability_20261021_build01\\campus_power_seed\\profile.json",
+        "sha256": "da4be246492ee2fb5eaed21c950c8d579d0dcc4c339d1c73a89bb334be51e5e8",
+        "input_successful_sorties": 4,
+        "archive_member": "LOCAL_ONLY_DO_NOT_UPLOAD/preview_seed/power/profile.json",
+        "source_unchanged": true,
+        "copy_is_atomic_no_overwrite": true,
+        "missing_primary_existing_backup_does_not_seed": true
+      },
+      "blockade": {
+        "source": "D:\\tmp\\bunny_readability_20261021_build01\\bucket_earned_userdata\\Godot\\app_userdata\\Neon Bastion Local Prototype\\profile.json",
+        "sha256": "0b58fea4442a82ad0fdbc51dbbf8c7d278e8663b96823ecab2dffc3b2f91ceab",
+        "input_successful_sorties": 8,
+        "archive_member": "LOCAL_ONLY_DO_NOT_UPLOAD/preview_seed/blockade/profile.json",
+        "source_unchanged": true,
+        "copy_is_atomic_no_overwrite": true,
+        "missing_primary_existing_backup_does_not_seed": true
+      }
+    }
+  },
+  "user_authorized_short_visual_recheck": {
+    "scope": "Fresh short user-authorized batch reran final rear/power snapshot, NOT portable alarm. Forward+ 1280x720 Dummy audio, controlled fixtures; focus/pause assertions passed, batch ended before portable-alarm development. Inspected rear close marker, normal rear hit, power choice, guarded normal and cut diagnostic captures. Not a normal native gameplay route or human playtest.",
+    "cases": [
+      {
+        "name": "rear",
+        "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\rear_native03.log",
+        "sha256": "f0018b6159e829609011ccf68dc0b26738ee6939bdfacce2da448d0b29a65bdf",
+        "screenshots": {
+          "rear_close_diagnostic.png": "38a1830717032925797dd6f829b1355cd08552a7707ce8e16b899f2793d56814",
+          "rear_hit.png": "db51507b469cbb5776af5954b088d0defe545072cfd5c1e407a6f9c084ee3d50",
+          "rear_normal.png": "1f7a3d61f64c1e6740f856c549c43658d9db6bf40d8ca0ea83522cc372d4d244"
+        }
+      },
+      {
+        "name": "power",
+        "path": "D:\\tmp\\bunny_rear_power_20261022_dev01\\power_native03.log",
+        "sha256": "9b0420f2321eb9f984a4a766f4bee97c17e3b7552736f9a45a25d42bf41f4655",
+        "screenshots": {
+          "power_choice.png": "3bc8cbbdc49cd9351d15a499cdb7dbcd9c81ca4bcca66a3864dd05d96c912e9e",
+          "power_cut_close_diagnostic.png": "0e3dd7a798740f7d5cffe1d9894c492c84ce9c207ad41619b5f011b0718db8f7",
+          "power_guarded_close_diagnostic.png": "a090bd8af9f8902b1b9c9ac836857a3687eb6f011dc9aa55145faf3364b7fd2f",
+          "power_guarded_normal.png": "d5a06930d5b347436f1ffaff7e64f01bdb673b30e4c3dda51834b0201a61e3e8"
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Portable alarm native visuals and actual audio not checked",
+    "No new five-hour human completion or review evidence",
+    "Other asset publication permissions remain unresolved; raw Unity package and Arcana excluded",
+    "Source WIP remains uncommitted; no commit/push this turn"
+  ],
+  "git_head": "ff5fd8c1b3293600b61e3888ad3b78a0cf9da886",
+  "public_release_approved": false
+}

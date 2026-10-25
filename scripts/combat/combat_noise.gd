@@ -9,7 +9,7 @@ static func emit_at(source: Node3D, origin: Vector3, radius: float, kind: String
 	var world := source.get_world_3d().direct_space_state
 	for node in source.get_tree().get_nodes_in_group("enemies"):
 		var enemy := node as EnemyController
-		if not enemy or enemy.is_dead or not enemy.is_physics_processing(): continue
+		if not enemy or enemy == source or enemy.get_world_3d() != source.get_world_3d() or enemy.is_dead or not enemy.is_physics_processing(): continue
 		var distance := enemy.global_position.distance_to(origin)
 		if distance > radius: continue
 		var query := PhysicsRayQueryParameters3D.create(origin + Vector3.UP * 0.8, enemy.global_position + Vector3.UP * 1.4, 4)

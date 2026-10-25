@@ -1,6 +1,7 @@
 class_name WarehouseGrid
 extends Control
 signal equipment_changed
+signal item_selected(instance_id: String)
 const CELL := 48.0
 var model: StashLayout
 var selected_id := ""
@@ -97,6 +98,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 func select_item(instance_id: String) -> void:
 	selected_id = instance_id
 	for child in get_children(): child.queue_redraw()
+	item_selected.emit(instance_id)
 	if not detail: return
 	var item := model.profile.inventory.get_item(instance_id)
 	if not item:

@@ -1,0 +1,14 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+LOCAL_RIFLE_ACTUAL_STATE Idle
+LOCAL_RIFLE_ACTUAL_STATE WalkRelaxed
+LOCAL_RIFLE_ACTUAL_STATE Run
+CAMPUS WALK STOP main_hall / 430.6 m / (328.4896, -0.201389, 132.3969)
+CAMPUS WALK STOP youth_shore / 816.9 m / (306.699, -2.618393, -202.3447)
+CAMPUS WALK STOP north_dormitory / 1435.0 m / (-81.37858, -0.091253, -310.3489)
+CAMPUS WALK STOP northwest_courts / 1881.0 m / (-330.3055, -0.94596, -114.2787)
+CAMPUS WALK STOP west_services / 2611.8 m / (-609.0544, 0.966393, 269.5851)
+CAMPUS WALK STOP west_gate / 3008.9 m / (-272.4129, -0.86616, 202.3154)
+CAMPUS WALK STOP jingye_shore / 3371.0 m / (70.63995, -1.25379, 268.3166)
+CAMPUS WALK STOP east_gate / 4005.8 m / (671.27, 1.187022, 230.0211)
+CAMPUS ART WALK: 0 failures / 4005.8 m / 8 stops

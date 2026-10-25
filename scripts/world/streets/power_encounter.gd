@@ -5,13 +5,44 @@ enum Phase { IDLE, ACTIVE, CLEARED }
 const GROUP:=&"campus_power_charge"
 const INTRO:="Su Mi: Wait. That noise is not the relay.\nShen: Away from the console. Now.\nTang Kui: It is wearing a DOOR!\nSu Mi: That is a shield!\nTang Kui: Tell it!"
 const CLEAR:="Su Mi: There. Back to the console. L-02B only.\nTang Kui: Shen, your voice cracked.\nShen: Bad radio.\nSu Mi: Mine was very clear."
-const CHOICE:="L-02A / Shelter: stays ON\nL-02B / Experimental branch: still ON\n\nStart isolation. A shielded charger and two followers will approach. Its orange charge lane is committed: step aside, bait a wall impact or flank its shield. After the charger is down, return to this console and cut L-02B. No six-second work timer on this new route."
+const CHOICE:="Su Mi: I could rip this whole cabinet out.\nTang Kui: The man by the window is on that wire too.\nSu Mi: ...I know.\nPlayer: Can we cover A first?\nSu Mi: ...Mind her label."
+const OPERATION:="Close A's safety cover and unlock B. Both branches stay ON for now.\nIf a charger approaches, leave its orange lane. Defeat it, return here, then pull B OFF."
+const COVER_OPEN:=-1.35
+const CONFIRM:="CLOSE A COVER / UNLOCK B"
+const SHELTER_NOTE:="The man\nby the window"
 var phase:=Phase.IDLE
 
 func _ready() -> void:
 	add_to_group("campus_power_encounter")
 	for entry in [["Ram",Vector3(-37,0,-35),&"campus_rammer"],["Follower0",Vector3(-37,0,-42),&"campus_infected"],["Follower1",Vector3(-47,0,-29),&"campus_infected"]]:
 		var point:=EnemySpawnPoint.new();point.name=entry[0];point.position=entry[1];point.rotation.y=PI;point.enemy_definition_id=entry[2];point.initial_spawn=false;point.activation_group_id=GROUP;add_child(point)
+	refresh_hardware()
+
+func refresh_hardware(control: CampusAction=null) -> void:
+	# Render-only hardware derives from the existing encounter/cut facts. It is
+	# absent from v2 controls and adds no collider, work timer or checkpoint field.
+	if not control:control=get_parent().get_node_or_null("L02BranchControl") as CampusAction
+	if not control:return
+	var hardware:=control.get_node_or_null("BranchHardware") as Node3D
+	if not hardware:
+		hardware=Node3D.new();hardware.name="BranchHardware";control.add_child(hardware)
+		for x in [-.35,.35]:VisualFactory.box(hardware,Vector3(.30,.40,.045),Vector3(x,1.2,.81),Color("34474d"),"SwitchMount")
+		for entry in [["ShelterCover",-.35,Color("507767")],["ExperimentCover",.35,Color("92664f")]]:
+			var cover:=Node3D.new();cover.name=entry[0];cover.position=Vector3(entry[1],1.4,.86);hardware.add_child(cover)
+			VisualFactory.box(cover,Vector3(.30,.38,.025),Vector3(0,-.19,0),entry[2],"CoverLeaf")
+		var shelter:=hardware.get_node("ShelterCover") as Node3D
+		VisualFactory.box(shelter,Vector3(.26,.20,.008),Vector3(0,-.19,.018),Color("ddd0ac"),"NamePaper")
+		var note:=Label3D.new();note.name="ShelterNote";note.font=UIFactory.FONT;note.font_size=24;note.pixel_size=.0014;note.outline_size=0;note.modulate=Color("263b39");note.position=Vector3(0,-.19,.025);shelter.add_child(note)
+		var lever:=Node3D.new();lever.name="ExperimentLever";lever.position=Vector3(.35,1.2,.89);hardware.add_child(lever)
+		VisualFactory.box(lever,Vector3(.035,.17,.035),Vector3(0,.07,0),Color("abb8b7"),"LeverStem")
+		VisualFactory.box(lever,Vector3(.15,.055,.06),Vector3(0,.15,0),Color("d5ac64"),"LeverGrip")
+	var session:=SortieRuntime.get_current_session()
+	var cut: bool=session!=null and not session.campus.is_empty() and session.campus.power_cut
+	var guarded:=phase!=Phase.IDLE or cut
+	hardware.get_node("ShelterCover").rotation.x=0.0 if guarded else COVER_OPEN
+	hardware.get_node("ExperimentCover").rotation.x=COVER_OPEN if guarded else 0.0
+	hardware.get_node("ExperimentLever").rotation.z=PI if cut else 0.0
+	hardware.get_node("ShelterCover/ShelterNote").text=tr(SHELTER_NOTE)
 
 func rammer() -> CampusRammer:
 	var battle:=get_parent().get_parent().get_parent()

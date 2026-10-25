@@ -1,0 +1,51 @@
+{
+  "actions": [
+    "dispatch",
+    "catalogue",
+    "archive_power",
+    "archive",
+    "diagram",
+    "relay",
+    "blackout",
+    "restore",
+    "isolate",
+    "youth_sample",
+    "deliver",
+    "jingye_sample",
+    "report"
+  ],
+  "checks": 48,
+  "failures": [],
+  "flags": {
+    "accepted": true,
+    "archive": true,
+    "archive_power": true,
+    "catalogue": true,
+    "delivered": true,
+    "diagram": true,
+    "jingye_sample": true,
+    "relay": true,
+    "reported": true,
+    "shelter_power": true,
+    "youth_sample": true
+  },
+  "history": [
+    "dispatch",
+    "catalogue",
+    "archive_power",
+    "archive",
+    "diagram",
+    "relay",
+    "blackout",
+    "restore",
+    "isolate",
+    "youth_sample",
+    "deliver",
+    "jingye_sample",
+    "report"
+  ],
+  "method": "Only normal movement/E/button input; actual portals are the sole room transfers; no direct state grants",
+  "native": false,
+  "ticks": 22968,
+  "walked_m": 2931.21631111391
+}
